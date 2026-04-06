@@ -1,0 +1,291 @@
+{
+    "basic_info": {
+        "url_slug": "/games/earthbound",
+        "title": "EarthBound",
+        "cover_url": "/images/earthbound.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Time Travel",
+            "Hero's Journey",
+            "Friendship",
+            "Satire",
+            "Modern Setting"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.9,
+        "review": "EarthBound is a cult classic RPG praised for its unique modern setting, quirky humor, and innovative battle system. Despite initial commercial failure in the West, it has gained legendary status among retro gaming enthusiasts.",
+        "developers": [
+            "Ape Inc.",
+            "HAL Laboratory"
+        ],
+        "publishers": [
+            "Nintendo"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Mother 2: Gyiyg no Gyakush\u016b (\u30de\u30b6\u30fc2 \u30ae\u30fc\u30b0\u306e\u9006\u8972)",
+            "EarthBound 64",
+            "Mother 1+2"
+        ],
+        "platforms": [
+            {
+                "name": "Super Nintendo Entertainment System (SNES)",
+                "region": "Japan",
+                "release_date": "1994-08-27"
+            },
+            {
+                "name": "Super Nintendo Entertainment System (SNES)",
+                "region": "North America",
+                "release_date": "1995-06-05"
+            },
+            {
+                "name": "Game Boy Advance",
+                "region": "Japan",
+                "release_date": "2003-06-20"
+            },
+            {
+                "name": "Wii U Virtual Console",
+                "region": "Worldwide",
+                "release_date": "2013-07-28"
+            },
+            {
+                "name": "Nintendo 3DS Virtual Console",
+                "region": "North America",
+                "release_date": "2016-03-24"
+            },
+            {
+                "name": "Super NES Classic Edition",
+                "region": "Worldwide",
+                "release_date": "2017-09-29"
+            },
+            {
+                "name": "Nintendo Switch Online",
+                "region": "Worldwide",
+                "release_date": "2022-02-22"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Mother",
+        "part_number": 2,
+        "previous_game": {
+            "title": "EarthBound Beginnings (Mother)",
+            "url_slug": "/games/earthbound-beginnings"
+        },
+        "next_game": {
+            "title": "Mother 3",
+            "url_slug": "/games/mother-3"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        },
+        {
+            "title": "Final Fantasy VI",
+            "url_slug": "/games/final-fantasy-vi"
+        },
+        {
+            "title": "Secret of Mana",
+            "url_slug": "/games/secret-of-mana"
+        },
+        {
+            "title": "Undertale",
+            "url_slug": "/games/undertale"
+        },
+        {
+            "title": "Omori",
+            "url_slug": "/games/omori"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch Online (SNES)",
+            "details": "The most accessible official version with Nintendo's emulation. Includes the Player's Guide and runs smoothly on modern hardware.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Mother 2: Perfect Edition",
+                    "description": "The most complete re-localization patch. Uncensored script with refined dialogue closer to the original Japanese intent.",
+                    "url": "https://www.romhacking.net/hacks/6140/"
+                },
+                {
+                    "name": "EarthBound Consistency Patch",
+                    "description": "Makes EarthBound more consistent with EarthBound Beginnings and Mother 3 in terms of terminology and style.",
+                    "url": "https://www.romhacking.net/hacks/4257/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "RetroArch (SNES9x core)",
+                    "optimal_settings": [
+                        "CRT filter enabled for authentic look",
+                        "High accuracy mode",
+                        "Frame skip disabled"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Snes9x EX+",
+                    "optimal_settings": [
+                        "Custom controller mapping",
+                        "Save state slots enabled",
+                        "High accuracy mode"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Game Boy Advance (Mother 1+2)",
+            "details": "Portable version with fan translation for Mother 1. Mother 2 only has menu translations but offers portability.",
+            "available_in_english": {
+                "official_localization": false,
+                "fan_translation": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Mother 1+2 Fan Translation",
+                    "description": "Complete English translation for Mother 1 by Tomato and Jeffman. Mother 2 has menu translations only.",
+                    "url": "http://mother12.earthboundcentral.com/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "VBA-M",
+                    "optimal_settings": [
+                        "DirectSound audio output",
+                        "High accuracy mode",
+                        "Save state support"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "My Boy!",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Fast forward enabled",
+                        "Save state slots"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Super Nintendo Entertainment System (SNES)",
+            "details": "Original cartridge experience. Can be enhanced with unofficial patches for improved translation and bug fixes.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": true
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Mother 2: Perfect Edition",
+                    "description": "Uncensored re-localization with refined script and removed censorship from original release.",
+                    "url": "https://www.romhacking.net/hacks/6140/"
+                },
+                {
+                    "name": "MaternalBound Patch",
+                    "description": "Earlier translation hack that Perfect Edition builds upon. Good alternative if you prefer its style.",
+                    "url": "https://www.romhacking.net/hacks/2538/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "higan (bsnes core)",
+                    "optimal_settings": [
+                        "Accurate mode for best compatibility",
+                        "Low-latency audio enabled",
+                        "Fullscreen display"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RetroArch (SNES9x core)",
+                    "optimal_settings": [
+                        "Auto-save enabled",
+                        "Custom overlay for touchscreen controls",
+                        "CRT shader filter"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Windows (PC Emulation)",
+            "details": "Modern PC version with emulators offering flexibility and quality-of-life features.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": true
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Mother 2: Perfect Edition",
+                    "description": "Best translation patch for PC play. Uncensored and refined.",
+                    "url": "https://www.romhacking.net/hacks/6140/"
+                },
+                {
+                    "name": "EarthBound Ultimate Mod",
+                    "description": "Fan-made remake with quality-of-life features including Red Text boxes option.",
+                    "url": "https://gamebanana.com/mods/527416"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Snes9x",
+                    "optimal_settings": [
+                        "High accuracy mode",
+                        "CRT filter for authentic look",
+                        "Save state support"
+                    ]
+                },
+                {
+                    "platform": "macOS",
+                    "recommended_emulator": "OpenEmu",
+                    "optimal_settings": [
+                        "SNES core set to accurate mode",
+                        "Built-in save states",
+                        "Clean interface"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "A young boy named Ness and his friends Paula, Jeff, and Poo travel the world collecting melodies from eight Sanctuaries to defeat the cosmic entity Giygas who threatens to destroy Earth.",
+        "key_features": [
+            "Seamless overworld with no random encounters",
+            "Rolling HP meter battle system",
+            "PSI psychic powers unique to each character",
+            "Modern 1990s American setting for an RPG",
+            "Multiple endings based on player choices"
+        ],
+        "long_description": "EarthBound, known as Mother 2 in Japan, is a 1994 role-playing game developed by Ape Inc. and HAL Laboratory, published by Nintendo for the Super Nintendo Entertainment System. The second entry in the Mother series, it follows Ness and his companions on a quest to collect melodies from eight Sanctuaries to defeat Giygas, a cosmic entity threatening Earth. Unlike traditional RPGs of its era, EarthBound features a modern American setting with quirky humor, no random encounters (enemies appear directly on-screen), and an innovative rolling HP meter battle system. The game was initially poorly received in the West due to its cartoonish graphics and satirical marketing campaign ('This game stinks'), but has since gained legendary cult status. It influenced countless later RPGs including Undertale, Omori, and YIIK: A Postmodern RPG.",
+        "legacy_and_impact": [
+            "Influenced modern indie RPGs like Undertale and Omori",
+            "Pioneered the seamless overworld without random encounters in Western RPGs",
+            "Created one of gaming's most dedicated fan communities (Starmen.net)",
+            "Ness became a staple character in Super Smash Bros. series",
+            "Considered one of the greatest SNES games and RPGs of all time"
+        ]
+    }
+}

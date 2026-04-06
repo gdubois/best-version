@@ -1,0 +1,208 @@
+{
+    "basic_info": {
+        "url_slug": "/games/final-fantasy-viii",
+        "title": "Final Fantasy VIII",
+        "cover_url": "/images/final-fantasy-viii.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Sci-Fi Fantasy",
+            "Coming of Age",
+            "War and Politics",
+            "Love and Loss",
+            "Identity and Memory"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.6,
+        "review": "Final Fantasy VIII is a divisive but ambitious entry in the series, praised for its mature themes and innovative Junction system, though criticized by some for its complex mechanics and mixed reception compared to VII and IX.",
+        "developers": [
+            "Square"
+        ],
+        "publishers": [
+            "Square",
+            "Electronic Arts",
+            "Square Enix"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcVIII (Fainaru Fantaj\u012b VIII)",
+            "Final Fantasy VIII Remastered"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation",
+                "region": "Japan",
+                "release_date": "1999-02-11"
+            },
+            {
+                "name": "PlayStation",
+                "region": "North America",
+                "release_date": "1999-09-09"
+            },
+            {
+                "name": "PlayStation",
+                "region": "Europe",
+                "release_date": "1999-10-27"
+            },
+            {
+                "name": "Windows (PC)",
+                "region": "North America",
+                "release_date": "2000-01-25"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2013-12-05"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "Worldwide",
+                "release_date": "2019-09-03"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Worldwide",
+                "release_date": "2019-09-03"
+            },
+            {
+                "name": "Xbox One",
+                "region": "Worldwide",
+                "release_date": "2019-09-03"
+            },
+            {
+                "name": "iOS",
+                "region": "Worldwide",
+                "release_date": "2021-03-25"
+            },
+            {
+                "name": "Android",
+                "region": "Worldwide",
+                "release_date": "2021-03-25"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Final Fantasy",
+        "part_number": 8,
+        "previous_game": {
+            "title": "Final Fantasy VII",
+            "url_slug": "/games/final-fantasy-vii"
+        },
+        "next_game": {
+            "title": "Final Fantasy IX",
+            "url_slug": "/games/final-fantasy-ix"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Xenogears",
+            "url_slug": "/games/xenogears"
+        },
+        {
+            "title": "Legend of Dragoon",
+            "url_slug": "/games/legend-of-dragoon"
+        },
+        {
+            "title": "Skies of Arcadia",
+            "url_slug": "/games/skies-of-arcadia"
+        },
+        {
+            "title": "Suikoden II",
+            "url_slug": "/games/suikoden-ii"
+        },
+        {
+            "title": "Chrono Cross",
+            "url_slug": "/games/chrono-cross"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (Steam)",
+            "details": "The definitive version with HD texture mods, widescreen fixes, and extensive community support. The Remastered edition offers updated character models, restored music from PS1, and quality-of-life features including auto-save and game boosters.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "HD Texture Mods",
+                    "description": "Community-created high-resolution texture packs that upscale character models, environments, and backgrounds while preserving the original art style.",
+                    "url": "https://www.gamepressure.com/download/final-fantasy-viii-ff8-high-res-patch-mod/z012f16"
+                },
+                {
+                    "name": "Widescreen Fix",
+                    "description": "Removes the 4:3 pillarboxing and enables true widescreen support for modern displays.",
+                    "url": "https://steamcommunity.com/app/1026680/discussions/0/592884947430152746"
+                },
+                {
+                    "name": "Junction VIII Mod Manager",
+                    "description": "Utility for managing the Junction system and other gameplay modifications.",
+                    "url": "https://forums.qhimm.com/index.php?topic=28009.0"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 4",
+            "details": "Best console version with trophy support and backward compatibility on PS5. Offers the Remastered experience without modding capabilities but includes auto-save and game boosters.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "Nintendo Switch",
+            "details": "Portable hybrid experience with the Remastered version. Good for on-the-go play but lacks modding support and has longer load times compared to PC.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "iOS",
+            "details": "Best portable version of the Remaster for mobile play. Features virtual gamepad and cloud save support with good performance on modern devices.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "A young mercenary named Squall Leonhart joins the elite SeeD organization to fight against a powerful sorceress and her army. As he uncovers a conspiracy involving time compression, ancient civilizations, and his own mysterious past, Squall must confront the ultimate threat of Ultimecia while learning about friendship, love, and sacrifice.",
+        "key_features": [
+            "Innovative Junction system for character customization",
+            "Guardian Force (GF) summoning mechanics",
+            "Real-time combat with ATB gauge",
+            "Triple Triad card minigame",
+            "Multiple endings based on player choices",
+            "Blend of sci-fi and fantasy elements"
+        ],
+        "long_description": "Final Fantasy VIII, developed by Square and released in 1999, is the eighth main installment in the legendary Final Fantasy series. Directed by Hironobu Sakaguchi with scenario written by Kazushige Nojima, it introduced revolutionary gameplay mechanics including the Junction system that allowed players to equip magic spells as stat-boosting abilities. The game features Squall Leonhart, a SeeD mercenary who must stop sorceress Edea and later Ultimecia from manipulating time itself. With music composed by Nobuo Uematsu (including the iconic 'Eyes On Me' performed by Chisa Yoko), it sold over 9 million copies across all platforms. The Remastered version released in 2019 features updated character models, restored PS1 audio, and quality-of-life improvements including auto-save and game boosters.",
+        "legacy_and_impact": [
+            "Introduced the innovative Junction system that influenced later RPGs",
+            "First Final Fantasy with fully voiced FMVs",
+            "Featured the first mainline FF theme song in English ('Eyes On Me')",
+            "Pioneered real-time combat with ATB mechanics",
+            "Remastered version brought modern quality-of-life features to classic gameplay"
+        ]
+    }
+}

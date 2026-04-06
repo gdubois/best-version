@@ -1,0 +1,195 @@
+{
+    "basic_info": {
+        "url_slug": "/games/the-witcher-3",
+        "title": "The Witcher 3: Wild Hunt",
+        "cover_url": "/images/the-witcher-3.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Fantasy",
+            "Hero's Journey",
+            "Moral Choices",
+            "Monster Hunting",
+            "Political Intrigue"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 9.3,
+        "review": "The Witcher 3: Wild Hunt is widely considered one of the greatest RPGs ever made, featuring an expansive open world, compelling narrative, and meaningful player choices that shape the story.",
+        "developers": [
+            "CD Projekt Red"
+        ],
+        "publishers": [
+            "CD Projekt"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Wied\u017amin 3: Dziki Gon (Polish)",
+            "The Witcher 3: Wild Hunt - Complete Edition",
+            "The Witcher 3 GOTY Edition"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation 4",
+                "region": "Worldwide",
+                "release_date": "2015-05-19"
+            },
+            {
+                "name": "Windows (PC)",
+                "region": "Worldwide",
+                "release_date": "2015-05-19"
+            },
+            {
+                "name": "Xbox One",
+                "region": "Worldwide",
+                "release_date": "2015-10-27"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Worldwide",
+                "release_date": "2019-10-15"
+            },
+            {
+                "name": "PlayStation 5",
+                "region": "Worldwide",
+                "release_date": "2022-12-14"
+            },
+            {
+                "name": "Xbox Series X|S",
+                "region": "Worldwide",
+                "release_date": "2022-12-14"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2022-12-13"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "The Witcher",
+        "part_number": 3,
+        "previous_game": {
+            "title": "The Witcher 2: Assassins of Kings",
+            "url_slug": "/games/the-witcher-2"
+        },
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "The Elder Scrolls V: Skyrim",
+            "url_slug": "/games/skyrim"
+        },
+        {
+            "title": "Mass Effect 2",
+            "url_slug": "/games/mass-effect-2"
+        },
+        {
+            "title": "Dragon Age: Origins",
+            "url_slug": "/games/dragon-age-origins"
+        },
+        {
+            "title": "Red Dead Redemption 2",
+            "url_slug": "/games/red-dead-redemption-2"
+        },
+        {
+            "title": "God of War (2018)",
+            "url_slug": "/games/god-of-war-2018"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation 5",
+            "details": "The Complete Edition with Next-Gen update featuring ray tracing, improved textures, faster loading times, and DualSense haptic feedback support. Considered the definitive console version.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Next-Gen Update",
+                    "description": "Official update adding ray tracing, improved visuals, and performance modes"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Xbox Series X|S",
+            "details": "Complete Edition with Next-Gen enhancements including 4K resolution options, ray tracing support, and optimized performance. Xbox Game Pass available.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Next-Gen Update",
+                    "description": "Official update adding ray tracing and visual improvements"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (Steam)",
+            "details": "PC version with extensive modding support. Best experience achieved with HD Reworked Project and performance patches for optimal stability.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "HD Reworked Project NextGen Edition",
+                    "description": "Comprehensive visual overhaul improving textures, models, and assets for next-gen PC version"
+                },
+                {
+                    "name": "Script Merger Tool",
+                    "description": "Essential modding tool to prevent conflicts between multiple mods"
+                },
+                {
+                    "name": "Performance Fix Patch",
+                    "description": "Addresses stuttering and DX12 renderer issues for smoother gameplay"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Nintendo Switch",
+            "details": "Portable version with reduced resolution but complete content including all DLC. Good for on-the-go play despite performance limitations.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Geralt of Rivia, a professional monster hunter, searches for his adopted daughter Ciri while navigating political conflicts and supernatural threats in the war-torn Continent.",
+        "key_features": [
+            "Massive open world with hundreds of quests",
+            "Meaningful player choices affecting story outcomes",
+            "Complex combat system with signs, swords, and alchemy",
+            "Two major expansions: Hearts of Stone & Blood and Wine",
+            "Multiple endings based on decisions throughout the game"
+        ],
+        "long_description": "The Witcher 3: Wild Hunt, developed by CD Projekt Red, is widely regarded as one of the greatest RPGs ever created. Released in May 2015, it follows Geralt of Rivia searching for his adopted daughter Ciri while uncovering a conspiracy involving the Wild Hunt. The game features an expansive open world spanning multiple regions, hundreds of quests (both main and side), and a narrative system where player choices have lasting consequences. The Complete Edition/Next-Gen update (December 2022) added ray tracing, improved textures, faster loading times, and performance optimizations for modern platforms. With over 130 hours of gameplay for the base game alone, plus two massive expansions that add hundreds more hours, it remains a benchmark for open-world RPGs.",
+        "legacy_and_impact": [
+            "Won over 800 Game of the Year awards",
+            "Set new standards for open-world RPG design and storytelling",
+            "Popularized meaningful choice systems in modern gaming",
+            "The Complete Edition became a model for next-gen updates",
+            "Continues to receive community mods years after release"
+        ]
+    }
+}

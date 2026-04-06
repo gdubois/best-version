@@ -1,0 +1,31 @@
+/**
+ * Global styles - Uses design-system.css for comprehensive design tokens
+ * Story 7.1: Design System Configuration
+ */
+
+@import './styles/design-system.css';
+
+/* Custom scrollbar - styled with design tokens */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-secondary);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-light);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-accent-purple);
+  color: var(--color-text-primary);
+}

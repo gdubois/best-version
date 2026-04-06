@@ -1,0 +1,250 @@
+{
+    "basic_info": {
+        "url_slug": "/games/cannon-fodder",
+        "title": "Cannon Fodder",
+        "cover_url": "/images/cannon-fodder.jpg",
+        "genres": [
+            "Shoot 'em up",
+            "Strategy"
+        ],
+        "themes": [
+            "Anti-War Message",
+            "Military Tactics",
+            "Dark Humor",
+            "Squad-Based Combat",
+            "Satire"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 9.2,
+        "review": "Cannon Fodder is a cult classic military action-strategy game praised for its innovative squad-based tactics, darkly humorous anti-war message, and addictive gameplay. Amiga magazines awarded it unprecedented scores over 90%, with GamesMaster ranking it #52 in Top 100 Games of All Time.",
+        "developers": [
+            "Sensible Software"
+        ],
+        "publishers": [
+            "Virgin Interactive Entertainment",
+            "Codemasters"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Cannon Fodder: War, Never Been So Much Fun!"
+        ],
+        "platforms": [
+            {
+                "name": "Amiga",
+                "region": "Worldwide",
+                "release_date": "1993-12-03"
+            },
+            {
+                "name": "MS-DOS",
+                "region": "Worldwide",
+                "release_date": "1994-01-01"
+            },
+            {
+                "name": "Atari ST",
+                "region": "Europe",
+                "release_date": "1994-03-01"
+            },
+            {
+                "name": "Super Nintendo Entertainment System",
+                "region": "Worldwide",
+                "release_date": "1995-01-01"
+            },
+            {
+                "name": "Sega Mega Drive/Genesis",
+                "region": "Worldwide",
+                "release_date": "1994-06-01"
+            },
+            {
+                "name": "Atari Jaguar",
+                "region": "North America",
+                "release_date": "1995-02-01"
+            },
+            {
+                "name": "Amiga CD32",
+                "region": "Europe",
+                "release_date": "1994-06-01"
+            },
+            {
+                "name": "Game Boy Color",
+                "region": "Worldwide",
+                "release_date": "2000-03-01"
+            },
+            {
+                "name": "Windows (GOG)",
+                "region": "Worldwide",
+                "release_date": "2009-03-24"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Cannon Fodder",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Cannon Fodder 2",
+            "url_slug": "/games/cannon-fodder-2"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Syndicate",
+            "url_slug": "/games/syndicate"
+        },
+        {
+            "title": "Commandos: Behind Enemy Lines",
+            "url_slug": "/games/commandos-behind-enemy-lines"
+        },
+        {
+            "title": "Mega Lo Mania",
+            "url_slug": "/games/mega-lo-mania"
+        },
+        {
+            "title": "Wizkid",
+            "url_slug": "/games/wizkid"
+        },
+        {
+            "title": "Desperados III",
+            "url_slug": "/games/desperados-iii"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Amiga (Emulated with OpenFodder)",
+            "details": "The definitive experience. Original Amiga version considered best by fans for graphics, sound, and authentic gameplay speed. Use OpenFodder open-source engine to run on modern systems with enhanced features including higher resolutions, save states, and campaign editor.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "OpenFodder Engine",
+                    "description": "Modern open-source port of Cannon Fodder engine supporting Windows, Linux, macOS. Features higher resolutions, save states, campaign/map editor, random map generation, and runs with original GOG data files.",
+                    "url": "https://github.com/OpenFodder/openfodder"
+                },
+                {
+                    "name": "Password SRAM Patch",
+                    "description": "Adds simple saving mechanism to Game Boy Color version which originally lacked save functionality.",
+                    "url": "https://www.romhacking.net/hacks/7506"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "OpenFodder (native) or WinUAE",
+                    "optimal_settings": [
+                        "Use OpenFodder for modern enhancements",
+                        "Higher resolution scaling available in OpenFodder",
+                        "Save states enabled"
+                    ]
+                },
+                {
+                    "platform": "Linux",
+                    "recommended_emulator": "OpenFodder (native)",
+                    "optimal_settings": [
+                        "Available via Flathub or compile from source",
+                        "Supports all modern Linux distributions"
+                    ]
+                },
+                {
+                    "platform": "macOS",
+                    "recommended_emulator": "OpenFodder (native) or UAE",
+                    "optimal_settings": [
+                        "Native OpenFodder build available",
+                        "Best performance on modern Macs"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Windows (GOG)",
+            "details": "Official GOG version with DOSBox wrapper. Runs at approximately twice the speed of Amiga/Mega Drive versions making it harder, especially in later levels. Good for quick access without emulation setup.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "OpenFodder Engine",
+                    "description": "Use OpenFodder with GOG data files for better experience than native DOSBox version.",
+                    "url": "https://github.com/OpenFodder/openfodder"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Super Nintendo Entertainment System (Emulated)",
+            "details": "SNES version has best graphics but poor joypad controls. Requires Nintendo Mouse peripheral for optimal experience. Good alternative if you prefer console aesthetic.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Snes9x or bsnes/higan",
+                    "optimal_settings": [
+                        "Configure mouse support for best controls",
+                        "4x internal resolution scaling"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Game Boy Color (Emulated)",
+            "details": "Portable version with simplified graphics and gameplay. Lacks save functionality without patch. Good for casual play on the go.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Password SRAM Patch",
+                    "description": "Adds saving mechanism to GBC version.",
+                    "url": "https://www.romhacking.net/hacks/7506"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "mGBA or VisualBoyAdvance-M",
+                    "optimal_settings": [
+                        "2x or 3x internal resolution scaling",
+                        "Apply Password SRAM patch for saving"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "In this military-themed action-strategy game, players direct a squad of up to six soldiers through 24 missions (72 levels total) across jungle, snow, and desert environments. Battle enemy infantry, vehicles including tanks and helicopters, and installations while managing limited explosive ammunition to complete objectives.",
+        "key_features": [
+            "Squad-based tactical combat with point-and-click controls",
+            "24 missions divided into 72 levels across diverse environments",
+            "Limited explosive weapons requiring strategic resource management",
+            "Darkly humorous anti-war message with named soldiers and gravestones between levels",
+            "Enemy variety including infantry, jeeps, tanks, helicopters, and missile turrets"
+        ],
+        "long_description": "Cannon Fodder is a 1993 military action-strategy game developed by Sensible Software and published by Virgin Interactive Entertainment for the Amiga. Created by Jon Hare with programming by Jools Jameson and art by Stoo Cambridge, it was developed in a small one-room office after successes like Wizkid, Mega Lo Mania, and especially Sensible Soccer. The game combines shooting action with strategy elements using mouse-based point-and-click controls uncommon for shoot 'em ups. Players control up to six soldiers armed with machine guns against enemy infantry, vehicles, and buildings requiring explosive weapons (grenades/rockets) found in limited supply crates. Each of the several hundred soldiers is named individually and awarded gravestones between levels displaying their rank\u2014a personalization choice Hare intended as an anti-war statement showing 'people died and they're not just faceless sacrifices.' The game was controversial upon release, criticized by Daily Star for juxtaposing war with humor and using poppy iconography near Remembrance Day. Despite this, Amiga magazines awarded unprecedented scores over 90%, with Amiga Action calling it best game of the year. It sold over 100,000 copies and was followed by Cannon Fodder 2 in 1994.",
+        "legacy_and_impact": [
+            "Amiga Action awarded unprecedented score, calling it best game of 1993",
+            "GamesMaster ranked Amiga version #52 in Top 100 Games of All Time (1996)",
+            "Electronic Gaming Monthly awarded Best Atari Jaguar Game of 1995",
+            "Retro Gamer readers voted it #61 top retro game (2004)",
+            "Wirtualna Polska ranked it #5 best Amiga game (2011)",
+            "Spawned open-source OpenFodder engine enabling modern play with enhancements"
+        ]
+    }
+}

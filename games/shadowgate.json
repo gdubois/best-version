@@ -1,0 +1,168 @@
+{
+    "basic_info": {
+        "url_slug": "/games/shadowgate",
+        "title": "Shadowgate",
+        "cover_url": "/images/shadowgate.jpg",
+        "genres": [
+            "Adventure"
+        ],
+        "themes": [
+            "Mystery",
+            "Fantasy",
+            "Puzzle-solving",
+            "Exploration"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 6.8,
+        "review": "Shadowgate is a classic adventure game praised for its atmospheric storytelling and intricate puzzles, though some modern players find the old-school gameplay challenging.",
+        "developers": [
+            "ICOM Simulations"
+        ],
+        "publishers": [
+            "Mindscape",
+            "Viacom New Media",
+            "Reverb Triple XP"
+        ]
+    },
+    "release": {
+        "alternative_names": [],
+        "platforms": [
+            {
+                "name": "Mac OS Classic",
+                "region": "United States",
+                "release_date": "1987-01-01"
+            },
+            {
+                "name": "DOS",
+                "region": "United States",
+                "release_date": "1988-01-01"
+            },
+            {
+                "name": "Windows 3.x",
+                "region": "United States",
+                "release_date": "1993-01-01"
+            },
+            {
+                "name": "Windows",
+                "region": "Worldwide",
+                "release_date": "2014-08-21"
+            },
+            {
+                "name": "macOS (OS X)",
+                "region": "Worldwide",
+                "release_date": "2014-08-21"
+            },
+            {
+                "name": "Linux",
+                "region": "Worldwide",
+                "release_date": "2017-10-31"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Shadowgate",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Beyond Shadowgate",
+            "url_slug": "/games/beyond-shadowgate"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "D\u00e9j\u00e0 Vu",
+            "url_slug": "/games/deja-vu"
+        },
+        {
+            "title": "King's Quest",
+            "url_slug": "/games/kings-quest"
+        },
+        {
+            "title": "Monkey Island",
+            "url_slug": "/games/monkey-island"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (Steam)",
+            "details": "Modern remastered version with Unity engine; available on Steam and GOG.com. Features enhanced visuals, achievements support, and official updates.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "macOS (GOG)",
+            "details": "Official port of the remaster with native macOS support. DRM-free version available on GOG.com.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "DOS (Emulated)",
+            "details": "Original DOS version playable via emulator. Features community patches for improved visuals and compatibility.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Graphical Facelift",
+                    "description": "Enhanced visuals using GBC port assets; resolves outdated textures.",
+                    "url": "https://www.romhacking.net/hacks/2369"
+                },
+                {
+                    "name": "Font Improvement",
+                    "description": "Replaces original NES-style font with clearer text for better readability.",
+                    "url": "https://www.romhacking.net/hacks/75"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "DOSBox",
+                    "optimal_settings": [
+                        "Fullscreen",
+                        "Adjust CPU cycles for compatibility"
+                    ]
+                },
+                {
+                    "platform": "macOS",
+                    "recommended_emulator": "DOSBox-X",
+                    "optimal_settings": [
+                        "Automatic configuration",
+                        "Save states enabled"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "A young adventurer is sent to the ancient keep of Shadowgate on a quest to uncover its secrets and defeat dark forces.",
+        "key_features": [
+            "Point-and-click adventure gameplay",
+            "Over 40 rooms filled with puzzles and hidden objects",
+            "Atmospheric graphics and sound design",
+            "Multiple endings based on player decisions"
+        ],
+        "long_description": "Shadowgate, developed by ICOM Simulations in 1987, is a pioneering point-and-click adventure game that set new standards for interactive storytelling. The game places players in the role of an adventurer exploring the mysterious Shadowgate castle, solving intricate puzzles and interacting with a variety of objects to progress through its chambers. Its blend of challenging gameplay, atmospheric presentation, and narrative depth has cemented it as a classic of the genre. In 2014, Zojoi released a remastered version featuring updated visuals and modern compatibility while preserving the original game's charm.",
+        "legacy_and_impact": [
+            "Pioneered point-and-click adventure mechanics in early computer gaming",
+            "Influenced later titles like King's Quest and Monkey Island",
+            "Remained relevant through multiple re-releases including a successful 2014 remaster",
+            "Consistently ranked among the greatest adventure games of all time"
+        ]
+    }
+}

@@ -1,0 +1,237 @@
+{
+    "basic_info": {
+        "url_slug": "/games/final-fantasy-xv",
+        "title": "Final Fantasy XV",
+        "cover_url": "/images/final-fantasy-xv.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Brotherhood and Friendship",
+            "Coming of Age",
+            "Destiny and Fate",
+            "Kingdom Restoration",
+            "Technology vs Magic"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": true,
+            "co_op": true
+        },
+        "difficulty_rating": 3,
+        "reception_score": 7.9,
+        "review": "Final Fantasy XV is a visually stunning open-world RPG with innovative combat and memorable characters. The Windows Edition offers the best experience with enhanced graphics, all DLC included, and extensive mod support.",
+        "developers": [
+            "Square Enix"
+        ],
+        "publishers": [
+            "Square Enix"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcXV (Final Fantasy J\u016bgo)",
+            "Final Fantasy XV Royal Edition",
+            "Final Fantasy XV Windows Edition",
+            "Final Fantasy XV Pocket Edition"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation 4",
+                "region": "Japan",
+                "release_date": "2016-11-29"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "North America",
+                "release_date": "2016-11-29"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "Europe",
+                "release_date": "2016-11-29"
+            },
+            {
+                "name": "Xbox One",
+                "region": "North America",
+                "release_date": "2016-11-29"
+            },
+            {
+                "name": "Xbox One",
+                "region": "Europe",
+                "release_date": "2016-11-29"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2018-03-06"
+            },
+            {
+                "name": "iOS",
+                "region": "Japan",
+                "release_date": "2017-09-28"
+            },
+            {
+                "name": "Android",
+                "region": "Japan",
+                "release_date": "2017-09-28"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Fabula Nova Crystallis: Final Fantasy XV",
+        "part_number": 5,
+        "previous_game": {
+            "title": "Final Fantasy XIV",
+            "url_slug": "/games/final-fantasy-xiv"
+        },
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "The Witcher 3: Wild Hunt",
+            "url_slug": "/games/the-witcher-3-wild-hunt"
+        },
+        {
+            "title": "Dragon Quest XI",
+            "url_slug": "/games/dragon-quest-xi"
+        },
+        {
+            "title": "Persona 5 Royal",
+            "url_slug": "/games/persona-5-royal"
+        },
+        {
+            "title": "Horizon Zero Dawn",
+            "url_slug": "/games/horizon-zero-dawn"
+        },
+        {
+            "title": "Monster Hunter World",
+            "url_slug": "/games/monster-hunter-world"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (Steam) with Mods",
+            "details": "The Windows Edition includes all Royal Pack content, Season Pass DLC, and offers superior graphics with HDR support. Best version for modding and customization.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Luminous Engine Tweaks",
+                    "description": "Allows overriding engine settings for better graphics and performance optimization.",
+                    "url": "https://www.nexusmods.com/finalfantasy15/mods/136"
+                },
+                {
+                    "name": "Community Texture Patch",
+                    "description": "Fixes numerous graphical errors left unpatched after FFXV's final update.",
+                    "url": "https://www.curseforge.com/final-fantasy-xv/mods/community-texture-patch"
+                },
+                {
+                    "name": "FFXV Mini-Mod",
+                    "description": "Performance optimization mod that fixes FPS drops when using summons and improves resource management.",
+                    "url": "https://www.neogaf.com/threads/final-fantasy-15-windows-edition-mods-and-fixes.1461422"
+                },
+                {
+                    "name": "Pure Light Reshade Preset",
+                    "description": "Makes the game look more cinematic with photorealistic feel and enhanced lighting.",
+                    "url": "https://www.nexusmods.com/finalfantasy15/mods/136"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Xbox One X (Enhanced)",
+            "details": "Backward compatible version with enhanced performance and resolution. Digital Foundry confirmed this as an excellent console experience, though lacks mod support.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 4",
+            "details": "Original console release. Good experience but inferior to Windows Edition in terms of graphics and performance.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "RPCS3",
+                    "optimal_settings": [
+                        "Enable SPU Loop Detection",
+                        "Set SPU Frequency to Auto",
+                        "Use Vulkan renderer for best compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RPCS3 (experimental)",
+                    "optimal_settings": [
+                        "Lower resolution scaling",
+                        "Enable asynchronous shader compilation"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Xbox 360 (via Backward Compatibility)",
+            "details": "Original Xbox One version playable on newer consoles. Digital Foundry noted it performs well but lacks the enhancements of Windows Edition.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Xenia",
+                    "optimal_settings": [
+                        "Enable shader cache",
+                        "Use Vulkan or DirectX 12 backend"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "iOS / Android (Cloud)",
+            "details": "Pocket Edition is an abridged version with streamlined progression. Requires stable internet connection and offers less control over settings.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Prince Noctis and his four friends embark on a road trip across Eos to reclaim his kingdom from the tyrannical Niflheim Empire, discovering friendship, sacrifice, and destiny along the way.",
+        "key_features": [
+            "Open-world exploration with seamless travel",
+            "Real-time combat system with character switching",
+            "Regalia vehicle customization and driving mechanics",
+            "Multiplayer co-op mode (Comrades)",
+            "First-person view mode in Royal Edition"
+        ],
+        "long_description": "Final Fantasy XV, developed by Square Enix and directed by Hajime Tabata, represents a bold new direction for the Final Fantasy series. Originally announced as Versus XIII in 2006, the game underwent years of development before releasing on PS4 and Xbox One in November 2016. The Windows Edition (March 2018) brought all Royal Pack content including the Insomnia City Ruins dungeon, First-Person View mode, Armiger Unleashed combat state, and Regalia Type-D vehicle. Digital Foundry praised the PC version for offering superior graphics with HDR support and higher resolutions compared to console versions. The game features an innovative real-time combat system where players can switch between four party members mid-battle, each with unique abilities. The Luminous Engine delivers stunning visuals with dynamic weather systems and day-night cycles that affect gameplay.",
+        "legacy_and_impact": [
+            "Introduced the Armiger combat system to Final Fantasy series",
+            "Pioneered seamless open-world exploration in a mainline FF title",
+            "Featured extensive modding support on PC platform",
+            "Part of the Fabula Nova Crystallis sub-series with shared mythology",
+            "Windows Edition set new standards for console-to-PC ports"
+        ]
+    }
+}

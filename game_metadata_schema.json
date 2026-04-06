@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/game_metadata.schema.json",
+  "title": "Game Metadata Schema",
+  "description": "Strict JSON schema for representing game metadata",
+  "type": "object",
+  "properties": {
+    "basic_info": {
+      "type": "object",
+      "description": "Core identification and classification information about the game",
+      "properties": {
+        "url_slug": {
+          "type": "string",
+          "pattern": "^/games/.*$",
+          "description": "URL-friendly identifier for the game, formatted as a path segment"
+        },
+        "title": {
+          "type": "string",
+          "description": "Official title of the game"
+        },
+        "cover_url": {
+          "type": "string",
+          "pattern": "^/images/.*\\.jpg$",
+          "description": "Path to the game's cover image"
+        },
+        "genres": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Tactical Role-Playing", "Strategy", "Adventure", "Action", "RPG", "JRPG", "Puzzle", "Sports", "Racing", "RTS", "FPS"]
+          },
+          "minItems": 1,
+          "description": "List of primary genres for the game"
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Major thematic elements in the game (e.g., mythology, hero's journey)"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "modes": {
+          "type": "object",
+          "description": "Supported gameplay modes and their availability",
+          "properties": {
+            "single_player": {"type": "boolean", "description": "Supports single-player mode"},
+            "multiplayer_local": {"type": "boolean", "description": "Supports local multiplayer"},
+            "multiplayer_online": {"type": "boolean", "description": "Supports online multiplayer"},
+            "co_op": {"type": "boolean", "description": "Supports cooperative play"}
+          },
+          "required": ["single_player"]
+        },
+        "difficulty_rating": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Difficulty rating on a scale from 1 (easy) to 5 (hard)"
+        },
+        "reception_score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 10.0,
+          "description": "User reception score on a scale from 0.0 to 10.0"
+        },
+        "review": {
+          "type": "string",
+          "description": "Short user review or quote about the game"
+        },
+        "developers": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1,
+          "description": "List of development studios that created the game"
+        },
+        "publishers": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1,
+          "description": "List of publishing companies responsible for the game"
+        }
+      },
+      "required": ["url_slug", "title", "cover_url", "genres", "modes", "developers", "publishers"]
+    },
+    "release": {
+      "type": "object",
+      "description": "Release information including alternative names and platform-specific details",
+      "properties": {
+        "alternative_names": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "Alternative names for the game in different regions or languages"
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {"type": "string", "description": "Platform name (e.g., 'Nintendo Switch')"},
+              "region": {
+                "type": "string",
+                "enum": ["Japan", "North America", "Europe", "Australia", "Asia", "Brazil", "World"]
+              },
+              "release_date": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "description": "Release date in ISO 8601 format (YYYY-MM-DD)"
+              }
+            },
+            "required": ["name", "region", "release_date"]
+          },
+          "minItems": 1,
+          "description": "List of platform-region combinations with their release dates"
+        }
+      },
+      "required": ["platforms"]
+    },
+    "serie": {
+      "type": "object",
+      "description": "Series information (note: 'serie' is used instead of 'series' in this schema)",
+      "properties": {
+        "is_part_of_serie": {
+          "type": "boolean",
+          "description": "Whether the game is part of a larger series"
+        },
+        "serie_name": {
+          "type": "string",
+          "description": "Name of the series the game belongs to"
+        },
+        "part_number": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Ordinal number of this game in its series"
+        },
+        "previous_game": {
+          "type": ["object", "null"],
+          "description": "Information about the previous game in the series, if any",
+          "properties": {
+            "title": {"type": "string", "description": "Title of the previous game"},
+            "url_slug": {"type": "string", "pattern": "^/games/.*$"}
+          },
+          "required": ["title", "url_slug"]
+        },
+        "next_game": {
+          "type": ["object", "null"],
+          "description": "Information about the next game in the series, if any",
+          "properties": {
+            "title": {"type": "string", "description": "Title of the next game"},
+            "url_slug": {"type": "string", "pattern": "^/games/.*$"}
+          },
+          "required": ["title", "url_slug"]
+        }
+      },
+      "required": ["is_part_of_serie", "serie_name", "part_number"]
+    },
+    "similar_games": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string", "description": "Title of a similar game"},
+          "url_slug": {"type": "string", "pattern": "^/games/.*$"}
+        },
+        "required": ["title", "url_slug"]
+      },
+      "minItems": 0,
+      "description": "List of games with similar gameplay or themes"
+    },
+    "play_today": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "platform": {"type": "string", "description": "Platform for current play"},
+          "details": {"type": "string", "description": "Specific details about the version being played"},
+          "available_in_english": {
+            "type": "object",
+            "properties": {
+              "official_localization": {"type": "boolean"},
+              "fan_translation": {"type": "boolean"}
+            },
+            "required": ["official_localization"],
+            "description": "English language support details"
+          },
+          "retro_achievements_support": {
+            "type": "boolean",
+            "description": "Whether the game supports retro achievements (e.g., on Nintendo Switch)"
+          },
+          "recommended_patches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {"type": "string"},
+                "description": {"type": "string"},
+                "url": {"type": "string", "format": "uri"}
+              },
+              "required": ["name", "description", "url"]
+            },
+            "minItems": 0,
+            "description": "Recommended downloadable content (DLC) or patches. include unofficial patches and mods like translations"
+          },
+          "emulators": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "platform": {"type": "string", "enum": ["Windows", "Android", "Linux", "macOS"]},
+                "recommended_emulator": {"type": "string"},
+                "optimal_settings": {
+                  "type": "array",
+                  "items": {"type": "string"},
+                  "minItems": 1
+                }
+              },
+              "required": ["platform", "recommended_emulator", "optimal_settings"]
+            },
+            "minItems": 0,
+            "description": "Recommended emulators and optimal settings for playing the game"
+          }
+        },
+        "required": ["platform", "details", "available_in_english"]
+      },
+      "minItems": 0,
+      "description": "Current playability information including emulation support"
+    },
+    "description": {
+      "type": "object",
+      "description": "Comprehensive descriptive information about the game",
+      "properties": {
+        "synopsis": {
+          "type": "string",
+          "description": "Brief summary of the game's story premise"
+        },
+        "key_features": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "List of important gameplay features"
+        },
+        "long_description": {
+          "type": "string",
+          "description": "Detailed description covering development, gameplay, and reception"
+        },
+        "legacy_and_impact": {
+          "type": "array",
+          "items": {"type": "string"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "List of significant contributions or impacts of the game"
+        }
+      },
+      "required": ["synopsis", "long_description"]
+    }
+  },
+  "required": ["basic_info", "release", "description"],
+  "additionalProperties": false
+}

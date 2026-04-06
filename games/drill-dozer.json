@@ -1,0 +1,243 @@
+{
+    "basic_info": {
+        "url_slug": "/games/drill-dozer",
+        "title": "Drill Dozer",
+        "cover_url": "/images/drill-dozer.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Action Platformer",
+            "Mech Pilot",
+            "Revenge Quest",
+            "Treasure Hunting"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.1,
+        "review": "Drill Dozer is one of the best GBA games with brilliant design and fantastic gameplay, featuring unique drill-focused mechanics that set it apart from other platformers.",
+        "developers": [
+            "Game Freak"
+        ],
+        "publishers": [
+            "Nintendo"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Screw Breaker G\u014dshin Drillero (\u30b9\u30af\u30ea\u30e5\u30fc\u30d6\u30ec\u30a4\u30ab\u30fc\u8f5f\u632f\u3069\u308a\u308b\u308c\u308d)",
+            "Screw Breaker"
+        ],
+        "platforms": [
+            {
+                "name": "Game Boy Advance",
+                "region": "Japan",
+                "release_date": "2005-09-22"
+            },
+            {
+                "name": "Game Boy Advance",
+                "region": "North America",
+                "release_date": "2006-02-06"
+            },
+            {
+                "name": "Wii U Virtual Console",
+                "region": "Japan",
+                "release_date": "2015-12-16"
+            },
+            {
+                "name": "Wii U Virtual Console",
+                "region": "Europe",
+                "release_date": "2016-01-07"
+            },
+            {
+                "name": "Wii U Virtual Console",
+                "region": "Australia",
+                "release_date": "2016-01-07"
+            },
+            {
+                "name": "Wii U Virtual Console",
+                "region": "North America",
+                "release_date": "2016-06-23"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": false,
+        "serie_name": null,
+        "part_number": null,
+        "previous_game": null,
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "Metroid Fusion",
+            "url_slug": "/games/metroid-fusion"
+        },
+        {
+            "title": "Blaster Master Zero",
+            "url_slug": "/games/blaster-master-zero"
+        },
+        {
+            "title": "Giga Wrecker",
+            "url_slug": "/games/giga-wrecker"
+        },
+        {
+            "title": "Kid Icarus: Uprising",
+            "url_slug": "/games/kid-icarus-uprising"
+        },
+        {
+            "title": "Bionic Commando",
+            "url_slug": "/games/bionic-commando"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Wii U Virtual Console (via RetroArch / Emulation)",
+            "details": "The most accessible version for modern play. Preserves the original GBA rumble functionality when played with compatible controllers. The Wii U eShop has been discontinued as of March 2023, but the game remains available through existing purchases.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Rumble Patch for EZ3in1",
+                    "description": "Enables rumble functionality on EZ3in1 flash carts that cannot directly play Drill Dozer with rumble.",
+                    "url": "https://gbatemp.net/threads/drill-dozer-rumble-patch-for-ez3in1.661260/"
+                },
+                {
+                    "name": "Game Boy Player Rumble Patch",
+                    "description": "Unlocks the Game Boy Player rumble feature on GBA and adds cartridge rumble support.",
+                    "url": "https://www.romhacking.net/hacks/7271/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "mGBA / VisualBoyAdvance-M",
+                    "optimal_settings": [
+                        "Enable rumble support if using compatible controller",
+                        "High internal resolution (2x or 3x)",
+                        "Use accurate timing for best compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "mGBA",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Save state slots enabled",
+                        "Enable rumble vibration if supported by device"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Game Boy Advance (Original Cartridge)",
+            "details": "The original release with built-in rumble pack functionality. This is the definitive version for collectors and enthusiasts who want the authentic experience with hardware rumble support.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Rumble Patch for EZ3in1",
+                    "description": "Enables rumble functionality on EZ3in1 flash carts that cannot directly play Drill Dozer with rumble.",
+                    "url": "https://gbatemp.net/threads/drill-dozer-rumble-patch-for-ez3in1.661260/"
+                },
+                {
+                    "name": "Game Boy Player Rumble Patch",
+                    "description": "Unlocks the Game Boy Player rumble feature on GBA and adds cartridge rumble support.",
+                    "url": "https://www.romhacking.net/hacks/7271/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "mGBA / VisualBoyAdvance-M",
+                    "optimal_settings": [
+                        "Enable rumble support if using compatible controller",
+                        "High internal resolution (2x or 3x)",
+                        "Use accurate timing for best compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "mGBA",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Save state slots enabled",
+                        "Enable rumble vibration if supported by device"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Game Boy Advance (Japanese Version)",
+            "details": "The original Japanese release with the full title 'Screw Breaker G\u014dshin Drillero'. Features Game Freak character-themed unlockable outfits in the English localization.",
+            "available_in_english": {
+                "official_localization": false,
+                "fan_translation": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "English Translation Patch",
+                    "description": "Fan translation patch for the original Japanese release.",
+                    "url": "https://www.romhacking.net/translations/"
+                },
+                {
+                    "name": "Rumble Patch for EZ3in1",
+                    "description": "Enables rumble functionality on EZ3in1 flash carts that cannot directly play Drill Dozer with rumble.",
+                    "url": "https://gbatemp.net/threads/drill-dozer-rumble-patch-for-ez3in1.661260/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "mGBA / VisualBoyAdvance-M",
+                    "optimal_settings": [
+                        "Enable rumble support if using compatible controller",
+                        "High internal resolution (2x or 3x)",
+                        "Use accurate timing for best compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "mGBA",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Save state slots enabled",
+                        "Enable rumble vibration if supported by device"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "Jill, daughter of a bandit gang leader, pilots her mech Drill Dozer to retrieve the Red Diamond stolen from her family by the rival Skullkers gang while collecting four other diamonds that affect people and objects across the world.",
+        "key_features": [
+            "Unique drill-based gameplay with clockwise/counter-clockwise rotation controls",
+            "Built-in rumble pack functionality activated during drilling sequences",
+            "17 massive stages filled with enemies, obstacles, and puzzles",
+            "Gear shift system that allows indefinite drilling after collecting sprockets",
+            "Treasure collection system to increase Jill's reputation as a thief",
+            "Unlockable outfits themed after Game Freak characters in English version"
+        ],
+        "long_description": "Drill Dozer is a 2005 action-platformer video game developed by Game Freak and published by Nintendo for the Game Boy Advance. Directed by Ken Sugimori, the first game he directed since Pulseman in 1994, it stars Jill and her mech Drill Dozer, which features a drill that can be rotated in both directions to fight enemies, drill into surfaces, and screw objects. The game was revealed at E3 2005 under its original title 'Screw Breaker' before being localized for international release. Development began after Pok\u00e9mon Ruby and Sapphire when Game Freak had staff available who hadn't worked on the mainline Pok\u00e9mon games. Sugimori wanted to create an action game that didn't use traditional combat, inspired by tokusatsu monsters that could drill through anything. The protagonist was designed as a little girl piloting a mech rather than a muscular male character, with her hair design inspired by roll cakes. The game features shoulder button controls for drilling direction, with rumble functionality added late in development at Nintendo's suggestion. It received generally favorable reviews and has been regarded as one of the best GBA games by multiple publications including Nintendo Power (GBA Game of the Year 2006), though it was a commercial failure due to coinciding with the Nintendo DS release and poor marketing, becoming a cult classic hidden gem.",
+        "legacy_and_impact": [
+            "Regarded as one of the best Game Boy Advance games by multiple publications",
+            "Won GBA 'Game of the Show' at E3 2005 from Nintendo World Report",
+            "Featured as summonable character in Super Smash Bros. Brawl (2008)",
+            "Inspired Game Freak's later action game Giga Wrecker which shares similar essence",
+            "Demonstrated Game Freak's ability to create successful non-Pok\u00e9mon titles",
+            "Preserved rumble functionality as a notable feature in Virtual Console releases"
+        ]
+    }
+}

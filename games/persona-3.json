@@ -1,0 +1,155 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "basic_info": {
+        "url_slug": "/games/persona-3",
+        "title": "Persona 3",
+        "cover_url": "/images/persona-3.jpg",
+        "genres": [
+            "RPG",
+            "JRPG"
+        ],
+        "themes": [
+            "Supernatural",
+            "School Life",
+            "Social Bonds",
+            "Mortality"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 9.3,
+        "review": "Persona 3 Reload revitalizes a classic JRPG with stunning visuals, refined combat mechanics, and expanded story content, solidifying its status as one of the greatest RPGs ever made.",
+        "developers": [
+            "Atlus"
+        ],
+        "publishers": [
+            "Sega",
+            "Atlus"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "P3R",
+            "Persona 3 Remake"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation 5",
+                "region": "Worldwide",
+                "release_date": "2024-02-02"
+            },
+            {
+                "name": "Xbox Series X/S",
+                "region": "Worldwide",
+                "release_date": "2024-02-02"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2024-02-02"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Persona",
+        "part_number": 3,
+        "previous_game": {
+            "title": "Persona 2",
+            "url_slug": "/games/persona-2"
+        },
+        "next_game": {
+            "title": "Persona 4",
+            "url_slug": "/games/persona-4"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Persona 5",
+            "url_slug": "/games/persona-5"
+        },
+        {
+            "title": "Persona 4 Golden",
+            "url_slug": "/games/persona-4-golden"
+        },
+        {
+            "title": "Final Fantasy X",
+            "url_slug": "/games/final-fantasy-x"
+        },
+        {
+            "title": "Shin Megami Tensei III: Nocturne",
+            "url_slug": "/games/shin-megami-tensei-iii-nocturne"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (Steam)",
+            "details": "Official release with full modding support. Includes community scripts for visual enhancements, texture improvements, and quality-of-life fixes.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "RT Reflections Fix",
+                    "description": "Enables ray-traced reflections in Tartarus for enhanced visual fidelity.",
+                    "url": "https://community.pcgamingwiki.com/files/file/2925-persona-3-reload-force-rt-reflections-everywhere"
+                },
+                {
+                    "name": "SSAO Quality Fix",
+                    "description": "Improves screen-space ambient occlusion to eliminate grid patterns.",
+                    "url": "https://community.pcgamingwiki.com/files/file/2926-persona-3-reload-force-higher-quality-ssao"
+                },
+                {
+                    "name": "Bond Growth Wording Fix",
+                    "description": "Corrects text inconsistencies in the Bond Growth system for better clarity.",
+                    "url": ""
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 5",
+            "details": "Native port with optimized performance and trophies support. Features all content from the Reload version.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "Xbox Series X/S",
+            "details": "Official release with optimized performance and Xbox Achievements. Features all content from the Reload version.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "A group of high school students discovers the existence of Shadows and the Dark Hour, a hidden time period where they must battle monsters with their Personas to prevent global catastrophe.",
+        "key_features": [
+            "Social Links system for character development",
+            "Turn-based combat with elemental weaknesses",
+            "Time management mechanics balancing daily life and dungeon crawling",
+            "Multiple endings based on player choices"
+        ],
+        "long_description": "Persona 3, developed by Atlus' P-Studio, is a landmark JRPG that introduced the Social Link mechanic to the series. The game follows a group of students who form the Specialized Extracurricular Execution Squad (SEES) to battle Shadows during the Dark Hour \u2014 a hidden time period when the world stops for everyone else but them. Persona 3 Reload reimagines this classic with modern visuals, improved combat mechanics including active time-based actions, and expanded story content featuring new characters like Aigis' sister Aegis. Its blend of school life simulation, dungeon crawling, and deep narrative about facing mortality has cemented its place as one of the most influential RPGs in history.",
+        "legacy_and_impact": [
+            "Pioneered Social Link system now standard in Persona series",
+            "Influenced time-based mechanics in later JRPGs",
+            "Set benchmark for blending school life with supernatural combat",
+            "Inspired modern games like Shin Megami Tensei V and other Atlus titles"
+        ]
+    }
+}

@@ -1,0 +1,155 @@
+{
+    "basic_info": {
+        "url_slug": "/games/the-witcher",
+        "title": "The Witcher",
+        "cover_url": "/images/the-witcher.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Fantasy",
+            "Monster Hunting",
+            "Moral Choices",
+            "Political Intrigue",
+            "Magic and Alchemy"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 7.8,
+        "review": "The Witcher is a groundbreaking RPG that introduced complex moral choices and mature storytelling to the genre, though its combat system shows its age compared to later entries in the series.",
+        "developers": [
+            "CD Projekt Red"
+        ],
+        "publishers": [
+            "Atari",
+            "CD Projekt"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Wied\u017amin (Polish)",
+            "The Witcher: Enhanced Edition Director's Cut",
+            "The Witcher: Rise of the White Wolf (PS3/Xbox 360)"
+        ],
+        "platforms": [
+            {
+                "name": "Windows (PC)",
+                "region": "Worldwide",
+                "release_date": "2007-10-26"
+            },
+            {
+                "name": "PlayStation 3",
+                "region": "Worldwide",
+                "release_date": "2009-05-28"
+            },
+            {
+                "name": "Xbox 360",
+                "region": "Worldwide",
+                "release_date": "2009-05-28"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "The Witcher",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "The Witcher 2: Assassins of Kings",
+            "url_slug": "/games/the-witcher-2"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Baldur's Gate II",
+            "url_slug": "/games/baldurs-gate-ii"
+        },
+        {
+            "title": "Neverwinter Nights 2",
+            "url_slug": "/games/neverwinter-nights-2"
+        },
+        {
+            "title": "Dragon Age: Origins",
+            "url_slug": "/games/dragon-age-origins"
+        },
+        {
+            "title": "Mass Effect 1",
+            "url_slug": "/games/mass-effect-1"
+        },
+        {
+            "title": "The Elder Scrolls IV: Oblivion",
+            "url_slug": "/games/oblivion"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (PC - GOG/Steam)",
+            "details": "Enhanced Edition Director's Cut is the definitive version with all DLC, improved stability, and modern compatibility. Best experience when combined with community mods.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "HD Reworked Project",
+                    "description": "Comprehensive visual overhaul improving textures, models, and assets for modern displays"
+                },
+                {
+                    "name": "4GB Patch (NTcore)",
+                    "description": "Allows game to use more than 2GB RAM, preventing crashes on modern systems"
+                },
+                {
+                    "name": "Aspect Ratio Fix",
+                    "description": "Enables ultrawide and multi-monitor support for cutscenes"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 3",
+            "details": "Console port with simplified controls but complete content. Good for casual play but lacks modding flexibility.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "Xbox 360",
+            "details": "Console port with complete content and controller support. Performance similar to PS3 version.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Geralt of Rivia, a mutated monster hunter known as a Witcher, investigates political conspiracies while searching for his former lover and navigating the dangerous world of magic and monsters.",
+        "key_features": [
+            "Multiple difficulty levels affecting gameplay depth",
+            "Choice system with lasting consequences on story outcomes",
+            "Alchemy and potion brewing mechanics",
+            "Isometric or over-the-shoulder camera perspectives",
+            "First game in the acclaimed Witcher trilogy"
+        ],
+        "long_description": "The Witcher, released in October 2007 by CD Projekt Red (then known as CD Projekt), is based on Andrzej Sapkowski's bestselling fantasy novels. It was the studio's debut title and established their reputation for mature storytelling and complex moral choices. The Enhanced Edition Director's Cut (September 2008) added over 200 new animations, improved NPC models, redesigned inventory systems, reduced load times by 80%, and included all DLC content. While the original combat system shows its age compared to later entries in the series, the game remains praised for its narrative depth, world-building, and pioneering approach to player choice. The PS3 and Xbox 360 ports (2009) brought the experience to consoles but with simplified controls.",
+        "legacy_and_impact": [
+            "Established CD Projekt Red as a major RPG developer",
+            "Introduced mature storytelling and moral complexity to Western RPGs",
+            "Created the foundation for one of gaming's most beloved franchises",
+            "Pioneered choice systems that influenced later RPGs like The Witcher 2 & 3",
+            "Continues to receive community support and mods years after release"
+        ]
+    }
+}

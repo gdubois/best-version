@@ -1,0 +1,237 @@
+{
+    "basic_info": {
+        "url_slug": "/games/final-fantasy-xiii",
+        "title": "Final Fantasy XIII",
+        "cover_url": "/images/final-fantasy-xiii.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Destiny and Fate",
+            "Dystopian Society",
+            "Hero's Journey",
+            "Sacrifice",
+            "Technology vs Nature"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 7.8,
+        "review": "Final Fantasy XIII is a visually stunning RPG with innovative combat systems and memorable characters, though criticized for its linearity. The Xbox One X enhanced version offers the best experience with improved resolution and performance.",
+        "developers": [
+            "Square Enix"
+        ],
+        "publishers": [
+            "Square Enix"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcXIII (Final Fantasy J\u016bsan)",
+            "Final Fantasy XIII International",
+            "Final Fantasy XIII-2",
+            "Lightning Returns: Final Fantasy XIII"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation 3",
+                "region": "Japan",
+                "release_date": "2009-12-17"
+            },
+            {
+                "name": "PlayStation 3",
+                "region": "North America",
+                "release_date": "2010-03-09"
+            },
+            {
+                "name": "PlayStation 3",
+                "region": "Europe",
+                "release_date": "2010-03-12"
+            },
+            {
+                "name": "Xbox 360",
+                "region": "North America",
+                "release_date": "2010-03-09"
+            },
+            {
+                "name": "Xbox 360",
+                "region": "Europe",
+                "release_date": "2010-03-12"
+            },
+            {
+                "name": "Xbox 360",
+                "region": "Japan",
+                "release_date": "2010-12-16"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2014-10-09"
+            },
+            {
+                "name": "iOS",
+                "region": "Japan",
+                "release_date": "2015-04-10"
+            },
+            {
+                "name": "Android",
+                "region": "Japan",
+                "release_date": "2015-04-10"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Fabula Nova Crystallis: Final Fantasy XIII",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Final Fantasy XIII-2",
+            "url_slug": "/games/final-fantasy-xiii-2"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        },
+        {
+            "title": "Final Fantasy X",
+            "url_slug": "/games/final-fantasy-x"
+        },
+        {
+            "title": "Final Fantasy VII",
+            "url_slug": "/games/final-fantasy-vii"
+        },
+        {
+            "title": "Dragon Quest IX",
+            "url_slug": "/games/dragon-quest-ix"
+        },
+        {
+            "title": "Persona 4 Golden",
+            "url_slug": "/games/persona-4-golden"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Xbox One X / Xbox Series X|S (Backward Compatible)",
+            "details": "The enhanced version with 4K resolution, improved cutscenes, and better performance. Considered the definitive version by Digital Foundry.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (Steam) with FF13Fix Mod",
+            "details": "PC version enhanced with the community-made FF13Fix mod that uncaps framerate, fixes stuttering, and improves performance. Best for customization.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "FF13Fix Mod",
+                    "description": "Performance and bug fixes mod that removes frame pacer, uncaps framerate (optional), enables triple buffering, and fixes various technical issues.",
+                    "url": "https://github.com/rebtd7/FF13Fix/releases"
+                },
+                {
+                    "name": "Ultrawide Fix",
+                    "description": "Removes pillarboxing on ultrawide monitors for 21:9 displays.",
+                    "url": "https://community.pcgamingwiki.com/files/file/2017-final-fantasy-xiii-ultrawide-fix"
+                },
+                {
+                    "name": "Console Button Prompts",
+                    "description": "Replaces PC keyboard prompts with console-style button icons for better visual clarity.",
+                    "url": "https://community.pcgamingwiki.com/files/file/2878-ffxiii-console-button-prompts-v20"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 3",
+            "details": "Original release with native resolution. Good version but inferior to Xbox One X enhanced in terms of visual quality and performance.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "RPCS3",
+                    "optimal_settings": [
+                        "Enable SPU Loop Detection",
+                        "Set SPU Frequency to Auto",
+                        "Use Vulkan renderer for best compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RPCS3 (experimental)",
+                    "optimal_settings": [
+                        "Lower resolution scaling",
+                        "Enable asynchronous shader compilation"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Xbox 360",
+            "details": "Original Xbox 360 release. Digital Foundry noted this version had inferior graphics compared to PS3, but the Xbox One X enhanced version fixes these issues.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Xenia",
+                    "optimal_settings": [
+                        "Enable shader cache",
+                        "Use Vulkan or DirectX 12 backend"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "iOS / Android (Cloud)",
+            "details": "Cloud streaming version released in Japan. Requires stable internet connection and offers the least control over performance settings.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Lightning and her companions are thrust into a war between the sky city of Cocoon and the ground world of Pulse, fighting against fate and powerful creatures called fal'Cie.",
+        "key_features": [
+            "Innovative Command Synergy Battle (CSB) combat system",
+            "Crystarium character progression system",
+            "Multiple endings based on player choices",
+            "Stunning visuals with pre-rendered backgrounds",
+            "Memorable soundtrack by Masashi Hamauzu"
+        ],
+        "long_description": "Final Fantasy XIII, developed and published by Square Enix, represents a bold departure from traditional Final Fantasy formulas. Directed by Motomu Toriyama and featuring character designs by Yoshitaka Amano and Akira Toriyama, the game introduced the Command Synergy Battle system that combined traditional turn-based combat with real-time action elements. The Crystarium system allowed for deep character customization through a node-based progression tree. Despite criticism for its linearity compared to previous entries, the game was praised for its visual fidelity, emotional storytelling, and innovative mechanics. The Xbox One X enhanced version, released in 2018 as part of Microsoft's backward compatibility program, significantly improved upon the original by offering 4K resolution, better frame rates, and enhanced cutscene quality.",
+        "legacy_and_impact": [
+            "Introduced the Command Synergy Battle system to Final Fantasy series",
+            "Pioneered the Crystarium character progression system",
+            "Part of the Fabula Nova Crystallis sub-series",
+            "Influenced subsequent Final Fantasy games with its combat mechanics",
+            "Xbox One X enhanced version set new standards for backward compatibility improvements"
+        ]
+    }
+}

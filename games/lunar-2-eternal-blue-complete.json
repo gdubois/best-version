@@ -1,0 +1,173 @@
+{
+    "basic_info": {
+        "url_slug": "/games/lunar-2-eternal-blue-complete",
+        "title": "Lunar 2: Eternal Blue Complete",
+        "cover_url": "/images/lunar-2-eternal-blue-complete.jpg",
+        "genres": [
+            "RPG",
+            "JRPG"
+        ],
+        "themes": [
+            "Fantasy",
+            "Adventure",
+            "Romance",
+            "Magic"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 9.0,
+        "review": "Lunar 2: Eternal Blue Complete is a classic JRPG celebrated for its deep storytelling, memorable characters, and rich world-building. It remains one of the most beloved games in the series.",
+        "developers": [
+            "Game Arts"
+        ],
+        "publishers": [
+            "Working Designs",
+            "Sega"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Lunar 2: Eternal Blue",
+            "\u30eb\u30ca\uff12\uff1a\u30a8\u30bf\u30fc\u30ca\u30eb\u30d6\u30eb\u30fc",
+            "Lunar II: Eternal Blue Complete"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation",
+                "region": "Japan",
+                "release_date": "1998-06-30"
+            },
+            {
+                "name": "PlayStation",
+                "region": "North America",
+                "release_date": "1998-10-30"
+            },
+            {
+                "name": "PSP",
+                "region": "Japan",
+                "release_date": "2009-11-17"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Lunar",
+        "part_number": 2,
+        "previous_game": {
+            "title": "Lunar: The Silver Star",
+            "url_slug": "/games/lunar-the-silver-star"
+        },
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        },
+        {
+            "title": "Final Fantasy VI",
+            "url_slug": "/games/final-fantasy-vi"
+        },
+        {
+            "title": "Tales of Destiny",
+            "url_slug": "/games/tales-of-destiny"
+        },
+        {
+            "title": "Secret of Mana",
+            "url_slug": "/games/secret-of-mana"
+        },
+        {
+            "title": "Kingdom Hearts II",
+            "url_slug": "/games/kingdom-hearts-ii"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation (PS1)",
+            "details": "Definitive version with enhanced graphics, voice acting, and full English localization by Working Designs. Best experienced through modern emulators for optimal performance.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Eternal Blue Complete Improved Translation Patch",
+                    "description": "Community-driven patch that refines Working Designs' localization for greater accuracy and consistency",
+                    "url": "https://www.romhacking.net/translations/1967/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "RetroArch (Beetle PSX core)",
+                    "optimal_settings": [
+                        "Enable VSync",
+                        "Set texture filtering to 'Bilinear'",
+                        "Use 2x internal resolution for sharper visuals"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RetroArch (Beetle PSX core)",
+                    "optimal_settings": [
+                        "Configure touchscreen buttons for combat actions",
+                        "Enable 'Auto-save on pause'",
+                        "Use 'Luminance' shader for better color accuracy"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "PSP",
+            "details": "Official PSP port with downscaled visuals and missing soundtrack enhancements. Still playable but inferior to PS1 version due to resolution limitations.",
+            "available_in_english": {
+                "official_localization": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "PPSSPP",
+                    "optimal_settings": [
+                        "Use 'Auto' scaling mode for best aspect ratio",
+                        "Enable 'Anisotropic Filtering'",
+                        "Set internal resolution to 2x"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Mobile (iOS/Android)",
+            "details": "Official mobile ports with simplified controls and compressed graphics. Not recommended due to inferior presentation compared to console versions.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "A young protagonist joins a quest across time and space to prevent the destruction of the world, uncovering ancient secrets while forging bonds with companions.",
+        "key_features": [
+            "Turn-based combat system with strategic positioning",
+            "Dual-wielding weapon mechanics for unique combos",
+            "Multiple character paths based on narrative choices",
+            "Dynamic weather effects influencing battle outcomes",
+            "Richly detailed story with emotional depth and memorable characters"
+        ],
+        "long_description": "Developed by Game Arts, Lunar 2: Eternal Blue Complete is the second entry in the beloved Lunar series. Originally released for Sega CD as 'Lunar 2: Eternal Blue', it was later remade for PlayStation as 'Eternal Blue Complete' with enhanced graphics, voice acting, and additional content. The game features a captivating story blending romance, adventure, and epic fantasy elements alongside an innovative battle system that emphasizes strategy through positioning and combo attacks. Its soundtrack by Hitoshi Sakimoto is widely regarded as one of the best in JRPG history. Despite its late 90s release, it remains influential for its emotional storytelling and has inspired countless titles in the genre.",
+        "legacy_and_impact": [
+            "Pioneered branching narrative structures in JRPGs",
+            "Influenced later series such as Tales of Destiny and Final Fantasy XII",
+            "Consistently ranked among top 100 JRPGs by gaming publications",
+            "Set standards for character-driven storytelling in role-playing games"
+        ]
+    }
+}

@@ -1,0 +1,165 @@
+{
+    "basic_info": {
+        "url_slug": "/games/super-mario-rpg",
+        "title": "Super Mario RPG: Legend of the Seven Stars",
+        "cover_url": "/images/super-mario-rpg.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Adventure",
+            "Fantasy",
+            "Friendship",
+            "Good vs Evil",
+            "Comedy"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 2,
+        "reception_score": 8.7,
+        "review": "Super Mario RPG is a charming and accessible JRPG that blends Nintendo's iconic characters with Square's legendary RPG design, creating one of the most beloved games in gaming history.",
+        "developers": [
+            "Square"
+        ],
+        "publishers": [
+            "Nintendo",
+            "Square Enix"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Super Mario RPG: Legend of the Seven Stars (Japanese title)",
+            "SMRPG",
+            "Super Mario RPG Remake"
+        ],
+        "platforms": [
+            {
+                "name": "Super Nintendo Entertainment System (SNES)",
+                "region": "Japan",
+                "release_date": "1996-03-09"
+            },
+            {
+                "name": "Super Nintendo Entertainment System (SNES)",
+                "region": "North America",
+                "release_date": "1996-05-13"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Worldwide",
+                "release_date": "2023-11-17"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Super Mario RPG",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Paper Mario",
+            "url_slug": "/games/paper-mario"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        },
+        {
+            "title": "Final Fantasy VI",
+            "url_slug": "/games/final-fantasy-vi"
+        },
+        {
+            "title": "Dragon Quest XI",
+            "url_slug": "/games/dragon-quest-xi"
+        },
+        {
+            "title": "Persona 5 Royal",
+            "url_slug": "/games/persona-5"
+        },
+        {
+            "title": "Fire Emblem: Three Houses",
+            "url_slug": "/games/fire-emblem-three-houses"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch (Remake)",
+            "details": "The definitive modern version with 60fps performance, updated 3D visuals while preserving original art style, quality-of-life improvements including auto-battle and skip features.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "60 FPS Update",
+                    "description": "Official update ensuring rock-solid 60fps performance throughout all gameplay"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Super Nintendo (SNES)",
+            "details": "The original classic experience. Best played on authentic hardware or high-quality emulation for the nostalgic feel.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Snes9x / bsnes",
+                    "optimal_settings": [
+                        "CRT filter for authentic feel",
+                        "60 FPS emulation",
+                        "Enable save states"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RetroArch (SNES9x core)",
+                    "optimal_settings": [
+                        "Touch controls customization",
+                        "Save state slots enabled"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Nintendo Switch Online",
+            "details": "Access to original SNES version through Nintendo's subscription service. Convenient but lacks remake improvements.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Mario and his new friends must collect the seven Star Pieces scattered across the world to stop Smithy and his gang of villains from destroying the kingdom.",
+        "key_features": [
+            "First Mario RPG collaboration between Nintendo and Square",
+            "Turn-based combat with action commands",
+            "Memorable characters and humor",
+            "Iconic soundtrack by Yoko Shimomura",
+            "Multiple endings based on player choices"
+        ],
+        "long_description": "Super Mario RPG: Legend of the Seven Stars, released for SNES in March 1996 (Japan) and May 1996 (North America), is a landmark JRPG developed by Square with supervision from Nintendo. It was the first game to feature Mario in an RPG format, created during the golden era when Nintendo and Square were still collaborating on major projects. Players control Mario alongside new characters like Geno, Mallow, Peach, Bowser, and Croco as they journey across a vibrant world collecting Star Pieces to defeat Smithy's army. The game features turn-based combat with action commands (timing button presses for extra damage), charming character interactions, and Yoko Shimomura's memorable soundtrack. The 2023 Nintendo Switch remake by ArtePiazza modernized the experience with full 3D graphics while maintaining the original art style, added quality-of-life features like auto-battle and skip options, and ensured smooth 60fps performance throughout.",
+        "legacy_and_impact": [
+            "Established Mario's presence in the RPG genre",
+            "Created a template for future Paper Mario games",
+            "Yoko Shimomura's soundtrack became iconic in gaming history",
+            "Demonstrated successful Nintendo-Square collaboration before their split",
+            "Continues to receive community support and appreciation decades after release"
+        ]
+    }
+}

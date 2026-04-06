@@ -1,0 +1,13 @@
+[
+  {
+    "id": "test-submission",
+    "title": "Test Game",
+    "description": "Test description",
+    "status": "pending",
+    "submittedAt": "2026-04-06T07:30:40.043Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null
+  }
+]

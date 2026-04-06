@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SubmissionForm from '../components/SubmissionForm.astro';
+
+// Get pre-filled values from query params
+const searchParams = Astro.url.searchParams;
+const prefillTitle = searchParams.get('q') || '';
+const prefillPlatforms = searchParams.get('platforms') || '';
+const prefillEmulator = searchParams.get('emulator') || '';
+---
+
+<Layout title="Submit">
+  <main id="main-content" role="main" style="padding-top: 100px;">
+    <section class="section" aria-labelledby="submit-heading">
+      <div class="max-w-3xl mx-auto">
+        <h1 id="submit-heading" class="text-h2 mb-6 text-gradient-primary text-center">
+          Submit a Game
+        </h1>
+        <p class="text-body text-secondary mb-8 text-center">
+          Help us build the ultimate retro game database by submitting your recommendations.
+        </p>
+
+        <SubmissionForm
+          prefillTitle={prefillTitle}
+          prefillPlatforms={prefillPlatforms}
+          prefillEmulator={prefillEmulator}
+        />
+      </div>
+    </section>
+  </main>
+</Layout>

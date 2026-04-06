@@ -1,0 +1,218 @@
+{
+    "basic_info": {
+        "url_slug": "/games/grandia",
+        "title": "Grandia",
+        "cover_url": "/images/grandia.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Adventure",
+            "Exploration",
+            "Ancient Civilization",
+            "Friendship",
+            "Coming of Age"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.9,
+        "review": "Grandia is a landmark JRPG praised for its innovative battle system, charming characters, and memorable world design. Its blend of real-time combat with strategic elements set new standards for the genre.",
+        "developers": [
+            "Game Arts"
+        ],
+        "publishers": [
+            "Entertainment Software Publishing",
+            "Sony Computer Entertainment",
+            "Ubisoft",
+            "GungHo Online Entertainment"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30b0\u30e9\u30f3\u30c7\u30a3\u30a2 (Kuronia Torig\u0101)",
+            "Grandia HD Remaster"
+        ],
+        "platforms": [
+            {
+                "name": "Sega Saturn",
+                "region": "Japan",
+                "release_date": "1997-12-18"
+            },
+            {
+                "name": "PlayStation",
+                "region": "Japan",
+                "release_date": "1999-06-24"
+            },
+            {
+                "name": "PlayStation",
+                "region": "North America",
+                "release_date": "1999-10-26"
+            },
+            {
+                "name": "PlayStation",
+                "region": "Europe",
+                "release_date": "2000-03-31"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Worldwide",
+                "release_date": "2019-08-16"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2019-10-15"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "Worldwide",
+                "release_date": "2024-03-26"
+            },
+            {
+                "name": "Xbox One",
+                "region": "Worldwide",
+                "release_date": "2024-03-26"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Grandia",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Grandia II",
+            "url_slug": "/games/grandia-ii"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Lunar: Silver Star Story Complete",
+            "url_slug": "/games/lunar-silver-star-story-complete"
+        },
+        {
+            "title": "Final Fantasy VI",
+            "url_slug": "/games/final-fantasy-vi"
+        },
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        },
+        {
+            "title": "Xenogears",
+            "url_slug": "/games/xenogears"
+        },
+        {
+            "title": "Star Ocean: The Second Story",
+            "url_slug": "/games/star-ocean-the-second-story"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation",
+            "details": "The definitive version with official English localization, widely available through PSN and physical copies. Features DualShock support and PocketStation compatibility.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "High resolution rendering (2x or 3x)",
+                        "Texture filtering enabled",
+                        "Fast memory card access"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Save state slots enabled",
+                        "Performance mode for smoother gameplay"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Nintendo Switch / Windows (Steam)",
+            "details": "HD Remaster version with enhanced visuals, widescreen support, and multiple language options. Based on PlayStation code but references Saturn for visual details.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "HD Remaster Bug Fix Patch",
+                    "description": "Official patch addressing various bugs including localization errors and game freezing issues (version 1.01.00+)",
+                    "url": "https://store.steampowered.com/app/1034860/Grandia_HD_Remaster/"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Sega Saturn",
+            "details": "The original version with superior visual effects, better frame rates in town areas, and building shadows not present in the PS1 port. Requires English translation patch for non-Japanese players.",
+            "available_in_english": {
+                "official_localization": false,
+                "fan_translation": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Sega Saturn English Translation Patch",
+                    "description": "Applies the official PlayStation English translation to the Japanese Saturn release. Created by TrekkiesUnite118 and team.",
+                    "url": "https://segaxtreme.net/resources/grandia-english-patch.67/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Yabause",
+                    "optimal_settings": [
+                        "High accuracy mode for best compatibility",
+                        "Enable audio buffering",
+                        "Use 640x480 resolution"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Yabause",
+                    "optimal_settings": [
+                        "Custom button mapping for touchscreen",
+                        "Save state slots enabled",
+                        "Performance mode for smoother gameplay"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "A young boy named Justin inherits a magic stone that leads him on an adventure around the world to uncover the mystery of a long-lost civilization while evading the militaristic Garlyle Forces.",
+        "key_features": [
+            "Innovative real-time battle system with IP bar timing mechanics",
+            "Rotational party roster with skill-based character progression",
+            "Preemptive strike system based on attack angle and positioning",
+            "3D environments with 2D animated bitmap sprites",
+            "Fully rotational camera for exploration"
+        ],
+        "long_description": "Grandia, developed by Game Arts over a period of more than two years following their Lunar series work, is considered one of the finest JRPGs of the late 1990s. The game was originally intended for Sega CD but shifted to Saturn during development. Featuring 20,000 frames of animation and music composed by Noriyuki Iwadare (recorded at Skywalker Sound), Grandia introduced an innovative battle system where players must time their attacks based on the IP bar mechanics. The story follows Justin, a young adventurer seeking his missing father while uncovering ancient secrets about the Icarians and the parasitic creature Gaia. The game received near-universal acclaim, with GameSpot calling it 'every bit as worthwhile as Final Fantasy VIII' and IGN ranking it 17th on their top PlayStation games list in 2000.",
+        "legacy_and_impact": [
+            "Influenced battle system design in numerous subsequent JRPGs",
+            "Featured prominently in GameSpot's 'Best RPGs of All Time' lists",
+            "Voted 73rd greatest game of all time by Famitsu readers in 2006",
+            "Established Game Arts as a premier JRPG developer alongside Square and Enix",
+            "Continued to receive ports and remasters decades after original release"
+        ]
+    }
+}

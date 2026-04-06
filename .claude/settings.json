@@ -1,0 +1,81 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(.agent/history/**)"
+    ],
+    "allow": [
+      "**"
+    ]
+  },
+    "env": {
+    "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
+	"ANTHROPIC_BASE_URL": "http://10.0.0.15:1234",
+    "ANTHROPIC_AUTH_TOKEN": "local",
+    "ANTHROPIC_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "unsloth/qwen3.5-35b-a3b",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",  
+    "DISABLE_COST_WARNINGS": "1",  
+    "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",  
+    "CLAUDE_CODE_DISABLE_1M_CONTEXT": "1",  
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "128000",  
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "256000",  
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "90",  
+    "DISABLE_PROMPT_CACHING": "1",  
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1",  
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",  
+    "MAX_THINKING_TOKENS": "0",  
+    "CLAUDE_CODE_DISABLE_FAST_MODE": "1",  
+    "DISABLE_INTERLEAVED_THINKING": "1",  
+    "CLAUDE_CODE_MAX_RETRIES": "3",  
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",  
+    "DISABLE_TELEMETRY": "1",  
+    "CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY": "1",  
+    "ENABLE_TOOL_SEARCH": "auto",    
+    "DISABLE_AUTOUPDATER": "1",  
+    "DISABLE_ERROR_REPORTING": "1",  
+    "DISABLE_FEEDBACK_COMMAND": "1"  
+  },
+  "defaultMode": "acceptEdits",
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "playwright",
+    "context7",
+    "sequential-thinking"
+  ],
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/post-tool-use.js"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/one-task-guard.js"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/.claude/hooks/play-sound.js notification"
+          }
+        ]
+      }
+    ]
+  }
+}

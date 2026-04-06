@@ -1,0 +1,197 @@
+{
+    "basic_info": {
+        "url_slug": "/games/xenogears",
+        "title": "Xenogears",
+        "cover_url": "/images/xenogears.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Religion and Theology",
+            "Jungian Psychology",
+            "Freudian Thought",
+            "Mecha Combat",
+            "Reincarnation",
+            "Philosophy",
+            "Cosmic Threat"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.4,
+        "review": "Xenogears is a landmark JRPG praised for its ambitious philosophical narrative, complex characters, and innovative mecha combat system. Despite some pacing issues in the second half, it remains one of the most influential and beloved RPGs ever created.",
+        "developers": [
+            "Square"
+        ],
+        "publishers": [
+            "Square",
+            "Square Electronic Arts"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30bc\u30ce\u30ae\u30a2\u30b9 (Zenogiasu)",
+            "Xenogears Episode V"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation",
+                "region": "Japan",
+                "release_date": "1998-02-11"
+            },
+            {
+                "name": "PlayStation",
+                "region": "North America",
+                "release_date": "1998-10-20"
+            },
+            {
+                "name": "PlayStation Network (PS3)",
+                "region": "Japan",
+                "release_date": "2008-06-25"
+            },
+            {
+                "name": "PlayStation Network (PSP/PS Vita)",
+                "region": "North America",
+                "release_date": "2011-02-22"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Xeno",
+        "part_number": 5,
+        "previous_game": null,
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "Final Fantasy VII",
+            "url_slug": "/games/final-fantasy-vii"
+        },
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        },
+        {
+            "title": "Xenosaga Episode I",
+            "url_slug": "/games/xenosaga-episode-i"
+        },
+        {
+            "title": "Valkyrie Profile",
+            "url_slug": "/games/valkyrie-profile"
+        },
+        {
+            "title": "Suikoden II",
+            "url_slug": "/games/suikoden-ii"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation (Emulated)",
+            "details": "Original PS1 version with the Xenogears Perfect Works Build mod applied. This is widely considered the definitive way to experience the game in 2024, combining authentic presentation with modern quality of life improvements.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Xenogears Perfect Works Build",
+                    "description": "Comprehensive mod including improved translation closer to original Japanese script, rebalanced gameplay mechanics, quality of life improvements (1.5x or 2x EXP/gold options), bug fixes, and graphical enhancements.",
+                    "url": "https://github.com/NoharOSP/Perfect_Works_Build/releases"
+                },
+                {
+                    "name": "Undub Patch",
+                    "description": "Restores original Japanese voice acting while keeping English text. Fixes the infamous Deus crash bug present in the US version.",
+                    "url": "https://www.romhacking.net/hacks/5284"
+                },
+                {
+                    "name": "Story Mode Mod",
+                    "description": "Disables all random battles and makes boss battles instant win for players who want to experience the story without combat.",
+                    "url": "https://www.romhacking.net/hacks/8879"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "Internal resolution 4x or higher",
+                        "Enable hardware rendering",
+                        "PGXP corrections enabled for accurate geometry"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "DuckStation (mobile)",
+                    "optimal_settings": [
+                        "Custom touch controls overlay",
+                        "Save state slots enabled",
+                        "2x or 3x internal resolution"
+                    ]
+                },
+                {
+                    "platform": "macOS",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "Metal renderer for best performance",
+                        "High internal resolution scaling"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "PlayStation Network (PS3/PS Vita)",
+            "details": "Official digital re-release available on PSN. Convenient and legal way to play without emulation, but lacks the quality of life improvements available through mods.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation (Original Disc)",
+            "details": "Authentic original release on physical media. Requires original PlayStation hardware or emulation. No patches can be applied without converting to ISO format.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "DuckStation or ePSXe",
+                    "optimal_settings": [
+                        "Use high-quality BIOS file",
+                        "Enable texture filtering"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "In a world dominated by the religious organization Ethos and the floating city Solaris, amnesiac young man Fei Fong Wong pilots an ancient mecha called a Gear to fight against oppression while uncovering mysteries about his past, reincarnation, and humanity's true origins.",
+        "key_features": [
+            "Innovative Active Time Battle system with combo-based Deathblow mechanics",
+            "Dual combat modes: on-foot martial arts battles and giant mecha (Gear) combat",
+            "Complex narrative incorporating Jungian psychology, Freudian thought, and religious symbolism",
+            "Hand-drawn anime cutscenes by Production I.G and Bee Train",
+            "Multiple character progression systems with Ether magic and Gear customization"
+        ],
+        "long_description": "Xenogears, developed by Square's Product Development Division 3 under director Tetsuya Takahashi, is a 1998 PlayStation RPG that stands as one of the most ambitious and philosophically complex games ever created. Originally conceived as a concept for Final Fantasy VII before being developed as its own project, Xenogears combines traditional JRPG elements with mecha combat, anime cutscenes, and an intricate narrative exploring themes of religion, psychology, reincarnation, and human consciousness. The game's story follows protagonist Fei Fong Wong across two discs, spanning from his exile in the village of Lahan to a cosmic battle against Deus, an ancient weapon that threatens all existence. Composed by Yasunori Mitsuda with character designs by Kunihiko Tanaka, Xenogears received critical acclaim for its storytelling depth and innovative gameplay, earning an 84 Metacritic score and cult classic status. Despite time constraints affecting the second disc's pacing (primarily told through cutscenes), it remains a landmark title that influenced countless later RPGs and spawned spiritual successors including the Xenosaga trilogy and Xenoblade Chronicles series.",
+        "legacy_and_impact": [
+            "Pioneered the integration of anime cutscenes in Western-released JRPGs",
+            "Established Tetsuya Takahashi as a visionary director, leading to Monolith Soft's founding",
+            "Influenced narrative complexity and philosophical themes in subsequent RPGs",
+            "Considered one of the greatest PlayStation games despite never being officially released in Europe",
+            "Maintains active modding community two decades after release with comprehensive improvement projects"
+        ]
+    }
+}

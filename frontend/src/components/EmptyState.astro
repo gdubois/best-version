@@ -1,0 +1,162 @@
+---
+/**
+ * Empty State Component - Updated to match index.html cyberpunk style
+ */
+
+interface Props {
+  message?: string;
+  searchQuery?: string;
+}
+
+const { message = "Game not found", searchQuery = "" } = Astro.props;
+
+// Encode search query for URL parameter
+const encodedQuery = searchQuery ? encodeURIComponent(searchQuery) : "";
+---
+
+<div
+  class="empty-state"
+  role="status"
+  aria-label="No results found"
+  tabindex="0"
+>
+  <div class="empty-state-icon" aria-hidden="true">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="80"
+      height="80"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.35-4.35"></path>
+    </svg>
+  </div>
+
+  <h2 class="empty-state-title">{message}</h2>
+
+  <p class="empty-state-description">
+    We couldn't find that game in our database.
+    <br />
+    Be the first to add it!
+  </p>
+
+  <a
+    href={`/submit${searchQuery ? `?q=${encodedQuery}` : ""}`}
+    class="btn btn-primary empty-state-cta"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      aria-hidden="true"
+    >
+      <path d="M12 5v14M5 12h14"></path>
+    </svg>
+    <span>Suggest this game</span>
+  </a>
+</div>
+
+<style>
+  /* Empty State Component - Cyberpunk Style */
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-5xl) var(--space-xl);
+    min-height: 400px;
+  }
+
+  .empty-state-icon {
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-xl);
+    opacity: 0.6;
+  }
+
+  .empty-state-title {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    font-weight: var(--font-bold);
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-md);
+  }
+
+  .empty-state-description {
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    max-width: 320px;
+    line-height: var(--leading-relaxed);
+  }
+
+  .empty-state-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--button-padding);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    transition: all var(--duration-normal) var(--ease-default);
+    border: none;
+    cursor: pointer;
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+  }
+
+  .empty-state-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 50px rgba(99, 102, 241, 0.6);
+  }
+
+  .empty-state-cta:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .empty-state-cta svg {
+    flex-shrink: 0;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .empty-state {
+      padding: var(--space-3xl) var(--space-md);
+    }
+
+    .empty-state-title {
+      font-size: var(--text-h3);
+    }
+
+    .empty-state-description {
+      font-size: var(--text-sm);
+      max-width: 280px;
+    }
+
+    .empty-state-cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .empty-state-cta:hover {
+      transform: none;
+    }
+  }
+</style>

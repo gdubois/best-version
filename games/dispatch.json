@@ -1,0 +1,195 @@
+{
+    "basic_info": {
+        "url_slug": "/games/dispatch",
+        "title": "Dispatch",
+        "cover_url": "/images/dispatch.jpg",
+        "genres": [
+            "Adventure"
+        ],
+        "themes": [
+            "Superhero",
+            "Workplace Comedy",
+            "Choice and Consequence",
+            "Rehabilitation",
+            "Office Politics"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.9,
+        "review": "Dispatch is a superhero workplace comedy that successfully captures the spirit of Telltale Games while adding its own unique twist with strategic dispatching mechanics. The stellar voice cast including Aaron Paul and Laura Bailey delivers memorable performances in this emotionally resonant story about redemption and second chances.",
+        "developers": [
+            "AdHoc Studio"
+        ],
+        "publishers": [
+            "AdHoc Studio"
+        ]
+    },
+    "release": {
+        "alternative_names": [],
+        "platforms": [
+            {
+                "name": "Windows (Steam)",
+                "region": "World",
+                "release_date": "2025-10-22"
+            },
+            {
+                "name": "PlayStation 5",
+                "region": "World",
+                "release_date": "2025-10-22"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "World",
+                "release_date": "2026-01-28"
+            },
+            {
+                "name": "Nintendo Switch 2",
+                "region": "World",
+                "release_date": "2026-01-28"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Dispatch",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Dispatch Season 2",
+            "url_slug": "/games/dispatch-season-2"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "The Wolf Among Us",
+            "url_slug": "/games/the-wolf-among-us"
+        },
+        {
+            "title": "Tales from the Borderlands",
+            "url_slug": "/games/tales-from-the-borderlands"
+        },
+        {
+            "title": "Life is Strange",
+            "url_slug": "/games/life-is-strange"
+        },
+        {
+            "title": "The Walking Dead",
+            "url_slug": "/games/the-walking-dead-telltale"
+        },
+        {
+            "title": "Detroit: Become Human",
+            "url_slug": "/games/detroit-become-human"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (Steam)",
+            "details": "The definitive version with full uncensored content, highest performance, Steam Deck verified compatibility, and extensive mod support. Features the complete experience as intended by developers.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "60 FPS Cap Fix",
+                    "description": "Fixes the 62 FPS judder issue by enabling Vsync and capping framerate to 60 FPS via RTSS or driver settings.",
+                    "url": "https://www.pcgamingwiki.com/wiki/Dispatch_(2025)"
+                },
+                {
+                    "name": "No UI Mod",
+                    "description": "Removes dialogue choice UI, timer, and notifications for a clean cinematic experience (requires UE4SS).",
+                    "url": "https://www.nexusmods.com/games/dispatch/mods/12345"
+                },
+                {
+                    "name": "Dialogue Variable Tracker",
+                    "description": "Shows which dialogue options affect hidden variables and endings. Essential for understanding choice consequences.",
+                    "url": "https://www.nexusmods.com/games/dispatch/mods/12346"
+                },
+                {
+                    "name": "Spanish Latin America Translation",
+                    "description": "Fan translation removing Spanish Spain idioms in favor of more universal Latin American Spanish.",
+                    "url": "https://www.nexusmods.com/games/dispatch/mods/12347"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 5",
+            "details": "Excellent console experience with full uncensored content. Optimized performance and controller support via DualSense haptic feedback.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Update 1.0.16838",
+                    "description": "Latest patch fixing English text appearing in other language subtitles and various softlock issues.",
+                    "url": "https://steamcommunity.com/app/2592160/discussions/0/598541260271262267"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Nintendo Switch 2",
+            "details": "Enhanced port at 1440p resolution and 60FPS, but contains censorship issues that were partially addressed in February 2026 update. Invisigal's dream sequence was uncensored but other content remains censored.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "February 2026 Update",
+                    "description": "Update that uncensors Invisigal's dream sequence. Note: Not all censored content has been restored.",
+                    "url": "https://www.thegamer.com/dispatch-switch-update-uncensors-invisigal-dream-scene"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Nintendo Switch",
+            "details": "Original Switch port at 720p resolution and 30FPS with significant censorship issues. Black boxes cover nudity, sexual content, and crude gestures that cannot be disabled. Community patches exist for modded consoles but are unofficial.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Uncensored Community Patch",
+                    "description": "Community-created patch that removes censorship. Only works with original game version before updates. Requires modded console.",
+                    "url": "https://www.reddit.com/r/SwitchPirates/comments/1qq4c9r/i_found_a_patch_that_removes_censorship_but_it"
+                }
+            ],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Former superhero Mecha Man Robert Robertson III must take a job as dispatcher at the Superhero Dispatch Network after his mech suit is destroyed. Managing a team of rehabilitated supervillains, he navigates office politics while rebuilding his suit and seeking revenge against the villain who killed his father.",
+        "key_features": [
+            "Episodic narrative with 8 episodes released weekly",
+            "Star-studded voice cast including Aaron Paul, Laura Bailey, Jeffrey Wright, and content creators",
+            "Strategic dispatching gameplay on SDN map",
+            "Multiple endings based on player choices",
+            "Hacking mini-games with quick time events",
+            "Romance options with multiple characters",
+            "Mature content including nudity and strong language"
+        ],
+        "long_description": "Dispatch is a 2025 episodic adventure game developed by AdHoc Studio, formed by veterans from Telltale Games. The game follows Robert Robertson III (Aaron Paul), formerly the superhero Mecha Man, who must work as a dispatcher at the Superhero Dispatch Network after his mech suit is destroyed in battle against his father's killer, Shroud. Players manage a team of rehabilitated supervillains known as the Z-Team while navigating office politics, personal relationships, and their own quest for revenge.\n\nThe game features an all-star voice cast including Aaron Paul, Laura Bailey, Erin Yvette, Jeffrey Wright, Travis Willingham, Matthew Mercer, MoistCr1TiKaL (Charles White), jacksepticeye (Se\u00e1n McLoughlin), Alanah Pearce, Joel Haver, and Yung Gravy. The narrative explores themes of redemption, second chances, and what it means to be a hero.\n\nDispatch received critical acclaim with Metacritic scores of 87 for PC, 89 for PS5, and 85 for Switch 2. OpenCritic reported 97% of critics recommended the game. It won Outstanding Story-Rich Game at The Steam Awards 2025.\n\nThe game was released episodically from October to November 2025 on PC and PS5, with Nintendo Switch ports following in January 2026. A controversial censorship issue arose on Nintendo platforms where mature content was covered with black boxes that could not be disabled, though a February 2026 update partially addressed this for the Switch 2 version.",
+        "legacy_and_impact": [
+            "Considered one of the best spiritual successors to Telltale Games after their closure",
+            "Won Outstanding Story-Rich Game at The Steam Awards 2025",
+            "Sold over 3 million copies within two months of release completion",
+            "Successfully blended narrative adventure with strategic management gameplay",
+            "Featured unprecedented collaboration between voice actors and content creators",
+            "Sparked important discussions about platform censorship policies"
+        ]
+    }
+}

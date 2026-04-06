@@ -1,0 +1,252 @@
+{
+    "basic_info": {
+        "url_slug": "/games/final-fantasy-tactics",
+        "title": "FINAL FANTASY TACTICS - The Ivalice Chronicles",
+        "cover_url": "/images/final-fantasy-tactics.jpg",
+        "genres": [
+            "Tactical Role-Playing",
+            "Strategy"
+        ],
+        "themes": [
+            "Political Intrigue",
+            "War",
+            "Betrayal",
+            "Social Class Conflict",
+            "Magic and Technology"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 8.8,
+        "review": "The Ivalice Chronicles is the definitive version of Final Fantasy Tactics, offering Enhanced mode with voice acting, difficulty options, modern UI improvements, tactical overhead view, and speed-up features. It's considered one of the greatest tactical RPGs ever made with its deep job system, complex story, and strategic combat.",
+        "developers": [
+            "Square"
+        ],
+        "publishers": [
+            "Square Enix",
+            "Nintendo"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Final Fantasy Tactics: The War of the Lions (PSP)",
+            "Gensou Seikoku no Final Fantasy Tactics"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation",
+                "region": "Japan",
+                "release_date": "1997-06-20"
+            },
+            {
+                "name": "PlayStation",
+                "region": "North America",
+                "release_date": "1998-05-31"
+            },
+            {
+                "name": "PlayStation Portable (PSP)",
+                "region": "Japan",
+                "release_date": "2007-04-19"
+            },
+            {
+                "name": "PlayStation Portable (PSP)",
+                "region": "North America",
+                "release_date": "2007-08-28"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Worldwide",
+                "release_date": "2025-09-30"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "Worldwide",
+                "release_date": "2025-09-30"
+            },
+            {
+                "name": "PlayStation 5",
+                "region": "Worldwide",
+                "release_date": "2025-09-30"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2025-09-30"
+            },
+            {
+                "name": "Xbox One",
+                "region": "Worldwide",
+                "release_date": "2025-09-30"
+            },
+            {
+                "name": "Xbox Series X/S",
+                "region": "Worldwide",
+                "release_date": "2025-09-30"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Ivalice Chronicles",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Final Fantasy Tactics Advance",
+            "url_slug": "/games/final-fantasy-tactics-advance"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Fire Emblem: Three Houses",
+            "url_slug": "/games/fire-emblem-three-houses"
+        },
+        {
+            "title": "Triangle Strategy",
+            "url_slug": "/games/triangle-strategy"
+        },
+        {
+            "title": "Tactics Ogre: Reborn",
+            "url_slug": "/games/tactics-ogre-reborn"
+        },
+        {
+            "title": "Disgaea 4: A Promise Unforgotten",
+            "url_slug": "/games/disgaea-4-a-promise-unforgotten"
+        },
+        {
+            "title": "Valkyrie Profile: Lenneth",
+            "url_slug": "/games/valkyrie-profile-lenneth"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch / PS5 / Xbox Series X (The Ivalice Chronicles)",
+            "details": "The best modern experience - official HD remaster with Enhanced mode featuring fully voiced dialogue, difficulty options, tactical overhead view, speed-up features, and beautifully enhanced graphics. Available on all current-gen platforms.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (Steam)",
+            "details": "PC version of The Ivalice Chronicles with Steam Cloud saves and controller support. Works well on modern systems including Steam Deck.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation Portable (PSP - War of the Lions)",
+            "details": "The PSP version added new content including side stories, jobs, and characters. However, it has performance slowdowns that can be fixed with unofficial patches for optimal play.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "WotL Slowdown Removal Patch",
+                    "description": "Removes performance slowdowns in the PSP version for smoother gameplay"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "PPSSPP",
+                    "optimal_settings": [
+                        "High internal resolution (4x or higher)",
+                        "Enable texture filtering",
+                        "Fast memory access enabled"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "PPSSPP",
+                    "optimal_settings": [
+                        "GPU renderer: Vulkan or OpenGL",
+                        "High internal resolution",
+                        "Frame skipping disabled"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "PlayStation 1 (Original)",
+            "details": "The original 1997 release - authentic experience with spell quotes and proper animations. Best played on real hardware or high-quality emulation.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "Internal resolution 4x or higher",
+                        "Texture filtering enabled",
+                        "Fast memory access"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "ePSXe or DuckStation",
+                    "optimal_settings": [
+                        "High resolution rendering",
+                        "Frame skipping disabled",
+                        "Custom controller mapping"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "PlayStation 2 (Vagrant Story bundle)",
+            "details": "Included in the Vagrant Story collection - same as PS1 version but on different hardware.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "PCSX2",
+                    "optimal_settings": [
+                        "High internal resolution",
+                        "Enable texture filtering",
+                        "Fast memory access"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "In the war-torn kingdom of Ivalice, noble Ramza Beoulve discovers a conspiracy involving the True Runes and must navigate political intrigue, betrayal, and class conflict while leading a rebellion.",
+        "key_features": [
+            "Deep job system with 40+ jobs to master",
+            "Grid-based tactical combat with positioning matters",
+            "Rock-Paper-Scissors weapon triangle mechanics",
+            "True Rune magic system with unique abilities",
+            "Complex political storyline with multiple endings"
+        ],
+        "long_description": "Final Fantasy Tactics is a tactical role-playing game developed by Square (now Square Enix) and directed by Hiroyuki Ito, released for PlayStation in Japan on June 20, 1997. Set in the fantasy kingdom of Ivalice, the story follows Ramza Beoulve, a nobleman who becomes embroiled in a conspiracy involving the True Runes - magical artifacts that grant their wielders extraordinary powers. The game features one of gaming's most intricate job systems with over 40 jobs to master, each with unique abilities and stat growths. Combat takes place on grid-based battlefields where positioning is crucial, featuring weapon triangles (swords beat axes, axes beat spears, spears beat swords) and terrain advantages. The narrative explores themes of social class conflict, political intrigue, betrayal, and the corrupting nature of power. Upon release, it received critical acclaim for its deep gameplay mechanics, complex story, and strategic combat. The PSP version 'War of the Lions' (2007) added new content including side stories, additional jobs, characters, and voice acting. The 2025 HD remaster 'The Ivalice Chronicles' offers Enhanced mode with fully voiced dialogue, difficulty options, modern UI improvements, tactical overhead view, speed-up features, and beautifully enhanced graphics while preserving the original gameplay. It received a Metacritic score of 88 from 51 reviews and is ranked in the 98th percentile on OpenCritic.",
+        "legacy_and_impact": [
+            "Established one of gaming's most beloved tactical RPG franchises",
+            "Influenced countless JRPGs with its job system and political storytelling",
+            "Created the Ivalice universe spanning multiple games and media",
+            "Set standards for tactical combat in RPGs that remain influential today",
+            "Remains highly regarded among strategy game enthusiasts decades after release"
+        ]
+    }
+}

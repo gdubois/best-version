@@ -1,0 +1,234 @@
+{
+    "basic_info": {
+        "url_slug": "/games/xenoblade-chronicles",
+        "title": "Xenoblade Chronicles",
+        "cover_url": "/images/xenoblade-chronicles.jpg",
+        "genres": [
+            "RPG",
+            "JRPG"
+        ],
+        "themes": [
+            "Man vs Machine",
+            "Destiny and Free Will",
+            "Friendship",
+            "World Building",
+            "Mythology"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 9.2,
+        "review": "Xenoblade Chronicles is a landmark JRPG praised for its massive world design, epic storytelling, and innovative real-time combat system. The Definitive Edition brings this classic to modern platforms with enhanced visuals and new content.",
+        "developers": [
+            "Monolith Soft"
+        ],
+        "publishers": [
+            "Nintendo",
+            "Xseed Games"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Xenoblade (Japan)",
+            "Xenoblade Chronicles 3D",
+            "Xenoblade Chronicles Definitive Edition"
+        ],
+        "platforms": [
+            {
+                "name": "Wii",
+                "region": "Japan",
+                "release_date": "2010-06-10"
+            },
+            {
+                "name": "Wii",
+                "region": "Europe",
+                "release_date": "2011-08-19"
+            },
+            {
+                "name": "Wii",
+                "region": "Australia",
+                "release_date": "2011-09-01"
+            },
+            {
+                "name": "Wii",
+                "region": "North America",
+                "release_date": "2012-04-06"
+            },
+            {
+                "name": "New Nintendo 3DS",
+                "region": "Japan",
+                "release_date": "2015-04-02"
+            },
+            {
+                "name": "New Nintendo 3DS",
+                "region": "Europe",
+                "release_date": "2015-04-02"
+            },
+            {
+                "name": "New Nintendo 3DS",
+                "region": "North America",
+                "release_date": "2015-04-10"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "World",
+                "release_date": "2020-05-29"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Xenoblade Chronicles",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Xenoblade Chronicles X",
+            "url_slug": "/games/xenoblade-chronicles-x"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Final Fantasy XII",
+            "url_slug": "/games/final-fantasy-xii"
+        },
+        {
+            "title": "The Legend of Zelda: Breath of the Wild",
+            "url_slug": "/games/zelda-breath-of-the-wild"
+        },
+        {
+            "title": "Tales of Vesperia",
+            "url_slug": "/games/tales-of-vesperia"
+        },
+        {
+            "title": "Star Ocean: The Last Hope",
+            "url_slug": "/games/star-ocean-the-last-hope"
+        },
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch (Definitive Edition)",
+            "details": "The definitive version with enhanced HD visuals, remastered 90+ music tracks, improved UI, quality-of-life improvements, and the exclusive Future Connected epilogue story.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "AA/Blur Removal Mod",
+                    "description": "Removes anti-aliasing and blur filters for sharper visuals at 1080p and above.",
+                    "url": "https://gamebanana.com/mods/442637"
+                },
+                {
+                    "name": "No Sharpening Filter",
+                    "description": "Removes the sharpening filter applied to character models for more natural visuals.",
+                    "url": "https://gamebanana.com/mods/442638"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Yuzu or Ryujinx",
+                    "optimal_settings": [
+                        "Resolution scale: 2x or higher for 4K output",
+                        "Enable VSync for stable frame rate",
+                        "Use latest graphics drivers"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Yuzu Android (Suyu)",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Save state slots enabled",
+                        "Performance mode for stable 30fps"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "New Nintendo 3DS (Xenoblade Chronicles 3D)",
+            "details": "Portable version with touch controls and collection mode. Runs at lower resolution but offers the first portable experience of the game.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Citra",
+                    "optimal_settings": [
+                        "High accuracy mode for best compatibility",
+                        "Enable 3D effect if supported"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Lime3DS",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Performance mode for stable gameplay"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Wii (Original)",
+            "details": "The original release with classic presentation. Requires physical disc or emulator to play.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Dolphin",
+                    "optimal_settings": [
+                        "Internal resolution: 3x or higher for HD output",
+                        "Enable Widescreen hack if desired",
+                        "Low-latency audio settings"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Dolphin Android",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Save state slots enabled",
+                        "Performance mode for stable 30fps"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "In a world where two titans, the Bionis and Mechonis, stand frozen in eternal battle, humanity lives on the Bionis. Shulk, a young inventor, discovers he can wield the legendary Monado blade and sees visions of the future as he sets out to destroy the mechanical invaders known as the Mechon.",
+        "key_features": [
+            "Massive seamless world spanning two titans frozen in battle",
+            "Real-time strategic combat with positioning-based mechanics",
+            "Chain Attacks for powerful party-wide combos",
+            "Future-seeing ability through the Monado blade",
+            "Over 90 remastered music tracks by Yasunori Mitsuda"
+        ],
+        "long_description": "Xenoblade Chronicles, developed by Monolith Soft and published by Nintendo, is widely considered one of the greatest JRPGs ever made. Originally released on Wii in Japan (2010) and later internationally (2011-2012), the game was never officially released in North America until a limited GameStop exclusive run in 2012. The story follows Shulk, who wields the legendary Monado blade that allows him to see visions of the future. Set on the bodies of two colossal titans locked in eternal battle, players explore a massive seamless world while battling the mechanical Mechon invaders. The Definitive Edition for Nintendo Switch (May 2020) features enhanced HD visuals, remastered music, improved UI, quality-of-life improvements, and the exclusive Future Connected epilogue that continues Shulk and Melia's story.",
+        "legacy_and_impact": [
+            "Considered one of the greatest JRPGs of all time",
+            "Influenced open-world game design in subsequent titles",
+            "Established Monolith Soft as a premier RPG developer",
+            "Pioneered real-time positioning-based combat systems",
+            "Yasunori Mitsuda's soundtrack remains highly acclaimed decades later"
+        ]
+    }
+}

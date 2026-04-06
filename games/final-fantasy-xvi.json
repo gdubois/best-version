@@ -1,0 +1,186 @@
+{
+    "basic_info": {
+        "url_slug": "/games/final-fantasy-xvi",
+        "title": "Final Fantasy XVI",
+        "cover_url": "/images/final-fantasy-xvi.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "War and Conflict",
+            "Destiny and Fate",
+            "Revenge and Redemption",
+            "Political Intrigue",
+            "Magic vs Technology"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.5,
+        "review": "Final Fantasy XVI is a visually stunning action-RPG with innovative combat and mature storytelling. The PS5 Pro Game Boost version offers excellent performance, while the PC version provides superior graphics and extensive mod support.",
+        "developers": [
+            "Square Enix"
+        ],
+        "publishers": [
+            "Square Enix"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcXVI (Final Fantasy J\u016broku)",
+            "Final Fantasy XVI Windows Edition",
+            "Final Fantasy XVI PS5 Pro Enhanced"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation 5",
+                "region": "Worldwide",
+                "release_date": "2023-06-21"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2024-09-17"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Final Fantasy Main Series",
+        "part_number": 16,
+        "previous_game": {
+            "title": "Final Fantasy XV",
+            "url_slug": "/games/final-fantasy-xv"
+        },
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "Devil May Cry 5",
+            "url_slug": "/games/devil-may-cry-5"
+        },
+        {
+            "title": "Bayonetta 3",
+            "url_slug": "/games/bayonetta-3"
+        },
+        {
+            "title": "God of War Ragnar\u00f6k",
+            "url_slug": "/games/god-of-war-ragnarok"
+        },
+        {
+            "title": "Nier: Automata",
+            "url_slug": "/games/nier-automata"
+        },
+        {
+            "title": "Monster Hunter World",
+            "url_slug": "/games/monster-hunter-world"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation 5 Pro (Game Boost)",
+            "details": "The PS5 Pro Game Boost version offers significant performance improvements with up to 40% boost in some scenes. Digital Foundry confirmed this as the most polished console experience with stable frame rates and enhanced visuals.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (Steam) with FFXVIFix Mod",
+            "details": "The PC version offers superior graphics with HDR support and higher resolutions. The FFXVIFix mod is essential for ultrawide support, uncapped cutscene framerate, and adjustable FOV.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "FFXVIFix Mod",
+                    "description": "Essential mod that adds ultrawide/narrower support, uncaps framerate in cutscenes, lets you adjust gameplay FOV and improves performance.",
+                    "url": "https://github.com/Lyall/FFXVIFix/releases"
+                },
+                {
+                    "name": "RenoDX HDR Fix",
+                    "description": "Enhances HDR support and visual quality for better color accuracy and brightness on PC displays.",
+                    "url": "https://www.nexusmods.com/finalfantasy16/mods/287"
+                },
+                {
+                    "name": "Cinematic Reshade Preset",
+                    "description": "Makes the game look more cinematic with enhanced lighting, color grading, and visual effects.",
+                    "url": "https://www.nexusmods.com/finalfantasy16/mods/287"
+                },
+                {
+                    "name": "Unlimited Potions Mod",
+                    "description": "Provides unlimited healing items for easier gameplay without resource management constraints.",
+                    "url": "https://www.nexusmods.com/finalfantasy16/mods/287"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 5 (Standard)",
+            "details": "Original console release with solid performance. Digital Foundry noted it's one of the most polished games on PS5, though lacks the enhancements of Pro version.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "RPCS3",
+                    "optimal_settings": [
+                        "Enable SPU Loop Detection",
+                        "Set SPU Frequency to Auto",
+                        "Use Vulkan renderer for best compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RPCS3 (experimental)",
+                    "optimal_settings": [
+                        "Lower resolution scaling",
+                        "Enable asynchronous shader compilation"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Windows (DirectX 12)",
+            "details": "PC version with native DirectX 12 support. Requires powerful GPU for optimal performance at high settings.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Clive Rosfield seeks revenge against the Empire that destroyed his homeland and brother, wielding the power of Eikons in a war-torn world called Valisthea.",
+        "key_features": [
+            "Real-time action combat system with Eikon abilities",
+            "Cinematic presentation with high-quality cutscenes",
+            "Open-world exploration with fast travel system",
+            "Multiple difficulty modes including Ultimaniac and FF mode",
+            "Stunning visuals powered by Luminous Engine"
+        ],
+        "long_description": "Final Fantasy XVI, developed and published by Square Enix under the direction of Hiroshi Takai, represents a bold departure from traditional Final Fantasy RPG mechanics. Released on PS5 in June 2023 and Windows in September 2024, the game features an action-oriented combat system where players control Clive Rosfield in real-time battles against Eikons (giant magical creatures). The Luminous Engine delivers breathtaking visuals with dynamic weather systems and detailed environments. Digital Foundry praised both versions as technically impressive, noting the PS5 Pro Game Boost provides significant performance improvements while the PC version offers superior graphics customization. The game received critical acclaim for its mature storytelling, character development, and innovative combat mechanics, though it divided some fans due to its departure from traditional turn-based RPG elements.",
+        "legacy_and_impact": [
+            "Introduced real-time action combat to mainline Final Fantasy series",
+            "Featured groundbreaking Eikon battle system with unique abilities",
+            "Set new visual standards for PlayStation 5 exclusives",
+            "Demonstrated successful console-to-PC port with enhanced features",
+            "Part of the Final Fantasy legacy while establishing new franchise direction"
+        ]
+    }
+}

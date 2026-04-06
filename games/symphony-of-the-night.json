@@ -1,0 +1,200 @@
+{
+    "basic_info": {
+        "url_slug": "/games/symphony-of-the-night",
+        "title": "Castlevania: Symphony of the Night",
+        "cover_url": "/images/symphony-of-the-night.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Gothic Horror",
+            "Vampire Hunting",
+            "Metroidvania Exploration",
+            "Good vs Evil",
+            "Supernatural Powers"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 9.6,
+        "review": "Castlevania: Symphony of the Night is widely considered one of the greatest games ever made, pioneering the metroidvania genre with its expansive castle exploration, deep RPG mechanics, and iconic soundtrack by Michiru Yamane.",
+        "developers": [
+            "Konami"
+        ],
+        "publishers": [
+            "Konami"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Akumaj\u014d Dracula X: Nocturne in the Moonlight (\u60aa\u9b54\u57ce\u30c9\u30e9\u30ad\u30e5\u30e9X \u6708\u591c\u306e\u591c\u60f3\u66f2 - Japanese)",
+            "SotN",
+            "Castlevania Requiem"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation",
+                "region": "Japan",
+                "release_date": "1997-03-20"
+            },
+            {
+                "name": "PlayStation",
+                "region": "North America",
+                "release_date": "1997-10-02"
+            },
+            {
+                "name": "PlayStation",
+                "region": "Europe",
+                "release_date": "1998-03-27"
+            },
+            {
+                "name": "Sega Saturn",
+                "region": "Japan",
+                "release_date": "1998-06-04"
+            },
+            {
+                "name": "PlayStation Portable (PSP)",
+                "region": "Worldwide",
+                "release_date": "2007-10-23"
+            },
+            {
+                "name": "iOS",
+                "region": "Worldwide",
+                "release_date": "2020-03-04"
+            },
+            {
+                "name": "Android",
+                "region": "Worldwide",
+                "release_date": "2020-03-04"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Castlevania",
+        "part_number": 6,
+        "previous_game": {
+            "title": "Castlevania III: Dracula's Curse",
+            "url_slug": "/games/castlevania-iii"
+        },
+        "next_game": {
+            "title": "Castlevania: Aria of Sorrow",
+            "url_slug": "/games/aria-of-sorrow"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Super Metroid",
+            "url_slug": "/games/super-metroid"
+        },
+        {
+            "title": "Bloodstained: Ritual of the Night",
+            "url_slug": "/games/bloodstained-ritual-of-the-night"
+        },
+        {
+            "title": "Hollow Knight",
+            "url_slug": "/games/hollow-knight"
+        },
+        {
+            "title": "Ori and the Blind Forest",
+            "url_slug": "/games/ori-and-the-blind-forest"
+        },
+        {
+            "title": "Dead Cells",
+            "url_slug": "/games/dead-cells"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation 4 (via Castlevania Requiem)",
+            "details": "The most accessible modern version with original voice acting intact. Includes both SotN and Rondo of Blood in one package.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Original Voice Acting",
+                    "description": "Preserves the iconic PS1 voice lines including 'WHAT IS A MAN?!'"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (Emulation)",
+            "details": "PC emulation offers the most flexibility with save states, speed control, and modding support. Best experience with PCSX2 or similar PS1 emulators.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "SotN Reborn Mod",
+                    "description": "Comprehensive visual overhaul improving textures and models while preserving original art style"
+                },
+                {
+                    "name": "60 FPS Patch",
+                    "description": "Unlocks frame rate for smoother gameplay on modern systems"
+                },
+                {
+                    "name": "Control Enhancement Mod",
+                    "description": "Improves input responsiveness and adds controller customization"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "PCSX2 / ePSXe",
+                    "optimal_settings": [
+                        "60 FPS emulation",
+                        "CRT filter for authentic feel",
+                        "Enable save states"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "DuckStation / ePSXe",
+                    "optimal_settings": [
+                        "Touch controls customization",
+                        "Save state slots enabled"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "iOS/Android (Mobile)",
+            "details": "Official mobile ports with touch controls. Convenient for portable play but uses newer voice dub that lacks original PS1 charm.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Alucard, the son of Dracula, must explore his father's resurrected castle to stop a conspiracy that threatens to plunge the world into eternal darkness.",
+        "key_features": [
+            "Pioneering metroidvania exploration mechanics",
+            "Deep RPG system with equipment and leveling",
+            "Iconic soundtrack by Michiru Yamane",
+            "Multiple endings based on player choices",
+            "Extensive castle with interconnected areas"
+        ],
+        "long_description": "Castlevania: Symphony of the Night, released for PlayStation in March 1997 (Japan) and October 1997 (North America), is a landmark action-RPG that revolutionized the genre. Developed by Konami's Team Toei, it was the first Castlevania game to feature Metroid-style exploration with interconnected areas, backtracking, and ability-gated progression. Players control Alucard, Dracula's son, as he explores his father's resurrected castle filled with hundreds of enemies, bosses, secrets, and power-ups. The game features a deep RPG system where players can collect weapons, armor, spells, and items to customize their character. Its iconic soundtrack by Michiru Yamane remains one of gaming's most beloved compositions. While the PSP port (2007) added new voice acting, it lost some original charm. The mobile ports (2020) use the newer dub entirely. The PS1 version with original voices is universally considered the definitive experience.",
+        "legacy_and_impact": [
+            "Defined and popularized the metroidvania genre",
+            "Set new standards for exploration-based game design",
+            "Michiru Yamane's soundtrack became legendary in gaming history",
+            "Influenced countless modern indie developers (Bloodstained, Hollow Knight, etc.)",
+            "Continues to receive community mods and patches decades after release"
+        ]
+    }
+}

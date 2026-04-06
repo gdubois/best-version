@@ -1,0 +1,116 @@
+{
+    "basic_info": {
+        "url_slug": "/games/cannon-fodder-3",
+        "title": "Cannon Fodder 3",
+        "cover_url": "/images/cannon-fodder-3.jpg",
+        "genres": [
+            "Tactical Role-Playing",
+            "Strategy"
+        ],
+        "themes": [
+            "War",
+            "Modern Warfare",
+            "Anti-Terrorism",
+            "Squad Tactics"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": true,
+            "co_op": true
+        },
+        "difficulty_rating": 3,
+        "reception_score": 5.7,
+        "review": "Cannon Fodder 3 received mixed reviews for attempting to modernize the classic formula while suffering from poor translations, technical issues, and repetitive gameplay. While it retained some nostalgic elements, critics found it a disappointing sequel that failed to capture the magic of its predecessors.",
+        "developers": [
+            "Burut CT"
+        ],
+        "publishers": [
+            "Game Factory Interactive",
+            "Codemasters"
+        ]
+    },
+    "release": {
+        "alternative_names": [],
+        "platforms": [
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2012-02-09"
+            },
+            {
+                "name": "Windows (GamersGate)",
+                "region": "Europe",
+                "release_date": "2012-02-09"
+            },
+            {
+                "name": "Windows",
+                "region": "Russia",
+                "release_date": "2011-12-01"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Cannon Fodder",
+        "part_number": 3,
+        "previous_game": {
+            "title": "Cannon Fodder 2: Once More unto the Breach",
+            "url_slug": "/games/cannon-fodder-2"
+        },
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "Tiny Troopers",
+            "url_slug": "/games/tiny-troopers"
+        },
+        {
+            "title": "Command & Conquer",
+            "url_slug": "/games/command-and-conquer"
+        },
+        {
+            "title": "Worms",
+            "url_slug": "/games/worms"
+        },
+        {
+            "title": "Day of Infamy",
+            "url_slug": "/games/day-of-infamy"
+        },
+        {
+            "title": "Partisans 1941",
+            "url_slug": "/games/partisans-1941"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (Steam)",
+            "details": "The only officially supported modern version available. Includes Steam Cloud saves and community support.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "American soldiers battle terrorist forces seeking world domination in this modern sequel featuring 3D graphics and online co-op support.",
+        "key_features": [
+            "Isometric tactical shooter gameplay",
+            "Squad-based command with up to 4 soldiers",
+            "Online cooperative multiplayer for up to 4 players",
+            "Modern 3D graphics and destructible environments",
+            "Vehicles including tanks and helicopters"
+        ],
+        "long_description": "Cannon Fodder 3 is a tactical action-strategy game developed by Burut CT and published by Game Factory Interactive, released in Russia in December 2011 and internationally on February 9, 2012 via GamersGate. This third installment marks the first time since the original Sensible Software era that the franchise received a new entry, though Jon Hare and Sensible Software were uninvolved in its development. Codemasters, who acquired the Cannon Fodder IP from Sensible Software, licensed it to Russian company Game Factory Interactive (GFI). The game features American soldiers battling terrorist forces across various modern settings including snowy locales and even the moon. Unlike its predecessors which used 2D sprites, CF3 introduced 3D graphics with destructible environments. However, reviews were mixed - critics praised the colorful cartoonish visuals and explosive action but criticized poor English translations (some called them worse than Zero Wing), technical bugs, repetitive mission design, and long loading times. The game received a Metacritic score of approximately 57 from user reviews, reflecting its divisive reception among fans of the original series.",
+        "legacy_and_impact": [
+            "First new Cannon Fodder title since 1994",
+            "Attempted to modernize classic formula with 3D graphics",
+            "Introduced online co-op multiplayer to the franchise",
+            "Demonstrated challenges of reviving classic IPs without original creators",
+            "Remains a cult curiosity among retro gaming enthusiasts"
+        ]
+    }
+}

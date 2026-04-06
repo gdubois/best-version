@@ -1,0 +1,247 @@
+---
+/**
+ * Game Card Component - Updated to match index.html cyberpunk style
+ *
+ * Displays a game entry with cover art, platform badges, and interactive hover effects.
+ */
+
+interface Props {
+  title: string;
+  slug: string;
+  coverImage?: string;
+  platforms?: ('desktop-console' | 'handheld')[];
+  featured?: boolean;
+}
+
+const {
+  title,
+  slug,
+  coverImage = '/images/placeholder.png',
+  platforms = ['desktop-console'],
+  featured = false,
+} = Astro.props;
+
+// Generate platform badge HTML
+function renderPlatformBadges(platforms: ('desktop-console' | 'handheld')[]) {
+  const badges = platforms.map((platform) => {
+    if (platform === 'desktop-console') {
+      return `<span class="badge badge-platform-desktop-console" aria-label="Desktop/Console platform">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        Desktop/Console
+      </span>`;
+    } else {
+      return `<span class="badge badge-platform-handheld" aria-label="Handheld platform">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+          <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </svg>
+        Handheld
+      </span>`;
+    }
+  });
+  return badges.join('');
+}
+---
+
+<article
+  class={`game-card ${featured ? 'featured' : ''}`}
+  role="article"
+  aria-labelledby={`game-title-${slug}`}
+  tabindex="0"
+  aria-describedby={`game-desc-${slug}`}
+>
+  <a
+    href={`/games/${slug}`}
+    class="game-card-link"
+    aria-label="View details for ${title}"
+  >
+    <!-- Cover Image Section -->
+    <div class="game-card-cover">
+      <img
+        src={coverImage}
+        alt={title}
+        loading="lazy"
+        decoding="async"
+        class="game-card-image"
+      />
+      ${featured ? '<span class="badge badge-success" aria-label="Featured game">Featured</span>' : ''}
+    </div>
+
+    <!-- Content Section -->
+    <div class="game-card-content">
+      <h3
+        id={`game-title-${slug}`}
+        class="game-card-title"
+      >
+        ${title}
+      </h3>
+
+      <div
+        id={`game-desc-${slug}`}
+        class="game-card-badges"
+        role="list"
+        aria-label="Supported platforms for ${title}"
+      >
+        ${renderPlatformBadges(platforms)}
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  /* Game Card Component - Cyberpunk Style */
+
+  .game-card {
+    background: var(--color-surface-primary);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: all var(--duration-normal) var(--ease-default);
+    border: 1px solid var(--color-border-dark);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+    border-color: #00ff88;
+  }
+
+  .game-card:focus-within {
+    box-shadow: 0 0 0 3px var(--color-primary);
+  }
+
+  /* Featured games */
+  .game-card.featured {
+    border-color: rgba(0, 255, 136, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 255, 136, 0.1);
+  }
+
+  .game-card.featured:hover {
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.25);
+  }
+
+  /* Card link */
+  .game-card-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    position: relative;
+  }
+
+  .game-card-link:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: -3px;
+  }
+
+  /* Cover Image */
+  .game-card-cover {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a, #222222);
+  }
+
+  .game-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform var(--duration-slow) var(--ease-out);
+  }
+
+  .game-card:hover .game-card-image {
+    transform: scale(1.05);
+  }
+
+  .game-card-link:focus-visible .game-card-image {
+    transform: none;
+  }
+
+  /* Featured badge overlay */
+  .game-card-cover .badge {
+    position: absolute;
+    top: var(--space-3);
+    left: var(--space-3);
+    z-index: 1;
+    font-weight: var(--font-semibold);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Content Section */
+  .game-card-content {
+    padding: var(--space-4);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Game Title */
+  .game-card-title {
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-3) 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Platform Badges */
+  .game-card-badges {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .game-card {
+      border-radius: var(--radius-xl);
+    }
+
+    .game-card-content {
+      padding: var(--space-3);
+    }
+
+    .game-card-title {
+      font-size: var(--text-base);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .game-card {
+      display: flex;
+    }
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .game-card,
+    .game-card-link,
+    .game-card-image {
+      transition: none;
+    }
+
+    .game-card:hover,
+    .game-card-link:hover {
+      transform: none;
+    }
+
+    .game-card-image {
+      transform: none;
+    }
+  }
+</style>

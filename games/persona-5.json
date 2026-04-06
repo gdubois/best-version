@@ -1,0 +1,180 @@
+{
+    "basic_info": {
+        "url_slug": "/games/persona-5",
+        "title": "Persona 5: The Phantom X",
+        "cover_url": "/images/persona-5.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Coming of Age",
+            "Social Commentary",
+            "Supernatural Powers",
+            "School Life",
+            "Justice and Rebellion"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 9.5,
+        "review": "Persona 5 Royal is widely considered one of the greatest JRPGs ever made, featuring stunning art direction, an unforgettable soundtrack, deep social simulation mechanics, and a compelling story about fighting corruption.",
+        "developers": [
+            "Atlus"
+        ],
+        "publishers": [
+            "Atlus",
+            "Sega"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30da\u30eb\u30bd\u30ca5 (Japanese)",
+            "Persona 5: The Phantom X",
+            "P5R"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation 3",
+                "region": "Japan",
+                "release_date": "2016-04-14"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "Worldwide",
+                "release_date": "2017-04-04"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Worldwide",
+                "release_date": "2022-10-27"
+            },
+            {
+                "name": "PlayStation 5",
+                "region": "Worldwide",
+                "release_date": "2022-10-27"
+            },
+            {
+                "name": "Xbox One",
+                "region": "Worldwide",
+                "release_date": "2022-10-27"
+            },
+            {
+                "name": "Xbox Series X|S",
+                "region": "Worldwide",
+                "release_date": "2022-10-27"
+            },
+            {
+                "name": "Windows (PC)",
+                "region": "Worldwide",
+                "release_date": "2022-10-27"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Persona",
+        "part_number": 5,
+        "previous_game": {
+            "title": "Persona 4 Golden",
+            "url_slug": "/games/persona-4-golden"
+        },
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "Persona 3 Reload",
+            "url_slug": "/games/persona-3-reload"
+        },
+        {
+            "title": "Persona 4 Golden",
+            "url_slug": "/games/persona-4-golden"
+        },
+        {
+            "title": "Fire Emblem: Three Houses",
+            "url_slug": "/games/fire-emblem-three-houses"
+        },
+        {
+            "title": "Disgaea 5 Complete",
+            "url_slug": "/games/disgaea-5-complete"
+        },
+        {
+            "title": "Dragon Quest XI",
+            "url_slug": "/games/dragon-quest-xi"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation 5 / Xbox Series X|S",
+            "details": "The definitive version with enhanced resolution, faster loading times, and all Royal content including new confidants, dungeons, and gameplay improvements. Best performance experience.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Next-Gen Update",
+                    "description": "Official update adding 4K support, faster loading, and performance optimizations"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (PC - Steam)",
+            "details": "PC version with extensive modding support. Best experience when combined with community mods for visual improvements and quality of life enhancements.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Win7 Patch",
+                    "description": "Bypasses system version check for Windows 7/8 compatibility"
+                },
+                {
+                    "name": "P5R Texture Fixes Project",
+                    "description": "Fixes texture bugs and improves visual quality across the game"
+                },
+                {
+                    "name": "FPS Patch / Control UI Mod",
+                    "description": "Enables smoother 60+ FPS gameplay and customizable controls"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Nintendo Switch",
+            "details": "Portable version with complete Royal content. Performance is stable but resolution is lower than console versions. Good for on-the-go play.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Joker, a high school student with the power to summon Personas, leads a group of rebellious students who use their powers to steal the distorted desires of corrupt adults and change their hearts.",
+        "key_features": [
+            "Unique blend of social simulation and dungeon crawling",
+            "Stunning art direction and iconic visual style",
+            "Memorable soundtrack by Shoji Meguro",
+            "Multiple endings based on player choices",
+            "New confidants and story content in Royal version"
+        ],
+        "long_description": "Persona 5: The Phantom X (commonly known as Persona 5 Royal or P5R) is a JRPG developed by Atlus, released originally for PS3 in Japan (2016), then PS4 worldwide (2017). The enhanced 'Royal' version was released on PS4 in October 2019, adding new characters, story content, dungeons, and gameplay improvements. In October 2022, P5R received a multi-platform port to Switch, PS5, Xbox One, Xbox Series X/S, and PC via Steam. The game follows Joker and the Phantom Thieves of Hearts as they fight corruption in modern-day Tokyo through a unique dual-gameplay system combining social simulation (building relationships, managing time) with turn-based RPG combat using Personas (supernatural entities). With over 100 hours of content for Royal alone, it's widely regarded as one of the greatest JRPGs ever made.",
+        "legacy_and_impact": [
+            "Won multiple Game of the Year awards including Fami\u901a\u7684 Best Game",
+            "Set new standards for JRPG art direction and presentation",
+            "Popularized social simulation mechanics in Western RPGs",
+            "The Royal version became a model for enhanced editions",
+            "Continues to receive community mods years after release"
+        ]
+    }
+}

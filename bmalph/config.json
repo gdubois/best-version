@@ -1,0 +1,9 @@
+{
+  "name": "best_version",
+  "description": "Web encyclopedia of the best way to play older games on a modern system",
+  "createdAt": "2026-04-04T18:27:48.299Z",
+  "platform": "claude-code",
+  "upstreamVersions": {
+    "bmadCommit": "d1163f85"
+  }
+}

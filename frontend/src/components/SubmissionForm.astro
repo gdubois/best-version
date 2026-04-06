@@ -1,0 +1,826 @@
+---
+/**
+ * Submission Form Component - Updated to match index.html cyberpunk style
+ */
+
+interface Props {
+  prefillTitle?: string;
+  prefillPlatforms?: string;
+  prefillEmulator?: string;
+}
+
+const { prefillTitle = "", prefillPlatforms = "", prefillEmulator = "" } = Astro.props;
+
+// Parse pre-filled platforms
+const prefillPlatformsList = prefillPlatforms
+  ? prefillPlatforms.split(",").map((p: string) => p.trim().toLowerCase())
+  : [];
+---
+
+<div class="submission-form-wrapper">
+  <form
+    id="submission-form"
+    class="submission-form"
+    action="/api/submissions"
+    method="POST"
+    novalidate
+  >
+    <!-- hCaptcha integration -->
+    <div class="hcaptcha-container" data-sitekey="YOUR_SITE_KEY_HERE">
+      <div class="hcaptcha-wrapper">
+        <input type="checkbox" class="hcaptcha-checkbox" aria-label="I am human (hCaptcha bot protection)" />
+        <div class="hcaptcha-badge">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only">Protected by hCaptcha</span>
+        </div>
+        <p class="hcaptcha-label">
+          This form is protected by hCaptcha and subject to the hCaptcha
+          <a href="https://www.hcaptcha.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>,
+          <a href="https://www.hcaptcha.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>, and
+          <a href="https://www.hcaptcha.com/cookie-policy" target="_blank" rel="noopener noreferrer">Cookie Policy</a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Game Title - Required -->
+    <div class="form-field">
+      <label for="title" class="form-label">
+        Game Title <span class="required-indicator" aria-hidden="true">*</span>
+        <span class="sr-only">(required)</span>
+      </label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        class="form-input"
+        placeholder="e.g., Final Fantasy VII"
+        value={prefillTitle}
+        required
+        autocomplete="off"
+        aria-required="true"
+        aria-describedby="title-hint title-error"
+      />
+      <span id="title-hint" class="form-hint">
+        Enter the full game title
+      </span>
+      <span id="title-error" class="form-error" role="alert" aria-live="polite"></span>
+    </div>
+
+    <!-- Alternative Names - Optional -->
+    <div class="form-field">
+      <label for="alternative-names" class="form-label">
+        Alternative Names <span class="optional-indicator">(optional)</span>
+      </label>
+      <input
+        type="text"
+        id="alternative-names"
+        name="alternative_names"
+        class="form-input"
+        placeholder="e.g., FF7, Final Fantasy 7"
+        autocomplete="off"
+        aria-describedby="alt-names-hint"
+      />
+      <span id="alt-names-hint" class="form-hint">
+        Comma-separated list of alternative names or translations
+      </span>
+    </div>
+
+    <!-- Platforms - Required -->
+    <div class="form-field">
+      <fieldset class="form-fieldset">
+        <legend class="form-legend">
+          Platforms <span class="required-indicator" aria-hidden="true">*</span>
+          <span class="sr-only">(required)</span>
+        </legend>
+        <div class="form-checkbox-group">
+          <label class="form-checkbox-label">
+            <input
+              type="checkbox"
+              name="platforms"
+              value="desktop-console"
+              class="form-checkbox"
+              data-platform
+              aria-describedby="platform-desktop-console-desc"
+            />
+            <span class="form-checkbox-custom">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="form-checkbox-text">Desktop/Console</span>
+          </label>
+
+          <label class="form-checkbox-label">
+            <input
+              type="checkbox"
+              name="platforms"
+              value="handheld"
+              class="form-checkbox"
+              data-platform
+              aria-describedby="platform-handheld-desc"
+            />
+            <span class="form-checkbox-custom">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span class="form-checkbox-text">Handheld</span>
+          </label>
+        </div>
+        <span id="platform-desktop-console-desc" class="sr-only">
+          Play on desktop or console using an emulator
+        </span>
+        <span id="platform-handheld-desc" class="sr-only">
+          Play on handheld devices like Steam Deck
+        </span>
+      </fieldset>
+      <span id="platforms-error" class="form-error" role="alert" aria-live="polite"></span>
+    </div>
+
+    <!-- Emulator Recommendation - Required -->
+    <div class="form-field">
+      <label for="emulator" class="form-label">
+        Emulator <span class="required-indicator" aria-hidden="true">*</span>
+        <span class="sr-only">(required)</span>
+      </label>
+      <input
+        type="text"
+        id="emulator"
+        name="emulator"
+        class="form-input"
+        placeholder="e.g., RetroArch, SNES9x"
+        value={prefillEmulator}
+        required
+        autocomplete="off"
+        aria-required="true"
+        aria-describedby="emulator-hint"
+      />
+      <span id="emulator-hint" class="form-hint">
+        Recommended emulator for this game
+      </span>
+      <span id="emulator-error" class="form-error" role="alert" aria-live="polite"></span>
+    </div>
+
+    <!-- Emulator Version - Optional -->
+    <div class="form-field">
+      <label for="version" class="form-label">
+        Emulator Version <span class="optional-indicator">(optional)</span>
+      </label>
+      <input
+        type="text"
+        id="version"
+        name="version"
+        class="form-input"
+        placeholder="e.g., 1.15.0"
+        autocomplete="off"
+        aria-describedby="version-hint"
+      />
+      <span id="version-hint" class="form-hint">
+        Specific version of the recommended emulator
+      </span>
+    </div>
+
+    <!-- Config Presets Link - Optional -->
+    <div class="form-field">
+      <label for="config-link" class="form-label">
+        Config Presets Link <span class="optional-indicator">(optional)</span>
+      </label>
+      <input
+        type="url"
+        id="config-link"
+        name="config_link"
+        class="form-input"
+        placeholder="https://example.com/configs"
+        autocomplete="off"
+        aria-describedby="config-link-hint"
+      />
+      <span id="config-link-hint" class="form-hint">
+        Link to recommended configuration presets
+      </span>
+    </div>
+
+    <!-- Notes - Optional -->
+    <div class="form-field">
+      <label for="notes" class="form-label">
+        Additional Notes <span class="optional-indicator">(optional)</span>
+      </label>
+      <textarea
+        id="notes"
+        name="notes"
+        class="form-textarea"
+        placeholder="Any additional information, tips, or context about this game..."
+        rows="4"
+        aria-describedby="notes-hint"
+      ></textarea>
+      <span id="notes-hint" class="form-hint">
+        Share any relevant details about the game or your recommendation
+      </span>
+    </div>
+
+    <!-- Email - Optional -->
+    <div class="form-field">
+      <label for="email" class="form-label">
+        Email <span class="optional-indicator">(optional)</span>
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="form-input"
+        placeholder="your@email.com"
+        autocomplete="email"
+        aria-describedby="email-hint"
+      />
+      <span id="email-hint" class="form-hint">
+        Optional: You'll receive notification when your submission is reviewed
+      </span>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      id="submit-btn"
+      class="form-submit btn btn-primary"
+      aria-label="Submit game recommendation form"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+      </svg>
+      <span>Submit Game</span>
+    </button>
+  </form>
+
+  <!-- Success Message (hidden by default) -->
+  <div id="success-message" class="success-message" role="status" aria-live="polite" hidden>
+    <svg class="success-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <h3 class="success-title">Submission Received!</h3>
+    <p class="success-text">
+      Thank you for your contribution! Your submission has been received and will be reviewed by our team.
+    </p>
+    <p id="success-timer" class="success-timer">
+      <span class="sr-only">Page will redirect in</span>
+      <span id="timer-countdown">5</span> seconds...
+    </p>
+    <a href="/" class="btn btn-secondary">Return to Home</a>
+  </div>
+</div>
+
+<style>
+  /* Submission Form Component - Cyberpunk Style */
+
+  .submission-form-wrapper {
+    width: 100%;
+  }
+
+  .submission-form {
+    background: var(--color-surface-primary);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border-default);
+  }
+
+  /* hCaptcha Container */
+  .hcaptcha-container {
+    margin-bottom: var(--space-5);
+    padding: var(--space-4);
+    background: var(--color-surface-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-default);
+  }
+
+  .hcaptcha-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .hcaptcha-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+  }
+
+  .hcaptcha-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: var(--radius-lg);
+    color: var(--color-secondary);
+    font-size: var(--text-sm);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+  }
+
+  .hcaptcha-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .hcaptcha-label a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+  }
+
+  .hcaptcha-label a:hover {
+    color: var(--color-primary);
+  }
+
+  /* Form Fields */
+  .form-field {
+    margin-bottom: var(--space-5);
+  }
+
+  .form-label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+  }
+
+  .required-indicator {
+    color: var(--color-accent);
+    font-weight: var(--font-bold);
+  }
+
+  .optional-indicator {
+    color: var(--color-text-tertiary);
+    font-weight: var(--font-normal);
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    min-height: var(--input-min-height);
+    padding: var(--input-padding);
+    border-radius: var(--radius-full);
+    font-size: var(--text-base);
+    background: var(--color-surface-secondary);
+    border: 2px solid var(--color-border-default);
+    color: var(--color-text-primary);
+    transition: all var(--duration-normal) var(--ease-default);
+    font-family: inherit;
+    backdrop-filter: blur(10px);
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1),
+                0 0 30px rgba(99, 102, 241, 0.4);
+  }
+
+  .form-input:invalid:not(:placeholder-shown),
+  .form-input.is-error {
+    border-color: var(--color-accent);
+  }
+
+  .form-input:valid:not(:placeholder-shown),
+  .form-input.is-valid {
+    border-color: #00ff88;
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    border-radius: var(--radius-lg);
+  }
+
+  .form-hint {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+
+  .form-error {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--color-accent);
+    margin-top: var(--space-1);
+    min-height: 1.25rem;
+  }
+
+  /* Fieldset */
+  .form-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .form-legend {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  /* Checkbox Group */
+  .form-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .form-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    cursor: pointer;
+    user-select: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-border-default);
+    background: var(--color-surface-secondary);
+    transition: all var(--duration-normal) var(--ease-default);
+    min-height: 44px;
+  }
+
+  .form-checkbox-label:hover {
+    border-color: var(--color-secondary);
+    background: var(--color-surface-elevated);
+  }
+
+  .form-checkbox-label:has(.form-checkbox:checked) {
+    border-color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+  }
+
+  .form-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .form-checkbox-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background: transparent;
+    border: 2px solid var(--color-text-tertiary);
+    transition: all var(--duration-normal) var(--ease-default);
+    flex-shrink: 0;
+  }
+
+  .form-checkbox-label:has(.form-checkbox:checked) .form-checkbox-custom {
+    background: #00ff88;
+    border-color: #00ff88;
+  }
+
+  .form-checkbox-text {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+  }
+
+  .form-checkbox-label:has(.form-checkbox:checked) .form-checkbox-text {
+    color: #00ff88;
+  }
+
+  /* Submit Button */
+  .form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: var(--button-min-height);
+    padding: var(--button-padding);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    transition: all var(--duration-normal) var(--ease-default);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+  }
+
+  .form-submit:focus-visible {
+    outline: 2px solid #00ff88;
+    outline-offset: 2px;
+  }
+
+  .form-submit:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 50px rgba(99, 102, 241, 0.6);
+  }
+
+  .form-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Success Message */
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-5xl) var(--space-3xl);
+    background: rgba(0, 255, 136, 0.05);
+    border: 2px solid #00ff88;
+    border-radius: var(--radius-2xl);
+    animation: success-fade-in 0.3s ease-out;
+  }
+
+  @keyframes success-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .success-icon {
+    color: #00ff88;
+    margin-bottom: var(--space-3);
+  }
+
+  .success-title {
+    font-family: var(--font-display);
+    font-size: var(--text-h2);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .success-text {
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+    max-width: 400px;
+  }
+
+  .success-timer {
+    font-size: var(--text-sm);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 767px) {
+    .submission-form {
+      padding: var(--space-4);
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-submit {
+      font-size: var(--text-base);
+    }
+
+    .form-checkbox-label {
+      flex: 1;
+      min-width: 100px;
+      text-align: center;
+    }
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .form-input,
+    .form-textarea,
+    .form-submit,
+    .form-checkbox-label {
+      transition: none;
+    }
+
+    .form-submit:hover {
+      transform: none;
+    }
+
+    .success-message {
+      animation: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  /**
+   * Submission Form Client-Side Validation
+   */
+  (function() {
+    const form = document.getElementById('submission-form');
+    if (!form) return;
+
+    const successMessage = document.getElementById('success-message');
+    const submitBtn = document.getElementById('submit-btn');
+
+    // Validation helpers
+    function showError(field, message) {
+      const errorEl = document.getElementById(`${field.name}-error`);
+      if (errorEl) {
+        errorEl.textContent = message;
+      }
+      field.classList.add('is-error');
+      field.classList.remove('is-valid');
+    }
+
+    function showSuccess(field) {
+      const errorEl = document.getElementById(`${field.name}-error`);
+      if (errorEl) {
+        errorEl.textContent = '';
+      }
+      field.classList.add('is-valid');
+      field.classList.remove('is-error');
+    }
+
+    function clearErrors() {
+      form.querySelectorAll('.form-error').forEach(el => {
+        el.textContent = '';
+      });
+      form.querySelectorAll('.form-input').forEach(input => {
+        input.classList.remove('is-error', 'is-valid');
+      });
+      form.querySelectorAll('.form-checkbox-label').forEach(label => {
+        label.classList.remove('is-error', 'is-valid');
+      });
+    }
+
+    // Validate title
+    function validateTitle() {
+      const titleInput = form.querySelector('#title');
+      if (!titleInput.value.trim()) {
+        showError(titleInput, 'Game title is required');
+        return false;
+      }
+      showSuccess(titleInput);
+      return true;
+    }
+
+    // Validate platforms
+    function validatePlatforms() {
+      const platformCheckboxes = form.querySelectorAll('[data-platform]');
+      let hasPlatform = false;
+      platformCheckboxes.forEach(cb => {
+        const label = cb.closest('.form-checkbox-label');
+        if (cb.checked) {
+          hasPlatform = true;
+          label.classList.add('is-valid');
+          label.classList.remove('is-error');
+        } else {
+          label.classList.remove('is-error', 'is-valid');
+        }
+      });
+
+      if (!hasPlatform) {
+        platformCheckboxes.forEach(cb => {
+          const label = cb.closest('.form-checkbox-label');
+          label.classList.add('is-error');
+        });
+        const errorEl = document.getElementById('platforms-error');
+        if (errorEl) errorEl.textContent = 'Please select at least one platform';
+        return false;
+      }
+
+      platformCheckboxes.forEach(cb => {
+        const label = cb.closest('.form-checkbox-label');
+        label.classList.remove('is-error');
+      });
+      return true;
+    }
+
+    // Validate emulator
+    function validateEmulator() {
+      const emulatorInput = form.querySelector('#emulator');
+      if (!emulatorInput.value.trim()) {
+        showError(emulatorInput, 'Emulator recommendation is required');
+        return false;
+      }
+      showSuccess(emulatorInput);
+      return true;
+    }
+
+    // Validate hCaptcha
+    function validateHcaptcha() {
+      const hcaptchaCheckbox = form.querySelector('.hcaptcha-checkbox');
+      if (!hcaptchaCheckbox.checked) {
+        const badge = form.querySelector('.hcaptcha-badge');
+        if (badge) {
+          badge.style.borderColor = 'var(--color-accent)';
+        }
+        return false;
+      }
+      return true;
+    }
+
+    // Handle real-time validation
+    form.querySelectorAll('#title, #emulator').forEach(input => {
+      input.addEventListener('blur', function() {
+        if (this.value.trim()) {
+          showSuccess(this);
+        }
+      });
+
+      input.addEventListener('input', function() {
+        if (this.classList.contains('is-error')) {
+          this.classList.remove('is-error');
+          document.getElementById(`${this.name}-error`).textContent = '';
+        }
+      });
+    });
+
+    form.querySelectorAll('[data-platform]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        validatePlatforms();
+      });
+    });
+
+    // Form submission
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      clearErrors();
+
+      // Client-side validation
+      const isTitleValid = validateTitle();
+      const isPlatformValid = validatePlatforms();
+      const isEmulatorValid = validateEmulator();
+      const isHcaptchaValid = validateHcaptcha();
+
+      if (!isTitleValid || !isPlatformValid || !isEmulatorValid || !isHcaptchaValid) {
+        return;
+      }
+
+      // Disable button and show loading
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="loading-spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" stroke-opacity="0.3"></circle>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke-opacity="1"></path>
+        </svg>
+        <span>Submitting...</span>
+      `;
+
+      try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        const response = await fetch('/api/submissions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          // Show success message
+          form.style.display = 'none';
+          if (successMessage) {
+            successMessage.hidden = false;
+
+            // Countdown timer
+            let countdown = 5;
+            const timerEl = document.getElementById('timer-countdown');
+            const interval = setInterval(() => {
+              countdown--;
+              if (timerEl) timerEl.textContent = countdown;
+              if (countdown <= 0) {
+                clearInterval(interval);
+                window.location.href = '/';
+              }
+            }, 1000);
+          }
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+          </svg>
+          <span>Submit Game</span>
+        `;
+
+        const errorEl = document.getElementById('submit-btn-error');
+        if (errorEl) {
+          errorEl.textContent = 'Submission failed. Please try again.';
+        }
+      }
+    });
+  })();
+</script>

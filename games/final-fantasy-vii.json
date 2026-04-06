@@ -1,0 +1,273 @@
+{
+    "basic_info": {
+        "url_slug": "/games/final-fantasy-vii",
+        "title": "Final Fantasy VII",
+        "cover_url": "/images/final-fantasy-vii.jpg",
+        "genres": [
+            "JRPG",
+            "RPG"
+        ],
+        "themes": [
+            "Cyberpunk",
+            "Fantasy"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 9.8,
+        "review": "Final Fantasy VII is widely regarded as one of the greatest RPGs ever made, with its iconic characters, emotional story, and innovative battle system setting new standards for JRPGs.",
+        "developers": [
+            "Square Enix"
+        ],
+        "publishers": [
+            "Square Enix",
+            "Eidos Interactive"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcVII",
+            "Final Fantasy VII Remaster"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation",
+                "region": "Japan",
+                "release_date": "1997-01-31"
+            },
+            {
+                "name": "PlayStation",
+                "region": "North America",
+                "release_date": "1997-09-07"
+            },
+            {
+                "name": "Microsoft Windows",
+                "region": "Worldwide",
+                "release_date": "1998-06-25"
+            },
+            {
+                "name": "PlayStation Network (PS3)",
+                "region": "Worldwide",
+                "release_date": "2012-04-03"
+            },
+            {
+                "name": "iOS",
+                "region": "Worldwide",
+                "release_date": "2015-09-17"
+            },
+            {
+                "name": "Android",
+                "region": "Worldwide",
+                "release_date": "2015-09-17"
+            },
+            {
+                "name": "PlayStation Network (PS4)",
+                "region": "Worldwide",
+                "release_date": "2018-05-10"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Final Fantasy",
+        "part_number": 7,
+        "previous_game": {
+            "title": "Final Fantasy VI",
+            "url_slug": "/games/final-fantasy-vi"
+        },
+        "next_game": {
+            "title": "Final Fantasy VIII",
+            "url_slug": "/games/final-fantasy-viii"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        },
+        {
+            "title": "Final Fantasy VIII",
+            "url_slug": "/games/final-fantasy-viii"
+        },
+        {
+            "title": "Xenogears",
+            "url_slug": "/games/xenogears"
+        },
+        {
+            "title": "Kingdom Hearts",
+            "url_slug": "/games/kingdom-hearts"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (Steam)",
+            "details": "Official PC port with community mods for improved visuals, performance, and modern compatibility. Requires patches to run on contemporary systems.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "FFNx",
+                    "description": "D3D11/12/Vulkan renderer replacement for DirectX 5, enabling higher resolutions and better graphics settings.",
+                    "url": "https://github.com/FFNX/FFNX"
+                },
+                {
+                    "name": "60 FPS Gameplay Mod",
+                    "description": "Achieves consistent 60 FPS throughout the game via FFNx integration.",
+                    "url": "https://www.qhimm.com/forum/index.php?topic=23456.0"
+                },
+                {
+                    "name": "FF7Music",
+                    "description": "Replaces MIDI soundtrack with accurate PSX audio emulation for better quality.",
+                    "url": "https://github.com/FFNX/FF7Music"
+                },
+                {
+                    "name": "TrueMotion 2 Codec",
+                    "description": "Required codec for playing FMVs without black screens on modern Windows systems.",
+                    "url": "https://www.codecguide.com/download_tmt2.htm"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 4",
+            "details": "Official PSN remaster of the original PlayStation version. Includes updated controls and online features.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "iOS / Android",
+            "details": "Mobile port of the original game; available on app stores with touch-based controls.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 1 (Emulated)",
+            "details": "Original PlayStation version running on modern systems via emulator. Requires BIOS and game image.",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "High resolution texture packing",
+                        "VSync",
+                        "Shader-based upscaling"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RetroArch (Mednafen core)",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Screen scaling adjustments"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "A young mercenary named Cloud Strife joins an eco-terrorist group to fight against a powerful corporation draining the planet's life energy, uncovering a deeper cosmic threat in the process.",
+        "key_features": [
+            "Innovative Materia system for customizable character abilities",
+            "Branching storylines with multiple endings based on player choices",
+            "Cinematic storytelling using full-motion video (FMV)",
+            "Iconic character designs by Yoshitaka Amano and music by Nobuo Uematsu",
+            "Turn-based combat with real-time elements and combo attacks"
+        ],
+        "long_description": "Final Fantasy VII, developed by SquareSoft (now Square Enix), revolutionized the JRPG genre in 1997 with its mature narrative, complex characters, and groundbreaking technical achievements. The game's exploration of environmentalism, corporate greed, and personal identity resonated globally, setting new standards for storytelling in video games. Its innovative Materia system allowed deep character customization, while cinematic cutscenes and memorable music created an immersive experience that influenced countless subsequent titles. With over 10 million copies sold worldwide by 2005, it remains a cornerstone of gaming history.",
+        "legacy_and_impact": [
+            "Pioneered the use of full-motion video for storytelling in RPGs",
+            "Popularized the Materia system for skill customization across future JRPGs",
+            "Influenced narrative structures in mainstream games through its mature themes and character development",
+            "Became one of the best-selling games of all time, with over 10 million copies sold worldwide by 2005",
+            "Inspired numerous remakes, adaptations, and spiritual successors across multiple media"
+        ]
+    },
+    "tv_recommendations": [
+        {
+            "emulator_name": "DuckStation",
+            "emulator_version": "latest",
+            "config_notes": "Recommended settings for best performance on modern Windows systems. Enable hardware acceleration for improved frame rates.",
+            "config_url": "https://www.duckstation.org/wiki/Configuration_Guide",
+            "resources": [
+                {
+                    "type": "emulator_download",
+                    "title": "DuckStation Official Download",
+                    "description": "Official DuckStation emulator download from duckstation-nightly builds",
+                    "url": "https://github.com/stenzek/duckstation-nightly/releases/latest",
+                    "is_unofficial": false
+                },
+                {
+                    "type": "config_preset",
+                    "title": "FF7 High-Res Texture Pack Config",
+                    "description": "Pre-configured settings for running FF7 with upscaled textures at higher resolutions",
+                    "url": "https://www.psx-place.com/threads/duckstation-ff7-high-res-texture-pack-guide.12345/",
+                    "is_unofficial": false
+                },
+                {
+                    "type": "patch",
+                    "title": "FF7 Translation Hack",
+                    "description": "Community fan translation patch for regions without official localization",
+                    "url": "https://www.romhacking.net/translations/1234/",
+                    "is_unofficial": true
+                },
+                {
+                    "type": "additional_resources",
+                    "title": "PSX Emulation Wiki",
+                    "description": "Comprehensive documentation on PSX emulation setup and troubleshooting",
+                    "url": "https://psx.emulation.dev/",
+                    "is_unofficial": false
+                }
+            ]
+        }
+    ],
+    "portable_recommendations": [
+        {
+            "emulator_name": "RetroArch (PPSSPP core)",
+            "emulator_version": "1.14.x",
+            "config_notes": "For portable play, use PPSSPP core in RetroArch. Configure touch controls and enable frame skipping if needed.",
+            "config_url": "https://www.retroarch.com/?page=platforms",
+            "resources": [
+                {
+                    "type": "emulator_download",
+                    "title": "RetroArch Download",
+                    "description": "Official RetroArch emulator download for Android and iOS",
+                    "url": "https://retroarch.com/?page=download",
+                    "is_unofficial": false
+                },
+                {
+                    "type": "config_preset",
+                    "title": "FF7 Mobile Touch Controls",
+                    "description": "Pre-configured touch control layout optimized for Final Fantasy VII on mobile devices",
+                    "url": "https://github.com/retroarch/retroarch-assets/tree/master/cores",
+                    "is_unofficial": false
+                },
+                {
+                    "type": "additional_resources",
+                    "title": "Mobile Emulation Guide",
+                    "description": "Step-by-step guide for setting up PS1 games on mobile devices",
+                    "url": "https://mobileemulation.guide/ps1-setup",
+                    "is_unofficial": false
+                }
+            ]
+        }
+    ]
+}

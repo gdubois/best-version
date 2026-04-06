@@ -1,0 +1,182 @@
+---
+/**
+ * Search Bar Component - Updated to match index.html cyberpunk style
+ *
+ * Prominent, accessible search bar centered on the page.
+ */
+
+interface Props {
+  placeholder?: string;
+  action?: string;
+  value?: string;
+}
+
+const { placeholder = "Search for a game...", action = "/search", value = "" } = Astro.props;
+---
+
+<form
+  action={action}
+  method="GET"
+  class="search-bar"
+  role="search"
+  aria-label="Game search"
+  data-astro-reload
+>
+  <div class="search-container">
+    <input
+      id="search-input-primary"
+      type="text"
+      name="q"
+      placeholder={placeholder}
+      value={value}
+      class="search-input"
+      aria-label="Search for a game"
+      autocomplete="off"
+    />
+    <button
+      type="submit"
+      class="search-submit"
+      aria-label="Submit search"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+    </button>
+  </div>
+</form>
+
+<script client>
+  /**
+   * Roman Numeral to Arabic Numeral Converter
+   * Converts Roman numerals (I-VII, etc.) to Arabic numerals (1-7, etc.)
+   * for search queries to provide seamless user experience.
+   */
+
+  // Roman numeral mapping
+  const romanMap: Record<string, number> = {
+    I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7,
+    VIII: 8, IX: 9, X: 10, XI: 11, XII: 12,
+    // Lowercase variants
+    i: 1, ii: 2, iii: 3, iv: 4, v: 5, vi: 6, vii: 7,
+    viii: 8, ix: 9, x: 10, xi: 11, xii: 12,
+  };
+
+  /**
+   * Convert Roman numerals in a search query to Arabic numerals
+   * Handles common game title numerals (I-XII typically)
+   */
+  function convertRomanNumerals(query: string): string {
+    if (!query) return query;
+
+    // Pattern matches Roman numerals as whole words (with word boundaries)
+    const romanPattern = /\b(I{1,3}(V?X+)|V?X{1,3}(L?C+)|L?V?X{1,3}|ix|iv)\b/gi;
+
+    return query.replace(romanPattern, (match) => {
+      const upper = match.toUpperCase();
+      if (upper in romanMap) {
+        return romanMap[upper].toString();
+      }
+      return match;
+    });
+  }
+</script>
+
+<style>
+  /* Search Bar Component - Cyberpunk Style */
+
+  .search-bar {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.9rem 3.5rem 0.9rem 1.8rem;
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-full);
+    background: rgba(26, 26, 46, 0.8);
+    color: var(--color-text-primary);
+    font-size: var(--text-base);
+    outline: none;
+    transition: all var(--duration-normal) cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+  }
+
+  .search-input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .search-input:focus {
+    width: 360px;
+    border-color: transparent;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1),
+                0 0 30px rgba(99, 102, 241, 0.4);
+  }
+
+  .search-submit {
+    position: absolute;
+    right: 12px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all var(--duration-normal) var(--ease-default);
+  }
+
+  .search-submit:hover svg {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6));
+  }
+
+  .search-submit svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: url(#searchGradient);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all var(--duration-normal) var(--ease-default);
+  }
+
+  /* Desktop - larger search */
+  @media (min-width: 768px) {
+    .search-bar {
+      max-width: 320px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 767px) {
+    .search-bar {
+      max-width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+    }
+
+    .search-input:focus {
+      width: 100%;
+    }
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .search-input:focus {
+      width: 100%;
+    }
+
+    .search-submit:hover svg {
+      transform: none;
+    }
+  }
+</style>

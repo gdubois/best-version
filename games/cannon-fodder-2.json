@@ -1,0 +1,203 @@
+{
+    "basic_info": {
+        "url_slug": "/games/cannon-fodder-2",
+        "title": "Cannon Fodder 2: Once More unto the Breach",
+        "cover_url": "/images/cannon-fodder-2.jpg",
+        "genres": [
+            "Tactical Role-Playing",
+            "Strategy"
+        ],
+        "themes": [
+            "War",
+            "Time Travel",
+            "Alien Invasion",
+            "Squad Tactics"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 7.6,
+        "review": "Cannon Fodder 2 retains the addictive gameplay of its predecessor but increases difficulty significantly. While critics praised its level design and tactical depth, some found it frustratingly hard compared to the original.",
+        "developers": [
+            "Sensible Software"
+        ],
+        "publishers": [
+            "Virgin Interactive Entertainment",
+            "Codemasters"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Cannon Fodder 2: Once More unto the Breach"
+        ],
+        "platforms": [
+            {
+                "name": "Amiga",
+                "region": "Europe",
+                "release_date": "1994-11-01"
+            },
+            {
+                "name": "MS-DOS",
+                "region": "North America",
+                "release_date": "1994-11-01"
+            },
+            {
+                "name": "Windows (GOG.com)",
+                "region": "Worldwide",
+                "release_date": "2013-02-07"
+            },
+            {
+                "name": "Linux (via GOG/DOSBox)",
+                "region": "Worldwide",
+                "release_date": "2015-11-27"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Cannon Fodder",
+        "part_number": 2,
+        "previous_game": {
+            "title": "Cannon Fodder",
+            "url_slug": "/games/cannon-fodder"
+        },
+        "next_game": {
+            "title": "Cannon Fodder 3",
+            "url_slug": "/games/cannon-fodder-3"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Command & Conquer",
+            "url_slug": "/games/command-and-conquer"
+        },
+        {
+            "title": "Worms",
+            "url_slug": "/games/worms"
+        },
+        {
+            "title": "Day of Infamy",
+            "url_slug": "/games/day-of-infamy"
+        },
+        {
+            "title": "Partisans 1941",
+            "url_slug": "/games/partisans-1941"
+        },
+        {
+            "title": "Tiny Troopers",
+            "url_slug": "/games/tiny-troopers"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Windows (OpenFodder)",
+            "details": "The best modern experience - an open source port that fixes engine bugs, supports modern systems, and includes a campaign/map editor. Compatible with retail, Amiga, and GOG versions.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "OpenFodder v2.0.0",
+                    "description": "Latest open source port with bug fixes, modern system support, and campaign editor"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (GOG.com)",
+            "details": "Best official version - comes pre-packaged with DOSBox for compatibility with Windows 10/11. DRM-free and verified for modern systems.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "DOSBox (pre-installed)",
+                    "optimal_settings": [
+                        "Fullscreen mode",
+                        "Auto-cycle CPU speed",
+                        "Enable sound"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Amiga",
+            "details": "Original version - the authentic experience with original graphics and sound. Best played on real hardware or high-quality emulator.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "WinUAE",
+                    "optimal_settings": [
+                        "Amiga 500/600 configuration",
+                        "High accuracy mode",
+                        "Enable audio emulation"
+                    ]
+                },
+                {
+                    "platform": "Linux",
+                    "recommended_emulator": "WinUAE or UAE",
+                    "optimal_settings": [
+                        "Amiga 500/600 configuration",
+                        "High accuracy mode",
+                        "Enable audio emulation"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "MS-DOS (Original)",
+            "details": "Original DOS release - requires DOSBox or similar emulator for modern systems. Less convenient than GOG version.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "DOSBox",
+                    "optimal_settings": [
+                        "Fullscreen mode",
+                        "Auto-cycle CPU speed to 100%",
+                        "Enable sound"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "A squad of soldiers is abducted by aliens and sent through time to fight on various battlefields, from medieval times to alien planets, in this tactical action-strategy sequel.",
+        "key_features": [
+            "Top-down tactical shooter gameplay",
+            "Squad-based command system with up to 4 soldiers",
+            "Time-travel narrative across multiple eras and settings",
+            "Vehicles including jeeps, tanks, and helicopters",
+            "72 levels divided into 24 missions"
+        ],
+        "long_description": "Cannon Fodder 2: Once More unto the Breach is a tactical action-strategy game developed by Sensible Software and published by Virgin Interactive in November 1994. As the sequel to the acclaimed Cannon Fodder, it retains the core gameplay mechanics while introducing time-travel elements that transport soldiers through various historical periods and an alien planet setting. The player commands a squad of up to four soldiers who must navigate 72 levels across 24 missions, battling enemy infantry, vehicles, and installations using machine guns, grenades, and rockets. Despite receiving positive reviews (Amiga Format: 90%, Amiga Power: 89%), critics noted the game was significantly more difficult than its predecessor and lacked new gameplay mechanics, comparing it to a data disk expansion rather than a full sequel. The game features memorable level names based on song titles and pop culture references, though the plot remained minimally explained due to budget constraints.",
+        "legacy_and_impact": [
+            "Established the tactical squad-based shooter genre",
+            "Influenced later top-down strategy games with its control scheme",
+            "Maintained cult status among retro gaming enthusiasts",
+            "Inspired the OpenFodder open source project for modern preservation",
+            "Featured in numerous 'best Amiga games' lists"
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "best-version-frontend",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "typescript": "^5.5.0"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^5.0.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

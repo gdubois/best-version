@@ -1,0 +1,23 @@
+# =============================================================================
+# Best Version - Static Frontend Dockerfile
+# =============================================================================
+# Serves static frontend files (HTML, CSS, JS) via nginx
+# =============================================================================
+
+FROM nginx:alpine
+
+# Copy custom nginx configuration
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+
+# Copy public static files
+COPY public/ /usr/share/nginx/html/
+
+# Expose ports
+EXPOSE 80 443
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD wget --quiet --spider http://localhost:80/health || exit 1
+
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]

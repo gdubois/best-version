@@ -1,0 +1,215 @@
+{
+    "basic_info": {
+        "url_slug": "/games/mother-earthbound-beginnings",
+        "title": "Mother / EarthBound Beginnings",
+        "cover_url": "/images/mother-earthbound-beginnings.jpg",
+        "genres": [
+            "Role-Playing Game (RPG)",
+            "Adventure"
+        ],
+        "themes": [
+            "Coming of Age",
+            "Family Bonds",
+            "Time Travel",
+            "Parody of American Culture",
+            "Supernatural Powers"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 6.5,
+        "review": "A charming but flawed RPG that pioneered the quirky EarthBound style with its modern American setting and unique humor, though plagued by pacing issues and challenging gameplay.",
+        "developers": [
+            "Ape Inc."
+        ],
+        "publishers": [
+            "Nintendo"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Mother (\u30de\u30b6\u30fc)",
+            "EarthBound Zero",
+            "MOTHER 1+2"
+        ],
+        "platforms": [
+            {
+                "name": "Famicom / NES",
+                "region": "Japan",
+                "release_date": "1989-07-27"
+            },
+            {
+                "name": "Wii U Virtual Console",
+                "region": "North America",
+                "release_date": "2015-06-14"
+            },
+            {
+                "name": "Nintendo Switch Online",
+                "region": "Worldwide",
+                "release_date": "2022-02-28"
+            },
+            {
+                "name": "Game Boy Advance (Mother 1+2)",
+                "region": "Japan",
+                "release_date": "2003-06-20"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Mother",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "EarthBound (Mother 2)",
+            "url_slug": "/games/earthbound"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "EarthBound",
+            "url_slug": "/games/earthbound"
+        },
+        {
+            "title": "Mother 3",
+            "url_slug": "/games/mother-3"
+        },
+        {
+            "title": "Undertale",
+            "url_slug": "/games/undertale"
+        },
+        {
+            "title": "YIIK: A Postmodern RPG",
+            "url_slug": "/games/yiik-a-postmodern-rpg"
+        },
+        {
+            "title": "Omori",
+            "url_slug": "/games/omori"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch Online (NES Collection)",
+            "details": "Best modern option with official English localization, save states, and online play. Includes the complete MOTHER Restored fan translation patch.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "MOTHER 1+2 Fan Translation",
+                    "description": "Complete English translation by Demi and Haeleth that translates all text including menus and story"
+                },
+                {
+                    "name": "MOTHER Restored Patch",
+                    "description": "Restores graphics and applies the fan translation, uncensors content for modern audiences"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "FCEUX / Nestopia UE",
+                    "optimal_settings": [
+                        "Enable CRT filter for authentic NES look",
+                        "Use accurate audio emulation",
+                        "Save state slots enabled"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Nostalgia.NES / RetroArch (FCEU core)",
+                    "optimal_settings": [
+                        "Custom touch controls overlay",
+                        "Save state functionality enabled"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Wii U Virtual Console",
+            "details": "Excellent portable option with official English localization and save states. Considered one of the best NES ports.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "MOTHER Restored Patch",
+                    "description": "Restores graphics and applies the fan translation for complete English experience"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Famicom / NES (Original)",
+            "details": "Authentic original hardware experience. Best played with a CRT TV or emulator with accurate rendering.",
+            "available_in_english": {
+                "official_localization": false,
+                "fan_translation": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "MOTHER 1+2 Fan Translation",
+                    "description": "Complete English translation patch for the original Famicom ROM"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "FCEUX / Nestopia UE",
+                    "optimal_settings": [
+                        "Enable CRT shader/filter",
+                        "Accurate audio emulation enabled",
+                        "Use accurate mode for best compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Nostalgia.NES / RetroArch (FCEU core)",
+                    "optimal_settings": [
+                        "Custom touch controls overlay",
+                        "Save state slots enabled"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Game Boy Advance (Mother 1+2 Compilation)",
+            "details": "Avoid this version - community consensus states it's inferior in every way compared to the original NES version.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "A young boy named Ninten and his friends use psychic powers to save the world from alien invaders in this quirky RPG set in a parody of modern America.",
+        "key_features": [
+            "Modern American setting unlike typical fantasy RPGs",
+            "Psychic power (PK) system for battles",
+            "Quirky humor and pop culture references",
+            "Innovative save system with portable devices",
+            "First game in the Mother series"
+        ],
+        "long_description": "Mother, released as EarthBound Beginnings outside Japan, is a 1989 role-playing video game developed by Ape Inc. and published by Nintendo for the Famicom/NES. Created by Shigesato Itoi (who also created EarthBound), it pioneered the quirky, modern-setting RPG style that would define the Mother series. The story follows Ninten, a boy with psychic powers who must save his town from alien invaders. Unlike typical fantasy RPGs of its era, Mother parodies American culture and features a contemporary setting. Despite receiving mixed reviews (IGN 6.5/10) due to pacing issues and challenging gameplay, it established the foundation for EarthBound and Mother 3. The game was never officially released in North America until the Wii U Virtual Console in 2015. A fan translation by Demi and Haeleth made the original accessible to English speakers worldwide. The GBA compilation 'Mother 1+2' is widely considered inferior to the original NES version according to community consensus.",
+        "legacy_and_impact": [
+            "Established Shigesato Itoi as a pioneering RPG creator",
+            "Pioneered modern-setting parody RPGs in Japan",
+            "Created the foundation for the EarthBound series",
+            "Influenced indie games like Undertale and Omori",
+            "Never officially released in North America until 2015",
+            "Inspired countless fan translations and ROM hacks",
+            "Set the tone for quirky, character-driven RPGs"
+        ]
+    }
+}

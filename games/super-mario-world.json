@@ -1,0 +1,234 @@
+{
+    "basic_info": {
+        "url_slug": "/games/super-mario-world",
+        "title": "Super Mario World",
+        "cover_url": "/images/super-mario-world.jpg",
+        "genres": [
+            "Platform"
+        ],
+        "themes": [
+            "Adventure",
+            "Hero's Journey",
+            "Friendship",
+            "Exploration",
+            "Good vs Evil"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": true,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 2,
+        "reception_score": 9.5,
+        "review": "Super Mario World is widely considered one of the greatest video games ever made and Shigeru Miyamoto's favorite Mario game. Its masterful level design, innovative gameplay mechanics including Yoshi, and timeless presentation set new standards for platformers.",
+        "developers": [
+            "Nintendo EAD"
+        ],
+        "publishers": [
+            "Nintendo"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Super Mario World: Super Mario Bros. 4 (Japan)",
+            "Super Mario World: Super Mario Advance 2 (GBA)"
+        ],
+        "platforms": [
+            {
+                "name": "Super Famicom",
+                "region": "Japan",
+                "release_date": "1990-11-21"
+            },
+            {
+                "name": "Super Nintendo Entertainment System (SNES)",
+                "region": "North America",
+                "release_date": "1991-08-23"
+            },
+            {
+                "name": "Super Nintendo Entertainment System (SNES)",
+                "region": "Europe",
+                "release_date": "1992-04-11"
+            },
+            {
+                "name": "Super Nintendo Entertainment System (SNES)",
+                "region": "Australia",
+                "release_date": "1992-07-01"
+            },
+            {
+                "name": "Game Boy Advance",
+                "region": "Japan",
+                "release_date": "2001-12-14"
+            },
+            {
+                "name": "Game Boy Advance",
+                "region": "North America",
+                "release_date": "2002-02-11"
+            },
+            {
+                "name": "Game Boy Advance",
+                "region": "Europe",
+                "release_date": "2002-04-12"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Super Mario",
+        "part_number": 5,
+        "previous_game": {
+            "title": "Super Mario Bros. 3",
+            "url_slug": "/games/super-mario-bros-3"
+        },
+        "next_game": {
+            "title": "Super Mario Land 2: 6 Golden Coins",
+            "url_slug": "/games/super-mario-land-2-6-golden-coins"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Super Mario Bros. 3",
+            "url_slug": "/games/super-mario-bros-3"
+        },
+        {
+            "title": "Super Mario World: Super Mario Advance 2",
+            "url_slug": "/games/super-mario-world-super-mario-advance-2"
+        },
+        {
+            "title": "The Legend of Zelda: A Link to the Past",
+            "url_slug": "/games/the-legend-of-zelda-a-link-to-the-past"
+        },
+        {
+            "title": "Donkey Kong Country",
+            "url_slug": "/games/donkey-kong-country"
+        },
+        {
+            "title": "Super Metroid",
+            "url_slug": "/games/super-metroid"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch (Nintendo Switch Online)",
+            "details": "The most accessible modern way to play with official Nintendo emulation. Includes all original content and is regularly updated.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "Super Nintendo Entertainment System (SNES)",
+            "details": "The definitive original version with the best audio and visual quality. Requires authentic hardware or high-quality emulation.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "higan (bsnes core)",
+                    "optimal_settings": [
+                        "Accurate mode for best compatibility",
+                        "Low-latency audio",
+                        "Enable dynamic recompiler"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RetroArch (SNES9x core)",
+                    "optimal_settings": [
+                        "Auto-save enabled",
+                        "Custom overlay for touchscreen controls",
+                        "Enable frame skip if needed"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Super Nintendo Entertainment System (SNES) - Original Hardware",
+            "details": "Play on authentic hardware with a flashcart like Super Everdrive or Super Powerpak for the best experience.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "Game Boy Advance",
+            "details": "Super Mario World: Super Mario Advance 2 offers quality-of-life improvements including save-anywhere functionality and Luigi as a playable single-player character. Requires color restoration patch for authentic SNES visuals.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "SMA2 Color Restoration",
+                    "description": "Restores original SNES color palette to the GBA version which had overly bright colors. Essential for authentic visual experience.",
+                    "url": "https://www.romhacking.net/hacks/470/"
+                },
+                {
+                    "name": "SMA2 DX Improvement",
+                    "description": "Enhancement hack with bug fixes and quality-of-life improvements over the original GBA release.",
+                    "url": "https://www.romhacking.net/hacks/9055/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "mGBA",
+                    "optimal_settings": [
+                        "High accuracy mode",
+                        "Enable save state support"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "My Boy!",
+                    "optimal_settings": [
+                        "Fast forward enabled",
+                        "Save state slots configured"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Nintendo Switch (SNES Classic Edition)",
+            "details": "Not available on SNES Classic Edition. This platform is no longer in production.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Mario and Luigi vacation in Dinosaur Land when Princess Peach is captured by Bowser. With the help of Yoshi, a newly hatched dinosaur companion, they must rescue the princess and defeat Bowser's seven Koopaling children across seven worlds.",
+        "key_features": [
+            "Introduction of Yoshi as a rideable dinosaur companion with unique abilities",
+            "Overworld map system allowing multiple paths through each world",
+            "New Spin Jump move for crushing enemies and breaking blocks",
+            "Cape Feather power-up enabling flight and gliding capabilities",
+            "96 total level exits including secret Star Road routes",
+            "Two-player alternating mode with Mario and Luigi"
+        ],
+        "long_description": "Super Mario World is a 1990 platform game developed by Nintendo EAD for the Super Famicom/SNES. Directed by Takashi Tezuka and produced by series creator Shigeru Miyamoto, it was one of two launch titles for the Super Famicom in Japan on November 21, 1990. The game introduced Yoshi, a dinosaur companion that became one of Nintendo's most iconic characters, appearing in numerous subsequent games and spin-offs. Development began in October 1988 after Miyamoto realized the team needed to create something 'totally new' rather than simply upgrading Super Mario Bros. 3 for the new hardware. The game features an innovative overworld map system where players navigate between levels through a world map, with multiple paths and secret areas. It introduced several gameplay mechanics that would become series staples, including the Spin Jump, Cape Feather flight ability, and power-up storage. The soundtrack by Koji Kondo is considered one of the best in the Mario franchise. Super Mario World sold over 20 million copies worldwide, making it the best-selling SNES game. It has been consistently ranked as one of the greatest video games of all time, with IGN naming it the best Mario game in December 2025.",
+        "legacy_and_impact": [
+            "Best-selling SNES game with over 20 million copies sold worldwide",
+            "Introduced Yoshi, who became a major franchise character",
+            "Considered Shigeru Miyamoto's favorite Mario game",
+            "Set new standards for platformer level design and exploration",
+            "Continues to be celebrated decades after release through Nintendo Switch Online",
+            "Inspired Super Mario Maker which allows players to create custom SMW levels"
+        ]
+    }
+}

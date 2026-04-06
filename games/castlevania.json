@@ -1,0 +1,178 @@
+{
+    "basic_info": {
+        "url_slug": "/games/castlevania",
+        "title": "Castlevania",
+        "cover_url": "/images/castlevania.jpg",
+        "genres": [
+            "Action"
+        ],
+        "themes": [
+            "Horror",
+            "Vampire Hunting",
+            "Medieval Fantasy",
+            "Good vs Evil",
+            "Gothic Atmosphere"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 8.5,
+        "review": "Castlevania is a groundbreaking action-platformer that established the metroidvania genre with its atmospheric gothic horror setting, challenging gameplay, and memorable soundtrack by Michiru Yamane.",
+        "developers": [
+            "Konami"
+        ],
+        "publishers": [
+            "Konami"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Akumaj\u014d Dracula (\u60aa\u9b54\u57ce\u30c9\u30e9\u30ad\u30e5\u30e9 - Japanese)",
+            "Vampire Killer (MSX version)",
+            "Castlevania Anniversary Collection"
+        ],
+        "platforms": [
+            {
+                "name": "Famicom Disk System",
+                "region": "Japan",
+                "release_date": "1986-09-26"
+            },
+            {
+                "name": "Nintendo Entertainment System (NES)",
+                "region": "North America",
+                "release_date": "1987-05-01"
+            },
+            {
+                "name": "Nintendo Entertainment System (NES)",
+                "region": "Europe",
+                "release_date": "1988-12-19"
+            },
+            {
+                "name": "MSX",
+                "region": "Japan",
+                "release_date": "1986-09-26"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Castlevania",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Castlevania II: Simon's Quest",
+            "url_slug": "/games/castlevania-ii"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Super Metroid",
+            "url_slug": "/games/super-metroid"
+        },
+        {
+            "title": "Contra",
+            "url_slug": "/games/contra"
+        },
+        {
+            "title": "Ghosts 'n Goblins",
+            "url_slug": "/games/ghosts-n-goblins"
+        },
+        {
+            "title": "Kid Icarus",
+            "url_slug": "/games/kid-icarus"
+        },
+        {
+            "title": "Blaster Master",
+            "url_slug": "/games/blaster-master"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch (Anniversary Collection)",
+            "details": "The most accessible modern version with all classic Castlevania games included. Features save states, rewind functionality, and online leaderboards.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Anniversary Collection Update",
+                    "description": "Official update adding online leaderboards and improved save functionality"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (Emulation)",
+            "details": "NES emulation provides the most authentic experience. Best played with FCEUX or Nestopia emulator for accuracy.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Control Enhancement Mod",
+                    "description": "Improves jump mechanics and input responsiveness for modern controllers"
+                },
+                {
+                    "name": "Graphics Overhaul Pack",
+                    "description": "Enhanced sprite quality while preserving original art style"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "FCEUX / Nestopia UE",
+                    "optimal_settings": [
+                        "CRT filter for authentic feel",
+                        "60 FPS emulation",
+                        "Enable save states"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RetroArch (NES core)",
+                    "optimal_settings": [
+                        "Touch controls customization",
+                        "Save state slots enabled"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Nintendo Switch (Original NES ROM)",
+            "details": "Play the original cartridge version via emulation. Best for purists wanting authentic experience.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Simon Belmont, a member of the noble Belmont clan, must venture into Dracula's castle to stop his resurrection and save humanity from eternal darkness.",
+        "key_features": [
+            "Pioneering side-scrolling action-platformer",
+            "Atmospheric gothic horror setting",
+            "Memorable soundtrack by Michiru Yamane",
+            "Multiple weapon and item pickups",
+            "Non-linear progression with secret areas"
+        ],
+        "long_description": "Castlevania, released in September 1986 for the Famicom Disk System in Japan (and May 1987 for NES in North America), is a landmark action-platformer developed by Konami. It established many conventions of the metroidvania genre and became one of the most influential games of the 8-bit era. Players control Simon Belmont, a vampire hunter from the noble Belmont clan, as he traverses Dracula's castle to prevent his resurrection. The game features challenging platforming, strategic combat with various weapons (whip, axe, dagger, holy water), and atmospheric gothic horror aesthetics that defined the series for decades. While the MSX version titled 'Vampire Killer' exists with different gameplay mechanics, the NES/Famicom version is universally considered the definitive original. The game's iconic soundtrack by Michiru Yamane remains one of gaming's most beloved compositions.",
+        "legacy_and_impact": [
+            "Established the metroidvania genre template",
+            "Created one of gaming's most recognizable franchises",
+            "Michiru Yamane's soundtrack became legendary in gaming history",
+            "Set standards for atmospheric horror in video games",
+            "Continues to influence modern indie developers decades later"
+        ]
+    }
+}

@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Version - The Definitive Video Game History</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0a0a0f;
+            --darker: #050507;
+            --light: #ffffff;
+            --gray: #1a1a2e;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, #1a1a2e 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 50%),
+                        radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(50px, -50px) rotate(120deg); }
+            66% { transform: translate(-50px, 50px) rotate(240deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar {
+            padding: 0.9rem 3.5rem 0.9rem 1.8rem;
+            width: 320px;
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(30, 30, 50, 0.9));
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .search-bar::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 300;
+        }
+
+        .search-bar:focus {
+            border-color: transparent;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+            box-shadow:
+                0 0 0 4px rgba(99, 102, 241, 0.1),
+                0 0 30px rgba(99, 102, 241, 0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            width: 360px;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 18px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .search-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: url(#searchGradient);
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.3s ease;
+        }
+
+        .search-container:hover .search-icon svg {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6));
+        }
+
+        .search-bar:focus + .search-icon svg,
+        .search-container:hover .search-icon svg {
+            stroke: url(#searchGradient);
+            filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.8));
+        }
+
+        /* Animated search icon ring */
+        .search-icon::before {
+            content: '';
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: -1;
+        }
+
+        .search-container:hover .search-icon::before {
+            opacity: 0.15;
+            transform: scale(1);
+        }
+
+        /* Search Results Dropdown */
+        .search-results {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            width: 400px;
+            max-height: 400px;
+            background: var(--gray);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            display: none;
+            z-index: 1001;
+        }
+
+        .search-results.active {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .search-result-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-result-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .search-result-title {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .search-result-year {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .no-results {
+            padding: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(99, 102, 241, 0.3);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--light) 0%, var(--primary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 4rem 3rem;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        /* Featured Games */
+        .featured {
+            padding: 6rem 3rem;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--light), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .game-card {
+            background: var(--gray);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .game-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
+        .game-info {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .game-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-year {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .game-desc {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .best-version {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 3rem;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .modern-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: transparent;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+
+        .modern-icon svg {
+            width: 48px;
+            height: 48px;
+            fill: none;
+            stroke: url(#searchGradient);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.3s ease;
+        }
+
+        .modern-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .modern-icon:hover svg {
+            filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.8));
+        }
+
+        .feature-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 3rem;
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1a2e 100%);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--light), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-highlight {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .about-highlight p {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 15px;
+        }
+
+        .about-stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .about-stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 6rem 3rem;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            background: var(--gray);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem;
+            text-align: center;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .search-bar {
+                width: 250px;
+            }
+
+            .search-bar:focus {
+                width: 280px;
+            }
+
+            .nav-links {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .search-container {
+                width: 100%;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .stats, .featured, .features, .about, .newsletter {
+                padding: 4rem 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .search-results {
+                width: calc(100% - 2rem);
+                right: 1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Game Modal */
+        .game-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .game-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: var(--gray);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-year {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+
+        .modal-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .modal-section p {
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Error message */
+        .error-message {
+            background: rgba(236, 72, 153, 0.2);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            color: #ec4899;
+        }
+
+        /* Patches Section Styles */
+        .patches-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.08));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .patches-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .patches-section h3::before {
+            content: '🔧';
+            font-size: 1.2em;
+        }
+
+        .platform-header {
+            background: rgba(99, 102, 241, 0.15);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .platform-header::before {
+            content: '🎮';
+            font-size: 1.2em;
+        }
+
+        .platform-name {
+            font-weight: 700;
+            color: var(--light);
+            font-size: 1.1rem;
+        }
+
+        .patch-card {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .patch-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+        }
+
+        .patch-card:hover {
+            transform: translateX(5px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
+        }
+
+        .patch-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .patch-name {
+            font-weight: 700;
+            color: var(--light);
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .patch-name::before {
+            content: '📦';
+            font-size: 1em;
+        }
+
+        .patch-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .patch-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            padding-left: 1.75rem;
+        }
+
+        .patch-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .patch-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .patch-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+        }
+
+        .patch-link::before {
+            content: '🔗';
+            font-size: 0.9em;
+        }
+
+        .no-patches {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            background: rgba(99, 102, 241, 0.05);
+            border-radius: 12px;
+        }
+
+        .no-patches::before {
+            content: '✨';
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Patch Platform Group */
+        .patch-platform-group {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .patch-platform-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Additional patch card hover effect */
+        .patch-card:hover::before {
+            width: 6px;
+        }
+
+        /* Responsive adjustments for patches */
+        @media (max-width: 768px) {
+            .patches-section {
+                padding: 1rem;
+            }
+
+            .patch-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .patch-links {
+                margin-top: 0.75rem;
+            }
+
+            .platform-name {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">BEST VERSION</div>
+        
+        <!-- SVG Definitions for gradients -->
+        <svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="searchGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#6366f1; stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#8b5cf6; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ec4899; stop-opacity:1" />
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input
+                type="text"
+                id="gameSearch"
+                class="search-bar"
+                placeholder="Search for a game..."
+                autocomplete="off"
+            >
+            <span class="search-icon" onclick="document.getElementById('gameSearch').focus()" aria-label="Search">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+            </span>
+            
+            <!-- Search Results Dropdown -->
+            <div id="searchResults" class="search-results">
+                <!-- Results will be populated dynamically -->
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#games">Games</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact-admin">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Ultimate Video Game History Archive</h1>
+            <p id="hero-subtitle">Discover the definitive versions of gaming's greatest classics. Every game, every era, one perfect edition.</p>
+            <div class="cta-buttons">
+                <a href="#games" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" style="width: 1.3em; height: 1.3em; fill: none; stroke: white; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+                    Explore Games
+                </a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats fade-in">
+        <div class="stat-item">
+            <div id="total-games" class="stat-number"><span class="loading-spinner"></span></div>
+            <div class="stat-label">Games Catalogued</div>
+        </div>
+        <div class="stat-item">
+            <div id="total-platforms" class="stat-number"><span class="loading-spinner"></span></div>
+            <div class="stat-label">Platforms Supported</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Curated Versions</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">24x7</div>
+            <div class="stat-label">Always Accessible</div>
+        </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section id="games" class="featured fade-in">
+        <h2 class="section-title">Featured Classics</h2>
+        <div id="games-grid" class="games-grid">
+            <!-- Game cards will be loaded dynamically from API -->
+            <div style="grid-column: 1/-1; text-align: center;">
+                <span class="loading-spinner"></span>
+                <p style="margin-top: 1rem; color: rgba(255,255,255,0.7);">Loading games...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features fade-in">
+        <h2 class="section-title">Why Choose Best Version?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="modern-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3 class="feature-title">Curated Excellence</h3>
+                <p class="feature-desc">Every game features our expertly selected best version, ensuring optimal gameplay and experience.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="modern-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </div>
+                <h3 class="feature-title">Comprehensive History</h3>
+                <p class="feature-desc">Deep dive into gaming's evolution with detailed information about each title and its impact.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="modern-icon">
+                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <h3 class="feature-title">Fast & Responsive</h3>
+                <p class="feature-desc">Lightning-fast loading times and smooth navigation across all devices for seamless browsing.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="modern-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </div>
+                <h3 class="feature-title">Advanced Search</h3>
+                <p class="feature-desc">Find exactly what you're looking for with our powerful search and filtering capabilities.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="modern-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+                </div>
+                <h3 class="feature-title">Rich Data</h3>
+                <p class="feature-desc">Access detailed JSON data for each game including screenshots, reviews, and technical specs.</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="modern-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3 class="feature-title">Global Community</h3>
+                <p class="feature-desc">Join thousands of gaming enthusiasts sharing knowledge and preserving history together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about fade-in">
+        <div class="about-content">
+            <h2 class="section-title">About Best Version</h2>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p><strong>Welcome to Best Version</strong> — a passion project born from frustration and fueled by love for gaming history.</p>
+                    
+                    <p>I created this site because I was tired of seeing modern remakes that don't hold a candle to the original versions. Too often, developers try to "improve" what wasn't broken, losing the magic that made these games special in the first place.</p>
+                    
+                    <div class="about-highlight">
+                        <p>"How many hours have I wasted trying to find consensus on whether Symphony of the Night is best on PSX, PSP, or Saturn? This site exists so you don't have to."</p>
+                    </div>
+
+                    <p>Best Version isn't about ranking games — it's about finding THE BEST version of each game. We dig deep into patches, mods, and platform differences to ensure you know exactly how to experience these classics at their absolute peak.</p>
+
+                    <p>This is a solo project driven by one mission: help players discover the definitive way to play gaming's greatest titles, complete with the best patches, mods, and technical recommendations available today.</p>
+                </div>
+
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=800&h=600&fit=crop" alt="Gaming Setup">
+                    
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <div class="about-stat-number">1</div>
+                            <div class="about-stat-label">Dedicated Creator</div>
+                        </div>
+                        <div class="about-stat">
+                            <div id="progress-games" class="about-stat-number"><span class="loading-spinner"></span></div>
+                            <div class="about-stat-label">Games in Progress</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How We Determine Best Version -->
+            <div style="margin-top: 4rem;">
+                <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">How We Determine the Best Version</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="feature-title">Community Votes</h3>
+                        <p class="feature-desc">We gather input from thousands of players who have spent hundreds of hours on each version.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        </div>
+                        <h3 class="feature-title">Critical Acclaim</h3>
+                        <p class="feature-desc">Professional reviews and retrospective analysis from trusted gaming publications.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14.7 13.3L6.8 5.4c-.4-.4-1-.4-1.4 0l-2 2c-.4.4-.4 1 0 1.4l7.9 7.9c.4.4 1 .4 1.4 0l2-2c.4-.4.4-1 0-1.4zM20.3 5.4c-.4-.4-1-.4-1.4 0l-2 2c-.4.4-.4 1 0 1.4l3.6 3.6c.4.4 1 .4 1.4 0l2-2c.4-.4.4-1 0-1.4l-3.6-3.6z"/></svg>
+                        </div>
+                        <h3 class="feature-title">Modern Standards</h3>
+                        <p class="feature-desc">Technical improvements, patches, and mods that enhance the experience without losing the original charm.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+                        </div>
+                        <h3 class="feature-title">Playability</h3>
+                        <p class="feature-desc">Controller support, performance stability, and overall user experience on each platform.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27,6.96 12,12.01 20.73,6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </div>
+                        <h3 class="feature-title">Content Completeness</h3>
+                        <p class="feature-desc">All DLC, bonus content, and hidden features included in the recommended version.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg>
+                        </div>
+                        <h3 class="feature-title">Accessibility</h3>
+                        <p class="feature-desc">How easy is it to find, install, and play this version in today's gaming landscape?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Plans -->
+            <div style="margin-top: 4rem; background: rgba(99, 102, 241, 0.1); padding: 3rem; border-radius: 20px;">
+                <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">What's Next?</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                        </div>
+                        <h3 class="feature-title">More Games</h3>
+                        <p class="feature-desc">Expanding our catalog with hundreds more classics from every era and platform.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <h3 class="feature-title">Newsletter</h3>
+                        <p class="feature-desc">Stay updated on new additions, patches, and community discussions.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        </div>
+                        <h3 class="feature-title">Community Features</h3>
+                        <p class="feature-desc">User submissions, version comparisons, and discussion forums coming soon.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="16,18 22,12 16,6"/><polyline points="8,6 2,12 8,18"/></svg>
+                        </div>
+                        <h3 class="feature-title">API Access</h3>
+                        <p class="feature-desc">Developers can access our data for their own projects and tools.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+                        </div>
+                        <h3 class="feature-title">Video Content</h3>
+                        <p class="feature-desc">Side-by-side comparisons and technical breakdowns of different versions.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h3 class="feature-title">Global Community</h3>
+                        <p class="feature-desc">Join our Discord and contribute your expertise to help improve the database.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Admin Section -->
+            <section id="contact-admin" style="margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1)); border-radius: 20px;">
+                <h3 style="font-family: 'Orbitron', sans-serif; font-size: 2rem; margin-bottom: 1rem; text-align: center;">Contact Admin</h3>
+                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem; text-align: center;">Have questions, suggestions, or want to contribute? I'd love to hear from you!</p>
+                
+                <div class="features-grid" style="margin-top: 2rem;">
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <h3 class="feature-title">Email Me</h3>
+                        <a href="mailto:admin@best-version.com" style="color: var(--primary); font-size: 1.2rem; text-decoration: none;">admin@best-version.com</a>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3 class="feature-title">Join Community</h3>
+                        <p style="color: rgba(255, 255, 255, 0.7); margin-top: 1rem;">Discord and forums coming soon!</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="modern-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+                        </div>
+                        <h3 class="feature-title">Submit a Game</h3>
+                        <a href="mailto:admin@best-version.com?subject=Game Submission" style="color: var(--primary); font-size: 1.2rem; text-decoration: none;">Suggest a game →</a>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; text-align: center;">
+                    <a href="mailto:admin@best-version.com" class="btn btn-primary">Send Message</a>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter fade-in">
+        <div class="newsletter-content">
+            <h2>Stay Updated</h2>
+            <p>Get notified when we add new games or update existing entries. Join our community of gaming historians!</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo" style="margin-bottom: 2rem;">BEST VERSION</div>
+        <div class="footer-links">
+            <a href="#about">About Us</a>
+            <a href="#contact-admin">Contact</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="/api/docs" target="_blank">API Documentation</a>
+        </div>
+        <p style="color: rgba(255, 255, 255, 0.5);">© 2026 Best Version. All rights reserved. Preserving gaming history one game at a time.</p>
+    </footer>
+
+    <!-- Game Detail Modal -->
+    <div id="gameModal" class="game-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeGameModal()">×</button>
+            <div id="modalBody" class="modal-body">
+                <!-- Game details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Animations and API Integration -->
+    <script>
+        // API Base URL - can be overridden via environment variable or config
+        const API_BASE = window.API_BASE || '/api';
+        
+        let allGames = [];
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await Promise.all([
+                    loadStats(),
+                    loadFeaturedGames()
+                ]);
+            } catch (error) {
+                console.error('Failed to load data:', error);
+                showError();
+            }
+        });
+
+        // Load statistics from API
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_BASE}/games/stats`);
+                if (!response.ok) throw new Error('Failed to load stats');
+                
+                const data = await response.json();
+                
+                document.getElementById('total-games').innerHTML = `${data.total_games}+`;
+                document.getElementById('total-platforms').textContent = data.total_platforms;
+                document.getElementById('progress-games').textContent = data.total_games + '+';
+            } catch (error) {
+                console.error('Error loading stats:', error);
+                // Use fallback values if API fails
+                document.getElementById('total-games').textContent = '500+';
+                document.getElementById('total-platforms').textContent = '7';
+                document.getElementById('progress-games').textContent = '500+';
+            }
+        }
+
+        // Load featured games from API - shuffles on each page load for variety
+        async function loadFeaturedGames() {
+            const grid = document.getElementById('games-grid');
+            
+            try {
+                const response = await fetch(`${API_BASE}/games/games?limit=100`);
+                if (!response.ok) throw new Error('Failed to load games');
+                
+                allGames = await response.json();
+                
+                // Shuffle and take first 6 for variety - this runs fresh on each page load
+                const shuffled = [...allGames].sort(() => Math.random() - 0.5).slice(0, 6);
+                
+                grid.innerHTML = shuffled.map(game => createGameCard(game)).join('');
+            } catch (error) {
+                console.error('Error loading games:', error);
+                // Fallback to static content if API fails
+                grid.innerHTML = getFallbackGames();
+            }
+        }
+
+        // Create game card HTML - uses best_version_platform and best_version_date from play_today section
+        function createGameCard(game) {
+            const platforms = game.platforms.slice(0, 2).join(', ');
+            
+            // Use best version info if available (from play_today), otherwise fall back to general info
+            const displayYear = game.best_version_date || game.year || 'N/A';
+            const displayPlatform = game.best_version_platform || platforms;
+            const platformDisplay = Array.isArray(displayPlatform)
+                ? displayPlatform.slice(0, 2).join(', ')
+                : (displayPlatform || platforms);
+            
+            return `
+                <div class="game-card" onclick="openGameModal('${game.slug}')">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=400&fit=crop" alt="${game.title}" class="game-image">
+                    <div class="game-info">
+                        <h3 class="game-title">${game.title}</h3>
+                        <p class="game-year">${displayYear} • ${platformDisplay}${Array.isArray(game.platforms) && game.platforms.length > 2 ? '+' : ''}</p>
+                        <span class="best-version">View Details →</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Fallback games for when API is unavailable
+        function getFallbackGames() {
+            const fallback = [
+                {
+                    title: "Castlevania",
+                    year: 1986,
+                    platforms: ["NES"],
+                    slug: "castlevania",
+                    best_version_platform: "Nintendo Switch (Anniversary Collection)",
+                    best_version_date: "2021"
+                },
+                {
+                    title: "Final Fantasy VI",
+                    year: 1994,
+                    platforms: ["SNES"],
+                    slug: "final-fantasy-vi",
+                    best_version_platform: "Pixel Remaster (Multi-platform)",
+                    best_version_date: "2022"
+                },
+                {
+                    title: "Grandia",
+                    year: 1997,
+                    platforms: ["PlayStation"],
+                    slug: "grandia",
+                    best_version_platform: "Nintendo Switch / Windows (Steam)",
+                    best_version_date: "2019"
+                }
+            ];
+            
+            return fallback.map(game => createGameCard(game)).join('');
+        }
+
+        // Open game detail modal
+        async function openGameModal(slug) {
+            const modal = document.getElementById('gameModal');
+            const body = document.getElementById('modalBody');
+            
+            body.innerHTML = '<div style="text-align:center;padding:3rem;"><span class="loading-spinner"></span><p>Loading game details...</p></div>';
+            modal.classList.add('active');
+
+            try {
+                const response = await fetch(`${API_BASE}/games/game/${slug}`);
+                if (!response.ok) throw new Error('Failed to load game');
+                
+                const data = await response.json();
+                body.innerHTML = renderGameDetails(data);
+            } catch (error) {
+                console.error('Error loading game:', error);
+                body.innerHTML = `
+                    <div class="error-message">
+                        Failed to load game details. Please try again later.
+                    </div>
+                `;
+            }
+        }
+
+        // Render game details in modal
+        function renderGameDetails(data) {
+            const basicInfo = data.basic_info || {};
+            const description = data.description || {};
+            
+            // Get image path from API response, fallback to default
+            const imageUrl = data.image_path || '/images/default-image.jpg';
+            
+            let platformsHtml = '';
+            if (data.release?.platforms) {
+                platformsHtml = '<ul style="list-style: none; padding: 0;">';
+                data.release.platforms.forEach(p => {
+                    platformsHtml += `<li>• ${p.name} (${p.region}) - ${p.release_date}</li>`;
+                });
+                platformsHtml += '</ul>';
+            }
+
+            // Extract patches from play_today entries - organized by platform
+            let patchesHtml = '';
+            if (data.play_today && data.play_today.length > 0) {
+                const patchesByPlatform = {};
+                
+                data.play_today.forEach(entry => {
+                    const platformName = entry.platform;
+                    
+                    if (!patchesByPlatform[platformName]) {
+                        patchesByPlatform[platformName] = [];
+                    }
+                    
+                    if (entry.recommended_patches && entry.recommended_patches.length > 0) {
+                        entry.recommended_patches.forEach(patch => {
+                            patchesByPlatform[platformName].push({
+                                name: patch.name,
+                                description: patch.description,
+                                url: patch.url || null
+                            });
+                        });
+                    }
+                });
+                
+                const platformKeys = Object.keys(patchesByPlatform);
+                
+                if (platformKeys.length > 0) {
+                    patchesHtml = `
+                        <div class="patches-section">
+                            <h3>Recommended Patches & Mods</h3>
+                            ${platformKeys.map(platform => `
+                                <div class="patch-platform-group">
+                                    <div class="platform-header">
+                                        <span class="platform-name">${platform}</span>
+                                    </div>
+                                    ${patchesByPlatform[platform].map(patch => `
+                                        <div class="patch-card">
+                                            <div class="patch-header">
+                                                <span class="patch-name">${patch.name}</span>
+                                                ${patch.url ? '<span class="patch-badge">Download Available</span>' : '<span class="patch-badge" style="background: linear-gradient(135deg, #6b7280, #4b5563); font-size: 0.7rem;">Documentation Only</span>'}
+                                            </div>
+                                            <p class="patch-description">${patch.description}</p>
+                                            ${patch.url ? `
+                                                <div class="patch-links">
+                                                    <a href="${patch.url}" target="_blank" rel="noopener noreferrer" class="patch-link">Download Patch</a>
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else {
+                    patchesHtml = `
+                        <div class="patches-section">
+                            <h3>Recommended Patches & Mods</h3>
+                            <div class="no-patches">
+                                No additional patches or mods recommended for this game. The base version is ready to play!
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            let playTodayHtml = '';
+            if (data.play_today) {
+                playTodayHtml = '<div style="margin-top: 2rem;">';
+                data.play_today.forEach((entry, idx) => {
+                    playTodayHtml += `
+                        <div style="background: rgba(99,102,241,0.1); padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem;">
+                            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">${entry.platform}</h4>
+                            <p>${entry.details}</p>
+                        </div>
+                    `;
+                });
+                playTodayHtml += '</div>';
+            }
+
+            return `
+                <!-- Game Cover Image -->
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <img src="${imageUrl}" alt="${basicInfo.title || data.title || 'Game'} cover"
+                         style="max-width: 450px; max-height: 600px; object-fit: contain; border-radius: 16px; box-shadow: 0 12px 48px rgba(99,102,241,0.4);">
+                </div>
+                
+                <h2 class="modal-title">${basicInfo.title || data.title || 'Game Title'}</h2>
+                ${platformsHtml ? `<p class="modal-year">Released on: ${platformsHtml.replace(/<ul>|<\/ul>/g, '').replace(/• /g, '')}</p>` : ''}
+                
+                <div class="modal-section">
+                    <h3>Synopsis</h3>
+                    <p>${description.synopsis || 'No synopsis available.'}</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Key Features</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        ${(description.key_features || []).map(f => `<li>✓ ${f}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Long Description</h3>
+                    <p>${description.long_description || 'No description available.'}</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Legacy and Impact</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        ${(description.legacy_and_impact || []).map(l => `<li>• ${l}</li>`).join('')}
+                    </ul>
+                </div>
+
+                ${playTodayHtml}
+
+                <div class="modal-section">
+                    <h3>Genres</h3>
+                    <p>${(basicInfo.genres || []).join(', ') || 'N/A'}</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Themes</h3>
+                    <p>${(basicInfo.themes || []).join(', ') || 'N/A'}</p>
+                </div>
+
+                ${basicInfo.review ? `
+                <div class="modal-section">
+                    <h3>Critical Reception</h3>
+                    <p style="font-style: italic;">"${basicInfo.review}"</p>
+                    <p style="margin-top: 0.5rem;"><strong>Score:</strong> ${basicInfo.reception_score}/10</p>
+                </div>
+                ` : ''}
+
+                <div class="modal-section">
+                    <h3>Developers & Publishers</h3>
+                    <p><strong>Developed by:</strong> ${(basicInfo.developers || []).join(', ')}</p>
+                    <p><strong>Published by:</strong> ${(basicInfo.publishers || []).join(', ')}</p>
+                </div>
+
+                ${data.similar_games?.length ? `
+                <div class="modal-section">
+                    <h3>Similar Games</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        ${data.similar_games.map(g => `<li><a href="#" onclick="openGameModal('${g.url_slug.replace("/games/", "").replace("/", "-")}'); return false;">${g.title}</a></li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn btn-primary" onclick="closeGameModal()">Close</button>
+                </div>
+            `;
+        }
+
+        // Close game modal
+        function closeGameModal() {
+            document.getElementById('gameModal').classList.remove('active');
+        }
+
+        // Search functionality - fetches from API
+        const searchInput = document.getElementById('gameSearch');
+        const searchResults = document.getElementById('searchResults');
+
+        let searchTimeout;
+
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(searchTimeout);
+            
+            if (e.target.value.length < 2) {
+                hideSearchResults();
+                return;
+            }
+
+            // Debounce search
+            searchTimeout = setTimeout(() => {
+                performSearch(e.target.value.toLowerCase());
+            }, 300);
+        });
+
+        async function performSearch(query) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '<div style="padding:1rem;text-align:center;"><span class="loading-spinner"></span></div>';
+            resultsContainer.classList.add('active');
+
+            try {
+                const response = await fetch(`${API_BASE}/games/games/search?q=${encodeURIComponent(query)}&limit=10`);
+                if (!response.ok) throw new Error('Search failed');
+                
+                const data = await response.json();
+                displayResults(data.results, query);
+            } catch (error) {
+                console.error('Search error:', error);
+                // Fallback to local search
+                const results = allGames.filter(game => 
+                    game.title.toLowerCase().includes(query) ||
+                    (game.year && game.year.toString().includes(query))
+                );
+                displayResults(results, query);
+            }
+        }
+
+        function displayResults(results, query) {
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="no-results">No games found matching your search</div>';
+            } else {
+                searchResults.innerHTML = results.map(game => `
+                    <div class="search-result-item" onclick="openGameModal('${game.slug}'); hideSearchResults();">
+                        <div class="search-result-title">${game.title}</div>
+                        <div class="search-result-year">${game.year || 'N/A'} • ${game.platforms.slice(0,2).join(', ')}</div>
+                    </div>
+                `).join('');
+            }
+
+            searchResults.classList.add('active');
+        }
+
+        function hideSearchResults() {
+            searchResults.classList.remove('active');
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                hideSearchResults();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeGameModal();
+                hideSearchResults();
+            }
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax Effect for Background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelector('.bg-animation').style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Error handler when API is unavailable
+        function showError() {
+            const heroSubtitle = document.getElementById('hero-subtitle');
+            if (heroSubtitle) {
+                heroSubtitle.innerHTML += '<div class="error-message" style="margin-top:1rem;">Note: Some features may be limited. Please ensure the backend server is running.</div>';
+            }
+        }
+
+        // Counter Animation for Stats
+        const animateCounter = (element) => {
+            const target = parseInt(element.textContent.replace(/[^0-9]/g, ''));
+            if (!target) return;
+            
+            let count = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                count += increment;
+                if (count >= target) {
+                    element.textContent = target + (element.textContent.includes('+') ? '+' : '');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(count) + (element.textContent.includes('+') ? '+' : '');
+                }
+            }, 30);
+        };
+
+        // Trigger counter animation when stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.stat-number').forEach(animateCounter);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelector('.stats') && statsObserver.observe(document.querySelector('.stats'));
+    </script>
+</body>
+</html>

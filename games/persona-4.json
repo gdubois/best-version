@@ -1,0 +1,172 @@
+{
+    "$schema": "game_metadata_schema.json",
+    "basic_info": {
+        "url_slug": "/games/persona-4",
+        "title": "Persona 4",
+        "cover_url": "/images/persona-4.jpg",
+        "genres": [
+            "JRPG",
+            "Social Simulation"
+        ],
+        "themes": [
+            "Mystery",
+            "Supernatural",
+            "Teen Life"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.7,
+        "review": "A timeless classic that masterfully blends deep storytelling with engaging social mechanics.",
+        "developers": [
+            "Atlus"
+        ],
+        "publishers": [
+            "Atlus"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Shin Megami Tensei: Persona 4",
+            "Persona IV"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation 2",
+                "region": "Japan",
+                "release_date": "2008-07-10"
+            },
+            {
+                "name": "PlayStation 2",
+                "region": "North America",
+                "release_date": "2008-10-07"
+            },
+            {
+                "name": "PlayStation 2",
+                "region": "Europe",
+                "release_date": "2009-03-06"
+            },
+            {
+                "name": "PlayStation Portable",
+                "region": "Japan",
+                "release_date": "2011-11-26"
+            },
+            {
+                "name": "PlayStation Portable",
+                "region": "North America",
+                "release_date": "2012-10-16"
+            },
+            {
+                "name": "PlayStation Portable",
+                "region": "Europe",
+                "release_date": "2012-10-19"
+            },
+            {
+                "name": "PC",
+                "region": "Global",
+                "release_date": "2020-09-26"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Japan",
+                "release_date": "2021-05-25"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "North America",
+                "release_date": "2021-06-30"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Europe",
+                "release_date": "2021-06-30"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "Global",
+                "release_date": "2021-06-30"
+            },
+            {
+                "name": "Xbox One",
+                "region": "Global",
+                "release_date": "2021-06-30"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Persona",
+        "part_number": 4,
+        "previous_game": {
+            "title": "Persona 3",
+            "url_slug": "/games/persona-3"
+        },
+        "next_game": {
+            "title": "Persona 5",
+            "url_slug": "/games/persona-5"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Shin Megami Tensei V",
+            "url_slug": "/games/shin-megami-tensei-v"
+        },
+        {
+            "title": "Final Fantasy XV",
+            "url_slug": "/games/final-fantasy-xv"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch",
+            "details": "Persona 4 Golden edition available via Nintendo eShop",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "PC (Steam)",
+            "details": "Persona 4 Golden available on Steam",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 4",
+            "details": "Persona 4 Golden available on PlayStation Store",
+            "available_in_english": {
+                "official_localization": true
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "A group of high school students investigate the Midnight Channel phenomenon, which leads them to a supernatural realm called the TV World where they battle Shadows using Personas.",
+        "key_features": [
+            "Social Link system",
+            "Turn-based combat with elemental strengths and weaknesses",
+            "Dungeon exploration in the TV World",
+            "Calendar management for daily activities",
+            "Character-driven narrative with multiple endings"
+        ],
+        "long_description": "Persona 4 is a Japanese role-playing game developed by Atlus. The story follows a group of students at Yasogami High School who uncover a mystery surrounding missing persons linked to the Midnight Channel\u2014a mysterious TV phenomenon. They are transported to the TV World, where they battle Shadows using Personas\u2014manifestations of their psyche. The game features a calendar-based system that allows players to manage school days and social relationships (Social Links), which enhance combat abilities and story progression. Released for PlayStation 2 in 2008, it has since been re-released as Persona 4 Golden on multiple platforms including Nintendo Switch, PlayStation 4, Xbox One, and PC via Steam.",
+        "legacy_and_impact": [
+            "Pioneered the integration of social simulation elements into JRPGs",
+            "Influenced numerous subsequent games in the genre with its narrative depth",
+            "Widely regarded as one of the greatest RPGs of all time"
+        ]
+    }
+}

@@ -1,0 +1,71 @@
+# Git
+.git
+.gitignore
+
+# Environment
+.env
+
+# Node
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Testing
+coverage
+.nyc_output
+.jest
+jest-cache
+.test-results
+playwright-report
+
+# Build
+dist
+build
+*.tgz
+*.tar.gz
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.docker
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Documentation
+docs
+*.md
+!README.md
+
+# Scripts
+scripts/*.sh
+scripts/*.js
+
+# Backups
+backups
+
+# Temporary files
+tmp
+temp
+*.tmp
+
+# Playwright
+playwright-report
+test-results
+
+# Misc
+.DS_Store
+Thumbs.db

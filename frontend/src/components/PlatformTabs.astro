@@ -1,0 +1,198 @@
+---
+/**
+ * Platform Tabs Component - Updated to match index.html cyberpunk style
+ */
+
+interface Props {
+  selected?: 'desktop-console' | 'handheld';
+  onTabChange?: (platform: 'desktop-console' | 'handheld') => void;
+}
+
+const { selected = 'desktop-console', onTabChange } = Astro.props;
+
+function handleChange(platform: 'desktop-console' | 'handheld') {
+  if (onTabChange) {
+    onTabChange(platform);
+  }
+}
+
+function handleKeydown(event: KeyboardEvent, platform: 'desktop-console' | 'handheld') {
+  if (onTabChange) {
+    onTabChange(platform);
+  }
+}
+---
+
+<div class="platform-tabs-wrapper" role="group" aria-label="Platform selection">
+  <div class="platform-tabs" role="tablist" aria-label="Platform options">
+    <button
+      role="tab"
+      id="tab-desktop-console"
+      aria-selected={selected === 'desktop-console' ? 'true' : 'false'}
+      aria-controls="panel-desktop-console"
+      tabindex={selected === 'desktop-console' ? '0' : '-1'}
+      on:click={() => handleChange('desktop-console')}
+      on:keydown={(e) => handleKeydown(e.detail?.event || e, 'desktop-console')}
+      class={`platform-tab desktop-console ${selected === 'desktop-console' ? 'active' : ''}`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+      </svg>
+      Desktop/Console
+    </button>
+    <button
+      role="tab"
+      id="tab-handheld"
+      aria-selected={selected === 'handheld' ? 'true' : 'false'}
+      aria-controls="panel-handheld"
+      tabindex={selected === 'handheld' ? '0' : '-1'}
+      on:click={() => handleChange('handheld')}
+      on:keydown={(e) => handleKeydown(e.detail?.event || e, 'handheld')}
+      class={`platform-tab handheld ${selected === 'handheld' ? 'active' : ''}`}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+      </svg>
+      Handheld
+    </button>
+  </div>
+
+  <div class="tabs-panels" role="tabpanel" id="panel-desktop-console" tabindex="0">
+    <slot name="desktop-console" />
+  </div>
+  <div class="tabs-panels" role="tabpanel" id="panel-handheld" tabindex="0">
+    <slot name="handheld" />
+  </div>
+</div>
+
+<style>
+  /* Platform Tabs Component - Cyberpunk Style */
+
+  .platform-tabs-wrapper {
+    width: 100%;
+  }
+
+  .platform-tabs {
+    display: flex;
+    gap: 0;
+    background: var(--color-surface-secondary);
+    border-radius: var(--radius-xl);
+    padding: 4px;
+    border: 1px solid var(--color-border-default);
+  }
+
+  .platform-tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    color: var(--color-text-secondary);
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-default);
+    min-height: 2.75rem;
+    white-space: nowrap;
+  }
+
+  .platform-tab:hover {
+    color: var(--color-text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .platform-tab:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -2px;
+  }
+
+  /* Desktop/Console tab - Purple color coding */
+  .platform-tab.desktop-console {
+    color: var(--color-primary);
+  }
+
+  .platform-tab.desktop-console.active {
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-glow-primary);
+  }
+
+  .platform-tab.desktop-console:hover {
+    background-color: rgba(99, 102, 241, 0.1);
+  }
+
+  /* Handheld tab - Indigo color coding */
+  .platform-tab.handheld {
+    color: var(--color-secondary);
+  }
+
+  .platform-tab.handheld.active {
+    background: var(--gradient-accent);
+    color: var(--color-text-primary);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  }
+
+  .platform-tab.handheld:hover {
+    background-color: rgba(139, 92, 246, 0.1);
+  }
+
+  /* Panel styling */
+  .tabs-panels {
+    margin-top: var(--space-4);
+  }
+
+  /* Responsive - stack on mobile */
+  @media (max-width: 767px) {
+    .platform-tabs {
+      flex-direction: row;
+    }
+
+    .platform-tab {
+      font-size: var(--text-sm);
+      padding: var(--space-2) var(--space-3);
+    }
+  }
+
+  /* Desktop - ensure proper layout */
+  @media (min-width: 768px) {
+    .platform-tabs {
+      flex-direction: row;
+    }
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .platform-tab {
+      transition: none;
+    }
+
+    .platform-tab:hover {
+      background-color: transparent;
+    }
+  }
+</style>

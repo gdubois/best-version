@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroGame Curator - Design Directions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00ff88',
+                        secondary: '#9d4edd',
+                        accent: '#ffaa00',
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        surface: '#1a1a1a',
+                        surfaceHover: '#222222',
+                        text: '#ffffff',
+                        textMuted: '#a0a0a0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #050505;
+            color: #ffffff;
+        }
+        .direction-selector {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #0a0a0a;
+            border-bottom: 1px solid #222;
+        }
+        .direction-content {
+            min-height: calc(100vh - 60px);
+        }
+        .direction-showcase {
+            display: none;
+        }
+        .direction-showcase.active {
+            display: block;
+        }
+        .game-card {
+            transition: all 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 255, 136, 0.2);
+        }
+        .platform-badge {
+            font-size: 0.625rem;
+            padding: 0.125rem 0.375rem;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Direction Selector -->
+    <nav class="direction-selector">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-darker" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-lg">RetroGame Curator</span>
+                </div>
+                <div class="flex items-center space-x-1" id="directionButtons">
+                    <button class="direction-btn px-3 py-2 rounded-lg text-sm font-medium transition-colors" data-direction="1">Direction 1</button>
+                    <button class="direction-btn px-3 py-2 rounded-lg text-sm font-medium transition-colors" data-direction="2">Direction 2</button>
+                    <button class="direction-btn px-3 py-2 rounded-lg text-sm font-medium transition-colors" data-direction="3">Direction 3</button>
+                    <button class="direction-btn px-3 py-2 rounded-lg text-sm font-medium transition-colors" data-direction="4">Direction 4</button>
+                    <button class="direction-btn px-3 py-2 rounded-lg text-sm font-medium transition-colors" data-direction="5">Direction 5</button>
+                    <button class="direction-btn px-3 py-2 rounded-lg text-sm font-medium transition-colors" data-direction="6">Direction 6</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Direction 1: Classic Dark (Steam-inspired) -->
+    <div id="direction1" class="direction-showcase direction-showcase-1 active">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <!-- Hero Section -->
+            <div class="text-center py-12">
+                <h1 class="text-5xl font-bold mb-4">RetroGame Curator</h1>
+                <p class="text-xl text-textMuted mb-8">Find the best way to play any retro game</p>
+                <div class="max-w-2xl mx-auto relative">
+                    <input type="text" placeholder="Search for a game (e.g., 'Final Fantasy VII')"
+                        class="w-full px-6 py-4 rounded-xl bg-surface text-white placeholder-textMuted focus:outline-none focus:ring-2 focus:ring-primary text-lg">
+                    <svg class="w-6 h-6 absolute right-4 top-1/2 -translate-y-1/2 text-textMuted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Game Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Game Card 1 -->
+                <div class="game-card bg-surface rounded-xl overflow-hidden cursor-pointer">
+                    <div class="aspect-video bg-gradient-to-br from-purple-900 to-blue-900 flex items-center justify-center">
+                        <span class="text-4xl">🎮</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Final Fantasy VII</h3>
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="platform-badge bg-primary text-darker">PC</span>
+                            <span class="platform-badge bg-surface text-text">Mobile</span>
+                        </div>
+                        <p class="text-sm text-textMuted">Best: RetroArch + PCSX2</p>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card bg-surface rounded-xl overflow-hidden cursor-pointer">
+                    <div class="aspect-video bg-gradient-to-br from-green-900 to-emerald-900 flex items-center justify-center">
+                        <span class="text-4xl">🍄</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Super Mario Bros</h3>
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="platform-badge bg-primary text-darker">PC</span>
+                            <span class="platform-badge bg-surface text-text">Mobile</span>
+                        </div>
+                        <p class="text-sm text-textMuted">Best: bsnes core</p>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card bg-surface rounded-xl overflow-hidden cursor-pointer">
+                    <div class="aspect-video bg-gradient-to-br from-red-900 to-orange-900 flex items-center justify-center">
+                        <span class="text-4xl">🐉</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Metal Gear Solid</h3>
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="platform-badge bg-primary text-darker">PC</span>
+                            <span class="platform-badge bg-accent text-darker">Portable</span>
+                        </div>
+                        <p class="text-sm text-textMuted">Best: PPSSPP</p>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card bg-surface rounded-xl overflow-hidden cursor-pointer">
+                    <div class="aspect-video bg-gradient-to-br from-yellow-900 to-amber-900 flex items-center justify-center">
+                        <span class="text-4xl">⚔️</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Castlevania</h3>
+                        <div class="flex items-center space-x-2 mb-3">
+                            <span class="platform-badge bg-primary text-darker">PC</span>
+                            <span class="platform-badge bg-surface text-text">Mobile</span>
+                        </div>
+                        <p class="text-sm text-textMuted">Best: RetroArch + Genesis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Direction 2: Minimal Clean (GameNative-inspired) -->
+    <div id="direction2" class="direction-showcase direction-showcase-2">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <!-- Hero Section -->
+            <div class="text-center py-16">
+                <h1 class="text-4xl font-light mb-3">RetroGame Curator</h1>
+                <div class="max-w-xl mx-auto relative">
+                    <input type="text" placeholder="Search games..."
+                        class="w-full px-6 py-3 rounded-full bg-surface text-white placeholder-textMuted focus:outline-none focus:ring-2 focus:ring-primary text-base">
+                    <svg class="w-5 h-5 absolute right-4 top-1/2 -translate-y-1/2 text-textMuted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Game Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Game Card 1 -->
+                <div class="game-card cursor-pointer">
+                    <div class="aspect-[3/4] bg-gradient-to-br from-purple-800 to-blue-800 rounded-lg mb-2 flex items-center justify-center">
+                        <span class="text-3xl">🎮</span>
+                    </div>
+                    <h3 class="text-sm font-medium truncate">Final Fantasy VII</h3>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card cursor-pointer">
+                    <div class="aspect-[3/4] bg-gradient-to-br from-green-800 to-emerald-800 rounded-lg mb-2 flex items-center justify-center">
+                        <span class="text-3xl">🍄</span>
+                    </div>
+                    <h3 class="text-sm font-medium truncate">Super Mario Bros</h3>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card cursor-pointer">
+                    <div class="aspect-[3/4] bg-gradient-to-br from-red-800 to-orange-800 rounded-lg mb-2 flex items-center justify-center">
+                        <span class="text-3xl">🐉</span>
+                    </div>
+                    <h3 class="text-sm font-medium truncate">Metal Gear Solid</h3>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card cursor-pointer">
+                    <div class="aspect-[3/4] bg-gradient-to-br from-yellow-800 to-amber-800 rounded-lg mb-2 flex items-center justify-center">
+                        <span class="text-3xl">⚔️</span>
+                    </div>
+                    <h3 class="text-sm font-medium truncate">Castlevania</h3>
+                </div>
+
+                <!-- Game Card 5 -->
+                <div class="game-card cursor-pointer">
+                    <div class="aspect-[3/4] bg-gradient-to-br from-pink-800 to-rose-800 rounded-lg mb-2 flex items-center justify-center">
+                        <span class="text-3xl">💎</span>
+                    </div>
+                    <h3 class="text-sm font-medium truncate">Phantasy Star</h3>
+                </div>
+
+                <!-- Game Card 6 -->
+                <div class="game-card cursor-pointer">
+                    <div class="aspect-[3/4] bg-gradient-to-br from-cyan-800 to-teal-800 rounded-lg mb-2 flex items-center justify-center">
+                        <span class="text-3xl">👾</span>
+                    </div>
+                    <h3 class="text-sm font-medium truncate">Pac-Man</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Direction 3: EmuReady Technical (Information-Dense) -->
+    <div id="direction3" class="direction-showcase direction-showcase-3">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold mb-1">RetroGame Curator</h1>
+                    <p class="text-textMuted text-sm">Expert recommendations for retro gaming</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <input type="text" placeholder="Search games..."
+                        class="px-4 py-2 rounded-lg bg-surface text-white placeholder-textMuted focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                    <button class="px-4 py-2 bg-primary text-darker rounded-lg font-medium text-sm">Submit</button>
+                </div>
+            </div>
+
+            <!-- Game List -->
+            <div class="space-y-4">
+                <!-- Game Row 1 -->
+                <div class="game-card bg-surface rounded-lg p-4 cursor-pointer hover:bg-surfaceHover">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-24 h-24 bg-gradient-to-br from-purple-800 to-blue-800 rounded-lg flex-shrink-0 flex items-center justify-center">
+                            <span class="text-2xl">🎮</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <h3 class="font-bold text-lg">Final Fantasy VII</h3>
+                                <span class="platform-badge bg-primary text-darker">TV</span>
+                                <span class="platform-badge bg-surface text-text">Mobile</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-x-8 gap-y-1 text-sm">
+                                <span class="text-textMuted">Best for TV:</span>
+                                <span class="font-mono">RetroArch + PCSX2 (2x upscale)</span>
+                                <span class="text-textMuted">Best for Mobile:</span>
+                                <span class="font-mono">DuckStation</span>
+                                <span class="text-textMuted">Version:</span>
+                                <span class="font-mono">v1.13+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Row 2 -->
+                <div class="game-card bg-surface rounded-lg p-4 cursor-pointer hover:bg-surfaceHover">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-24 h-24 bg-gradient-to-br from-green-800 to-emerald-800 rounded-lg flex-shrink-0 flex items-center justify-center">
+                            <span class="text-2xl">🍄</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <h3 class="font-bold text-lg">Super Mario Bros</h3>
+                                <span class="platform-badge bg-primary text-darker">TV</span>
+                                <span class="platform-badge bg-surface text-text">Mobile</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-x-8 gap-y-1 text-sm">
+                                <span class="text-textMuted">Best for TV:</span>
+                                <span class="font-mono">RetroArch + bsnes</span>
+                                <span class="text-textMuted">Best for Mobile:</span>
+                                <span class="font-mono">RetroArch + bsnes core</span>
+                                <span class="text-textMuted">Version:</span>
+                                <span class="font-mono">v1.50+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Row 3 -->
+                <div class="game-card bg-surface rounded-lg p-4 cursor-pointer hover:bg-surfaceHover">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-24 h-24 bg-gradient-to-br from-red-800 to-orange-800 rounded-lg flex-shrink-0 flex items-center justify-center">
+                            <span class="text-2xl">🐉</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <h3 class="font-bold text-lg">Metal Gear Solid</h3>
+                                <span class="platform-badge bg-accent text-darker">Portable</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-x-8 gap-y-1 text-sm">
+                                <span class="text-textMuted">Best Setup:</span>
+                                <span class="font-mono">PPSSPP (MGS is PSP!)</span>
+                                <span class="text-textMuted">Config:</span>
+                                <span class="font-mono">2x resolution upscale</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Direction 4: Modern Bold (High Contrast) -->
+    <div id="direction4" class="direction-showcase direction-showcase-4">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <!-- Hero Section -->
+            <div class="bg-gradient-to-r from-purple-900 via-purple-800 to-blue-900 rounded-2xl p-12 mb-12 text-center">
+                <h1 class="text-5xl font-bold mb-4">RetroGame Curator</h1>
+                <p class="text-xl text-white/80 mb-8">One clear answer. Every game.</p>
+                <div class="max-w-2xl mx-auto relative">
+                    <input type="text" placeholder="Search for a game (e.g., 'Final Fantasy VII')"
+                        class="w-full px-6 py-4 rounded-xl bg-white/10 backdrop-blur text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary text-lg border border-white/20">
+                    <svg class="w-6 h-6 absolute right-4 top-1/2 -translate-y-1/2 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Game Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Game Card 1 -->
+                <div class="game-card bg-gradient-to-br from-surface to-surfaceHover rounded-xl overflow-hidden border border-white/5 cursor-pointer">
+                    <div class="aspect-video bg-gradient-to-br from-purple-700 to-blue-700 flex items-center justify-center relative">
+                        <div class="absolute top-3 right-3 flex space-x-1">
+                            <span class="platform-badge bg-primary text-darker">TV</span>
+                            <span class="platform-badge bg-surface text-text">Mobile</span>
+                        </div>
+                        <span class="text-5xl">🎮</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-xl mb-3">Final Fantasy VII</h3>
+                        <div class="border-t border-white/10 pt-4">
+                            <p class="text-primary font-mono text-sm mb-1">PC: RetroArch + PCSX2</p>
+                            <p class="text-textMuted text-xs">2x resolution upscale recommended</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card bg-gradient-to-br from-surface to-surfaceHover rounded-xl overflow-hidden border border-white/5 cursor-pointer">
+                    <div class="aspect-video bg-gradient-to-br from-green-700 to-emerald-700 flex items-center justify-center relative">
+                        <div class="absolute top-3 right-3 flex space-x-1">
+                            <span class="platform-badge bg-primary text-darker">TV</span>
+                            <span class="platform-badge bg-surface text-text">Mobile</span>
+                        </div>
+                        <span class="text-5xl">🍄</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-xl mb-3">Super Mario Bros</h3>
+                        <div class="border-t border-white/10 pt-4">
+                            <p class="text-primary font-mono text-sm mb-1">RetroArch + bsnes core</p>
+                            <p class="text-textMuted text-xs">Best accuracy emulator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card bg-gradient-to-br from-surface to-surfaceHover rounded-xl overflow-hidden border border-white/5 cursor-pointer">
+                    <div class="aspect-video bg-gradient-to-br from-red-700 to-orange-700 flex items-center justify-center relative">
+                        <div class="absolute top-3 right-3 flex space-x-1">
+                            <span class="platform-badge bg-accent text-darker">Portable</span>
+                        </div>
+                        <span class="text-5xl">🐉</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-xl mb-3">Metal Gear Solid</h3>
+                        <div class="border-t border-white/10 pt-4">
+                            <p class="text-primary font-mono text-sm mb-1">PPSSPP</p>
+                            <p class="text-textMuted text-xs">MGS is PSP, not PS1!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card bg-gradient-to-br from-surface to-surfaceHover rounded-xl overflow-hidden border border-white/5 cursor-pointer">
+                    <div class="aspect-video bg-gradient-to-br from-yellow-700 to-amber-700 flex items-center justify-center relative">
+                        <div class="absolute top-3 right-3 flex space-x-1">
+                            <span class="platform-badge bg-primary text-darker">TV</span>
+                            <span class="platform-badge bg-surface text-text">Mobile</span>
+                        </div>
+                        <span class="text-5xl">⚔️</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold text-xl mb-3">Castlevania</h3>
+                        <div class="border-t border-white/10 pt-4">
+                            <p class="text-primary font-mono text-sm mb-1">RetroArch + Genesis Plus</p>
+                            <p class="text-textMuted text-xs">Best sound emulation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Direction 5: Retro Modern (Nostalgic Accents) -->
+    <div id="direction5" class="direction-showcase direction-showcase-5">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <!-- Header with retro accent -->
+            <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-6">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-darker" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">RetroGame Curator</h1>
+                        <p class="text-textMuted text-sm">Your guide to classic gaming</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <input type="text" placeholder="Search..."
+                        class="px-4 py-2 rounded-lg bg-surface text-white placeholder-textMuted focus:outline-none focus:ring-2 focus:ring-primary text-sm">
+                    <button class="px-4 py-2 bg-gradient-to-r from-primary to-accent text-darker rounded-lg font-medium text-sm">Submit</button>
+                </div>
+            </div>
+
+            <!-- Section Header -->
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold">Featured Games</h2>
+                <div class="flex items-center space-x-2">
+                    <span class="text-textMuted text-sm">Sort by:</span>
+                    <select class="bg-surface text-white text-sm rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option>Recently Added</option>
+                        <option>Popular</option>
+                        <option>A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Game Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Game Card 1 -->
+                <div class="game-card bg-surface rounded-xl overflow-hidden border border-white/5 cursor-pointer group">
+                    <div class="aspect-video bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="platform-badge bg-primary text-darker">TV</span>
+                        </div>
+                        <div class="absolute top-3 right-3">
+                            <span class="platform-badge bg-surface/80 text-text">Mobile</span>
+                        </div>
+                        <span class="text-5xl group-hover:scale-110 transition-transform">🎮</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Final Fantasy VII</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-textMuted">PCSX2 | RetroArch</span>
+                            <span class="text-xs text-primary">View Setup →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="game-card bg-surface rounded-xl overflow-hidden border border-white/5 cursor-pointer group">
+                    <div class="aspect-video bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="platform-badge bg-primary text-darker">TV</span>
+                        </div>
+                        <div class="absolute top-3 right-3">
+                            <span class="platform-badge bg-surface/80 text-text">Mobile</span>
+                        </div>
+                        <span class="text-5xl group-hover:scale-110 transition-transform">🍄</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Super Mario Bros</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-textMuted">bsnes | RetroArch</span>
+                            <span class="text-xs text-primary">View Setup →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="game-card bg-surface rounded-xl overflow-hidden border border-white/5 cursor-pointer group">
+                    <div class="aspect-video bg-gradient-to-br from-red-900 via-red-800 to-orange-900 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="platform-badge bg-accent text-darker">Portable</span>
+                        </div>
+                        <span class="text-5xl group-hover:scale-110 transition-transform">🐉</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Metal Gear Solid</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-textMuted">PPSSPP</span>
+                            <span class="text-xs text-primary">View Setup →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 4 -->
+                <div class="game-card bg-surface rounded-xl overflow-hidden border border-white/5 cursor-pointer group">
+                    <div class="aspect-video bg-gradient-to-br from-yellow-900 via-yellow-800 to-amber-900 flex items-center justify-center relative">
+                        <div class="absolute top-3 left-3">
+                            <span class="platform-badge bg-primary text-darker">TV</span>
+                        </div>
+                        <div class="absolute top-3 right-3">
+                            <span class="platform-badge bg-surface/80 text-text">Mobile</span>
+                        </div>
+                        <span class="text-5xl group-hover:scale-110 transition-transform">⚔️</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Castlevania</h3>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-textMuted">Genesis Plus GX</span>
+                            <span class="text-xs text-primary">View Setup →</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Direction 6: Split Platform (TV vs Portable Focus) -->
+    <div id="direction6" class="direction-showcase direction-showcase-6">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-darker" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-xl">RetroGame Curator</span>
+                </div>
+                <div class="flex items-center space-x-2 bg-surface rounded-lg p-1">
+                    <button class="px-4 py-2 bg-primary text-darker rounded-md font-medium text-sm">TV Setup</button>
+                    <button class="px-4 py-2 text-textMuted hover:text-white font-medium text-sm">Portable</button>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="max-w-2xl mx-auto mb-12">
+                <input type="text" placeholder="Search for a game..."
+                    class="w-full px-6 py-4 rounded-xl bg-surface text-white placeholder-textMuted focus:outline-none focus:ring-2 focus:ring-primary text-lg">
+            </div>
+
+            <!-- Platform Split Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- TV Section -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                            <path d="M15 7v2H4v-2h11z"/>
+                        </svg>
+                        <h2 class="text-xl font-bold">Best for TV</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Game Row 1 -->
+                        <div class="game-card bg-surface rounded-lg p-4 cursor-pointer hover:bg-surfaceHover border-l-4 border-primary">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-800 to-blue-800 rounded-lg flex items-center justify-center">
+                                    <span class="text-2xl">🎮</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold mb-1">Final Fantasy VII</h3>
+                                    <p class="text-sm text-textMuted">RetroArch + PCSX2 backend</p>
+                                </div>
+                                <button class="px-4 py-2 bg-primary text-darker rounded-lg font-medium text-sm">View</button>
+                            </div>
+                        </div>
+
+                        <!-- Game Row 2 -->
+                        <div class="game-card bg-surface rounded-lg p-4 cursor-pointer hover:bg-surfaceHover border-l-4 border-primary">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-green-800 to-emerald-800 rounded-lg flex items-center justify-center">
+                                    <span class="text-2xl">🍄</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold mb-1">Super Mario Bros</h3>
+                                    <p class="text-sm text-textMuted">RetroArch + bsnes core</p>
+                                </div>
+                                <button class="px-4 py-2 bg-primary text-darker rounded-lg font-medium text-sm">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portable Section -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1v1a1 1 0 11-2 0v-1H9a1 1 0 110-2h1V8a1 1 0 112 0v1h1a1 1 0 011 1zM4.343 14.657a1 1 0 001.414 1.414l.707-.707a1 1 0 00-1.414-1.414l-.707.707zM6 10a1 1 0 112 0v1a1 1 0 11-2 0v-1zM7 14a1 1 0 10-2 0v1a1 1 0 102 0v-1z"/>
+                        </svg>
+                        <h2 class="text-xl font-bold">Best for Portable</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Game Row 1 -->
+                        <div class="game-card bg-surface rounded-lg p-4 cursor-pointer hover:bg-surfaceHover border-l-4 border-accent">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-red-800 to-orange-800 rounded-lg flex items-center justify-center">
+                                    <span class="text-2xl">🐉</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold mb-1">Metal Gear Solid</h3>
+                                    <p class="text-sm text-textMuted">PPSSPP emulator</p>
+                                </div>
+                                <button class="px-4 py-2 bg-accent text-darker rounded-lg font-medium text-sm">View</button>
+                            </div>
+                        </div>
+
+                        <!-- Game Row 2 -->
+                        <div class="game-card bg-surface rounded-lg p-4 cursor-pointer hover:bg-surfaceHover border-l-4 border-accent">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-16 h-16 bg-gradient-to-br from-yellow-800 to-amber-800 rounded-lg flex items-center justify-center">
+                                    <span class="text-2xl">⚔️</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold mb-1">Castlevania</h3>
+                                    <p class="text-sm text-textMuted">RetroArch + ProSystem</p>
+                                </div>
+                                <button class="px-4 py-2 bg-accent text-darker rounded-lg font-medium text-sm">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Direction switching
+        const directionButtons = document.querySelectorAll('.direction-btn');
+        const directionShowcases = document.querySelectorAll('.direction-showcase');
+
+        directionButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const direction = btn.dataset.direction;
+
+                // Update button states
+                directionButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-darker', 'font-bold');
+                    b.classList.add('text-textMuted', 'hover:text-white');
+                });
+                btn.classList.remove('text-textMuted', 'hover:text-white');
+                btn.classList.add('bg-primary', 'text-darker', 'font-bold');
+
+                // Update showcase
+                directionShowcases.forEach(showcase => {
+                    showcase.classList.remove('active');
+                });
+                document.getElementById(`direction${direction}`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const errorMessage = Astro.params?.error || '';
+---
+
+<Layout title="Admin Login - Best Version">
+  <main id="main-content" role="main" class="admin-login">
+    <section class="min-h-screen flex items-center justify-center py-12 px-4">
+      <div class="max-w-md w-full">
+        <div class="text-center mb-8">
+          <h1 class="text-h2 mb-2">Admin Login</h1>
+          <p class="text-textSecondary">Enter your admin token to access the dashboard</p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <form action="/api/admin/login" method="POST">
+            <div class="mb-6">
+              <label for="admin-token" class="block text-sm font-medium text-textPrimary mb-2">
+                Admin Token
+              </label>
+              <input
+                type="password"
+                id="admin-token"
+                name="token"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                placeholder="Enter admin token"
+                required
+                autocomplete="off"
+              />
+            </div>
+
+            ${errorMessage ? `<div class="mb-6 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg" role="alert">
+                <strong class="font-bold">Error: </strong>
+                <span>${errorMessage}</span>
+              </div>` : ''}
+
+            <button
+              type="submit"
+              class="w-full bg-purple-600 text-white py-3 px-4 rounded-lg hover:bg-purple-700 transition-colors font-semibold"
+            >
+              Login
+            </button>
+          </form>
+
+          <div class="mt-6 text-center">
+            <a href="/" class="text-sm text-textSecondary hover:text-primary">
+              Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .admin-login {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+  }
+</style>

@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SearchBar from '../components/SearchBar.astro';
+import EmptyState from '../components/EmptyState.astro';
+
+// Get search query from URL parameters
+const url = new URL(Astro.request.url);
+const query = url.searchParams.get('q') || '';
+
+// Load all games using Astro's glob import
+const gamesData = import.meta.glob('../../games/*.json', { eager: true });
+
+const games = Object.values(gamesData).map((module: any) => {
+  const data = module.default || module;
+  // Flatten the nested structure
+  return {
+    title: data.basic_info?.title || '',
+    slug: data.basic_info?.url_slug?.replace('/games/', '') || '',
+    description: {
+      synopsis: data.description?.synopsis || '',
+      long_description: data.description?.long_description || ''
+    },
+    platforms: data.release?.platforms?.map((p: any) => p.name) || [],
+    genres: data.basic_info?.genres || [],
+    image: data.basic_info?.cover_url || ''
+  };
+}).filter(Boolean);
+
+// Filter games based on search query
+let filteredGames = games;
+if (query) {
+  const normalizedQuery = query.toLowerCase().trim();
+  filteredGames = games.filter((game: any) => {
+    const title = (game.title || '').toLowerCase();
+    const description = (game.description?.synopsis || '').toLowerCase();
+    const platforms = (game.platforms || []).join(' ').toLowerCase();
+    const genres = (game.genres || []).join(' ').toLowerCase();
+    return (
+      title.includes(normalizedQuery) ||
+      description.includes(normalizedQuery) ||
+      platforms.includes(normalizedQuery) ||
+      genres.includes(normalizedQuery)
+    );
+  });
+}
+
+// Extract platform display info
+games.forEach((game: any) => {
+  // Determine primary platform category
+  const platformNames = game.platforms || [];
+  game.primaryPlatforms = platformNames.slice(0, 2).join(', ');
+});
+---
+
+<Layout title={query ? `Search: ${query}` : 'Search'}>
+  <main id="main-content" role="main" style="padding-top: 100px;">
+    <section class="section" aria-labelledby="search-heading">
+      <h1 id="search-heading" class="text-h2 mb-6 text-gradient-primary text-center">
+        Search Games
+      </h1>
+      <div class="max-w-2xl mx-auto mb-8">
+        <SearchBar value={query} />
+      </div>
+
+      <!-- Search Results Section -->
+      {query && (
+        <div class="mb-6">
+          <p class="text-center text-text-secondary">
+            {filteredGames.length} result{filteredGames.length !== 1 ? 's' : ''} for "{query}"
+          </p>
+        </div>
+      )}
+
+      <!-- Show results if any -->
+      {filteredGames.length > 0 && query && (
+        <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          {filteredGames.map((game: any) => (
+            <article class="game-card" data-testid="game" aria-label={game.title}>
+              <a href={`/games/${game.slug}`} class="game-card-link">
+                {game.image && (
+                  <div class="game-card-cover">
+                    <img
+                      src={game.image}
+                      alt={game.title}
+                      loading="lazy"
+                      class="game-card-image"
+                      onerror="this.src='https://placehold.co/400x533/1a1a2e/ffffff?text=No+Image'"
+                    />
+                  </div>
+                )}
+                <div class="game-card-content">
+                  <h2 class="game-card-title">{game.title}</h2>
+                  {game.platforms && game.platforms.length > 0 && (
+                    <div class="game-card-badges">
+                      {game.platforms.slice(0, 2).map((platform: string) => (
+                        <span class="badge badge-secondary">{platform}</span>
+                      ))}
+                      {game.platforms.length > 2 && (
+                        <span class="badge badge-secondary">+{game.platforms.length - 2}</span>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      )}
+
+      <!-- Show empty state if no search or no results -->
+      {(!query || filteredGames.length === 0) && (
+        <EmptyState
+          message={query
+            ? `No games found matching "${query}". Try a different search term.`
+            : 'Search our library of retro games'}
+          searchQuery={query}
+        />
+      )}
+    </section>
+  </main>
+</Layout>

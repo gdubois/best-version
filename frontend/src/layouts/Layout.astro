@@ -1,0 +1,105 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Best Version - The Ultimate Video Game History Archive" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="color-scheme" content="dark" />
+    <title>{title} | Best Version</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+      /* Embedded critical CSS for flash-of-unstyled-content prevention */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Rajdhani', sans-serif;
+        background: #0a0a0f;
+        color: #ffffff;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+
+    <!-- Skip to main content for accessibility -->
+    <a
+      href="#main-content"
+      class="skip-link"
+      style="position: absolute; left: -9999px; z-index: 9999; padding: 1rem; background: var(--color-primary); color: white; text-decoration: none; font-weight: bold;"
+      focus-style="outline: 3px solid var(--color-accent)"
+    >
+      Skip to main content
+    </a>
+
+    <!-- Navigation -->
+    <nav class="cyber-nav">
+      <a href="/" class="cyber-logo">BEST VERSION</a>
+
+      <!-- SVG Definitions for gradients -->
+      <svg style="position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="searchGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#6366f1; stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#8b5cf6; stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ec4899; stop-opacity:1" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <ul class="cyber-nav-links" role="list">
+        <li>
+          <a href="/" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="/search">Search</a>
+        </li>
+        <li>
+          <a href="/submit">Submit Game</a>
+        </li>
+        {title.includes('Admin') ? (
+          <li>
+            <a href="/admin">Admin</a>
+          </li>
+        ) : null}
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="container" role="main">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div style="font-family: 'Orbitron', sans-serif; font-size: 1.2rem; font-weight: 900; background: linear-gradient(135deg, #6366f1, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem; letter-spacing: 2px;">
+        BEST VERSION
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
+        <a href="/legal/privacy" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--duration-fast);">Privacy</a>
+        <a href="/legal/terms" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--duration-fast);">Terms</a>
+      </div>
+      <p>2026 Best Version. All rights reserved.</p>
+    </footer>
+
+    <!-- Live region for screen reader announcements -->
+    <div
+      class="live-region"
+      aria-live="polite"
+      aria-atomic="true"
+      role="status"
+    ></div>
+  </body>
+</html>

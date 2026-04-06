@@ -1,0 +1,140 @@
+{
+    "basic_info": {
+        "url_slug": "/games/fire-emblem-three-houses",
+        "title": "Fire Emblem: Three Houses",
+        "cover_url": "/images/fire-emblem-three-houses.jpg",
+        "genres": [
+            "Tactical Role-Playing"
+        ],
+        "themes": [
+            "War and Politics",
+            "School Life",
+            "Moral Choices",
+            "Romance",
+            "Military Strategy"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 9.0,
+        "review": "Fire Emblem: Three Houses is a masterpiece of tactical RPG design, combining deep character relationships, strategic combat, and meaningful choices that shape the story in multiple directions.",
+        "developers": [
+            "Koei Tecmo",
+            "Intelligent Systems"
+        ],
+        "publishers": [
+            "Nintendo"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30d5\u30a1\u30a4\u30a2\u30fc\u30a8\u30e0\u30d6\u30ec\u30e0 \u98a8\u82b1\u96ea\u6708 (Japanese)",
+            "FE3H",
+            "Fire Emblem: Three Houses - Complete Edition"
+        ],
+        "platforms": [
+            {
+                "name": "Nintendo Switch",
+                "region": "Worldwide",
+                "release_date": "2019-07-26"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Fire Emblem",
+        "part_number": 16,
+        "previous_game": {
+            "title": "Fire Emblem Fates",
+            "url_slug": "/games/fire-emblem-fates"
+        },
+        "next_game": {
+            "title": "Fire Emblem Engage",
+            "url_slug": "/games/fire-emblem-engage"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Persona 3 Reload",
+            "url_slug": "/games/persona-3-reload"
+        },
+        {
+            "title": "Fire Emblem: Awakening",
+            "url_slug": "/games/fire-emblem-awakening"
+        },
+        {
+            "title": "Dragon Quest XI",
+            "url_slug": "/games/dragon-quest-xi"
+        },
+        {
+            "title": "Disgaea 5 Complete",
+            "url_slug": "/games/disgaea-5-complete"
+        },
+        {
+            "title": "XCOM 2",
+            "url_slug": "/games/xcom-2"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Nintendo Switch (OLED/Standard)",
+            "details": "The definitive version with all DLC content available via Expansion Pass. Best experience in handheld mode for portability, or docked for better visuals.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Expansion Pass",
+                    "description": "Official DLC adding 4 waves of content including new characters (Hilda, Sylvain, etc.), story routes, and gameplay features"
+                },
+                {
+                    "name": "1.2.0 Update",
+                    "description": "Official update adding unit appearance customization and quality-of-life improvements"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Yuzu/Ryujinx",
+                    "optimal_settings": [
+                        "60 FPS patch (Ctrl+U)",
+                        "High resolution rendering",
+                        "Enable VSync for stability"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Skyline",
+                    "optimal_settings": [
+                        "Custom shader compilation",
+                        "Performance mode enabled"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "Byleth, a mercenary and professor at the Garreg Mach Monastery, must choose one of three houses to lead through a war-torn continent while managing relationships with students who will become their allies or enemies.",
+        "key_features": [
+            "Three distinct story routes based on house choice",
+            "Social simulation mechanics (teaching, bonding, romance)",
+            "Tactical turn-based combat with permadeath option",
+            "Multiple endings determined by player choices",
+            "Extensive character customization and relationship system"
+        ],
+        "long_description": "Fire Emblem: Three Houses, developed by Koei Tecmo's Omega Force team in collaboration with Intelligent Systems, was released for Nintendo Switch on July 26, 2019. It is the sixteenth main installment in the Fire Emblem franchise and represents a major evolution of the series' formula. Players take on the role of Byleth, a mercenary turned professor at Garreg Mach Monastery, where they teach students from three noble houses while navigating political intrigue and an impending war. The game features unprecedented depth with three distinct story routes (Golden Deer, Black Eagles, Blue Lions), each offering unique characters, storylines, and endings. The Expansion Pass adds additional content including the Crimson Flower route, new playable characters, and gameplay enhancements. With over 100 hours of gameplay for a complete playthrough including all DLC, it's widely considered one of the best tactical RPGs ever made.",
+        "legacy_and_impact": [
+            "Became the best-selling Fire Emblem game in history",
+            "Revolutionized the series with social simulation mechanics",
+            "Set new standards for character depth and relationship systems",
+            "The Expansion Pass became a model for DLC integration",
+            "Continues to receive community support years after release"
+        ]
+    }
+}

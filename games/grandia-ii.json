@@ -1,0 +1,248 @@
+{
+    "basic_info": {
+        "url_slug": "/games/grandia-ii",
+        "title": "Grandia II",
+        "cover_url": "/images/grandia-ii.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Adventure",
+            "Good vs Evil",
+            "Redemption",
+            "Ancient Gods",
+            "Coming of Age"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 9.0,
+        "review": "Grandia II is a masterful sequel praised for its refined battle system, mature storytelling, and stunning visuals. Its IP-based combat mechanics and memorable characters set new standards for JRPGs of the early 2000s.",
+        "developers": [
+            "Game Arts"
+        ],
+        "publishers": [
+            "Game Arts",
+            "Enix",
+            "Ubisoft",
+            "GungHo Online Entertainment"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30b0\u30e9\u30f3\u30c7\u30a3\u30a2II (Kuronia Ts\u016b)",
+            "Grandia II Anniversary Edition",
+            "Grandia II HD Remaster"
+        ],
+        "platforms": [
+            {
+                "name": "Dreamcast",
+                "region": "Japan",
+                "release_date": "2000-08-03"
+            },
+            {
+                "name": "Dreamcast",
+                "region": "North America",
+                "release_date": "2000-12-06"
+            },
+            {
+                "name": "Dreamcast",
+                "region": "Europe",
+                "release_date": "2001-02-23"
+            },
+            {
+                "name": "PlayStation 2",
+                "region": "Japan",
+                "release_date": "2002-01-28"
+            },
+            {
+                "name": "PlayStation 2",
+                "region": "North America",
+                "release_date": "2002-03-12"
+            },
+            {
+                "name": "PlayStation 2",
+                "region": "Europe",
+                "release_date": "2002-04-05"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2015-08-24"
+            },
+            {
+                "name": "Nintendo Switch",
+                "region": "Worldwide",
+                "release_date": "2019-08-16"
+            },
+            {
+                "name": "Windows (Steam)",
+                "region": "Worldwide",
+                "release_date": "2019-10-15"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "Worldwide",
+                "release_date": "2024-03-26"
+            },
+            {
+                "name": "Xbox One",
+                "region": "Worldwide",
+                "release_date": "2024-03-26"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Grandia",
+        "part_number": 2,
+        "previous_game": {
+            "title": "Grandia",
+            "url_slug": "/games/grandia"
+        },
+        "next_game": {
+            "title": "Grandia III",
+            "url_slug": "/games/grandia-iii"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Xenoblade Chronicles",
+            "url_slug": "/games/xenoblade-chronicles"
+        },
+        {
+            "title": "Tales of Symphonia",
+            "url_slug": "/games/tales-of-symphonia"
+        },
+        {
+            "title": "Star Ocean: The Second Story",
+            "url_slug": "/games/star-ocean-the-second-story"
+        },
+        {
+            "title": "Grandia",
+            "url_slug": "/games/grandia"
+        },
+        {
+            "title": "Final Fantasy X",
+            "url_slug": "/games/final-fantasy-x"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Dreamcast",
+            "details": "The definitive original version with superior graphics, better frame rates, and authentic Dreamcast experience. Features the complete soundtrack on a second disc in some releases.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "Flycast",
+                    "optimal_settings": [
+                        "High resolution rendering (2x or 3x)",
+                        "Texture filtering enabled",
+                        "Enable audio buffering for best compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "Flycast",
+                    "optimal_settings": [
+                        "Custom button mapping for touchscreen",
+                        "Save state slots enabled",
+                        "Performance mode for smoother gameplay"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Nintendo Switch / Windows (Steam)",
+            "details": "HD Remaster version with enhanced visuals, widescreen support, and multiple language options. Based on Anniversary Edition code with additional fixes.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "HD Remaster Bug Fix Patch",
+                    "description": "Official patch addressing various bugs including localization errors and game freezing issues (version 1.01.00+)",
+                    "url": "https://store.steampowered.com/app/330390/Grandia_II_HD_Remaster/"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "Windows (Anniversary Edition)",
+            "details": "Enhanced PC port with visual upgrades, Japanese voice option, and additional difficulty level. Includes Steam achievements and cloud saves.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "HQ Music Mod",
+                    "description": "Replaces up to 130 sound files with higher quality 44.1kHz audio for improved music fidelity",
+                    "url": "https://community.pcgamingwiki.com/files/file/882-grandia-ii-anniversary-edition-hq-music-mod"
+                }
+            ],
+            "emulators": []
+        },
+        {
+            "platform": "PlayStation 2",
+            "details": "Inferior port with reduced textures, graphical glitches, and performance issues. Not recommended unless playing on original hardware.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "PCSX2",
+                    "optimal_settings": [
+                        "High resolution rendering (2x or 3x)",
+                        "Texture filtering enabled",
+                        "Fast memory access"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "Custom button mapping for touchscreen",
+                        "Save state slots enabled",
+                        "Performance mode for smoother gameplay"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "A mercenary named Ryudo is hired to protect a songstress named Elena, uncovering a conspiracy involving ancient gods Granas and Valmar while battling his own brother Melfice.",
+        "key_features": [
+            "Refined IP-based real-time battle system with critical hits and combo attacks",
+            "First Grandia game with fully three-dimensional graphics",
+            "Anger system for Millenia character that triggers AI-controlled power mode",
+            "Skill Books and Mana Eggs for customizable character progression",
+            "Multiple endings based on player choices and completion order"
+        ],
+        "long_description": "Grandia II, developed by Game Arts and released in August 2000 for the Dreamcast, is widely considered one of the finest JRPGs of its generation. The game was designed to be more mature than its predecessor while maintaining the series' signature charm and innovative combat mechanics. Composer Noriyuki Iwadare returned to create an acclaimed soundtrack that blended orchestral arrangements with electronic elements. The story follows Ryudo, a Geohound mercenary, as he escorts Elena, a Songstress of the Church of Granas, on a journey that reveals dark secrets about the world's creation and the war between the gods Granas and Valmar. The game received overwhelmingly positive reviews, earning 90/100 on Metacritic for the Dreamcast version and an Editor's Choice from IGN. Critics praised its battle system as 'arguably the most advanced in play today' while noting some linearity in dungeon design.",
+        "legacy_and_impact": [
+            "Considered one of the greatest Dreamcast games ever made",
+            "Refined the IP-based combat system that became series signature",
+            "Featured prominently in IGN's top PlayStation/Dreamcast game lists",
+            "Maintained strong cult following with HD remaster releases decades later",
+            "Influenced battle system design in numerous subsequent JRPGs"
+        ]
+    }
+}

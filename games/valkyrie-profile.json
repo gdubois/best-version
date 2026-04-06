@@ -1,0 +1,239 @@
+{
+    "basic_info": {
+        "url_slug": "/games/valkyrie-profile",
+        "title": "Valkyrie Profile",
+        "cover_url": "/images/valkyrie-profile.jpg",
+        "genres": [
+            "Role-Playing Game (RPG)"
+        ],
+        "themes": [
+            "Norse Mythology",
+            "Fate and Destiny",
+            "Sacrifice",
+            "War Between Gods"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 4,
+        "reception_score": 8.7,
+        "review": "Valkyrie Profile is a unique and ambitious JRPG with a complex battle system, deep narrative about fate and sacrifice, and memorable characters. Its innovative mechanics and emotional storytelling have earned it a cult following among RPG enthusiasts.",
+        "developers": [
+            "tri-Ace"
+        ],
+        "publishers": [
+            "Enix",
+            "Square Enix"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "Valkyrie Profile: Lenneth (PSP version)",
+            "\u30f4\u30a1\u30eb\u30ad\u30ea\u30fc\u30d7\u30ed\u30d5\u30a1\u30a4\u30eb (Japanese title)"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation",
+                "region": "Japan",
+                "release_date": "1999-12-22"
+            },
+            {
+                "name": "PlayStation",
+                "region": "North America",
+                "release_date": "2000-08-29"
+            },
+            {
+                "name": "PlayStation Portable (PSP)",
+                "region": "Japan",
+                "release_date": "2006-03-02"
+            },
+            {
+                "name": "PlayStation Portable (PSP)",
+                "region": "North America",
+                "release_date": "2006-07-18"
+            },
+            {
+                "name": "PlayStation Portable (PSP)",
+                "region": "Europe",
+                "release_date": "2007-04-27"
+            },
+            {
+                "name": "iOS",
+                "region": "Worldwide",
+                "release_date": "2018-03-22"
+            },
+            {
+                "name": "Android",
+                "region": "Worldwide",
+                "release_date": "2018-05-28"
+            },
+            {
+                "name": "PlayStation 4",
+                "region": "Worldwide",
+                "release_date": "2022-12-22"
+            },
+            {
+                "name": "PlayStation 5",
+                "region": "Worldwide",
+                "release_date": "2022-12-22"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Valkyrie Profile",
+        "part_number": 1,
+        "previous_game": null,
+        "next_game": {
+            "title": "Valkyrie Profile 2: Silmeria",
+            "url_slug": "/games/valkyrie-profile-2-silmeria"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Chrono Trigger",
+            "url_slug": "/games/chrono-trigger"
+        },
+        {
+            "title": "Valkyrie Profile: Covenant of the Plume",
+            "url_slug": "/games/valkyrie-profile-covenant-of-the-plume"
+        },
+        {
+            "title": "Star Ocean: Till the End of Time",
+            "url_slug": "/games/star-ocean-till-the-end-of-time"
+        },
+        {
+            "title": "Xenogears",
+            "url_slug": "/games/xenogears"
+        },
+        {
+            "title": "Vagrant Story",
+            "url_slug": "/games/vagrant-story"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation (PS1)",
+            "details": "The original English version with quality of life improvements including sortable inventory, better menu functionality, and more straightforward true ending requirements. Features the best sprite work and sound design that aged well.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Chinese Seraphic Gate Patch",
+                    "description": "Fan translation patch that adds new content to the Seraphic Gate including powerful weapons and items not available in the original English release"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "ePSXe",
+                    "optimal_settings": [
+                        "High-resolution rendering",
+                        "Texture filtering enabled",
+                        "Accurate CPU timing"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Save state slots enabled",
+                        "High-resolution rendering"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "PlayStation Portable (PSP)",
+            "details": "Enhanced port with CGI cutscenes replacing anime scenes, additional dungeons and characters for extra replayability. Based on Japanese version but includes improved translation.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [
+                {
+                    "name": "Undub Patch by Mugi",
+                    "description": "Restores Japanese voice acting in cutscenes (note: not a complete undub as some English voices remain)"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "PPSSPP",
+                    "optimal_settings": [
+                        "High-resolution rendering",
+                        "Texture scaling enabled",
+                        "Fast forward for cutscenes"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "PPSSPP",
+                    "optimal_settings": [
+                        "Custom button mapping",
+                        "Save state slots enabled",
+                        "High-resolution rendering"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "iOS/Android (Mobile)",
+            "details": "Modern port with high-resolution graphics, revamped UI, character portraits, and quality of life features like auto-battle and cutscene skipping. Touchscreen controls can be challenging for platforming sections.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "BlueStacks",
+                    "optimal_settings": [
+                        "OpenGL rendering mode",
+                        "ARM ABI setting for compatibility",
+                        "Controller support enabled"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "PlayStation 4/5",
+            "details": "PSP port with software emulation, includes save states and rewind features. Visuals are mixed in reception compared to original PS1 version.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "Lenneth Valkyrie is tasked by the gods Odin and Freya to recruit fallen warriors (einherjar) to fight in Ragnarok against the Vanir. As she journeys through Midgard, she discovers tragic stories of heroes while learning about her own forgotten past as a human named Platina.",
+        "key_features": [
+            "Unique turn-based battle system with simultaneous party attacks",
+            "Three different endings based on player choices and actions",
+            "Complex 'Seal Value' mechanic affecting story progression",
+            "Seraphic Gate optional dungeon with powerful rewards",
+            "Character designs by tri-Ace's signature art style"
+        ],
+        "long_description": "Valkyrie Profile, developed by tri-Ace and published by Enix in 1999, is a groundbreaking JRPG that blends Norse mythology with an emotionally complex narrative about fate, sacrifice, and the consequences of divine intervention. Players control Lenneth Valkyrie, a valkyrie tasked with recruiting fallen warriors to fight in Ragnarok\u2014the final battle between the \u00c6sir (gods) and Vanir (giants). The game features a unique turn-based combat system where the entire party acts simultaneously during each turn, combined with strategic resource management through the 'Seal Value' mechanic that determines which ending players achieve. With three distinct endings (C, B, and A), multiple difficulty levels affecting available content, and an optional Seraphic Gate dungeon accessible after completing all story paths, Valkyrie Profile offers exceptional replayability. The English PS1 version is particularly praised for quality of life improvements over the Japanese original, including sortable inventory and better menu functionality. Despite its cult status and limited availability (original copies can sell for hundreds of dollars), the game has been re-released on PSP, mobile platforms, and PlayStation 4/5, ensuring new generations can experience this ambitious RPG masterpiece.",
+        "legacy_and_impact": [
+            "Established tri-Ace as a premier JRPG developer alongside Square",
+            "Influenced narrative complexity in later Valkyrie Profile sequels",
+            "Pioneered the three-ending structure in Japanese RPGs",
+            "Featured one of the most memorable soundtracks by Motoi Sakuraba",
+            "Remains highly regarded among retro RPG enthusiasts decades after release"
+        ]
+    }
+}

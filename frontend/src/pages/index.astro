@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GameCard from '../components/GameCard.astro';
+import SearchBar from '../components/SearchBar.astro';
+---
+
+<Layout title="Home">
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="page-title">
+      <div class="max-w-3xl">
+        <h1 id="page-title" class="text-h1 text-gradient-primary mb-4">
+          The Ultimate Video Game History Archive
+        </h1>
+        <p class="text-body text-secondary mb-8" style="font-size: 1.25rem; line-height: 1.6;">
+          Discover the definitive versions of gaming's greatest classics. Every game, every era, one perfect edition.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#games" class="btn btn-primary">
+            <svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <circle cx="12" cy="12" r="2"/>
+              <path d="M6 12h.01M18 12h.01"/>
+            </svg>
+            Explore Games
+          </a>
+          <button class="btn btn-secondary" onclick="window.location.href='/submit'">Submit a Game</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section" style="padding: 4rem 3rem; background: rgba(99, 102, 241, 0.05);">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Games Catalogued</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">7</div>
+            <div class="stat-label">Platforms Supported</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Curated Versions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">24x7</div>
+            <div class="stat-label">Always Accessible</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section id="games" class="section" aria-labelledby="discover-heading">
+      <div class="container">
+        <h2 id="discover-heading" class="section-title">
+          Featured Classics
+        </h2>
+        <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <GameCard
+            title="Final Fantasy VII"
+            slug="final-fantasy-vii"
+            platforms={['desktop-console', 'handheld']}
+            featured={true}
+          />
+          <GameCard
+            title="The Legend of Zelda: Ocarina of Time"
+            slug="zelda-ocarina-of-time"
+            platforms={['desktop-console']}
+            featured={true}
+          />
+          <GameCard
+            title="Chrono Trigger"
+            slug="chrono-trigger"
+            platforms={['desktop-console', 'handheld']}
+            featured={true}
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" style="background: rgba(99, 102, 241, 0.05);" aria-labelledby="features-heading">
+      <div class="container">
+        <h2 id="features-heading" class="section-title">
+          Why Choose Best Version?
+        </h2>
+        <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem;">
+          <div style="text-align: center;">
+            <div class="modern-icon" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: transparent; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="url(#searchGradient)" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="text-h4 mb-3" style="font-family: 'Orbitron', sans-serif;">Curated Excellence</h3>
+            <p class="text-secondary">Every game features our expertly selected best version, ensuring optimal gameplay and experience.</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="modern-icon" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: transparent; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="url(#searchGradient)" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-h4 mb-3" style="font-family: 'Orbitron', sans-serif;">Comprehensive History</h3>
+            <p class="text-secondary">Deep dive into gaming's evolution with detailed information about each title and its impact.</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="modern-icon" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: transparent; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="url(#searchGradient)" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h3 class="text-h4 mb-3" style="font-family: 'Orbitron', sans-serif;">Fast & Responsive</h3>
+            <p class="text-secondary">Lightning-fast loading times and smooth navigation across all devices.</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="modern-icon" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: transparent; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="url(#searchGradient)" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="M21 21l-4.35-4.35"/>
+              </svg>
+            </div>
+            <h3 class="text-h4 mb-3" style="font-family: 'Orbitron', sans-serif;">Advanced Search</h3>
+            <p class="text-secondary">Find exactly what you're looking for with our powerful search capabilities.</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="modern-icon" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: transparent; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="url(#searchGradient)" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h3 class="text-h4 mb-3" style="font-family: 'Orbitron', sans-serif;">Rich Data</h3>
+            <p class="text-secondary">Access detailed JSON data for each game including screenshots, reviews, and technical specs.</p>
+          </div>
+
+          <div style="text-align: center;">
+            <div class="modern-icon" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: transparent; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="url(#searchGradient)" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <h3 class="text-h4 mb-3" style="font-family: 'Orbitron', sans-serif;">Global Community</h3>
+            <p class="text-secondary">Join thousands of gaming enthusiasts sharing knowledge and preserving history.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

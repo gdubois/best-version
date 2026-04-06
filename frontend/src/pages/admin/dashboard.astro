@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SubmissionList from '../../components/admin/SubmissionList.astro';
+
+const adminToken = Astro.params?.token || '';
+const isAuthenticated = adminToken === Astro.locals.adminToken;
+
+if (!isAuthenticated && import.meta.env.PROD) {
+  Astro.redirect('/admin/login');
+}
+
+// Get all submissions for the dashboard
+const submissionsPath = '../../../submissions/index.json';
+let submissions = [];
+let pendingCount = 0;
+let approvedCount = 0;
+let rejectedCount = 0;
+
+try {
+  const submissionsFile = await import(submissionsPath);
+  submissions = submissionsFile.default || [];
+
+  pendingCount = submissions.filter((s: any) => s.status === 'pending').length;
+  approvedCount = submissions.filter((s: any) => s.status === 'approved').length;
+  rejectedCount = submissions.filter((s: any) => s.status === 'rejected').length;
+} catch {
+  submissions = [];
+}
+---
+
+<Layout title="Admin Dashboard - Best Version">
+  <main id="main-content" role="main" class="admin-dashboard">
+    <section class="py-8">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h1 class="text-h2">Admin Dashboard</h1>
+          <a href="/" class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Site
+          </a>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <div class="stat-card">
+            <div class="stat-icon bg-blue-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="stat-value">{approvedCount}</div>
+            <div class="stat-label">Approved</div>
+          </div>
+
+          <div class="stat-card stat-card-pending">
+            <div class="stat-icon bg-yellow-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </div>
+            <div class="stat-value">{pendingCount}</div>
+            <div class="stat-label">Pending Review</div>
+          </div>
+
+          <div class="stat-card stat-card-rejected">
+            <div class="stat-icon bg-red-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <div class="stat-value">{rejectedCount}</div>
+            <div class="stat-label">Rejected</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon bg-green-100">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+            </div>
+            <div class="stat-value">{submissions.length}</div>
+            <div class="stat-label">Total Submissions</div>
+          </div>
+        </div>
+
+        <!-- Submissions List -->
+        <section aria-labelledby="submissions-heading">
+          <h2 id="submissions-heading" class="text-h3 mb-4">Recent Submissions</h2>
+          <SubmissionList submissions={submissions} />
+        </section>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .admin-dashboard {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+    min-height: 100vh;
+    padding: 4rem 1rem;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-card stat-card-pending {
+    border-top: 4px solid #f59e0b;
+  }
+
+  .stat-card stat-card-rejected {
+    border-top: 4px solid #ef4444;
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6366f1;
+  }
+
+  .stat-icon.bg-yellow-100 {
+    background: #fef3c7;
+    color: #f59e0b;
+  }
+
+  .stat-icon.bg-red-100 {
+    background: #fee2e2;
+    color: #ef4444;
+  }
+
+  .stat-icon.bg-green-100 {
+    background: #d1fae5;
+    color: #10b981;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

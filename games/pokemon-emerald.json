@@ -1,0 +1,238 @@
+{
+    "basic_info": {
+        "url_slug": "/games/pokemon-emerald",
+        "title": "Pok\u00e9mon Emerald Version",
+        "cover_url": "/images/pokemon-emerald.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Adventure",
+            "Collection",
+            "Friendship",
+            "Legendary Creatures"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 8.5,
+        "review": "Pok\u00e9mon Emerald Version is the definitive Gen III Pok\u00e9mon experience, featuring the Battle Frontier, Rayquaza as a central plot element, and numerous improvements over Ruby and Sapphire that make it the best version to play.",
+        "developers": [
+            "Game Freak"
+        ],
+        "publishers": [
+            "Nintendo",
+            "The Pok\u00e9mon Company"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30dd\u30b1\u30c3\u30c8\u30e2\u30f3\u30b9\u30bf\u30fc\u30a8\u30e1\u30e9\u30eb\u30c9 (Pocket Monsters Emerald)",
+            "Pok\u00e9mon Emerald"
+        ],
+        "platforms": [
+            {
+                "name": "Game Boy Advance",
+                "region": "Japan",
+                "release_date": "2004-09-16"
+            },
+            {
+                "name": "Game Boy Advance",
+                "region": "North America",
+                "release_date": "2005-05-01"
+            },
+            {
+                "name": "Game Boy Advance",
+                "region": "Australia",
+                "release_date": "2005-06-09"
+            },
+            {
+                "name": "Game Boy Advance",
+                "region": "Europe",
+                "release_date": "2005-10-21"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Pok\u00e9mon Core Series",
+        "part_number": 5,
+        "previous_game": null,
+        "next_game": {
+            "title": "Pok\u00e9mon Diamond Version",
+            "url_slug": "/games/pokemon-diamond"
+        }
+    },
+    "similar_games": [
+        {
+            "title": "Pok\u00e9mon Ruby Version",
+            "url_slug": "/games/pokemon-ruby"
+        },
+        {
+            "title": "Pok\u00e9mon Sapphire Version",
+            "url_slug": "/games/pokemon-sapphire"
+        },
+        {
+            "title": "Pok\u00e9mon FireRed Version",
+            "url_slug": "/games/pokemon-firered"
+        },
+        {
+            "title": "Pok\u00e9mon LeafGreen Version",
+            "url_slug": "/games/pokemon-leafgreen"
+        },
+        {
+            "title": "Pok\u00e9mon Platinum Version",
+            "url_slug": "/games/pokemon-platinum"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "Game Boy Advance (Original Cartridge)",
+            "details": "The definitive original version with authentic hardware experience. Features the Battle Frontier, Rayquaza storyline, and all Gen III content. Best played on original GBA or GBA SP hardware for authenticity.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Bugfix Patch",
+                    "description": "Fixes various glitches and bugs in the original game including RNG issues and battle mechanics.",
+                    "url": "https://www.romhacking.net/hacks/6499/"
+                },
+                {
+                    "name": "RTC Clock Fix",
+                    "description": "Resolves internal battery RTC issues that prevent clock-based events from functioning properly after save file corruption.",
+                    "url": "https://consolemods.org/wiki/GBA:Real_Time_Clock_(RTC)_Fix"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "mGBA",
+                    "optimal_settings": [
+                        "Enable Real Time Clock in emulator settings",
+                        "Set Save Type to Flash 128K",
+                        "Use 2x or 3x internal resolution for sharper visuals",
+                        "Enable fast-forward for battle speedup"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "My Boy!",
+                    "optimal_settings": [
+                        "Custom button mapping for touchscreen",
+                        "Save state slots enabled for quick saving",
+                        "Enable RTC support in settings"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Game Boy Advance (Emulation)",
+            "details": "Modern emulation provides the most accessible way to play today with enhanced features like save states, fast-forward, and screen scaling. mGBA is the recommended emulator for best compatibility.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "Bugfix Patch",
+                    "description": "Fixes various glitches and bugs in the original game including RNG issues and battle mechanics.",
+                    "url": "https://www.romhacking.net/hacks/6499/"
+                },
+                {
+                    "name": "Hoenn Dex Edition",
+                    "description": "Allows obtaining all Hoenn region Pok\u00e9mon without trading, ideal for completionists and Nuzlocke runs.",
+                    "url": "https://www.romhacking.net/hacks/1947/"
+                },
+                {
+                    "name": "National Dex Edition",
+                    "description": "Further expanded version allowing all Gen 3 Pok\u00e9mon without trading requirements.",
+                    "url": "https://www.romhacking.net/hacks/1991/"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "mGBA",
+                    "optimal_settings": [
+                        "Enable Real Time Clock in emulator settings",
+                        "Set Save Type to Flash 128K",
+                        "Use 2x or 3x internal resolution for sharper visuals",
+                        "Enable fast-forward for battle speedup"
+                    ]
+                },
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "RetroArch (mGBA core)",
+                    "optimal_settings": [
+                        "Use mGBA core instead of other GBA cores",
+                        "Enable shader for CRT effect if desired",
+                        "Configure save state slots"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "RetroArch (mGBA core)",
+                    "optimal_settings": [
+                        "Custom button mapping for touchscreen",
+                        "Save state slots enabled",
+                        "Enable RTC support in settings"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "Game Boy Advance (3DS Virtual Console Injection)",
+            "details": "Not officially available on 3DS Virtual Console. Requires homebrew injection for 3DS play, which may have RTC compatibility issues and is not recommended for new players.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [
+                {
+                    "name": "RTC Fix Patch",
+                    "description": "Essential patch for 3DS injection to fix RTC clock issues that commonly occur with injected GBA games.",
+                    "url": "https://consolemods.org/wiki/GBA:Real_Time_Clock_(RTC)_Fix"
+                }
+            ],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "mGBA",
+                    "optimal_settings": [
+                        "Enable Real Time Clock in emulator settings",
+                        "Set Save Type to Flash 128K",
+                        "Use 2x or 3x internal resolution for sharper visuals"
+                    ]
+                }
+            ]
+        }
+    ],
+    "description": {
+        "synopsis": "The player travels through the Hoenn region, collecting Gym Badges to challenge the Elite Four while stopping Team Magma and Team Aqua from awakening the legendary Pok\u00e9mon Groudon and Kyogre. Rayquaza must be awakened to restore balance when both teams succeed.",
+        "key_features": [
+            "Battle Frontier post-game content with seven unique battle facilities",
+            "Rayquaza as a central plot element catchable before Elite Four",
+            "Both Team Magma and Team Aqua featured throughout the story",
+            "Wireless Adapter support for trading and battling",
+            "Animated Pok\u00e9mon sprites in battles and overworld",
+            "Expanded Pok\u00e9dex with all Gen III Pok\u00e9mon available"
+        ],
+        "long_description": "Pok\u00e9mon Emerald Version, developed by Game Freak and published by Nintendo, is the enhanced third version of Generation III's Pok\u00e9mon Ruby and Sapphire. Released in 2004-2005 for the Game Boy Advance, it represents the definitive Gen III experience with numerous improvements over its predecessors. The game features an expanded storyline where both Team Magma and Team Aqua serve as antagonists, requiring the player to awaken Rayquaza to stop their plans of awakening Groudon and Kyogre. Key additions include the Battle Frontier (replacing the Battle Tower), wireless connectivity support from FireRed/LeafGreen, animated Pok\u00e9mon sprites, and access to all Gen III Pok\u00e9mon through expanded routes and features. The game was critically acclaimed for its improvements and remains one of the most beloved entries in the main series. It sold over 6 million copies worldwide and holds a Metacritic score of approximately 76-85 depending on the source.",
+        "legacy_and_impact": [
+            "Final core series Pok\u00e9mon game released on Game Boy Advance hardware",
+            "Introduced the Battle Frontier concept that influenced later games like Platinum",
+            "Last Nintendo game with specially colored cartridge (emerald green)",
+            "Established many features now standard in main series games including animated sprites",
+            "Remains highly popular among speedrunners and completionists decades after release"
+        ]
+    }
+}

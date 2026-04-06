@@ -1,0 +1,148 @@
+{
+    "basic_info": {
+        "url_slug": "/games/grandia-iii",
+        "title": "Grandia III",
+        "cover_url": "/images/grandia-iii.jpg",
+        "genres": [
+            "RPG"
+        ],
+        "themes": [
+            "Adventure",
+            "Coming of Age",
+            "Sky Pirates",
+            "Ancient Guardians",
+            "Dreams and Ambition"
+        ],
+        "modes": {
+            "single_player": true,
+            "multiplayer_local": false,
+            "multiplayer_online": false,
+            "co_op": false
+        },
+        "difficulty_rating": 3,
+        "reception_score": 7.7,
+        "review": "Grandia III is praised for its refined battle system and beautiful visuals, though critics noted a more linear story compared to previous entries in the series.",
+        "developers": [
+            "Game Arts"
+        ],
+        "publishers": [
+            "Square Enix"
+        ]
+    },
+    "release": {
+        "alternative_names": [
+            "\u30b0\u30e9\u30f3\u30c7\u30a3\u30a2III (Kuronia Sur\u012b)",
+            "Grandia III PS2 Classic"
+        ],
+        "platforms": [
+            {
+                "name": "PlayStation 2",
+                "region": "Japan",
+                "release_date": "2005-08-04"
+            },
+            {
+                "name": "PlayStation 2",
+                "region": "North America",
+                "release_date": "2006-02-14"
+            },
+            {
+                "name": "PlayStation 3",
+                "region": "North America",
+                "release_date": "2016-07-21"
+            }
+        ]
+    },
+    "serie": {
+        "is_part_of_serie": true,
+        "serie_name": "Grandia",
+        "part_number": 3,
+        "previous_game": {
+            "title": "Grandia II",
+            "url_slug": "/games/grandia-ii"
+        },
+        "next_game": null
+    },
+    "similar_games": [
+        {
+            "title": "Xenoblade Chronicles",
+            "url_slug": "/games/xenoblade-chronicles"
+        },
+        {
+            "title": "Tales of Symphonia",
+            "url_slug": "/games/tales-of-symphonia"
+        },
+        {
+            "title": "Grandia II",
+            "url_slug": "/games/grandia-ii"
+        },
+        {
+            "title": "Star Ocean: The Second Story",
+            "url_slug": "/games/star-ocean-the-second-story"
+        },
+        {
+            "title": "Valkyrie Profile 2: Silmeria",
+            "url_slug": "/games/valkyrie-profile-2-silmeria"
+        }
+    ],
+    "play_today": [
+        {
+            "platform": "PlayStation 2",
+            "details": "The definitive original version with full graphics, audio quality, and authentic PS2 experience. This is the only complete retail release of the game.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": false,
+            "recommended_patches": [],
+            "emulators": [
+                {
+                    "platform": "Windows",
+                    "recommended_emulator": "PCSX2",
+                    "optimal_settings": [
+                        "High resolution rendering (2x or 3x)",
+                        "Texture filtering enabled",
+                        "EE fast mode for compatibility"
+                    ]
+                },
+                {
+                    "platform": "Android",
+                    "recommended_emulator": "DuckStation",
+                    "optimal_settings": [
+                        "Custom button mapping for touchscreen",
+                        "Save state slots enabled",
+                        "Performance mode for smoother gameplay"
+                    ]
+                }
+            ]
+        },
+        {
+            "platform": "PlayStation 3 (PSN Classic)",
+            "details": "Digital re-release on PlayStation Store as a PS2 Classic. Same content as original but with convenient digital access and trophy support.",
+            "available_in_english": {
+                "official_localization": true,
+                "fan_translation": false
+            },
+            "retro_achievements_support": true,
+            "recommended_patches": [],
+            "emulators": []
+        }
+    ],
+    "description": {
+        "synopsis": "A young boy named Yuki dreams of becoming a great pilot like his idol Sky Captain Schmidt. Together with Alfina, a girl who can communicate with spiritual guardians, they uncover secrets about the world's past and face an evil rogue guardian named Xorn.",
+        "key_features": [
+            "Refined IP-based battle system with aerial combo mechanics",
+            "Flying aircraft for world travel instead of traditional overworld map",
+            "Sacred Beasts as mystical guardians that aid the party",
+            "Multiple playable characters joining at different story points",
+            "Aerial Finish mechanic for bonus item drops"
+        ],
+        "long_description": "Grandia III, developed by Game Arts and published by Square Enix for PlayStation 2, was released in Japan on August 4, 2005 and North America on February 14, 2006. This marked the first main series Grandia title not to receive a European release. The game was directed by Hidenobu Takahashi with character designs by You Yoshinari and music by series veteran Noriyuki Iwadare. Set in a world where humans fly magic-powered aircraft, the story follows Yuki, an aspiring pilot who dreams of becoming like his idol Sky Captain Schmidt. Alongside Alfina, a Communicator who can speak with Sacred Beasts (god-like guardians), they embark on an adventure to stop Xorn, a rogue guardian seeking godhood. The game received generally positive reviews, earning 77/100 on Metacritic and 35/40 from Famitsu's Platinum Award in Japan. Critics praised the battle system as 'arguably the greatest combat system of any turn-based role-playing game' while noting the story was more linear than previous entries.",
+        "legacy_and_impact": [
+            "Introduced aerial combat mechanics to the Grandia series",
+            "Featured one of the most refined battle systems in JRPG history",
+            "Last mainline Grandia game for over a decade until online revival",
+            "Maintained cult following despite mixed critical reception",
+            "Preserved as PS2 Classic on PlayStation Store"
+        ]
+    }
+}
