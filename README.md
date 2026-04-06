@@ -114,5 +114,3 @@ Environment variables:
 ## License
 
 ISC
-# best-version
-# best-version
