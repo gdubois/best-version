@@ -19,9 +19,9 @@
           "description": "Official title of the game"
         },
         "cover_url": {
-          "type": "string",
+          "type": ["string", "null"],
           "pattern": "^/images/.*\\.jpg$",
-          "description": "Path to the game's cover image"
+          "description": "Path to the game's cover image (optional - defaults to default-image.jpg if not specified)"
         },
         "genres": {
           "type": "array",
@@ -81,7 +81,7 @@
           "description": "List of publishing companies responsible for the game"
         }
       },
-      "required": ["url_slug", "title", "cover_url", "genres", "modes", "developers", "publishers"]
+      "required": ["url_slug", "title", "genres", "modes", "developers", "publishers"]
     },
     "release": {
       "type": "object",

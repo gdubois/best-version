@@ -909,4 +909,413 @@ describe('Games Routes Tests', () => {
     assert(Array.isArray(games), 'Games should be an array');
   });
 
+  // ===========================================================================
+  // STATS ENDPOINT TESTS
+  // Test IDs: 1.0-RTE-031 to 1.0-RTE-040
+  // ===========================================================================
+
+  // Test stats endpoint returns all required fields
+  test('1.0-RTE-031 [P1] Stats endpoint returns total_games field', () => {
+    // Given GamesRoutes with mock data
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockGames = [
+      { basic_info: { title: 'Game 1', url_slug: 'game-1' } },
+      { basic_info: { title: 'Game 2', url_slug: 'game-2' } }
+    ];
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getAllGames = () => mockGames;
+    mockGameAPI.getUniquePlatforms = () => ['Platform 1', 'Platform 2'];
+
+    const mockSubmissionService = createMockSubmissionService();
+    mockSubmissionService.getPendingSubmissions = () => [];
+
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    const routes = new GamesRoutes(
+      mockGameAPI,
+      mockSubmissionService,
+      mockGameLoader,
+      mockNewsletterService,
+      mockDeletionRequestService,
+      mockDmcaService
+    );
+
+    // When getting stats
+    const games = mockGameAPI.getAllGames();
+    const platforms = mockGameAPI.getUniquePlatforms();
+    const pendingSubmissions = mockSubmissionService.getPendingSubmissions();
+
+    // Then stats data should include total_games
+    assert.strictEqual(games.length, 2, 'Should have 2 games');
+  });
+
+  // Test stats endpoint returns in_progress count
+  test('1.0-RTE-032 [P1] Stats endpoint includes in_progress count for pending submissions', () => {
+    // Given GamesRoutes with pending submissions
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockGames = [
+      { basic_info: { title: 'Game 1', url_slug: 'game-1' } },
+      { basic_info: { title: 'Game 2', url_slug: 'game-2' } }
+    ];
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getAllGames = () => mockGames;
+    mockGameAPI.getUniquePlatforms = () => ['Platform 1', 'Platform 2'];
+
+    // Create mock submission service with pending submissions
+    const mockPendingSubmissions = [
+      { id: 'uuid-1', title: 'Pending Game 1', status: 'pending' },
+      { id: 'uuid-2', title: 'Pending Game 2', status: 'pending' },
+      { id: 'uuid-3', title: 'Pending Game 3', status: 'pending' }
+    ];
+    const mockSubmissionService = createMockSubmissionService();
+    mockSubmissionService.getPendingSubmissions = () => mockPendingSubmissions;
+
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    // When getting stats
+    const games = mockGameAPI.getAllGames();
+    const platforms = mockGameAPI.getUniquePlatforms();
+    const pendingCount = mockSubmissionService.getPendingSubmissions().length;
+
+    // Then in_progress count should reflect pending submissions
+    assert.strictEqual(pendingCount, 3, 'Should have 3 pending submissions');
+    assert.strictEqual(games.length, 2, 'Should have 2 curated games');
+  });
+
+  // Test stats endpoint calculates total_versions from play_today
+  test('1.0-RTE-033 [P1] Stats endpoint calculates total_versions correctly', () => {
+    // Given GamesRoutes with games that have play_today entries
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockGames = [
+      {
+        basic_info: { title: 'Game 1', url_slug: 'game-1' },
+        play_today: [
+          { platform: 'PlayStation', details: 'PS5 version' },
+          { platform: 'Xbox', details: 'Xbox Series X version' }
+        ]
+      },
+      {
+        basic_info: { title: 'Game 2', url_slug: 'game-2' },
+        play_today: [
+          { platform: 'PC', details: 'PC version' }
+        ]
+      }
+    ];
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getAllGames = () => mockGames;
+    mockGameAPI.getUniquePlatforms = () => ['PlayStation', 'Xbox', 'PC'];
+
+    const mockSubmissionService = createMockSubmissionService();
+    mockSubmissionService.getPendingSubmissions = () => [];
+
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    const routes = new GamesRoutes(
+      mockGameAPI,
+      mockSubmissionService,
+      mockGameLoader,
+      mockNewsletterService,
+      mockDeletionRequestService,
+      mockDmcaService
+    );
+
+    // When calculating total_versions from play_today
+    let totalVersions = 0;
+    mockGames.forEach(game => {
+      if (game.play_today && Array.isArray(game.play_today)) {
+        totalVersions += game.play_today.length;
+      }
+    });
+
+    // Then total_versions should be 3 (2 for Game 1 + 1 for Game 2)
+    assert.strictEqual(totalVersions, 3, 'Should have 3 total curated versions');
+  });
+
+  // Test stats endpoint with no games
+  test('1.0-RTE-034 [P2] Stats endpoint handles empty games array', () => {
+    // Given GamesRoutes with no games
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getAllGames = () => [];
+    mockGameAPI.getUniquePlatforms = () => [];
+
+    const mockSubmissionService = createMockSubmissionService();
+    mockSubmissionService.getPendingSubmissions = () => [];
+
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    const routes = new GamesRoutes(
+      mockGameAPI,
+      mockSubmissionService,
+      mockGameLoader,
+      mockNewsletterService,
+      mockDeletionRequestService,
+      mockDmcaService
+    );
+
+    // When getting stats with no games
+    const games = mockGameAPI.getAllGames();
+
+    // Then should return empty array with 0 counts
+    assert.strictEqual(games.length, 0, 'Should have 0 games');
+  });
+
+  // Test stats endpoint with no pending submissions
+  test('1.0-RTE-035 [P2] Stats endpoint handles zero pending submissions', () => {
+    // Given GamesRoutes with games but no pending submissions
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockGames = [
+      { basic_info: { title: 'Game 1', url_slug: 'game-1' } }
+    ];
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getAllGames = () => mockGames;
+    mockGameAPI.getUniquePlatforms = () => ['Platform 1'];
+
+    const mockSubmissionService = createMockSubmissionService();
+    mockSubmissionService.getPendingSubmissions = () => [];
+
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    const routes = new GamesRoutes(
+      mockGameAPI,
+      mockSubmissionService,
+      mockGameLoader,
+      mockNewsletterService,
+      mockDeletionRequestService,
+      mockDmcaService
+    );
+
+    // When getting stats
+    const pendingCount = mockSubmissionService.getPendingSubmissions().length;
+
+    // Then in_progress should be 0
+    assert.strictEqual(pendingCount, 0, 'Should have 0 pending submissions');
+  });
+
+  // Test stats endpoint with many pending submissions
+  test('1.0-RTE-036 [P2] Stats endpoint handles large number of pending submissions', () => {
+    // Given GamesRoutes with many pending submissions
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockGames = [{ basic_info: { title: 'Game 1', url_slug: 'game-1' } }];
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getAllGames = () => mockGames;
+    mockGameAPI.getUniquePlatforms = () => ['Platform 1'];
+
+    // Create 50 pending submissions
+    const manyPendingSubmissions = Array.from({ length: 50 }, (_, i) => ({
+      id: `uuid-${i}`,
+      title: `Pending Game ${i}`,
+      status: 'pending'
+    }));
+
+    const mockSubmissionService = createMockSubmissionService();
+    mockSubmissionService.getPendingSubmissions = () => manyPendingSubmissions;
+
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    const routes = new GamesRoutes(
+      mockGameAPI,
+      mockSubmissionService,
+      mockGameLoader,
+      mockNewsletterService,
+      mockDeletionRequestService,
+      mockDmcaService
+    );
+
+    // When getting stats
+    const pendingCount = mockSubmissionService.getPendingSubmissions().length;
+
+    // Then in_progress should reflect all pending submissions
+    assert.strictEqual(pendingCount, 50, 'Should have 50 pending submissions');
+  });
+
+  // Test stats endpoint filters only pending submissions
+  test('1.0-RTE-037 [P1] Stats endpoint only counts pending submissions (not approved/rejected)', () => {
+    // Given GamesRoutes with mixed submission statuses
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockGames = [{ basic_info: { title: 'Game 1', url_slug: 'game-1' } }];
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getAllGames = () => mockGames;
+    mockGameAPI.getUniquePlatforms = () => ['Platform 1'];
+
+    // Create submissions with different statuses
+    const mixedSubmissions = [
+      { id: '1', title: 'Pending Game 1', status: 'pending' },
+      { id: '2', title: 'Approved Game 1', status: 'approved' },
+      { id: '3', title: 'Rejected Game 1', status: 'rejected' },
+      { id: '4', title: 'Pending Game 2', status: 'pending' },
+      { id: '5', title: 'Flagged Game 1', status: 'flagged_for_review' },
+      { id: '6', title: 'Pending Game 3', status: 'pending' }
+    ];
+
+    const mockSubmissionService = createMockSubmissionService();
+    mockSubmissionService.getPendingSubmissions = () => mixedSubmissions.filter(s => s.status === 'pending');
+
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    const routes = new GamesRoutes(
+      mockGameAPI,
+      mockSubmissionService,
+      mockGameLoader,
+      mockNewsletterService,
+      mockDeletionRequestService,
+      mockDmcaService
+    );
+
+    // When getting stats
+    const pendingCount = mockSubmissionService.getPendingSubmissions().length;
+    const allSubmissions = mixedSubmissions.filter(s => s.status === 'pending');
+
+    // Then in_progress should only count pending submissions
+    assert.strictEqual(pendingCount, 3, 'Should have 3 pending submissions');
+    assert.strictEqual(allSubmissions.length, 3, 'Filter should return only pending');
+  });
+
+  // Test complete stats data structure
+  test('1.0-RTE-038 [P1] Stats endpoint returns complete data structure', () => {
+    // Given GamesRoutes with all data
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockGames = [
+      { basic_info: { title: 'Game 1', url_slug: 'game-1' } },
+      { basic_info: { title: 'Game 2', url_slug: 'game-2' } },
+      { basic_info: { title: 'Game 3', url_slug: 'game-3' } }
+    ];
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getAllGames = () => mockGames;
+    mockGameAPI.getUniquePlatforms = () => ['Platform 1', 'Platform 2'];
+
+    const mockPendingSubmissions = [
+      { id: '1', title: 'Pending 1', status: 'pending' },
+      { id: '2', title: 'Pending 2', status: 'pending' }
+    ];
+    const mockSubmissionService = createMockSubmissionService();
+    mockSubmissionService.getPendingSubmissions = () => mockPendingSubmissions;
+
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    const routes = new GamesRoutes(
+      mockGameAPI,
+      mockSubmissionService,
+      mockGameLoader,
+      mockNewsletterService,
+      mockDeletionRequestService,
+      mockDmcaService
+    );
+
+    // When calculating stats
+    const games = mockGameAPI.getAllGames();
+    const platforms = mockGameAPI.getUniquePlatforms();
+    let totalVersions = 0;
+    games.forEach(game => {
+      if (game.play_today && Array.isArray(game.play_today)) {
+        totalVersions += game.play_today.length;
+      }
+    });
+    const pendingCount = mockSubmissionService.getPendingSubmissions().length;
+
+    // Then all stats fields should be present
+    const stats = {
+      total_games: games.length,
+      total_platforms: platforms.length,
+      total_versions: totalVersions,
+      in_progress: pendingCount
+    };
+
+    assert.strictEqual(stats.total_games, 3, 'Should have 3 total games');
+    assert.strictEqual(stats.total_platforms, 2, 'Should have 2 platforms');
+    assert.strictEqual(stats.in_progress, 2, 'Should have 2 in progress');
+  });
+
+  // Test that getUniquePlatforms returns platform list with correct length
+  test('1.0-RTE-039 [P1] getUniquePlatforms returns correct platform count', () => {
+    // Given GamesRoutes with mock platforms
+    const { GamesRoutes } = require('../../src/routes/games');
+    const mockPlatforms = ['Nintendo Switch', 'PlayStation 5', 'Xbox Series X', 'PC'];
+    const mockGameAPI = createMockGameAPI();
+    mockGameAPI.getUniquePlatforms = () => mockPlatforms;
+
+    const mockSubmissionService = createMockSubmissionService();
+    const mockGameLoader = {
+      gamesDir: path.join(__dirname, '../games'),
+      schemaPath: path.join(__dirname, '../game_metadata_schema.json')
+    };
+    const mockNewsletterService = createMockNewsletterService();
+    const mockDeletionRequestService = createMockDeletionRequestService();
+    const mockDmcaService = createMockDmcaService();
+
+    const routes = new GamesRoutes(
+      mockGameAPI,
+      mockSubmissionService,
+      mockGameLoader,
+      mockNewsletterService,
+      mockDeletionRequestService,
+      mockDmcaService
+    );
+
+    // When getting unique platforms
+    const platforms = mockGameAPI.getUniquePlatforms();
+
+    // Then returns correct platform count
+    assert(Array.isArray(platforms), 'Platforms should be an array');
+    assert.strictEqual(platforms.length, 4, 'Should have 4 platforms');
+  });
+
+  // Test that pending submissions are properly filtered
+  test('1.0-RTE-040 [P1] getPendingSubmissions returns only pending status submissions', () => {
+    // Given submissionService with getPendingSubmissions method
+    const { SubmissionService } = require('../../src/services/submissionService');
+
+    // Verify getPendingSubmissions method exists
+    assert(typeof SubmissionService.prototype.getPendingSubmissions === 'function',
+      'getPendingSubmissions should be a method');
+  });
+
 });

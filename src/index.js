@@ -1,8 +1,11 @@
 // Game Metadata Application Entry Point
 
+require('dotenv').config();
+
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const fs = require('fs');
 const config = require('./config');
 const { StorageManager } = require('./services/storageService');
 const { GameAPI } = require('./services/gameAPI');
@@ -187,9 +190,6 @@ async function main() {
 
   // hCaptcha middleware (applied to specific routes below)
 
-  // Serve static files (frontend)
-  app.use(express.static('public'));
-
   // Initialize admin dashboard with storage services
   const { AdminDashboardService } = require('./services/adminDashboardService');
   const adminDashboard = new AdminDashboardService(submissionService, gameLoader, storageManager.games, storageManager.submissions);
@@ -227,7 +227,17 @@ app.get('/api/performance/cache-stats', async (req, res) => {
 // Root endpoint - serve frontend
 
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    // Ensure session and generate CSRF token if needed
+    req.session = req.session || {};
+    if (!req.session.csrfToken) {
+      const crypto = require('crypto');
+      req.session.csrfToken = crypto.randomBytes(32).toString('hex');
+    }
+    const html = fs.readFileSync(path.join(__dirname, '../public/index.html'), 'utf8');
+    // Replace CSRF token placeholder
+    const token = req.session.csrfToken;
+    const injectedHtml = html.replace('{{CSRF_TOKEN}}', token);
+    res.send(injectedHtml);
   });
 
   // Search page
@@ -240,9 +250,15 @@ app.get('/api/performance/cache-stats', async (req, res) => {
     res.sendFile(path.join(__dirname, '../public/games/detail.html'));
   });
 
-  // Submission page
+  // Submission page - redirect to home with prefill param
   app.get('/submit', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/submit.html'));
+    // Preserve the ?game= parameter if present
+    const query = req.url.split('?')[1];
+    if (query) {
+      res.redirect(`/?${query}`);
+    } else {
+      res.redirect('/');
+    }
   });
 
   // Admin page

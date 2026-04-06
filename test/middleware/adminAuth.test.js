@@ -136,14 +136,9 @@ expect(auth.maxTokenRequestsPerMinute).toBe(3);
     // Given
     const auth = new AdminAuth();
 
-    // Then - verifyToken will throw on null, which means it's rejected
-    let threw = false;
-    try {
-      auth.verifyToken(null);
-    } catch (e) {
-      threw = true;
-    }
-    assert(threw, 'Should throw on null token');
+    // Then - verifyToken returns null for null token (graceful handling)
+    const result = auth.verifyToken(null);
+    assert.strictEqual(result, null, 'Should return null for null token');
   });
 
   test('1.0-MW-159 [P0] AdminAuth rejects empty token', () => {
@@ -224,9 +219,9 @@ expect(auth.maxTokenRequestsPerMinute).toBe(3);
   test('1.0-MW-164 [P0] requireAdmin accepts valid token in query', () => {
     // Given
     const auth = new AdminAuth();
-    const token = auth.generateVerificationToken(defaultAdminEmail);
+    const tokenResult = auth.generateVerificationToken(defaultAdminEmail);
 
-    const req = createMockReq({ token });
+    const req = createMockReq({ token: tokenResult.token });
     const res = createMockRes();
     let nextCalled = false;
 
@@ -244,9 +239,9 @@ expect(auth.maxTokenRequestsPerMinute).toBe(3);
   test('1.0-MW-165 [P0] requireAdmin accepts valid token in cookie', () => {
     // Given
     const auth = new AdminAuth();
-    const token = auth.generateVerificationToken(defaultAdminEmail);
+    const tokenResult = auth.generateVerificationToken(defaultAdminEmail);
 
-    const req = createMockReq({}, { admin_token: token });
+    const req = createMockReq({}, { admin_token: tokenResult.token });
     const res = createMockRes();
     let nextCalled = false;
 
@@ -281,11 +276,11 @@ expect(auth.maxTokenRequestsPerMinute).toBe(3);
   test('1.0-MW-167 [P0] requireAdmin token in query takes precedence over cookie', () => {
     // Given
     const auth = new AdminAuth();
-    const validToken = auth.generateVerificationToken(defaultAdminEmail);
+    const tokenResult = auth.generateVerificationToken(defaultAdminEmail);
     const invalidToken = 'invalid';
 
     // Valid token in query, invalid in cookie - should use query token
-    const req = createMockReq({ token: validToken }, { admin_token: invalidToken });
+    const req = createMockReq({ token: tokenResult.token }, { admin_token: invalidToken });
     const res = createMockRes();
     let nextCalled = false;
 

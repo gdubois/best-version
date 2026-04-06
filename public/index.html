@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{CSRF_TOKEN}}">
     <title>Best Version - The Definitive Video Game History</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
@@ -1045,6 +1046,8 @@
             margin-top: 2rem;
             border: 1px solid rgba(99, 102, 241, 0.3);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
         }
 
         .submit-modal-header {
@@ -1053,6 +1056,10 @@
             align-items: center;
             padding: 1.5rem 2rem;
             border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            position: sticky;
+            top: 0;
+            background: rgba(26, 26, 46, 0.98);
+            z-index: 5;
         }
 
         .submit-modal-title {
@@ -1079,17 +1086,20 @@
 
         .submit-modal-body {
             padding: 2rem;
+            flex: 1;
         }
 
         .prefill-info {
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             padding: 8px 16px;
             background: rgba(139, 92, 246, 0.15);
             border: 1px solid rgba(139, 92, 246, 0.3);
             border-radius: 50px;
             color: var(--secondary);
             font-size: 0.875rem;
-            margin-bottom: 1.25rem;
+            margin: 0 auto 1.25rem auto;
         }
 
         .error-message {
@@ -1395,8 +1405,8 @@
                 <div class="stat-label">Curated Versions</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">24x7</div>
-                <div class="stat-label">Always Accessible</div>
+                <div id="in-progress" class="stat-number"><span class="loading-spinner"></span></div>
+                <div class="stat-label">In Progress</div>
             </div>
         </section>
 
@@ -1625,6 +1635,14 @@
             // API Base URL
             const API_BASE = window.API_BASE || '/api';
 
+            // Get CSRF token from meta tag or window variable
+            const getCsrfToken = () => {
+                if (window.CSRF_TOKEN) return window.CSRF_TOKEN;
+                const metaTag = document.querySelector('meta[name="csrf-token"]');
+                return metaTag ? metaTag.getAttribute('content') : '';
+            };
+            const CSRF_TOKEN = getCsrfToken();
+
             let allGames = [];
 
             // Initialize the application
@@ -1652,7 +1670,8 @@
                     document.getElementById('total-games').innerHTML = `${data.total_games}+`;
                     document.getElementById('total-platforms').textContent = data.total_platforms;
                     document.getElementById('curated-versions').textContent = data.total_versions;
-                    document.getElementById('progress-games').textContent = data.total_games + '+';
+                    document.getElementById('in-progress').textContent = data.in_progress || 0;
+                    document.getElementById('progress-games').textContent = (data.in_progress || 0) + '+';
                 } catch (error) {
                     console.error('Error loading stats:', error);
                     // Use fallback values if API fails
@@ -1668,10 +1687,11 @@
                 const grid = document.getElementById('games-grid');
 
                 try {
-                    const response = await fetch(`${API_BASE}/games/games?limit=100`);
+                    const response = await fetch(`${API_BASE}/games?limit=100`);
                     if (!response.ok) throw new Error('Failed to load games');
 
-                    allGames = await response.json();
+                    const result = await response.json();
+                    allGames = result.data || [];
 
                     // Shuffle and take first 6 for variety - this runs fresh on each page load
                     const shuffled = [...allGames].sort(() => Math.random() - 0.5).slice(0, 6);
@@ -1684,59 +1704,39 @@
                 }
             }
 
-            // Create game card HTML - KEEP existing game card display
+            // Create game card HTML - Title first, then cover art, then recommended platform info
             function createGameCard(game) {
                 const title = game.basic_info?.title || game.title || 'Unknown Game';
                 const slug = game.basic_info?.url_slug || 'unknown';
-                const platforms = game.release?.platforms || [];
 
-                // Determine platform badges
-                const hasDesktopConsole = platforms.some(p => p.name && (p.name.toLowerCase().includes('desktop') || p.name.toLowerCase().includes('console') || p.name.toLowerCase().includes('tv')));
-                const hasHandheld = platforms.some(p => p.name && (p.name.toLowerCase().includes('handheld') || p.name.toLowerCase().includes('portable')));
+                // Get cover image - use game's cover_url, allow 404 if image doesn't exist
+                const coverUrl = game.basic_info?.cover_url || '/images/default-image.jpg';
 
-                let platformHtml = '';
-                if (hasDesktopConsole && hasHandheld) {
-                    platformHtml = `
-                        <span class="platform-badge both">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v12H4V6zm2 2v8h12V8H6z"/><path d="M12 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
-                            Both
-                        </span>
-                    `;
-                } else if (hasDesktopConsole) {
-                    platformHtml = `
-                        <span class="platform-badge desktop-console">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 8H3V8h18v6z"/><path d="M6 14h2v4H6v-4zm4-2h2v6h-2v-6zm4 2h2v4h-2v-4z"/></svg>
-                            Desktop/Console
-                        </span>
-                    `;
-                } else if (hasHandheld) {
-                    platformHtml = `
-                        <span class="platform-badge handheld">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2zm0 2v16h10V4H7zm2 4h6v2H9V8zm0 4h6v2H9v-2z"/></svg>
-                            Handheld
-                        </span>
+                // Extract recommended platform info from play_today
+                let platformInfoHtml = '';
+                if (game.play_today && game.play_today.length > 0) {
+                    const platformNames = game.play_today.map(p => p.platform).join(', ');
+                    platformInfoHtml = `
+                        <div class="platform-badges" style="margin-top: 0.5rem;">
+                            <span class="platform-badge handheld" style="background: rgba(99, 102, 241, 0.15); color: var(--primary); border: 1px solid rgba(99, 102, 241, 0.3);">
+                                🎮 ${platformNames}
+                            </span>
+                        </div>
                     `;
                 }
 
-                // Generate cover art placeholder
-                const coverUrl = generateCoverUrl(title);
-                const initial = title.charAt(0).toUpperCase();
-
                 return `
                     <div class="game-card" onclick="openGameModal('${slug}');">
-                        <div class="game-card-image">
+                        <div class="game-card-content" style="padding-bottom: 0.5rem;">
+                            <h3 class="game-card-title" title="${escapeHtml(title)}" style="margin-bottom: 0.75rem;">${escapeHtml(title)}</h3>
+                        </div>
+                        <div class="game-card-image" style="margin-top: 0.75rem;">
                             ${coverUrl ? `<img src="${coverUrl}" alt="${escapeHtml(title)} cover art">` : `
-                                <span class="placeholder">${initial}</span>
+                                <span class="placeholder">${title.charAt(0).toUpperCase()}</span>
                             `}
                         </div>
-                        <div class="game-card-content">
-                            <h3 class="game-card-title" title="${escapeHtml(title)}">${escapeHtml(title)}</h3>
-                            <div class="platform-badges">
-                                ${platformHtml}
-                            </div>
-                            <div class="game-card-meta">
-                                ${getGenres(game.basic_info?.genres)}
-                            </div>
+                        <div class="game-card-content" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+                            ${platformInfoHtml}
                         </div>
                     </div>
                 `;
@@ -1747,19 +1747,19 @@
                 const fallback = [
                     {
                         title: "Castlevania",
-                        basic_info: { genres: ["Action", "Adventure"] },
+                        basic_info: { genres: ["Action", "Adventure"], cover_url: "/images/castlevania.jpg" },
                         release: { platforms: [{ name: "PlayStation", region: "World" }] },
                         slug: "castlevania"
                     },
                     {
                         title: "Final Fantasy VI",
-                        basic_info: { genres: ["RPG"] },
+                        basic_info: { genres: ["RPG"], cover_url: "/images/final-fantasy-vi.jpg" },
                         release: { platforms: [{ name: "SNES", region: "World" }] },
                         slug: "final-fantasy-vi"
                     },
                     {
                         title: "Grandia",
-                        basic_info: { genres: ["RPG", "Adventure"] },
+                        basic_info: { genres: ["RPG", "Adventure"], cover_url: "/images/grandia.jpg" },
                         release: { platforms: [{ name: "PlayStation", region: "World" }] },
                         slug: "grandia"
                     }
@@ -1796,7 +1796,7 @@
             searchInput.addEventListener('input', (e) => {
                 clearTimeout(searchTimeout);
 
-                if (e.target.value.length < 2) {
+                if (e.target.value.length < 3) {
                     hideSearchResults();
                     return;
                 }
@@ -1812,11 +1812,11 @@
                 resultsContainer.classList.add('active');
 
                 try {
-                    const response = await fetch(`${API_BASE}/games/games/search?q=${encodeURIComponent(query)}&limit=10`);
+                    const response = await fetch(`${API_BASE}/games/search?q=${encodeURIComponent(query)}&limit=10`);
                     if (!response.ok) throw new Error('Search failed');
 
                     const data = await response.json();
-                    displayResults(data.results, query);
+                    displayResults(data.data || data.results || [], query);
                 } catch (error) {
                     console.error('Search error:', error);
                     // Fallback to local search
@@ -1884,7 +1884,10 @@
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
+                    const href = this.getAttribute('href');
+                    // Skip if href is just "#"
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
                     if (target) {
                         target.scrollIntoView({
                             behavior: 'smooth',
@@ -1949,11 +1952,17 @@
                 modal.classList.add('active');
 
                 try {
-                    const response = await fetch(`${API_BASE}/games/game/${slug}`);
-                    if (!response.ok) throw new Error('Failed to load game');
+                    // Handle both /games/slug and slug formats
+                    let gameSlug = slug;
+                    if (slug.startsWith('/games/')) {
+                        gameSlug = slug.substring(7); // Remove '/games/' prefix
+                    }
+                    const response = await fetch(`${API_BASE}/games/${gameSlug}`);
+                    if (!response.ok) throw new Error(`Failed to load game: ${response.status} ${response.statusText}`);
 
-                    const data = await response.json();
-                    body.innerHTML = renderGameDetails(data);
+                    const result = await response.json();
+                    console.log('Game data:', result);
+                    body.innerHTML = renderGameDetails(result.data || result);
                 } catch (error) {
                     console.error('Error loading game:', error);
                     body.innerHTML = `
@@ -1965,8 +1974,14 @@
             }
 
             function renderGameDetails(data) {
+                console.log('Rendering game details for:', data);
                 const basicInfo = data.basic_info || {};
                 const description = data.description || {};
+                console.log('Basic info:', basicInfo);
+                console.log('Description:', description);
+
+                // Get cover image URL - always use the stored cover_url, allow 404 images to show
+                const imageUrl = basicInfo.cover_url || '/images/default-image.jpg';
 
                 let platformsHtml = '';
                 if (data.release?.platforms) {
@@ -1977,66 +1992,71 @@
                     platformsHtml += '</ul>';
                 }
 
-                // Extract patches from play_today entries
-                let patchesHtml = '';
+                // Combine play_today and patches into one section
+                let recommendedSectionHtml = '';
                 if (data.play_today && data.play_today.length > 0) {
                     const patchesByPlatform = {};
 
+                    // First, gather all patch data
                     data.play_today.forEach(entry => {
                         const platformName = entry.platform;
                         if (!patchesByPlatform[platformName]) {
                             patchesByPlatform[platformName] = [];
                         }
-
                         if (entry.recommended_patches && entry.recommended_patches.length > 0) {
                             entry.recommended_patches.forEach(patch => {
-                                patchesByPlatform[platformName].push({
-                                    name: patch.name,
-                                    description: patch.description,
-                                    url: patch.url || null
-                                });
+                                patchesByPlatform[platformName].push(patch);
                             });
                         }
                     });
 
                     const platformKeys = Object.keys(patchesByPlatform);
 
-                    if (platformKeys.length > 0) {
-                        patchesHtml = `
-                            <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.08)); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 16px; padding: 1.5rem; margin-top: 1.5rem;">
-                                <h3 style="font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem;">
-                                    🔧 Recommended Patches & Mods
-                                </h3>
-                                ${platformKeys.map(platform => `
-                                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(99, 102, 241, 0.2);">
-                                        <div style="background: rgba(99, 102, 241, 0.15); padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                                            <span style="font-size: 1.2em;">🎮</span>
-                                            <span style="font-weight: 700; color: var(--light); font-size: 1.1rem;">${platform}</span>
-                                        </div>
-                                        ${patchesByPlatform[platform].map(patch => `
-                                            <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; transition: all 0.3s ease;">
-                                                <div style="display: flex; justify-content: space-between; align-items: start; gap: 1rem; margin-bottom: 0.75rem;">
-                                                    <span style="font-weight: 700; color: var(--light); font-size: 1.05rem;">📦 ${escapeHtml(patch.name)}</span>
-                                                    ${patch.url ? '<span style="background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; color: white;">Download Available</span>' : ''}
+                    recommendedSectionHtml = `
+                        <div class="modal-section" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.08)); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 16px; padding: 1.5rem; margin: 1.5rem 0;">
+                            <h3 style="font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 1.5rem;">
+                                🎮 Recommended Versions & Patches
+                            </h3>
+                            ${data.play_today.map(entry => `
+                                <div style="background: rgba(99, 102, 241, 0.05); padding: 1rem; border-radius: 10px; margin-bottom: 1rem;">
+                                    <h4 style="color: var(--light); margin-bottom: 0.5rem;">
+                                        🎮 ${escapeHtml(entry.platform)}
+                                    </h4>
+                                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin-bottom: 1rem;">${escapeHtml(entry.details || '')}</p>
+                                    ${patchesByPlatform[entry.platform] && patchesByPlatform[entry.platform].length > 0 ? `
+                                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(99, 102, 241, 0.2);">
+                                            <h5 style="color: var(--primary); margin-bottom: 0.75rem; font-size: 0.9rem;">Recommended Patches & Mods:</h5>
+                                            ${patchesByPlatform[entry.platform].map(patch => `
+                                                <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 8px; padding: 0.75rem; margin-bottom: 0.5rem;">
+                                                    <div style="display: flex; justify-content: space-between; align-items: start; gap: 0.75rem;">
+                                                        <span style="font-weight: 600; color: var(--light); font-size: 0.9rem;">📦 ${escapeHtml(patch.name)}</span>
+                                                        ${patch.url ? '<span style="background: linear-gradient(135deg, var(--primary), var(--secondary)); padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; color: white;">Download</span>' : ''}
+                                                    </div>
+                                                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.5; margin: 0.5rem 0 0.75rem 0; padding-left: 0;">${escapeHtml(patch.description)}</p>
+                                                    ${patch.url ? `<a href="${escapeHtml(patch.url)}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.5rem 0.875rem; background: rgba(99, 102, 241, 0.15); border: 1px solid var(--primary); border-radius: 6px; color: var(--primary); text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: all 0.3s;">Download Patch</a>` : ''}
                                                 </div>
-                                                <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 1rem; padding-left: 1.75rem;">${escapeHtml(patch.description)}</p>
-                                                ${patch.url ? `
-                                                    <a href="${escapeHtml(patch.url)}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background: rgba(99, 102, 241, 0.15); border: 1px solid var(--primary); border-radius: 8px; color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: all 0.3s;">
-                                                        🔗 Download Patch
-                                                    </a>
-                                                ` : ''}
-                                            </div>
-                                        `).join('')}
-                                    </div>
-                                `).join('')}
-                            </div>
-                        `;
-                    }
+                                            `).join('')}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
                 }
 
                 return `
                     <h2 class="modal-title">${basicInfo.title || data.title || 'Game Title'}</h2>
-                    ${platformsHtml ? `<p class="modal-year">Released on: ${platformsHtml.replace(/<ul>|<\/ul>/g, '').replace(/• /g, '')}</p>` : ''}
+
+                    <!-- Game Cover Image -->
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <img src="${imageUrl}" alt="${escapeHtml(basicInfo.title || data.title || 'Game')} cover"
+                             style="max-width: 300px; max-height: 400px; object-fit: contain; border-radius: 12px; box-shadow: 0 8px 32px rgba(99,102,241,0.3);">
+                    </div>
+
+                    <!-- Recommended Versions with Patches -->
+                    ${recommendedSectionHtml}
+
+                    ${platformsHtml ? `<div class="modal-section"><p class="modal-year">Released on: ${platformsHtml.replace(/<ul>|<\/ul>/g, '').replace(/• /g, '')}</p></div>` : ''}
 
                     <div class="modal-section">
                         <h3>Synopsis</h3>
@@ -2057,8 +2077,6 @@
                         <h3>Legacy and Impact</h3>
                         <ul>${(description.legacy_and_impact || []).map(l => `<li>• ${escapeHtml(l)}</li>`).join('')}</ul>
                     </div>
-
-                    ${patchesHtml}
 
                     <div class="modal-section">
                         <h3>Genres</h3>
@@ -2085,9 +2103,13 @@
                     </div>
 
                     ${data.similar_games?.length ? `
-                    <div class="modal-section">
-                        <h3>Similar Games</h3>
-                        <ul>${data.similar_games.map(g => `<li><a href="#" onclick="openGameModal('${g.url_slug.replace("/games/", "").replace("/", "-")}'); return false;">${escapeHtml(g.title)}</a></li>`).join('')}</ul>
+                    <div class="modal-section" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05)); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 12px; padding: 1.25rem; margin: 1.5rem 0;">
+                        <h3 style="font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 1rem; text-align: center;">
+                            🎯 Similar Games
+                        </h3>
+                        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
+                            ${data.similar_games.map(g => `<li><a href="#" onclick="openGameModal('${g.url_slug}'); return false;" style="color: var(--primary); font-weight: 600; text-decoration: none; padding: 0.5rem; border-radius: 6px; display: block; transition: all 0.2s;">${escapeHtml(g.title)}</a></li>`).join('')}
+                        </ul>
                     </div>
                     ` : ''}
 
@@ -2108,22 +2130,16 @@
 
             function openSubmitModal(prefillGame = null) {
                 const modal = document.getElementById('submitModal');
-                const modalContent = modal.querySelector('.submit-modal-content') || modal;
+                const submitModalBody = document.getElementById('submitModalBody');
 
                 submitRecommendations = [];
-                modalContent.innerHTML = '';
 
+                // Clear body content but keep header
                 const urlParams = new URLSearchParams(window.location.search);
                 const prefillGameFromUrl = prefillGame || urlParams.get('game');
 
-                modalContent.innerHTML = `
-                    <button class="modal-close" onclick="closeSubmitModal()">×</button>
-                    <div class="submit-modal-header">
-                        <h2 class="submit-modal-title">Submit a Game</h2>
-                        <button class="submit-close" onclick="closeSubmitModal()">&times;</button>
-                    </div>
-                    <div class="submit-modal-body">
-                            ${prefillGameFromUrl ? `
+                submitModalBody.innerHTML = `
+                    ${prefillGameFromUrl ? `
                                 <div class="prefill-info">
                                     Suggesting: <strong>${escapeHtml(prefillGameFromUrl)}</strong>
                                 </div>
@@ -2213,7 +2229,8 @@
                                     </div>
                                 </div>
 
-                                <input type="hidden" id="deviceFingerprint" name="device_fingerprint">
+                                <input type="hidden" id="csrfToken" name="_csrf" value="${CSRF_TOKEN}">
+<input type="hidden" id="deviceFingerprint" name="device_fingerprint">
 
                                 <div class="submit-section">
                                     <button type="submit" id="submitBtn" class="submit-button">
@@ -2344,11 +2361,14 @@
                 submitBtn.innerHTML = '<span class="loading-spinner-small"></span> Submitting...';
 
                 try {
+                    const csrfToken = document.getElementById('csrfToken').value;
                     const response = await fetch(`${API_BASE}/submissions`, {
                         method: 'POST',
                         headers: {
-                            'Content-Type': 'application/json'
+                            'Content-Type': 'application/json',
+                            'X-CSRF-Token': csrfToken
                         },
+                        credentials: 'include',
                         body: JSON.stringify(formData)
                     });
 
@@ -2357,6 +2377,8 @@
                     if (result.success) {
                         closeSubmitModal();
                         showToast('Submission received! Thank you for your contribution.', 'success');
+                        // Reload stats to update "In Progress" count
+                        await loadStats();
                     } else {
                         showError(result.error || 'Failed to submit. Please try again.');
                         resetSubmitButton();
@@ -2396,7 +2418,15 @@
            SUBMIT MODAL HTML
            ============================================= -->
         <div id="submitModal" class="submit-modal">
-            <!-- Content loaded dynamically by openSubmitModal() -->
+            <div class="submit-modal-content">
+                <div class="submit-modal-header">
+                    <h2 class="submit-modal-title">Submit a Game</h2>
+                    <button class="submit-close" onclick="closeSubmitModal()">&times;</button>
+                </div>
+                <div id="submitModalBody" class="submit-modal-body">
+                    <!-- Content will be loaded here -->
+                </div>
+            </div>
         </div>
 
         <script>

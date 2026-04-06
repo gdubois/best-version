@@ -73,7 +73,29 @@
       "Bash(rm:*)",
       "Bash(mkdir:*)",
       "Bash(pkill -9 -f \"node\")",
-      "Bash(pkill -9 -f \"astro\")"
+      "Bash(pkill -9 -f \"astro\")",
+      "Bash(pkill -f \"node -e\")",
+      "Bash(COOKIE_SECRET=\"test-secret-key-for-development-only\" node:*)",
+      "Bash(npm start:*)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill:*)",
+      "Bash(netstat -tlnp)",
+      "Bash(fg:*)",
+      "Bash(COOKIE_SECRET=\"dev-secret-key-change-in-production\" npm start:*)",
+      "Bash(grep -l \"Final Fantasy IX\\\\|Final Fantasy 9\" /mnt/d/Dev/best_version/games/*.json)",
+      "Bash(pkill -9 -f \"node src/index.js\")",
+      "Bash(echo \"Server started, PID: $!\" sleep 5 cat /tmp/server.log)",
+      "Bash(export COOKIE_SECRET=\"test-secret-for-development-only\")",
+      "Bash(COOKIE_SECRET=\"test-secret-for-development-only\" node src/index.js)",
+      "Bash(pkill -9 -f \"node src/index.js\" sleep 2 COOKIE_SECRET=\"test-secret-for-development-only\" node src/index.js)",
+      "Bash(pkill -f \"node src/index.js\" sleep 2 COOKIE_SECRET=\"test-secret-for-development-only\" node src/index.js)",
+      "Bash(fuser -k 3000/tcp)",
+      "Bash(pkill -f \"node src\")",
+      "Bash(rm -rf /mnt/d/Dev/best_version/src/.admin_sessions/*)",
+      "Bash(NODE_OPTIONS=\"--max-old-space-size=4096\" npx jest test/middleware/adminAuth.test.js --forceExit)",
+      "Bash(find src/.admin_sessions -name \"*.json\" -delete)",
+      "Bash(tar -cf - scripts/)",
+      "Bash(tar -tf -)"
     ]
   }
 }

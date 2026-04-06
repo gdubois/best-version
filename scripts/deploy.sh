@@ -90,10 +90,11 @@ check_env_file() {
     fi
 
     # Check SITE_URL is set to production domain
-    if grep -q "SITE_URL=http" "$PROJECT_DIR/.env" 2>/dev/null; then
-        log_warn "SITE_URL is set to http - consider using https://www.best-version.com"
-    elif grep -q "SITE_URL=https" "$PROJECT_DIR/.env" 2>/dev/null; then
+	if grep -q "SITE_URL=https" "$PROJECT_DIR/.env" 2>/dev/null; then
         log_success "SITE_URL is configured for HTTPS"
+    elif grep -q "SITE_URL=http" "$PROJECT_DIR/.env" 2>/dev/null; then
+        log_warn "SITE_URL is set to http - consider using https://www.best-version.com"
+    
     fi
 
     echo ""

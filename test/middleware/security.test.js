@@ -134,7 +134,9 @@ describe('Security Middleware Tests', () => {
   test('1.0-MW-039 [P0] createSessionMiddleware initializes empty session when no cookie', () => {
     // Given request without session cookie
     const req = { headers: {}, cookies: {}, session: null, get: () => null, hostname: 'localhost', ip: '127.0.0.1' };
-    const res = {};
+    const res = {
+      cookie: () => {} // Mock cookie method
+    };
 
     const middleware = createSessionMiddleware();
     middleware(req, res, () => {});

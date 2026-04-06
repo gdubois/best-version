@@ -1,11 +1,9 @@
-version: '3.8'
-
+# =============================================================================
+# Best Version Application Container
+# =============================================================================
+# Single container running both nginx (frontend) and Node.js (backend)
+# =============================================================================
 services:
-  # ============================================================================
-  # Best Version Application Container
-  # ============================================================================
-  # Single container running both nginx (frontend) and Node.js (backend)
-  # ============================================================================
   app:
     build:
       context: .
@@ -37,19 +35,23 @@ services:
       test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:3000/health"]
       interval: 30s
       timeout: 10s
-      retries: 3
-      start_period: 30s
+      retries: 5
+      start_period: 60s
 
 volumes:
   # Named volumes for persistent data storage
   games_data:
     name: best-version_games
+    external: true
   submissions_data:
     name: best-version_submissions
+    external: true
   newsletters_data:
     name: best-version_newsletters
+    external: true
   ssl_certs:
     name: best-version_ssl
+    external: true
 
 networks:
   best-version-network:

@@ -75,6 +75,10 @@ class AdminAuth {
    * Verify and consume verification token
    */
   verifyToken(token) {
+    if (!token || typeof token !== 'string') {
+      return null;
+    }
+
     const tokenHash = crypto
       .createHash('sha256')
       .update(token)
@@ -82,11 +86,11 @@ class AdminAuth {
 
     const tokenFile = path.join(this.sessionsDir, `${tokenHash}.json`);
 
-    if (!fs.existsSync(tokenFile)) {
-      return null;
-    }
-
     try {
+      if (!fs.existsSync(tokenFile)) {
+        return null;
+      }
+
       const tokenData = JSON.parse(fs.readFileSync(tokenFile, 'utf8'));
 
       // Check if token is expired

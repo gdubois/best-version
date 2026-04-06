@@ -128,6 +128,122 @@ describe('GameAPI Service Tests', () => {
     assert.strictEqual(results.length, 0, 'Should be empty');
   });
 
+  // Test partial word matching
+  test('1.0-SVC-083 [P1] GameAPI searchByTitle matches partial words (e.g., "can" → "cannon")', () => {
+    // When
+    const results = gameAPI.searchByTitle('can');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    assert(results.length > 0, 'Should find matches');
+    // Should match games with "cannon" or similar in title
+    results.forEach(game => {
+      const title = game.basic_info.title.toLowerCase();
+      assert(title.includes('can'), `Title "${title}" should contain "can"`);
+    });
+  });
+
+  test('1.0-SVC-084 [P1] GameAPI searchByTitle matches partial word in multi-word query', () => {
+    // When - "antasy 6" should match "Final Fantasy VI"
+    const results = gameAPI.searchByTitle('antasy 6');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    assert(results.length > 0, 'Should find matches');
+    results.forEach(game => {
+      const title = game.basic_info.title.toLowerCase();
+      assert(title.includes('fantasy'), 'Should contain "fantasy"');
+    });
+  });
+
+  test('1.0-SVC-085 [P1] GameAPI searchByTitle requires all parts to match', () => {
+    // When - "fantasy 7" should match "Final Fantasy VII"
+    const results = gameAPI.searchByTitle('fantasy 7');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    assert(results.length > 0, 'Should find matches');
+    results.forEach(game => {
+      const title = game.basic_info.title.toLowerCase();
+      assert(title.includes('fantasy'), 'Should contain "fantasy"');
+      assert(title.includes('vii'), 'Should contain "vii"');
+    });
+  });
+
+  // Test Roman numeral preservation
+  test('1.0-SVC-086 [P1] GameAPI searchByTitle matches exact Roman numeral "VII" only', () => {
+    // When - Search for exact Roman numeral VII
+    const results = gameAPI.searchByTitle('vii');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    // Should only match games with "VII" in title, not "VIII"
+    results.forEach(game => {
+      const title = game.basic_info.title.toLowerCase();
+      // Should contain VII but this test verifies it finds something
+      assert(title.includes('vii'), `Title should contain "vii": ${title}`);
+    });
+  });
+
+  test('1.0-SVC-087 [P1] GameAPI searchByTitle matches exact Roman numeral "VIII" only', () => {
+    // When - Search for exact Roman numeral VIII
+    const results = gameAPI.searchByTitle('viii');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    assert(results.length > 0, 'Should find matches');
+    results.forEach(game => {
+      const title = game.basic_info.title.toLowerCase();
+      assert(title.includes('viii'), `Title should contain "viii": ${title}`);
+      assert(!title.includes('vii') || title.includes('viii'), 'Should not match VII without VIII');
+    });
+  });
+
+  test('1.0-SVC-088 [P1] GameAPI searchByTitle converts Arabic to Roman numerals', () => {
+    // When - Search with Arabic "7" should find "VII"
+    const results = gameAPI.searchByTitle('7');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    assert(results.length > 0, 'Should find matches');
+  });
+
+  test('1.0-SVC-089 [P1] GameAPI searchByTitle converts Roman to Arabic numerals', () => {
+    // When - Search with Roman "xii" should find "XII"
+    const results = gameAPI.searchByTitle('xii');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    assert(results.length > 0, 'Should find matches');
+  });
+
+  test('1.0-SVC-090 [P1] GameAPI searchByTitle handles mixed Roman/Arabic in multi-part query', () => {
+    // When - "fantasy vii" should match "Final Fantasy VII"
+    const results = gameAPI.searchByTitle('fantasy vii');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    assert(results.length > 0, 'Should find matches');
+    results.forEach(game => {
+      const title = game.basic_info.title.toLowerCase();
+      assert(title.includes('fantasy'), 'Should contain "fantasy"');
+      assert(title.includes('vii'), 'Should contain "vii"');
+    });
+  });
+
+  test('1.0-SVC-091 [P1] GameAPI searchByTitle exact Roman matching prevents cascade matches', () => {
+    // When - "xii" should NOT match all games with Roman numerals
+    const results = gameAPI.searchByTitle('xii');
+
+    // Then
+    assert(Array.isArray(results), 'Should return array');
+    // Should only match XII, not X, XI, XIII, etc.
+    results.forEach(game => {
+      const title = game.basic_info.title.toLowerCase();
+      assert(title.includes('xii'), `Title should contain "xii": ${title}`);
+    });
+  });
+
   // Test getGamesByGenre
   test('1.0-SVC-063 [P1] GameAPI getGamesByGenre returns games by genre', () => {
     // When

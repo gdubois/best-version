@@ -1,1 +1,181 @@
-[]
+[
+  {
+    "id": "0967541a-8164-4208-9d24-e10cd4aa2cd1",
+    "title": "Test Game",
+    "alternativeNames": [],
+    "platforms": [
+      "PC"
+    ],
+    "recommendations": [],
+    "notes": "Test submission",
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-06T18:08:57.469Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title",
+        "notes"
+      ],
+      "detectedWords": [
+        "shit",
+        "ass"
+      ],
+      "flaggedAt": "2026-04-06T18:08:57.469Z"
+    }
+  },
+  {
+    "id": "2d41fef4-3837-48c1-8e4c-05e9ddb48cfb",
+    "title": "Test",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-06T18:09:08.276Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "shit"
+      ],
+      "flaggedAt": "2026-04-06T18:09:08.276Z"
+    }
+  },
+  {
+    "id": "5998c526-9d08-4171-bc14-3eb1f8528a60",
+    "title": "Test 3",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-06T18:11:01.496Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "shit"
+      ],
+      "flaggedAt": "2026-04-06T18:11:01.496Z"
+    }
+  },
+  {
+    "id": "23484546-8548-4328-943d-520e9db75529",
+    "title": "Test 5",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-06T18:15:27.657Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "shit"
+      ],
+      "flaggedAt": "2026-04-06T18:15:27.657Z"
+    }
+  },
+  {
+    "id": "7a208177-8665-4cc1-ada8-5bef730d01be",
+    "title": "Test 6",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-06T18:16:43.974Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "shit"
+      ],
+      "flaggedAt": "2026-04-06T18:16:43.974Z"
+    }
+  },
+  {
+    "id": "38115612-fe2a-453d-bac3-f50e5c4e4899",
+    "title": "Test 6",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-06T18:16:52.219Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "shit"
+      ],
+      "flaggedAt": "2026-04-06T18:16:52.219Z"
+    }
+  },
+  {
+    "id": "234ffbac-cf56-4b98-8404-bcfc5308f18f",
+    "title": "Test 7",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-06T18:32:44.662Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "shit"
+      ],
+      "flaggedAt": "2026-04-06T18:32:44.662Z"
+    }
+  }
+]

@@ -54,12 +54,20 @@ class GamesRoutes {
           }
         });
 
+        // Get pending submissions count (suggested but not yet curated)
+        // Includes both 'pending' and 'flagged_for_review' as both need review
+        const allSubmissions = this.submissionService.getAllSubmissions();
+        const pendingCount = allSubmissions.filter(s =>
+          s.status === 'pending' || s.status === 'flagged_for_review'
+        ).length;
+
         res.json({
           success: true,
           data: {
             total_games: games.length,
             total_platforms: platforms.length,
-            total_versions: totalVersions
+            total_versions: totalVersions,
+            in_progress: pendingCount
           }
         });
       } catch (error) {
@@ -67,20 +75,8 @@ class GamesRoutes {
       }
     });
 
-    // GET /api/games/:slug - Get single game by slug
-    router.get('/games/:slug', (req, res) => {
-      try {
-        const game = this.gameAPI.getGameBySlug(req.params.slug);
-        if (!game) {
-          return res.status(404).json({ success: false, error: 'Game not found' });
-        }
-        res.json({ success: true, data: game });
-      } catch (error) {
-        res.status(500).json({ success: false, error: error.message });
-      }
-    });
-
     // GET /api/games/search?q=query - Search games by title
+    // Must be BEFORE /:slug to avoid dynamic route matching
     router.get('/games/search', (req, res) => {
       try {
         const query = req.query.q;
@@ -89,6 +85,26 @@ class GamesRoutes {
         }
         const games = this.gameAPI.searchByTitle(query);
         res.json({ success: true, data: games, count: games.length });
+      } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+      }
+    });
+
+    // GET /api/games/:slug - Get single game by slug
+    router.get('/games/:slug', (req, res) => {
+      try {
+        // Extract slug - handle both /games/slug and slug formats
+        let slug = req.params.slug;
+        if (slug.startsWith('/games/')) {
+          slug = slug.substring(7); // Remove '/games/' prefix
+        }
+        // Look up with full path format
+        const lookupSlug = `/games/${slug}`;
+        const game = this.gameAPI.getGameBySlug(lookupSlug);
+        if (!game) {
+          return res.status(404).json({ success: false, error: 'Game not found' });
+        }
+        res.json({ success: true, data: game });
       } catch (error) {
         res.status(500).json({ success: false, error: error.message });
       }

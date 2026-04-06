@@ -247,6 +247,7 @@ curl -fsSL https://get.docker.com | sh
 git clone <repo-url> /opt/best-version
 cd /opt/best-version
 
+<<<<<<< HEAD
 # Copy backup
 scp -r user@backup-server:/path/to/backups/best-version-backup_* /opt/best-version/backups/
 
@@ -271,3 +272,6 @@ For issues or questions:
 1. Check logs: `docker-compose logs -f`
 2. Review `docs/` documentation
 3. Check `scripts/README.md` for script usage
+=======
+ISC
+>>>>>>> 2ce509a95b122579796ff0d81f5b4a5f17981c5b

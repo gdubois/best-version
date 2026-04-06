@@ -61,11 +61,10 @@ check_prerequisites() {
         log_success "Certbot already installed: $(certbot --version)"
     fi
 
-    # Check if nginx is running
-    if ! systemctl is-active --quiet nginx 2>/dev/null; then
-        log_warn "nginx is not running, starting it..."
-        systemctl start nginx
-    fi
+    # Note: nginx runs inside Docker, so we don't check systemctl
+    # Certbot standalone mode will temporarily bind to port 80 to verify
+    log_info "nginx runs inside Docker container"
+    log_info "Certbot will use standalone mode for HTTP-01 challenge"
 
     # Check if domain DNS is configured
     log_info "Checking DNS configuration for $SSL_DOMAIN..."
@@ -133,31 +132,19 @@ create_ssl_certificate() {
     # or nginx mode if nginx is configured to listen on port 80/443
     log_info "Obtaining certificate for $SSL_DOMAIN and $SSL_ALT_DOMAIN..."
 
-    # Try nginx mode first (if nginx config exists)
-    if certbot --nginx -d "$SSL_DOMAIN" -d "$SSL_ALT_DOMAIN" \
+    # Use standalone mode since nginx runs inside Docker
+    # Standalone mode temporarily binds to port 80 for validation
+    log_info "Using standalone mode for certificate validation..."
+
+    certbot standalone -d "$SSL_DOMAIN" -d "$SSL_ALT_DOMAIN" \
         --non-interactive --agree-tos \
-        --email admin@$SSL_DOMAIN > /dev/null 2>&1; then
-        log_success "SSL certificate obtained using nginx plugin"
+        --email admin@$SSL_DOMAIN > /dev/null 2>&1
+
+    if [ $? -eq 0 ]; then
+        log_success "SSL certificate obtained using standalone mode"
     else
-        # Fallback to standalone mode
-        log_info "Falling back to standalone mode (will stop nginx briefly)..."
-
-        # Stop nginx
-        systemctl stop nginx 2>/dev/null || true
-
-        certbot standalone -d "$SSL_DOMAIN" -d "$SSL_ALT_DOMAIN" \
-            --non-interactive --agree-tos \
-            --email admin@$SSL_DOMAIN > /dev/null 2>&1
-
-        # Start nginx again
-        systemctl start nginx
-
-        if [ $? -eq 0 ]; then
-            log_success "SSL certificate obtained using standalone mode"
-        else
-            log_error "Failed to obtain SSL certificate"
-            exit 1
-        fi
+        log_error "Failed to obtain SSL certificate"
+        exit 1
     fi
 
     # Verify certificate
@@ -256,10 +243,7 @@ renew_ssl_certificate() {
     if certbot renew --force-renewal > /dev/null 2>&1; then
         log_success "SSL certificate renewed"
 
-        # Reload nginx
-        systemctl reload nginx 2>/dev/null || true
-
-        # Update project SSL
+        # Copy updated certificates to project
         copy_ssl_to_project
     else
         log_error "Failed to renew SSL certificate"

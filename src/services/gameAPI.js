@@ -1,10 +1,13 @@
 // Game data API service
 
-const { generateQueryVariations } = require('../utils/romanNumeral');
-
 class GameAPI {
   constructor(gameLoader) {
     this.gameLoader = gameLoader;
+  }
+
+  // Escape special regex characters to prevent regex injection
+  escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
   async init() {
@@ -21,32 +24,117 @@ class GameAPI {
     return this.gameLoader.getGameBySlug(slug);
   }
 
-  // Search games by title with Roman numeral normalization
+  // Search games by title with partial word matching and Roman numeral preservation
   searchByTitle(query) {
-    // Generate all variations of the query (Roman numeral to Arabic conversions)
-    const variations = generateQueryVariations(query);
-
     const allGames = this.gameLoader.getAllGames();
     const results = [];
-
-    // Track which games we've already added to avoid duplicates
     const seenSlugs = new Set();
 
-    for (const variation of variations) {
-      const normalizedQuery = variation.toLowerCase();
-      const matches = allGames.filter(game =>
-        game.basic_info.title.toLowerCase().includes(normalizedQuery)
-      );
+    const normalizedQuery = query.toLowerCase().trim();
 
-      matches.forEach(game => {
-        if (!seenSlugs.has(game.basic_info.url_slug)) {
-          results.push(game);
-          seenSlugs.add(game.basic_info.url_slug);
+    for (const game of allGames) {
+      const title = game.basic_info.title.toLowerCase();
+
+      // Generate all variations for each part of the query
+      const parts = normalizedQuery.split(/\s+/);
+      const partVariations = parts.map(part => this.getSearchVariations(part));
+
+      // Check if ALL parts match the title (each part can be Roman or Arabic)
+      let allPartsMatch = true;
+      for (let i = 0; i < parts.length; i++) {
+        const part = parts[i];
+        const variations = partVariations[i];
+
+        let partMatched = false;
+        for (const variation of variations) {
+          const isRoman = this.isExactRomanNumeral(variation);
+          const regex = isRoman
+            ? new RegExp(`\\b${this.escapeRegex(variation)}\\b`, 'i')
+            : new RegExp(this.escapeRegex(variation), 'i');
+          if (regex.test(title)) {
+            partMatched = true;
+            break;
+          }
         }
-      });
+
+        if (!partMatched) {
+          allPartsMatch = false;
+          break;
+        }
+      }
+
+      if (allPartsMatch && !seenSlugs.has(game.basic_info.url_slug)) {
+        results.push(game);
+        seenSlugs.add(game.basic_info.url_slug);
+      }
     }
 
     return results;
+  }
+
+  // Generate search variations for a single part to handle Roman ↔ Arabic numeral conversion
+  getSearchVariations(part) {
+    const variations = [part];
+
+    // If part is a single digit, also generate Roman numeral version
+    if (/^\d$/.test(part)) {
+      const num = parseInt(part, 10);
+      const roman = this.arabicToRoman(num);
+      if (roman) {
+        variations.push(roman.toLowerCase());
+      }
+    }
+
+    // If part is a Roman numeral, also generate Arabic version
+    if (this.isExactRomanNumeral(part)) {
+      const arabic = this.romanToArabic(part);
+      if (arabic !== null) {
+        variations.push(arabic.toString());
+      }
+    }
+
+    return variations;
+  }
+
+  // Convert Roman numeral to Arabic
+  romanToArabic(roman) {
+    const romanMap = {
+      'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5, 'VI': 6,
+      'VII': 7, 'VIII': 8, 'IX': 9, 'X': 10, 'XI': 11, 'XII': 12,
+      'XIII': 13, 'XIV': 14, 'XV': 15, 'XVI': 16, 'XVII': 17, 'XVIII': 18,
+      'XIX': 19, 'XX': 20, 'XXI': 21, 'XXII': 22, 'XXIII': 23, 'XXIV': 24,
+      'XXV': 25, 'XXVI': 26, 'XXVII': 27, 'XXVIII': 28, 'XXIX': 29, 'XXX': 30
+    };
+    return romanMap.hasOwnProperty(roman.toUpperCase()) ? romanMap[roman.toUpperCase()] : null;
+  }
+
+  // Convert Arabic to Roman numeral
+  arabicToRoman(num) {
+    const romanMap = {
+      1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI',
+      7: 'VII', 8: 'VIII', 9: 'IX', 10: 'X', 11: 'XI', 12: 'XII',
+      13: 'XIII', 14: 'XIV', 15: 'XV', 16: 'XVI', 17: 'XVII', 18: 'XVIII',
+      19: 'XIX', 20: 'XX', 21: 'XXI', 22: 'XXII', 23: 'XXIII', 24: 'XXIV',
+      25: 'XXV', 26: 'XXVI', 27: 'XXVII', 28: 'XXVIII', 29: 'XXIX', 30: 'XXX'
+    };
+    return romanMap[num] || null;
+  }
+
+  // Check if query is an exact Roman numeral (single, not part of longer string)
+  isExactRomanNumeral(query) {
+    if (!query) return false;
+
+    const romanMap = {
+      'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5, 'VI': 6,
+      'VII': 7, 'VIII': 8, 'IX': 9, 'X': 10, 'XI': 11, 'XII': 12,
+      'XIII': 13, 'XIV': 14, 'XV': 15, 'XVI': 16, 'XVII': 17, 'XVIII': 18,
+      'XIX': 19, 'XX': 20, 'XXI': 21, 'XXII': 22, 'XXIII': 23, 'XXIV': 24,
+      'XXV': 25, 'XXVI': 26, 'XXVII': 27, 'XXVIII': 28, 'XXIX': 29, 'XXX': 30
+    };
+
+    // Check if query (case-insensitive) is exactly a Roman numeral
+    const upper = query.toUpperCase();
+    return /^[IVXLCDM]+$/.test(upper) && romanMap.hasOwnProperty(upper);
   }
 
   // Get games by genre

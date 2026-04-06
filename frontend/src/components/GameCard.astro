@@ -16,10 +16,12 @@ interface Props {
 const {
   title,
   slug,
-  coverImage = '/images/placeholder.png',
   platforms = ['desktop-console'],
   featured = false,
 } = Astro.props;
+
+// Provide default cover art when none is specified
+const coverImage = Astro.props.coverImage || '/images/default-image.jpg';
 
 // Generate platform badge HTML
 function renderPlatformBadges(platforms: ('desktop-console' | 'handheld')[]) {

@@ -174,6 +174,11 @@ function getUserAgentBlocker() {
 function blockScrapers(req, res, next) {
   const userAgent = req.get('User-Agent') || req.headers['user-agent'];
 
+  // Exempt health check endpoint from user-agent blocking
+  if (req.path === '/health') {
+    return next();
+  }
+
   const blocker = getUserAgentBlocker();
 
   if (blocker.shouldBlockUserAgent(userAgent)) {

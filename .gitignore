@@ -3,6 +3,7 @@
 # ==============
 .ralph/
 _bmad/
+.claude/
 
 # ==============
 # Dependencies

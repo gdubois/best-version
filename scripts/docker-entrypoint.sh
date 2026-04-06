@@ -15,6 +15,10 @@ mkdir -p /var/run/nginx
 mkdir -p /var/log/nginx
 touch /var/run/nginx.pid
 
+# Generate nginx config based on SSL certificates
+echo "[Entrypoint] Generating nginx configuration..."
+/app/scripts/generate-nginx-config.sh
+
 # Start nginx in background (foreground mode for Docker)
 echo "[Entrypoint] Starting nginx..."
 nginx -g "daemon off;" &
