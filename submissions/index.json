@@ -177,5 +177,112 @@
       ],
       "flaggedAt": "2026-04-06T18:32:44.662Z"
     }
+  },
+  {
+    "id": "be50e810-e852-4919-9966-280ea7abfa0a",
+    "title": "test",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-07T19:47:03.855Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "shit"
+      ],
+      "flaggedAt": "2026-04-07T19:47:03.855Z"
+    }
+  },
+  {
+    "id": "b2451592-8f48-443d-abfb-bd104a41b938",
+    "title": "test",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-07T19:52:33.742Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "shit"
+      ],
+      "flaggedAt": "2026-04-07T19:52:33.742Z"
+    }
+  },
+  {
+    "id": "9b376947-f801-456d-a8be-bba7a189e477",
+    "title": "dcsdcds",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "pending",
+    "submittedAt": "2026-04-07T19:53:17.567Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": null
+  },
+  {
+    "id": "a664cde1-41af-4fbb-a326-b0577af442f7",
+    "title": "asd",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "flagged_for_review",
+    "submittedAt": "2026-04-07T19:53:39.420Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": {
+      "flagged": true,
+      "flaggedFields": [
+        "title"
+      ],
+      "detectedWords": [
+        "ass"
+      ],
+      "flaggedAt": "2026-04-07T19:53:39.420Z"
+    }
+  },
+  {
+    "id": "719472a6-07f9-4e2d-bcec-47b5de6bd5b3",
+    "title": "Prout",
+    "alternativeNames": [],
+    "platforms": [],
+    "recommendations": [],
+    "notes": null,
+    "email": null,
+    "status": "pending",
+    "submittedAt": "2026-04-07T20:38:33.232Z",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "rejectionReason": null,
+    "approvedAt": null,
+    "languageFilterResult": null
   }
 ]

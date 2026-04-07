@@ -46,7 +46,6 @@ class UserAgentBlocker {
         'harvest',
         // Monitoring tools (often abused)
         'uptime robot',
-        'statuscake',
         // Known bad actors
         'nutch',
         'libwww',
@@ -59,7 +58,7 @@ class UserAgentBlocker {
         'webbandit',
         'getright',
         'hitweb',
-        // Generic aggressive bots
+        // Specific known bad bots (more specific patterns)
         'mj12bot',
         'AhrefsSiteAudit',
         'dotbot',

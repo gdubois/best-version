@@ -331,6 +331,7 @@
         }
 
         .btn {
+            font-family: 'Rajdhani', sans-serif;
             padding: 1rem 2.5rem;
             font-size: 1.1rem;
             font-weight: 700;
@@ -660,7 +661,10 @@
             font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
             font-weight: 900;
-            color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .about-stat-label {
@@ -1505,8 +1509,8 @@
                                 <div class="about-stat-label">Dedicated Creator</div>
                             </div>
                             <div class="about-stat">
-                                <div id="progress-games" class="about-stat-number"><span class="loading-spinner"></span></div>
-                                <div class="about-stat-label">Games in Progress</div>
+                                <div class="about-stat-number">Growing</div>
+                                <div class="about-stat-label">Community</div>
                             </div>
                         </div>
                     </div>
@@ -1622,10 +1626,9 @@
             <div class="logo" style="margin-bottom: 2rem;">BEST VERSION</div>
             <div class="footer-links">
                 <a href="#about">About Us</a>
-                <a href="/submit">Contact</a>
+                <a href="mailto:admin@best-version.com">Contact</a>
                 <a href="/legal/privacy.html">Privacy Policy</a>
                 <a href="/legal/terms.html">Terms of Service</a>
-                <a href="/api/docs" target="_blank">API Documentation</a>
             </div>
             <p style="color: rgba(255, 255, 255, 0.5);">© 2026 Best Version. All rights reserved. Preserving gaming history one game at a time.</p>
         </footer>
@@ -1671,14 +1674,14 @@
                     document.getElementById('total-platforms').textContent = data.total_platforms;
                     document.getElementById('curated-versions').textContent = data.total_versions;
                     document.getElementById('in-progress').textContent = data.in_progress || 0;
-                    document.getElementById('progress-games').textContent = (data.in_progress || 0) + '+';
+                    // progress-games element was removed (changed to Community Members)
                 } catch (error) {
                     console.error('Error loading stats:', error);
                     // Use fallback values if API fails
                     document.getElementById('total-games').textContent = '500+';
                     document.getElementById('total-platforms').textContent = '7';
                     document.getElementById('curated-versions').textContent = '1000+';
-                    document.getElementById('progress-games').textContent = '500+';
+                    // progress-games element was removed (changed to Community Members)
                 }
             }
 
@@ -1830,7 +1833,17 @@
 
             function displayResults(results, query) {
                 if (results.length === 0) {
-                    searchResults.innerHTML = '<div class="no-results">No games found matching your search</div>';
+                    searchResults.innerHTML = `
+                        <div class="no-results" style="padding: 2rem;">
+                            <div style="text-align: center;">
+                                <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">No games found matching "${escapeHtml(query)}"</p>
+                                <button onclick="preFillSubmitAndClose('${escapeHtml(query)}'); hideSearchResults();"
+                                    class="btn btn-primary">
+                                    Submit "${escapeHtml(query)}" as a new game
+                                </button>
+                            </div>
+                        </div>
+                    `;
                 } else {
                     searchResults.innerHTML = results.map(game => {
                         const title = game.basic_info?.title || game.title || 'Unknown';
@@ -2128,20 +2141,31 @@
                ============================================= */
             let submitRecommendations = [];
 
+            function preFillSubmitAndClose(searchQuery) {
+                // Store the prefill query for the submit modal
+                window.__prefillGameFromSearch = searchQuery;
+                openSubmitModal();
+            }
+
             function openSubmitModal(prefillGame = null) {
                 const modal = document.getElementById('submitModal');
                 const submitModalBody = document.getElementById('submitModalBody');
 
                 submitRecommendations = [];
 
-                // Clear body content but keep header
+                // Check for prefill from search or URL
                 const urlParams = new URLSearchParams(window.location.search);
-                const prefillGameFromUrl = prefillGame || urlParams.get('game');
+                const prefillGameFromUrl = urlParams.get('game');
+                const prefillGameFromSearch = window.__prefillGameFromSearch || prefillGame || prefillGameFromUrl;
 
                 submitModalBody.innerHTML = `
-                    ${prefillGameFromUrl ? `
+                    ${prefillGameFromSearch ? `
                                 <div class="prefill-info">
-                                    Suggesting: <strong>${escapeHtml(prefillGameFromUrl)}</strong>
+                                    Found no results for: <strong>${escapeHtml(prefillGameFromSearch)}</strong>
+                                    <button onclick="window.__prefillGameFromSearch = null; this.parentElement.remove();"
+                                            style="margin-left: 10px; background: none; border: none; color: var(--primary); cursor: pointer; padding: 0;">
+                                        Clear
+                                    </button>
                                 </div>
                             ` : ''}
 
@@ -2160,7 +2184,7 @@
                                         autocorrect="off"
                                         autocapitalize="off"
                                         spellcheck="false"
-                                        ${prefillGameFromUrl ? `value="${escapeHtml(prefillGameFromUrl)}"` : ''}
+                                        ${prefillGameFromSearch ? `value="${escapeHtml(prefillGameFromSearch)}"` : ''}
                                     >
                                     <p class="form-hint">Enter the official title of the game</p>
                                 </div>
@@ -2315,7 +2339,7 @@
                 // Validation
                 const title = document.getElementById('gameTitle').value.trim();
                 if (!title) {
-                    showError('Please enter a game title');
+                    showToast('Please enter a game title', 'error');
                     return;
                 }
 
@@ -2380,7 +2404,7 @@
                         // Reload stats to update "In Progress" count
                         await loadStats();
                     } else {
-                        showError(result.error || 'Failed to submit. Please try again.');
+                        showToast(result.error || 'Failed to submit. Please try again.', 'error');
                         resetSubmitButton();
                     }
                 } catch (error) {
@@ -2391,8 +2415,10 @@
 
             function showError(message) {
                 const errorMessage = document.getElementById('submitErrorMessage');
-                errorMessage.textContent = message;
-                errorMessage.classList.add('active');
+                if (errorMessage) {
+                    errorMessage.textContent = message;
+                    errorMessage.classList.add('active');
+                }
             }
 
             function resetSubmitButton() {

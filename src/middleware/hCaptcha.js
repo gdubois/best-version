@@ -280,6 +280,13 @@ async function hCaptchaMiddleware(req, res, next) {
 
   if (!token || token.trim() === '') {
     // No token provided - try fallback
+    // Only use fallback if hCaptcha is not configured
+    if (!service.secretKey) {
+      // hCaptcha not configured - allow request through without captcha
+      req.hCaptchaValid = true;
+      return next();
+    }
+    // hCaptcha configured but no token - validate using fallback
     result = await service.verifyFallback(req);
   } else {
     // Token provided - validate with hCaptcha

@@ -412,9 +412,13 @@ class AdminAuth {
 AdminAuth.sessions = new Map();
 
 // Auto-cleanup every 5 minutes
-setInterval(() => {
-  const auth = new AdminAuth();
-  auth.cleanupExpired();
-}, 5 * 60 * 1000);
+let cleanupInterval = null;
 
-module.exports = { AdminAuth, adminAuth: new AdminAuth() };
+if (process.env.NODE_ENV !== 'test') {
+  cleanupInterval = setInterval(() => {
+    const auth = new AdminAuth();
+    auth.cleanupExpired();
+  }, 5 * 60 * 1000);
+}
+
+module.exports = { AdminAuth, adminAuth: new AdminAuth(), stopAdminAuthCleanup: () => { if (cleanupInterval) clearInterval(cleanupInterval); } };

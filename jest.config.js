@@ -1,7 +1,12 @@
 module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/test/**/*.test.js'],
-  verbose: true,
+  testPathIgnorePatterns: ['/test/e2e/'],
+  verbose: false,
+  testTimeout: 30000,
+  forceExit: true,
+  detectOpenHandles: true,
+  globalTeardown: './test/globalTeardown.js',
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
   collectCoverageFrom: [

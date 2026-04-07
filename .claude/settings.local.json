@@ -95,7 +95,12 @@
       "Bash(NODE_OPTIONS=\"--max-old-space-size=4096\" npx jest test/middleware/adminAuth.test.js --forceExit)",
       "Bash(find src/.admin_sessions -name \"*.json\" -delete)",
       "Bash(tar -cf - scripts/)",
-      "Bash(tar -tf -)"
+      "Bash(tar -tf -)",
+      "Bash(npm ls:*)",
+      "Bash(pm2 restart:*)",
+      "Bash(kill 90565)",
+      "Bash(pkill -f \"node.*index.js\")",
+      "Bash(grep:*)"
     ]
   }
 }

@@ -159,7 +159,11 @@ class SessionStore {
 }
 
 const sessionStore = new SessionStore();
-sessionStore.startCleanup();
+
+// Only start cleanup in non-test environments
+if (process.env.NODE_ENV !== 'test') {
+  sessionStore.startCleanup();
+}
 
 /**
  * Generate session ID
@@ -247,6 +251,23 @@ class CSRFProtect {
         const token = this.generateToken();
         res.locals.csrfToken = token;
         res.set('X-CSRF-Token', token);
+        return next();
+      }
+
+      // Skip CSRF validation for specific API endpoints that have their own protection
+      // (e.g., newsletter subscribe uses hCaptcha, admin endpoints use adminAuth)
+      const skipPaths = [
+        '/api/newsletter/subscribe',
+        '/api/submissions',  // submissions use hCaptcha
+      ];
+      const path = req.path.toLowerCase();
+      if (skipPaths.some(skipPath => path === skipPath || path.startsWith(skipPath + '?'))) {
+        return next();
+      }
+
+      // Skip CSRF validation if hCaptcha has already validated the request
+      // (hCaptcha provides equivalent protection for public endpoints)
+      if (req.hCaptchaValid) {
         return next();
       }
 

@@ -123,12 +123,24 @@ function cleanupOldConnections() {
   }
 }
 
+let cleanupInterval = null;
+
 /**
  * Cleanup cron task to run periodically
  */
 function scheduleCleanup() {
   // Run cleanup every minute
-  setInterval(cleanupOldConnections, 60000);
+  cleanupInterval = setInterval(cleanupOldConnections, 60000);
+}
+
+/**
+ * Stop the cleanup cron task
+ */
+function stopCleanup() {
+  if (cleanupInterval) {
+    clearInterval(cleanupInterval);
+    cleanupInterval = null;
+  }
 }
 
 /**
@@ -168,14 +180,17 @@ function getRateLimitStats() {
   return stats;
 }
 
-// Schedule cleanup on module load
-scheduleCleanup();
+// Schedule cleanup on module load (skip in test environment)
+if (process.env.NODE_ENV !== 'test') {
+  scheduleCleanup();
+}
 
 module.exports = {
   concurrencyMiddleware,
   rateLimitMiddleware,
   getConcurrencyStats,
   getRateLimitStats,
+  stopCleanup,
   config,
   cleanupOldConnections
 };

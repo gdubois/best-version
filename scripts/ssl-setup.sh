@@ -2,7 +2,7 @@
 # =============================================================================
 # Best Version - SSL Setup Script (Docker Only)
 # =============================================================================
-# Manages Let's Encrypt SSL certificates for www.best-version.com
+# Manages Let's Encrypt SSL certificates for $SSL_ALT_DOMAIN
 # Uses custom certbot Docker image for certificate management
 # No local certbot installation required
 # =============================================================================
@@ -12,10 +12,20 @@ set -e
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
-SSL_DOMAIN="www.best-version.com"
-SSL_ALT_DOMAIN="best-version.com"
-SSL_DIR="/etc/letsencrypt/live/$SSL_DOMAIN"
-SSL_KEY_DIR="/etc/letsencrypt/archive/$SSL_DOMAIN"
+
+# Default domain if SITE_URL not set
+DEFAULT_DOMAIN="www.best-version.com"
+
+# Get domain from SITE_URL environment variable or use default
+SITE_URL="${SITE_URL:-https://$DEFAULT_DOMAIN}"
+
+# Extract domain from SITE_URL (remove https:// or http:// prefix)
+SSL_DOMAIN=$(echo "$SITE_URL" | sed -E 's|https?://||' | sed -E 's|/.*||')
+
+# Get base domain (remove www. prefix if present)
+SSL_ALT_DOMAIN=$(echo "$SSL_DOMAIN" | sed 's/^www\.//')
+SSL_DIR="/etc/letsencrypt/live/$SSL_ALT_DOMAIN"
+SSL_KEY_DIR="/etc/letsencrypt/archive/$SSL_ALT_DOMAIN"
 PROJECT_SSL_DIR="$PROJECT_DIR/nginx/ssl"
 CERTBOT_IMAGE="best-version-certbot:latest"
 CERTBOT_CONTEXT="$SCRIPT_DIR/../"
@@ -218,8 +228,8 @@ check_prerequisites() {
 check_ssl_exists() {
     log_info "Checking for existing SSL certificate..."
 
-    local CERT_FILE="$SSL_KEY_DIR/www.best-version.com/cert1.pem"
-    local KEY_FILE="$SSL_KEY_DIR/www.best-version.com/privkey1.pem"
+    local CERT_FILE="$SSL_KEY_DIR/$SSL_ALT_DOMAIN/cert1.pem"
+    local KEY_FILE="$SSL_KEY_DIR/$SSL_ALT_DOMAIN/privkey1.pem"
 
     if [ -f "$CERT_FILE" ] && [ -f "$KEY_FILE" ]; then
         # Get certificate expiry date
@@ -310,7 +320,7 @@ create_ssl_certificate() {
 
     # Verify certificate and show expiration date
     # Check archive directory since Docker mount may not create live symlinks
-    local FULLCHAIN_FILE="$SSL_KEY_DIR/www.best-version.com/fullchain1.pem"
+    local FULLCHAIN_FILE="$SSL_KEY_DIR/$SSL_ALT_DOMAIN/fullchain1.pem"
     if [ -f "$FULLCHAIN_FILE" ]; then
         log_success "SSL certificate created successfully at: $SSL_DIR"
 
@@ -325,7 +335,7 @@ create_ssl_certificate() {
     else
         log_error "Certificate verification failed - fullchain1.pem not found"
         log_error "Checking available files:"
-        ls -la "$SSL_KEY_DIR/www.best-version.com/" 2>/dev/null || true
+        ls -la "$SSL_KEY_DIR/$SSL_ALT_DOMAIN/" 2>/dev/null || true
         exit 1
     fi
 
@@ -364,8 +374,8 @@ create_ssl_certificate() {
 copy_ssl_to_project() {
     log_info "Copying SSL certificates to project directory and Docker volume..."
 
-    local FULLCHAIN_FILE="$SSL_KEY_DIR/www.best-version.com/fullchain1.pem"
-    local KEY_FILE="$SSL_KEY_DIR/www.best-version.com/privkey1.pem"
+    local FULLCHAIN_FILE="$SSL_KEY_DIR/$SSL_ALT_DOMAIN/fullchain1.pem"
+    local KEY_FILE="$SSL_KEY_DIR/$SSL_ALT_DOMAIN/privkey1.pem"
 
     if [ -f "$FULLCHAIN_FILE" ] && [ -f "$KEY_FILE" ]; then
         mkdir -p "$PROJECT_SSL_DIR"
@@ -403,7 +413,7 @@ update_nginx_config() {
     log_info "Ensuring nginx configuration is up to date..."
 
     # Check if nginx config has correct domain
-    if grep -q "www.best-version.com" "$PROJECT_DIR/nginx/nginx.conf"; then
+    if grep -q "$SSL_ALT_DOMAIN" "$PROJECT_DIR/nginx/nginx.conf"; then
         log_success "nginx config already has correct domain"
     else
         log_info "Updating nginx configuration..."
@@ -417,7 +427,7 @@ check_ssl_renewal() {
     log_info "Checking SSL certificate status..."
     echo ""
 
-    local FULLCHAIN_FILE="$SSL_KEY_DIR/www.best-version.com/fullchain1.pem"
+    local FULLCHAIN_FILE="$SSL_KEY_DIR/$SSL_ALT_DOMAIN/fullchain1.pem"
     if [ -f "$FULLCHAIN_FILE" ]; then
         # Get expiry date
         local expiry=$(openssl x509 -in "$FULLCHAIN_FILE" -noout -enddate | cut -d= -f2)
@@ -482,7 +492,7 @@ renew_ssl_certificate() {
         echo ""
 
         # Show new expiration date
-        local FULLCHAIN_FILE="$SSL_KEY_DIR/www.best-version.com/fullchain1.pem"
+        local FULLCHAIN_FILE="$SSL_KEY_DIR/$SSL_ALT_DOMAIN/fullchain1.pem"
         if [ -f "$FULLCHAIN_FILE" ]; then
             local expiry=$(openssl x509 -in "$FULLCHAIN_FILE" -noout -enddate 2>/dev/null | cut -d= -f2)
             local expiry_epoch=$(date -d "$expiry" +%s 2>/dev/null)

@@ -19,13 +19,16 @@ log_success() { echo -e "${GREEN}[SUCCESS]${NC} $1"; }
 log_warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
 log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
-# Get domain from environment variable
-DOMAIN="${SSL_DOMAIN:-}"
-if [ -z "$DOMAIN" ]; then
-    log_error "SSL_DOMAIN environment variable is not set"
-    log_info "Set it and run again: export SSL_DOMAIN=yourdomain.com"
+# Get domain from SITE_URL environment variable
+SITE_URL="${SITE_URL:-}"
+if [ -z "$SITE_URL" ]; then
+    log_error "SITE_URL environment variable is not set"
+    log_info "Set it and run again: export SITE_URL=https://yourdomain.com"
     exit 1
 fi
+
+# Extract domain from SITE_URL
+DOMAIN=$(echo "$SITE_URL" | sed -E 's|https?://||' | sed -E 's|/.*||')
 
 log_info "Setting up SSL for: $DOMAIN"
 
@@ -36,7 +39,10 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Obtain SSL certificate
-log_info "Obtaining SSL certificate..."
+log_info "Obtaining SSL certificate for: $DOMAIN and www.$DOMAIN"
+
+# Extract base domain (without www prefix)
+BASE_DOMAIN=$(echo "$DOMAIN" | sed 's/^www\.//')
 
 # Check if running as root
 if [ "$EUID" -ne 0 ]; then
@@ -44,14 +50,9 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-# Handle multiple domains (comma-separated)
-DOMAINS=""
-EMAIL=""
-for d in $(echo "$DOMAIN" | tr ',' ' '); do
-    DOMAINS="$DOMAINS -d $d"
-    EMAIL="admin@$d"
-    break
-done
+# Handle multiple domains (main domain + www)
+DOMAINS="-d $DOMAIN -d $BASE_DOMAIN"
+EMAIL="admin@$BASE_DOMAIN"
 
 # Mount the letsencrypt directory and run certbot in Docker
 CERT_DIR="/etc/letsencrypt"
@@ -70,7 +71,8 @@ docker run --rm --network host \
 
 if [ $? -eq 0 ]; then
     log_success "SSL certificate obtained"
-    log_info "Certificate location: $CERT_DIR/live/$DOMAIN"
+    log_info "Certificate location: $CERT_DIR/live/$BASE_DOMAIN"
+    log_info "SITE_URL should be set to: https://$DOMAIN"
 else
     log_error "Certbot failed with exit code: $?"
     exit 1
@@ -89,7 +91,7 @@ fi
 
 # Show certificate information
 log_info "Certificate information:"
-docker run --rm -v "$CERT_DIR:/etc/letsencrypt" certbot/certbot certificates 2>&1 | grep -A 5 "best-version.com" || true
+docker run --rm -v "$CERT_DIR:/etc/letsencrypt" certbot/certbot certificates 2>&1 | grep -A 5 "$BASE_DOMAIN" || true
 
 echo ""
 log_success "SSL setup complete!"

@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "id": "mnp1abi23fx7gntpo8c",
+    "email": "test@example.com",
+    "subscribedAt": "2026-04-07T19:50:19.322Z",
+    "ip": "::1",
+    "unsubscribedAt": null
+  },
+  {
+    "id": "mnp1amu3zw0ke63zxi",
+    "email": "bob@dole.com",
+    "subscribedAt": "2026-04-07T19:50:34.011Z",
+    "ip": "::1",
+    "unsubscribedAt": null
+  },
+  {
+    "id": "mnp1chlnakflusaog4g",
+    "email": "bob2@dole.com",
+    "subscribedAt": "2026-04-07T19:52:00.539Z",
+    "ip": "::1",
+    "unsubscribedAt": null
+  },
+  {
+    "id": "mnp1d1z4bbcu3jx3hxt",
+    "email": "bob3@dole.com",
+    "subscribedAt": "2026-04-07T19:52:26.944Z",
+    "ip": "::1",
+    "unsubscribedAt": null
+  },
+  {
+    "id": "mnp2rner1kdob8648hl",
+    "email": "bobdd@dole.com",
+    "subscribedAt": "2026-04-07T20:31:47.523Z",
+    "ip": "::1",
+    "unsubscribedAt": null
+  }
+]

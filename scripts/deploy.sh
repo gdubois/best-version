@@ -95,14 +95,14 @@ check_env_file() {
         # Extract domain from SITE_URL
         EXPORTED_DOMAIN=$(grep "^SITE_URL=" "$PROJECT_DIR/.env" | sed 's|SITE_URL=\([a-zA-Z0-9.-]*\).*|\1|')
         if [ -n "$EXPORTED_DOMAIN" ]; then
-            export SSL_DOMAIN="$EXPORTED_DOMAIN"
+            export SITE_URL_VALUE="https://$EXPORTED_DOMAIN"
         fi
     elif grep -q "SITE_URL=http" "$PROJECT_DIR/.env" 2>/dev/null; then
         log_warn "SITE_URL is set to http - consider using https"
-        # Extract domain from SITE_URL anyway for SSL setup
+        # Extract domain from SITE_URL anyway
         EXPORTED_DOMAIN=$(grep "^SITE_URL=" "$PROJECT_DIR/.env" | sed 's|SITE_URL=\([a-zA-Z0-9.-]*\).*|\1|')
         if [ -n "$EXPORTED_DOMAIN" ]; then
-            export SSL_DOMAIN="$EXPORTED_DOMAIN"
+            export SITE_URL_VALUE="http://$EXPORTED_DOMAIN"
         fi
     fi
 
@@ -119,14 +119,15 @@ get_base_domain() {
 setup_ssl() {
     log_info "Setting up SSL certificates..."
 
-    # Use domain from environment or extract from SITE_URL
-    local TARGET_DOMAIN="${SSL_DOMAIN:-}"
+    # Extract domain from SITE_URL value or extract from .env
+    local TARGET_DOMAIN="${SITE_URL_VALUE:-}"
     if [ -z "$TARGET_DOMAIN" ] && [ -f "$PROJECT_DIR/.env" ]; then
-        TARGET_DOMAIN=$(grep "^SITE_URL=" "$PROJECT_DIR/.env" | sed 's|SITE_URL=\([a-zA-Z0-9.-]*\).*|\1|')
+        SITE_URL_RAW=$(grep "^SITE_URL=" "$PROJECT_DIR/.env" | cut -d'=' -f2)
+        TARGET_DOMAIN=$(echo "$SITE_URL_RAW" | sed 's|https\?://||' | sed 's|/.*||')
     fi
 
     if [ -z "$TARGET_DOMAIN" ]; then
-        log_warn "No domain found in SSL_DOMAIN or SITE_URL"
+        log_warn "No domain found in SITE_URL"
         log_warn "Continuing with hostname as fallback"
         TARGET_DOMAIN=$(hostname)
     fi
@@ -141,8 +142,8 @@ setup_ssl() {
     local cert_exists=false
     local CERT_DOMAIN=""
     for cert_dir in "/etc/letsencrypt/live/$TARGET_DOMAIN" \
-                    "/etc/letsencrypt/live/www.$BASE_DOMAIN" \
                     "/etc/letsencrypt/live/$BASE_DOMAIN" \
+                    "/etc/letsencrypt/live/www.$BASE_DOMAIN" \
                     "/etc/letsencrypt/live/$(hostname)"; do
         if [ -f "$cert_dir/cert.pem" ] && [ -f "$cert_dir/privkey.pem" ]; then
             cert_exists=true
@@ -159,8 +160,8 @@ setup_ssl() {
         mkdir -p "$PROJECT_DIR/nginx/ssl"
 
         for cert_dir in "/etc/letsencrypt/live/$TARGET_DOMAIN" \
-                        "/etc/letsencrypt/live/www.$BASE_DOMAIN" \
                         "/etc/letsencrypt/live/$BASE_DOMAIN" \
+                        "/etc/letsencrypt/live/www.$BASE_DOMAIN" \
                         "/etc/letsencrypt/live/$(hostname)"; do
             if [ -f "$cert_dir/cert.pem" ] && [ -f "$cert_dir/privkey.pem" ]; then
                 cp "$cert_dir/cert.pem" "$PROJECT_DIR/nginx/ssl/cert.pem"
@@ -173,20 +174,20 @@ setup_ssl() {
         log_info "No existing SSL certificate found"
         log_info "Obtaining certificates for: $TARGET_DOMAIN and $BASE_DOMAIN"
 
-        # Set SSL_DOMAIN for the ssl script to use (comma-separated for both domains)
-        export SSL_DOMAIN="$TARGET_DOMAIN,$BASE_DOMAIN"
+        # Set SITE_URL_VALUE for the ssl script to use (https://domain)
+        export SITE_URL_VALUE="https://$TARGET_DOMAIN"
 
-        # Check if ssl-setup.sh exists and is executable
+        # Check if setup-ssl.sh exists and is executable
         if [ -x "$PROJECT_DIR/scripts/setup-ssl.sh" ]; then
-            # Run setup-ssl.sh (no args, reads SSL_DOMAIN)
+            # Run setup-ssl.sh (reads SITE_URL_VALUE)
             log_info "Running SSL setup script..."
             sudo ./scripts/setup-ssl.sh || {
                 log_warn "Automatic SSL setup failed"
-                log_warn "Please run manually: sudo SSL_DOMAIN=\"$TARGET_DOMAIN,$BASE_DOMAIN\" ./scripts/setup-ssl.sh"
+                log_warn "Please run manually: sudo SITE_URL=\"https://$TARGET_DOMAIN\" ./scripts/setup-ssl.sh"
             }
         else
             log_warn "SSL setup script not found or not executable"
-            log_warn "Please run: sudo SSL_DOMAIN=\"$TARGET_DOMAIN,$BASE_DOMAIN\" ./scripts/setup-ssl.sh"
+            log_warn "Please run: sudo SITE_URL=\"https://$TARGET_DOMAIN\" ./scripts/setup-ssl.sh"
         fi
     fi
 
