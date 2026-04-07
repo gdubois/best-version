@@ -27,7 +27,7 @@ services:
       - games_data:/app/games
       - submissions_data:/app/submissions
       - newsletters_data:/app/newsletters
-      # SSL certificates for HTTPS
+      # SSL certificates for HTTPS (fullchain + key)
       - ssl_certs:/etc/nginx/ssl:ro
     networks:
       - best-version-network

@@ -103,15 +103,19 @@ async function main() {
   });
 
   // Redis cache (optional, for distributed caching)
-  const redisCache = new RedisCacheService({
-    host: process.env.REDIS_HOST || 'localhost',
-    port: parseInt(process.env.REDIS_PORT) || 6379
-  });
+  const redisCacheEnabled = process.env.ENABLE_REDIS_CACHE === 'true';
+  let redisCache = null;
+  if (redisCacheEnabled) {
+    redisCache = new RedisCacheService({
+      host: process.env.REDIS_HOST || 'localhost',
+      port: parseInt(process.env.REDIS_PORT) || 6379
+    });
+  }
 
   // Data cache wrapper
   const dataCache = new DataCache({
     enableMemoryCache: process.env.ENABLE_MEMORY_CACHE !== 'false',
-    enableRedisCache: process.env.ENABLE_REDIS_CACHE === 'true',
+    enableRedisCache: redisCacheEnabled,
     memoryCacheTTL: parseInt(process.env.CACHE_TTL) || 300,
     redisOptions: {
       host: process.env.REDIS_HOST || 'localhost',
@@ -132,7 +136,7 @@ async function main() {
 
   console.log('Performance optimizations initialized');
   console.log(`Memory cache: ${memoryCache ? 'enabled' : 'disabled'}`);
-  console.log(`Redis cache: ${redisCache.enabled ? 'enabled' : 'disabled'}`);
+  console.log(`Redis cache: ${redisCacheEnabled ? (redisCache ? 'enabled' : 'failed') : 'disabled'}`);
   console.log(`Image optimization: ImageMagick=${imageService.hasImageMagick}, GraphicsMagick=${imageService.hasGraphicsMagick}, Sharp=${imageService.hasSharp}`);
 
   // Set up Express server
@@ -286,6 +290,11 @@ app.get('/api/performance/cache-stats', async (req, res) => {
 
   // Serve static files (frontend)
   app.use(express.static('public'));
+
+  // Handle favicon.ico (prevent 404 errors)
+  app.get('/favicon.ico', (req, res) => {
+    res.status(404).send('Not found');
+  });
 
   // Start server
   console.log('[Main] Starting server on port', config.port);

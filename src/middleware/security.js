@@ -273,6 +273,14 @@ class CSRFProtect {
       }
 
       // Constant-time comparison to prevent timing attacks
+      // Ensure both tokens are the same length before comparison
+      if (sessionToken.length !== csrfToken.length) {
+        return res.status(403).json({
+          success: false,
+          error: 'Invalid CSRF token',
+          code: 'CSRF_TOKEN_INVALID'
+        });
+      }
       if (!crypto.timingSafeEqual(
         Buffer.from(sessionToken),
         Buffer.from(csrfToken)

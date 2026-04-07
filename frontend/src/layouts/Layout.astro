@@ -1,4 +1,6 @@
 ---
+import DesignTokens from '../components/DesignTokens.astro';
+
 interface Props {
   title: string;
 }
@@ -17,18 +19,7 @@ const { title } = Astro.props;
     <title>{title} | Best Version</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-      /* Embedded critical CSS for flash-of-unstyled-content prevention */
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Rajdhani', sans-serif;
-        background: #0a0a0f;
-        color: #ffffff;
-        overflow-x: hidden;
-        min-height: 100vh;
-      }
-    </style>
+    <DesignTokens />
   </head>
   <body>
     <!-- Animated Background -->

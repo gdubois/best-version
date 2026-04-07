@@ -89,41 +89,78 @@ check_env_file() {
         log_warn "COOKIE_SECRET not set in .env (using default)"
     fi
 
-    # Check SITE_URL is set to production domain
+    # Check SITE_URL is set to production domain and extract domain
 	if grep -q "SITE_URL=https" "$PROJECT_DIR/.env" 2>/dev/null; then
         log_success "SITE_URL is configured for HTTPS"
+        # Extract domain from SITE_URL
+        EXPORTED_DOMAIN=$(grep "^SITE_URL=" "$PROJECT_DIR/.env" | sed 's|SITE_URL=\([a-zA-Z0-9.-]*\).*|\1|')
+        if [ -n "$EXPORTED_DOMAIN" ]; then
+            export SSL_DOMAIN="$EXPORTED_DOMAIN"
+        fi
     elif grep -q "SITE_URL=http" "$PROJECT_DIR/.env" 2>/dev/null; then
-        log_warn "SITE_URL is set to http - consider using https://www.best-version.com"
-    
+        log_warn "SITE_URL is set to http - consider using https"
+        # Extract domain from SITE_URL anyway for SSL setup
+        EXPORTED_DOMAIN=$(grep "^SITE_URL=" "$PROJECT_DIR/.env" | sed 's|SITE_URL=\([a-zA-Z0-9.-]*\).*|\1|')
+        if [ -n "$EXPORTED_DOMAIN" ]; then
+            export SSL_DOMAIN="$EXPORTED_DOMAIN"
+        fi
     fi
 
     echo ""
+}
+
+# Extract base domain (remove www. prefix if present)
+get_base_domain() {
+    local domain="$1"
+    echo "$domain" | sed 's/^www\.//'
 }
 
 # Setup SSL certificates
 setup_ssl() {
     log_info "Setting up SSL certificates..."
 
-    # Check if Let's Encrypt certificate exists
+    # Use domain from environment or extract from SITE_URL
+    local TARGET_DOMAIN="${SSL_DOMAIN:-}"
+    if [ -z "$TARGET_DOMAIN" ] && [ -f "$PROJECT_DIR/.env" ]; then
+        TARGET_DOMAIN=$(grep "^SITE_URL=" "$PROJECT_DIR/.env" | sed 's|SITE_URL=\([a-zA-Z0-9.-]*\).*|\1|')
+    fi
+
+    if [ -z "$TARGET_DOMAIN" ]; then
+        log_warn "No domain found in SSL_DOMAIN or SITE_URL"
+        log_warn "Continuing with hostname as fallback"
+        TARGET_DOMAIN=$(hostname)
+    fi
+
+    # Get base domain (without www. prefix)
+    local BASE_DOMAIN=$(get_base_domain "$TARGET_DOMAIN")
+
+    log_info "Primary domain: $TARGET_DOMAIN"
+    log_info "Base domain: $BASE_DOMAIN"
+
+    # Check if Let's Encrypt certificate exists for either domain
     local cert_exists=false
-    for cert_dir in "/etc/letsencrypt/live/www.best-version.com" \
-                    "/etc/letsencrypt/live/best-version.com" \
+    local CERT_DOMAIN=""
+    for cert_dir in "/etc/letsencrypt/live/$TARGET_DOMAIN" \
+                    "/etc/letsencrypt/live/www.$BASE_DOMAIN" \
+                    "/etc/letsencrypt/live/$BASE_DOMAIN" \
                     "/etc/letsencrypt/live/$(hostname)"; do
         if [ -f "$cert_dir/cert.pem" ] && [ -f "$cert_dir/privkey.pem" ]; then
             cert_exists=true
+            CERT_DOMAIN=$(basename "$cert_dir")
             break
         fi
     done
 
     if [ "$cert_exists" = true ]; then
-        log_success "Existing SSL certificate found"
+        log_success "Existing SSL certificate found: $CERT_DOMAIN"
         log_info "Reusing certificate from Let's Encrypt"
 
         # Copy to project SSL directory for Docker volume
         mkdir -p "$PROJECT_DIR/nginx/ssl"
 
-        for cert_dir in "/etc/letsencrypt/live/www.best-version.com" \
-                        "/etc/letsencrypt/live/best-version.com" \
+        for cert_dir in "/etc/letsencrypt/live/$TARGET_DOMAIN" \
+                        "/etc/letsencrypt/live/www.$BASE_DOMAIN" \
+                        "/etc/letsencrypt/live/$BASE_DOMAIN" \
                         "/etc/letsencrypt/live/$(hostname)"; do
             if [ -f "$cert_dir/cert.pem" ] && [ -f "$cert_dir/privkey.pem" ]; then
                 cp "$cert_dir/cert.pem" "$PROJECT_DIR/nginx/ssl/cert.pem"
@@ -134,19 +171,22 @@ setup_ssl() {
         done
     else
         log_info "No existing SSL certificate found"
-        log_info "Attempting to obtain certificate from Let's Encrypt..."
+        log_info "Obtaining certificates for: $TARGET_DOMAIN and $BASE_DOMAIN"
+
+        # Set SSL_DOMAIN for the ssl script to use (comma-separated for both domains)
+        export SSL_DOMAIN="$TARGET_DOMAIN,$BASE_DOMAIN"
 
         # Check if ssl-setup.sh exists and is executable
-        if [ -x "$PROJECT_DIR/scripts/ssl-setup.sh" ]; then
-            # Run ssl-setup.sh create
+        if [ -x "$PROJECT_DIR/scripts/setup-ssl.sh" ]; then
+            # Run setup-ssl.sh (no args, reads SSL_DOMAIN)
             log_info "Running SSL setup script..."
-            ./scripts/ssl-setup.sh create || {
+            sudo ./scripts/setup-ssl.sh || {
                 log_warn "Automatic SSL setup failed"
-                log_warn "Please run manually: sudo ./scripts/ssl-setup.sh create"
+                log_warn "Please run manually: sudo SSL_DOMAIN=\"$TARGET_DOMAIN,$BASE_DOMAIN\" ./scripts/setup-ssl.sh"
             }
         else
             log_warn "SSL setup script not found or not executable"
-            log_warn "Please run: sudo ./scripts/ssl-setup.sh create"
+            log_warn "Please run: sudo SSL_DOMAIN=\"$TARGET_DOMAIN,$BASE_DOMAIN\" ./scripts/setup-ssl.sh"
         fi
     fi
 

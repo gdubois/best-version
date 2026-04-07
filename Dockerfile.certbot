@@ -1,0 +1,58 @@
+# =============================================================================
+# Certbot Docker Image with Standalone Plugin
+# =============================================================================
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    netcat-openbsd \
+    nginx \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install certbot (standalone plugin included by default)
+RUN pip install certbot
+
+# Create directory for certificates
+RUN mkdir -p /etc/letsencrypt/archive /etc/letsencrypt/live /var/lib/letsencrypt /var/log/letsencrypt
+
+# Create helper script to reload nginx in the best-version container
+RUN cat > /usr/local/bin/docker-reload-nginx << 'EOF'
+#!/bin/bash
+echo "[docker-reload-nginx] Reloading nginx in best-version container..."
+docker exec best-version nginx -s reload 2>/dev/null && echo "[docker-reload-nginx] Success" || echo "[docker-reload-nginx] Failed"
+EOF
+RUN chmod +x /usr/local/bin/docker-reload-nginx
+
+# Create wrapper script that handles Docker container stop/start
+RUN cat > /usr/local/bin/certbot-run << 'EOF'
+#!/bin/bash
+
+# Function to stop the best-version Docker container
+stop_container() {
+    echo "[certbot-run] Stopping 'best-version' container..."
+    docker stop best-version 2>/dev/null || true
+}
+
+# Function to start the best-version Docker container
+start_container() {
+    echo "[certbot-run] Starting 'best-version' container..."
+    docker start best-version 2>/dev/null || true
+}
+
+# Always start container on exit (trap)
+trap start_container EXIT
+
+# Stop container before running certbot
+stop_container
+
+# Wait for container to fully stop
+sleep 2
+
+# Execute certbot with all passed arguments
+exec certbot "$@"
+EOF
+
+RUN chmod +x /usr/local/bin/certbot-run
+
+# Set the wrapper as the default entrypoint
+ENTRYPOINT ["/usr/local/bin/certbot-run"]

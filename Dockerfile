@@ -68,14 +68,19 @@ COPY --from=builder /app/scripts /app/scripts
 # Copy root level files
 COPY game_metadata_schema.json ./
 
-# Copy frontend build to nginx wwwroot
-COPY --from=builder /app/frontend/dist /usr/share/nginx/html
+# Copy public folder to nginx wwwroot first (contains index.html)
+COPY --from=builder /app/public /usr/share/nginx/html
+# Then copy frontend build assets (merges with public folder)
+COPY --from=builder /app/frontend/dist/_astro /usr/share/nginx/html/_astro
+COPY --from=builder /app/frontend/dist/favicon.ico /usr/share/nginx/html/favicon.ico
+COPY --from=builder /app/frontend/dist/favicon.svg /usr/share/nginx/html/favicon.svg
 
-
-# Copy nginx template config
-COPY nginx/nginx-template.conf /etc/nginx/nginx-template.conf
 # Copy nginx config generator script
 COPY scripts/generate-nginx-config.sh /app/scripts/generate-nginx-config.sh
+
+# Copy nginx config template and final config
+COPY nginx/nginx-template.conf /etc/nginx/nginx-template.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Set proper ownership and permissions
 RUN chown -R nginx:nginx /var/run/nginx /var/log/nginx /usr/share/nginx/html /var/www/certbot && \
