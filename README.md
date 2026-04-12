@@ -37,6 +37,7 @@ nano .env  # Update RESEND_API_KEY, SITE_URL, COOKIE_SECRET, ADMIN_PASSWORD
 - **Frontend**: Astro static site served by nginx
 - **Backend**: Node.js Express API
 - **Data Persistence**: Docker named volumes (games, submissions, newsletters, ssl)
+- **Web Search**: Open WebSearch MCP service (multi-engine search for game research)
 - **Security**: SSL/TLS via Let's Encrypt, security headers, rate limiting, CSRF protection
 
 ## Project Structure
@@ -66,6 +67,8 @@ nano .env  # Update RESEND_API_KEY, SITE_URL, COOKIE_SECRET, ADMIN_PASSWORD
 ## Key Features
 
 - **Game Metadata Management**: Load, validate, and query game metadata
+- **Game Creator**: AI-powered automated game research using LLMs and web search
+- **Multi-Engine Web Search**: DuckDuckGo, Brave, Bing, Exa, and more via Open WebSearch MCP
 - **Search & Filtering**: Search by title, genre, theme, platform, difficulty, reception
 - **Recommendations**: Get similar games based on genres and themes
 - **User Submissions**: Submit new games or edits with validation
@@ -74,6 +77,13 @@ nano .env  # Update RESEND_API_KEY, SITE_URL, COOKIE_SECRET, ADMIN_PASSWORD
 - **Newsletter Distribution**: Build and send newsletters to subscribers
 - **Admin Dashboard**: Manage submissions, games, and system settings
 - **Performance Optimization**: Memory caching, image optimization, CDN headers
+
+## Docker Services
+
+| Service | Description | Port |
+|---------|-------------|------|
+| `app` | Main application (nginx + Node.js) | 80, 443, 3000 |
+| `open-websearch` | Multi-engine web search for game-creator | 3001 |
 
 ## Data Volumes
 
@@ -120,6 +130,13 @@ ADMIN_PASSWORD=$(openssl rand -base64 32)
 # Settings
 ADMIN_EMAIL=admin@best-version.com
 NEWSLETTER_EMAIL=newsletter@best-version.com
+
+# Game Creator & Web Search
+GAME_CREATOR_ENABLED=true
+OPEN_WEBSEARCH_MCP_ENABLED=true
+OPEN_WEBSEARCH_MCP_ENGINE=duckduckgo
+USE_PROXY=false  # Enable for restricted regions
+PROXY_URL=http://127.0.0.1:7890
 ```
 
 ## Container Management
@@ -131,6 +148,7 @@ docker-compose ps
 # Logs
 docker-compose logs -f
 docker-compose logs app
+docker-compose logs open-websearch
 
 # Stop/Start
 docker-compose stop
@@ -141,6 +159,7 @@ docker-compose restart
 
 # View container
 docker exec -it best-version sh
+docker exec -it open-websearch-mcp sh
 ```
 
 ## Volume Management

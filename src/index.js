@@ -33,6 +33,7 @@ const { ImageService } = require('./services/imageService');
 // Security middleware
 const {
   securityHeaders,
+  attachNonceToResponse,
   apiRateLimiter,
   authRateLimiter,
   submissionRateLimiter,
@@ -50,6 +51,37 @@ console.log('[Main] Admin auth loaded');
 async function main() {
   console.log('[Main] Entering main');
   console.log('[Main] Starting main function...');
+
+  // Security: Validate required environment variables
+  const requiredEnvVars = [
+    'COOKIE_SECRET',
+    'ADMIN_PASSWORD',
+    'SITE_URL'
+  ];
+
+  const missingEnvVars = requiredEnvVars.filter(envVar => {
+    const value = process.env[envVar];
+    if (!value || value.length === 0) {
+      console.error(`[Security] Missing required environment variable: ${envVar}`);
+      return true;
+    }
+    return false;
+  });
+
+  if (missingEnvVars.length > 0) {
+    console.error('[Security] Application cannot start without required environment variables');
+    process.exit(1);
+  }
+
+  // Warn about potentially weak credentials
+  if (process.env.COOKIE_SECRET.length < 32) {
+    console.warn('[Security] WARNING: COOKIE_SECRET should be at least 32 characters for security');
+  }
+
+  if (process.env.ADMIN_PASSWORD && process.env.ADMIN_PASSWORD.length < 16) {
+    console.warn('[Security] WARNING: ADMIN_PASSWORD should be at least 16 characters');
+  }
+
   console.log('=== Game Metadata Application ===');
   console.log(`Environment: ${config.env}`);
   console.log(`Port: ${config.port}`);
@@ -105,11 +137,44 @@ async function main() {
   // Redis cache (optional, for distributed caching)
   const redisCacheEnabled = process.env.ENABLE_REDIS_CACHE === 'true';
   let redisCache = null;
-  if (redisCacheEnabled) {
-    redisCache = new RedisCacheService({
+  let redisClient = null;
+
+  // Initialize Redis for sessions and cache if enabled
+  const redisEnabled = process.env.REDIS_ENABLED === 'true';
+  if (redisEnabled || redisCacheEnabled) {
+    const Redis = require('ioredis');
+    redisClient = new Redis({
       host: process.env.REDIS_HOST || 'localhost',
-      port: parseInt(process.env.REDIS_PORT) || 6379
+      port: parseInt(process.env.REDIS_PORT) || 6379,
+      password: process.env.REDIS_PASSWORD || null,
+      db: process.env.REDIS_DB ? parseInt(process.env.REDIS_DB) : 0,
+      retryStrategy: (times) => {
+        if (times > 5) {
+          console.warn('Redis connection failed after max retries - falling back to in-memory storage');
+          return null;
+        }
+        const delay = Math.min(times * 500, 2000);
+        return delay;
+      },
+      onError: (error) => {
+        console.error('Redis error:', error.message);
+      },
+      onConnect: () => {
+        console.log('Redis connected successfully');
+      }
     });
+
+    // Initialize session store with Redis
+    sessionStore.initRedis(redisClient);
+
+    // Initialize Redis cache service
+    if (redisCacheEnabled) {
+      redisCache = new RedisCacheService({
+        host: process.env.REDIS_HOST || 'localhost',
+        port: parseInt(process.env.REDIS_PORT) || 6379,
+        password: process.env.REDIS_PASSWORD || null
+      });
+    }
   }
 
   // Data cache wrapper
@@ -154,6 +219,7 @@ async function main() {
   // Security middleware - MUST come early
   app.use(requestIdMiddleware);
   app.use(ipValidationMiddleware);
+  app.use(attachNonceToResponse); // Attach CSP nonce before securityHeaders
   app.use(securityHeaders());
 
   // HTTPS enforcement (check first after security headers)
@@ -296,6 +362,24 @@ app.get('/api/performance/cache-stats', async (req, res) => {
     res.status(404).send('Not found');
   });
 
+  // Fallback handler for /images/* - serve default image if specific image not found
+  // This catches requests that didn't match express.static and serves the default
+  // Express 5 uses /* syntax for catch-all routes
+  app.use(/\/images\/.*/, (req, res, next) => {
+    const requestedImage = req.path; // e.g., /images/some-game.jpg
+    const defaultImagePath = path.join(__dirname, '../public/images/default-image.jpg');
+
+    // Check if default image exists
+    if (fs.existsSync(defaultImagePath)) {
+      res.setHeader('Content-Type', 'image/jpeg');
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      res.sendFile(defaultImagePath);
+    } else {
+      // If no default image exists, return 404
+      res.status(404).json({ error: 'Image not found' });
+    }
+  });
+
   // Start server
   console.log('[Main] Starting server on port', config.port);
   const server = app.listen(config.port, () => {
@@ -317,14 +401,20 @@ app.get('/api/performance/cache-stats', async (req, res) => {
   console.log('[Main] Server listener registered');
 }
 
-// Handle errors
+// Handle errors - avoid leaking sensitive info in production
 process.on('uncaughtException', (error) => {
-  console.error('Uncaught Exception:', error);
+  console.error('An unexpected error occurred');
+  if (process.env.NODE_ENV !== 'production') {
+    console.error('Error details:', error.stack || error);
+  }
   process.exit(1);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
-  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  console.error('An unhandled promise rejection occurred');
+  if (process.env.NODE_ENV !== 'production') {
+    console.error('Promise:', promise, 'Reason:', reason);
+  }
   process.exit(1);
 });
 

@@ -1,0 +1,289 @@
+I am creating a website about the history of video games and specifically the BEST VERSION available for each game and the best way to play them. For each game, this website presents a single page with the data for a given game using a JSON file as source. I want you to help by generating accurate, well-researched JSON files.
+
+CRITICAL INSTRUCTION: You MUST use MCP tool calls (web search) to gather information. Do NOT rely on your training data alone - the web may have updated information, patches, and community recommendations that you don't know about.
+You MUST run several web searches with the MCP tool to be thourough and gather enough information.
+
+=============================================================================
+YOUR WORKFLOW - FOLLOW THESE STEPS IN ORDER
+=============================================================================
+
+STEP 1: WEB RESEARCH (MANDATORY - USE MCP TOOLS)
+Search the web for comprehensive information about the game. Search at minimum:
+- Wikipedia: General info, platforms, release dates, developer/publisher (https://www.wikipedia.org/)
+- PCGamingWiki (pcgamingwiki.com): PC-specific patches, fixes, enhancements (https://www.pcgamingwiki.com/wiki/Home)
+- romhacking.net: Translation patches, quality-of-life patches, enhancements
+- romhackplaza.org: Additional patches and mods
+- Digital Foundry: Technical analysis, remaster comparisons (https://www.digitalfoundry.net/)
+- Mobygames: Accurate release dates per platform (https://www.mobygames.com/)
+- Reddit communities: Community recommendations, known issues
+- GameFAQs: Release dates, version differences
+- Metacritic/OpenCritic: Reception scores and reviews (https://www.metacritic.com/ and https://opencritic.com/)
+- IGN/GameSpot: Reception scores and reviews (https://www.ign.com/ and https://www.gamespot.com/)
+- hg101: Game reviews and versions comparison (http://www.hardcoregaming101.net/)
+
+STEP 2: IDENTIFY ALL PLATFORMS AND VERSIONS
+- List every platform the game was released on with specific release dates
+- Use the EXACT platform names from the naming guide below
+- Note any remasters, remakes, or re-releases as separate entries
+- Include region-specific release dates when they differ
+
+STEP 3: DETERMINE THE BEST VERSION TO PLAY TODAY
+Consider these factors in order of importance:
+1. Language: The game must be playable by an English speaker who does not speak any other lanuguage
+2. Features: Extra content, quality-of-life improvements
+3. Convenience: Save states, achievements, modern controls
+4. Accuracy: Faithfulness to the original experience
+5. Graphics: Resolution, aspect ratio support, visual enhancements
+6. Performance: Frame rate stability, load times
+7. Availability: How easy is it to obtain/play
+
+STEP 4: FIND ACTUAL PATCHES AND MODS (NOT GENERIC LINKS!)
+For each platform version, find SPECIFIC patches with:
+- ACTUAL PATCH NAME (e.g., "Uninvited High Resolution Patch")
+- VERSION NUMBER if available (e.g., "v2.0", "1.5.3")
+- DESCRIPTION of what it does (detailed, not generic)
+- DIRECT URL to download or access the patch
+
+CRITICAL: Do NOT provide generic search links like "Search romhacking.net for X"
+Instead, provide: {name: "Specific Patch Name", version: "1.2", description: "What it does", url: "https://...direct-link..."}
+
+If no specific patches exist for a game, leave the patches array empty - do NOT fabricate entries.
+
+STEP 5: GENERATE THE JSON
+- Follow the provided JSON schema exactly
+- In "play_today", rank platforms from BEST to WORST way to play (no more than 3 platforms)
+- Do not include all platforms the game was released on
+- Each platform entry should have specific, actionable information
+
+=============================================================================
+PLATFORM NAMING GUIDE - USE THESE EXACT NAMES
+=============================================================================
+
+CONSOLE PLATFORMS:
+"PlayStation" (not "PS1", "Sony PlayStation")
+"PlayStation 2" (not "PS2")
+"PlayStation 3"
+"PlayStation 4"
+"PlayStation 5"
+"PlayStation Portable" (or "PSP")
+"PlayStation Vita"
+"Nintendo Entertainment System (NES)" (or "NES")
+"Super Nintendo Entertainment System (SNES)" (or "SNES")
+"Nintendo 64" (not "N64")
+"GameCube" (not "GC", "GCN")
+"Wii"
+"Wii U"
+"Nintendo Switch"
+"Nintendo 3DS"
+"Game Boy"
+"Game Boy Color"
+"Game Boy Advance" (or "GBA")
+"Xbox"
+"Xbox 360"
+"Xbox One"
+"Xbox Series X/S"
+
+PC AND RETRO:
+"Microsoft Windows" (or "Windows", or "PC")
+"macOS" (or "Mac", or "Macintosh")
+"Linux"
+"MS-DOS" (not "DOS")
+"Amiga" (not "Commodore Amiga")
+"Atari ST" (not "ST")
+"Commodore 64" (or "C64")
+"Apple IIGS" (not "Apple II GS")
+"Famicom Disk System"
+"MSX"
+"Sega Genesis" (or "Mega Drive")
+"Sega Master System"
+"Sega CD"
+"Sega Saturn"
+"Dreamcast"
+"Neo Geo"
+"TurboGrafx-16" (or "PC Engine")
+
+MOBILE:
+"iOS"
+"Android"
+
+COMPILED PLATFORMS (for remasters/collections):
+"PlayStation 4/5, Xbox Series X/S, Nintendo Switch, Windows" (use exact format for multi-platform releases)
+
+DO NOT USE:
+- Company names alone: "Nintendo", "Sony", "Microsoft"
+- Abbreviations: "PS", "PSX", "GCN", "N64", "GBA"
+- Generic terms: "Game Boy", "Nintendo Console"
+
+=============================================================================
+PATCH URL PATTERNS TO USE
+=============================================================================
+romhacking.net format: https://www.romhacking.net/hacks/{id}/
+romhackplaza.org format: https://romhackplaza.org/{patch-slug}
+PCGamingWiki format: https://www.pcgamingwiki.com/wiki/{Game-Title}
+gamebanana.com format: https://gamebanana.com/mods/{id}
+GitHub format: https://github.com/{user}/{repo}
+
+ONLY include patches that actually exist. 
+Always use the latest available version - check patch pages for version history.
+Do indicate the URL of the patch if possible.
+Do include all enhancement patches (patches that affect Qol, uncensor, improvement, fan translations, bug fixes, balance, widescreen, SRAM) unless they have negative feedback
+Do not include full conversion patches (patches that change the story, make the game harder, change fundamental game mechanics)
+
+=============================================================================
+EMULATOR REQUIREMENTS
+=============================================================================
+- The "platform" field in emulators MUST be one of: "Windows", "Android", "Linux" (do not include other platforms)
+- Do NOT use: "Windows/Mac/Linux", "All platforms", "Cross-platform", "Various"
+- If an emulator supports multiple platforms, create SEPARATE entries for each platform
+- Provide 3-4 specific optimal_settings per emulator (not just "Default settings")
+
+EXAMPLE OF GOOD EMULATOR DATA:
+{
+  "platform": "Windows",
+  "recommended_emulator": "DuckStation",
+  "optimal_settings": [
+    "Internal resolution: 2x-4x for clean retro look or 9x for 4K sharpness",
+    "Enable NTSC mode for correct timing",
+    "Use texture filtering for smoother visuals"
+  ]
+}
+
+=============================================================================
+SERIES DATA REQUIREMENTS
+=============================================================================
+- If the game is part of a series, set "is_part_of_serie": true
+- Include "serie_name" with the official series name
+- Include "part_number" as an integer (minimum 1)
+- If possible, include "previous_game" and "next_game" with their titles and url_slugs
+- The url_slug format is: "/games/{game-name-hyphenated}"
+- If it's the first game, set "previous_game": null
+- If it's the last game, set "next_game": null
+
+EXAMPLE:
+{
+  "is_part_of_serie": true,
+  "serie_name": "Final Fantasy",
+  "part_number": 7,
+  "previous_game": {
+    "title": "Final Fantasy VI",
+    "url_slug": "/games/final-fantasy-vi"
+  },
+  "next_game": {
+    "title": "Final Fantasy VIII",
+    "url_slug": "/games/final-fantasy-viii"
+  }
+}
+
+=============================================================================
+DATA QUALITY REQUIREMENTS - READ CAREFULLY
+=============================================================================
+
+1. RELEASE DATES:
+- You MUST find actual release dates for each platform/region combination
+- Format: "YYYY-MM-DD" (ISO 8601)
+- Use "0000-00-00" ONLY if the date is genuinely unknown after thorough research
+- Research Mobygames, Wikipedia, and official sources for accurate dates
+- Different regions often have different release dates - list them separately
+
+2. THEMES:
+- Provide 3-6 specific themes that capture the game's narrative/visual identity
+- BAD: ["Classic", "Retro", "Adventure"] (too generic)
+- GOOD: ["Environmentalism", "Corporate Greed", "Identity", "Mortality", "Cyberpunk"]
+- Draw themes from: story elements, visual style, philosophical concepts, historical setting
+
+3. KEY FEATURES:
+- List 6-10 specific gameplay features or innovations
+- Focus on mechanics, not genre description
+- BAD: ["Turn-based combat", "RPG elements", "Classic gameplay"]
+- GOOD: ["Innovative Materia system for deep character customization and magic/ability progression",
+         "Active Time Battle (ATB) system combining turn-based strategy with real-time elements",
+         "Cinematic storytelling using groundbreaking full-motion video (FMV) cutscenes"]
+
+4. LEGACY_AND_IMPACT:
+- List 5-10 specific ways the game influenced gaming history
+- Include: genre influence, sales figures, awards, cultural impact, sequel/spin-off generation
+- BAD: ["Classic game", "Influential", "Beloved by fans"]
+- GOOD: ["Pioneered the use of full-motion video for narrative storytelling in RPGs, influencing countless subsequent titles",
+         "Popularized the Materia customization system, adopted by numerous future RPGs",
+         "Credited with establishing the PlayStation as a major gaming platform in North America",
+         "Became one of the best-selling games of all time with over 15 million copies sold worldwide"]
+
+5. RECEPTION DATA:
+- "reception_score": A score from 0.0 to 10.0 based on aggregated reviews
+- "review": A one-sentence summary of critical reception
+- Include specific critic quotes or aggregate scores when available
+- Reference review aggregation sites (Metacritic, GameSpot, IGN, etc.)
+
+6. PLAY_TODAY DETAILS:
+- Provide 200-300 character descriptions for each platform
+- BAD: "Best way to play" or "Original version"
+- GOOD: "The definitive way to play Final Fantasy VII. The 2025 Steam release includes native controller support, cloud saves, and full mod compatibility via 7th Heaven mod manager. Use mods for 60 FPS, widescreen, HD textures, voice acting, and improved audio for the ultimate experience."
+
+7. PATCHES:
+- Provide SPECIFIC version numbers when available
+- DESCRIPTION should explain what the patch does in 1-2 sentences
+- URL must be a direct link to download/access the patch (not a search page)
+- If a patch has no URL, omit the url field (it's optional)
+
+=============================================================================
+EXAMPLE OF HIGH-QUALITY PLAY_TODAY ENTRY
+=============================================================================
+
+{
+  "platform": "PC (Steam)",
+  "details": "The definitive way to play Final Fantasy VII. The 2025 Steam release includes native controller support, cloud saves, and full mod compatibility via 7th Heaven mod manager. Use mods for 60 FPS, widescreen, HD textures, voice acting, and improved audio for the ultimate experience.",
+  "available_in_english": {
+    "official_localization": true
+  },
+  "retro_achievements_support": true,
+  "recommended_patches": [
+    {
+      "name": "7th Heaven Mod Manager",
+      "version": "v4.0",
+      "description": "Essential mod manager that virtualizes game files and loads mods on the fly without modifying originals. Required for installing most other mods.",
+      "url": "https://7thheaven.rocks/download.html"
+    },
+    {
+      "name": "Cosmos Limit Break",
+      "version": "v2.0",
+      "description": "True widescreen support with AI-assisted outpainting that fills black bars with upscaled background content. Provides genuine widescreen experience beyond simple stretching.",
+      "url": "https://7thheaven.rocks/catalog/"
+    }
+  ],
+  "emulators": []
+}
+
+=============================================================================
+FINAL VALIDATION CHECKLIST
+=============================================================================
+
+Before generating JSON, verify:
+[ ] All platform names follow the naming guide exactly
+[ ] All release dates are in YYYY-MM-DD format (not "0000-00-00" unless genuinely unknown)
+[ ] All patch URLs are direct links (not search pages)
+[ ] All emulator platforms are: Windows, Android, Linux, or macOS only
+[ ] All patches have: name, description, and optionally version and url
+[ ] "play_today" is ordered from BEST to WORST way to play
+[ ] Themes are specific and meaningful (not "Classic", "Retro", "Adventure")
+[ ] Key features are 6-10 specific gameplay innovations
+[ ] Legacy_and_impact has 5-10 specific historical impacts
+[ ] Reception_score is a number from 0.0 to 10.0
+[ ] Valid JSON with no markdown formatting
+[ ] No fabricated data - if information is unknown, use appropriate defaults or omit optional fields
+
+=============================================================================
+JSON OUTPUT REQUIREMENTS
+=============================================================================
+1. Valid JSON only - no markdown, no explanation text, no ```json wrappers
+2. Match the provided schema exactly
+3. All required fields must be present
+4. "play_today" array ordered from best to worst version
+5. Platform names must follow the naming guide above
+6. Include version numbers in patches when available
+7. Emulator platform values must be enum values: Windows, Android, Linux, macOS
+
+=============================================================================
+GAME TO RESEARCH: {{{GAME_TITLE}}}
+=============================================================================
+
+Now, begin your research using MCP web search tools and generate the JSON file.

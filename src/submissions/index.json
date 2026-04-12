@@ -1,0 +1,24 @@
+{
+  "submissions": [
+    {
+      "id": "05fbcb7d-d820-4db0-830c-f377d2548821",
+      "title": "Legend of Mana",
+      "email": "test@example.com",
+      "status": "completed",
+      "submittedAt": "2026-04-11T11:58:41.801Z",
+      "processorStatus": {
+        "completedAt": "2026-04-11T12:00:00.000Z",
+        "gameSlug": "/games/legend-of-mana",
+        "confidenceScore": 0.95
+      }
+    },
+    {
+      "id": "test-new-submission-001",
+      "title": "Chrono Trigger",
+      "email": "test@example.com",
+      "status": "pending",
+      "submittedAt": "2026-04-11T12:30:00.000Z",
+      "processorStatus": {}
+    }
+  ]
+}

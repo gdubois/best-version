@@ -185,29 +185,40 @@ class NewsletterService {
     }
   }
 
+  // Escape HTML for safe display in email templates
+  escapeHtml(text) {
+    if (!text) return '';
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
   // Build newsletter email HTML
   buildNewsletterHTML(content, baseUrl) {
     const featuredGames = (content.featuredGames || []).map(g => `
       <div style="background: #1a1a1a; padding: 20px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #00ff88;">
-        <h3 style="color: #00ff88; margin: 0 0 10px 0;">${escapeHtml(g.title)}</h3>
-        ${g.description ? `<p style="color: #aaa; margin: 0;">${escapeHtml(g.description)}</p>` : ''}
-        ${g.link ? `<a href="${escapeHtml(g.link)}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #00ff88; color: #0a0a0a; text-decoration: none; border-radius: 4px; font-weight: bold;">View Game</a>` : ''}
+        <h3 style="color: #00ff88; margin: 0 0 10px 0;">${this.escapeHtml(g.title)}</h3>
+        ${g.description ? `<p style="color: #aaa; margin: 0;">${this.escapeHtml(g.description)}</p>` : ''}
+        ${g.link ? `<a href="${this.escapeHtml(g.link)}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #00ff88; color: #0a0a0a; text-decoration: none; border-radius: 4px; font-weight: bold;">View Game</a>` : ''}
       </div>
     `).join('');
 
     const newAdditions = (content.newAdditions || []).map(g => `
       <div style="background: #1a1a1a; padding: 20px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #9d4edd;">
-        <h3 style="color: #9d4edd; margin: 0 0 10px 0;">${escapeHtml(g.title)}</h3>
-        ${g.platform ? `<p style="color: #aaa; margin: 0;">Platform: ${escapeHtml(g.platform)}</p>` : ''}
-        ${g.link ? `<a href="${escapeHtml(g.link)}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #9d4edd; color: #0a0a0a; text-decoration: none; border-radius: 4px; font-weight: bold;">View Game</a>` : ''}
+        <h3 style="color: #9d4edd; margin: 0 0 10px 0;">${this.escapeHtml(g.title)}</h3>
+        ${g.platform ? `<p style="color: #aaa; margin: 0;">Platform: ${this.escapeHtml(g.platform)}</p>` : ''}
+        ${g.link ? `<a href="${this.escapeHtml(g.link)}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #9d4edd; color: #0a0a0a; text-decoration: none; border-radius: 4px; font-weight: bold;">View Game</a>` : ''}
       </div>
     `).join('');
 
     const updatedEntries = (content.updatedEntries || []).map(g => `
       <div style="background: #1a1a1a; padding: 20px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #ffaa00;">
-        <h3 style="color: #ffaa00; margin: 0 0 10px 0;">${escapeHtml(g.title)}</h3>
-        ${g.description ? `<p style="color: #aaa; margin: 0;">${escapeHtml(g.description)}</p>` : ''}
-        ${g.link ? `<a href="${escapeHtml(g.link)}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #ffaa00; color: #0a0a0a; text-decoration: none; border-radius: 4px; font-weight: bold;">View Update</a>` : ''}
+        <h3 style="color: #ffaa00; margin: 0 0 10px 0;">${this.escapeHtml(g.title)}</h3>
+        ${g.description ? `<p style="color: #aaa; margin: 0;">${this.escapeHtml(g.description)}</p>` : ''}
+        ${g.link ? `<a href="${this.escapeHtml(g.link)}" style="display: inline-block; margin-top: 10px; padding: 8px 16px; background: #ffaa00; color: #0a0a0a; text-decoration: none; border-radius: 4px; font-weight: bold;">View Update</a>` : ''}
       </div>
     `).join('');
 
@@ -260,7 +271,7 @@ class NewsletterService {
           Thank you for subscribing to Best Version!
         </p>
         <p style="color: #666; text-align: center; font-size: 12px; margin: 0;">
-          <a href="${escapeHtml(`${baseUrl}/newsletter/unsubscribe?token=UNSUBSCRIBE_TOKEN`)}" style="color: #666; text-decoration: underline;">Unsubscribe</a>
+          <a href="${this.escapeHtml(`${baseUrl}/newsletter/unsubscribe?token=UNSUBSCRIBE_TOKEN`)}" style="color: #666; text-decoration: underline;">Unsubscribe</a>
         </p>
       </td>
     </tr>

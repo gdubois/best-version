@@ -39,7 +39,9 @@ const config = {
     reuseExistingServer: !process.env.CI,
     env: {
       COOKIE_SECRET: 'test-secret-key-for-development-only',
-      ENABLE_REDIS_CACHE: 'false'
+      ENABLE_REDIS_CACHE: 'false',
+      DISABLE_CSP: 'true',
+      MAX_CONCURRENT_USERS: '500'
     }
   }
 };

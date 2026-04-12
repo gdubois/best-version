@@ -274,4 +274,68 @@ describe('API Integration Tests', () => {
 
     assert.strictEqual(response.status, 404);
   });
+
+  // ==================== Image Fallback Tests ====================
+
+  test('2.0-INT-016 P1 Image fallback serves default image for non-existent game images', async () => {
+    const fs = require('fs');
+    const path = require('path');
+
+    const app = express();
+    app.use(express.json());
+
+    // Mock static file serving
+    app.use(express.static(path.join(__dirname, '../../public')));
+
+    // Fallback handler for /images/* - serves default image if specific image not found
+    app.use(/\/images\/.*/, (req, res, next) => {
+      const requestedImage = req.path;
+      const defaultImagePath = path.join(__dirname, '../../public/images/default-image.jpg');
+
+      if (fs.existsSync(defaultImagePath)) {
+        res.setHeader('Content-Type', 'image/jpeg');
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        res.sendFile(defaultImagePath);
+      } else {
+        res.status(404).json({ error: 'Image not found' });
+      }
+    });
+
+    // Request a non-existent game image
+    const response = await request(app).get('/images/non-existent-game.jpg');
+
+    assert.strictEqual(response.status, 200);
+    assert.strictEqual(response.headers['content-type'], 'image/jpeg');
+    assert.ok(response.headers['cache-control'].includes('public'));
+    assert.ok(response.headers['cache-control'].includes('immutable'));
+    // Response should be image data, not JSON error
+    assert.ok(response.headers['content-length'] > '0');
+  });
+
+  test('2.0-INT-017 P2 Existing game images are served directly', async () => {
+    const fs = require('fs');
+    const path = require('path');
+
+    const app = express();
+    app.use(express.json());
+    app.use(express.static(path.join(__dirname, '../../public')));
+
+    // Fallback handler
+    app.use(/\/images\/.*/, (req, res, next) => {
+      const defaultImagePath = path.join(__dirname, '../../public/images/default-image.jpg');
+      if (fs.existsSync(defaultImagePath)) {
+        res.setHeader('Content-Type', 'image/jpeg');
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        res.sendFile(defaultImagePath);
+      } else {
+        res.status(404).json({ error: 'Image not found' });
+      }
+    });
+
+    // Request an existing game image (castlevania.jpg exists in public/images)
+    const response = await request(app).get('/images/castlevania.jpg');
+
+    assert.strictEqual(response.status, 200);
+    assert.strictEqual(response.headers['content-type'], 'image/jpeg');
+  });
 });

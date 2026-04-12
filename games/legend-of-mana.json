@@ -1,0 +1,175 @@
+{
+  "basic_info": {
+    "url_slug": "/games/legend-of-mana",
+    "title": "Legend of Mana",
+    "cover_url": "/images/legend-of-mana.jpg",
+    "genres": [
+      "Action RPG"
+    ],
+    "themes": [
+      "Classic"
+    ],
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square",
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square",
+      "Square Enix"
+    ],
+    "reception_score": 9,
+    "review": "A masterpiece of world-building and non-linear storytelling that set a new standard for action RPGs."
+  },
+  "release": {
+    "alternative_names": [
+      "Seiken Densetsu 3",
+      "Mana no Densetsu",
+      "Legend of Mana HD Remaster"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation",
+        "region": "World",
+        "release_date": "1999-04-29"
+      },
+      {
+        "name": "PlayStation",
+        "region": "World",
+        "release_date": "1999-10-31"
+      },
+      {
+        "name": "PlayStation",
+        "region": "World",
+        "release_date": "2000-03-31"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2021-06-24"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2021-06-24"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2021-06-24"
+      },
+      {
+        "name": "Xbox Series X|S",
+        "region": "World",
+        "release_date": "2021-06-24"
+      },
+      {
+        "name": "iOS",
+        "region": "World",
+        "release_date": "2021-06-24"
+      },
+      {
+        "name": "Android",
+        "region": "World",
+        "release_date": "2021-06-24"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Mana",
+    "part_number": 4
+  },
+  "similar_games": [
+    {
+      "title": "Secret of Mana",
+      "url_slug": "/games/secret-of-mana"
+    },
+    {
+      "title": "Soul Nomad: The World Eater",
+      "url_slug": "/games/soul-nomad-the-world-eater"
+    },
+    {
+      "title": "Octopath Traveler",
+      "url_slug": "/games/octopath-traveler"
+    },
+    {
+      "title": "Tales of Phantasia",
+      "url_slug": "/games/tales-of-phantasia"
+    },
+    {
+      "title": "Ys I & II",
+      "url_slug": "/games/ys-i-ii"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows",
+      "details": "The HD Remaster on PC offers the best balance of modern convenience and performance. It features 1080p resolution, widescreen support, and a streamlined user interface. The game runs smoothly on modern hardware, and the Steam version includes cloud saves and controller support, making it the most accessible way to experience the game today.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "The Switch version of the HD Remaster is ideal for portable play, offering the same visual upgrades as the PC version. It allows players to enjoy the game on the go with a battery life that supports extended sessions. The controls are well-adapted for the Joy-Cons, though a Pro Controller is recommended for the action combat.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation",
+      "details": "For purists seeking the authentic 1999 experience, the original PlayStation version is the definitive choice. While it lacks HD graphics and widescreen support, it retains the original aspect ratio and the specific feel of the original hardware. It is highly recommended to use an unofficial English translation patch to access the full narrative without language barriers.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Legend of Mana English Translation Patch",
+          "description": "An unofficial fan translation patch that converts the Japanese text of the original PlayStation version into English. It includes all dialogue, menu options, item descriptions, and cutscene text, allowing players to experience the game in its original form with full narrative comprehension.",
+          "url": "https://www.romhacking.net/hacks/2085/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Default settings"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "ePSXe",
+          "optimal_settings": [
+            "Default settings"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "A young girl named Raine Sage awakens in a forest with no memory of her past. She must travel the world of Fa'Diel to restore the Tree of Mana, which is dying, while uncovering the mysteries of her own identity and the history of the world.",
+    "key_features": [
+      "Land Make System: A unique world-building mechanic allowing players to customize the map layout by placing towns and dungeons.",
+      "Non-Linear Storytelling: The narrative branches based on player choices and the order in which events are triggered.",
+      "Real-Time Action Combat: Fast-paced battles requiring precise timing and strategy without turn-based delays.",
+      "Weapon and Armor Crafting: A deep synthesis system allowing players to combine materials to create powerful equipment.",
+      "Dynamic World Map: The environment changes visually and functionally based on the player's progress and map configuration."
+    ],
+    "long_description": "Legend of Mana is a unique action role-playing game developed by Square and directed by Koichi Ishii. Set in the fantasy world of Fa'Diel, the game distinguishes itself with a non-linear narrative structure where the player's actions determine the story's progression. The game features the innovative 'Land Make' system, allowing players to customize the world map by placing towns and dungeons, effectively creating their own adventure. With real-time combat, a focus on exploration, and a memorable soundtrack by Yoko Shimomura, it stands as a cult classic in the Mana series.",
+    "legacy_and_impact": [
+      "Legend of Mana is widely regarded as one of the most unique entries in the Mana series and the broader RPG genre. Its 'Land Make' system was a pioneering feature that influenced later games in terms of player agency and world customization. Despite a mixed initial reception due to its non-linear structure, it has gained a massive cult following over the years, celebrated for its artistic direction, Yoko Shimomura's iconic soundtrack, and its departure from traditional RPG tropes."
+    ]
+  }
+}

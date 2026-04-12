@@ -88,8 +88,8 @@ class RateLimiter {
 // Express middleware for rate limiting
 function rateLimitMiddleware(limiter, config = {}) {
   return (req, res, next) => {
-    // Skip rate limiting for health checks, admin routes, and static files
-    if (req.path === '/health' || req.path.startsWith('/_') || req.path.includes('/admin')) {
+    // Skip rate limiting for health checks, admin routes, static files, and images
+    if (req.path === '/health' || req.path.startsWith('/_') || req.path.includes('/admin') || req.path.startsWith('/images/')) {
       return next();
     }
 

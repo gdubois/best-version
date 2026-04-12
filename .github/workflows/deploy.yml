@@ -135,48 +135,159 @@ jobs:
             docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
             docker pull ghcr.io/${{ github.repository }}:${{ github.sha }}
             docker tag ghcr.io/${{ github.repository }}:${{ github.sha }} ghcr.io/${{ github.repository }}:latest
-            docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
-            docker push ghcr.io/${{ github.repository }}:latest
 
-            # Stop old container gracefully
-            echo "Stopping old container..."
-            docker stop best-version || true
-            docker rm best-version || true
+            # Pull open-websearch MCP service
+            echo "Pulling open-websearch MCP service..."
+            docker pull ghcr.io/aas-ee/open-web-search:latest
 
-            # Start new container with updated image
-            echo "Starting new container..."
-            docker run -d \
-              --name best-version \
-              --restart unless-stopped \
-              -p 3000:3000 \
-              -v $(pwd)/games:/app/games \
-              -v $(pwd)/submissions:/app/submissions \
-              -e NODE_ENV=production \
-              ghcr.io/${{ github.repository }}:latest
+            # Create .env file with production values (using GitHub secrets)
+            echo "Creating .env configuration..."
+            cat > .env << EOF
+            NODE_ENV=production
+            PORT=3000
+            OPEN_WEBSEARCH_MCP_ENABLED=true
+            OPEN_WEBSEARCH_MCP_ENGINE=${{ secrets.OPEN_WEBSEARCH_MCP_ENGINE || 'duckduckgo' }}
+            OPEN_WEBSEARCH_MCP_HOST=http://open-websearch:3000
+            OPEN_WEBSEARCH_MCP_ENDPOINT=/search
+            RESEND_API_KEY=${{ secrets.RESEND_API_KEY || '' }}
+            COOKIE_SECRET=${{ secrets.COOKIE_SECRET || 'change-this-to-a-random-secure-string' }}
+            ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD || '' }}
+            LLM_ENDPOINT=${{ secrets.LLM_ENDPOINT || 'http://10.0.0.15:1234/v1/chat/completions' }}
+            LLM_MODEL=${{ secrets.LLM_MODEL || 'llama3.2' }}
+            GAME_CREATOR_ENABLED=${{ secrets.GAME_CREATOR_ENABLED || 'true' }}
+            MCP_SERVER_ENABLED=${{ secrets.MCP_SERVER_ENABLED || 'true' }}
+            DUCKDUCKGO_ENABLED=${{ secrets.DUCKDUCKGO_ENABLED || 'true' }}
+            BRAVE_SEARCH_ENABLED=${{ secrets.BRAVE_SEARCH_ENABLED || 'true' }}
+            USE_PROXY=${{ secrets.USE_PROXY || 'false' }}
+            PROXY_URL=${{ secrets.PROXY_URL || 'http://127.0.0.1:7890' }}
+            ALLOWED_SEARCH_ENGINES=${{ secrets.ALLOWED_SEARCH_ENGINES || 'duckduckgo,bing,exa,brave' }}
+            EOF
 
-            # Health check with retry
+            # Create docker-compose file with both services
+            echo "Creating docker-compose configuration..."
+            cat > docker-compose.yml << 'COMPOSE_EOF'
+            version: '3.8'
+            services:
+              open-websearch:
+                image: ghcr.io/aas-ee/open-web-search:latest
+                container_name: open-websearch-mcp
+                restart: unless-stopped
+                ports:
+                  - "3001:3000"
+                environment:
+                  - MODE=http
+                  - PORT=3000
+                  - DEFAULT_SEARCH_ENGINE=${OPEN_WEBSEARCH_MCP_ENGINE:-duckduckgo}
+                  - ENABLE_CORS=true
+                  - CORS_ORIGIN=*
+                  - USE_PROXY=${USE_PROXY:-false}
+                  - PROXY_URL=${PROXY_URL:-http://127.0.0.1:7890}
+                  - ALLOWED_SEARCH_ENGINES=${ALLOWED_SEARCH_ENGINES:-duckduckgo,bing,exa,brave}
+                networks:
+                  - best-version-network
+                healthcheck:
+                  test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:3000/health"]
+                  interval: 30s
+                  timeout: 10s
+                  retries: 5
+                  start_period: 30s
+
+              app:
+                image: ghcr.io/${{ github.repository }}:latest
+                container_name: best-version
+                restart: unless-stopped
+                ports:
+                  - "80:80"
+                  - "443:443"
+                  - "3000:3000"
+                depends_on:
+                  open-websearch:
+                    condition: service_healthy
+                env_file:
+                  - .env
+                environment:
+                  - OPEN_WEBSEARCH_MCP_HOST=http://open-websearch:3000
+                  - OPEN_WEBSEARCH_MCP_ENDPOINT=/search
+                volumes:
+                  - games_data:/app/games
+                  - submissions_data:/app/submissions
+                  - newsletters_data:/app/newsletters
+                  - images_data:/app/images
+                  - ssl_certs:/etc/nginx/ssl:ro
+                networks:
+                  - best-version-network
+                healthcheck:
+                  test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:3000/health"]
+                  interval: 30s
+                  timeout: 10s
+                  retries: 5
+                  start_period: 60s
+
+            volumes:
+              games_data:
+                name: best-version_games
+              submissions_data:
+                name: best-version_submissions
+              newsletters_data:
+                name: best-version_newsletters
+              images_data:
+                name: best-version_images
+              ssl_certs:
+                name: best-version_ssl
+
+            networks:
+              best-version-network:
+                driver: bridge
+            COMPOSE_EOF
+
+            # Stop old containers
+            echo "Stopping old containers..."
+            docker-compose down || true
+
+            # Start new containers with docker-compose
+            echo "Starting new containers..."
+            docker-compose up -d
+
+            # Wait for services to start
+            echo "Waiting for services to initialize..."
+            sleep 15
+
+            # Health check for app
             echo "Running health check..."
             MAX_RETRIES=10
             RETRY_COUNT=0
             while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
               if curl -f http://localhost:3000/health 2>/dev/null; then
-                echo "Health check passed!"
+                echo "App health check passed!"
                 break
               fi
               RETRY_COUNT=$((RETRY_COUNT + 1))
               echo "Health check attempt $RETRY_COUNT failed, retrying..."
-              sleep 2
+              sleep 3
             done
 
             if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
               echo "Health check failed after $MAX_RETRIES attempts"
+              docker-compose logs app
               exit 1
+            fi
+
+            # Health check for open-websearch
+            echo "Checking open-websearch MCP service..."
+            if curl -sf http://localhost:3001/health 2>/dev/null; then
+              echo "Open WebSearch MCP service is healthy!"
+            else
+              echo "WARNING: Open WebSearch MCP service may not be healthy"
+              docker-compose logs open-websearch
             fi
 
             # Log deployment
             echo "Deployment completed successfully!"
-            docker ps --filter name=best-version
-            docker logs --tail 20 best-version
+            docker-compose ps
+            echo "=== App logs ==="
+            docker-compose logs --tail 20 app
+            echo "=== Open WebSearch logs ==="
+            docker-compose logs --tail 10 open-websearch
 
       - name: Send deployment notification
         if: success()
@@ -223,25 +334,59 @@ jobs:
           key: ${{ secrets.DEPLOY_SSH_KEY }}
           port: ${{ secrets.DEPLOY_PORT || 22 }}
           script: |
-            # Stop current container
-            echo "Stopping current container..."
+            # Stop current containers
+            echo "Stopping current containers..."
+            docker-compose down || true
             docker stop best-version || true
             docker rm best-version || true
+            docker stop open-websearch-mcp || true
+            docker rm open-websearch-mcp || true
 
-            # Get previous image tag (before latest)
-            echo "Rolling back to previous image..."
-            docker pull ghcr.io/${{ github.repository }}:previous || docker pull ghcr.io/${{ github.repository }}:latest~1
+            # Pull previous images
+            echo "Pulling previous images..."
+            docker pull ghcr.io/${{ github.repository }}:latest~1 || docker pull ghcr.io/${{ github.repository }}:previous
+            docker pull ghcr.io/aas-ee/open-web-search:latest
 
             # Start with previous image
             echo "Starting previous container..."
-            docker run -d \
-              --name best-version \
-              --restart unless-stopped \
-              -p 3000:3000 \
-              -v $(pwd)/games:/app/games \
-              -v $(pwd)/submissions:/app/submissions \
-              -e NODE_ENV=production \
-              ghcr.io/${{ github.repository }}:latest~1
+
+            # Create docker-compose for rollback
+            cat > docker-compose.yml << COMPOSE_EOF
+            version: '3.8'
+            services:
+              open-websearch:
+                image: ghcr.io/aas-ee/open-web-search:latest
+                container_name: open-websearch-mcp
+                restart: unless-stopped
+                environment:
+                  - MODE=http
+                  - PORT=3000
+                networks:
+                  - best-version-network
+
+              app:
+                image: ghcr.io/${{ github.repository }}:latest~1
+                container_name: best-version
+                restart: unless-stopped
+                ports:
+                  - "3000:3000"
+                depends_on:
+                  - open-websearch
+                volumes:
+                  - games_data:/app/games
+                  - submissions_data:/app/submissions
+                networks:
+                  - best-version-network
+
+            volumes:
+              games_data:
+              submissions_data:
+
+            networks:
+              best-version-network:
+            COMPOSE_EOF
+
+            docker-compose up -d
 
             # Health check
             echo "Running health check..."
@@ -264,7 +409,7 @@ jobs:
 
             # Log rollback
             echo "Rollback completed successfully!"
-            docker ps --filter name=best-version
+            docker-compose ps
 
   # ============================================================
   # MANUAL ROLLBACK TRIGGER (via workflow_dispatch)
@@ -306,7 +451,8 @@ jobs:
             TARGET_VERSION="${{ github.event.inputs.target_version }}"
             echo "Rolling back to version: $TARGET_VERSION"
 
-            # Stop current container
+            # Stop current containers
+            docker-compose down || true
             docker stop best-version || true
             docker rm best-version || true
 
@@ -314,15 +460,43 @@ jobs:
             docker pull ghcr.io/${{ github.repository }}:$TARGET_VERSION
             docker tag ghcr.io/${{ github.repository }}:$TARGET_VERSION ghcr.io/${{ github.repository }}:rollback
 
-            # Start rolled-back container
-            docker run -d \
-              --name best-version \
-              --restart unless-stopped \
-              -p 3000:3000 \
-              -v $(pwd)/games:/app/games \
-              -v $(pwd)/submissions:/app/submissions \
-              -e NODE_ENV=production \
-              ghcr.io/${{ github.repository }}:rollback
+            # Create docker-compose for rollback
+            cat > docker-compose.yml << COMPOSE_EOF
+            version: '3.8'
+            services:
+              open-websearch:
+                image: ghcr.io/aas-ee/open-web-search:latest
+                container_name: open-websearch-mcp
+                restart: unless-stopped
+                environment:
+                  - MODE=http
+                  - PORT=3000
+                networks:
+                  - best-version-network
+
+              app:
+                image: ghcr.io/${{ github.repository }}:rollback
+                container_name: best-version
+                restart: unless-stopped
+                ports:
+                  - "3000:3000"
+                depends_on:
+                  - open-websearch
+                volumes:
+                  - games_data:/app/games
+                  - submissions_data:/app/submissions
+                networks:
+                  - best-version-network
+
+            volumes:
+              games_data:
+              submissions_data:
+
+            networks:
+              best-version-network:
+            COMPOSE_EOF
+
+            docker-compose up -d
 
             # Health check
             MAX_RETRIES=10

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "web-search": {
+      "type": "http",
+      "url": "http://localhost:3000/mcp"
+    },
+    "web-search-sse": {
+      "type": "sse",
+      "url": "http://localhost:3000/sse"
+    }
+  }
+}

@@ -44,6 +44,7 @@ lerna-debug.log*
 *.trace
 coverage/
 .nyc_output/
+.ralph/logs/
 
 # ==============
 # Test & Debug
@@ -141,3 +142,5 @@ ssl/
 *.rej
 *.orig-*
 ~$*
+.ralph/logs/
+_bmad-output/

@@ -5,6 +5,7 @@
 const { expect } = require('expect');
 const path = require('path');
 const { JsonSchemaValidator } = require('../../src/utils/validators');
+const { createValidGame, createInvalidGame } = require('../fixtures/game.fixture');
 
 const schemaPath = path.join(__dirname, '../../game_metadata_schema.json');
 
@@ -48,21 +49,11 @@ describe('JSON Schema Validator Tests', () => {
 
   // Test validate method - general validation
   test('1.0-UTIL-033 [P1] JsonSchemaValidator validates complete valid data', () => {
-    // Given valid game data
+    // Given valid game data using fixture
     const validator = new JsonSchemaValidator(schemaPath);
     validator.loadSchema();
 
-    const validData = {
-      basic_info: {
-        url_slug: '/games/test',
-        title: 'Test Game',
-        genres: ['RPG'],
-        themes: ['Adventure']
-      },
-      release: { platforms: [] },
-      serie: { is_part_of_serie: false },
-      similar_games: []
-    };
+    const validData = createValidGame();
 
     // When validating
     const result = validator.validate(validData);
@@ -85,13 +76,11 @@ describe('JSON Schema Validator Tests', () => {
   });
 
   test('1.0-UTIL-035 [P1] JsonSchemaValidator requires top-level properties', () => {
-    // Given incomplete data
+    // Given incomplete data using fixture
     const validator = new JsonSchemaValidator(schemaPath);
     validator.loadSchema();
 
-    const invalidData = {
-      // Missing all required properties
-    };
+    const invalidData = createInvalidGame();
 
     const result = validator.validate(invalidData);
     expect(result).toBe(false);

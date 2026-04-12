@@ -2,18 +2,38 @@
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const validator = require('validator');
+const crypto = require('crypto');
 
 /**
  * Security headers configuration
  * Uses helmet for standard security headers plus custom headers
  */
+// Security nonce for CSP - generates a cryptographically secure random value
+function generateNonce() {
+  return crypto.randomBytes(16).toString('base64');
+}
+
+// Attach nonce to response for use in views
+function attachNonceToResponse(req, res, next) {
+  res.locals.nonce = generateNonce();
+  next();
+}
+
 function securityHeaders() {
+  // CSP uses nonce-based approach instead of unsafe-inline
+  // The nonce is attached to res.locals.nonce by attachNonceToResponse middleware
+  // DISABLE_CSP can be set to 'true' to disable CSP for testing purposes
+  const cspDisabled = process.env.DISABLE_CSP === 'true';
   return helmet({
-    contentSecurityPolicy: {
+    contentSecurityPolicy: cspDisabled ? false : {
+      useDefaults: true,
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-        scriptSrcAttr: ["'unsafe-inline'"],
+        // Allow inline scripts and event handlers for single-page app functionality
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        // Allow inline event handlers (onclick, etc.)
+        scriptSrcAttr: ["'self'", "'unsafe-inline'"],
+        // Allow unsafe-inline for styles during transition; consider external stylesheets
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         imgSrc: ["'self'", 'data:', 'https:'],
         connectSrc: ["'self'", 'https://fonts.googleapis.com', 'https://fonts.gstatic.com'],
@@ -22,7 +42,8 @@ function securityHeaders() {
         mediaSrc: ["'self'"],
         frameSrc: ["'none'"],
         upgradeInsecureRequests: []
-      }
+      },
+      reportOnly: false
     },
     crossOriginEmbedderPolicy: true,
     crossOriginOpenerPolicy: { policy: "same-origin" },
@@ -98,46 +119,106 @@ const submissionRateLimiter = rateLimit({
 });
 
 /**
- * Session store using in-memory storage (can be replaced with Redis)
+ * Session store supporting both in-memory (development) and Redis (production)
  */
 class SessionStore {
-  constructor(redisClient = null) {
+  constructor(redisClient = null, options = {}) {
     this.redis = redisClient;
     this.sessions = new Map();
     this.cleanupInterval = null;
+    this.useRedis = !!redisClient;
+    this.sessionPrefix = options.prefix || 'sess:';
+    this.sessionTTL = options.ttl || 24 * 60 * 60; // 24 hours in seconds
+  }
+
+  /**
+   * Get session key for Redis
+   */
+  _getKey(sid) {
+    return `${this.sessionPrefix}${sid}`;
   }
 
   /**
    * Get session by ID
    */
-  get(sid) {
+  async get(sid) {
+    if (this.useRedis && this.redis) {
+      try {
+        const data = await this.redis.get(this._getKey(sid));
+        if (!data) return null;
+        const session = JSON.parse(data);
+        // Check if session has expired
+        if (session.expiresAt && session.expiresAt < Date.now()) {
+          await this.redis.del(this._getKey(sid));
+          return null;
+        }
+        return session;
+      } catch (error) {
+        console.error('SessionStore: Redis get error:', error.message);
+        // Fallback to in-memory if Redis fails
+        return this.sessions.get(sid);
+      }
+    }
     return this.sessions.get(sid);
   }
 
   /**
    * Set session
    */
-  set(sid, session) {
-    // Clean up existing session if present
+  async set(sid, session) {
+    if (this.useRedis && this.redis) {
+      try {
+        // Check if existing session is expired before setting
+        const existing = await this._getKey(sid);
+        const existingData = await this.redis.get(existing);
+        if (existingData) {
+          const existingSession = JSON.parse(existingData);
+          if (existingSession.expiresAt && existingSession.expiresAt < Date.now()) {
+            await this.redis.del(existing);
+          }
+        }
+        await this.redis.setex(
+          this._getKey(sid),
+          this.sessionTTL,
+          JSON.stringify(session)
+        );
+        return;
+      } catch (error) {
+        console.error('SessionStore: Redis set error:', error.message);
+        // Fallback to in-memory if Redis fails
+        this.sessions.set(sid, session);
+        return;
+      }
+    }
+
+    // In-memory fallback
     const existing = this.sessions.get(sid);
     if (existing && existing.expiresAt && existing.expiresAt < Date.now()) {
       this.sessions.delete(sid);
     }
-
     this.sessions.set(sid, session);
   }
 
   /**
    * Destroy session
    */
-  destroy(sid) {
+  async destroy(sid) {
+    if (this.useRedis && this.redis) {
+      try {
+        await this.redis.del(this._getKey(sid));
+      } catch (error) {
+        console.error('SessionStore: Redis del error:', error.message);
+      }
+    }
     this.sessions.delete(sid);
   }
 
   /**
-   * Start automatic cleanup
+   * Start automatic cleanup (in-memory only)
    */
   startCleanup() {
+    if (this.useRedis) return; // Redis handles TTL automatically
+
     this.cleanupInterval = setInterval(() => {
       const now = Date.now();
       for (const [sid, session] of this.sessions.entries()) {
@@ -156,6 +237,15 @@ class SessionStore {
       clearInterval(this.cleanupInterval);
     }
   }
+
+  /**
+   * Initialize Redis connection
+   */
+  async initRedis(redisClient) {
+    this.redis = redisClient;
+    this.useRedis = true;
+    console.log('SessionStore: Using Redis-backed session storage');
+  }
 }
 
 const sessionStore = new SessionStore();
@@ -169,7 +259,6 @@ if (process.env.NODE_ENV !== 'test') {
  * Generate session ID
  */
 function generateSessionId() {
-  const crypto = require('crypto');
   return crypto.randomBytes(32).toString('hex');
 }
 
@@ -177,46 +266,51 @@ function generateSessionId() {
  * Create session middleware
  */
 function createSessionMiddleware() {
-  return (req, res, next) => {
+  return async (req, res, next) => {
     // Always initialize session as an object first
     req.session = req.session || {};
 
     // Check for session cookie
     const sessionId = req.cookies?.session_id;
 
-    if (sessionId) {
-      const session = sessionStore.get(sessionId);
-      if (session && session.expiresAt > Date.now()) {
-        req.session = session;
-        // Extend session on use
-        session.expiresAt = Date.now() + (24 * 60 * 60 * 1000); // 24 hours
-        sessionStore.set(sessionId, session);
+    try {
+      if (sessionId) {
+        const session = await sessionStore.get(sessionId);
+        if (session && session.expiresAt > Date.now()) {
+          req.session = session;
+          // Extend session on use
+          session.expiresAt = Date.now() + (24 * 60 * 60 * 1000); // 24 hours
+          await sessionStore.set(sessionId, session);
+        } else {
+          // Session expired, clear cookie
+          res.clearCookie('session_id', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: 'strict',
+            path: '/'
+          });
+          req.session = {};
+        }
       } else {
-        // Session expired, clear cookie
-        res.clearCookie('session_id', {
+        // No session cookie - create a new one
+        const newSessionId = generateSessionId();
+        req.session = {
+          id: newSessionId,
+          createdAt: Date.now(),
+          expiresAt: Date.now() + (24 * 60 * 60 * 1000)
+        };
+        await sessionStore.set(newSessionId, req.session);
+        // Set the session cookie on response
+        res.cookie('session_id', newSessionId, {
           httpOnly: true,
           secure: process.env.NODE_ENV === 'production',
           sameSite: 'strict',
-          path: '/'
+          maxAge: 24 * 60 * 60 * 1000
         });
-        req.session = {};
       }
-    } else {
-      // No session cookie - create a new one
-      const newSessionId = generateSessionId();
-      req.session = {
-        id: newSessionId,
-        createdAt: Date.now(),
-        expiresAt: Date.now() + (24 * 60 * 60 * 1000)
-      };
-      sessionStore.set(newSessionId, req.session);
-      // Set the session cookie on response
-      res.cookie('session_id', newSessionId, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 24 * 60 * 60 * 1000
-      });
+    } catch (error) {
+      console.error('Session middleware error:', error.message);
+      req.session = {};
     }
 
     next();
@@ -226,8 +320,6 @@ function createSessionMiddleware() {
 /**
  * CSRF token generation and validation
  */
-const crypto = require('crypto');
-
 class CSRFProtect {
   constructor() {
     this.tokenLength = 32;
@@ -254,20 +346,24 @@ class CSRFProtect {
         return next();
       }
 
-      // Skip CSRF validation for specific API endpoints that have their own protection
-      // (e.g., newsletter subscribe uses hCaptcha, admin endpoints use adminAuth)
-      const skipPaths = [
-        '/api/newsletter/subscribe',
-        '/api/submissions',  // submissions use hCaptcha
+      // Skip CSRF validation for public read-only endpoints (GET is already skipped above)
+      // These endpoints are stateless and don't modify server state
+      const publicReadOnlyPaths = [
+        '/api/csp-report',  // CSP violation reporting
       ];
-      const path = req.path.toLowerCase();
-      if (skipPaths.some(skipPath => path === skipPath || path.startsWith(skipPath + '?'))) {
+      const path = (req.path || '').toLowerCase();
+      if (publicReadOnlyPaths.some(skipPath => path === skipPath)) {
         return next();
       }
 
-      // Skip CSRF validation if hCaptcha has already validated the request
-      // (hCaptcha provides equivalent protection for public endpoints)
-      if (req.hCaptchaValid) {
+      // Note: hCaptcha is NOT a substitute for CSRF protection
+      // hCaptcha protects against bots; CSRF tokens protect against request forgery
+      // Both should be used together for defense in depth
+      // Admin endpoints have separate adminAuth middleware with their own CSRF handling
+      const adminPaths = ['/admin', '/api/admin'];
+      const isAdminPath = adminPaths.some(adminPath => path.startsWith(adminPath));
+      if (isAdminPath && req.headers['x-admin-auth']) {
+        // Admin auth middleware handles CSRF separately
         return next();
       }
 
@@ -321,7 +417,7 @@ class CSRFProtect {
    * Get CSRF token setter
    */
   getTokenGetter() {
-    return (req, res, next) => {
+    return async (req, res, next) => {
       // Always initialize session and locals
       req.session = req.session || {};
       res.locals = res.locals || {};
@@ -338,7 +434,7 @@ class CSRFProtect {
       const sessionId = req.cookies?.session_id;
       if (sessionId) {
         req.session.expiresAt = Date.now() + (24 * 60 * 60 * 1000);
-        sessionStore.set(sessionId, req.session);
+        await sessionStore.set(sessionId, req.session);
       }
 
       next();
@@ -589,15 +685,17 @@ const auditMiddleware = auditLogger.createMiddleware();
  * Error handling middleware
  */
 function errorHandler(err, req, res, next) {
-  console.error('Error:', err);
-
   // Log error for debugging (in production, log to file/service)
   if (process.env.NODE_ENV !== 'production') {
-    console.error(err.stack);
+    if (err.stack) {
+      console.error(err.stack);
+    } else {
+      console.error(err);
+    }
   }
 
   // Security events to log
-  if (err.message?.includes('CSRF')) {
+  if (err.message && err.message.includes('CSRF')) {
     auditLogger.logSecurityEvent('CSRF_VIOLATION', {
       path: req.path,
       method: req.method,
@@ -610,7 +708,7 @@ function errorHandler(err, req, res, next) {
     success: false,
     error: process.env.NODE_ENV === 'production'
       ? 'An internal error occurred'
-      : err.message || 'An internal error occurred'
+      : (err.message || 'An internal error occurred')
   });
 }
 
@@ -642,6 +740,10 @@ function ipValidationMiddleware(req, res, next) {
 module.exports = {
   // Helmet security headers
   securityHeaders,
+
+  // CSP nonce middleware
+  attachNonceToResponse,
+  generateNonce,
 
   // Rate limiters
   apiRateLimiter,

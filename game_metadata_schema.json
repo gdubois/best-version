@@ -27,7 +27,28 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": ["Tactical Role-Playing", "Strategy", "Adventure", "Action", "RPG", "JRPG", "Puzzle", "Sports", "Racing", "RTS", "FPS"]
+            "enum": [
+              "Action",
+              "Action RPG",
+              "Adventure",
+              "Fighting",
+              "FPS",
+              "JRPG",
+              "Platform",
+              "Puzzle",
+              "Racing",
+              "RPG",
+              "Role-Playing Game (RPG)",
+              "RTS",
+              "Shoot 'em up",
+              "Simulator",
+              "Social Simulation",
+              "Sports",
+              "Stealth",
+              "Strategy",
+              "Survival Horror",
+              "Tactical Role-Playing"
+            ]
           },
           "minItems": 1,
           "description": "List of primary genres for the game"
@@ -192,14 +213,28 @@
             "items": {
               "type": "object",
               "properties": {
-                "name": {"type": "string"},
-                "description": {"type": "string"},
-                "url": {"type": "string", "format": "uri"}
+                "name": {
+                  "type": "string",
+                  "description": "Name of the patch or mod"
+                },
+                "version": {
+                  "type": "string",
+                  "description": "Version number of the patch (e.g., '1.0', '2.1.3')"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description of what the patch does"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "URL to download or access the patch (optional - some patches are informational only)"
+                }
               },
-              "required": ["name", "description", "url"]
+              "required": ["name", "description"]
             },
             "minItems": 0,
-            "description": "Recommended downloadable content (DLC) or patches. include unofficial patches and mods like translations"
+            "description": "Recommended downloadable content (DLC) or patches. Include unofficial patches and mods like translations"
           },
           "emulators": {
             "type": "array",

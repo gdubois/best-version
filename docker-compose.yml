@@ -4,6 +4,31 @@
 # Single container running both nginx (frontend) and Node.js (backend)
 # =============================================================================
 services:
+  # Open WebSearch MCP Service - provides multi-engine web search for game-creator
+  open-websearch:
+    image: ghcr.io/aas-ee/open-web-search:latest
+    container_name: open-websearch-mcp
+    restart: unless-stopped
+    ports:
+      - "3001:3000"  # Expose on port 3001 (game-creator will connect to this)
+    environment:
+      - MODE=http
+      - PORT=3000
+      - DEFAULT_SEARCH_ENGINE=${OPEN_WEBSEARCH_MCP_ENGINE:-duckduckgo}
+      - ENABLE_CORS=true
+      - CORS_ORIGIN=*
+      - USE_PROXY=${USE_PROXY:-false}
+      - PROXY_URL=${PROXY_URL:-http://127.0.0.1:7890}
+      - ALLOWED_SEARCH_ENGINES=${ALLOWED_SEARCH_ENGINES:-duckduckgo,bing,exa,brave}
+    networks:
+      - best-version-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
   app:
     build:
       context: .
@@ -15,6 +40,9 @@ services:
       - "80:80"      # HTTP
       - "443:443"   # HTTPS
       - "3000:3000" # Backend API (internal access)
+    depends_on:
+      open-websearch:
+        condition: service_healthy
     environment:
       - NODE_ENV=production
       - PORT=3000
@@ -22,11 +50,27 @@ services:
       - SITE_URL=${SITE_URL:-http://localhost}
       - COOKIE_SECRET=${COOKIE_SECRET:-change-this-to-a-random-secure-string}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-}
+      # Game Creator Configuration
+      - GAME_CREATOR_ENABLED=${GAME_CREATOR_ENABLED:-true}
+      - ENABLE_GAME_CREATOR=${ENABLE_GAME_CREATOR:-true}
+      - LLM_ENDPOINT=${LLM_ENDPOINT:-http://10.0.0.15:1234/v1/chat/completions}
+      - LLM_MODEL=${LLM_MODEL:-llama3.2}
+      - LLM_TIMEOUT=${LLM_TIMEOUT:-120000}
+      - LLM_MAX_RETRIES=${LLM_MAX_RETRIES:-3}
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0.2}
+      - LLM_MAX_TOKENS=${LLM_MAX_TOKENS:-8000}
+      # OpenSearch MCP Configuration (Primary Search - No API Keys Required)
+      - MCP_SERVER_ENABLED=${MCP_SERVER_ENABLED:-true}
+      - MCP_TIMEOUT=${MCP_TIMEOUT:-60000}
+      - OPEN_WEBSEARCH_MCP_ENABLED=${OPEN_WEBSEARCH_MCP_ENABLED:-true}
+      - OPEN_WEBSEARCH_MCP_ENGINE=${OPEN_WEBSEARCH_MCP_ENGINE:-duckduckgo}
+      - OPEN_WEBSEARCH_MCP_HOST=http://open-websearch:3000
     volumes:
       # Data directories - persisted in named volumes
       - games_data:/app/games
       - submissions_data:/app/submissions
       - newsletters_data:/app/newsletters
+      - images_data:/app/images
       # SSL certificates for HTTPS (fullchain + key)
       - ssl_certs:/etc/nginx/ssl:ro
     networks:
@@ -48,6 +92,9 @@ volumes:
     external: true
   newsletters_data:
     name: best-version_newsletters
+    external: true
+  images_data:
+    name: best-version_images
     external: true
   ssl_certs:
     name: best-version_ssl

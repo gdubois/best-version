@@ -35,6 +35,29 @@ if ! kill -0 $NGINX_PID 2>/dev/null; then
 fi
 echo "[Entrypoint] nginx started (PID: $NGINX_PID)"
 
+# Check if open-websearch MCP service is available (external container in docker-compose)
+# The game-creator will use this for enhanced web search capabilities
+if [ -n "$OPEN_WEBSEARCH_MCP_HOST" ]; then
+    echo "[Entrypoint] Open WebSearch MCP configured: $OPEN_WEBSEARCH_MCP_HOST"
+
+    # Wait for open-websearch to be ready (max 30 seconds)
+    OPEN_WEBSEARCH_READY=false
+    for i in 1 2 3 4 5 6; do
+        if curl -sf --connect-timeout 5 "$OPEN_WEBSEARCH_MCP_HOST/health" > /dev/null 2>&1; then
+            OPEN_WEBSEARCH_READY=true
+            echo "[Entrypoint] Open WebSearch MCP service is ready"
+            break
+        fi
+        echo "[Entrypoint] Waiting for Open WebSearch MCP... ($i/6)"
+        sleep 5
+    done
+
+    if [ "$OPEN_WEBSEARCH_READY" = false ]; then
+        echo "[Entrypoint] WARNING: Open WebSearch MCP service not responding"
+        echo "[Entrypoint] Game-creator will operate with reduced search capabilities"
+    fi
+fi
+
 # Start Node.js backend in background
 echo "[Entrypoint] Starting Node.js application..."
 node src/index.js &

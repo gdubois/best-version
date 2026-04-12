@@ -1,0 +1,229 @@
+{
+  "basic_info": {
+    "url_slug": "/games/chrono-trigger",
+    "title": "Chrono Trigger",
+    "cover_url": "/images/chrono-trigger.jpg",
+    "genres": [
+      "Adventure"
+    ],
+    "themes": [
+      "Classic"
+    ],
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square",
+      "TOSE Co., Ltd."
+    ],
+    "publishers": [
+      "Square",
+      "Square Enix"
+    ],
+    "reception_score": 10,
+    "review": "A masterpiece of game design that redefined the RPG genre with its time-travel mechanics and multiple endings."
+  },
+  "release": {
+    "alternative_names": [
+      "CT",
+      "Chrono Trigger '99",
+      "Final Fantasy Chronicles"
+    ],
+    "platforms": [
+      {
+        "name": "Super Nintendo Entertainment System",
+        "region": "Japan",
+        "release_date": "1995-03-11"
+      },
+      {
+        "name": "Super Nintendo Entertainment System",
+        "region": "North America",
+        "release_date": "1995-08-22"
+      },
+      {
+        "name": "Super Nintendo Entertainment System",
+        "region": "Europe",
+        "release_date": "1995-09-01"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "1999-06-29"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Japan",
+        "release_date": "1999-08-05"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Europe",
+        "release_date": "1999-10-01"
+      },
+      {
+        "name": "Nintendo DS",
+        "region": "North America",
+        "release_date": "2008-11-25"
+      },
+      {
+        "name": "Nintendo DS",
+        "region": "Japan",
+        "release_date": "2008-11-27"
+      },
+      {
+        "name": "Nintendo DS",
+        "region": "Europe",
+        "release_date": "2009-02-06"
+      },
+      {
+        "name": "Windows",
+        "region": "North America",
+        "release_date": "2011-11-15"
+      },
+      {
+        "name": "Windows",
+        "region": "Japan",
+        "release_date": "2011-11-15"
+      },
+      {
+        "name": "iOS",
+        "region": "North America",
+        "release_date": "2011-11-15"
+      },
+      {
+        "name": "Android",
+        "region": "North America",
+        "release_date": "2011-11-15"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Chrono",
+    "part_number": 1
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy VI",
+      "url_slug": "/games/final-fantasy-vi"
+    },
+    {
+      "title": "Xenogears",
+      "url_slug": "/games/xenogears"
+    },
+    {
+      "title": "Mother 3",
+      "url_slug": "/games/mother-3"
+    },
+    {
+      "title": "Dragon Quest VIII",
+      "url_slug": "/games/dragon-quest-viii"
+    },
+    {
+      "title": "Chrono Cross",
+      "url_slug": "/games/chrono-cross"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo DS",
+      "details": "The definitive version for most players, featuring a complete English localization, a new voice acting track, and a second playable character (Kid) with her own questline. It includes a touch-screen interface for menu navigation and a new dungeon, though the graphics remain 2D sprites.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Super Nintendo Entertainment System",
+      "details": "The original 1995 release offers the purest artistic vision with the original soundtrack and no voice acting, which many purists prefer. It requires an emulator or original hardware. The English version is available but lacks the quality of life improvements found in later ports.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Chrono Trigger Bugfix and Uncensoring Patch",
+          "description": "A comprehensive patch that fixes various glitches present in the original SNES release, such as the 'Lucca's Gun' bug and the 'Save Point' glitch. It also restores censored content, including the original 'Lizard Man' sprite and dialogue that was altered in the North American release.",
+          "url": "https://www.romhacking.net/hacks/3147/"
+        },
+        {
+          "name": "Chrono Trigger English Translation Patch (Fan Translation)",
+          "description": "An unofficial translation patch that improves upon the original English localization by correcting mistranslations, adding missing context, and restoring Japanese cultural nuances that were lost in the official Square release.",
+          "url": "https://www.romhacking.net/translations/1258/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Snes9x",
+          "optimal_settings": [
+            "Default settings"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "bsnes",
+          "optimal_settings": [
+            "Default settings"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "ZSNES",
+          "optimal_settings": [
+            "Default settings"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation",
+      "details": "A port of the SNES version that includes a new orchestral soundtrack arrangement and a new dungeon. However, it suffers from slower load times and lacks the touch-screen convenience of the DS version. It is generally considered inferior to the DS port for modern play.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "ePSXe",
+          "optimal_settings": [
+            "Default settings"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Default settings"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PCSX2",
+          "optimal_settings": [
+            "Default settings"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In the year 1000 AD, a festival is interrupted by a mysterious machine that transports the protagonist, Crono, and his friend Lucca to the distant past, where they meet a dinosaur named Marle. As they traverse time to return home, they uncover a conspiracy involving a powerful entity known as Lavos, threatening to destroy the world.",
+    "key_features": [
+      "Active Time Battle (ATB) system with real-time movement and cooperative attacks",
+      "Non-linear story progression with multiple distinct endings based on player choices",
+      "Time travel mechanics allowing access to five distinct historical eras",
+      "Absence of random enemy encounters, with all battles occurring on the overworld map",
+      "Dual-wielding weapon system and character-specific tech combinations"
+    ],
+    "long_description": "Chrono Trigger is a landmark role-playing game developed by Square, featuring a non-linear narrative where players travel through time to prevent a global catastrophe. Set in a world where technology and magic coexist, the story follows Crono and his companions as they navigate different eras, from the prehistoric past to a dystopian future. The game is renowned for its lack of random encounters, its multiple endings determined by player choices, and its innovative battle system that allows for real-time attacks and cooperative moves. It stands as a pinnacle of 16-bit gaming, blending the storytelling depth of Final Fantasy with the action-oriented pacing of Dragon Quest.",
+    "legacy_and_impact": [
+      "Chrono Trigger is universally acclaimed as one of the greatest video games ever made. It influenced countless subsequent RPGs with its non-linear storytelling, lack of random encounters, and emphasis on player agency. Its soundtrack by Yasunori Mitsuda and Nobuo Uematsu is considered a classic in video game music history."
+    ]
+  }
+}

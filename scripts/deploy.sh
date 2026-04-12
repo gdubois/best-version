@@ -106,6 +106,46 @@ check_env_file() {
         fi
     fi
 
+    # Check Game Creator LLM endpoint configuration
+    if grep -q "LLM_ENDPOINT" "$PROJECT_DIR/.env" 2>/dev/null; then
+        LLM_ENDPOINT_VALUE=$(grep "^LLM_ENDPOINT=" "$PROJECT_DIR/.env" | cut -d'=' -f2)
+        if [ -n "$LLM_ENDPOINT_VALUE" ] && [ "$LLM_ENDPOINT_VALUE" != "http://10.0.0.15:1234/api/generate" ]; then
+            log_success "LLM_ENDPOINT configured: $LLM_ENDPOINT_VALUE"
+
+            # Test connectivity to LLM endpoint (optional, non-blocking)
+            log_info "Testing LLM endpoint connectivity..."
+            if curl -sf --connect-timeout 5 "$LLM_ENDPOINT_VALUE" > /dev/null 2>&1; then
+                log_success "LLM endpoint is reachable"
+            else
+                log_warn "LLM endpoint is not reachable: $LLM_ENDPOINT_VALUE"
+                log_warn "Make sure your llama.cpp server is running and accessible"
+            fi
+        fi
+    fi
+
+    # Check OpenSearch MCP configuration (Primary Search - No API Keys Required)
+    if grep -q "OPEN_WEBSEARCH_MCP_ENABLED" "$PROJECT_DIR/.env" 2>/dev/null; then
+        MCP_ENABLED=$(grep "^OPEN_WEBSEARCH_MCP_ENABLED=" "$PROJECT_DIR/.env" | cut -d'=' -f2)
+        if [ "$MCP_ENABLED" = "true" ]; then
+            log_success "OpenSearch MCP is enabled (no API keys required)"
+
+            # Check search engine configuration
+            if grep -q "OPEN_WEBSEARCH_MCP_ENGINE" "$PROJECT_DIR/.env" 2>/dev/null; then
+                MCP_ENGINE=$(grep "^OPEN_WEBSEARCH_MCP_ENGINE=" "$PROJECT_DIR/.env" | cut -d'=' -f2)
+                log_info "OpenSearch MCP engine: $MCP_ENGINE"
+            fi
+
+            # Check for proxy configuration (useful for restricted regions)
+            if grep -q "USE_PROXY" "$PROJECT_DIR/.env" 2>/dev/null; then
+                USE_PROXY_VALUE=$(grep "^USE_PROXY=" "$PROJECT_DIR/.env" | cut -d'=' -f2)
+                if [ "$USE_PROXY_VALUE" = "true" ]; then
+                    PROXY_URL_VALUE=$(grep "^PROXY_URL=" "$PROJECT_DIR/.env" | cut -d'=' -f2)
+                    log_info "Proxy configured for OpenSearch MCP: $PROXY_URL_VALUE"
+                fi
+            fi
+        fi
+    fi
+
     echo ""
 }
 
@@ -202,6 +242,7 @@ create_volumes() {
     docker volume create best-version_games 2>/dev/null || true
     docker volume create best-version_submissions 2>/dev/null || true
     docker volume create best-version_newsletters 2>/dev/null || true
+    docker volume create best-version_images 2>/dev/null || true
     docker volume create best-version_ssl 2>/dev/null || true
 
     log_success "Data volumes ready"
@@ -379,6 +420,7 @@ show_info() {
     echo "  - games:         best-version_games"
     echo "  - submissions:   best-version_submissions"
     echo "  - newsletters:   best-version_newsletters"
+    echo "  - images:        best-version_images"
     echo "  - ssl:           best-version_ssl"
     echo ""
 

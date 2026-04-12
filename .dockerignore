@@ -66,3 +66,8 @@ test-results
 # Misc
 .DS_Store
 Thumbs.db
+
+# Temporarily exclude bracket routing files during build
+*/[id]*
+*/[reviewId]*
+*/_id*

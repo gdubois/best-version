@@ -1,0 +1,43 @@
+I am creating a website about the history of video games and specifically the best version available for each game. For each game, this website presents a single page with the data for a given game using a JSON file as source. I want you to help by generating the JSON files. Here is an example of such JSON file for the game "Chrono Trigger" and the related JSON schema that you will use for your answer.
+Make sure your answer follows the exact JSON schema provided and is properly indented. Use web search to gather reliable information, make sure to collect all the required information about which is the best version, recommended unofficial patches (downloadable content, translation patches, improvement patches, improvement mods, etc...) and that it is correct before you record it in the JSON file.
+
+You will perform the following steps, in order. Read and understand the step and the flow, do not execute these steps yet.
+
+Step 1. Do not rely on your knowledge. Use MCP tool calls to search the web for up-to-date information. Search at least these websites (but you can search more websites not listed here):
+- wikipedia (https://www.wikipedia.org/)
+- digital Foundry (https://www.digitalfoundry.net/)
+- PCGamingWiki (https://www.pcgamingwiki.com/wiki/Home)
+- hg101 (http://www.hardcoregaming101.net/)
+- metacritic (https://www.metacritic.com/)
+- opencritic (https://opencritic.com/)
+- reddit (https://www.reddit.com/)
+- mobygames (https://www.mobygames.com/)
+- gamespot (https://www.gamespot.com/)
+- IGN (https://www.ign.com/)
+
+Step 2. Compare the information from all the relevant websites, judge their reliability and consolidate the information 
+
+Step 3. Based on your search, try to identify the best version of the game, you may use other web searches
+
+Step 4. Identify the best unofficial patches and mods that should be used for the best experience
+- romhacking (https://www.romhacking.net/)
+- romhackplaza (https://romhackplaza.org/)
+- gamebanana (https://gamebanana.com/)
+
+Step 5. Generate the JSON file for that game. In the "play_today" field, rank the versions from the best and most desirable way to play to the worst. Ensure that the JSON file complies with the JSON schema provided.
+
+Now follow the steps described above and provide the JSON file for the game "###".
+
+======================================================================================
+Qwen3.5-35b-a3b
+Qwen3-8b
+Qwen3-next
+GLM-4.7
+ToolACE-2-Llama-3.1-8B
+
+siyases122@advarm.com
+
+
+I am creating a website about the history of video games and specifically the best version available for each game. For each game, this website presents a single page with the data for a given game using a JSON file as source. The data for a game is served from a backend back to the end-user. The website allows to search for a game based on its title (or a part of it). The whole solution needs to run with decent performance on a small raspberry pi. Security is paramount.
+I want to be able to run everything with a ingle docker compose command. The website landing page is attached, you can modify it.
+Please recommend a backend and create a Docker compose file to put the whole solution together. 

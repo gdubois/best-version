@@ -1,0 +1,316 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// API base URL - use relative URL in production
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+
+// Fetch failed submissions from API
+let failedSubmissions: any[] = [];
+let error: string | null = null;
+
+try {
+    const response = await fetch(`${API_BASE}/admin/failed-submissions`, {
+        headers: {
+            'Authorization': `Bearer ${Astro.locals.adminToken || ''}`
+        }
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        failedSubmissions = data.submissions || [];
+    } else {
+        error = 'Failed to load failed submissions';
+    }
+} catch (e) {
+    error = 'Unable to connect to service';
+}
+---
+
+<Layout title="Failed Submissions - Admin - Best Version">
+    <main id="main-content" role="main" class="failed-page">
+        <section class="py-8">
+            <div class="max-w-6xl mx-auto px-4">
+                <!-- Header -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
+                    <div>
+                        <h1 class="text-h2">Failed Submissions</h1>
+                        <p class="text-gray-600 mt-2">View and retry failed game submissions</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="/admin/dashboard" class="btn btn-outline">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Error State -->
+                {error && (
+                    <div role="alert" class="alert alert-error mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <span>{error}</span>
+                    </div>
+                )}
+
+                <!-- Empty State -->
+                {failedSubmissions.length === 0 && !error && (
+                    <div role="status" class="empty-state">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h2 class="text-h4 mt-4 mb-2">No Failed Submissions</h2>
+                        <p class="text-gray-600">All submissions have been processed successfully.</p>
+                        <a href="/admin/reviews" class="btn btn-primary mt-6">View Review Queue</a>
+                    </div>
+                )}
+
+                <!-- Failed Submissions List -->
+                {failedSubmissions.length > 0 && !error && (
+                    <>
+                        <div class="failed-list" role="list">
+                            {failedSubmissions.map((submission) => (
+                                <article class="failed-card" role="listitem">
+                                    <div class="failed-header">
+                                        <div class="failed-title">
+                                            <h3 class="text-h5">{submission.title}</h3>
+                                            <div class="failed-meta">
+                                                <span class="meta-item">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                                        <circle cx="12" cy="12" r="10"></circle>
+                                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                                    </svg>
+                                                    Submitted: {new Date(submission.submittedAt).toLocaleDateString()}
+                                                </span>
+                                                {submission.failedAt && (
+                                                    <span class="meta-item">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                                            <circle cx="12" cy="12" r="10"></circle>
+                                                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                                                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                                                        </svg>
+                                                        Failed: {new Date(submission.failedAt).toLocaleString()}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </div>
+
+                                        <div class="failed-attempts">
+                                            <span class="attempts-badge">
+                                                {submission.attemptCount || 1} attempt{submission.attemptCount > 1 ? 's' : ''}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="failed-reason" role="alert">
+                                        <div class="reason-header">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                            </svg>
+                                            <span>Failure Reason</span>
+                                        </div>
+                                        <p class="reason-text">{submission.failureReason || 'Unknown error'}</p>
+                                    </div>
+
+                                    {submission.skipUntil && (
+                                        <div class="retry-info">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12 6 12 12 16 14"></polyline>
+                                            </svg>
+                                            <span>Auto-retry in: {new Date(submission.skipUntil).toLocaleString()}</span>
+                                        </div>
+                                    )}
+
+                                    <div class="failed-actions">
+                                        <button class="btn btn-primary" onclick="retrySubmission('${submission.id}')" aria-label={`Retry ${submission.title}`}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                                <polyline points="23 4 23 10 17 10"></polyline>
+                                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                            </svg>
+                                            Retry
+                                        </button>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+
+                        <footer class="failed-summary">
+                            <p>Showing <strong>{failedSubmissions.length}</strong> failed submission{failedSubmissions.length > 1 ? 's' : ''}</p>
+                        </footer>
+                    </>
+                )}
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<script>
+    const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+
+    async function retrySubmission(id) {
+        if (!confirm('Retry this submission? It will be queued for processing.')) {
+            return;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE}/admin/failed-submissions/${id}/retry`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('adminToken') || ''}`
+                }
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert('Submission queued for retry!');
+                location.reload();
+            } else {
+                alert('Error: ' + (result.error || 'Failed to retry submission'));
+            }
+        } catch (error) {
+            alert('Error: ' + error.message);
+        }
+    }
+</script>
+
+<style>
+    .failed-page {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        min-height: 100vh;
+    }
+
+    .failed-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .failed-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid #ef4444;
+    }
+
+    .failed-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .failed-title {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .failed-title h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1f2937;
+        word-break: break-word;
+    }
+
+    .failed-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .meta-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 0.8125rem;
+        color: #6b7280;
+    }
+
+    .attempts-badge {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .failed-reason {
+        background: #fef2f2;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .reason-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #991b1b;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .reason-text {
+        margin: 0;
+        font-size: 0.9375rem;
+        color: #7f1d1d;
+    }
+
+    .retry-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        background: #fef3c7;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        color: #92400e;
+    }
+
+    .failed-actions {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .empty-state svg {
+        color: #d1d5db;
+    }
+
+    .failed-summary {
+        background: white;
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        margin-top: 1.5rem;
+        text-align: center;
+        color: #6b7280;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 640px) {
+        .failed-header { flex-direction: column; }
+    }
+</style>
