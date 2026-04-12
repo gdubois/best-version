@@ -161,7 +161,12 @@
       "Bash(perl:*)",
       "mcp__jina__search_web",
       "Bash(sort -t'\\(' -k2 -rn)",
-      "Bash(xargs -I{} basename {} .test.js)"
+      "Bash(xargs -I{} basename {} .test.js)",
+      "Bash(pkill -f \"batch-process-games.js\")",
+      "Bash(tee /tmp/batch-process-output.txt)",
+      "Bash(pkill -9 -f \"batch-process-games.js\")",
+      "Bash(pkill -9 -f \"node scripts\")",
+      "Bash(tee /tmp/batch-resume-output.txt)"
     ]
   }
 }

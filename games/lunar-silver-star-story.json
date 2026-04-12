@@ -1,232 +1,339 @@
 {
-    "basic_info": {
-        "url_slug": "/games/lunar-silver-star-story",
-        "title": "Lunar: Silver Star Story",
-        "cover_url": "/images/lunar-silver-star-story.jpg",
-        "genres": [
-            "JRPG"
-        ],
-        "themes": [
-            "Fantasy",
-            "Adventure",
-            "Romance"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 8.5,
-        "review": "A timeless JRPG classic with a heartwarming story, memorable characters, and innovative gameplay mechanics that influenced generations of role-playing games.",
-        "developers": [
-            "Game Arts"
-        ],
-        "publishers": [
-            "Sega",
-            "Working Designs (US)"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Lunar: The Silver Star Story",
-            "Lunar: Silver Star Story Complete"
-        ],
-        "platforms": [
-            {
-                "name": "Sega CD",
-                "region": "Japan",
-                "release_date": "1992-10-23"
-            },
-            {
-                "name": "Sega CD",
-                "region": "North America",
-                "release_date": "1994-08-05"
-            },
-            {
-                "name": "PlayStation",
-                "region": "Japan",
-                "release_date": "1996-07-26"
-            },
-            {
-                "name": "PlayStation",
-                "region": "North America",
-                "release_date": "1998-05-31"
-            },
-            {
-                "name": "PlayStation Portable",
-                "region": "Worldwide",
-                "release_date": "2010-06-24"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2023-12-15"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Lunar",
-        "part_number": 1,
-        "previous_game": null,
-        "next_game": {
-            "title": "Lunar: Eternal Blue",
-            "url_slug": "/games/lunar-eternal-blue"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "Final Fantasy VI",
-            "url_slug": "/games/final-fantasy-vi"
-        },
-        {
-            "title": "Star Ocean: The Second Story",
-            "url_slug": "/games/star-ocean-the-second-story"
-        }
+  "basic_info": {
+    "url_slug": "/games/lunar-silver-star-story",
+    "title": "Lunar: Silver Star Story Complete",
+    "cover_url": "/images/lunar-silver-star-story-complete.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (Steam)",
-            "details": "Officially remastered version with updated HD graphics, modern UI enhancements, full voice acting, and seamless integration of all original content. The definitive edition for modern systems.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation Portable",
-            "details": "Official PSP port with enhanced graphics and voice acting. Requires PPSSPP emulator for modern systems but retains the original charm while improving visual presentation.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "Lunar Silver Star Harmony Complete UNDUB",
-                    "description": "Restores original Japanese audio with English subtitles for authentic experience",
-                    "url": "https://www.romhacking.net/hacks/4060"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "PPSSPP",
-                    "optimal_settings": [
-                        "Use recommended CPU core",
-                        "Enable texture filtering",
-                        "Adjust resolution scaling for modern screens"
-                    ]
-                },
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "PPSSPP",
-                    "optimal_settings": [
-                        "Enable hardware acceleration",
-                        "Set GPU backend to Vulkan or OpenGL",
-                        "Use native resolution with 2x anisotropic filtering"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PlayStation 1",
-            "details": "Original PlayStation port featuring expanded story content and additional gameplay features. Requires emulation for modern systems but offers a classic experience.",
-            "available_in_english": {
-                "official_localization": false,
-                "fan_translation": true
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "English Translation Patch",
-                    "description": "Fan translation to enable English language support for original Japanese version",
-                    "url": "https://www.romhacking.net/translations/6890"
-                },
-                {
-                    "name": "Classic Controls Hack",
-                    "description": "Adjusts control scheme for better usability on modern systems",
-                    "url": "https://www.romhacking.net/hacks/7848"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "RetroArch (PCSX2 core)",
-                    "optimal_settings": [
-                        "Enable GSdx plugin for best compatibility",
-                        "Set internal resolution to 1080p with bilinear filtering"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "RetroArch (PCSX-ReARMed core)",
-                    "optimal_settings": [
-                        "Customize touch controls for combat actions",
-                        "Enable Vsync to reduce screen tearing"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Sega CD",
-            "details": "Original release with the foundational story and gameplay mechanics that defined the series. Requires emulation with fan translations for English support.",
-            "available_in_english": {
-                "official_localization": false,
-                "fan_translation": true
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "English Translation Patch",
-                    "description": "Fan translation to enable English language support for original Japanese version",
-                    "url": "https://www.romhacking.net/translations/6890"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Kega Fusion",
-                    "optimal_settings": [
-                        "Enable Sega CD BIOS emulation",
-                        "Set audio buffer to 128KB for smoother playback",
-                        "Use accurate timing mode for best performance"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "RetroArch (Picodrive core)",
-                    "optimal_settings": [
-                        "Adjust touch controls for menu navigation",
-                        "Enable CD audio synchronization for better music quality"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "A young hero named Lunar sets out on a journey to become the next Moon God, battling cosmic threats and forming unbreakable bonds with companions across time and space.",
-        "key_features": [
-            "Innovative 'Active Time Battle' system blending strategy and real-time elements",
-            "Branching narrative paths leading to multiple endings based on player choices",
-            "Iconic character designs by Akira Toriyama (Dragon Ball)",
-            "Emotionally resonant story with memorable musical score composed by Hitoshi Sakimoto"
-        ],
-        "long_description": "Lunar: Silver Star Story, developed by Game Arts and published by Sega in 1992 for the Sega CD, revolutionized JRPG storytelling with its cinematic presentation and character-driven narrative. Originally titled Lunar: The Silver Star Story, it was later ported to PlayStation as 'Silver Star Story Complete' with expanded content including additional dungeons, characters, and story scenes. The game's blend of traditional turn-based combat with dynamic visual elements set a new standard for the genre. Its legacy continues through modern remasters that preserve its classic charm while updating visuals and accessibility features for contemporary players.",
-        "legacy_and_impact": [
-            "Pioneered cinematic storytelling in JRPGs with full-motion video cutscenes",
-            "Influenced iconic series like Final Fantasy and Dragon Quest with its emotional narrative structure",
-            "Established the 'Complete' porting model for adding content to classic games",
-            "Became a benchmark for fan translation communities due to complex localization challenges"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Game Arts",
+      "Working Designs"
+    ],
+    "publishers": [
+      "Game Arts",
+      "Working Designs",
+      "Sega"
+    ],
+    "reception_score": 8.8,
+    "review": "A masterpiece of the JRPG genre, praised for its emotional storytelling, memorable characters, and beautiful soundtrack."
+  },
+  "release": {
+    "alternative_names": [
+      "Lunar: Silver Star Story",
+      "Lunar 2: Eternal Blue Complete",
+      "ルナ シルバースターストーリー"
+    ],
+    "platforms": [
+      {
+        "name": "Sega Saturn",
+        "region": "Japan",
+        "release_date": "1996-10-25"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "1998-09-29"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Europe",
+        "release_date": "1999-03-05"
+      },
+      {
+        "name": "Windows",
+        "region": "North America",
+        "release_date": "1999-06-01"
+      },
+      {
+        "name": "Windows",
+        "region": "Europe",
+        "release_date": "1999-09-01"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Japan",
+        "release_date": "1998-09-24"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Lunar",
+    "part_number": 2,
+    "next_game": {
+      "title": "Lunar: Eternal Blue",
+      "url_slug": "/games/lunar-eternal-blue"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Chrono Trigger",
+      "url_slug": "/games/chrono-trigger"
+    },
+    {
+      "title": "Final Fantasy VI",
+      "url_slug": "/games/final-fantasy-vi"
+    },
+    {
+      "title": "Suikoden II",
+      "url_slug": "/games/suikoden-ii"
+    },
+    {
+      "title": "Tales of Phantasia",
+      "url_slug": "/games/tales-of-phantasia"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (Steam)",
+      "details": "Officially remastered version with updated HD graphics, modern UI enhancements, full voice acting, and seamless integration of all original content. The definitive edition for modern systems.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation Portable",
+      "details": "Official PSP port with enhanced graphics and voice acting. Requires PPSSPP emulator for modern systems but retains the original charm while improving visual presentation.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "Lunar Silver Star Harmony Complete UNDUB",
+          "description": "Restores original Japanese audio with English subtitles for authentic experience",
+          "url": "https://www.romhacking.net/hacks/4060"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Android",
+          "recommended_emulator": "PPSSPP",
+          "optimal_settings": [
+            "Use recommended CPU core",
+            "Enable texture filtering",
+            "Adjust resolution scaling for modern screens"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PPSSPP",
+          "optimal_settings": [
+            "Enable hardware acceleration",
+            "Set GPU backend to Vulkan or OpenGL",
+            "Use native resolution with 2x anisotropic filtering"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation 1",
+      "details": "Original PlayStation port featuring expanded story content and additional gameplay features. Requires emulation for modern systems but offers a classic experience.",
+      "available_in_english": {
+        "official_localization": false,
+        "fan_translation": true
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "English Translation Patch",
+          "description": "Fan translation to enable English language support for original Japanese version",
+          "url": "https://www.romhacking.net/translations/6890"
+        },
+        {
+          "name": "Classic Controls Hack",
+          "description": "Adjusts control scheme for better usability on modern systems",
+          "url": "https://www.romhacking.net/hacks/7848"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "RetroArch (PCSX2 core)",
+          "optimal_settings": [
+            "Enable GSdx plugin for best compatibility",
+            "Set internal resolution to 1080p with bilinear filtering"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "RetroArch (PCSX-ReARMed core)",
+          "optimal_settings": [
+            "Customize touch controls for combat actions",
+            "Enable Vsync to reduce screen tearing"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Sega CD",
+      "details": "Original release with the foundational story and gameplay mechanics that defined the series. Requires emulation with fan translations for English support.",
+      "available_in_english": {
+        "official_localization": false,
+        "fan_translation": true
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "English Translation Patch",
+          "description": "Fan translation to enable English language support for original Japanese version",
+          "url": "https://www.romhacking.net/translations/6890"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Kega Fusion",
+          "optimal_settings": [
+            "Enable Sega CD BIOS emulation",
+            "Set audio buffer to 128KB for smoother playback",
+            "Use accurate timing mode for best performance"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "RetroArch (Picodrive core)",
+          "optimal_settings": [
+            "Adjust touch controls for menu navigation",
+            "Enable CD audio synchronization for better music quality"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation",
+      "details": "The definitive 'Complete' edition widely considered the best version. It features the full English localization, enhanced FMVs, and the complete soundtrack. While it requires emulation, it offers the most faithful experience to the original vision with no content cuts found in later remakes.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Lunar SSS Complete Portrait Texture Pack",
+          "description": "Replaces original character portraits with AI-upscaled versions from the PSP remake for the PlayStation version, usable via RetroArch's Beetle PSX HW core texture replacement feature.",
+          "url": "https://www.reddit.com/r/texturepacks/comments/i38xod/lunar_silver_star_story_complete_portrait_texture/"
+        },
+        {
+          "name": "Lunar SSS Complete 60FPS Patch",
+          "description": "Removes the 30FPS lock for smoother gameplay and cutscenes on the PlayStation version, often applied via emulator settings or specific core configurations.",
+          "url": "https://www.romhacking.net/games/1701/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Internal Resolution: 2x Native for clean retro look or 4x for 4K sharpness",
+            "Enable NTSC mode for correct timing and color accuracy",
+            "Use texture filtering (bilinear) for smoother sprite scaling",
+            "Configure save states to auto-save every 5 minutes"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Renderer: Vulkan for best performance on modern devices",
+            "Internal Resolution: 2x Native to balance performance and visuals",
+            "Enable Frame Skipping: Off for smooth cutscenes",
+            "Use Texture Dump/Replace feature for portrait enhancements"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Sega Saturn",
+      "details": "The original Japanese release offers the purest experience but lacks official English support. It is preferred by purists for its slightly faster load times and original audio mixing. Requires a fan translation patch to be playable for English speakers.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Lunar Silver Star Story English Patch v1.5.1",
+          "description": "High-quality fan translation that replaces Japanese text with English for the Sega Saturn version, inserting the PSX English script and font. Supports the original non-MPEG edition.",
+          "url": "https://segaxtreme.net/resources/lunar-sss-english-patch.65/"
+        },
+        {
+          "name": "Lunar SSS English Text/Voice Patch v1.2",
+          "description": "An alternative translation patch for the Sega Saturn version that translates in-game Japanese text to English and includes voice adjustments, widely discussed in the Saturn community.",
+          "url": "https://www.reddit.com/r/SegaSaturn/comments/kqi4uv/lunar_silver_star_story_english_textvoice_patch/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Yabause",
+          "optimal_settings": [
+            "Video: OpenGL for best compatibility and performance",
+            "Sound: SPU2 for accurate audio reproduction",
+            "CD-ROM: Full Speed to reduce load times",
+            "BIOS: Use official Sega Saturn BIOS for best compatibility"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Yaba",
+          "optimal_settings": [
+            "Renderer: OpenGL for smooth gameplay on mobile",
+            "Audio: SPU2 for accurate sound emulation",
+            "CD-ROM: Full Speed to minimize loading screens",
+            "Save States: Enable auto-save every 10 minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Windows",
+      "details": "The PC port of the Saturn version. It is convenient to run but suffers from poor optimization, lack of widescreen support, and potential compatibility issues on modern OS. Only recommended if emulation is not an option.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Lunar SSS PC English Patch",
+          "description": "Fan translation for the PC version of Lunar Silver Star Story, essential for English play as the original PC port lacks official localization.",
+          "url": "https://www.romhacking.net/translations/6890/"
+        },
+        {
+          "name": "Lunar SSS PC Widescreen and Bugfix Patch",
+          "description": "Adds widescreen support and fixes compatibility issues on modern Windows operating systems for the PC port of Lunar Silver Star Story.",
+          "url": "https://www.romhacking.net/games/1701/"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Alex, a young boy living in the peaceful village of Silver Town, discovers he is the prophesied hero destined to save the world from the evil wizard Zoldark. Accompanied by his childhood friend Luna, a mysterious girl with the power to control the moon, Alex embarks on a journey to gather the legendary Lunar Stones. Along the way, he befriends a diverse group of companions, each with their own unique stories and struggles, as they face the looming threat of the Dark Lord and the corruption of the world's magic.",
+    "key_features": [
+      "Expanded storyline with new characters and plotlines compared to the Sega CD original",
+      "Completely redrawn 2D sprite graphics with higher resolution",
+      "Full English localization by Working Designs with a polished script",
+      "Orchestral soundtrack arranged by Motoi Sakuraba",
+      "Enhanced battle system with cooperative attacks and status effects",
+      "Multiple endings based on player choices and character relationships",
+      "Detailed character customization through equipment and skill progression",
+      "Interactive world map with exploration and hidden secrets"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Lunar: Silver Star Story Complete is widely regarded as one of the greatest JRPGs of all time, setting a benchmark for localization quality in the 1990s. Its emotional narrative and Motoi Sakuraba's iconic soundtrack have influenced countless developers and remain beloved by fans decades later."
+    ]
+  }
 }

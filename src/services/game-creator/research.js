@@ -910,17 +910,7 @@ async function generatePlayTodayRecommendations(researchResult) {
         recommendations.push(recommendation);
     }
 
-    // Fallback if no platforms found
-    if (recommendations.length === 0) {
-        recommendations.push({
-            platform: 'Original Platform',
-            details: 'Play on the original release platform for authentic experience',
-            available_in_english: true,
-            recommended_patches: [],
-            emulators: isRetroGame ? ['Search for emulators supporting the original platform'] : []
-        });
-    }
-
+    // Return recommendations (if platforms array is empty, return empty array)
     return recommendations;
 }
 
@@ -1007,6 +997,9 @@ function getPlatformDetails(platform, researchResult, isRetroGame) {
 function getRecommendedPatches(platform, researchResult, isRetroGame) {
     const patches = [];
 
+    // Extract game title for use in patch URLs
+    const gameTitle = researchResult.title || '';
+
     // Extract platform name for comparison
     let platformName;
     if (typeof platform === 'string') {
@@ -1027,9 +1020,6 @@ function getRecommendedPatches(platform, researchResult, isRetroGame) {
             'uncensored', 'unrated', 'japan uncensored', 'full version',
             'international', 'director cut', 'complete'
         ];
-
-        // Search through any patches found in research
-        const gameTitle = researchResult.title || '';
 
         // Add uncensored patch recommendation for retro games (especially NES/SNES)
         if ((platformName.includes('NES') || platformName.includes('SNES') ||
@@ -1064,9 +1054,7 @@ function getRecommendedPatches(platform, researchResult, isRetroGame) {
     }
 
     // Add enhancement patches for PC games
-    if (platformName.includes('PC') || platformName.includes('Windows')) {
-        const gameTitle = researchResult.title || '';
-
+    if ((platformName.includes('PC') || platformName.includes('Windows')) && gameTitle) {
         // High-res patches for retro games
         if (isRetroGame) {
             patches.push({
@@ -1449,33 +1437,39 @@ async function researchGameWithAgent(gameTitle) {
             return await researchGameWithLLM(gameTitle);
         }
 
-        const metadata = agentResult.metadata;
+        // Handle both old agent output (flat structure) and new 3-phase output (metadata.play_today)
+        // New 3-phase agent returns: { metadata: { title, platforms, play_today, ... } }
+        // Old agent returned: { metadata: { basic_info: { title }, release: { platforms }, ... } }
+        let agentMetadata = agentResult.metadata;
 
-        if (!metadata) {
+        if (!agentMetadata) {
             log('Agent returned no metadata, falling back to LLM-based research', 'warn');
             return await researchGameWithLLM(gameTitle);
         }
 
+        // Check if this is the new 3-phase format with play_today directly under metadata
+        const isNewPhaseFormat = agentMetadata.play_today !== undefined || agentMetadata.platforms !== undefined;
+
         // The agent now returns complete game data following game_metadata_schema.json format
         // We need to map it to the internal format used by the processor
         let result = {
-            title: metadata.title || gameTitle,
-            alternativeTitles: metadata.alternativeTitles || metadata.alternateTitles || [],
-            genres: metadata.genres || [],
-            platforms: metadata.platforms || [],
-            releaseDate: metadata.releaseDate || null,
+            title: isNewPhaseFormat ? agentMetadata.title : (agentMetadata.basic_info?.title || gameTitle),
+            alternativeTitles: agentMetadata.alternativeTitles || agentMetadata.alternateTitles || [],
+            genres: isNewPhaseFormat ? agentMetadata.genres : (agentMetadata.basic_info?.genres || []),
+            platforms: isNewPhaseFormat ? agentMetadata.platforms : (agentMetadata.release?.platforms || []),
+            releaseDate: agentMetadata.releaseDate || null,
             releaseYear: null,
-            developers: metadata.developers || metadata.developer ? Array.isArray(metadata.developers || metadata.developer) ? (metadata.developers || metadata.developer) : [metadata.developers || metadata.developer] : [],
-            publishers: metadata.publishers || metadata.publisher ? Array.isArray(metadata.publishers || metadata.publisher) ? (metadata.publishers || metadata.publisher) : [metadata.publishers || metadata.publisher] : [],
-            description: metadata.description || '',
-            synopsis: metadata.synopsis || '',
-            features: metadata.features || [],
-            reception: metadata.reception || { scores: [], reviews: [], legacy: null },
-            playToday: metadata.play_today || metadata.playToday || [],
-            confidence: metadata.confidence || agentResult.confidence || 0.7,
-            sources: metadata.sources || metadata.sourceUrls || agentResult.sourceUrls || [],
-            serie: metadata.serie || metadata.series || null,
-            similarGames: metadata.similarGames || [],
+            developers: isNewPhaseFormat ? (agentMetadata.developers || []) : (agentMetadata.basic_info?.developers || []),
+            publishers: isNewPhaseFormat ? (agentMetadata.publishers || []) : (agentMetadata.basic_info?.publishers || []),
+            description: agentMetadata.description || '',
+            synopsis: agentMetadata.synopsis || '',
+            features: isNewPhaseFormat ? agentMetadata.key_features : agentMetadata.features,
+            reception: agentMetadata.reception || { scores: [], reviews: [], legacy: null },
+            playToday: isNewPhaseFormat ? agentMetadata.play_today : (agentMetadata.play_today || agentMetadata.playToday || []),
+            confidence: agentMetadata.confidence || agentResult.confidence || 0.7,
+            sources: agentMetadata.sources || agentMetadata.sourceUrls || agentResult.sourceUrls || [],
+            serie: agentMetadata.serie || agentMetadata.series || null,
+            similarGames: isNewPhaseFormat ? agentMetadata.similar_games : (agentMetadata.similarGames || []),
             researchTime: Date.now() - startTime
         };
 

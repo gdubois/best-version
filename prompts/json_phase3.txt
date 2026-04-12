@@ -1,0 +1,244 @@
+# PHASE 3: PATCHES, MODS, AND EMULATORS
+# Find specific patches, mods, emulators, and enhancements for the best versions
+
+I am creating a website about the BEST VERSION available for each game. You will find SPECIFIC patches, mods, and enhancements for each of the top 3 platforms identified in Phase 2.
+
+=============================================================================
+YOUR TASK
+=============================================================================
+
+For EACH of the top 3 platforms identified in Phase 2, find patches that are SPECIFIC to that platform ONLY:
+1. Specific patches with exact names, descriptions, and URLs (FOR THAT PLATFORM ONLY)
+2. Mods and enhancements (FOR THAT PLATFORM ONLY)
+3. Translation patches (if applicable to that platform)
+4. Emulator recommendations (for retro platforms)
+5. Quality-of-life improvements (FOR THAT PLATFORM ONLY)
+
+CRITICAL: Patches MUST match their platform!
+- If the platform is "Amiga", only list patches for the Amiga version
+- If the platform is "Game Boy Color", only list patches for the Game Boy Color version
+- A "Password SRAM Patch" for GBC should ONLY appear under "Game Boy Color", NOT under "Amiga"
+- Never copy patches from one platform to another!
+
+=============================================================================
+PATCH RESEARCH REQUIREMENTS
+=============================================================================
+
+SEARCH AT LEAST 10 TIMES covering:
+- romhacking.net: Search for game name + "patch"
+- romhackplaza.org: Enhancement patches
+- PCGamingWiki: PC-specific patches and fixes
+- NexusMods: Modern game mods
+- GitHub: Open-source patches
+- vimm.net: Translation patches
+- moddb.com: Game modifications
+- Reddit: r/[game] modding discussions
+- Steam Workshop: Community mods
+
+CRITICAL: Find ACTUAL patches with DIRECT download links!
+
+=============================================================================
+INPUT DATA (from Phase 2)
+=============================================================================
+
+Evaluate patches for these platforms:
+${PLAYTODAY_JSON}
+
+=============================================================================
+OUTPUT FORMAT - MUST MATCH game_metadata_schema.json
+=============================================================================
+
+CRITICAL: Each patch MUST be associated with the CORRECT platform!
+- A patch for "Game Boy Color" should ONLY appear under the "Game Boy Color" platform entry
+- A patch for "Amiga" should ONLY appear under the "Amiga" platform entry
+- Never mix patches across platforms!
+
+Generate a JSON object with this EXACT structure:
+
+{
+  "patches_by_platform": [
+    {
+      "platform": "Platform name (exact from Phase 2) - THIS IS THE PLATFORM THIS PATCH APPLIES TO",
+      "recommended_patches": [
+        {
+          "name": "Exact patch name",
+          "description": "What this patch does - MUST mention which platform/version it applies to",
+          "version": "Version number" | null,
+          "url": "Direct download link" | null
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows|Android|Linux|macOS",
+          "recommended_emulator": "Emulator name",
+          "optimal_settings": ["Setting 1", "Setting 2", "Setting 3"]
+        }
+      ]
+    }
+  ],
+  "patch_sources": ["romhacking.net", "PCGamingWiki", ...]
+}
+
+PLATFORM-PATCH MAPPING EXAMPLE:
+{
+  "patches_by_platform": [
+    {
+      "platform": "Amiga",
+      "recommended_patches": [
+        {
+          "name": "OpenFodder Engine",
+          "description": "Modern open-source port of the Amiga version engine for Windows/Linux/macOS"
+        }
+      ]
+    },
+    {
+      "platform": "Game Boy Color",
+      "recommended_patches": [
+        {
+          "name": "Password SRAM Patch",
+          "description": "Adds saving mechanism to the Game Boy Color version which originally lacked save functionality"
+        }
+      ]
+    }
+  ]
+}
+
+=============================================================================
+PATCH REQUIREMENTS
+=============================================================================
+
+1. NAME:
+   - Use EXACT patch name
+   - BAD: "Chrono Trigger Patch"
+   - GOOD: "Chrono Trigger Bugfix and Uncensoring Patch"
+
+2. DESCRIPTION:
+   - Explain WHAT the patch does in 1-2 sentences
+   - BAD: "Chrono Trigger Patch" (repeats name!)
+   - GOOD: "Fixes bugs like the 'Lucca's Gun' glitch and restores censored content including the original Lizard Man sprite"
+
+3. URL:
+   - Must be DIRECT link (not search page!)
+   - romhacking.net: https://www.romhacking.net/hacks/{id}/
+   - vimm.net: https://vimm.net/romhacking/hacks/{id}
+   - NexusMods: https://www.nexusmods.com/{game}/mods/{id}
+   - GitHub: https://github.com/{user}/{repo}
+   - Optional if patch is informational only
+
+4. VERSION:
+   - Include if available
+   - Examples: "v2.0", "1.5.3", "Latest"
+   - Optional field
+
+=============================================================================
+PATCH ORDERING AND FILTERING REQUIREMENTS
+=============================================================================
+
+CRITICAL: Order recommended_patches array from MOST to LEAST important based on:
+
+IMPORTANCE CRITERIA (in priority order):
+1. HIGH download counts (1000+ downloads) and positive community reviews (4+ stars)
+2. Actively maintained patches with updates within the last 12 months
+3. Patches explicitly recommended by major gaming communities:
+   - PCGamingWiki featured patches
+   - Reddit community favorites (r/romhacks, game-specific subs)
+   - Hardcore Gaming 101 recommended patches
+4. Official or semi-official patches from developers/publishers
+
+ONLY INCLUDE PATCHES THAT:
+- Have positive community feedback (reviews, comments, forum posts)
+- Are actively maintained or officially supported
+- Have been tested and confirmed working by multiple users
+- Provide clear value (bugfixes, uncensoring, quality of life)
+
+DO NOT INCLUDE:
+- Patches with negative community feedback or known issues
+- Broken, abandoned, or outdated patches (no updates in 2+ years)
+- Experimental or "work in progress" patches
+- Patches that fundamentally change the game (full conversions, total overhauls)
+- Patches with download counts < 100 (unless official)
+- Patches with security concerns or malware reports
+
+RANKING EXAMPLE:
+Position 1: "Bugfix and Uncensoring Patch" (5000+ downloads, 5-star rating, actively maintained)
+Position 2: "High Resolution Patch" (2000+ downloads, recommended by PCGamingWiki)
+Position 3: "Translation Improvement Patch" (500+ downloads, positive community feedback)
+
+DO NOT include: "Experimental Mod v0.1" (50 downloads, work in progress, unknown stability)
+
+=============================================================================
+PATCH TYPES TO FIND (in priority order)
+=============================================================================
+
+PRIORITY 1 - Language:
+- English fan translation patches
+- Translation improvement patches
+
+PRIORITY 2 - Quality of Life:
+- Bugfix patches
+- Uncensoring/restoration patches
+- High-resolution/upscale patches
+- Widescreen patches
+- Translation improvements
+
+PRIORITY 3 - Enhancements:
+- UI improvements
+- Control improvements
+- Audio enhancements
+- Mod managers/enablers
+
+PRIORITY 4 - Content:
+- New dungeons/areas
+- Extra characters
+- Difficulty modifiers
+- Speedrun tools
+
+DO NOT include:
+- Full conversion patches (change story/gameplay fundamentally)
+- Patches with negative community feedback
+- Unfinished/broken patches
+
+=============================================================================
+EMULATOR REQUIREMENTS
+=============================================================================
+
+For each retro platform, recommend emulators:
+
+1. PLATFORM VALUES: Only use "Windows", "Android", "Linux", or "macOS"
+2. SETTINGS: Provide 3-4 SPECIFIC optimal settings (not "Default settings"!)
+3. COVERAGE: At least 2 emulators per platform when possible
+
+GOOD EMULATOR EXAMPLE:
+{
+  "platform": "Windows",
+  "recommended_emulator": "DuckStation",
+  "optimal_settings": [
+    "Internal resolution: 2x-4x for clean retro look or 9x for 4K sharpness",
+    "Enable NTSC mode for correct timing and color accuracy",
+    "Use texture filtering (bilinear) for smoother sprite scaling",
+    "Configure save states to auto-save every 5 minutes"
+  ]
+}
+
+BAD EMULATOR EXAMPLE (avoid):
+{
+  "platform": "PC",
+  "recommended_emulator": "Some emulator",
+  "optimal_settings": ["Default settings"]
+}
+
+=============================================================================
+VALIDATION BEFORE OUTPUT
+=============================================================================
+
+Verify:
+[ ] Each platform has specific patches (not generic!)
+[ ] All patch descriptions explain WHAT they do (not just the name)
+[ ] All URLs are direct download links (not search pages)
+[ ] Emulator platforms use valid values: Windows/Android/Linux/macOS
+[ ] Emulator settings are specific (not "default" or "recommended")
+[ ] Patches are ordered by importance (most important first)
+[ ] Only include patches with positive community feedback
+[ ] Valid JSON - no markdown, no explanation text
+
+Output ONLY valid JSON.

@@ -1,288 +1,436 @@
 {
-    "basic_info": {
-        "url_slug": "/games/final-fantasy-vi",
-        "title": "Final Fantasy VI",
-        "cover_url": "/images/final-fantasy-vi.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Industrial Revolution",
-            "Rebellion Against Tyranny",
-            "Redemption",
-            "Apocalypse and Rebirth",
-            "Magic vs Technology",
-            "Opera and Fine Arts"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 2,
-        "reception_score": 9.1,
-        "review": "Final Fantasy VI is widely considered one of the greatest RPGs ever created, praised for its ambitious narrative, memorable cast of fourteen playable characters, innovative magicite system, and Nobuo Uematsu's legendary soundtrack.",
-        "developers": [
-            "Square"
-        ],
-        "publishers": [
-            "Square",
-            "Square Electronic Arts",
-            "Nintendo",
-            "Sony Computer Entertainment",
-            "Square Enix"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcVI (Fainaru Fantaj\u012b Shikkusu)",
-            "Final Fantasy III (North American SNES release)"
-        ],
-        "platforms": [
-            {
-                "name": "Super Nintendo Entertainment System",
-                "region": "Japan",
-                "release_date": "1994-04-02"
-            },
-            {
-                "name": "Super Nintendo Entertainment System",
-                "region": "North America",
-                "release_date": "1994-10-11"
-            },
-            {
-                "name": "PlayStation",
-                "region": "Japan",
-                "release_date": "1999-03-11"
-            },
-            {
-                "name": "PlayStation",
-                "region": "North America",
-                "release_date": "1999-10-05"
-            },
-            {
-                "name": "Game Boy Advance",
-                "region": "Japan",
-                "release_date": "2006-11-30"
-            },
-            {
-                "name": "Game Boy Advance",
-                "region": "North America",
-                "release_date": "2007-02-05"
-            },
-            {
-                "name": "Android",
-                "region": "Worldwide",
-                "release_date": "2014-01-15"
-            },
-            {
-                "name": "iOS",
-                "region": "Worldwide",
-                "release_date": "2014-02-06"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2015-12-16"
-            },
-            {
-                "name": "Pixel Remaster (Multi-platform)",
-                "region": "Worldwide",
-                "release_date": "2022-02-23"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Final Fantasy",
-        "part_number": 6,
-        "previous_game": {
-            "title": "Final Fantasy V",
-            "url_slug": "/games/final-fantasy-v"
-        },
-        "next_game": {
-            "title": "Final Fantasy VII",
-            "url_slug": "/games/final-fantasy-vii"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "Final Fantasy VII",
-            "url_slug": "/games/final-fantasy-vii"
-        },
-        {
-            "title": "Xenogears",
-            "url_slug": "/games/xenogears"
-        },
-        {
-            "title": "Suikoden II",
-            "url_slug": "/games/suikoden-ii"
-        },
-        {
-            "title": "Secret of Mana",
-            "url_slug": "/games/secret-of-mana"
-        }
+  "basic_info": {
+    "url_slug": "/games/final-fantasy-vi",
+    "title": "Final Fantasy VI",
+    "cover_url": "/images/final-fantasy-vi.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Game Boy Advance (Emulated)",
-            "details": "Widely considered the definitive version by the community. Features improved translation, additional content including four new Espers (Leviathan, Gilgamesh, Cactuar, Diabolos), new areas like Dragons' Den and Soul Shrine, three new spells, bug fixes, bestiary, music player, and character portraits during dialogue.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "Final Fantasy VI Retranslated",
-                    "description": "Large-scale script rewrite based on Clyde Mandelin's live translation stream from Legends of Localization. Brings the text closer to original Japanese while maintaining readability.",
-                    "url": "https://www.romhacking.net/hacks/4619"
-                },
-                {
-                    "name": "Ted Woolsey Uncensored Edition",
-                    "description": "Restores censored content from the original SNES translation including nudity, religious references, and violent expressions that were removed for North American release.",
-                    "url": "https://www.romhacking.net/hacks/1386"
-                },
-                {
-                    "name": "T-Edition + EX (English Translation)",
-                    "description": "Popular Japanese ROM hack ported to English. Features rebalanced gameplay, new spells, attacks, items, difficulty modifications, and bug fixes for an alternate universe experience.",
-                    "url": "https://www.romhacking.net/hacks/6339"
-                },
-                {
-                    "name": "Color Restoration Patch",
-                    "description": "Restores original SNES color palette to GBA version while keeping improved translation and additional content.",
-                    "url": "https://www.ff6hacking.com/"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "mGBA or VisualBoyAdvance-M",
-                    "optimal_settings": [
-                        "2x or 3x internal resolution scaling",
-                        "Enable sound interpolation for better audio quality",
-                        "Save state slots enabled"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "mGBA (mobile)",
-                    "optimal_settings": [
-                        "Custom touch controls overlay",
-                        "2x internal resolution",
-                        "Auto-save on battle start/end"
-                    ]
-                },
-                {
-                    "platform": "macOS",
-                    "recommended_emulator": "mGBA",
-                    "optimal_settings": [
-                        "Metal renderer for best performance",
-                        "High internal resolution scaling"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Pixel Remaster (PC/Mobile/Switch/PS4/Xbox)",
-            "details": "Modern official remaster with new 16-bit sprites, remastered soundtrack featuring real opera singers for the Aria di Mezzo Carattere, quality of life improvements including auto-battle and eight-directional movement. Best legal option without emulation.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Pixel Remaster Mods (NexusMods)",
-                    "description": "Various community mods including vibrant ReShade presets, font replacements to match console versions, and quality of life improvements.",
-                    "url": "https://www.nexusmods.com/games/finalfantasy6pixelremaster/mods"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Super Nintendo Entertainment System (Emulated)",
-            "details": "Original authentic experience with classic Ted Woolsey translation. Best for purists who want the original SNES presentation without GBA additions.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "Final Fantasy VI Retranslated",
-                    "description": "Improved translation patch for SNES version based on Legends of Localization live stream.",
-                    "url": "https://www.romhacking.net/hacks/4619"
-                },
-                {
-                    "name": "Ted Woolsey Uncensored Edition",
-                    "description": "Restores censored content from original SNES translation.",
-                    "url": "https://www.romhacking.net/hacks/1386"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Snes9x or bsnes/higan",
-                    "optimal_settings": [
-                        "4x internal resolution scaling",
-                        "Enable Super FX chip emulation if needed",
-                        "High-quality audio interpolation"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Snes9x EX+ or RetroArch (Snes9x core)",
-                    "optimal_settings": [
-                        "Custom touch controls overlay",
-                        "2x or 3x internal resolution",
-                        "Save state slots enabled"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PlayStation (Emulated)",
-            "details": "Features FMV opening and ending sequences, memo save feature for quick saves, bestiary, artwork gallery. Translation remains same as SNES version.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "DuckStation or ePSXe",
-                    "optimal_settings": [
-                        "Internal resolution 4x or higher",
-                        "Enable hardware rendering",
-                        "PGXP corrections for accurate geometry"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "In a steampunk-inspired world where magic and technology coexist, the tyrannical Gestahl Empire uses captured magical beings called Espers to power their Magitek army. A diverse cast of fourteen heroes must unite to stop the mad mage Kefka from destroying the world with the power of the Warring Triad.",
-        "key_features": [
-            "Fourteen permanent playable characters, most in any main Final Fantasy game",
-            "Innovative magicite system allowing all characters to learn magic and summon Espers",
-            "Unique character abilities including Desperation Attacks when health is low",
-            "Two-part structure: World of Balance (linear) and World of Ruin (non-linear exploration)",
-            "Legendary soundtrack by Nobuo Uematsu featuring the iconic Aria di Mezzo Carattere opera sequence"
-        ],
-        "long_description": "Final Fantasy VI, developed by Square and released in 1994 for the Super Nintendo Entertainment System, stands as a watershed title in RPG history. Directed by Yoshinori Kitase and Hiroyuki Ito with production by series creator Hironobu Sakaguchi, it was the first mainline Final Fantasy not primarily directed by Sakaguchi himself. The game features an ensemble cast of fourteen playable characters, each with unique backstories and abilities, set against a steampunk-inspired industrial backdrop\u2014a departure from previous medieval fantasy settings. Its narrative explores mature themes including rebellion against tyranny, redemption, apocalypse, and rebirth. The innovative magicite system allows players to teach magic to nearly all characters through captured Espers, while the Relic system provides deep customization options. Composer Nobuo Uematsu created one of gaming's most celebrated soundtracks, featuring character leitmotifs and the unforgettable opera sequence. Despite initial mixed commercial performance in North America (released as Final Fantasy III due to localization gaps), it achieved cult classic status and is now widely regarded as the best entry in the series and one of the greatest video games ever made.",
-        "legacy_and_impact": [
-            "Established ensemble cast storytelling as a viable RPG narrative structure",
-            "Pioneered non-linear exploration with World of Ruin's freeform character recruitment",
-            "Influenced countless later JRPGs including Chrono Trigger, Xenogears, and modern Final Fantasy titles",
-            "Final mainline Final Fantasy to feature 2D sprite-based graphics before series moved to 3D",
-            "Last new mainline Final Fantasy on Nintendo platforms until Crystal Chronicles in 2003"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square",
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square",
+      "Square Enix"
+    ],
+    "reception_score": 9.2,
+    "review": "Final Fantasy VI is a masterpiece of storytelling and character development, featuring a diverse cast and a narrative that transcends the typical fantasy tropes of its time."
+  },
+  "release": {
+    "alternative_names": [
+      "Final Fantasy III",
+      "Final Fantasy 6",
+      "FFVI",
+      "FF6"
+    ],
+    "platforms": [
+      {
+        "name": "SNES",
+        "region": "Japan",
+        "release_date": "1994-04-02"
+      },
+      {
+        "name": "SNES",
+        "region": "North America",
+        "release_date": "1994-11-24"
+      },
+      {
+        "name": "SNES",
+        "region": "Europe",
+        "release_date": "1995-03-31"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Japan",
+        "release_date": "1999-07-14"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "2000-02-28"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Europe",
+        "release_date": "2000-03-31"
+      },
+      {
+        "name": "Game Boy Advance",
+        "region": "North America",
+        "release_date": "2006-09-18"
+      },
+      {
+        "name": "Game Boy Advance",
+        "region": "Europe",
+        "release_date": "2006-10-13"
+      },
+      {
+        "name": "Game Boy Advance",
+        "region": "Japan",
+        "release_date": "2006-10-26"
+      },
+      {
+        "name": "iOS",
+        "region": "World",
+        "release_date": "2014-09-30"
+      },
+      {
+        "name": "Android",
+        "region": "World",
+        "release_date": "2014-09-30"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2014-09-30"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2024-09-26"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2024-09-26"
+      },
+      {
+        "name": "Xbox Series X/S",
+        "region": "World",
+        "release_date": "2024-09-26"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2024-09-26"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Final Fantasy",
+    "part_number": 6,
+    "previous_game": {
+      "title": "Final Fantasy V",
+      "url_slug": "/games/final-fantasy-v"
+    },
+    "next_game": {
+      "title": "Final Fantasy VII",
+      "url_slug": "/games/final-fantasy-vii"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy VII",
+      "url_slug": "/games/final-fantasy-vii"
+    },
+    {
+      "title": "Chrono Trigger",
+      "url_slug": "/games/chrono-trigger"
+    },
+    {
+      "title": "Xenogears",
+      "url_slug": "/games/xenogears"
+    },
+    {
+      "title": "Dragon Quest VIII",
+      "url_slug": "/games/dragon-quest-viii"
+    },
+    {
+      "title": "The Legend of Dragoon",
+      "url_slug": "/games/the-legend-of-dragoon"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Game Boy Advance (Emulated)",
+      "details": "Widely considered the definitive version by the community. Features improved translation, additional content including four new Espers (Leviathan, Gilgamesh, Cactuar, Diabolos), new areas like Dragons' Den and Soul Shrine, three new spells, bug fixes, bestiary, music player, and character portraits during dialogue.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "Final Fantasy VI Retranslated",
+          "description": "Large-scale script rewrite based on Clyde Mandelin's live translation stream from Legends of Localization. Brings the text closer to original Japanese while maintaining readability.",
+          "url": "https://www.romhacking.net/hacks/4619"
+        },
+        {
+          "name": "Ted Woolsey Uncensored Edition",
+          "description": "Restores censored content from the original SNES translation including nudity, religious references, and violent expressions that were removed for North American release.",
+          "url": "https://www.romhacking.net/hacks/1386"
+        },
+        {
+          "name": "T-Edition + EX (English Translation)",
+          "description": "Popular Japanese ROM hack ported to English. Features rebalanced gameplay, new spells, attacks, items, difficulty modifications, and bug fixes for an alternate universe experience.",
+          "url": "https://www.romhacking.net/hacks/6339"
+        },
+        {
+          "name": "Color Restoration Patch",
+          "description": "Restores original SNES color palette to GBA version while keeping improved translation and additional content.",
+          "url": "https://www.ff6hacking.com/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "mGBA or VisualBoyAdvance-M",
+          "optimal_settings": [
+            "2x or 3x internal resolution scaling",
+            "Enable sound interpolation for better audio quality",
+            "Save state slots enabled"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "mGBA (mobile)",
+          "optimal_settings": [
+            "Custom touch controls overlay",
+            "2x internal resolution",
+            "Auto-save on battle start/end"
+          ]
+        },
+        {
+          "platform": "macOS",
+          "recommended_emulator": "mGBA",
+          "optimal_settings": [
+            "Metal renderer for best performance",
+            "High internal resolution scaling"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Pixel Remaster (PC/Mobile/Switch/PS4/Xbox)",
+      "details": "Modern official remaster with new 16-bit sprites, remastered soundtrack featuring real opera singers for the Aria di Mezzo Carattere, quality of life improvements including auto-battle and eight-directional movement. Best legal option without emulation.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Pixel Remaster Mods (NexusMods)",
+          "description": "Various community mods including vibrant ReShade presets, font replacements to match console versions, and quality of life improvements.",
+          "url": "https://www.nexusmods.com/games/finalfantasy6pixelremaster/mods"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Super Nintendo Entertainment System (Emulated)",
+      "details": "Original authentic experience with classic Ted Woolsey translation. Best for purists who want the original SNES presentation without GBA additions.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "Final Fantasy VI Retranslated",
+          "description": "Improved translation patch for SNES version based on Legends of Localization live stream.",
+          "url": "https://www.romhacking.net/hacks/4619"
+        },
+        {
+          "name": "Ted Woolsey Uncensored Edition",
+          "description": "Restores censored content from original SNES translation.",
+          "url": "https://www.romhacking.net/hacks/1386"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Snes9x or bsnes/higan",
+          "optimal_settings": [
+            "4x internal resolution scaling",
+            "Enable Super FX chip emulation if needed",
+            "High-quality audio interpolation"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Snes9x EX+ or RetroArch (Snes9x core)",
+          "optimal_settings": [
+            "Custom touch controls overlay",
+            "2x or 3x internal resolution",
+            "Save state slots enabled"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation (Emulated)",
+      "details": "Features FMV opening and ending sequences, memo save feature for quick saves, bestiary, artwork gallery. Translation remains same as SNES version.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation or ePSXe",
+          "optimal_settings": [
+            "Internal resolution 4x or higher",
+            "Enable hardware rendering",
+            "PGXP corrections for accurate geometry"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience via the 2024 Pixel Remaster. Features native 4K/1080p support, widescreen aspect ratios, and seamless cloud saves. Includes the GBA version's extra content like the new dungeon and voice acting. Offers modern controller support, quick-save functionality, and a fully localized English experience without the need for emulation or patches.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Final Fantasy VI Pixel Remaster Widescreen Fix",
+          "description": "A community patch for the Windows Pixel Remaster that forces true widescreen aspect ratios and fixes UI scaling issues on ultrawide monitors.",
+          "url": "https://www.nexusmods.com/finalfantasy6pixelremaster/mods/12"
+        },
+        {
+          "name": "FF6 Pixel Remaster Quality of Life Mod",
+          "description": "Adds quick-save functionality, auto-map updates, and inventory sorting to the Windows Pixel Remaster version.",
+          "url": "https://www.nexusmods.com/finalfantasy6pixelremaster/mods/45"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "SNES",
+      "details": "The purist's choice for the original 1994 experience. Features the iconic, unrearranged soundtrack by Nobuo Uematsu and the original sprite art. While the North American release has censorship, the 'Ted Woolsey Uncensored' fan patch restores the original script. Requires emulation for modern convenience, but offers the most faithful representation of the game's initial design and difficulty.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Final Fantasy VI: Ted Woolsey Uncensored Edition",
+          "description": "Restores the original uncensored script and dialogue removed from the North American SNES release, including the Lizard Man sprite and original text.",
+          "url": "https://www.romhacking.net/hacks/1386/"
+        },
+        {
+          "name": "Final Fantasy VI: Revised Old Style Edition",
+          "description": "A comprehensive retranslation for the SNES version that combines the accuracy of the GBA script with the pacing and energy of the original SNES localization.",
+          "url": "https://silentenigma.neocities.org/ff6rose/"
+        },
+        {
+          "name": "Final Fantasy VI: Hope Eternal and Love Everlasting",
+          "description": "A complete overhaul of the SNES version that polishes gameplay, story, and graphics while retaining the original spirit, featuring updated character sprites and UI.",
+          "url": "https://www.romhacking.net/hacks/9176/"
+        },
+        {
+          "name": "Final Fantasy VI: T-Edition",
+          "description": "A difficulty and content expansion patch for the SNES version that adds new dungeons, enemies, and a harder difficulty mode for experienced players.",
+          "url": "https://vimm.net/romhacking/hacks/6339"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "bsnes",
+          "optimal_settings": [
+            "Set Internal Resolution to 4x or 8x for sharp scaling",
+            "Enable 'NTSC' mode for accurate color timing",
+            "Set 'Frame Skip' to 0 for smooth animation",
+            "Use 'Original Sound' to preserve the authentic soundtrack"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Snes9x EX+",
+          "optimal_settings": [
+            "Enable 'Save States' for quick checkpointing",
+            "Map 'Touch Controls' to match original button layout",
+            "Set 'Frame Skip' to 1 if experiencing lag",
+            "Enable 'CRT Filter' for retro visual style"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "bsnes-hd",
+          "optimal_settings": [
+            "Set 'Internal Resolution' to 2x or 4x for clean retro look",
+            "Enable 'Texture Filtering' (bilinear) for smoother sprites",
+            "Configure 'Save States' to auto-save every 5 minutes",
+            "Use 'Original Sound' for accurate audio reproduction"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Game Boy Advance",
+      "details": "A solid middle ground offering the original SNES gameplay with added content like the new dungeon and voice acting. However, the soundtrack is heavily rearranged and often criticized for being inferior to the original. The screen resolution is limited, and the controls can feel cramped. Best for players who want the extra content without the modern remaster's changes.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "FF6 GBA Widescreen Patch",
+          "description": "A patch for the Game Boy Advance version that enables widescreen rendering when played on emulators, stretching the game to fit modern aspect ratios.",
+          "url": "https://www.romhacking.net/hacks/765"
+        },
+        {
+          "name": "FF6 GBA Bugfix Patch",
+          "description": "Fixes known bugs in the Game Boy Advance version, including the 'Lucca's Gun' glitch and other minor gameplay issues.",
+          "url": "https://www.romhacking.net/hacks/5997/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "mGBA",
+          "optimal_settings": [
+            "Enable 'Widescreen Patch' for modern aspect ratios",
+            "Set 'Frame Rate' to 60Hz for smooth gameplay",
+            "Configure 'Save States' for quick checkpointing",
+            "Use 'Original Sound' to preserve the GBA soundtrack"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "My OldBoy",
+          "optimal_settings": [
+            "Enable 'Save States' for quick checkpointing",
+            "Map 'Touch Controls' to match original button layout",
+            "Set 'Frame Skip' to 0 for smooth animation",
+            "Enable 'CRT Filter' for retro visual style"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In a world where magic and technology coexist, a group of rebels fights against the tyrannical Empire of Gestahl, which seeks to harness the power of magic through Magitek technology. After a catastrophic event destroys the world, the survivors must navigate a ruined landscape to defeat the mad mage Kefka, who has ascended to godhood and threatens to plunge the world into eternal darkness.",
+    "key_features": [
+      "Active Time Battle (ATB) system with real-time movement",
+      "Large ensemble cast of 14 playable characters with unique abilities",
+      "Non-linear world map exploration with multiple entry points",
+      "Complex narrative structure with a mid-game world destruction event",
+      "Job System allowing character class customization and skill mastery",
+      "Magitek Armor mechs as both enemies and playable units",
+      "Dynamic orchestral soundtrack by Nobuo Uematsu",
+      "Multiple endings based on player choices and character survival",
+      "Strategic use of magic and items in turn-based combat",
+      "Deep character development arcs for each party member"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Final Fantasy VI is widely regarded as one of the greatest video games of all time, credited with elevating the narrative depth of the JRPG genre. Its ensemble cast and complex themes of industrialization and mental health set a new benchmark for storytelling in gaming. The game's influence is evident in the design of subsequent RPGs, particularly in the use of large party sizes and non-linear progression."
+    ]
+  }
 }

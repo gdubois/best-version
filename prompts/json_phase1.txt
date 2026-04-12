@@ -1,0 +1,166 @@
+# PHASE 1: GAME RESEARCH
+# Collect comprehensive metadata about the game
+
+I am creating a website about video games and their BEST VERSION. You will help gather ACCURATE metadata through web research.
+
+=============================================================================
+YOUR TASK
+=============================================================================
+
+Research the game and collect ALL available information about:
+1. Basic identification (title, developer, publisher)
+2. ALL platform releases with exact dates per region
+3. Genres, themes, key features
+4. Reception scores and reviews
+5. Series information, with previous and next game in the serie (if applicable)
+6. Similar games
+
+=============================================================================
+RESEARCH REQUIREMENTS
+=============================================================================
+
+SEARCH AT LEAST 10 TIMES covering:
+- Wikipedia: Developer, publisher, release dates, platforms
+- Mobygames: Accurate release dates per platform/region
+- Metacritic/OpenCritic: Reception scores
+- IGN/GameSpot/GameFAQs: Reviews, versions
+- Reddit: Community discussions about the game
+- Official sources: Publisher/developer pages
+
+CRITICAL: Do NOT rely on training data - use ONLY web search results!
+
+=============================================================================
+OUTPUT FORMAT - MUST MATCH game_metadata_schema.json
+=============================================================================
+
+Generate a JSON object with this EXACT structure:
+
+{
+  "title": "Exact official game title",
+  "alternativeTitles": ["Alternative name 1", "Alternative name 2"],
+  "developers": ["Developer 1", "Developer 2"],
+  "publishers": ["Publisher 1", "Publisher 2"],
+  "genres": ["Genre1", "Genre2"],
+  "platforms": [
+    {
+      "name": "Platform name (use naming guide below)",
+      "region": "Japan|North America|Europe|Australia|Asia|Brazil|World",
+      "release_date": "YYYY-MM-DD"
+    }
+  ],
+  "themes": ["Theme 1", "Theme 2", ...],
+  "key_features": ["Feature 1", "Feature 2", ...],
+  "reception": {
+    "scores": [85, 90, 88],
+    "reviews": ["Review summary 1", "Review summary 2"],
+    "legacy": "Historical impact summary (2-3 sentences)"
+  },
+  "serie": {
+    "is_part_of_serie": true|false,
+    "serie_name": "Series name or empty string if not part of series",
+    "part_number": 1|2|3... or 0 if not part of series,
+    "previous_game": {
+      "title": "Previous game title",
+      "url_slug": "/games/previous-game-slug"
+    } | null,
+    "next_game": {
+      "title": "Next game title",
+      "url_slug": "/games/next-game-slug"
+    } | null
+  },
+  "similar_games": [
+    {
+      "title": "Similar game title",
+      "url_slug": "/games/similar-game-slug"
+    }
+  ],
+  "synopsis": "Brief summary of the game's story premise (2-4 sentences)",
+  "long_description": "Detailed description covering development history, gameplay, and reception (150-300 words)",
+  "legacy_and_impact": ["Impact statement 1", "Impact statement 2"]
+}
+
+NOTE: The "reception" object in your output is INTERMEDIATE DATA. It will be processed by the system to generate:
+- basic_info.reception_score (float 1.0-10.0, calculated from average of scores)
+- basic_info.review (first review from your reviews array)
+- description.legacy_and_impact (your legacy text, as array)
+
+=============================================================================
+PLATFORM NAMING GUIDE - USE EXACT NAMES
+=============================================================================
+
+CONSOLES:
+"PlayStation", "PlayStation 2", "PlayStation 3", "PlayStation 4", "PlayStation 5"
+"PlayStation Portable", "PlayStation Vita"
+"NES", "SNES", "Nintendo 64", "GameCube", "Wii", "Wii U", "Nintendo Switch", "Nintendo 3DS"
+"Game Boy", "Game Boy Color", "Game Boy Advance"
+"Xbox", "Xbox 360", "Xbox One", "Xbox Series X/S"
+"Sega Genesis", "Sega Saturn", "Dreamcast"
+
+PC/RETRO:
+"Windows", "macOS", "Linux", "MS-DOS", "Amiga", "Atari ST"
+"Commodore 64", "Famicom Disk System", "MSX", "Neo Geo", "TurboGrafx-16"
+
+MOBILE:
+"iOS", "Android"
+
+=============================================================================
+DATA QUALITY REQUIREMENTS
+=============================================================================
+
+1. RELEASE DATES:
+   - MUST find actual dates from Mobygames/Wikipedia
+   - Format: YYYY-MM-DD (ISO 8601)
+   - Use "0000-00-00" ONLY if genuinely unknown
+   - Different regions = separate entries in platforms array
+
+2. DEVELOPERS/PUBLISHERS:
+   - Extract ACTUAL names from search results
+   - DO NOT use "Unknown" - research thoroughly!
+
+3. THEMES:
+   - Provide 5-8 SPECIFIC themes
+   - BAD: ["Classic", "Retro"]
+   - GOOD: ["Time Travel Paradoxes", "Environmental Degradation", "Destiny vs Free Will"]
+
+4. KEY FEATURES:
+   - List 6-10 SPECIFIC gameplay mechanics/innovations
+   - BAD: ["Classic gameplay", "Turn-based combat"]
+   - GOOD: ["Active Time Battle (ATB) system with real-time movement and cooperative attacks"]
+
+5. RECEPTION (intermediate data - will be processed):
+   - scores: Array of numeric scores from credible sources (0-100 or 0-10)
+     Example: [85, 90, 88] (Metacritic scores) or [8.5, 9.0, 8.8] (normalized)
+   - reviews: 2-3 review summaries from credible sources
+   - legacy: 2-3 sentences on historical impact
+   - NOTE: System will calculate average and normalize to 1.0-10.0 for reception_score
+
+6. SERIE (Series):
+   - is_part_of_serie: true if part of a series, false otherwise
+   - serie_name: Full series name (e.g., "Final Fantasy", "Chrono")
+   - part_number: Ordinal position in series (1, 2, 3...)
+   - previous_game/next_game: Objects with title and url_slug, or null
+
+7. SIMILAR GAMES:
+   - Array of objects with title and url_slug
+   - Include 3-5 games with similar gameplay or themes
+
+8. DESCRIPTION:
+   - synopsis: 2-4 sentences about story premise
+   - long_description: 150-300 words covering development, gameplay, reception
+   - legacy_and_impact: 3-5 specific statements about the game's impact
+
+=============================================================================
+VALIDATION BEFORE OUTPUT
+=============================================================================
+
+Verify:
+[ ] All platform names match naming guide EXACTLY
+[ ] All release dates in YYYY-MM-DD format
+[ ] Developers/publishers are actual names (not "Unknown")
+[ ] 5+ specific themes provided
+[ ] 6+ specific key features listed
+[ ] Platforms array has entries for each platform/region combination
+[ ] Serie fields are properly structured (boolean, string, integer, object/null)
+[ ] Valid JSON - no markdown, no explanation text
+
+Output ONLY valid JSON.

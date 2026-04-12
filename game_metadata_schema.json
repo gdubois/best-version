@@ -81,9 +81,9 @@
         },
         "reception_score": {
           "type": "number",
-          "minimum": 0.0,
+          "minimum": 1.0,
           "maximum": 10.0,
-          "description": "User reception score on a scale from 0.0 to 10.0"
+          "description": "User reception score on a scale from 1.0 (terrible) to 10.0 (perfect)"
         },
         "review": {
           "type": "string",
@@ -102,7 +102,7 @@
           "description": "List of publishing companies responsible for the game"
         }
       },
-      "required": ["url_slug", "title", "genres", "modes", "developers", "publishers"]
+      "required": ["url_slug", "title", "genres", "modes", "reception_score", "developers", "publishers"]
     },
     "release": {
       "type": "object",
@@ -287,7 +287,7 @@
           "description": "List of significant contributions or impacts of the game"
         }
       },
-      "required": ["synopsis", "long_description"]
+      "required": ["synopsis", "long_description", "similar_games", "play_today"]
     }
   },
   "required": ["basic_info", "release", "description"],

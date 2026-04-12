@@ -1,225 +1,334 @@
 {
-    "basic_info": {
-        "url_slug": "/games/final-fantasy-x",
-        "title": "Final Fantasy X",
-        "cover_url": "/images/final-fantasy-x.jpg",
-        "genres": [
-            "Role-Playing Game (RPG)",
-            "JRPG"
-        ],
-        "themes": [
-            "Coming of Age",
-            "Religion and Faith",
-            "Death and Reincarnation",
-            "Hero's Journey",
-            "Romance"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 9.2,
-        "review": "Final Fantasy X is a landmark JRPG that revolutionized the genre with its fully 3D environments, voice acting, and emotionally compelling story. Its Sphere Grid system, memorable characters, and iconic soundtrack by Nobuo Uematsu made it one of the most influential RPGs ever created.",
-        "developers": [
-            "Square"
-        ],
-        "publishers": [
-            "Square",
-            "Square Enix"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcX (Final Fantasy X)",
-            "Final Fantasy X International",
-            "Final Fantasy X HD Remaster"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation 2",
-                "region": "Japan",
-                "release_date": "2001-07-19"
-            },
-            {
-                "name": "PlayStation 2",
-                "region": "North America",
-                "release_date": "2001-09-13"
-            },
-            {
-                "name": "PlayStation 2",
-                "region": "Europe",
-                "release_date": "2001-10-26"
-            },
-            {
-                "name": "PlayStation 3",
-                "region": "Worldwide",
-                "release_date": "2011-09-28"
-            },
-            {
-                "name": "PlayStation Vita",
-                "region": "North America",
-                "release_date": "2014-01-14"
-            },
-            {
-                "name": "PlayStation Vita",
-                "region": "Europe",
-                "release_date": "2014-03-14"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2016-05-12"
-            },
-            {
-                "name": "Xbox One",
-                "region": "North America",
-                "release_date": "2017-08-29"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Worldwide",
-                "release_date": "2019-03-26"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Final Fantasy",
-        "part_number": 10,
-        "previous_game": {
-            "title": "Final Fantasy IX",
-            "url_slug": "/games/final-fantasy-ix"
-        },
-        "next_game": {
-            "title": "Final Fantasy X-2",
-            "url_slug": "/games/final-fantasy-x-2"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "Final Fantasy VII",
-            "url_slug": "/games/final-fantasy-vii"
-        },
-        {
-            "title": "Final Fantasy VI",
-            "url_slug": "/games/final-fantasy-vi"
-        },
-        {
-            "title": "Dragon Quest V",
-            "url_slug": "/games/dragon-quest-v"
-        },
-        {
-            "title": "Persona 3",
-            "url_slug": "/games/persona-3"
-        }
+  "basic_info": {
+    "url_slug": "/games/final-fantasy-x",
+    "title": "Final Fantasy X",
+    "cover_url": "/images/final-fantasy-x.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (Steam)",
-            "details": "The HD Remaster on PC with ProjectUnX mod provides the most complete experience. Includes all International version content, widescreen support, controller button prompts, and quality-of-life improvements.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "ProjectUnX (Untitled Project X)",
-                    "description": "Comprehensive mod including 4GB memory patch, widescreen support, controller button prompts, speed boosters, and various technical fixes. Essential for optimal PC experience."
-                },
-                {
-                    "name": "Special K Mod",
-                    "description": "Additional tweaks and enhancements that work alongside ProjectUnX for improved performance and visual quality."
-                },
-                {
-                    "name": "4GB Memory Patch",
-                    "description": "Fixes random crashes during cutscenes by allowing the game to use more system memory. Included in ProjectUnX but available separately if needed."
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 2 (International Version)",
-            "details": "The original International version on PS2 offers the authentic experience with better character expressions and models than the HD Remaster. Can be played via emulator with widescreen patches.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "Widescreen Patch",
-                    "description": "Enables 16:9 aspect ratio support for PS2 version. Available through PCSX2 patches or community mods."
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "PCSX2",
-                    "optimal_settings": [
-                        "Enable widescreen patch (16:9)",
-                        "Use GSdx plugin with hardware mode",
-                        "Enable EE x2, VU x4 speed hacks for performance"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "NetherSX2",
-                    "optimal_settings": [
-                        "High graphics rendering quality",
-                        "Enable fast memory card save",
-                        "Use Vulkan renderer if available"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PlayStation 3 / PlayStation Vita",
-            "details": "Console versions of the HD Remaster with cross-save functionality. Good for playing on TV or portable without PC setup.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo Switch",
-            "details": "Portable HD Remaster version with touch controls. Convenient for on-the-go play but lacks PC modding capabilities.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Yuna, a young summoner, embarks on a pilgrimage with her guardians to defeat Sin, a monstrous creature terrorizing the world of Spira. Along the way she meets Tidus, a blitzball player from another dimension who has been thrust into this strange new world.",
-        "key_features": [
-            "Revolutionary fully 3D environments and character models",
-            "First Final Fantasy with full voice acting in all cutscenes",
-            "Innovative Sphere Grid character progression system",
-            "Emotionally compelling story dealing with death, religion, and sacrifice",
-            "Iconic soundtrack composed by Nobuo Uematsu and Masashi Hamauzu"
-        ],
-        "long_description": "Final Fantasy X, released in 2001 for PlayStation 2, marked a major turning point for the Final Fantasy series. It was the first entry to feature fully 3D environments and character models, abandoning the pre-rendered backgrounds of previous entries. The game introduced the Sphere Grid system, a flexible character progression mechanic that allowed players to customize their party's abilities in unprecedented ways. Directed by Hironobu Sakaguchi and developed by Square's 'Dream Team' (including creators of Final Fantasy VII), FFX features one of gaming's most beloved stories about Yuna's pilgrimage to defeat Sin, accompanied by the charismatic Tidus and a memorable cast of guardians. The game's soundtrack, composed by Nobuo Uematsu with contributions from Masashi Hamauzu, is widely regarded as one of the best in the series. The HD Remaster (2016) added widescreen support, quality-of-life improvements, and included content from the International version such as additional dungeons and characters like Seymour. Despite some criticism regarding character expressions in the remaster compared to PS2 originals, it remains the most accessible way to experience this landmark RPG today.",
-        "legacy_and_impact": [
-            "First Final Fantasy with full 3D environments and voice acting",
-            "Introduced the Sphere Grid progression system that influenced many later RPGs",
-            "One of the best-selling PlayStation 2 games of all time (over 8.5 million copies)",
-            "Established Yuna as one of gaming's most iconic female protagonists",
-            "The soundtrack remains highly influential in JRPG music",
-            "Set new standards for cinematic storytelling in RPGs"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square"
+    ],
+    "publishers": [
+      "Square",
+      "Square Enix"
+    ],
+    "reception_score": 9.1,
+    "review": "IGN praised the game for its emotional story, stunning visuals, and the innovative Sphere Grid system, calling it a masterpiece of the genre."
+  },
+  "release": {
+    "alternative_names": [
+      "Final Fantasy X International",
+      "FFX",
+      "ファイナルファンタジーX"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation 2",
+        "region": "Japan",
+        "release_date": "2001-07-19"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "North America",
+        "release_date": "2001-07-30"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Europe",
+        "release_date": "2001-10-26"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Australia",
+        "release_date": "2001-11-08"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Japan",
+        "release_date": "2002-01-25"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Japan",
+        "release_date": "2013-07-25"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "North America",
+        "release_date": "2013-08-27"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Europe",
+        "release_date": "2013-09-06"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Japan",
+        "release_date": "2013-07-25"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "North America",
+        "release_date": "2013-08-27"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Europe",
+        "release_date": "2013-09-06"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "Japan",
+        "release_date": "2015-09-23"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "North America",
+        "release_date": "2015-09-29"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "Europe",
+        "release_date": "2015-09-30"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2016-02-09"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2019-06-11"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2019-06-11"
+      },
+      {
+        "name": "Xbox Series X/S",
+        "region": "World",
+        "release_date": "2019-06-11"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Final Fantasy",
+    "part_number": 10,
+    "previous_game": {
+      "title": "Final Fantasy IX",
+      "url_slug": "/games/final-fantasy-ix"
+    },
+    "next_game": {
+      "title": "Final Fantasy X-2",
+      "url_slug": "/games/final-fantasy-x-2"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy IX",
+      "url_slug": "/games/final-fantasy-ix"
+    },
+    {
+      "title": "Final Fantasy XII",
+      "url_slug": "/games/final-fantasy-xii"
+    },
+    {
+      "title": "Dragon Quest VIII",
+      "url_slug": "/games/dragon-quest-viii"
+    },
+    {
+      "title": "Tales of Symphonia",
+      "url_slug": "/games/tales-of-symphonia"
+    },
+    {
+      "title": "Kingdom Hearts",
+      "url_slug": "/games/kingdom-hearts"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (Steam)",
+      "details": "The HD Remaster on PC with ProjectUnX mod provides the most complete experience. Includes all International version content, widescreen support, controller button prompts, and quality-of-life improvements.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "ProjectUnX (Untitled Project X)",
+          "description": "Comprehensive mod including 4GB memory patch, widescreen support, controller button prompts, speed boosters, and various technical fixes. Essential for optimal PC experience."
+        },
+        {
+          "name": "Special K Mod",
+          "description": "Additional tweaks and enhancements that work alongside ProjectUnX for improved performance and visual quality."
+        },
+        {
+          "name": "4GB Memory Patch",
+          "description": "Fixes random crashes during cutscenes by allowing the game to use more system memory. Included in ProjectUnX but available separately if needed."
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 2 (International Version)",
+      "details": "The original International version on PS2 offers the authentic experience with better character expressions and models than the HD Remaster. Can be played via emulator with widescreen patches.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "Widescreen Patch",
+          "description": "Enables 16:9 aspect ratio support for PS2 version. Available through PCSX2 patches or community mods."
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PCSX2",
+          "optimal_settings": [
+            "Enable widescreen patch (16:9)",
+            "Use GSdx plugin with hardware mode",
+            "Enable EE x2, VU x4 speed hacks for performance"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "NetherSX2",
+          "optimal_settings": [
+            "High graphics rendering quality",
+            "Enable fast memory card save",
+            "Use Vulkan renderer if available"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation 3 / PlayStation Vita",
+      "details": "Console versions of the HD Remaster with cross-save functionality. Good for playing on TV or portable without PC setup.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "Portable HD Remaster version with touch controls. Convenient for on-the-go play but lacks PC modding capabilities.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience via Steam. Runs at native 4K with unlocked frame rates, supports widescreen, and includes all HD Remaster content like voice acting and the Fiend Arena. Crucially, it supports community mods that fix the controversial HD textures, restore original PS2 visuals, and add QoL features like auto-save and difficulty adjustments.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Special K UnX (Untitled Project X)",
+          "description": "A comprehensive mod for the Windows HD Remaster that fixes green screen glitches, enables cutscene skipping, adds variable speed control (up to 16x), and restores original PS2 character face models.",
+          "url": "https://wiki.special-k.info/SpecialK/Custom/UnX"
+        },
+        {
+          "name": "FFX/X-2 HD Remaster - Anima Edition",
+          "description": "A PCGamingWiki recommended patch that fixes the 4GB memory limit, resolves online-only bugs, and improves stability for the Windows version.",
+          "url": "https://community.pcgamingwiki.com/files/file/2432-final-fantasy-xx-2-hd-remaster-anima-edition/"
+        },
+        {
+          "name": "FFX/X-2 Re-Remastered Mod",
+          "description": "A high-resolution texture pack that manually upscales all textures, animations, and interface elements using AI to improve visual fidelity on the Windows HD Remaster.",
+          "url": "https://www.nexusmods.com/finalfantasyxx2hdremaster/mods/244"
+        },
+        {
+          "name": "FFX HD - Ultra Remaster",
+          "description": "A popular texture replacement mod for the Windows version that replaces low-resolution assets with high-quality alternatives, requiring the External File Loader.",
+          "url": "https://www.nexusmods.com/finalfantasyxx2hdremaster/mods/168"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 4",
+      "details": "The most convenient console option for modern players. Offers native 1080p/4K output, quick resume, and cloud saves. Includes the complete HD Remaster content with voice acting and the Fiend Arena. While it lacks the modding capabilities of PC, it provides a stable, plug-and-play experience with modern controller support and no emulation required.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 2",
+      "details": "The authentic original experience for purists. The Japanese 'International' version (released Jan 2002) is the only PS2 version with full English voice acting and the Fiend Arena. It features the original 4:3 aspect ratio and 240p resolution, offering the truest representation of the game's design, though it lacks modern QoL features like save states or widescreen support.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PCSX2",
+          "optimal_settings": [
+            "Internal Resolution: 2x Native (720p) or 3x Native (1080p) for sharp visuals",
+            "Texture Filtering: Bilinear for smoother sprite scaling",
+            "Frame Limiting: Off to utilize the game's native 60fps",
+            "Enable NTSC mode for correct color timing and aspect ratio"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "NetherSX2",
+          "optimal_settings": [
+            "Renderer: Vulkan for best performance on modern Android devices",
+            "Internal Resolution: 2x Native for balanced performance and clarity",
+            "Texture Filtering: Bilinear",
+            "Disable Frame Skipping to ensure smooth gameplay"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "Tidus, a star blitzball player, is summoned to the fantasy world of Spira by a mysterious girl named Yuna. Together, they embark on a pilgrimage to defeat Sin, a colossal beast that terrorizes the world, while uncovering a dark secret about the cycle of rebirth and the true nature of the gods.",
+    "key_features": [
+      "Sphere Grid character progression system",
+      "Full motion video (FMV) cutscenes",
+      "Voice acting for all characters",
+      "Real-time combat with turn-based elements",
+      "Overworld exploration on foot and by airship",
+      "Monster capture and customization (Overdrive)",
+      "Dynamic camera angles in battle",
+      "Integrated mini-games (Blitzball)",
+      "Non-linear story progression via Sphere Grid",
+      "High-fidelity 3D graphics for the era"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Final Fantasy X is widely regarded as one of the greatest RPGs of all time, credited with popularizing full voice acting and FMV cutscenes in the genre. Its emotional narrative and the Sphere Grid system influenced countless subsequent RPGs, setting a new standard for character progression and storytelling."
+    ]
+  }
 }

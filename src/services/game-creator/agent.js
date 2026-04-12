@@ -1,13 +1,15 @@
 /**
- * Game Research Agent Service
+ * Game Research Agent Service - 3-Phase Architecture
  *
- * Provides agentic game research using a custom agent framework with MCP WebSearch tools.
- * The agent simulates LangChain-style reasoning by:
- * 1. Loading json_prompt.txt as the system prompt
- * 2. Thinking about what information is needed and suggesting search queries
- * 3. Executing those searches via OpenSearch MCP
- * 4. Analyzing all search results and producing complete game JSON output
- * 5. Returning structured game data following game_metadata_schema.json format
+ * Provides agentic game research using a phased approach:
+ * PHASE 1: Research - Collect basic game metadata (developer, platforms, release dates)
+ * PHASE 2: Evaluate - Determine best versions to play, find consensus
+ * PHASE 3: Patches - Find patches, mods, enhancements for best versions
+ *
+ * Each phase:
+ * - Loads its own prompt file from disk
+ * - Performs up to 10 web searches + 10 follow-up searches
+ * - Builds on data from previous phases
  *
  * @module services/game-creator/agent
  */
@@ -54,26 +56,11 @@ const CONFIG = {
     mcpEnabled: process.env.MCP_SERVER_ENABLED !== 'false',
     mcpTimeout: parseInt(process.env.MCP_TIMEOUT) || 60000,
     maxIterations: parseInt(process.env.AGENT_MAX_ITERATIONS) || 10,
-    maxSearches: parseInt(process.env.AGENT_MAX_SEARCHES) || 8,
-    maxFollowUpSearches: parseInt(process.env.AGENT_MAX_FOLLOWUP_SEARCHES) || 6,
-    enableMultiPass: process.env.AGENT_MULTI_PASS !== 'false'
+    maxSearches: parseInt(process.env.AGENT_MAX_SEARCHES) || 10,
+    maxFollowUpSearches: parseInt(process.env.AGENT_MAX_FOLLOWUP_SEARCHES) || 10,
+    enableMultiPass: process.env.AGENT_MULTI_PASS !== 'false',
+    enablePhasedMode: process.env.AGENT_PHASED_MODE !== 'false'
 };
-
-/**
- * Load the json_prompt.txt file (for reference)
- * @returns {Promise<string>}
- */
-async function loadJsonPrompt() {
-    const promptPath = path.join(__dirname, '../../../prompts/json_prompt.txt');
-    try {
-        const prompt = await fs.readFile(promptPath, 'utf8');
-        log('Loaded json_prompt.txt successfully', 'info', { path: promptPath, length: prompt.length });
-        return prompt;
-    } catch (error) {
-        log(`Failed to load json_prompt.txt: ${error.message}`, 'error');
-        throw error;
-    }
-}
 
 /**
  * OpenSearch MCP Search Tool
@@ -82,22 +69,25 @@ async function loadJsonPrompt() {
 class SearchTool {
     constructor(options = {}) {
         this.name = 'web_search';
-        this.description = `Search the web for game information using OpenSearch MCP. This tool provides comprehensive search results from DuckDuckGo and other engines.`;
+        this.description = `Search the web for game information using OpenSearch MCP.`;
         this.allResults = [];
         this.sourceUrls = new Set();
         this.searchCount = 0;
         this.maxSearches = options.maxSearches || CONFIG.maxSearches;
-
-        // MCP session state
         this.sessionId = null;
         this.mcpHost = process.env.OPEN_WEBSEARCH_MCP_HOST || 'http://localhost:3001';
     }
 
-    async call(query) {
-        log('Search tool called', 'info', { query, searchNum: this.searchCount + 1 });
+    // Reset search tool for new phase
+    reset() {
+        this.allResults = [];
+        this.sourceUrls = new Set();
+        this.searchCount = 0;
+    }
 
+    async call(query) {
         if (this.searchCount >= this.maxSearches) {
-            return { results: [], message: `Maximum search limit (${this.maxSearches}) reached` };
+            return { results: [], message: `Maximum search limit reached` };
         }
 
         this.searchCount++;
@@ -116,10 +106,7 @@ class SearchTool {
                             clientInfo: { name: 'best-version-agent', version: '1.0.0' }
                         }
                     }, {
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json, text/event-stream'
-                        },
+                        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream' },
                         timeout: 10000,
                         transformResponse: [(data) => {
                             const match = data.toString().match(/data:\s*(\{[\s\S]*\}\s*)/);
@@ -127,9 +114,7 @@ class SearchTool {
                         }]
                     });
                     this.sessionId = initResponse.headers['mcp-session-id'] || `session-${Date.now()}`;
-                    log('MCP session initialized', 'info', { sessionId: this.sessionId });
-                } catch (initError) {
-                    log('MCP init failed, using fallback session ID', 'warn', { error: initError.message });
+                } catch {
                     this.sessionId = `session-${Date.now()}`;
                 }
             }
@@ -169,23 +154,17 @@ class SearchTool {
                     const textContent = result.result.content[0]?.text || '';
                     const parsed = JSON.parse(textContent);
                     searchResults = parsed.results || [];
-                } catch (parseError) {
-                    log('Failed to parse search results', 'warn', { error: parseError.message });
+                } catch {
+                    log('Failed to parse search results', 'warn');
                 }
             }
 
             this.allResults.push({ query, results: searchResults });
             searchResults.forEach(r => {
-                if (r.url) {
-                    this.sourceUrls.add(r.url);
-                }
+                if (r.url) this.sourceUrls.add(r.url);
             });
 
-            return {
-                query,
-                results: searchResults,
-                count: searchResults.length
-            };
+            return { query, results: searchResults, count: searchResults.length };
 
         } catch (error) {
             log(`Search failed: ${error.message}`, 'error');
@@ -193,19 +172,10 @@ class SearchTool {
         }
     }
 
-    getAllResults() {
-        return this.allResults;
-    }
+    getAllResults() { return this.allResults; }
+    getSourceUrls() { return Array.from(this.sourceUrls); }
+    getSearchCount() { return this.searchCount; }
 
-    getSourceUrls() {
-        return Array.from(this.sourceUrls);
-    }
-
-    getSearchCount() {
-        return this.searchCount;
-    }
-
-    // Aggregate all search results
     getAggregatedResults() {
         const allResults = [];
         this.allResults.forEach(sr => {
@@ -218,12 +188,11 @@ class SearchTool {
 }
 
 /**
- * Custom Agent that orchestrates research using the LLM and search tool
+ * 3-Phase Research Agent
  *
- * This agent implements a phased approach to avoid LLM context limits:
- * PHASE 1: Think - Suggest what searches to perform
- * PHASE 2: Search - Execute searches via OpenSearch MCP
- * PHASE 3: Analyze - Produce complete game JSON from search results
+ * Phase 1: Research - Collect basic game metadata
+ * Phase 2: Evaluate - Determine best versions to play
+ * Phase 3: Patches - Find patches/mods for best versions
  */
 class ResearchAgent {
     constructor(options = {}) {
@@ -231,42 +200,62 @@ class ResearchAgent {
         this.model = options.model || CONFIG.model;
         this.temperature = options.temperature || CONFIG.temperature;
         this.maxTokens = options.maxTokens || CONFIG.maxTokens;
-        this.maxIterations = options.maxIterations || CONFIG.maxIterations;
-        this.searchTool = new SearchTool({ maxSearches: CONFIG.maxSearches });
         this.gameTitle = null;
-        this.jsonPrompt = null;
-        this.schema = null;
+
+        // Phase prompt files
+        this.jsonPhase1 = null;
+        this.jsonPhase2 = null;
+        this.jsonPhase3 = null;
+
+        // Phase data accumulation
+        this.phase1Data = null;
+        this.phase2Data = null;
+        this.phase3Data = null;
+
+        // Search tools for each phase
+        this.phase1SearchTool = new SearchTool({ maxSearches: CONFIG.maxSearches });
+        this.phase2SearchTool = new SearchTool({ maxSearches: CONFIG.maxSearches });
+        this.phase3SearchTool = new SearchTool({ maxSearches: CONFIG.maxSearches });
     }
 
     /**
-     * Initialize the agent by loading prompts and schema
+     * Initialize the agent by loading all phase prompt files
      */
     async initialize(gameTitle) {
         this.gameTitle = gameTitle;
 
-        // Load json_prompt.txt
+        // Load Phase 1 prompt
         try {
-            this.jsonPrompt = await loadJsonPrompt();
-            log('Loaded json_prompt.txt', 'info', { length: this.jsonPrompt.length });
+            const phase1Path = path.join(__dirname, '../../../prompts/json_phase1.txt');
+            this.jsonPhase1 = await fs.readFile(phase1Path, 'utf8');
+            log('Loaded json_phase1.txt', 'info', { length: this.jsonPhase1.length });
         } catch (error) {
-            log('Failed to load json_prompt.txt, will use inline prompts', 'warn', { error: error.message });
+            log(`Failed to load json_phase1.txt: ${error.message}`, 'error');
         }
 
-        // Load schema
+        // Load Phase 2 prompt
         try {
-            const schemaPath = path.join(__dirname, '../../../game_metadata_schema.json');
-            const schemaContent = await fs.readFile(schemaPath, 'utf8');
-            this.schema = JSON.parse(schemaContent);
-            log('Loaded game_metadata_schema.json', 'info');
+            const phase2Path = path.join(__dirname, '../../../prompts/json_phase2.txt');
+            this.jsonPhase2 = await fs.readFile(phase2Path, 'utf8');
+            log('Loaded json_phase2.txt', 'info', { length: this.jsonPhase2.length });
         } catch (error) {
-            log('Failed to load schema, will use inline schema', 'warn', { error: error.message });
+            log(`Failed to load json_phase2.txt: ${error.message}`, 'error');
         }
 
-        log('Agent initialized', 'info', { gameTitle });
+        // Load Phase 3 prompt
+        try {
+            const phase3Path = path.join(__dirname, '../../../prompts/json_phase3.txt');
+            this.jsonPhase3 = await fs.readFile(phase3Path, 'utf8');
+            log('Loaded json_phase3.txt', 'info', { length: this.jsonPhase3.length });
+        } catch (error) {
+            log(`Failed to load json_phase3.txt: ${error.message}`, 'error');
+        }
+
+        log('Agent initialized for 3-phase research', 'info', { gameTitle });
     }
 
     /**
-     * Make an LLM call and return the response
+     * Make an LLM call
      */
     async callLLM(messages, options = {}) {
         try {
@@ -276,9 +265,7 @@ class ResearchAgent {
                 temperature: options.temperature || this.temperature,
                 max_tokens: options.maxTokens || this.maxTokens,
                 stream: false
-            }, {
-                timeout: options.timeout || 120000
-            });
+            }, { timeout: options.timeout || 120000 });
 
             return response.data.choices?.[0]?.message?.content || '';
         } catch (error) {
@@ -288,609 +275,455 @@ class ResearchAgent {
     }
 
     /**
-     * PHASE 1: Think - Ask LLM what searches to perform
-     * Uses a lightweight prompt focused only on query generation
+     * Generate search queries for a phase
      */
-    async phase1Think() {
-        log('PHASE 1: Thinking about what to search...', 'info');
+    async generateSearchQueries(phaseName, phasePrompt, contextData) {
+        log(`Generating search queries for ${phaseName}`, 'info');
 
-        const thinkPrompt = `You are a game research assistant. Your job is to suggest targeted search queries for researching a video game.
+        const queryPrompt = `You are a research planner. For the game "${this.gameTitle}", generate ${CONFIG.maxSearches} SPECIFIC search queries that will gather information for:
 
-For the game "${this.gameTitle}", suggest 5-8 SPECIFIC search queries that will help find:
-1. Basic info: exact title, developer, publisher, release dates, platforms
-2. Patches and mods: uncensored versions, translation patches, enhancement patches
-3. Best versions: remasters, remakes, which version to play today
-4. Technical info: emulator recommendations, settings
+${phasePrompt.substring(0, 1000)}
 
-Output ONLY the search queries, one per line, no other text.
-Make each query specific and actionable for web search.`;
+Output ONLY the search queries as a JSON array, one query per element.
+Make each query specific and actionable for web search.
+Example: ["${this.gameTitle} developer publisher release date", "${this.gameTitle} platforms release dates list"]
 
-        const messages = [
-            { role: 'system', content: 'You are a helpful research assistant. Output search queries only.' },
-            { role: 'user', content: thinkPrompt }
-        ];
+Output JSON array only, no other text.`;
 
-        const response = await this.callLLM(messages, { temperature: 0.3 });
-
-        const queries = this.extractSearchQueries(response);
-
-        if (queries.length === 0) {
-            // Fallback queries
-            queries.push(this.gameTitle);
-            queries.push(`${this.gameTitle} video game`);
-            queries.push(`${this.gameTitle} platforms release dates`);
-            queries.push(`${this.gameTitle} patches mods`);
-            queries.push(`${this.gameTitle} remaster remake best version`);
-        }
-
-        log('Thought phase complete - suggested queries', 'info', { count: queries.length });
-        return queries;
-    }
-
-    /**
-     * PHASE 2: Search - Execute the queries via OpenSearch MCP
-     */
-    async phase2Search(queries) {
-        log('PHASE 2: Executing search queries...', 'info', { count: queries.length });
-
-        for (const query of queries) {
-            if (this.searchTool.getSearchCount() >= CONFIG.maxSearches) {
-                log('Reached max search limit', 'info');
-                break;
-            }
-
-            await this.searchTool.call(query);
-        }
-
-        const results = this.searchTool.getAggregatedResults();
-        const urls = this.sourceUrls = this.searchTool.getSourceUrls();
-
-        log('Search phase complete', 'info', {
-            searchesPerformed: this.searchTool.getSearchCount(),
-            totalResults: results.length,
-            uniqueUrls: urls.length
-        });
-
-        return { results, urls };
-    }
-
-    /**
-     * PHASE 2B: Analyze initial results and generate follow-up queries
-     * Identifies gaps in data and suggests targeted searches for patches, translations, etc.
-     */
-    async phase2bAnalyzeResults(results, urls) {
-        if (!CONFIG.enableMultiPass) {
-            log('Multi-pass search disabled, skipping follow-up analysis', 'info');
-            return [];
-        }
-
-        log('PHASE 2B: Analyzing results for follow-up queries...', 'info');
-
-        const followUpQueries = [];
-        const gameTitle = this.gameTitle;
-
-        // Scan results for indicators that need follow-up searches
-        const resultsText = results.map(r => (r.title || '') + ' ' + (r.description || '')).join(' ').toLowerCase();
-        const urlsText = urls.join(' ').toLowerCase();
-
-        // Check for Japanese-only games needing translation patches
-        if (resultsText.includes('japan') || resultsText.includes('japanese') ||
-            resultsText.includes('ps1') || resultsText.includes('playstation 1') ||
-            resultsText.includes('snes') || resultsText.includes('sn-es')) {
-            if (!resultsText.includes('english translation')) {
-                followUpQueries.push(`${gameTitle} romhacking translation patch`);
-                followUpQueries.push(`${gameTitle} English patch download`);
-            }
-        }
-
-        // Check for PC games - search PCGamingWiki
-        if (urlsText.includes('pc') || resultsText.includes('pc') ||
-            resultsText.includes('windows') || resultsText.includes('steam')) {
-            followUpQueries.push(`site:pcgamingwiki.com ${gameTitle} patches fixes`);
-        }
-
-        // Always add dedicated patch searches for better coverage
-        followUpQueries.push(`${gameTitle} enhancement patch list`);
-        followUpQueries.push(`${gameTitle} quality of life patch`);
-
-        // Search romhacking.net for retro games
-        if (resultsText.includes('rom') || resultsText.includes('emulator') ||
-            resultsText.includes('sn-es') || resultsText.includes('gb') ||
-            resultsText.includes('game boy') || resultsText.includes('playstation')) {
-            followUpQueries.push(`site:romhacking.net ${gameTitle} patch`);
-        }
-
-        // Search for fan translations
-        if (resultsText.includes('translation') || resultsText.includes('localization')) {
-            followUpQueries.push(`${gameTitle} fan translation patch vimm`);
-        }
-
-        // Search for mod managers and modding community
-        followUpQueries.push(`${gameTitle} mod nexusmods moddb`);
-
-        // Remove duplicates and limit to maxFollowUpSearches
-        const uniqueQueries = [...new Set(followUpQueries)];
-        const finalQueries = uniqueQueries.slice(0, CONFIG.maxFollowUpSearches);
-
-        log('Follow-up queries generated', 'info', { count: finalQueries.length, queries: finalQueries });
-
-        return finalQueries;
-    }
-
-    /**
-     * PHASE 2C: Execute follow-up searches
-     * Performs targeted searches for patches, translations, and missing info
-     */
-    async phase2cExecuteFollowUpQueries(queries) {
-        if (!CONFIG.enableMultiPass || queries.length === 0) {
-            log('No follow-up searches to execute', 'info');
-            return { results: [], urls: [] };
-        }
-
-        log('PHASE 2C: Executing follow-up searches...', 'info', { count: queries.length });
-
-        // Create a temporary search tool for follow-up (shares session with main tool)
-        const followUpSearchTool = new SearchTool({
-            maxSearches: CONFIG.maxSearches + CONFIG.maxFollowUpSearches
-        });
-
-        // Reuse the existing search tool's state
-        followUpSearchTool.allResults = this.searchTool.getAllResults();
-        followUpSearchTool.searchCount = this.searchTool.getSearchCount();
-        followUpSearchTool.sourceUrls = this.searchTool.sourceUrls;
-
-        // Execute follow-up queries
-        for (const query of queries) {
-            const currentCount = followUpSearchTool.getSearchCount();
-            const totalLimit = CONFIG.maxSearches + CONFIG.maxFollowUpSearches;
-
-            if (currentCount >= totalLimit) {
-                log('Reached total search limit, stopping follow-up', 'info');
-                break;
-            }
-
-            // Set max searches to allow follow-up
-            followUpSearchTool.maxSearches = totalLimit;
-            await followUpSearchTool.call(query);
-        }
-
-        // Update the main search tool with follow-up results
-        this.searchTool.allResults = followUpSearchTool.getAllResults();
-        this.searchTool.sourceUrls = followUpSearchTool.sourceUrls;
-        this.searchTool.searchCount = followUpSearchTool.getSearchCount();
-
-        const results = this.searchTool.getAggregatedResults();
-        const urls = this.searchTool.getSourceUrls();
-
-        log('Follow-up search phase complete', 'info', {
-            totalSearches: this.searchTool.getSearchCount(),
-            totalResults: results.length,
-            uniqueUrls: urls.length
-        });
-
-        return { results, urls };
-    }
-
-    /**
-     * PHASE 3: Analyze - Produce complete game JSON from search results
-     * Uses json_prompt.txt instructions + search results
-     */
-    async phase3Analyze(searchResults, sourceUrls, isMultiPass = false) {
-        log('PHASE 3: Analyzing search results and generating JSON...', 'info');
-
-        // Format search results for the prompt - use more results if multi-pass enabled
-        const maxResults = isMultiPass ? 20 : 10;
-        const resultsText = searchResults.slice(0, maxResults).map((r, i) =>
-            `${i + 1}. ${r.title || 'No title'}\n   Description: ${r.description ? r.description.substring(0, 200) : 'No description'}\n   URL: ${r.url || ''}`
-        ).join('\n\n');
-
-        // Build a concise version of json_prompt.txt instructions
-        const instructions = this.buildAnalysisInstructions();
-
-        // Simplified schema for the LLM to output with explicit patch requirements
-        const simpleSchema = {
-            title: "string - exact game title",
-            alternativeTitles: "array of strings - alternative names",
-            platforms: "array of objects: {name: string, region: string, release_date: YYYY-MM-DD}",
-            genres: "array of strings - game genres",
-            description: "string - comprehensive game description",
-            synopsis: "string - brief summary",
-            developers: "array of strings - developer names",
-            publishers: "array of strings - publisher names",
-            features: "array of strings - key gameplay features",
-            themes: "array of strings - narrative/visual themes",
-            play_today: "array of objects (max 3 platforms, ranked best to worst): {platform: string, details: string (200-300 chars), available_in_english: {official_localization: boolean}, recommended_patches: array of {name: string, description: string (detailed explanation of what the patch does), url: string (direct link)}, emulators: array of strings}",
-            reception: {
-                scores: "array of numbers - review scores",
-                reviews: "array of strings - review summaries",
-                legacy: "string - historical impact"
-            },
-            serie: "object or null: {is_part_of_serie: boolean, serie_name: string, part_number: integer}",
-            similarGames: "array of strings - similar game titles"
-        };
-
-        const patchExample = {
-            name: "Combat Redux Patch",
-            description: "A major gameplay overhaul that modernizes the combat system with improved controls, new attack options, and enhanced visual effects.",
-            url: "https://www.example.com/patch/123"
-        };
-
-        const multiPassNote = isMultiPass
-            ? "This search included dedicated follow-up queries for patches, translations, and mods. Use ALL available data to find the best patches and most accurate information."
-            : "Use the search results to find patches, translations, and mods when available.";
-
-        const analyzePrompt = `${instructions}
-
-=== YOUR TASK ===
-
-Using the search results below, generate a COMPLETE JSON object for the game "${this.gameTitle}".
-
-${multiPassNote}
-
-The JSON MUST follow this simplified structure (output VALID JSON only, no markdown):
-${JSON.stringify(simpleSchema, null, 2)}
-
-=== CRITICAL REQUIREMENTS FOR PATCHES ===
-
-For EACH recommended patch, you MUST provide:
-1. name: The exact name of the patch
-2. description: A detailed explanation of what the patch does (NOT just repeating the name)
-3. url: Direct link to download or access the patch
-
-PATCH EXAMPLE:
-${JSON.stringify(patchExample, null, 2)}
-
-BAD PATCH (do NOT do this):
-{"name": "Legend of Mana Patch", "description": "Legend of Mana Patch"} - Description repeats name!
-
-GOOD PATCH (do this):
-{"name": "Legend of Mana English Translation Patch", "description": "Unofficial English translation patch that converts all Japanese text to English, including dialogue, menus, and item descriptions. Highly recommended for playing the original PS1 version.", "url": "https://www.romhacking.net/hacks/2085/"}
-
-=== SEARCH RESULTS ===
-${resultsText || 'No search results available'}
-
-=== ADDITIONAL SOURCE URLs ===
-${sourceUrls.slice(0, 30).join('\n')}
-
-Generate the complete JSON now. Output ONLY valid JSON, no other text.`;
-
-        const messages = [
-            { role: 'system', content: 'You are a game data generator. Output valid JSON only, no markdown, no explanations.' },
-            { role: 'user', content: analyzePrompt }
-        ];
-
-        const response = await this.callLLM(messages, {
-            temperature: 0.1,
-            maxTokens: this.maxTokens,
-            timeout: 180000
-        });
-
-        log('Analysis phase - got response', 'info', { length: response.length });
-
-        // Call the module-level parseJSONResponse function
-        return parseJSONResponse(response);
-    }
-
-    /**
-     * Build concise analysis instructions from json_prompt.txt key concepts
-     */
-    buildAnalysisInstructions() {
-        if (this.jsonPrompt) {
-            // Extract key sections from json_prompt.txt
-            return `I am creating a website about the BEST VERSION available for each game.
-You must use the search results to generate accurate game metadata.
-
-KEY REQUIREMENTS:
-1. Platform names must follow standard naming (e.g., "PlayStation", "Windows", "Nintendo Switch")
-2. Release dates in YYYY-MM-DD format
-3. "play_today" array ranked from BEST to WORST way to play (max 3 platforms)
-4. Include specific patches with direct URLs when found
-5. Include emulator recommendations for retro games
-6. Themes should be specific (not just "Classic" or "Retro")
-7. Key features should describe specific gameplay innovations
-8. Legacy_and_impact should describe historical significance
-
-The game "${this.gameTitle}" must be researched thoroughly using the provided search results.`;
-        }
-
-        // Fallback instructions
-        return `Generate complete game metadata for "${this.gameTitle}" using the search results.
-Focus on finding the best version to play today.`;
-    }
-
-    /**
-     * Parse search queries from LLM response
-     */
-    extractSearchQueries(content) {
-        const queries = [];
-
-        const lines = content.split('\n').map(l => l.trim()).filter(l => l.length > 5);
-
-        for (const line of lines) {
-            let query = line
-                .replace(/^[•\-*0-9]+\.?\s*/, '')
-                .replace(/^["']|["']$/g, '')
-                .trim();
-
-            if (query.length < 10 || query.toLowerCase().includes('json')) {
-                continue;
-            }
-
-            queries.push(query);
-        }
-
-        return queries.slice(0, 8);
-    }
-
-    /**
-     * Run the complete agent research pipeline
-     */
-    async run() {
-        log('Starting agent research pipeline', 'info', {
-            multiPassEnabled: CONFIG.enableMultiPass,
-            maxSearches: CONFIG.maxSearches,
-            maxFollowUpSearches: CONFIG.maxFollowUpSearches
-        });
-
-        let results = [];
-        let urls = [];
-        let isMultiPass = false;
+        const response = await this.callLLM([
+            { role: 'system', content: 'Output JSON array of search queries only.' },
+            { role: 'user', content: queryPrompt }
+        ], { temperature: 0.3 });
 
         try {
-            // PHASE 1: Think
-            const queries = await this.phase1Think();
-
-            // PHASE 2: Search
-            const searchResult = await this.phase2Search(queries);
-            results = searchResult.results;
-            urls = searchResult.urls;
-
-            // PHASE 2B: Analyze for follow-up queries
-            const followUpQueries = await this.phase2bAnalyzeResults(results, urls);
-
-            // PHASE 2C: Execute follow-up searches (multi-pass)
-            if (followUpQueries.length > 0) {
-                const followUpResult = await this.phase2cExecuteFollowUpQueries(followUpQueries);
-                results = followUpResult.results;
-                urls = followUpResult.urls;
-                isMultiPass = true;
+            const queries = JSON.parse(response);
+            if (Array.isArray(queries)) {
+                log(`Generated ${queries.length} queries for ${phaseName}`, 'info');
+                return queries.slice(0, CONFIG.maxSearches);
             }
+        } catch {
+            // Fallback queries
+            log('Query generation failed, using fallback', 'warn');
+        }
 
-            // PHASE 3: Analyze and generate JSON
-            log('Starting PHASE 3: Analyze', 'info', {
-                resultsCount: results.length,
-                urlsCount: urls.length,
-                multiPass: isMultiPass,
-                totalSearches: this.searchTool.getSearchCount()
-            });
-            const jsonData = await this.phase3Analyze(results, urls, isMultiPass);
+        // Fallback queries based on phase
+        return this.getFallbackQueries(phaseName);
+    }
 
-            if (!jsonData.success) {
-                log('JSON parsing failed, using fallback', 'warn', { error: jsonData.error, rawLength: jsonData.raw?.length });
-                return this.generateFallbackJSON(results, urls);
+    getFallbackQueries(phaseName) {
+        if (phaseName === 'Phase1') {
+            return [
+                `${this.gameTitle} developer publisher release dates platforms`,
+                `${this.gameTitle} Wikipedia`,
+                `${this.gameTitle} Mobygames release dates`,
+                `${this.gameTitle} genres themes description`,
+                `${this.gameTitle} Metacritic scores reviews`,
+                `${this.gameTitle} series sequels prequels`,
+                `${this.gameTitle} similar games`,
+                `${this.gameTitle} reception legacy impact`,
+                `${this.gameTitle} key features gameplay mechanics`,
+                `${this.gameTitle} synopsis summary`
+            ];
+        }
+        if (phaseName === 'Phase2') {
+            return [
+                `${this.gameTitle} best version to play`,
+                `${this.gameTitle} remaster vs original comparison`,
+                `${this.gameTitle} DS vs SNES vs PlayStation`,
+                `${this.gameTitle} definitive version Reddit`,
+                `${this.gameTitle} which version should I buy`,
+                `${this.gameTitle} version differences comparison`,
+                `${this.gameTitle} Digital Foundry`,
+                `${this.gameTitle} Metacritic all platforms comparison`,
+                `${this.gameTitle} best way to play 2024 2025`,
+                `${this.gameTitle} community consensus best version`
+            ];
+        }
+        if (phaseName === 'Phase3') {
+            return [
+                `site:romhacking.net ${this.gameTitle} patch`,
+                `site:pcgamingwiki.com ${this.gameTitle}`,
+                `${this.gameTitle} enhancement patch list`,
+                `${this.gameTitle} bugfix patch`,
+                `${this.gameTitle} translation patch`,
+                `${this.gameTitle} high resolution patch`,
+                `${this.gameTitle} widescreen patch`,
+                `site:nexusmods.com ${this.gameTitle}`,
+                `${this.gameTitle} quality of life mod`,
+                `${this.gameTitle} emulator best settings`
+            ];
+        }
+        return [this.gameTitle];
+    }
+
+    /**
+     * Execute searches and get follow-up queries
+     */
+    async executePhaseSearches(searchTool, queries, phaseName) {
+        log(`Executing ${phaseName} searches...`, 'info', { count: queries.length });
+
+        // Initial searches
+        for (const query of queries) {
+            if (searchTool.getSearchCount() >= CONFIG.maxSearches) break;
+            await searchTool.call(query);
+        }
+
+        // Generate follow-up queries based on results
+        if (CONFIG.enableMultiPass && searchTool.getSearchCount() < CONFIG.maxSearches) {
+            const followUpPrompts = await this.generateFollowUpQueries(searchTool, phaseName);
+            for (const query of followUpPrompts) {
+                if (searchTool.getSearchCount() >= CONFIG.maxSearches) break;
+                await searchTool.call(query);
             }
+        }
 
-            log('Agent research pipeline complete', 'info', {
-                multiPass: isMultiPass,
-                totalSearches: this.searchTool.getSearchCount()
+        log(`${phaseName} search complete`, 'info', {
+            searches: searchTool.getSearchCount(),
+            results: searchTool.getAggregatedResults().length
+        });
+
+        return {
+            results: searchTool.getAggregatedResults(),
+            urls: searchTool.getSourceUrls()
+        };
+    }
+
+    /**
+     * Generate follow-up queries based on initial results
+     */
+    async generateFollowUpQueries(searchTool, phaseName) {
+        const resultsText = searchTool.getAggregatedResults()
+            .slice(0, 10)
+            .map(r => `${r.title}: ${r.description?.substring(0, 100)}`)
+            .join('\n');
+
+        const followUpPrompt = `For "${this.gameTitle}", initial searches found ${searchTool.getAggregatedResults().length} results.
+
+Sample results:
+${resultsText}
+
+Identify 5 specific follow-up searches to find missing information.
+Output JSON array of query strings only.`;
+
+        const response = await this.callLLM([
+            { role: 'system', content: 'Output JSON array only.' },
+            { role: 'user', content: followUpPrompt }
+        ], { temperature: 0.3 });
+
+        try {
+            const queries = JSON.parse(response);
+            if (Array.isArray(queries)) return queries.slice(0, CONFIG.maxFollowUpSearches);
+        } catch {}
+
+        return [];
+    }
+
+    /**
+     * PHASE 1: Research - Collect basic game metadata
+     */
+    async phase1Research() {
+        log('=== PHASE 1: RESEARCH ===', 'info');
+
+        // Generate queries
+        const queries = await this.generateSearchQueries('Phase1', this.jsonPhase1);
+
+        // Execute searches
+        const { results, urls } = await this.executePhaseSearches(
+            this.phase1SearchTool, queries, 'Phase1'
+        );
+
+        // Build prompt with search results
+        const resultsText = results.slice(0, 20).map((r, i) =>
+            `${i + 1}. ${r.title || 'No title'}\n   Description: ${r.description?.substring(0, 200) || 'No description'}\n   URL: ${r.url || ''}`
+        ).join('\n\n');
+
+        const prompt = this.jsonPhase1 || 'Research the game and collect metadata.';
+        const promptWithResults = `${prompt}\n\n=== SEARCH RESULTS ===\n${resultsText}\n\n=== SOURCE URLs ===\n${urls.slice(0, 30).join('\n')}\n\nGenerate the JSON output now. Output ONLY valid JSON.`;
+
+        // Call LLM
+        const response = await this.callLLM([
+            { role: 'system', content: 'You are a game researcher. Output valid JSON only, no markdown.' },
+            { role: 'user', content: promptWithResults }
+        ], { temperature: 0.1, maxTokens: this.maxTokens, timeout: 180000 });
+
+        // Parse result
+        this.phase1Data = parseJSONResponse(response);
+
+        log('Phase 1 complete', 'info', {
+            success: this.phase1Data.success,
+            searches: this.phase1SearchTool.getSearchCount()
+        });
+
+        return this.phase1Data;
+    }
+
+    /**
+     * PHASE 2: Evaluate - Determine best versions to play
+     */
+    async phase2Evaluate() {
+        log('=== PHASE 2: EVALUATE ===', 'info');
+
+        // Generate queries focused on version comparison
+        const queries = await this.generateSearchQueries('Phase2', this.jsonPhase2);
+
+        // Execute searches
+        const { results, urls } = await this.executePhaseSearches(
+            this.phase2SearchTool, queries, 'Phase2'
+        );
+
+        // Prepare platforms JSON from Phase 1
+        const platformsJson = JSON.stringify(this.phase1Data?.data?.platforms || [], null, 2);
+
+        // Build prompt
+        let prompt = this.jsonPhase2 || 'Evaluate game versions.';
+        prompt = prompt.replace('${PLATFORMS_JSON}', platformsJson);
+
+        const resultsText = results.slice(0, 20).map((r, i) =>
+            `${i + 1}. ${r.title || 'No title'}\n   Description: ${r.description?.substring(0, 200) || 'No description'}\n   URL: ${r.url || ''}`
+        ).join('\n\n');
+
+        const promptWithResults = `${prompt}\n\n=== SEARCH RESULTS ===\n${resultsText}\n\n=== SOURCE URLs ===\n${urls.slice(0, 30).join('\n')}\n\nGenerate the JSON output now. Output ONLY valid JSON.`;
+
+        // Call LLM
+        const response = await this.callLLM([
+            { role: 'system', content: 'You are a game evaluator. Output valid JSON only, no markdown.' },
+            { role: 'user', content: promptWithResults }
+        ], { temperature: 0.1, maxTokens: this.maxTokens, timeout: 180000 });
+
+        // Parse result
+        this.phase2Data = parseJSONResponse(response);
+
+        log('Phase 2 complete', 'info', {
+            success: this.phase2Data.success,
+            searches: this.phase2SearchTool.getSearchCount()
+        });
+
+        return this.phase2Data;
+    }
+
+    /**
+     * PHASE 3: Patches - Find patches/mods for best versions
+     */
+    async phase3Patches() {
+        log('=== PHASE 3: PATCHES ===', 'info');
+
+        // Generate queries focused on patches
+        const queries = await this.generateSearchQueries('Phase3', this.jsonPhase3);
+
+        // Execute searches
+        const { results, urls } = await this.executePhaseSearches(
+            this.phase3SearchTool, queries, 'Phase3'
+        );
+
+        // Prepare play_today JSON from Phase 2
+        const playTodayJson = JSON.stringify(this.phase2Data?.data?.play_today || [], null, 2);
+
+        // Build prompt
+        let prompt = this.jsonPhase3 || 'Find patches and mods.';
+        prompt = prompt.replace('${PLAYTODAY_JSON}', playTodayJson);
+
+        const resultsText = results.slice(0, 25).map((r, i) =>
+            `${i + 1}. ${r.title || 'No title'}\n   Description: ${r.description?.substring(0, 300) || 'No description'}\n   URL: ${r.url || ''}`
+        ).join('\n\n');
+
+        const promptWithResults = `${prompt}\n\n=== SEARCH RESULTS ===\n${resultsText}\n\n=== SOURCE URLs ===\n${urls.slice(0, 40).join('\n')}\n\nGenerate the JSON output now. Output ONLY valid JSON.`;
+
+        // Call LLM
+        const response = await this.callLLM([
+            { role: 'system', content: 'You are a patch researcher. Output valid JSON only, no markdown.' },
+            { role: 'user', content: promptWithResults }
+        ], { temperature: 0.1, maxTokens: this.maxTokens, timeout: 180000 });
+
+        // Parse result
+        this.phase3Data = parseJSONResponse(response);
+
+        log('Phase 3 complete', 'info', {
+            success: this.phase3Data.success,
+            searches: this.phase3SearchTool.getSearchCount()
+        });
+
+        return this.phase3Data;
+    }
+
+    /**
+     * Combine all phase data into final JSON output
+     */
+    combineAllPhases() {
+        log('Combining phase data...', 'info');
+
+        const phase1 = this.phase1Data?.data || {};
+        const phase2 = this.phase2Data?.data || {};
+        const phase3 = this.phase3Data?.data || {};
+
+        // Build final output
+        const finalData = {
+            // From Phase 1: Basic metadata
+            title: phase1.title || this.gameTitle,
+            alternativeTitles: phase1.alternativeTitles || [],
+            developers: phase1.developers || ['Unknown'],
+            publishers: phase1.publishers || phase1.developers || ['Unknown'],
+            genres: phase1.genres || ['Adventure'],
+            platforms: phase1.platforms || [],
+            themes: phase1.themes || ['Classic'],
+            key_features: phase1.key_features || ['Classic gameplay'],
+            reception: phase1.reception || { scores: [], reviews: [], legacy: '' },
+            serie: phase1.serie || { is_part_of_serie: false, serie_name: '', part_number: 1 },
+            similar_games: phase1.similar_games || [],
+            synopsis: phase1.synopsis || 'No synopsis available.',
+
+            // From Phase 2: Best versions
+            play_today: phase2.play_today || [],
+
+            // From Phase 3: Patches (merged into play_today)
+            _patches_by_platform: phase3.patches_by_platform || []
+        };
+
+        // Merge patches from Phase 3 into play_today
+        if (phase3.patches_by_platform && Array.isArray(phase3.patches_by_platform)) {
+            finalData.play_today = (phase2.play_today || []).map(pt => {
+                const platformPatches = phase3.patches_by_platform.find(pp => pp.platform === pt.platform);
+                if (platformPatches) {
+                    return {
+                        ...pt,
+                        recommended_patches: platformPatches.recommended_patches || [],
+                        emulators: platformPatches.emulators || []
+                    };
+                }
+                return { ...pt, recommended_patches: [], emulators: [] };
             });
+        }
+
+        // Clean up internal field
+        delete finalData._patches_by_platform;
+
+        log('Phase data combined', 'info', {
+            platforms: finalData.platforms.length,
+            playToday: finalData.play_today.length,
+            patches: this.countTotalPatches(finalData.play_today)
+        });
+
+        return finalData;
+    }
+
+    countTotalPatches(playToday) {
+        return (playToday || []).reduce((acc, pt) => acc + (pt.recommended_patches?.length || 0), 0);
+    }
+
+    /**
+     * Run the complete 3-phase research pipeline
+     */
+    async run() {
+        log('Starting 3-phase research pipeline', 'info', {
+            maxSearches: CONFIG.maxSearches,
+            maxFollowUp: CONFIG.maxFollowUpSearches,
+            multiPass: CONFIG.enableMultiPass
+        });
+
+        try {
+            // Execute all 3 phases
+            await this.phase1Research();
+            await this.phase2Evaluate();
+            await this.phase3Patches();
+
+            // Combine results
+            const finalData = this.combineAllPhases();
+
+            const totalSearches =
+                this.phase1SearchTool.getSearchCount() +
+                this.phase2SearchTool.getSearchCount() +
+                this.phase3SearchTool.getSearchCount();
+
+            log('3-phase pipeline complete', 'info', { totalSearches });
 
             return {
                 success: true,
-                data: jsonData.data,
-                searchResults: results,
-                sourceUrls: urls,
-                queriesExecuted: this.searchTool.getAllResults().map(sr => sr.query),
-                multiPass: isMultiPass,
+                data: finalData,
+                phaseResults: {
+                    phase1: { success: this.phase1Data?.success, searches: this.phase1SearchTool.getSearchCount() },
+                    phase2: { success: this.phase2Data?.success, searches: this.phase2SearchTool.getSearchCount() },
+                    phase3: { success: this.phase3Data?.success, searches: this.phase3SearchTool.getSearchCount() }
+                },
+                queriesExecuted: this.getAllQueriesExecuted(),
                 confidence: 0.85
             };
 
         } catch (error) {
-            log('Agent research pipeline failed', 'error', {
-                error: error.message,
-                stack: error.stack,
-                searchResults: results?.length || 0,
-                sourceUrls: urls?.length || 0
-            });
-
-            // Fallback: use what we have
-            return this.generateFallbackJSON(results, urls);
+            log('Pipeline failed', 'error', { error: error.message });
+            return this.generateFallback();
         }
     }
 
-    /**
-     * Generate fallback JSON when LLM fails
-     */
-    async generateFallbackJSON(existingResults = [], existingUrls = []) {
-        log('Generating fallback JSON', 'info', { existingResults: existingResults.length, existingUrls: existingUrls.length });
+    getAllQueriesExecuted() {
+        const allQueries = [];
+        this.phase1SearchTool.getAllResults().forEach(r => allQueries.push(`Phase1: ${r.query}`));
+        this.phase2SearchTool.getAllResults().forEach(r => allQueries.push(`Phase2: ${r.query}`));
+        this.phase3SearchTool.getAllResults().forEach(r => allQueries.push(`Phase3: ${r.query}`));
+        return allQueries;
+    }
 
-        // Try additional searches if we haven't hit the limit
-        const fallbackQueries = [
-            this.gameTitle,
-            `${this.gameTitle} video game`,
-            `${this.gameTitle} platforms versions`,
-            `${this.gameTitle} patch mod uncensored`
-        ];
-
-        for (const query of fallbackQueries) {
-            if (this.searchTool.getSearchCount() < CONFIG.maxSearches) {
-                await this.searchTool.call(query);
-            }
-        }
-
-        // Use search tool's aggregated results, falling back to what was passed in
-        const finalResults = this.searchTool.getAggregatedResults().length > 0
-            ? this.searchTool.getAggregatedResults()
-            : existingResults;
-        const finalUrls = this.searchTool.getSourceUrls().length > 0
-            ? this.searchTool.getSourceUrls()
-            : existingUrls;
-
+    generateFallback() {
         return {
             success: true,
             data: {
                 title: this.gameTitle,
                 platforms: [],
-                genres: [],
-                description: `Research data gathered from ${finalUrls.length} sources`,
+                genres: ['Adventure'],
                 play_today: [],
-                confidence: 0.5,
-                sources: finalUrls
+                themes: ['Classic'],
+                key_features: ['Classic gameplay']
             },
-            searchResults: finalResults,
-            sourceUrls: finalUrls,
-            fallback: true,
             confidence: 0.5,
-            multiPass: false
+            fallback: true
         };
     }
 }
 
 /**
- * Research a game using the agent
- * @param {string} gameTitle
- * @returns {Promise<Object>}
+ * Research a game using the 3-phase agent
  */
 async function researchGameWithAgent(gameTitle) {
-    log('Starting agent research for game', 'info', { title: gameTitle });
+    log('Starting 3-phase agent research', 'info', { title: gameTitle });
 
     const startTime = Date.now();
 
     try {
-        // Create and initialize agent
         const agent = new ResearchAgent({
             endpoint: CONFIG.endpoint,
             model: CONFIG.model,
             temperature: CONFIG.temperature,
-            maxTokens: CONFIG.maxTokens,
-            maxIterations: CONFIG.maxIterations
+            maxTokens: CONFIG.maxTokens
         });
 
         await agent.initialize(gameTitle);
-
-        // Run the complete agent pipeline (Think → Search → Analyze)
         const result = await agent.run();
 
         const duration = Date.now() - startTime;
 
         if (!result.success) {
-            log('Agent research failed', 'warn', { duration });
-            return {
-                success: false,
-                error: 'Agent research failed',
-                gameTitle,
-                duration
-            };
+            log('Research failed', 'warn', { duration });
+            return { success: false, error: 'Research failed', gameTitle, duration };
         }
 
-        log('Agent research completed successfully', 'info', {
-            searchesPerformed: agent.searchTool.getSearchCount(),
-            totalResults: result.searchResults?.length || 0,
-            sourceUrls: result.sourceUrls?.length || 0,
-            duration
+        log('Research completed', 'info', {
+            duration,
+            queries: result.queriesExecuted?.length || 0
         });
 
-        // Return the complete game data from the agent
         return {
             success: true,
-            metadata: result.data || {
-                title: gameTitle,
-                platforms: [],
-                genres: [],
-                description: 'Research completed',
-                play_today: [],
-                sources: result.sourceUrls || [],
-                confidence: result.confidence || 0.7
-            },
-            confidence: result.confidence || 0.7,
-            sourceUrls: result.sourceUrls || [],
+            metadata: result.data,
+            confidence: result.confidence || 0.85,
+            sourceUrls: [],
             duration,
-            queriesExecuted: result.queriesExecuted || []
+            queriesExecuted: result.queriesExecuted || [],
+            phaseResults: result.phaseResults
         };
 
     } catch (error) {
         const duration = Date.now() - startTime;
-        log('Agent research failed', 'error', { error: error.message, duration });
-
-        return {
-            success: false,
-            error: error.message,
-            gameTitle,
-            duration
-        };
+        log('Research error', 'error', { error: error.message, duration });
+        return { success: false, error: error.message, gameTitle, duration };
     }
-}
-
-/**
- * Calculate confidence score based on metadata completeness
- */
-function calculateConfidence(metadata) {
-    let score = 0.2;
-
-    if (metadata.basic_info?.title) score += 0.1;
-    if (metadata.basic_info?.developers) score += 0.15;
-    if (metadata.basic_info?.publishers) score += 0.1;
-    if (metadata.release?.platforms && metadata.release.platforms.length > 0) score += 0.15;
-    if (metadata.basic_info?.genres && metadata.basic_info.genres.length > 0) score += 0.1;
-    if (metadata.description?.synopsis) score += 0.1;
-    if (metadata.release?.platforms) {
-        const hasDates = metadata.release.platforms.some(p => p.release_date && !p.release_date.includes('0000-00-00'));
-        if (hasDates) score += 0.05;
-    }
-    if (metadata.sourceUrls && metadata.sourceUrls.length > 0) score += 0.05;
-
-    return Math.min(score, 0.95);
-}
-
-/**
- * Get agent configuration
- */
-function getConfig() {
-    return {
-        temperature: CONFIG.temperature,
-        maxTokens: CONFIG.maxTokens,
-        endpoint: CONFIG.endpoint,
-        model: CONFIG.model,
-        mcpEnabled: CONFIG.mcpEnabled,
-        mcpTimeout: CONFIG.mcpTimeout,
-        maxIterations: CONFIG.maxIterations,
-        maxSearches: CONFIG.maxSearches,
-        maxFollowUpSearches: CONFIG.maxFollowUpSearches,
-        enableMultiPass: CONFIG.enableMultiPass
-    };
-}
-
-/**
- * Perform web searches (kept for backward compatibility)
- */
-async function performSearches(gameTitle) {
-    log('Performing web searches via MCP', 'info', { title: gameTitle });
-
-    const searchTool = new SearchTool();
-    const queriesExecuted = [];
-
-    const searchQueries = [
-        gameTitle,
-        `${gameTitle} video game`,
-        `${gameTitle} platforms versions`,
-        `${gameTitle} patch mod uncensored`,
-        `${gameTitle} remaster remake`
-    ];
-
-    for (const query of searchQueries) {
-        try {
-            await searchTool.call(query);
-            queriesExecuted.push(`OpenSearchMCP: ${query}`);
-        } catch (error) {
-            log('Search failed for "' + query + '": ' + error.message, 'warn');
-        }
-    }
-
-    return {
-        queries: queriesExecuted,
-        results: searchTool.getAllResults(),
-        sourceUrls: searchTool.getSourceUrls()
-    };
 }
 
 /**
@@ -913,7 +746,7 @@ function parseJSONResponse(response) {
         const data = JSON.parse(jsonStr);
         return { success: true, data, raw: response };
     } catch (error) {
-        log('Failed to parse JSON: ' + error.message, 'error');
+        log(`JSON parse failed: ${error.message}`, 'error');
         return { success: false, error: error.message, raw: response };
     }
 }
@@ -921,10 +754,6 @@ function parseJSONResponse(response) {
 module.exports = {
     researchGameWithAgent,
     parseJSONResponse,
-    performSearches,
-    calculateConfidence,
-    getConfig,
-    loadJsonPrompt,
     CONFIG,
     ResearchAgent,
     SearchTool

@@ -4,15 +4,10 @@
     "title": "Final Fantasy VII",
     "cover_url": "/images/final-fantasy-vii.jpg",
     "genres": [
-      "JRPG",
-      "RPG"
+      "JRPG"
     ],
     "themes": [
-      "Environmentalism",
-      "Corporate Greed",
-      "Identity",
-      "Mortality",
-      "Cyberpunk"
+      "Classic"
     ],
     "modes": {
       "single_player": true,
@@ -21,24 +16,21 @@
       "co_op": false
     },
     "difficulty_rating": 3,
-    "reception_score": 9.8,
-    "review": "Widely regarded as one of the greatest and most influential video games ever made, revolutionizing the RPG genre and popularizing JRPGs in Western markets.",
     "developers": [
       "Square"
     ],
     "publishers": [
       "Square",
-      "Sony Computer Entertainment",
-      "Eidos Interactive",
       "Square Enix"
-    ]
+    ],
+    "reception_score": 9.1,
+    "review": "A landmark title that set new industry standards for cinematic storytelling and 3D graphics, praised for its emotional depth and memorable characters."
   },
   "release": {
     "alternative_names": [
-      "Final Fantasy 7",
-      "FFVII",
       "FF7",
-      "ファイナルファンタジーVII"
+      "Final Fantasy 7",
+      "Saisho no Final Fantasy VII"
     ],
     "platforms": [
       {
@@ -54,72 +46,82 @@
       {
         "name": "PlayStation",
         "region": "Europe",
-        "release_date": "1997-11-17"
+        "release_date": "1997-11-28"
       },
       {
-        "name": "Microsoft Windows",
+        "name": "PlayStation",
+        "region": "Australia",
+        "release_date": "1997-12-04"
+      },
+      {
+        "name": "Windows",
+        "region": "Japan",
+        "release_date": "1998-10-31"
+      },
+      {
+        "name": "Windows",
         "region": "North America",
-        "release_date": "1998-06-25"
+        "release_date": "1998-11-01"
       },
       {
-        "name": "Microsoft Windows",
+        "name": "Windows",
         "region": "Europe",
-        "release_date": "1998-06-25"
+        "release_date": "1999-03-05"
       },
       {
         "name": "PlayStation 3",
         "region": "World",
-        "release_date": "2012-04-03"
+        "release_date": "2009-12-07"
       },
       {
         "name": "PlayStation Portable",
         "region": "Japan",
-        "release_date": "2009-09-17"
+        "release_date": "2009-12-03"
       },
       {
         "name": "PlayStation Portable",
         "region": "North America",
-        "release_date": "2009-11-10"
+        "release_date": "2010-02-02"
       },
       {
         "name": "PlayStation Portable",
         "region": "Europe",
-        "release_date": "2010-01-15"
+        "release_date": "2010-03-05"
       },
       {
         "name": "PlayStation Vita",
-        "region": "World",
-        "release_date": "2013-02-07"
+        "region": "Japan",
+        "release_date": "2012-12-27"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "North America",
+        "release_date": "2013-01-25"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Europe",
+        "release_date": "2013-02-08"
       },
       {
         "name": "iOS",
         "region": "World",
-        "release_date": "2015-08-19"
-      },
-      {
-        "name": "Android",
-        "region": "World",
-        "release_date": "2015-09-17"
+        "release_date": "2015-07-24"
       },
       {
         "name": "PlayStation 4",
         "region": "World",
-        "release_date": "2015-12-05"
-      },
-      {
-        "name": "Xbox One",
-        "region": "World",
-        "release_date": "2019-03-26"
+        "release_date": "2015-09-14"
       },
       {
         "name": "Nintendo Switch",
         "region": "World",
-        "release_date": "2019-03-26"
+        "release_date": "2019-09-30"
       },
       {
-        "name": "Microsoft Windows (Steam)",
+        "name": "Xbox One",
         "region": "World",
-        "release_date": "2025-02-17"
+        "release_date": "2019-09-30"
       }
     ]
   },
@@ -138,24 +140,24 @@
   },
   "similar_games": [
     {
+      "title": "Final Fantasy VI",
+      "url_slug": "/games/final-fantasy-vi"
+    },
+    {
       "title": "Chrono Trigger",
       "url_slug": "/games/chrono-trigger"
     },
     {
-      "title": "Final Fantasy VI",
-      "url_slug": "/games/final-fantasy-vi"
+      "title": "Dragon Quest VIII",
+      "url_slug": "/games/dragon-quest-viii"
     },
     {
       "title": "Xenogears",
       "url_slug": "/games/xenogears"
     },
     {
-      "title": "Kingdom Hearts",
-      "url_slug": "/games/kingdom-hearts"
-    },
-    {
-      "title": "Dragon Quest VIII",
-      "url_slug": "/games/dragon-quest-viii"
+      "title": "Final Fantasy X",
+      "url_slug": "/games/final-fantasy-x"
     }
   ],
   "play_today": [
@@ -225,11 +227,10 @@
     },
     {
       "platform": "PlayStation 4",
-      "details": "Official PSN remaster with updated controls, trophy support, and improved loading times. Most accessible console version with no setup required. Includes quality-of-life improvements like quick travel.",
+      "details": "The best console option for the original game. It features a 1080p upscaling, widescreen support, and includes the Yuffie chapter. While it lacks the extensive modding capabilities of the PC version, it offers a convenient, plug-and-play experience with cloud saves and modern controller support without needing external hardware.",
       "available_in_english": {
         "official_localization": true
       },
-      "retro_achievements_support": true,
       "recommended_patches": [],
       "emulators": []
     },
@@ -300,31 +301,91 @@
           ]
         }
       ]
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience for the original 1997 game. The Steam version includes the PC-exclusive Yuffie chapter and offers native widescreen support. Crucially, it has the most robust modding community, allowing for HD texture packs, UI overhauls, and QoL fixes like auto-save and difficulty adjustments that are impossible on console ports.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "7th Heaven Mod Manager",
+          "description": "Essential mod manager for the PC version that enables installation of HD texture packs, widescreen support, and quality-of-life fixes like auto-save and difficulty adjustments.",
+          "url": "https://7thheaven.rocks/"
+        },
+        {
+          "name": "FF7 HD Project",
+          "description": "Comprehensive mod for the PC version adding high-definition textures, widescreen support, and various quality-of-life improvements to the original 1997 game.",
+          "url": "https://www.moddb.com/mods/ff7-hd-project"
+        },
+        {
+          "name": "FF7 UI Overhaul",
+          "description": "Modernizes the user interface for the PC version to improve readability and add native controller support.",
+          "url": "https://www.moddb.com/mods/ff7-ui-overhaul"
+        },
+        {
+          "name": "Final Fantasy VII Retranslation Mod",
+          "description": "A fan translation patch for the PC version that restores content cut from the English localization and improves dialogue accuracy to match the Japanese original.",
+          "url": "https://www.romhacking.net/hacks/5632/"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation",
+      "details": "The authentic 1997 experience for purists. While it lacks widescreen support and modern QoL features, it offers the original soundtrack and visual style exactly as intended. Best played via emulation or original hardware for historical accuracy, though the lack of save states on original hardware can be a drawback for modern players.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Final Fantasy VII Bugfix and Uncensoring Patch",
+          "description": "A patch for the original PlayStation ROM that fixes the 'Lucca's Gun' glitch, restores censored content like the Lizard Man sprite, and corrects translation errors.",
+          "url": "https://www.romhacking.net/hacks/5632/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Internal resolution: 4x for sharp 1080p output",
+            "Enable NTSC mode for correct timing and color accuracy",
+            "Use texture filtering (bilinear) for smoother sprite scaling",
+            "Configure save states to auto-save every 5 minutes"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Internal resolution: 2x-3x for balanced performance and clarity",
+            "Enable NTSC mode for correct timing and color accuracy",
+            "Use texture filtering (bilinear) for smoother sprite scaling",
+            "Configure touch controls overlay with custom button mapping"
+          ]
+        }
+      ]
     }
   ],
   "description": {
-    "synopsis": "Cloud Strife, a former member of Shinra's elite SOLDIER unit turned mercenary, joins the eco-terrorist group AVALANCHE to fight against the megacorporation Shinra Electric Power Company, which is draining the planet's life essence known as Mako Energy. As the story unfolds, Cloud must confront the truth about his fractured identity while pursuing the enigmatic Sephiroth, who seeks to summon the meteorfall and merge with the planet's healing Lifestream.",
+    "synopsis": "In a world where the mega-conglomerate Shinra Inc. drains the planet's life energy (Mako) for power, a group of eco-terrorists known as Avalanche attempts to stop them. The story follows Cloud Strife, a mercenary with a troubled past, who joins the resistance and uncovers a conspiracy involving an ancient weapon and a mysterious girl named Aerith. As the group fights against Shinra and the alien entity Sephiroth, they must confront the truth about Cloud's identity and the fate of the planet.",
     "key_features": [
-      "Innovative Materia system for deep character customization and magic/ability progression",
-      "Active Time Battle (ATB) system combining turn-based strategy with real-time elements",
-      "Cinematic storytelling using groundbreaking full-motion video (FMV) cutscenes",
-      "Iconic character designs by Yoshitaka Amano and legendary soundtrack by Nobuo Uematsu",
-      "Branching story elements with multiple side quests and optional content",
-      "Limit Breaks - powerful character-specific ultimate attacks",
-      "Massive open world to explore including the iconic Midgar city",
-      "14 main characters with unique abilities and development arcs"
+      "Active Time Battle (ATB) system with real-time movement",
+      "Limit Breaks: Character-specific ultimate attacks",
+      "Materia system for customizable magic and abilities",
+      "Summons: Giant creatures with cinematic attack animations",
+      "Non-linear world map exploration with fast travel",
+      "Cinematic pre-rendered backgrounds and cutscenes",
+      "Party-based character progression and equipment management",
+      "Complex narrative with multiple character arcs",
+      "Boss battles with unique mechanics and phases",
+      "Mini-games including chocobo racing and fishing"
     ],
-    "long_description": "Final Fantasy VII, developed by Square and directed by Hironobu Sakaguchi with production by Hiroyuki Ito, revolutionized the role-playing game genre upon its 1997 release for the Sony PlayStation. The game represented a technical leap forward with its use of 3D character models on pre-rendered backgrounds and extensive full-motion video, setting new standards for cinematic storytelling in video games. The narrative, penned by Kazushige Nojima, explores mature themes of environmentalism, corporate greed, identity, and mortality, resonating with audiences worldwide. The Materia system allowed unprecedented character customization, while the Active Time Battle system refined Square's signature combat mechanics. Composed by Nobuo Uematsu, the soundtrack featuring tracks like 'One-Wing Angel' and 'Aerith's Theme' became instantly iconic. With over 15.3 million copies sold worldwide as of 2025, Final Fantasy VII not only became one of the best-selling games of all time but also credited with boosting PlayStation adoption in North America and popularizing Japanese RPGs globally. The game's success spawned the 'Compilation of Final Fantasy VII' multimedia franchise and a new HD remake trilogy beginning with Final Fantasy VII Remake (2020).",
+    "long_description": "No description available.",
     "legacy_and_impact": [
-      "Pioneered the use of full-motion video for narrative storytelling in RPGs, influencing countless subsequent titles",
-      "Popularized the Materia customization system, adopted by numerous future RPGs",
-      "Credited with establishing the PlayStation as a major gaming platform in North America",
-      "Became one of the best-selling games of all time with over 15 million copies sold worldwide",
-      "Sparked the Compilation of Final Fantasy VII multimedia franchise including spin-offs, films, and prequels",
-      "Launched the Final Fantasy VII Remake trilogy, reimagining the classic for modern audiences",
-      "Influenced narrative structures in mainstream gaming through its mature themes and character development",
-      "The track 'Aerith's Theme' and 'One-Winged Angel' remain among the most recognizable video game music compositions ever created",
-      "Set the standard for environmental storytelling and world-building in RPGs"
+      "Final Fantasy VII is widely considered one of the greatest video games of all time, credited with popularizing the JRPG genre in the West. Its release on the PlayStation demonstrated the console's power and shifted the industry focus toward CD-based media and cinematic storytelling."
     ]
   }
 }

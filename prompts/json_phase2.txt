@@ -1,0 +1,162 @@
+# PHASE 2: VERSION EVALUATION
+# Determine the BEST versions to play today
+
+I am creating a website about the BEST VERSION available for each game. You will evaluate ALL platform versions and determine which ones are best to play today.
+
+=============================================================================
+YOUR TASK
+=============================================================================
+
+Analyze all available versions/platforms of the game and:
+1. Compare features, quality, and convenience across all versions
+2. Find community consensus on "best way to play"
+3. Consider ratings, reviews, and expert opinions
+4. Rank the top 3 platforms from BEST to WORST
+
+=============================================================================
+EVALUATION CRITERIA (in order of importance)
+=============================================================================
+
+1. COMMUNITY CONSENSUS:
+   - What do Reddit users recommend?
+   - What do reviewers say is "definitive"?
+   - Digital Foundry analysis (if available)
+
+2. LANGUAGE ACCESSIBILITY:
+   - Game MUST be playable by English speakers who don't know other languages
+   - Official English localization preferred
+   - Fan translations acceptable if no official exists
+
+3. FEATURES & CONTENT:
+   - Extra dungeons, characters, story content
+   - Quality-of-life improvements
+   - Remaster/remake enhancements
+
+4. CONVENIENCE:
+   - Save states, achievements, cloud saves
+   - Modern controls, controller support
+   - Easy to obtain/play (Steam, eShop, etc.)
+
+5. GRAPHICS:
+   - Resolution support (1080p, 4K)
+   - Aspect ratio (widescreen support)
+   - Visual enhancements (HD textures, upscaling)
+
+6. PERFORMANCE:
+   - Frame rate stability (60 FPS preferred)
+   - Load times
+   - Bug fixes
+
+7. ACCURACY:
+   - Faithfulness to original experience
+   - Soundtrack quality (original vs rearranged)
+
+=============================================================================
+RESEARCH REQUIREMENTS
+=============================================================================
+
+SEARCH AT LEAST 10 TIMES covering:
+- "best version to play" comparisons
+- "vs" comparisons between versions (e.g., "DS vs SNES")
+- Reddit threads: r/[game subreddit] "best version", "which version"
+- Digital Foundry technical analysis
+- Metacritic/OpenCritic: Compare scores across platforms
+- Hardcore Gaming 101: Version comparisons
+- Steam community: Discussions, reviews by platform
+
+=============================================================================
+INPUT DATA (from Phase 1)
+=============================================================================
+
+Use the following platform list as your starting point:
+${PLATFORMS_JSON}
+
+=============================================================================
+OUTPUT FORMAT - MUST MATCH game_metadata_schema.json
+=============================================================================
+
+Generate a JSON object with this EXACT structure:
+
+{
+  "play_today": [
+    {
+      "platform": "Platform name (exact name from Phase 1)",
+      "details": "200-400 character description explaining WHY this is a good way to play. Be specific about features, convenience, graphics, drawbacks.",
+      "available_in_english": {
+        "official_localization": true|false,
+        "fan_translation": true|false
+      },
+      "retro_achievements_support": true|false,
+      "recommended_patches": [
+        {
+          "name": "Patch/Mod name",
+          "description": "What this patch does",
+          "version": "1.0" | null,
+          "url": "https://example.com/patch" | null
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows|Android|Linux|macOS",
+          "recommended_emulator": "Emulator name",
+          "optimal_settings": ["Setting 1", "Setting 2"]
+        }
+      ]
+    }
+  ],
+  "evaluation_notes": {
+    "consensus": "Community consensus on best version",
+    "ratings_comparison": "Metacritic/OpenCritic scores comparison",
+    "key_differences": "Major differences between versions",
+    "expert_recommendations": "What critics/experts recommend"
+  }
+}
+
+=============================================================================
+RANKING REQUIREMENTS
+=============================================================================
+
+1. Include EXACTLY 3 platforms in play_today array
+2. Rank from BEST (position 0) to WORST (position 2)
+3. Each entry MUST have:
+   - platform: Exact name from Phase 1
+   - details: 200-400 characters (specific, not generic)
+   - available_in_english with official_localization boolean
+   - retro_achievements_support: true if platform supports Retro Achievements
+   - recommended_patches: Array of patch objects (name, description, optional version/url)
+   - emulators: Array of emulator objects (platform, recommended_emulator, optimal_settings)
+
+4. BAD details example:
+   "Original release, best way to play"
+
+5. GOOD details example:
+   "The definitive modern experience via Steam. Features native widescreen support, controller remapping, and cloud saves. Includes the DS version's enhanced content like the new dungeon and voice acting. Mod support allows UI overhauls and QoL improvements not present in original."
+
+6. PATCHES:
+   - Only include recommended patches with positive community feedback
+   - Order from MOST to LEAST important based on:
+     * Community ratings/downloads
+     * Active maintenance
+     * Impact on gameplay
+   - Exclude broken, abandoned, or negatively-reviewed patches
+   - Each patch needs: name (required), description (required), version (optional), url (optional)
+
+7. EMULATORS:
+   - Include emulator recommendations for retro platforms
+   - Platform must be: Windows, Android, Linux, or macOS
+   - Include optimal settings (at least 1 setting)
+
+=============================================================================
+VALIDATION BEFORE OUTPUT
+=============================================================================
+
+Verify:
+[ ] Exactly 3 platforms ranked in play_today
+[ ] Each has 200+ character details (specific, not generic)
+[ ] available_in_english has official_localization boolean
+[ ] recommended_patches only include positive community patches
+[ ] Patches ordered by importance (most important first)
+[ ] emulators have valid platform values (Windows/Android/Linux/macOS)
+[ ] Valid JSON - no markdown, no explanation text
+
+Output ONLY valid JSON.

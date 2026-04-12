@@ -1,188 +1,208 @@
 {
-    "basic_info": {
-        "url_slug": "/games/terranigma",
-        "title": "Terranigma",
-        "cover_url": "/images/terranigma.jpg",
-        "genres": [
-            "Action RPG"
-        ],
-        "themes": [
-            "Creation Mythology",
-            "Hero's Journey",
-            "Good vs Evil",
-            "World Building"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 9.3,
-        "review": "Terranigma is widely considered one of the greatest SNES action RPGs ever made, featuring an epic story about world creation and destruction, innovative combat mechanics, and a memorable soundtrack by Yuzo Koshiro.",
-        "developers": [
-            "Quintet"
-        ],
-        "publishers": [
-            "Enix",
-            "Nintendo"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Tenchi S\u014dz\u014d (\u5929\u5730\u5275\u9020)",
-            "Terranigma PAL",
-            "Terranigma NTSC"
-        ],
-        "platforms": [
-            {
-                "name": "Super Nintendo Entertainment System (SNES)",
-                "region": "Japan",
-                "release_date": "1995-10-20"
-            },
-            {
-                "name": "Super Nintendo Entertainment System (SNES)",
-                "region": "Europe",
-                "release_date": "1996-12-19"
-            },
-            {
-                "name": "Super Nintendo Entertainment System (SNES)",
-                "region": "Australia",
-                "release_date": "1996-12-19"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Soul Blazer Trilogy",
-        "part_number": 3,
-        "previous_game": {
-            "title": "Landstalker: The Challenging Quest of Leo and Lina",
-            "url_slug": "/games/landstalker"
-        },
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "Soul Blazer",
-            "url_slug": "/games/soul-blazer"
-        },
-        {
-            "title": "Land of Illusion",
-            "url_slug": "/games/land-of-illusion"
-        },
-        {
-            "title": "Secret of Mana",
-            "url_slug": "/games/secret-of-mana"
-        },
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "EarthBound",
-            "url_slug": "/games/earthbound"
-        }
+  "basic_info": {
+    "url_slug": "/games/terranigma",
+    "title": "Terranigma",
+    "cover_url": "/images/terranigma.jpg",
+    "genres": [
+      "Action RPG",
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Super Nintendo Entertainment System (SNES)",
-            "details": "The definitive version with the Redux patch applied. This provides bug fixes, NTSC conversion for 60fps, improved text formatting, retranslation closer to Japanese original, and rebalanced gameplay.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Terranigma Redux",
-                    "description": "Comprehensive improvement patch with bug fixes, NTSC conversion (60fps), 8x16 font for better text spacing, retranslation closer to Japanese original, and rebalanced weapons/armor/bosses. Version 1.5.1 is the latest stable release.",
-                    "url": "https://www.romhacking.net/hacks/8939/"
-                },
-                {
-                    "name": "Bloody Mary Improvement",
-                    "description": "Boss balance fix that reduces Bloody Mary's defense from 59 to 47, making the fight fairer at levels 19-22 instead of requiring level 25+. Part of the Redux hack but available separately.",
-                    "url": "https://romhackplaza.org/romhacks/terranigma-bloody-mary-improvement-snes"
-                },
-                {
-                    "name": "NTSC Patch",
-                    "description": "Converts PAL version to NTSC format for 60fps gameplay. Essential for optimal performance on emulators.",
-                    "url": "https://www.romhacking.net/hacks/541/"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Snes9x or bsnes",
-                    "optimal_settings": [
-                        "Enable NTSC mode (60fps)",
-                        "High accuracy mode for best compatibility",
-                        "Low-latency audio settings"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Snes9x EX+",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "High accuracy mode"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Super Nintendo Entertainment System (SNES)",
-            "details": "Original PAL version without patches. Runs at 50fps with original English localization.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "NTSC Patch",
-                    "description": "Converts PAL version to NTSC format for 60fps gameplay.",
-                    "url": "https://www.romhacking.net/hacks/541/"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Snes9x",
-                    "optimal_settings": [
-                        "Standard accuracy mode",
-                        "Default audio settings"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Snes9x EX+",
-                    "optimal_settings": [
-                        "Auto-save enabled",
-                        "Custom overlay for touchscreen controls"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "A young hero named Ark must restore the world after it has been destroyed by a cosmic catastrophe. He travels through time and space, gathering power to rebuild civilization while battling forces of darkness.",
-        "key_features": [
-            "Innovative action RPG combat system with multiple attack types",
-            "Epic story about creation and destruction of worlds",
-            "Memorable soundtrack composed by Yuzo Koshiro (ActRaiser, Phantasy Star IV)",
-            "Multiple endings based on player choices",
-            "Seamless world exploration without loading screens"
-        ],
-        "long_description": "Terranigma, known as Tenchi S\u014dz\u014d in Japan, is a 1995 action RPG developed by Quintet and published by Enix. It was never officially released in North America due to Enix closing their US branch before localization could be completed. The game follows Ark, a young hero who must restore the world after it's been destroyed by a cosmic catastrophe. Players travel through time and space, gathering power to rebuild civilization while battling forces of darkness. The combat system is innovative for its time, featuring multiple attack types including physical attacks, magic spells, and special abilities. Yuzo Koshiro's soundtrack is widely regarded as one of the best on the SNES. Despite never receiving an official North American release, Terranigma has gained a cult following and is considered by many to be one of the greatest action RPGs ever made.",
-        "legacy_and_impact": [
-            "Considered one of the greatest SNES games of all time",
-            "Part of Quintet's acclaimed Soul Blazer trilogy",
-            "Influential combat system that inspired later action RPGs",
-            "Yuzo Koshiro's soundtrack remains highly regarded decades after release",
-            "Cult classic with dedicated fan community creating improvement patches"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Quintet"
+    ],
+    "publishers": [
+      "Enix",
+      "Nintendo"
+    ],
+    "reception_score": 8.8,
+    "review": "A masterpiece of the SNES library, praised for its beautiful art style, deep gameplay, and unique world-restoration mechanics that set it apart from contemporaries."
+  },
+  "release": {
+    "alternative_names": [
+      "Tenchi Sōzō",
+      "The Creation of Heaven and Earth"
+    ],
+    "platforms": [
+      {
+        "name": "SNES",
+        "region": "Japan",
+        "release_date": "1995-10-20"
+      },
+      {
+        "name": "SNES",
+        "region": "Europe",
+        "release_date": "1996-12-19"
+      },
+      {
+        "name": "SNES",
+        "region": "Australia",
+        "release_date": "1996-12-19"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Quintet Action RPG Trilogy",
+    "part_number": 3,
+    "previous_game": {
+      "title": "Landstalker: The Challenging Quest of Leo and Lina",
+      "url_slug": "/games/landstalker"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Illusion of Gaia",
+      "url_slug": "/games/illusion-of-gaia"
+    },
+    {
+      "title": "Soul Blazer",
+      "url_slug": "/games/soul-blazer"
+    },
+    {
+      "title": "Secret of Mana",
+      "url_slug": "/games/secret-of-mana"
+    },
+    {
+      "title": "Chrono Trigger",
+      "url_slug": "/games/chrono-trigger"
+    },
+    {
+      "title": "Zelda II: The Adventure of Link",
+      "url_slug": "/games/zelda-ii-the-adventure-of-link"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Super Nintendo Entertainment System (SNES)",
+      "details": "Original PAL version without patches. Runs at 50fps with original English localization.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "NTSC Patch",
+          "description": "Converts PAL version to NTSC format for 60fps gameplay.",
+          "url": "https://www.romhacking.net/hacks/541/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Snes9x",
+          "optimal_settings": [
+            "Standard accuracy mode",
+            "Default audio settings"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Snes9x EX+",
+          "optimal_settings": [
+            "Auto-save enabled",
+            "Custom overlay for touchscreen controls"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "SNES",
+      "details": "The Australian SNES version is identical to the European release in terms of content and language barriers. It is ranked third as it offers no unique advantages over the European or Japanese versions. Like the other SNES variants, it provides the best technical performance and visual fidelity of the game's history. However, without the Redux patch, it remains inaccessible to English speakers, making it a lower priority than the Japanese version which has a more established patching community.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Terranigma Redux + Retranslation",
+          "description": "A comprehensive patch for the SNES version that provides a complete English retranslation, fixes text spacing issues, rebalances weapons and bosses, and includes NTSC conversion for 60fps gameplay.",
+          "url": "https://romhackplaza.org/romhacks/terranigma-redux-retranslation-snes/"
+        },
+        {
+          "name": "Terranigma NTSC Patch",
+          "description": "Converts the PAL SNES version of Terranigma to NTSC format, allowing the game to run at 60fps instead of 50fps for smoother gameplay and correct timing.",
+          "url": "https://www.romhacking.net/hacks/541"
+        },
+        {
+          "name": "Terranigma Practise",
+          "description": "Adds a practice menu to the SNES version allowing players to set their level, items, and location for speedrunning or testing specific game mechanics.",
+          "url": "https://www.romhacking.net/hacks/4936/"
+        },
+        {
+          "name": "Terranigma Blue: Ark's Apology",
+          "description": "A quality-of-life patch for the SNES version that corrects Ark's sprite to match original concept art and nerfs the HP of the boss Bloody Mary for better balance.",
+          "url": "https://vimm.net/romhacking/hacks/6585"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "bsnes",
+          "optimal_settings": [
+            "Enable High-Precision Audio for accurate sound reproduction",
+            "Set Internal Resolution to 4x or 8x for sharp scaling",
+            "Enable CRT Filter (CRT-Royale) for authentic scanline look",
+            "Set Video Mode to 'NTSC' for correct color timing"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Snes9x",
+          "optimal_settings": [
+            "Enable SuperFX chip emulation if applicable",
+            "Set Resolution to 2x or 3x internal scaling",
+            "Use CRT shader for authentic look",
+            "Enable Audio Interpolation for smoother sound"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Snes9x EX+",
+          "optimal_settings": [
+            "Enable touch controls with custom layout",
+            "Set audio interpolation to high",
+            "Enable save state support for quick loading",
+            "Set screen scaling to 'Stretch' or 'Fit' based on device"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "RetroArch",
+          "optimal_settings": [
+            "Core: Snes9x or bsnes-mercury",
+            "Shader: CRT-Royale or Scanlines",
+            "Save state support enabled",
+            "Input remapping for controller support"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In a world where the land has turned to mud and life has ceased, a young boy named Ark awakens with the power to restore the earth. Guided by a mysterious voice, Ark travels across the globe, reviving dead creatures and healing the land to uncover the truth behind the world's destruction and the ancient civilization that once thrived there.",
+    "key_features": [
+      "Real-time action combat with jumping and weapon switching",
+      "World restoration mechanic where players revive dead land and creatures",
+      "Non-linear exploration with interconnected world map",
+      "Puzzle-solving elements integrated into dungeon navigation",
+      "Character customization through equipment and stat growth",
+      "Unique 'Mud' mechanic allowing transformation of terrain",
+      "Seamless transition between overworld and dungeons",
+      "Rich narrative delivered through environmental storytelling"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Terranigma is widely regarded as one of the greatest Action RPGs of the 16-bit era, often cited alongside Chrono Trigger and Secret of Mana. Its innovative world-restoration gameplay and stunning visuals have cemented its status as a cult classic, influencing modern indie titles focused on environmental themes."
+    ]
+  }
 }

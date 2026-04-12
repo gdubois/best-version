@@ -1,173 +1,282 @@
 {
-    "basic_info": {
-        "url_slug": "/games/lunar-2-eternal-blue-complete",
-        "title": "Lunar 2: Eternal Blue Complete",
-        "cover_url": "/images/lunar-2-eternal-blue-complete.jpg",
-        "genres": [
-            "RPG",
-            "JRPG"
-        ],
-        "themes": [
-            "Fantasy",
-            "Adventure",
-            "Romance",
-            "Magic"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 9.0,
-        "review": "Lunar 2: Eternal Blue Complete is a classic JRPG celebrated for its deep storytelling, memorable characters, and rich world-building. It remains one of the most beloved games in the series.",
-        "developers": [
-            "Game Arts"
-        ],
-        "publishers": [
-            "Working Designs",
-            "Sega"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Lunar 2: Eternal Blue",
-            "\u30eb\u30ca\uff12\uff1a\u30a8\u30bf\u30fc\u30ca\u30eb\u30d6\u30eb\u30fc",
-            "Lunar II: Eternal Blue Complete"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation",
-                "region": "Japan",
-                "release_date": "1998-06-30"
-            },
-            {
-                "name": "PlayStation",
-                "region": "North America",
-                "release_date": "1998-10-30"
-            },
-            {
-                "name": "PSP",
-                "region": "Japan",
-                "release_date": "2009-11-17"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Lunar",
-        "part_number": 2,
-        "previous_game": {
-            "title": "Lunar: The Silver Star",
-            "url_slug": "/games/lunar-the-silver-star"
-        },
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "Final Fantasy VI",
-            "url_slug": "/games/final-fantasy-vi"
-        },
-        {
-            "title": "Tales of Destiny",
-            "url_slug": "/games/tales-of-destiny"
-        },
-        {
-            "title": "Secret of Mana",
-            "url_slug": "/games/secret-of-mana"
-        },
-        {
-            "title": "Kingdom Hearts II",
-            "url_slug": "/games/kingdom-hearts-ii"
-        }
+  "basic_info": {
+    "url_slug": "/games/lunar-2-eternal-blue-complete",
+    "title": "Lunar 2: Eternal Blue Complete",
+    "cover_url": "/images/lunar-2-eternal-blue-complete.jpg",
+    "genres": [
+      "JRPG"
     ],
-    "play_today": [
-        {
-            "platform": "PlayStation (PS1)",
-            "details": "Definitive version with enhanced graphics, voice acting, and full English localization by Working Designs. Best experienced through modern emulators for optimal performance.",
-            "available_in_english": {
-                "official_localization": true
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "Eternal Blue Complete Improved Translation Patch",
-                    "description": "Community-driven patch that refines Working Designs' localization for greater accuracy and consistency",
-                    "url": "https://www.romhacking.net/translations/1967/"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "RetroArch (Beetle PSX core)",
-                    "optimal_settings": [
-                        "Enable VSync",
-                        "Set texture filtering to 'Bilinear'",
-                        "Use 2x internal resolution for sharper visuals"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "RetroArch (Beetle PSX core)",
-                    "optimal_settings": [
-                        "Configure touchscreen buttons for combat actions",
-                        "Enable 'Auto-save on pause'",
-                        "Use 'Luminance' shader for better color accuracy"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PSP",
-            "details": "Official PSP port with downscaled visuals and missing soundtrack enhancements. Still playable but inferior to PS1 version due to resolution limitations.",
-            "available_in_english": {
-                "official_localization": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "PPSSPP",
-                    "optimal_settings": [
-                        "Use 'Auto' scaling mode for best aspect ratio",
-                        "Enable 'Anisotropic Filtering'",
-                        "Set internal resolution to 2x"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Mobile (iOS/Android)",
-            "details": "Official mobile ports with simplified controls and compressed graphics. Not recommended due to inferior presentation compared to console versions.",
-            "available_in_english": {
-                "official_localization": true
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "A young protagonist joins a quest across time and space to prevent the destruction of the world, uncovering ancient secrets while forging bonds with companions.",
-        "key_features": [
-            "Turn-based combat system with strategic positioning",
-            "Dual-wielding weapon mechanics for unique combos",
-            "Multiple character paths based on narrative choices",
-            "Dynamic weather effects influencing battle outcomes",
-            "Richly detailed story with emotional depth and memorable characters"
-        ],
-        "long_description": "Developed by Game Arts, Lunar 2: Eternal Blue Complete is the second entry in the beloved Lunar series. Originally released for Sega CD as 'Lunar 2: Eternal Blue', it was later remade for PlayStation as 'Eternal Blue Complete' with enhanced graphics, voice acting, and additional content. The game features a captivating story blending romance, adventure, and epic fantasy elements alongside an innovative battle system that emphasizes strategy through positioning and combo attacks. Its soundtrack by Hitoshi Sakimoto is widely regarded as one of the best in JRPG history. Despite its late 90s release, it remains influential for its emotional storytelling and has inspired countless titles in the genre.",
-        "legacy_and_impact": [
-            "Pioneered branching narrative structures in JRPGs",
-            "Influenced later series such as Tales of Destiny and Final Fantasy XII",
-            "Consistently ranked among top 100 JRPGs by gaming publications",
-            "Set standards for character-driven storytelling in role-playing games"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Game Arts",
+      "Studio Alex"
+    ],
+    "publishers": [
+      "Kadokawa Shoten",
+      "Working Designs",
+      "GungHo Online Entertainment"
+    ],
+    "reception_score": 8.6,
+    "review": "A masterpiece of the JRPG genre, praised for its emotional storytelling, beautiful art style, and memorable soundtrack."
+  },
+  "release": {
+    "alternative_names": [
+      "Lunar 2: Eternal Blue",
+      "LUNAR 2: Eternal Blue Complete",
+      "Lunar: Eternal Blue (Remake)"
+    ],
+    "platforms": [
+      {
+        "name": "Sega Saturn",
+        "region": "Japan",
+        "release_date": "1998-04-23"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Japan",
+        "release_date": "1998-09-24"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "2000-12-15"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Europe",
+        "release_date": "2001-03-02"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2025-05-27"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2025-05-27"
+      },
+      {
+        "name": "PlayStation 5",
+        "region": "World",
+        "release_date": "2025-05-27"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2025-05-27"
+      },
+      {
+        "name": "Xbox Series X/S",
+        "region": "World",
+        "release_date": "2025-05-27"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2025-05-27"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Lunar",
+    "part_number": 2,
+    "previous_game": {
+      "title": "Lunar: The Silver Star",
+      "url_slug": "/games/lunar-the-silver-star"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Chrono Trigger",
+      "url_slug": "/games/chrono-trigger"
+    },
+    {
+      "title": "Final Fantasy VI",
+      "url_slug": "/games/final-fantasy-vi"
+    },
+    {
+      "title": "Suikoden II",
+      "url_slug": "/games/suikoden-ii"
+    },
+    {
+      "title": "Tales of Phantasia",
+      "url_slug": "/games/tales-of-phantasia"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "PlayStation (PS1)",
+      "details": "Definitive version with enhanced graphics, voice acting, and full English localization by Working Designs. Best experienced through modern emulators for optimal performance.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "Eternal Blue Complete Improved Translation Patch",
+          "description": "Community-driven patch that refines Working Designs' localization for greater accuracy and consistency",
+          "url": "https://www.romhacking.net/translations/1967/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "RetroArch (Beetle PSX core)",
+          "optimal_settings": [
+            "Enable VSync",
+            "Set texture filtering to 'Bilinear'",
+            "Use 2x internal resolution for sharper visuals"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "RetroArch (Beetle PSX core)",
+          "optimal_settings": [
+            "Configure touchscreen buttons for combat actions",
+            "Enable 'Auto-save on pause'",
+            "Use 'Luminance' shader for better color accuracy"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PSP",
+      "details": "Official PSP port with downscaled visuals and missing soundtrack enhancements. Still playable but inferior to PS1 version due to resolution limitations.",
+      "available_in_english": {
+        "official_localization": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PPSSPP",
+          "optimal_settings": [
+            "Use 'Auto' scaling mode for best aspect ratio",
+            "Enable 'Anisotropic Filtering'",
+            "Set internal resolution to 2x"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Mobile (iOS/Android)",
+      "details": "Official mobile ports with simplified controls and compressed graphics. Not recommended due to inferior presentation compared to console versions.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 5",
+      "details": "The definitive modern experience via the Lunar Remastered Collection. Features native 4K resolution, 60 FPS performance, and widescreen support. Includes the complete PS1 version with all extra dungeons, voice acting, and the improved English localization by Working Designs. Offers cloud saves, modern controller support, and seamless accessibility for new players.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation",
+      "details": "The classic definitive version for purists. This North American release features the complete Working Designs localization, which is widely considered the gold standard for Lunar games. It includes the extra dungeon and voice acting absent in the Sega CD original. While it lacks modern QoL features like save states or widescreen, it offers the authentic 1998 experience with the best soundtrack and cutscenes of the original generation.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Lunar 2: Eternal Blue Unworked Patch",
+          "description": "A patch for the PlayStation version that restores the original Japanese game balance and content while retaining the Working Designs English translation, undoing significant changes made to the original release.",
+          "url": "https://www.romhacking.net/hacks/5614/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Internal Resolution: 2x or 4x for sharp retro scaling",
+            "Enable NTSC mode for correct color timing",
+            "Texture Filtering: Bilinear for smooth sprite scaling",
+            "Audio: Enable SPU-X for enhanced sound quality"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Touch Controls: Enable on-screen overlay with custom layout",
+            "Save States: Enable auto-save every 5 minutes",
+            "Internal Resolution: 2x for performance on mobile devices",
+            "Frame Limit: 60 FPS for smooth gameplay"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Sega Saturn",
+      "details": "The original Japanese release offers the most faithful experience to the Sega CD source material, featuring superior background animations and the original soundtrack arrangement. However, it lacks an official English localization, requiring a fan translation patch to be playable for English speakers. It is recommended only for collectors or those seeking the specific Saturn aesthetic, as the PS1 version is generally preferred for content and accessibility.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Lunar 2: Eternal Blue Saturn English Translation Patch",
+          "description": "A fan translation patch for the Japanese Sega Saturn version that enables full English text and menus, fixing script dialog bugs, text display issues for items, and miscellaneous typos.",
+          "url": "https://segaxtreme.net/resources/lunar-2-eternal-blue-saturn-english-patch.137/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Yabause",
+          "optimal_settings": [
+            "BIOS: Load official Sega Saturn BIOS files (saturn_bios.zip)",
+            "Video: Enable high-resolution rendering (2x or 4x internal resolution)",
+            "Audio: Set sound chip to 'YMF292' for accurate audio emulation",
+            "Input: Configure controller mapping for modern gamepads"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "Yabause",
+          "optimal_settings": [
+            "BIOS: Ensure Saturn BIOS files are in the correct directory",
+            "Video: Use OpenGL renderer for better performance",
+            "Audio: Enable sound emulation with low latency settings",
+            "Save States: Enable periodic auto-save for stability"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "Set a thousand years after the events of the first game, Lunar 2: Eternal Blue Complete follows Hiro, a young man who discovers he is the reincarnation of the legendary hero Alex. As the world faces a new threat from the Moon, Hiro must gather a party of companions to prevent the destruction of the planet and uncover the truth about his own identity and the cycle of rebirth.",
+    "key_features": [
+      "Full-motion video (FMV) cutscenes with high production value",
+      "Turn-based battle system with elemental magic and status effects",
+      "Comprehensive character customization via equipment and skill trees",
+      "Multiple endings determined by player choices and relationship levels",
+      "Extensive world map exploration with hidden dungeons and secrets",
+      "Orchestral soundtrack composed by Motoi Sakuraba",
+      "Anime-style character designs by Akira Toriyama",
+      "Remastered versions feature updated graphics and quality-of-life improvements"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Lunar 2: Eternal Blue Complete is widely regarded as one of the greatest JRPGs of the 32-bit era, setting a high bar for emotional storytelling in the genre. Its influence is evident in the 'Complete' series of remakes and its enduring popularity among retro gaming enthusiasts."
+    ]
+  }
 }

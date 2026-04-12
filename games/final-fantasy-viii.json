@@ -1,208 +1,283 @@
 {
-    "basic_info": {
-        "url_slug": "/games/final-fantasy-viii",
-        "title": "Final Fantasy VIII",
-        "cover_url": "/images/final-fantasy-viii.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Sci-Fi Fantasy",
-            "Coming of Age",
-            "War and Politics",
-            "Love and Loss",
-            "Identity and Memory"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 8.6,
-        "review": "Final Fantasy VIII is a divisive but ambitious entry in the series, praised for its mature themes and innovative Junction system, though criticized by some for its complex mechanics and mixed reception compared to VII and IX.",
-        "developers": [
-            "Square"
-        ],
-        "publishers": [
-            "Square",
-            "Electronic Arts",
-            "Square Enix"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcVIII (Fainaru Fantaj\u012b VIII)",
-            "Final Fantasy VIII Remastered"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation",
-                "region": "Japan",
-                "release_date": "1999-02-11"
-            },
-            {
-                "name": "PlayStation",
-                "region": "North America",
-                "release_date": "1999-09-09"
-            },
-            {
-                "name": "PlayStation",
-                "region": "Europe",
-                "release_date": "1999-10-27"
-            },
-            {
-                "name": "Windows (PC)",
-                "region": "North America",
-                "release_date": "2000-01-25"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2013-12-05"
-            },
-            {
-                "name": "PlayStation 4",
-                "region": "Worldwide",
-                "release_date": "2019-09-03"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Worldwide",
-                "release_date": "2019-09-03"
-            },
-            {
-                "name": "Xbox One",
-                "region": "Worldwide",
-                "release_date": "2019-09-03"
-            },
-            {
-                "name": "iOS",
-                "region": "Worldwide",
-                "release_date": "2021-03-25"
-            },
-            {
-                "name": "Android",
-                "region": "Worldwide",
-                "release_date": "2021-03-25"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Final Fantasy",
-        "part_number": 8,
-        "previous_game": {
-            "title": "Final Fantasy VII",
-            "url_slug": "/games/final-fantasy-vii"
-        },
-        "next_game": {
-            "title": "Final Fantasy IX",
-            "url_slug": "/games/final-fantasy-ix"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Xenogears",
-            "url_slug": "/games/xenogears"
-        },
-        {
-            "title": "Legend of Dragoon",
-            "url_slug": "/games/legend-of-dragoon"
-        },
-        {
-            "title": "Skies of Arcadia",
-            "url_slug": "/games/skies-of-arcadia"
-        },
-        {
-            "title": "Suikoden II",
-            "url_slug": "/games/suikoden-ii"
-        },
-        {
-            "title": "Chrono Cross",
-            "url_slug": "/games/chrono-cross"
-        }
+  "basic_info": {
+    "url_slug": "/games/final-fantasy-viii",
+    "title": "Final Fantasy VIII",
+    "cover_url": "/images/final-fantasy-viii.jpg",
+    "genres": [
+      "JRPG"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (Steam)",
-            "details": "The definitive version with HD texture mods, widescreen fixes, and extensive community support. The Remastered edition offers updated character models, restored music from PS1, and quality-of-life features including auto-save and game boosters.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "HD Texture Mods",
-                    "description": "Community-created high-resolution texture packs that upscale character models, environments, and backgrounds while preserving the original art style.",
-                    "url": "https://www.gamepressure.com/download/final-fantasy-viii-ff8-high-res-patch-mod/z012f16"
-                },
-                {
-                    "name": "Widescreen Fix",
-                    "description": "Removes the 4:3 pillarboxing and enables true widescreen support for modern displays.",
-                    "url": "https://steamcommunity.com/app/1026680/discussions/0/592884947430152746"
-                },
-                {
-                    "name": "Junction VIII Mod Manager",
-                    "description": "Utility for managing the Junction system and other gameplay modifications.",
-                    "url": "https://forums.qhimm.com/index.php?topic=28009.0"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 4",
-            "details": "Best console version with trophy support and backward compatibility on PS5. Offers the Remastered experience without modding capabilities but includes auto-save and game boosters.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo Switch",
-            "details": "Portable hybrid experience with the Remastered version. Good for on-the-go play but lacks modding support and has longer load times compared to PC.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "iOS",
-            "details": "Best portable version of the Remaster for mobile play. Features virtual gamepad and cloud save support with good performance on modern devices.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "A young mercenary named Squall Leonhart joins the elite SeeD organization to fight against a powerful sorceress and her army. As he uncovers a conspiracy involving time compression, ancient civilizations, and his own mysterious past, Squall must confront the ultimate threat of Ultimecia while learning about friendship, love, and sacrifice.",
-        "key_features": [
-            "Innovative Junction system for character customization",
-            "Guardian Force (GF) summoning mechanics",
-            "Real-time combat with ATB gauge",
-            "Triple Triad card minigame",
-            "Multiple endings based on player choices",
-            "Blend of sci-fi and fantasy elements"
-        ],
-        "long_description": "Final Fantasy VIII, developed by Square and released in 1999, is the eighth main installment in the legendary Final Fantasy series. Directed by Hironobu Sakaguchi with scenario written by Kazushige Nojima, it introduced revolutionary gameplay mechanics including the Junction system that allowed players to equip magic spells as stat-boosting abilities. The game features Squall Leonhart, a SeeD mercenary who must stop sorceress Edea and later Ultimecia from manipulating time itself. With music composed by Nobuo Uematsu (including the iconic 'Eyes On Me' performed by Chisa Yoko), it sold over 9 million copies across all platforms. The Remastered version released in 2019 features updated character models, restored PS1 audio, and quality-of-life improvements including auto-save and game boosters.",
-        "legacy_and_impact": [
-            "Introduced the innovative Junction system that influenced later RPGs",
-            "First Final Fantasy with fully voiced FMVs",
-            "Featured the first mainline FF theme song in English ('Eyes On Me')",
-            "Pioneered real-time combat with ATB mechanics",
-            "Remastered version brought modern quality-of-life features to classic gameplay"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square"
+    ],
+    "publishers": [
+      "Square",
+      "Square Enix"
+    ],
+    "reception_score": 8.7,
+    "review": "Final Fantasy VIII is a masterpiece of storytelling and character development, featuring a unique junction system that revolutionized RPG mechanics."
+  },
+  "release": {
+    "alternative_names": [
+      "FFVIII",
+      "FF8",
+      "Final Fantasy 8"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation",
+        "region": "Japan",
+        "release_date": "1999-02-11"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "1999-09-07"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Europe",
+        "release_date": "1999-10-29"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Australia",
+        "release_date": "1999-10-29"
+      },
+      {
+        "name": "Windows",
+        "region": "Japan",
+        "release_date": "2002-07-25"
+      },
+      {
+        "name": "Windows",
+        "region": "North America",
+        "release_date": "2002-10-29"
+      },
+      {
+        "name": "Windows",
+        "region": "Europe",
+        "release_date": "2002-11-29"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Japan",
+        "release_date": "2009-06-25"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "North America",
+        "release_date": "2009-09-01"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Europe",
+        "release_date": "2009-09-04"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "World",
+        "release_date": "2010-01-28"
+      },
+      {
+        "name": "iOS",
+        "region": "World",
+        "release_date": "2013-05-15"
+      },
+      {
+        "name": "Android",
+        "region": "World",
+        "release_date": "2013-05-15"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Final Fantasy",
+    "part_number": 8,
+    "previous_game": {
+      "title": "Final Fantasy VII",
+      "url_slug": "/games/final-fantasy-vii"
+    },
+    "next_game": {
+      "title": "Final Fantasy IX",
+      "url_slug": "/games/final-fantasy-ix"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy VII",
+      "url_slug": "/games/final-fantasy-vii"
+    },
+    {
+      "title": "Final Fantasy IX",
+      "url_slug": "/games/final-fantasy-ix"
+    },
+    {
+      "title": "Chrono Trigger",
+      "url_slug": "/games/chrono-trigger"
+    },
+    {
+      "title": "Xenogears",
+      "url_slug": "/games/xenogears"
+    },
+    {
+      "title": "Tales of Symphonia",
+      "url_slug": "/games/tales-of-symphonia"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (Steam)",
+      "details": "The definitive version with HD texture mods, widescreen fixes, and extensive community support. The Remastered edition offers updated character models, restored music from PS1, and quality-of-life features including auto-save and game boosters.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "HD Texture Mods",
+          "description": "Community-created high-resolution texture packs that upscale character models, environments, and backgrounds while preserving the original art style.",
+          "url": "https://www.gamepressure.com/download/final-fantasy-viii-ff8-high-res-patch-mod/z012f16"
+        },
+        {
+          "name": "Widescreen Fix",
+          "description": "Removes the 4:3 pillarboxing and enables true widescreen support for modern displays.",
+          "url": "https://steamcommunity.com/app/1026680/discussions/0/592884947430152746"
+        },
+        {
+          "name": "Junction VIII Mod Manager",
+          "description": "Utility for managing the Junction system and other gameplay modifications.",
+          "url": "https://forums.qhimm.com/index.php?topic=28009.0"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 4",
+      "details": "Best console version with trophy support and backward compatibility on PS5. Offers the Remastered experience without modding capabilities but includes auto-save and game boosters.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "Portable hybrid experience with the Remastered version. Good for on-the-go play but lacks modding support and has longer load times compared to PC.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "iOS",
+      "details": "Best portable version of the Remaster for mobile play. Features virtual gamepad and cloud save support with good performance on modern devices.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The original PC port (2002) offers a unique experience with higher resolution textures than PSX but lacks the remaster's QoL. It is the only version with the original PC-exclusive content and soundtrack arrangement. Requires significant configuration to run on modern Windows systems.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "FF8_demaster",
+          "description": "Core mod for Final Fantasy VIII Remastered that fixes developer bugs, restores original mechanics, and enables widescreen support for the Steam version.",
+          "url": "https://github.com/MaKiPL/FF8_demaster/releases"
+        },
+        {
+          "name": "FF8 High Res Patch",
+          "description": "Replaces all graphics in the original 2002 PC version with HD textures and fixes resolution issues for modern displays.",
+          "url": "https://www.moddb.com/games/final-fantasy-viii/addons/ff8-high-res-patch-original-pc-game"
+        },
+        {
+          "name": "FF8 Official Patches Collection",
+          "description": "Essential collection of official patches for the original 2002 PC release, including Nvidia GeForce fixes and Yamaha audio driver corrections.",
+          "url": "https://community.pcgamingwiki.com/files/file/598-ffviii-official-patcheszip/"
+        },
+        {
+          "name": "FF8 Launcher Fix",
+          "description": "Fixes custom resolution support and 8-bit paletted texture errors in the original PC version launcher.",
+          "url": "https://forums.qhimm.com/index.php?topic=10217.50"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation",
+      "details": "The original definitive experience for purists. Features the authentic 4:3 aspect ratio, original soundtrack, and unaltered gameplay mechanics. Best played via emulation with CRT shaders to replicate the intended visual style of the late 90s. No modern QoL features.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "FF8 PC Patch (for PSX emulation)",
+          "description": "Fixes known bugs and improves compatibility when running the original PSX ISO on modern emulators.",
+          "url": "https://www.romhacking.net/hacks/ff8/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Enable CRT Shader for authentic late-90s visual style",
+            "Set Internal Resolution to 2x or 4x for clean retro look",
+            "Enable NTSC mode for correct timing and color accuracy",
+            "Configure save states to auto-save every 5 minutes"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Enable CRT Shader for authentic visual style",
+            "Configure Touch Controls Overlay for optimal gameplay",
+            "Set Internal Resolution to 2x for performance balance",
+            "Enable Bilinear Filtering for smoother sprite scaling"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "Final Fantasy VIII follows Squall Leonhart, a mercenary student at Balamb Garden, as he and his friends are drawn into a conflict between the SeeD organization and the sorceress Edea. As they uncover the truth about their world, they must confront the forces of destiny and the power of love to save their world from destruction.",
+    "key_features": [
+      "Guardian Force (GF) summon system with ability learning",
+      "Junction system allowing stat customization via magic",
+      "Real-time battle system with character movement",
+      "Dynamic camera angles and cinematic cutscenes",
+      "Complex character relationships and romance mechanics",
+      "Open-world exploration with seamless transitions",
+      "Collectible items and side quests affecting story",
+      "High-quality pre-rendered backgrounds and 3D character models"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Final Fantasy VIII is widely regarded as one of the greatest RPGs of all time, praised for its emotional narrative, innovative junction system, and stunning visuals. It influenced countless future RPGs and remains a beloved entry in the Final Fantasy series."
+    ]
+  }
 }

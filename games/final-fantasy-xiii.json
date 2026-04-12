@@ -1,237 +1,253 @@
 {
-    "basic_info": {
-        "url_slug": "/games/final-fantasy-xiii",
-        "title": "Final Fantasy XIII",
-        "cover_url": "/images/final-fantasy-xiii.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Destiny and Fate",
-            "Dystopian Society",
-            "Hero's Journey",
-            "Sacrifice",
-            "Technology vs Nature"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 7.8,
-        "review": "Final Fantasy XIII is a visually stunning RPG with innovative combat systems and memorable characters, though criticized for its linearity. The Xbox One X enhanced version offers the best experience with improved resolution and performance.",
-        "developers": [
-            "Square Enix"
-        ],
-        "publishers": [
-            "Square Enix"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcXIII (Final Fantasy J\u016bsan)",
-            "Final Fantasy XIII International",
-            "Final Fantasy XIII-2",
-            "Lightning Returns: Final Fantasy XIII"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation 3",
-                "region": "Japan",
-                "release_date": "2009-12-17"
-            },
-            {
-                "name": "PlayStation 3",
-                "region": "North America",
-                "release_date": "2010-03-09"
-            },
-            {
-                "name": "PlayStation 3",
-                "region": "Europe",
-                "release_date": "2010-03-12"
-            },
-            {
-                "name": "Xbox 360",
-                "region": "North America",
-                "release_date": "2010-03-09"
-            },
-            {
-                "name": "Xbox 360",
-                "region": "Europe",
-                "release_date": "2010-03-12"
-            },
-            {
-                "name": "Xbox 360",
-                "region": "Japan",
-                "release_date": "2010-12-16"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2014-10-09"
-            },
-            {
-                "name": "iOS",
-                "region": "Japan",
-                "release_date": "2015-04-10"
-            },
-            {
-                "name": "Android",
-                "region": "Japan",
-                "release_date": "2015-04-10"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Fabula Nova Crystallis: Final Fantasy XIII",
-        "part_number": 1,
-        "previous_game": null,
-        "next_game": {
-            "title": "Final Fantasy XIII-2",
-            "url_slug": "/games/final-fantasy-xiii-2"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "Final Fantasy X",
-            "url_slug": "/games/final-fantasy-x"
-        },
-        {
-            "title": "Final Fantasy VII",
-            "url_slug": "/games/final-fantasy-vii"
-        },
-        {
-            "title": "Dragon Quest IX",
-            "url_slug": "/games/dragon-quest-ix"
-        },
-        {
-            "title": "Persona 4 Golden",
-            "url_slug": "/games/persona-4-golden"
-        }
+  "basic_info": {
+    "url_slug": "/games/final-fantasy-xiii",
+    "title": "Final Fantasy XIII",
+    "cover_url": "/images/final-fantasy-xiii.jpg",
+    "genres": [
+      "Action RPG",
+      "JRPG"
     ],
-    "play_today": [
-        {
-            "platform": "Xbox One X / Xbox Series X|S (Backward Compatible)",
-            "details": "The enhanced version with 4K resolution, improved cutscenes, and better performance. Considered the definitive version by Digital Foundry.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "Windows (Steam) with FF13Fix Mod",
-            "details": "PC version enhanced with the community-made FF13Fix mod that uncaps framerate, fixes stuttering, and improves performance. Best for customization.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "FF13Fix Mod",
-                    "description": "Performance and bug fixes mod that removes frame pacer, uncaps framerate (optional), enables triple buffering, and fixes various technical issues.",
-                    "url": "https://github.com/rebtd7/FF13Fix/releases"
-                },
-                {
-                    "name": "Ultrawide Fix",
-                    "description": "Removes pillarboxing on ultrawide monitors for 21:9 displays.",
-                    "url": "https://community.pcgamingwiki.com/files/file/2017-final-fantasy-xiii-ultrawide-fix"
-                },
-                {
-                    "name": "Console Button Prompts",
-                    "description": "Replaces PC keyboard prompts with console-style button icons for better visual clarity.",
-                    "url": "https://community.pcgamingwiki.com/files/file/2878-ffxiii-console-button-prompts-v20"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 3",
-            "details": "Original release with native resolution. Good version but inferior to Xbox One X enhanced in terms of visual quality and performance.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "RPCS3",
-                    "optimal_settings": [
-                        "Enable SPU Loop Detection",
-                        "Set SPU Frequency to Auto",
-                        "Use Vulkan renderer for best compatibility"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "RPCS3 (experimental)",
-                    "optimal_settings": [
-                        "Lower resolution scaling",
-                        "Enable asynchronous shader compilation"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Xbox 360",
-            "details": "Original Xbox 360 release. Digital Foundry noted this version had inferior graphics compared to PS3, but the Xbox One X enhanced version fixes these issues.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Xenia",
-                    "optimal_settings": [
-                        "Enable shader cache",
-                        "Use Vulkan or DirectX 12 backend"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "iOS / Android (Cloud)",
-            "details": "Cloud streaming version released in Japan. Requires stable internet connection and offers the least control over performance settings.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Lightning and her companions are thrust into a war between the sky city of Cocoon and the ground world of Pulse, fighting against fate and powerful creatures called fal'Cie.",
-        "key_features": [
-            "Innovative Command Synergy Battle (CSB) combat system",
-            "Crystarium character progression system",
-            "Multiple endings based on player choices",
-            "Stunning visuals with pre-rendered backgrounds",
-            "Memorable soundtrack by Masashi Hamauzu"
-        ],
-        "long_description": "Final Fantasy XIII, developed and published by Square Enix, represents a bold departure from traditional Final Fantasy formulas. Directed by Motomu Toriyama and featuring character designs by Yoshitaka Amano and Akira Toriyama, the game introduced the Command Synergy Battle system that combined traditional turn-based combat with real-time action elements. The Crystarium system allowed for deep character customization through a node-based progression tree. Despite criticism for its linearity compared to previous entries, the game was praised for its visual fidelity, emotional storytelling, and innovative mechanics. The Xbox One X enhanced version, released in 2018 as part of Microsoft's backward compatibility program, significantly improved upon the original by offering 4K resolution, better frame rates, and enhanced cutscene quality.",
-        "legacy_and_impact": [
-            "Introduced the Command Synergy Battle system to Final Fantasy series",
-            "Pioneered the Crystarium character progression system",
-            "Part of the Fabula Nova Crystallis sub-series",
-            "Influenced subsequent Final Fantasy games with its combat mechanics",
-            "Xbox One X enhanced version set new standards for backward compatibility improvements"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "reception_score": 8.2,
+    "review": "Final Fantasy XIII delivers a visually stunning and emotionally resonant experience, though its linear design and restrictive gameplay loop may alienate fans of open-world exploration. The combat system is a significant evolution, offering fast-paced, strategic depth."
+  },
+  "release": {
+    "alternative_names": [
+      "FFXIII",
+      "Final Fantasy 13",
+      "ファイナルファンタジーXIII"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation 3",
+        "region": "Japan",
+        "release_date": "2009-12-17"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "North America",
+        "release_date": "2010-03-09"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Europe",
+        "release_date": "2010-03-12"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Australia",
+        "release_date": "2010-03-11"
+      },
+      {
+        "name": "Xbox 360",
+        "region": "North America",
+        "release_date": "2010-03-09"
+      },
+      {
+        "name": "Xbox 360",
+        "region": "Europe",
+        "release_date": "2010-03-12"
+      },
+      {
+        "name": "Xbox 360",
+        "region": "Australia",
+        "release_date": "2010-03-11"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2013-06-25"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Final Fantasy",
+    "part_number": 13,
+    "next_game": {
+      "title": "Final Fantasy XIII-2",
+      "url_slug": "/games/final-fantasy-xiii-2"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy XV",
+      "url_slug": "/games/final-fantasy-xv"
+    },
+    {
+      "title": "Kingdom Hearts III",
+      "url_slug": "/games/kingdom-hearts-iii"
+    },
+    {
+      "title": "Tales of Symphonia",
+      "url_slug": "/games/tales-of-symphonia"
+    },
+    {
+      "title": "Dragon Age: Origins",
+      "url_slug": "/games/dragon-age-origins"
+    },
+    {
+      "title": "Final Fantasy Type-0",
+      "url_slug": "/games/final-fantasy-type-0"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Xbox One X / Xbox Series X|S (Backward Compatible)",
+      "details": "The enhanced version with 4K resolution, improved cutscenes, and better performance. Considered the definitive version by Digital Foundry.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows (Steam) with FF13Fix Mod",
+      "details": "PC version enhanced with the community-made FF13Fix mod that uncaps framerate, fixes stuttering, and improves performance. Best for customization.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "FF13Fix Mod",
+          "description": "Performance and bug fixes mod that removes frame pacer, uncaps framerate (optional), enables triple buffering, and fixes various technical issues.",
+          "url": "https://github.com/rebtd7/FF13Fix/releases"
+        },
+        {
+          "name": "Ultrawide Fix",
+          "description": "Removes pillarboxing on ultrawide monitors for 21:9 displays.",
+          "url": "https://community.pcgamingwiki.com/files/file/2017-final-fantasy-xiii-ultrawide-fix"
+        },
+        {
+          "name": "Console Button Prompts",
+          "description": "Replaces PC keyboard prompts with console-style button icons for better visual clarity.",
+          "url": "https://community.pcgamingwiki.com/files/file/2878-ffxiii-console-button-prompts-v20"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 3",
+      "details": "The original console release with the lowest cutscene quality among the three major platforms. While it runs at a stable 30 FPS, it suffers from longer load times and lacks the graphical fidelity of the Xbox 360 version. It is only recommended for players who already own a PS3 and cannot access PC or Xbox.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "RPCS3",
+          "optimal_settings": [
+            "Enable Vulkan renderer for best performance and compatibility",
+            "Set Resolution Scale to 2x or 3x for sharp 1080p/4K visuals",
+            "Enable Async Shader Compilation to reduce stuttering during gameplay",
+            "Set CPU Thread Mode to MTU (Multi-Threaded Ultra) for smoother frame pacing"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "RPCS3",
+          "optimal_settings": [
+            "Enable Vulkan renderer for optimal Linux performance",
+            "Set Resolution Scale to 2x for balanced performance and clarity",
+            "Enable Async Shader Compilation to prevent frame drops",
+            "Configure GPU Driver Settings to use 'Force' for shader compilation"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Xbox 360",
+      "details": "The best console option via Xbox One/Series X backwards compatibility. This version runs at a stable 30 FPS with significantly better cutscene quality than the PS3 version. It offers a plug-and-play experience with modern controller support and achievements, though it lacks the modding capabilities of the PC version.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "iOS / Android (Cloud)",
+      "details": "Cloud streaming version released in Japan. Requires stable internet connection and offers the least control over performance settings.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience via Steam. While the base game has performance issues, the community has created essential patches like FF13Fix that unlock 60 FPS, fix stuttering, and enable widescreen support. It offers the most convenient access with cloud saves, controller support, and the ability to mod the UI for better quality of life.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "FF13Fix",
+          "description": "Essential performance patch for the Windows version that fixes stuttering, unlocks 60 FPS, enables widescreen support, and resolves various graphical glitches.",
+          "url": "https://github.com/rebtd7/FF13Fix"
+        },
+        {
+          "name": "The FF XIII HD Project",
+          "description": "Comprehensive graphical overhaul for the Windows version that improves texture quality, character models, and environmental details for HD and UHD resolutions.",
+          "url": "https://www.nexusmods.com/finalfantasy13/mods/17"
+        },
+        {
+          "name": "FF XIII HD Full Motion Video - English",
+          "description": "Replaces the low-resolution pre-rendered cutscenes in the Windows version with AI-upscaled 4K resolution FMVs for a modern visual experience.",
+          "url": "https://www.nexusmods.com/finalfantasy13/mods/24"
+        },
+        {
+          "name": "Final Fantasy XIII Ultrawide Fix",
+          "description": "Removes pillarboxing (black bars) on ultrawide monitors for the Windows version, allowing the game to render correctly across the full screen width.",
+          "url": "https://community.pcgamingwiki.com/files/file/2017-final-fantasy-xiii-ultrawide-fix/"
+        },
+        {
+          "name": "HD Models Plus",
+          "description": "High-quality model swap mod for the Windows version that automatically updates character and enemy models to higher fidelity versions.",
+          "url": "https://www.nexusmods.com/finalfantasy13/mods/11"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "In the world of Gran Pulse, humanity is threatened by the fal'Cie, god-like beings who control the fate of the world. Lightning, a soldier in the Cocoon military, is transformed into a l'Cie, a cursed individual tasked with a crystal mission to save the world or face crystallization. She must unite with other l'Cie to challenge the fal'Cie and uncover the truth behind the prophecy that threatens to destroy both Cocoon and Gran Pulse.",
+    "key_features": [
+      "Command Synergy Battle (CSB) system with real-time action",
+      "Dynamic role-switching mechanics (Command Synergy)",
+      "Linear narrative structure with cinematic presentation",
+      "High-fidelity graphics utilizing the Crystal Tools engine",
+      "Character customization via Crystarium progression system",
+      "Seamless transition between exploration and combat",
+      "Orchestral soundtrack by Masashi Hamauzu",
+      "Focus on a fixed party of three characters",
+      "Environmental puzzles integrated into the linear path",
+      "Photo mode and high-resolution textures on PC version"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Final Fantasy XIII marked a bold departure for the series, embracing a linear, cinematic approach that polarized the fanbase but showcased the technical prowess of the PlayStation 3. It established the Fabula Nova Crystallis mythology and paved the way for the Lightning Saga, influencing the narrative direction of subsequent entries."
+    ]
+  }
 }

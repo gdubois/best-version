@@ -362,14 +362,41 @@ app.get('/api/performance/cache-stats', async (req, res) => {
     res.status(404).send('Not found');
   });
 
-  // Fallback handler for /images/* - serve default image if specific image not found
-  // This catches requests that didn't match express.static and serves the default
-  // Express 5 uses /* syntax for catch-all routes
+  // Fallback handler for /images/* - serve from images directory or default if not found
+  // This catches requests that didn't match express.static and tries to serve from:
+  // 1. The images/ directory (where game creator saves new images)
+  // 2. The default image as fallback
   app.use(/\/images\/.*/, (req, res, next) => {
     const requestedImage = req.path; // e.g., /images/some-game.jpg
+    const imageFileName = requestedImage.split('/').pop(); // e.g., some-game.jpg
+
+    // Try to find the image in the images/ directory first
+    const imagesDirPath = path.join(__dirname, '../images');
+    const imagesDirImage = path.join(imagesDirPath, imageFileName);
+
+    // Also check public/images for existing images
+    const publicImagePath = path.join(__dirname, '../public/images', imageFileName);
+
+    // Default image path
     const defaultImagePath = path.join(__dirname, '../public/images/default-image.jpg');
 
-    // Check if default image exists
+    // Try to serve the requested image from images/ directory
+    if (fs.existsSync(imagesDirImage)) {
+      res.setHeader('Content-Type', 'image/jpeg');
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      res.sendFile(imagesDirImage);
+      return;
+    }
+
+    // Try public/images directory
+    if (fs.existsSync(publicImagePath)) {
+      res.setHeader('Content-Type', 'image/jpeg');
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      res.sendFile(publicImagePath);
+      return;
+    }
+
+    // Fall back to default image
     if (fs.existsSync(defaultImagePath)) {
       res.setHeader('Content-Type', 'image/jpeg');
       res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');

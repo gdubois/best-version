@@ -1,216 +1,334 @@
 {
-    "basic_info": {
-        "url_slug": "/games/final-fantasy-ix",
-        "title": "Final Fantasy IX",
-        "cover_url": "/images/final-fantasy-ix.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Fantasy",
-            "Medieval Setting",
-            "Coming of Age",
-            "Identity and Self-Discovery",
-            "War and Peace",
-            "Mortality and Death"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 9.4,
-        "review": "Final Fantasy IX is widely considered one of the greatest RPGs ever made, praised for its nostalgic return to fantasy roots, memorable characters, and emotional storytelling. It holds a 94/100 Metacritic score on PS1, making it the highest-scoring Final Fantasy game.",
-        "developers": [
-            "Square"
-        ],
-        "publishers": [
-            "Square",
-            "Electronic Arts",
-            "Square Enix"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcIX (Fainaru Fantaj\u012b Nain)",
-            "Final Fantasy IX Remastered"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation",
-                "region": "Japan",
-                "release_date": "2000-07-07"
-            },
-            {
-                "name": "PlayStation",
-                "region": "North America",
-                "release_date": "2000-11-14"
-            },
-            {
-                "name": "PlayStation",
-                "region": "Europe",
-                "release_date": "2001-02-16"
-            },
-            {
-                "name": "iOS",
-                "region": "Worldwide",
-                "release_date": "2016-02-10"
-            },
-            {
-                "name": "Android",
-                "region": "Worldwide",
-                "release_date": "2016-02-10"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2016-04-14"
-            },
-            {
-                "name": "PlayStation 4",
-                "region": "Worldwide",
-                "release_date": "2017-09-19"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "North America",
-                "release_date": "2019-02-13"
-            },
-            {
-                "name": "Xbox One",
-                "region": "Worldwide",
-                "release_date": "2019-02-13"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Final Fantasy",
-        "part_number": 9,
-        "previous_game": {
-            "title": "Final Fantasy VIII",
-            "url_slug": "/games/final-fantasy-viii"
-        },
-        "next_game": {
-            "title": "Final Fantasy X",
-            "url_slug": "/games/final-fantasy-x"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Final Fantasy VI",
-            "url_slug": "/games/final-fantasy-vi"
-        },
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "Dragon Quest VII",
-            "url_slug": "/games/dragon-quest-vii"
-        },
-        {
-            "title": "Suikoden II",
-            "url_slug": "/games/suikoden-ii"
-        },
-        {
-            "title": "Xenogears",
-            "url_slug": "/games/xenogears"
-        }
+  "basic_info": {
+    "url_slug": "/games/final-fantasy-ix",
+    "title": "Final Fantasy IX",
+    "cover_url": "/images/final-fantasy-ix.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (Steam)",
-            "details": "The definitive version with Moguri Mod and Memoria Engine providing 60+ FPS, HD background upscaling, widescreen support, analog stick restoration, and extensive quality-of-life improvements. This is widely considered the best way to play FF9 in 2024-2025.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Moguri Mod 9.0",
-                    "description": "AI-powered upscale of pre-rendered backgrounds to HD resolution with manual redrawn edges. Includes widescreen support and PSX font restoration.",
-                    "url": "https://github.com/Albeoris/Memoria/releases"
-                },
-                {
-                    "name": "Memoria Engine Patch",
-                    "description": "Game engine rewrite enabling 60+ FPS, widescreen resolutions, analog stick support, and extensive quality-of-life features including save/load anywhere.",
-                    "url": "https://github.com/Albeoris/Memoria"
-                },
-                {
-                    "name": "FFIX Field Patch",
-                    "description": "Background upscaling mod (included in Moguri Mod) that improves resolution of pre-rendered backgrounds through manual tweaking.",
-                    "url": "https://www.pcgamingwiki.com/wiki/Final_Fantasy_IX"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 4",
-            "details": "Best console version with trophy support and backward compatibility on PS5. Offers the remaster experience without modding capabilities.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo Switch",
-            "details": "Portable hybrid experience but suffers from longest load times and subpar visuals compared to other platforms. Only version with physical release in North America.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "iOS",
-            "details": "Best portable version of the remaster if not using PC. Works well on modern iOS devices with good load times and controller support.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation Vita",
-            "details": "Original PS1 experience with faster load times than Switch. No quality-of-life features but authentic retro experience.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "A young thief named Zidane Tribal kidnaps Princess Garnet as part of a ploy by the neighboring nation of Lindblum. He joins her and a growing cast of characters on a quest to stop Queen Brahne of Alexandria from using magical creatures called eidolons to wage war across the world.",
-        "key_features": [
-            "Active Time Battle combat system with Trance mode",
-            "Character-specific abilities and equipment systems",
-            "Mognet postal service minigame",
-            "Tetra Master card game",
-            "Multiple endings based on player choices",
-            "Nostalgic medieval fantasy setting returning to series roots"
-        ],
-        "long_description": "Final Fantasy IX, developed by Square and released in 2000, is the ninth main installment in the legendary Final Fantasy series. Directed by Hiroyuki Ito with scenario written by Hironobu Sakaguchi, it was designed as a retrospective celebration of the franchise's earlier entries, returning to medieval fantasy after the sci-fi settings of VII and VIII. The game features 8 playable characters including Zidane Tribal, Garnet Til Alexandros XVII (Dagger), Vivi Ornitier, Steiner, Freya Crescent, Quina Quen, Eiko Carol, and Amarant Coral. With music composed entirely by Nobuo Uematsu\u2014the last FF game he scored solo\u2014it sold over 5.5 million copies on PS1 alone and has reached 8.9 million across all platforms by March 2025. The remaster released in 2016 added quality-of-life features, but the community-created Moguri Mod and Memoria Engine patch have transformed it into the definitive version with 60+ FPS, HD backgrounds, widescreen support, and extensive customization options.",
-        "legacy_and_impact": [
-            "Highest-scoring Final Fantasy game on Metacritic (94/100)",
-            "Voted 4th best Final Fantasy game in NHK poll",
-            "Last mainline FF game composed solely by Nobuo Uematsu",
-            "Introduced Active Time Events for character development",
-            "Influenced countless JRPGs with its nostalgic approach",
-            "Remaster and modding community created the most enhanced version of a classic RPG"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square"
+    ],
+    "publishers": [
+      "Square",
+      "Square Enix"
+    ],
+    "reception_score": 8.9,
+    "review": "A masterpiece of storytelling and character development that returns to the series' fantasy roots with stunning visuals and an unforgettable soundtrack."
+  },
+  "release": {
+    "alternative_names": [
+      "FFIX",
+      "Final Fantasy 9",
+      "FF9"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation",
+        "region": "Japan",
+        "release_date": "2000-07-07"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "2000-11-07"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Europe",
+        "release_date": "2000-11-24"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Australia",
+        "release_date": "2000-11-24"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "iOS",
+        "region": "World",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "Android",
+        "region": "World",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Japan",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "North America",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Europe",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Japan",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "North America",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Europe",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "World",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2016-02-02"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2019-06-25"
+      },
+      {
+        "name": "PlayStation 5",
+        "region": "World",
+        "release_date": "2024-06-25"
+      },
+      {
+        "name": "Xbox Series X/S",
+        "region": "World",
+        "release_date": "2024-06-25"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Final Fantasy",
+    "part_number": 9,
+    "previous_game": {
+      "title": "Final Fantasy VIII",
+      "url_slug": "/games/final-fantasy-viii"
+    },
+    "next_game": {
+      "title": "Final Fantasy X",
+      "url_slug": "/games/final-fantasy-x"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy Tactics",
+      "url_slug": "/games/final-fantasy-tactics"
+    },
+    {
+      "title": "Chrono Trigger",
+      "url_slug": "/games/chrono-trigger"
+    },
+    {
+      "title": "Dragon Quest VIII",
+      "url_slug": "/games/dragon-quest-viii"
+    },
+    {
+      "title": "Xenoblade Chronicles",
+      "url_slug": "/games/xenoblade-chronicles"
+    },
+    {
+      "title": "The Legend of Dragoon",
+      "url_slug": "/games/the-legend-of-dragoon"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (Steam)",
+      "details": "The definitive version with Moguri Mod and Memoria Engine providing 60+ FPS, HD background upscaling, widescreen support, analog stick restoration, and extensive quality-of-life improvements. This is widely considered the best way to play FF9 in 2024-2025.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Moguri Mod 9.0",
+          "description": "AI-powered upscale of pre-rendered backgrounds to HD resolution with manual redrawn edges. Includes widescreen support and PSX font restoration.",
+          "url": "https://github.com/Albeoris/Memoria/releases"
+        },
+        {
+          "name": "Memoria Engine Patch",
+          "description": "Game engine rewrite enabling 60+ FPS, widescreen resolutions, analog stick support, and extensive quality-of-life features including save/load anywhere.",
+          "url": "https://github.com/Albeoris/Memoria"
+        },
+        {
+          "name": "FFIX Field Patch",
+          "description": "Background upscaling mod (included in Moguri Mod) that improves resolution of pre-rendered backgrounds through manual tweaking.",
+          "url": "https://www.pcgamingwiki.com/wiki/Final_Fantasy_IX"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 4",
+      "details": "Best console version with trophy support and backward compatibility on PS5. Offers the remaster experience without modding capabilities.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "Best portable option with native 1080p docked and 720p handheld. Includes all DS enhancements like the new dungeon and voice acting. Offers convenient save states via system features and cloud saves. Performance is stable at 30 FPS with occasional dips in complex scenes.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "iOS",
+      "details": "Best portable version of the remaster if not using PC. Works well on modern iOS devices with good load times and controller support.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation Vita",
+      "details": "Original PS1 experience with faster load times than Switch. No quality-of-life features but authentic retro experience.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience via Steam. Features native widescreen support, controller remapping, and cloud saves. Includes the DS version's enhanced content like the new dungeon and voice acting. Mod support allows UI overhauls and QoL improvements not present in original.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Moguri Mod",
+          "description": "A comprehensive overhaul using deep learning (ESRGAN) to upscale backgrounds and textures to 4K, fix FMVs, and add widescreen support with improved UI and controller compatibility.",
+          "url": "https://www.nexusmods.com/finalfantasy9/mods/32"
+        },
+        {
+          "name": "Final Fantasy IX: Alternate Fantasy",
+          "description": "A difficulty rebalance mod that increases enemy stats, adds new mechanics, and allows the recruitment of Beatrix as a playable party member for a fresh experience.",
+          "url": "https://www.romhacking.net/hacks/2530/"
+        },
+        {
+          "name": "Comprehensive ATB Enhancement",
+          "description": "Provides quality-of-life improvements to the Active Time Battle system, including faster gauge speeds and compatibility with other major patches.",
+          "url": "https://www.romhacking.net/hacks/9029/"
+        },
+        {
+          "name": "FF9 Scaled Battle UI",
+          "description": "Rescales the battle interface to fit modern high-resolution displays and widescreen aspect ratios without stretching or distortion.",
+          "url": "https://www.nexusmods.com/finalfantasy9/mods/3"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation",
+      "details": "The original authentic experience with the highest audio fidelity and original soundtrack. Best played via emulator for save states and widescreen patches. Lacks modern QoL features and has a 4:3 aspect ratio. Essential for purists seeking the unaltered 2000 release.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Final Fantasy IX: Alternate Fantasy",
+          "description": "A difficulty rebalance mod that increases enemy stats, adds new mechanics, and allows the recruitment of Beatrix as a playable party member for a fresh experience.",
+          "url": "https://www.romhacking.net/hacks/2530/"
+        },
+        {
+          "name": "Comprehensive ATB Enhancement",
+          "description": "Provides quality-of-life improvements to the Active Time Battle system, including faster gauge speeds and compatibility with other major patches.",
+          "url": "https://www.romhacking.net/hacks/9029/"
+        },
+        {
+          "name": "Final Fantasy IX ATB Gauge SpeedUp",
+          "description": "A simple patch that accelerates the ATB gauge movement to reduce waiting time during battles.",
+          "url": "https://www.romhacking.net/hacks/1799/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Enable widescreen patch via Patches menu for 16:9 aspect ratio",
+            "Set internal resolution to 2x or 3x for sharp retro visuals",
+            "Enable texture filtering (bilinear) for smoother sprite scaling",
+            "Configure save states to auto-save every 5 minutes"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Enable widescreen patch via Patches menu for 16:9 aspect ratio",
+            "Set internal resolution to 2x for optimal performance on mobile",
+            "Enable texture filtering (bilinear) for smoother sprite scaling",
+            "Configure save states to auto-save every 5 minutes"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In the fantasy world of Gaia, a group of thieves led by Zidane Tribal infiltrates the kingdom of Alexandria to steal a mysterious artifact. They discover a plot involving the summoning of a powerful entity and the manipulation of the world's fate. As the story unfolds, the party must confront the true nature of their world, the cycle of life, and the consequences of their actions while fighting against an ancient evil threatening to destroy everything they hold dear.",
+    "key_features": [
+      "Active Time Battle (ATB) system with real-time movement",
+      "Triple Triad card mini-game with strategic depth",
+      "Character-specific support abilities and equipment customization",
+      "Dynamic camera angles and pre-rendered backgrounds",
+      "Extensive use of cutscenes and voice acting for key characters",
+      "World map exploration with airship and foot travel",
+      "Complex party management with up to 16 playable characters",
+      "Quest-based side stories and hidden dungeons",
+      "Moguri mod support on modern platforms for enhanced visuals",
+      "Seamless integration of comedy and serious narrative tones"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Final Fantasy IX is widely regarded as one of the greatest video games of all time and the pinnacle of the PlayStation era. It revitalized the franchise by returning to its fantasy origins after the sci-fi direction of Final Fantasy VII and VIII, influencing countless JRPGs that followed with its focus on character-driven narratives and emotional storytelling."
+    ]
+  }
 }

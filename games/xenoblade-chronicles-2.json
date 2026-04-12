@@ -1,213 +1,239 @@
 {
-    "basic_info": {
-        "url_slug": "/games/xenoblade-chronicles-2",
-        "title": "Xenoblade Chronicles 2",
-        "cover_url": "/images/xenoblade-chronicles-2.jpg",
-        "genres": [
-            "RPG",
-            "JRPG"
-        ],
-        "themes": [
-            "Dreams and Hope",
-            "Identity and Purpose",
-            "Friendship",
-            "World Building",
-            "Mythology"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 8.5,
-        "review": "Xenoblade Chronicles 2 is a visually stunning JRPG praised for its vibrant art direction, deep combat system, and emotional storytelling. While divisive among fans compared to the original, it offers an expansive world with unique Blade mechanics.",
-        "developers": [
-            "Monolith Soft"
-        ],
-        "publishers": [
-            "Nintendo"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Xenoblade Chronicles 2: Torna - The Golden Country",
-            "XC2"
-        ],
-        "platforms": [
-            {
-                "name": "Nintendo Switch",
-                "region": "Japan",
-                "release_date": "2017-12-01"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "North America",
-                "release_date": "2017-12-01"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Europe",
-                "release_date": "2017-12-01"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Australia",
-                "release_date": "2017-12-01"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Xenoblade Chronicles",
-        "part_number": 2,
-        "previous_game": {
-            "title": "Xenoblade Chronicles",
-            "url_slug": "/games/xenoblade-chronicles"
-        },
-        "next_game": {
-            "title": "Xenoblade Chronicles X",
-            "url_slug": "/games/xenoblade-chronicles-x"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Final Fantasy XV",
-            "url_slug": "/games/final-fantasy-xv"
-        },
-        {
-            "title": "Tales of Arise",
-            "url_slug": "/games/tales-of-arise"
-        },
-        {
-            "title": "Star Ocean: The Divine Force",
-            "url_slug": "/games/star-ocean-the-divine-force"
-        },
-        {
-            "title": "The Legend of Zelda: Breath of the Wild",
-            "url_slug": "/games/zelda-breath-of-the-wild"
-        },
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        }
+  "basic_info": {
+    "url_slug": "/games/xenoblade-chronicles-2",
+    "title": "Xenoblade Chronicles 2",
+    "cover_url": "/images/xenoblade-chronicles-2.jpg",
+    "genres": [
+      "JRPG"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch (Base Game + Expansion Pass)",
-            "details": "The complete experience with all DLC including Torna - The Golden Country prequel story, additional blades, side quests, and challenge mode. Best played on docked mode for optimal visuals.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Ultimate XC2 Rebalance Mod",
-                    "description": "Comprehensive combat rebalance that improves shield hammers and other underperforming classes. Version 1.8 is the latest stable release.",
-                    "url": "https://gamebanana.com/mods/449897"
-                },
-                {
-                    "name": "Reduced Tedium Mod",
-                    "description": "Quality of life improvements including faster traversal, improved UI elements, and reduced grinding requirements.",
-                    "url": "https://gamebanana.com/mods/525389"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Ryujinx or Citron",
-                    "optimal_settings": [
-                        "Resolution scale: 2x for 1080p output",
-                        "Enable VSync for stable frame rate",
-                        "Use latest graphics drivers"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Suyu (Yuzu fork)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Nintendo Switch (Base Game Only)",
-            "details": "The original release without DLC content. Still offers the full main story experience but lacks Torna prequel and additional blades.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Ryujinx or Citron",
-                    "optimal_settings": [
-                        "Resolution scale: 2x for 1080p output",
-                        "Enable VSync for stable frame rate"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Suyu (Yuzu fork)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Nintendo Switch (Torna - The Golden Country Standalone)",
-            "details": "Standalone prequel story set 500 years before the main game. Features refined combat system and new characters. Requires base game for full DLC access.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Ryujinx or Citron",
-                    "optimal_settings": [
-                        "Resolution scale: 2x for 1080p output",
-                        "Enable VSync for stable frame rate"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Suyu (Yuzu fork)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "In a world where humanity lives on the backs of colossal Titans floating in an endless ocean of clouds, young scavenger Rex discovers he can awaken mysterious beings called Blades. Together with Pyra, a powerful Blade, he searches for the legendary paradise known as Elysium.",
-        "key_features": [
-            "Unique Blade system allowing character switching and fusion attacks",
-            "Vibrant anime-inspired art direction by Yoko Taro and others",
-            "Deep real-time combat with elemental synergies",
-            "Massive world spanning multiple Titans in an ocean of clouds",
-            "Torna - The Golden Country prequel story expansion"
-        ],
-        "long_description": "Xenoblade Chronicles 2, developed by Monolith Soft and published by Nintendo, was released worldwide on December 1, 2017 for the Nintendo Switch. It is the third installment in the Xenoblade Chronicles series and the sixth main entry in the broader Xeno meta-series. The game follows Rex, a young scavenger who discovers he can awaken mysterious beings called Blades that grant him tremendous power. Set on colossal Titans floating in an endless ocean of clouds, players explore vibrant worlds while battling enemies and uncovering secrets about Elysium, the legendary paradise. The game features a unique Blade system where players collect and fuse with different characters, each with their own abilities and personalities. While divisive among fans compared to the original Xenoblade Chronicles, it offers stunning visuals, an emotional story, and deep combat mechanics that reward mastery.",
-        "legacy_and_impact": [
-            "Won awards at 2019 Japan Game Awards and 2018 Famitsu Awards",
-            "Established Blade system as unique mechanic in JRPG genre",
-            "Yoko Taro's art direction influenced subsequent anime-style games",
-            "Torna - The Golden Country expanded the series' narrative scope",
-            "Demonstrated Nintendo Switch's capability for AAA JRPG experiences"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "reception_score": 8.4,
+    "review": "A visually stunning and ambitious RPG that refines the Xenoblade formula with a unique Blade system, though its combat can feel repetitive over its massive length."
+  },
+  "release": {
+    "alternative_names": [
+      "Xenoblade 2",
+      "ゼノブレイド2"
+    ],
+    "platforms": [
+      {
+        "name": "Nintendo Switch",
+        "region": "Japan",
+        "release_date": "2017-12-01"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "North America",
+        "release_date": "2017-12-01"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "Europe",
+        "release_date": "2017-12-01"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "Australia",
+        "release_date": "2017-12-01"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2017-12-01"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Xenoblade Chronicles",
+    "part_number": 3,
+    "previous_game": {
+      "title": "Xenoblade Chronicles",
+      "url_slug": "/games/xenoblade-chronicles"
+    },
+    "next_game": {
+      "title": "Xenoblade Chronicles X",
+      "url_slug": "/games/xenoblade-chronicles-x"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Xenoblade Chronicles",
+      "url_slug": "/games/xenoblade-chronicles"
+    },
+    {
+      "title": "Xenoblade Chronicles X",
+      "url_slug": "/games/xenoblade-chronicles-x"
+    },
+    {
+      "title": "Dragon Quest XI: Echoes of an Elusive Age",
+      "url_slug": "/games/dragon-quest-xi"
+    },
+    {
+      "title": "Final Fantasy XV",
+      "url_slug": "/games/final-fantasy-xv"
+    },
+    {
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "url_slug": "/games/the-legend-of-zelda-breath-of-the-wild"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch (Base Game + Expansion Pass)",
+      "details": "The complete experience with all DLC including Torna - The Golden Country prequel story, additional blades, side quests, and challenge mode. Best played on docked mode for optimal visuals.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Ultimate XC2 Rebalance Mod",
+          "description": "Comprehensive combat rebalance that improves shield hammers and other underperforming classes. Version 1.8 is the latest stable release.",
+          "url": "https://gamebanana.com/mods/449897"
+        },
+        {
+          "name": "Reduced Tedium Mod",
+          "description": "Quality of life improvements including faster traversal, improved UI elements, and reduced grinding requirements.",
+          "url": "https://gamebanana.com/mods/525389"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Ryujinx or Citron",
+          "optimal_settings": [
+            "Resolution scale: 2x for 1080p output",
+            "Enable VSync for stable frame rate",
+            "Use latest graphics drivers"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Suyu (Yuzu fork)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch (Base Game Only)",
+      "details": "The original release without DLC content. Still offers the full main story experience but lacks Torna prequel and additional blades.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Ryujinx or Citron",
+          "optimal_settings": [
+            "Resolution scale: 2x for 1080p output",
+            "Enable VSync for stable frame rate"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Suyu (Yuzu fork)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch (Torna - The Golden Country Standalone)",
+      "details": "Standalone prequel story set 500 years before the main game. Features refined combat system and new characters. Requires base game for full DLC access.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Ryujinx or Citron",
+          "optimal_settings": [
+            "Resolution scale: 2x for 1080p output",
+            "Enable VSync for stable frame rate"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Suyu (Yuzu fork)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "The Japanese release of the Definitive Edition. While it offers the same core gameplay and English localization as other regions, it is primarily recommended for collectors or players who prefer the Japanese eShop ecosystem. It lacks any unique gameplay features compared to the global versions but remains a valid way to experience the game on modern hardware.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Xenoblade Chronicles X: Definitive Edition - Quality of Life Tweaks",
+          "description": "A collection of tweaks for the Nintendo Switch version of Xenoblade Chronicles X: Definitive Edition that improves UI responsiveness and adds minor quality-of-life improvements for exploration.",
+          "url": "https://www.nexusmods.com/xenobladechroniclesx/mods/10"
+        },
+        {
+          "name": "Xenoblade Chronicles X: Definitive Edition - Switch Port Mods",
+          "description": "A repository of mods specifically designed for the Nintendo Switch version of Xenoblade Chronicles X: Definitive Edition, focusing on graphical enhancements and gameplay tweaks.",
+          "url": "https://github.com/StevensND/switch-port-mods/tree/main/Xenoblade%20Chronicles%20X%20Definitive%20Edition/%5B0100453019AA8000%5D/Mods/1.0.1"
+        },
+        {
+          "name": "FPSLocker Overlay",
+          "description": "An overlay tool compatible with the Nintendo Switch (via custom firmware) that allows users to set custom display refresh rates and FPS limits for retail games like Xenoblade Chronicles X.",
+          "url": "https://github.com/masagrator/FPSLocker"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "In a world where humanity lives atop the backs of colossal Titans, a young scavenger named Rex discovers a legendary Blade named Pyra. Together, they join a group of adventurers to challenge the Alrest Empire and uncover the truth behind the Titans and the mysterious 'Aegis' prophecy.",
+    "key_features": [
+      "Blade summoning system allowing players to equip and swap humanoid weapons",
+      "Chain Attack mechanic combining Arts and Blade abilities for massive damage",
+      "Open-world exploration across massive floating islands and ruins",
+      "Real-time action combat with manual dodging and blocking",
+      "Deep character customization through the Arts and Blade affinity system",
+      "Extensive side quests and exploration rewards",
+      "Dynamic weather and day-night cycles affecting gameplay",
+      "Co-op multiplayer support for specific quests",
+      "Complex narrative branching based on player choices",
+      "High-fidelity graphics and orchestral soundtrack by Yasunori Mitsuda"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Xenoblade Chronicles 2 revitalized the Nintendo Switch library upon launch, proving the console's capability for high-fidelity JRPGs. It established a new sub-series with the Blade mechanic and set a high bar for open-world design on handheld consoles."
+    ]
+  }
 }

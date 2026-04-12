@@ -1,234 +1,303 @@
 {
-    "basic_info": {
-        "url_slug": "/games/xenoblade-chronicles",
-        "title": "Xenoblade Chronicles",
-        "cover_url": "/images/xenoblade-chronicles.jpg",
-        "genres": [
-            "RPG",
-            "JRPG"
-        ],
-        "themes": [
-            "Man vs Machine",
-            "Destiny and Free Will",
-            "Friendship",
-            "World Building",
-            "Mythology"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 9.2,
-        "review": "Xenoblade Chronicles is a landmark JRPG praised for its massive world design, epic storytelling, and innovative real-time combat system. The Definitive Edition brings this classic to modern platforms with enhanced visuals and new content.",
-        "developers": [
-            "Monolith Soft"
-        ],
-        "publishers": [
-            "Nintendo",
-            "Xseed Games"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Xenoblade (Japan)",
-            "Xenoblade Chronicles 3D",
-            "Xenoblade Chronicles Definitive Edition"
-        ],
-        "platforms": [
-            {
-                "name": "Wii",
-                "region": "Japan",
-                "release_date": "2010-06-10"
-            },
-            {
-                "name": "Wii",
-                "region": "Europe",
-                "release_date": "2011-08-19"
-            },
-            {
-                "name": "Wii",
-                "region": "Australia",
-                "release_date": "2011-09-01"
-            },
-            {
-                "name": "Wii",
-                "region": "North America",
-                "release_date": "2012-04-06"
-            },
-            {
-                "name": "New Nintendo 3DS",
-                "region": "Japan",
-                "release_date": "2015-04-02"
-            },
-            {
-                "name": "New Nintendo 3DS",
-                "region": "Europe",
-                "release_date": "2015-04-02"
-            },
-            {
-                "name": "New Nintendo 3DS",
-                "region": "North America",
-                "release_date": "2015-04-10"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "World",
-                "release_date": "2020-05-29"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Xenoblade Chronicles",
-        "part_number": 1,
-        "previous_game": null,
-        "next_game": {
-            "title": "Xenoblade Chronicles X",
-            "url_slug": "/games/xenoblade-chronicles-x"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Final Fantasy XII",
-            "url_slug": "/games/final-fantasy-xii"
-        },
-        {
-            "title": "The Legend of Zelda: Breath of the Wild",
-            "url_slug": "/games/zelda-breath-of-the-wild"
-        },
-        {
-            "title": "Tales of Vesperia",
-            "url_slug": "/games/tales-of-vesperia"
-        },
-        {
-            "title": "Star Ocean: The Last Hope",
-            "url_slug": "/games/star-ocean-the-last-hope"
-        },
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        }
+  "basic_info": {
+    "url_slug": "/games/xenoblade-chronicles",
+    "title": "Xenoblade Chronicles",
+    "cover_url": "/images/xenoblade-chronicles.jpg",
+    "genres": [
+      "Action RPG"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch (Definitive Edition)",
-            "details": "The definitive version with enhanced HD visuals, remastered 90+ music tracks, improved UI, quality-of-life improvements, and the exclusive Future Connected epilogue story.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "AA/Blur Removal Mod",
-                    "description": "Removes anti-aliasing and blur filters for sharper visuals at 1080p and above.",
-                    "url": "https://gamebanana.com/mods/442637"
-                },
-                {
-                    "name": "No Sharpening Filter",
-                    "description": "Removes the sharpening filter applied to character models for more natural visuals.",
-                    "url": "https://gamebanana.com/mods/442638"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Yuzu or Ryujinx",
-                    "optimal_settings": [
-                        "Resolution scale: 2x or higher for 4K output",
-                        "Enable VSync for stable frame rate",
-                        "Use latest graphics drivers"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Yuzu Android (Suyu)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "New Nintendo 3DS (Xenoblade Chronicles 3D)",
-            "details": "Portable version with touch controls and collection mode. Runs at lower resolution but offers the first portable experience of the game.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Citra",
-                    "optimal_settings": [
-                        "High accuracy mode for best compatibility",
-                        "Enable 3D effect if supported"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Lime3DS",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Performance mode for stable gameplay"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Wii (Original)",
-            "details": "The original release with classic presentation. Requires physical disc or emulator to play.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Dolphin",
-                    "optimal_settings": [
-                        "Internal resolution: 3x or higher for HD output",
-                        "Enable Widescreen hack if desired",
-                        "Low-latency audio settings"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Dolphin Android",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "In a world where two titans, the Bionis and Mechonis, stand frozen in eternal battle, humanity lives on the Bionis. Shulk, a young inventor, discovers he can wield the legendary Monado blade and sees visions of the future as he sets out to destroy the mechanical invaders known as the Mechon.",
-        "key_features": [
-            "Massive seamless world spanning two titans frozen in battle",
-            "Real-time strategic combat with positioning-based mechanics",
-            "Chain Attacks for powerful party-wide combos",
-            "Future-seeing ability through the Monado blade",
-            "Over 90 remastered music tracks by Yasunori Mitsuda"
-        ],
-        "long_description": "Xenoblade Chronicles, developed by Monolith Soft and published by Nintendo, is widely considered one of the greatest JRPGs ever made. Originally released on Wii in Japan (2010) and later internationally (2011-2012), the game was never officially released in North America until a limited GameStop exclusive run in 2012. The story follows Shulk, who wields the legendary Monado blade that allows him to see visions of the future. Set on the bodies of two colossal titans locked in eternal battle, players explore a massive seamless world while battling the mechanical Mechon invaders. The Definitive Edition for Nintendo Switch (May 2020) features enhanced HD visuals, remastered music, improved UI, quality-of-life improvements, and the exclusive Future Connected epilogue that continues Shulk and Melia's story.",
-        "legacy_and_impact": [
-            "Considered one of the greatest JRPGs of all time",
-            "Influenced open-world game design in subsequent titles",
-            "Established Monolith Soft as a premier RPG developer",
-            "Pioneered real-time positioning-based combat systems",
-            "Yasunori Mitsuda's soundtrack remains highly acclaimed decades later"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "reception_score": 8.9,
+    "review": "A masterpiece of the RPG genre, offering a vast world, deep combat, and an emotional story that resonates long after the credits roll."
+  },
+  "release": {
+    "alternative_names": [
+      "Xenoblade",
+      "ゼノブレイド"
+    ],
+    "platforms": [
+      {
+        "name": "Wii",
+        "region": "Japan",
+        "release_date": "2010-06-10"
+      },
+      {
+        "name": "Wii",
+        "region": "Europe",
+        "release_date": "2011-08-19"
+      },
+      {
+        "name": "Wii",
+        "region": "North America",
+        "release_date": "2011-09-01"
+      },
+      {
+        "name": "Wii",
+        "region": "Australia",
+        "release_date": "2011-09-01"
+      },
+      {
+        "name": "Wii U",
+        "region": "Japan",
+        "release_date": "2015-08-05"
+      },
+      {
+        "name": "Wii U",
+        "region": "North America",
+        "release_date": "2016-04-28"
+      },
+      {
+        "name": "Wii U",
+        "region": "Europe",
+        "release_date": "2016-07-27"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Xenoblade Chronicles",
+    "part_number": 1,
+    "next_game": {
+      "title": "Xenoblade Chronicles X",
+      "url_slug": "/games/xenoblade-chronicles-x"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy XV",
+      "url_slug": "/games/final-fantasy-xv"
+    },
+    {
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "url_slug": "/games/the-legend-of-zelda-breath-of-the-wild"
+    },
+    {
+      "title": "Dragon Quest XI",
+      "url_slug": "/games/dragon-quest-xi"
+    },
+    {
+      "title": "Ni No Kuni II: Revenant Kingdom",
+      "url_slug": "/games/ni-no-kuni-ii-revenant-kingdom"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch (Definitive Edition)",
+      "details": "The definitive version with enhanced HD visuals, remastered 90+ music tracks, improved UI, quality-of-life improvements, and the exclusive Future Connected epilogue story.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "AA/Blur Removal Mod",
+          "description": "Removes anti-aliasing and blur filters for sharper visuals at 1080p and above.",
+          "url": "https://gamebanana.com/mods/442637"
+        },
+        {
+          "name": "No Sharpening Filter",
+          "description": "Removes the sharpening filter applied to character models for more natural visuals.",
+          "url": "https://gamebanana.com/mods/442638"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Yuzu or Ryujinx",
+          "optimal_settings": [
+            "Resolution scale: 2x or higher for 4K output",
+            "Enable VSync for stable frame rate",
+            "Use latest graphics drivers"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Yuzu Android (Suyu)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "New Nintendo 3DS (Xenoblade Chronicles 3D)",
+      "details": "Portable version with touch controls and collection mode. Runs at lower resolution but offers the first portable experience of the game.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Citra",
+          "optimal_settings": [
+            "High accuracy mode for best compatibility",
+            "Enable 3D effect if supported"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Lime3DS",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Performance mode for stable gameplay"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Wii (Original)",
+      "details": "The original release with classic presentation. Requires physical disc or emulator to play.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Dolphin",
+          "optimal_settings": [
+            "Internal resolution: 3x or higher for HD output",
+            "Enable Widescreen hack if desired",
+            "Low-latency audio settings"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Dolphin Android",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "details": "The European Wii U version is identical to the North American release in terms of content and language but released later. It serves as a viable alternative for physical collectors in Europe. Like the NA version, it offers the full English experience but lacks the modern performance enhancements found in emulation or future Switch ports.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Xenoblade Chronicles X Widescreen Fix",
+          "description": "A Cemu-specific graphic pack that forces true widescreen aspect ratio and removes black bars for a modern viewing experience on the Wii U version.",
+          "url": "https://github.com/cemu-project/cemu_graphic_packs/issues/214"
+        },
+        {
+          "name": "Xenoblade Chronicles X FPS Unlocker",
+          "description": "Removes the 30 FPS cap for smoother gameplay on powerful emulation setups, specifically targeting the Wii U version's performance limitations.",
+          "url": "https://www.nxoptimizer.com/games/xenoblade-chronicles-x/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Cemu",
+          "optimal_settings": [
+            "Enable Async GPU to reduce stuttering and improve frame pacing",
+            "Set Resolution to 2x Native or higher for sharp visuals",
+            "Enable Texture Filtering (Bilinear) for smoother scaling",
+            "Use 'Force 60Hz' output setting for consistent refresh rates"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Cemu",
+          "optimal_settings": [
+            "Use Vulkan Backend for optimal mobile performance",
+            "Set Internal Resolution to 1080p to balance quality and battery life",
+            "Enable 'Async GPU' to prevent frame drops on mobile hardware",
+            "Configure touch controls or Bluetooth controller mapping"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Wii",
+      "details": "The original Japanese release offers the purest, unaltered experience with the original character designs and soundtrack. However, it lacks official English localization, requiring a fan translation patch to be playable for English speakers. Performance is locked to 480p with significant frame rate drops in dense areas.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Xenoblade Chronicles HD Texture Pack v8.52",
+          "description": "A comprehensive texture replacement pack for the Wii version that upscales all in-game textures to HD resolution, significantly improving visual clarity when played via Dolphin emulator.",
+          "url": "https://forums.dolphin-emu.org/Thread-xenoblade-chronicles-hd-texture-pack-v8-52-august-21-2018"
+        },
+        {
+          "name": "NTSC/JP Xenoblade 60fps Mod",
+          "description": "A Gecko code patch specifically for the Wii version that unlocks the frame rate cap, allowing the game to run at a smoother 60 FPS on powerful emulation setups.",
+          "url": "https://forums.dolphin-emu.org/Thread-ntsc-jp-xenoblade-60fps-and-other-mods"
+        },
+        {
+          "name": "Xenoblade Chronicles Fan Translation Patch",
+          "description": "A community-made translation patch for the Japanese Wii version that enables full English text and subtitles, making the original unaltered experience accessible to English speakers.",
+          "url": "https://vimm.net/vault/?p=list&system=Wii&q=xenoblade+chronicles"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Dolphin",
+          "optimal_settings": [
+            "Enable Dual Core for maximum performance stability",
+            "Set Internal Resolution to 2x or 4x Native for HD clarity",
+            "Enable 'Load Custom Textures' to apply HD texture packs",
+            "Set Aspect Ratio to 16:9 Widescreen to remove letterboxing"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Dolphin",
+          "optimal_settings": [
+            "Use Vulkan Backend for better mobile GPU compatibility",
+            "Set Internal Resolution to 1080p for balanced performance",
+            "Enable 'Async GPU' to reduce input lag on mobile devices",
+            "Configure controller mapping for touch or Bluetooth gamepad support"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In a world where humanity lives on the back of a giant mechanical beast, the Bionis, and their enemies, the Mechon, inhabit the body of a rival giant, the Mechonis, a young man named Shulk discovers a mysterious sword. He must lead a group of friends to stop an impending invasion that threatens to destroy their world.",
+    "key_features": [
+      "Seamless open-world exploration without loading screens",
+      "Real-time action combat with manual dodging and blocking",
+      "Class-based character progression system (Arts and Arts Skills)",
+      "Dynamic weather and day-night cycle affecting gameplay",
+      "Monster hunting and crafting system for equipment",
+      "Complex narrative with multiple intertwining storylines",
+      "Large-scale boss battles requiring strategic party management",
+      "Voice-acted cutscenes and dialogue in all regions"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Xenoblade Chronicles revitalized the action RPG genre on home consoles and established Monolith Soft as a premier developer. Its seamless world design and narrative depth set a new standard for open-world RPGs, influencing countless successors."
+    ]
+  }
 }

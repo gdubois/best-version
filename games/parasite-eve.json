@@ -1,224 +1,338 @@
 {
-    "basic_info": {
-        "url_slug": "/games/parasite-eve",
-        "title": "Parasite Eve",
-        "cover_url": "/images/parasite-eve.jpg",
-        "genres": [
-            "Role-Playing Game (RPG)",
-            "Survival Horror",
-            "Action RPG"
-        ],
-        "themes": [
-            "Science Fiction",
-            "Bio-Horror",
-            "Evolution",
-            "Corporate Conspiracy",
-            "Spontaneous Human Combustion"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 8.1,
-        "review": "Parasite Eve is a groundbreaking cinematic RPG that blends survival horror with JRPG elements, featuring innovative real-time combat and a gripping sci-fi story about mitochondria and evolution.",
-        "developers": [
-            "SquareSoft"
-        ],
-        "publishers": [
-            "SquareSoft",
-            "Electronic Arts"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30d1\u30e9\u30b5\u30a4\u30c8\u30fb\u30a4\u30f4 (Parasaito Ivu)",
-            "Parasite Eve II"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation",
-                "region": "Japan",
-                "release_date": "1998-03-29"
-            },
-            {
-                "name": "PlayStation",
-                "region": "North America",
-                "release_date": "1998-09-10"
-            },
-            {
-                "name": "PlayStation Network (PSN Classics)",
-                "region": "Worldwide",
-                "release_date": "2011-03-15"
-            },
-            {
-                "name": "PSP",
-                "region": "North America",
-                "release_date": "2011-04-05"
-            },
-            {
-                "name": "PS Vita",
-                "region": "Worldwide",
-                "release_date": "2011-06-28"
-            },
-            {
-                "name": "PlayStation Classic",
-                "region": "Japan",
-                "release_date": "2018-12-03"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Parasite Eve",
-        "part_number": 1,
-        "previous_game": null,
-        "next_game": {
-            "title": "Parasite Eve II",
-            "url_slug": "/games/parasite-eve-ii"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Vagrant Story",
-            "url_slug": "/games/vagrant-story"
-        },
-        {
-            "title": "Final Fantasy VII",
-            "url_slug": "/games/final-fantasy-vii"
-        },
-        {
-            "title": "Resident Evil",
-            "url_slug": "/games/resident-evil"
-        },
-        {
-            "title": "Koudelka",
-            "url_slug": "/games/koudelka"
-        },
-        {
-            "title": "Shadow Hearts",
-            "url_slug": "/games/shadow-hearts"
-        }
+  "basic_info": {
+    "url_slug": "/games/parasite-eve",
+    "title": "Parasite Eve",
+    "cover_url": "/images/parasite-eve.jpg",
+    "genres": [
+      "Action RPG",
+      "Survival Horror"
     ],
-    "play_today": [
-        {
-            "platform": "PS Vita (PSN Classics)",
-            "details": "Best portable experience with excellent emulation quality, built-in save states, and optimized controls for handheld play.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "DuckStation",
-                    "optimal_settings": [
-                        "Enable PGXP correction for texture warping fix",
-                        "Set frame buffering to 0 or 1",
-                        "Use internal resolution 2x or 3x",
-                        "Enable hardware shader rendering"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "DuckStation (Android)",
-                    "optimal_settings": [
-                        "Custom touch controls overlay",
-                        "Save state slots enabled",
-                        "Performance mode for smoother gameplay"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PSP (PSN Classics)",
-            "details": "Good portable option with decent emulation, though slightly less refined than Vita version.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "DuckStation",
-                    "optimal_settings": [
-                        "PGXP correction enabled",
-                        "Frame buffering disabled to prevent slowdowns",
-                        "Accurate rendering mode"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PlayStation (Original)",
-            "details": "Authentic experience on original hardware or with high-quality emulation. The definitive way to play for purists.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "HD Texture Pack",
-                    "description": "Community-created HD texture pack by IceBullet and others that upscales graphics while preserving original art style"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "DuckStation (with PGXP)",
-                    "optimal_settings": [
-                        "Enable PGXP for texture correction",
-                        "Set frame buffering to 0 or 1",
-                        "Use accurate mode for best compatibility"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "DuckStation (Android)",
-                    "optimal_settings": [
-                        "Auto-save enabled",
-                        "Custom overlay for touchscreen controls"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PlayStation Classic (Japan Only)",
-            "details": "Limited availability but authentic experience. Only available in Japan's PS Classic lineup.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "A young NYPD officer named Aya Brea must stop a mysterious entity called Eve from destroying humanity through spontaneous human combustion and mitochondrial evolution.",
-        "key_features": [
-            "Pausable real-time combat system with ATB mechanics",
-            "Cinematic RPG style blending survival horror and JRPG elements",
-            "New Game+ mode (EX game) with additional content",
-            "Innovative Parasite Energy (PE) system for attacks and defense",
-            "Pre-rendered 3D backgrounds with real-world New York locations"
-        ],
-        "long_description": "Parasite Eve, developed by SquareSoft in 1998, is a groundbreaking cinematic RPG that blends survival horror with traditional JRPG elements. Directed by Takashi Tokita and produced by Hironobu Sakaguchi (Final Fantasy), the game follows NYPD officer Aya Brea as she investigates mysterious spontaneous human combustion incidents in New York City. The story centers on Eve, a woman whose mitochondria have evolved to create an 'Ultimate Being' that threatens humanity's existence. The game features SquareSoft's first M-rated content and was their first major collaboration between Japanese and American development teams. With music composed by Yoko Shimomura (Kingdom Hearts), the soundtrack incorporates opera and electronica influences, featuring the vocal track 'Somnia Memorias.' The combat system uses a unique pausable real-time ATB mechanic where players can dodge attacks during turns. Upon completion, an EX Game mode unlocks with additional content including the Chrysler Building dungeon. The game received generally favorable reviews (81/100 on Metacritic) and has been recognized as one of the greatest RPGs of all time, influencing countless horror RPGs that followed.",
-        "legacy_and_impact": [
-            "Pioneered the cinematic RPG genre blending survival horror with JRPG mechanics",
-            "First SquareSoft game rated M by ESRB",
-            "Established Yoko Shimomura as a major video game composer",
-            "Influenced numerous horror RPGs including Shadow Hearts and Koudelka",
-            "Part of the J-horror gaming phenomenon alongside Ring and The Grudge",
-            "Spawned two sequels: Parasite Eve II (1999) and The 3rd Birthday (2010)",
-            "Featured in PlayStation Classic lineup as a flagship title"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square"
+    ],
+    "publishers": [
+      "Square",
+      "Square Electronic Arts",
+      "Sony Computer Entertainment"
+    ],
+    "reception_score": 8.5,
+    "review": "A groundbreaking blend of action RPG and survival horror that pushed the PlayStation's graphical capabilities with stunning FMVs."
+  },
+  "release": {
+    "alternative_names": [
+      "パラサイト・イヴ",
+      "Parasite Eve (1998)"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation",
+        "region": "Japan",
+        "release_date": "1998-03-29"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "1998-09-09"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Europe",
+        "release_date": "1998-11-06"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Japan",
+        "release_date": "2010-04-22"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "North America",
+        "release_date": "2010-09-28"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Europe",
+        "release_date": "2010-10-08"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Japan",
+        "release_date": "2010-04-22"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "North America",
+        "release_date": "2010-09-28"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Europe",
+        "release_date": "2010-10-08"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Japan",
+        "release_date": "2012-06-27"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "North America",
+        "release_date": "2012-09-25"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Europe",
+        "release_date": "2012-10-05"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Parasite Eve",
+    "part_number": 1,
+    "next_game": {
+      "title": "Parasite Eve II",
+      "url_slug": "/games/parasite-eve-ii"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Resident Evil",
+      "url_slug": "/games/resident-evil"
+    },
+    {
+      "title": "Silent Hill",
+      "url_slug": "/games/silent-hill"
+    },
+    {
+      "title": "Final Fantasy VII",
+      "url_slug": "/games/final-fantasy-vii"
+    },
+    {
+      "title": "Xenogears",
+      "url_slug": "/games/xenogears"
+    },
+    {
+      "title": "Clock Tower",
+      "url_slug": "/games/clock-tower"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "PS Vita (PSN Classics)",
+      "details": "Best portable experience with excellent emulation quality, built-in save states, and optimized controls for handheld play.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Enable PGXP correction for texture warping fix",
+            "Set frame buffering to 0 or 1",
+            "Use internal resolution 2x or 3x",
+            "Enable hardware shader rendering"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation (Android)",
+          "optimal_settings": [
+            "Custom touch controls overlay",
+            "Save state slots enabled",
+            "Performance mode for smoother gameplay"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PSP (PSN Classics)",
+      "details": "Good portable option with decent emulation, though slightly less refined than Vita version.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "PGXP correction enabled",
+            "Frame buffering disabled to prevent slowdowns",
+            "Accurate rendering mode"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation (Original)",
+      "details": "Authentic experience on original hardware or with high-quality emulation. The definitive way to play for purists.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "HD Texture Pack",
+          "description": "Community-created HD texture pack by IceBullet and others that upscales graphics while preserving original art style"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation (with PGXP)",
+          "optimal_settings": [
+            "Enable PGXP for texture correction",
+            "Set frame buffering to 0 or 1",
+            "Use accurate mode for best compatibility"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation (Android)",
+          "optimal_settings": [
+            "Auto-save enabled",
+            "Custom overlay for touchscreen controls"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation Classic (Japan Only)",
+      "details": "Limited availability but authentic experience. Only available in Japan's PS Classic lineup.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation",
+      "details": "The definitive original experience. While the PS3 version exists, it is region-locked to Japan and lacks English text. The North American PS1 release offers the only official English localization. Playing via DuckStation on PC allows for 4K upscaling, 60FPS, widescreen aspect ratio, and save states, fixing the original's slow load times and lack of modern convenience while preserving the authentic atmosphere and soundtrack.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Parasite Eve Widescreen Patch (16:9)",
+          "description": "Enables true widescreen aspect ratio (16:9) for the PlayStation version by adjusting the view frustum, removing letterboxing and stretching for a modern viewing experience on emulators.",
+          "url": "https://github.com/duckstation/chtdb"
+        },
+        {
+          "name": "Parasite Eve 60FPS Speed Patch",
+          "description": "Removes the 30FPS cap for smoother combat and exploration on the PlayStation version, though some cutscenes may play faster than intended.",
+          "url": "https://www.reddit.com/r/RetroArch/comments/gqfy35/compilation_of_codes_to_increase_the_frame_limit/"
+        },
+        {
+          "name": "Parasite Eve HD Texture Pack (DuckStation)",
+          "description": "A community-created texture replacement pack for the PlayStation version that upscales low-resolution assets to 4K for use with DuckStation emulator.",
+          "url": "https://sites.google.com/view/vierockretrohd/ps1/parasite-eve-hd"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Internal Resolution: 4x Native (1920x1080 or higher)",
+            "Frame Limit: 60 FPS (with 60FPS patch applied)",
+            "Aspect Ratio: 16:9 (Widescreen)",
+            "Texture Filtering: Bilinear or Anisotropic"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Internal Resolution: 2x Native (for battery life) or 3x (for performance)",
+            "Frame Limit: 60 FPS",
+            "Touch Controls: On with custom layout",
+            "Texture Filtering: Bilinear"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation 3",
+      "details": "The only modern re-release, but critically flawed for English speakers. Released exclusively in Japan, this version lacks an official English localization, requiring a fan translation patch to be playable for most audiences. While it offers native HD resolution and faster load times compared to the PS1, the lack of official support and the need for external patches makes it a secondary choice to emulated PS1 discs.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Parasite Eve English Fan Translation",
+          "description": "Community-created patch that replaces Japanese text with English for the PlayStation 3 version, making the game playable for Western audiences.",
+          "url": "https://www.romhacking.net/translations/6089/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "RPCS3",
+          "optimal_settings": [
+            "Resolution Scale: 2x (1080p) or 3x (1440p)",
+            "GPU Backend: Vulkan (for best performance)",
+            "Threaded Presentation: On",
+            "Force Fullscreen: On"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation Portable",
+      "details": "Not recommended for Parasite Eve 1. The PSP platform only received 'The 3rd Birthday' and 'Parasite Eve II' (in Japan). There is no official PSP port of the first game. Attempting to play the PS1 version on PSP via emulation is inferior to modern PC emulation due to lower resolution, lack of widescreen support, and performance limitations. This platform is included only to clarify it is not a viable option for this specific title.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PPSSPP",
+          "optimal_settings": [
+            "Rendering: OpenGL or Vulkan",
+            "Internal Resolution: 4x Native",
+            "Frame Limit: 60 FPS",
+            "Texture Scaling: Hq2x or Hq4x"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In 1998 New York City, Aya Brea, a police officer, investigates a mysterious fire at the New York City Opera House that leaves only one survivor. She discovers that the fire was caused by a mutated cell known as Eve, which has gained consciousness and is evolving rapidly. Aya must hunt down Eve and stop her from triggering a global biological apocalypse.",
+    "key_features": [
+      "Real-time action combat with turn-based strategic elements",
+      "Mitochondria-based enemy evolution system",
+      "Full-motion video (FMV) cutscenes with live-action actors",
+      "Dynamic day-night cycle affecting enemy behavior",
+      "Weapon customization and upgrade system",
+      "Stealth mechanics for avoiding detection",
+      "Interactive environment with destructible objects",
+      "Complex narrative branching based on player choices"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Parasite Eve pioneered the integration of live-action FMVs into RPGs, influencing the cinematic style of future titles. Its unique blend of biological horror and action RPG mechanics created a distinct subgenre that remains influential in Japanese game design."
+    ]
+  }
 }

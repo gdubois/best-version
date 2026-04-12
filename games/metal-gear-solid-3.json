@@ -1,305 +1,387 @@
 {
-    "basic_info": {
-        "url_slug": "/games/metal-gear-solid-3",
-        "title": "Metal Gear Solid 3: Snake Eater",
-        "cover_url": "/images/metal-gear-solid-3.jpg",
-        "genres": [
-            "Action",
-            "Stealth"
-        ],
-        "themes": [
-            "Survival",
-            "Cold War Espionage",
-            "Betrayal",
-            "Nature vs Technology",
-            "Legacy and Mentorship"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": true,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 9.5,
-        "review": "Metal Gear Solid 3: Snake Eater is a masterclass in stealth-action design that pioneered survival mechanics and introduced the revolutionary third-person camera system. Its Cold War setting, memorable boss battles, and emotional narrative about mentorship make it one of gaming's most accomplished entries.",
-        "developers": [
-            "Konami Computer Entertainment Japan"
-        ],
-        "publishers": [
-            "Konami",
-            "Konami Digital Entertainment"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Metal Gear Solid 3: Subsistence (Expanded Edition)",
-            "\u30e1\u30bf\u30eb\u30ae\u30a2\u30bd\u30ea\u30c3\u30c93 \u30b9\u30cd\u30fc\u30af\u30a4\u30fc\u30bf\u30fc (Japanese)"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation 2",
-                "region": "North America",
-                "release_date": "2004-11-17"
-            },
-            {
-                "name": "PlayStation 2",
-                "region": "Japan",
-                "release_date": "2004-12-16"
-            },
-            {
-                "name": "PlayStation 2",
-                "region": "Europe",
-                "release_date": "2005-03-04"
-            },
-            {
-                "name": "Xbox",
-                "region": "North America",
-                "release_date": "2006-01-17"
-            },
-            {
-                "name": "PlayStation 2",
-                "region": "Worldwide",
-                "release_date": "2006-03-07"
-            },
-            {
-                "name": "Windows (PC)",
-                "region": "North America",
-                "release_date": "2005-11-15"
-            },
-            {
-                "name": "PlayStation 3",
-                "region": "Worldwide",
-                "release_date": "2011-11-22"
-            },
-            {
-                "name": "Xbox 360",
-                "region": "Worldwide",
-                "release_date": "2011-11-22"
-            },
-            {
-                "name": "PlayStation Vita",
-                "region": "North America",
-                "release_date": "2012-06-19"
-            },
-            {
-                "name": "Nintendo 3DS",
-                "region": "Worldwide",
-                "release_date": "2012-07-18"
-            },
-            {
-                "name": "PlayStation 4",
-                "region": "Worldwide",
-                "release_date": "2023-09-05"
-            },
-            {
-                "name": "Xbox One",
-                "region": "Worldwide",
-                "release_date": "2023-09-05"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Worldwide",
-                "release_date": "2023-09-05"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2023-09-05"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Metal Gear Solid",
-        "part_number": 3,
-        "previous_game": {
-            "title": "Metal Gear Solid 2: Sons of Liberty",
-            "url_slug": "/games/metal-gear-solid-2"
-        },
-        "next_game": {
-            "title": "Metal Gear Solid 4: Guns of the Patriots",
-            "url_slug": "/games/metal-gear-solid-4-guns-of-the-patriots"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Metal Gear Solid 2: Sons of Liberty",
-            "url_slug": "/games/metal-gear-solid-2"
-        },
-        {
-            "title": "Metal Gear Solid 4: Guns of the Patriots",
-            "url_slug": "/games/metal-gear-solid-4-guns-of-the-patriots"
-        },
-        {
-            "title": "Splinter Cell: Chaos Theory",
-            "url_slug": "/games/splinter-cell-chaos-theory"
-        },
-        {
-            "title": "Thief II: The Metal Age",
-            "url_slug": "/games/thief-ii-the-metal-age"
-        },
-        {
-            "title": "Hitman 2: Silent Assassin",
-            "url_slug": "/games/hitman-2-silent-assassin"
-        }
+  "basic_info": {
+    "url_slug": "/games/metal-gear-solid-3",
+    "title": "Metal Gear Solid 3: Snake Eater",
+    "cover_url": "/images/metal-gear-solid-3-snake-eater.jpg",
+    "genres": [
+      "Stealth"
     ],
-    "play_today": [
-        {
-            "platform": "PlayStation 2 (Subsistence)",
-            "details": "The definitive original version with exclusive Subsistence content including the revolutionary third-person camera mode, Snake vs. Monkey minigame, and Metal Gear Online multiplayer. Digital Foundry analysis confirms superior lighting effects compared to all remasters. Runs at native 60fps throughout gameplay.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "Widescreen Patch",
-                    "description": "Unlocks 16:9 aspect ratio for modern displays while maintaining gameplay integrity",
-                    "url": "https://www.pcgamingwiki.com/wiki/Metal_Gear_Solid_3:_Snake_Eater"
-                },
-                {
-                    "name": "FPS Unlocker (PC version)",
-                    "description": "Removes artificial framerate cap for smoother gameplay on modern systems",
-                    "url": "https://www.pcgamingwiki.com/wiki/Metal_Gear_Solid_3:_Snake_Eater"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "PCSX2 (Nightly Build 1.7+)",
-                    "optimal_settings": [
-                        "Internal Resolution: 3x or 4x (1080p/1440p)",
-                        "Anti-aliasing: Enabled",
-                        "Anisotropic Filtering: x16",
-                        "Texture Filtering: Bilinear PS2",
-                        "Widescreen Patch: Enabled",
-                        "EE Cycle Rate: 100% for accurate performance"
-                    ]
-                },
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "PCSX2 with HD Texture Pack",
-                    "optimal_settings": [
-                        "Use community HD texture mods",
-                        "Internal Resolution: 4x (1440p)",
-                        "Anisotropic Filtering: x16",
-                        "Enhanced environment textures"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "NetherSX2 or AetherSX2",
-                    "optimal_settings": [
-                        "Internal Resolution: 2x (720p)",
-                        "Fast Memory Card Enabled",
-                        "Texture Caching: Enabled"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Windows (Steam - Master Collection)",
-            "details": "Modern PC version with community mods that restore and enhance the experience. Digital Foundry notes this runs at fixed 720p without AA by default, but MGSHDFix provides comprehensive improvements including custom resolutions up to native 4K, ultrawide support, and bug fixes.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "MGSHDFix v2.4+",
-                    "description": "Essential fix adding custom resolutions up to native 4K, ultrawide support (including 21:9), fixes crashes and resolution scaling bugs, enables mod support",
-                    "url": "https://github.com/Lyall/MGSHDFix"
-                },
-                {
-                    "name": "HD Textures AI Slop Mod",
-                    "description": "Upscales textures to 4K while preserving original art style - highly recommended for jungle environments",
-                    "url": "https://www.nexusmods.com/metalgearsolid3mc/mods/139"
-                },
-                {
-                    "name": "MGS3 Audio Fix",
-                    "description": "Restores proper audio quality and fixes audio sync issues in cutscenes",
-                    "url": "https://www.nexusmods.com/metalgearsolid3mc/mods/139"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 5 / Xbox Series X (Master Collection)",
-            "details": "2023 Master Collection version with Patch 2.0 improvements. Offers native 1080p rendering with FSR upscaling to 4K, plus High Resolution movie mode for pre-rendered cutscenes. PS5 offers superior texture filtering compared to Xbox Series X.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Patch 2.0 Update",
-                    "description": "Essential update adding resolution settings up to 1080p native with FSR upscaling options and High Resolution movie mode",
-                    "url": "https://www.digitalfoundry.net/articles/digitalfoundry-2025-the-metal-gear-solid-master-collection-vol-1-improved-but-fundamental-problems-remain"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 3 / Xbox 360 (HD Collection)",
-            "details": "The 2011 HD remaster based on the Subsistence version. Runs at native 720p with 60fps target. Lacks some PS2-exclusive content but offers improved resolution over original.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo Switch (Master Collection)",
-            "details": "Digital Foundry analysis reveals this runs at native 720p with minimal anti-aliasing and no texture filtering. Frame-rate capped at 30fps with occasional drops below target in intense scenes.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Patch 2.0 Update",
-                    "description": "Improves frame-rate stability compared to launch build, though sub-30fps drops remain in some sections",
-                    "url": "https://www.digitalfoundry.net/articles/digitalfoundry-2025-the-metal-gear-solid-master-collection-vol-1-improved-but-fundamental-problems-remain"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation Vita",
-            "details": "Portable version with touch controls and gyro aiming. Includes all Subsistence content but lacks Metal Gear Online multiplayer.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Set in 1964 during the Cold War, Metal Gear Solid 3 follows Special Forces agent Naked Snake on a mission to infiltrate Soviet territory and rescue defecting scientist Dr. Sokolov while eliminating his former mentor The Boss.",
-        "key_features": [
-            "Revolutionary third-person camera system (Subsistence exclusive)",
-            "Survival mechanics including camouflage, hunting, and medical systems",
-            "Memorable boss battles with unique mechanics",
-            "Metal Gear Online multiplayer mode (Subsistence exclusive)",
-            "Snake vs. Monkey minigame (Subsistence exclusive)",
-            "Multiple endings based on player choices"
-        ],
-        "long_description": "Metal Gear Solid 3: Snake Eater, developed by Konami Computer Entertainment Japan under the direction of Hideo Kojima, was released in November 2004 for PlayStation 2. Set during the Cold War era of 1964, it serves as a prequel to the entire Metal Gear series and explores themes of survival, betrayal, and mentorship through one of gaming's most memorable narratives. The expanded 'Subsistence' edition added significant content including the revolutionary third-person camera mode that became standard in later games, Snake vs. Monkey minigame (a Tony Hawk-inspired skateboarding challenge), and Metal Gear Online multiplayer. Digital Foundry's technical analysis confirms that while later remasters improved resolution, the original PS2 version maintains superior lighting effects and visual presentation compared to all subsequent versions. The Master Collection (2023) runs at fixed 720p on PC without anti-aliasing by default, though community mods like MGSHDFix provide comprehensive fixes for custom resolutions up to native 4K and ultrawide support.",
-        "legacy_and_impact": [
-            "Pioneered survival mechanics in stealth games",
-            "Introduced the third-person camera system now standard in action games",
-            "Considered one of the greatest games of all time by critics and fans",
-            "The Snake vs. Monkey minigame became a cult favorite among fans",
-            "Continues to be studied for its innovative boss battle design"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Konami Computer Entertainment Japan",
+      "Kojima Productions"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "reception_score": 9.3,
+    "review": "IGN praised the game for its intense survival elements and the seamless integration of stealth and action, calling it a masterpiece of the genre."
+  },
+  "release": {
+    "alternative_names": [
+      "MGS3",
+      "Metal Gear Solid 3: Subsistence",
+      "Metal Gear Solid 3: Snake Eater HD Edition",
+      "METAL GEAR SOLID Δ: SNAKE EATER"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation 2",
+        "region": "Japan",
+        "release_date": "2004-11-17"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "North America",
+        "release_date": "2004-11-19"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Europe",
+        "release_date": "2005-03-04"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Australia",
+        "release_date": "2005-03-03"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Japan",
+        "release_date": "2006-03-02"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "North America",
+        "release_date": "2006-03-07"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Europe",
+        "release_date": "2006-03-10"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "World",
+        "release_date": "2011-11-15"
+      },
+      {
+        "name": "Xbox 360",
+        "region": "World",
+        "release_date": "2011-11-15"
+      },
+      {
+        "name": "Nintendo 3DS",
+        "region": "Japan",
+        "release_date": "2014-07-24"
+      },
+      {
+        "name": "Nintendo 3DS",
+        "region": "North America",
+        "release_date": "2014-08-12"
+      },
+      {
+        "name": "Nintendo 3DS",
+        "region": "Europe",
+        "release_date": "2014-08-15"
+      },
+      {
+        "name": "PlayStation 5",
+        "region": "World",
+        "release_date": "2024-08-29"
+      },
+      {
+        "name": "Xbox Series X/S",
+        "region": "World",
+        "release_date": "2024-08-29"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2024-08-29"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Metal Gear",
+    "part_number": 5,
+    "previous_game": {
+      "title": "Metal Gear Solid 2: Sons of Liberty",
+      "url_slug": "/games/metal-gear-solid-2"
+    },
+    "next_game": {
+      "title": "Metal Gear Solid 4: Guns of the Patriots",
+      "url_slug": "/games/metal-gear-solid-4-guns-of-the-patriots"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Metal Gear Solid 2: Sons of Liberty",
+      "url_slug": "/games/metal-gear-solid-2-sons-of-liberty"
+    },
+    {
+      "title": "Metal Gear Solid V: The Phantom Pain",
+      "url_slug": "/games/metal-gear-solid-v-the-phantom-pain"
+    },
+    {
+      "title": "Splinter Cell: Chaos Theory",
+      "url_slug": "/games/splinter-cell-chaos-theory"
+    },
+    {
+      "title": "Hitman: Codename 47",
+      "url_slug": "/games/hitman-codename-47"
+    },
+    {
+      "title": "Uncharted 2: Among Thieves",
+      "url_slug": "/games/uncharted-2-among-thieves"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "PlayStation 2 (Subsistence)",
+      "details": "The definitive original version with exclusive Subsistence content including the revolutionary third-person camera mode, Snake vs. Monkey minigame, and Metal Gear Online multiplayer. Digital Foundry analysis confirms superior lighting effects compared to all remasters. Runs at native 60fps throughout gameplay.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "Widescreen Patch",
+          "description": "Unlocks 16:9 aspect ratio for modern displays while maintaining gameplay integrity",
+          "url": "https://www.pcgamingwiki.com/wiki/Metal_Gear_Solid_3:_Snake_Eater"
+        },
+        {
+          "name": "FPS Unlocker (PC version)",
+          "description": "Removes artificial framerate cap for smoother gameplay on modern systems",
+          "url": "https://www.pcgamingwiki.com/wiki/Metal_Gear_Solid_3:_Snake_Eater"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PCSX2 (Nightly Build 1.7+)",
+          "optimal_settings": [
+            "Internal Resolution: 3x or 4x (1080p/1440p)",
+            "Anti-aliasing: Enabled",
+            "Anisotropic Filtering: x16",
+            "Texture Filtering: Bilinear PS2",
+            "Widescreen Patch: Enabled",
+            "EE Cycle Rate: 100% for accurate performance"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PCSX2 with HD Texture Pack",
+          "optimal_settings": [
+            "Use community HD texture mods",
+            "Internal Resolution: 4x (1440p)",
+            "Anisotropic Filtering: x16",
+            "Enhanced environment textures"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "NetherSX2 or AetherSX2",
+          "optimal_settings": [
+            "Internal Resolution: 2x (720p)",
+            "Fast Memory Card Enabled",
+            "Texture Caching: Enabled"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Windows (Steam - Master Collection)",
+      "details": "Modern PC version with community mods that restore and enhance the experience. Digital Foundry notes this runs at fixed 720p without AA by default, but MGSHDFix provides comprehensive improvements including custom resolutions up to native 4K, ultrawide support, and bug fixes.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "MGSHDFix v2.4+",
+          "description": "Essential fix adding custom resolutions up to native 4K, ultrawide support (including 21:9), fixes crashes and resolution scaling bugs, enables mod support",
+          "url": "https://github.com/Lyall/MGSHDFix"
+        },
+        {
+          "name": "HD Textures AI Slop Mod",
+          "description": "Upscales textures to 4K while preserving original art style - highly recommended for jungle environments",
+          "url": "https://www.nexusmods.com/metalgearsolid3mc/mods/139"
+        },
+        {
+          "name": "MGS3 Audio Fix",
+          "description": "Restores proper audio quality and fixes audio sync issues in cutscenes",
+          "url": "https://www.nexusmods.com/metalgearsolid3mc/mods/139"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 5 / Xbox Series X (Master Collection)",
+      "details": "2023 Master Collection version with Patch 2.0 improvements. Offers native 1080p rendering with FSR upscaling to 4K, plus High Resolution movie mode for pre-rendered cutscenes. PS5 offers superior texture filtering compared to Xbox Series X.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Patch 2.0 Update",
+          "description": "Essential update adding resolution settings up to 1080p native with FSR upscaling options and High Resolution movie mode",
+          "url": "https://www.digitalfoundry.net/articles/digitalfoundry-2025-the-metal-gear-solid-master-collection-vol-1-improved-but-fundamental-problems-remain"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 3 / Xbox 360 (HD Collection)",
+      "details": "The 2011 HD remaster based on the Subsistence version. Runs at native 720p with 60fps target. Lacks some PS2-exclusive content but offers improved resolution over original.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch (Master Collection)",
+      "details": "Digital Foundry analysis reveals this runs at native 720p with minimal anti-aliasing and no texture filtering. Frame-rate capped at 30fps with occasional drops below target in intense scenes.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Patch 2.0 Update",
+          "description": "Improves frame-rate stability compared to launch build, though sub-30fps drops remain in some sections",
+          "url": "https://www.digitalfoundry.net/articles/digitalfoundry-2025-the-metal-gear-solid-master-collection-vol-1-improved-but-fundamental-problems-remain"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation Vita",
+      "details": "Portable version with touch controls and gyro aiming. Includes all Subsistence content but lacks Metal Gear Online multiplayer.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 5",
+      "details": "The definitive modern experience via the Master Collection. Features native 4K resolution, 60 FPS performance, and fully remastered textures. Includes all Subsistence content like the Peace Walker demo and extra difficulty modes. Offers modern controller support, cloud saves, and quick resume functionality. The only version with properly rendered textures and no audio compression issues found in HD ports.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "MGSHDFix",
+          "description": "A community-created fix for the Metal Gear Solid Master Collection on PS5/PC that enables custom resolutions, ultrawide monitor support, and fixes various graphical glitches not present in the base release.",
+          "url": "https://github.com/Lyall/MGSHDFix"
+        },
+        {
+          "name": "MGS3 FPS Unlock Mod",
+          "description": "An experimental modification that allows the Master Collection version to run at framerates above or below the locked 60 FPS, providing smoother motion for high-refresh-rate displays.",
+          "url": "https://github.com/cipherxof/MGSFPSUnlock"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 2",
+      "details": "The original definitive experience, specifically the 'Subsistence' version (2006 releases). Includes the Peace Walker demo, extra difficulty modes, and the original uncompressed soundtrack. While limited to 480i resolution and 30 FPS, it offers the most authentic gameplay feel with pressure-sensitive buttons. Best played via emulation for widescreen support and save states, or on a PS3 with backward compatibility.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "MGS3 Widescreen PPF Patch",
+          "description": "A PPF patch specifically for the Metal Gear Solid 3: Subsistence PS2 ISO that enables 16:9 widescreen aspect ratio, removes black bars, and adjusts the camera for a modern viewing experience.",
+          "url": "https://www.psx-place.com/threads/tut-dl-ppf-patches-to-make-ps2-games-widescreen-16-9-work-also-on-ps3.11861/"
+        },
+        {
+          "name": "MGS3 60 FPS Code Patch",
+          "description": "A cheat code patch (PNATCH) for the PS2 version that unlocks the frame rate from 30 FPS to 60 FPS, significantly improving gameplay smoothness when used with PCSX2 or compatible hardware.",
+          "url": "https://forums.pcsx2.net/Thread-60-fps-codes"
+        },
+        {
+          "name": "PS2 Patch Engine",
+          "description": "A utility tool for applying various byte, short, and word patches to PS2 game images, essential for applying custom modifications like widescreen or region fixes to MGS3.",
+          "url": "https://www.psx-place.com/resources/ps2-patch-engine-by-pelvicthrustman.694/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PCSX2",
+          "optimal_settings": [
+            "Internal Resolution: 2x Native (or 4x for 4K)",
+            "Widescreen Hack: Enabled (if not using PPF patch)",
+            "Frame Limiting: Off (for 60 FPS patch usage)",
+            "Renderer: Vulkan or OpenGL for best performance"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "NetherSX2",
+          "optimal_settings": [
+            "Renderer: Vulkan",
+            "Internal Resolution: 2x",
+            "Widescreen: On",
+            "Frame Limiting: Off"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation 3",
+      "details": "The HD Collection version offers a middle ground with 720p resolution and widescreen support. It includes the full Subsistence content and uncompressed audio, unlike the Xbox 360 port. However, it is locked to 30 FPS and lacks the texture improvements of the Master Collection. Recommended only for those who own a PS3 and prefer physical media over the modern remaster.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "MGS3 HD Widescreen PPF Patch",
+          "description": "A patch for the PS3 HD Collection ISO that ensures proper 16:9 widescreen rendering and fixes minor graphical artifacts present in the original HD port.",
+          "url": "https://www.psx-place.com/threads/tut-dl-ppf-patches-to-make-ps2-games-widescreen-16-9-work-also-on-ps3.11861/"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Set in 1964 during the height of the Cold War, the game follows Naked Snake, a young special forces operative sent on a mission to stop a rogue Soviet faction from stealing a nuclear weapon. Snake must infiltrate the jungle, survive the harsh environment, and confront his mentor, The Boss, in a battle that will define his future.",
+    "key_features": [
+      "Survival mechanics requiring hunting and skinning animals for food and camouflage",
+      "Dynamic camouflage system where players must match their suit to the environment",
+      "CQC (Close Quarters Combat) system allowing for silent takedowns and interrogations",
+      "Binoculars used for reconnaissance, tagging enemies, and identifying wildlife",
+      "Snake's physical condition system affecting stamina, health, and vision",
+      "Non-lethal takedown options and the ability to capture enemies alive",
+      "Multiple endings based on player choices and performance",
+      "Boss battles against unique 'Legion' enemies with distinct behaviors",
+      "Integration of the 'Fox Engine' in the Delta remake for enhanced visuals and physics"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Metal Gear Solid 3: Snake Eater is widely regarded as one of the greatest video games of all time, setting a new standard for stealth-action games. Its introduction of survival mechanics and the 'Fox Engine' in the Delta remake have influenced countless subsequent titles in the genre."
+    ]
+  }
 }

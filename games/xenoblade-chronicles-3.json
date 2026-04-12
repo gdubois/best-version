@@ -1,211 +1,220 @@
 {
-    "basic_info": {
-        "url_slug": "/games/xenoblade-chronicles-3",
-        "title": "Xenoblade Chronicles 3",
-        "cover_url": "/images/xenoblade-chronicles-3.jpg",
-        "genres": [
-            "RPG",
-            "JRPG"
-        ],
-        "themes": [
-            "War and Peace",
-            "Freedom vs Control",
-            "Sacrifice",
-            "Friendship",
-            "World Building",
-            "Mythology"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 8.9,
-        "review": "Xenoblade Chronicles 3 is widely considered the pinnacle of the series, praised for its refined combat system combining elements from previous games, emotional storytelling, and memorable cast of characters.",
-        "developers": [
-            "Monolith Soft"
-        ],
-        "publishers": [
-            "Nintendo"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "XC3",
-            "Xenoblade Chronicles 3: Future Redeemed"
-        ],
-        "platforms": [
-            {
-                "name": "Nintendo Switch",
-                "region": "Japan",
-                "release_date": "2022-07-29"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "North America",
-                "release_date": "2022-07-29"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Europe",
-                "release_date": "2022-07-29"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Australia",
-                "release_date": "2022-07-29"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Xenoblade Chronicles",
-        "part_number": 3,
-        "previous_game": {
-            "title": "Xenoblade Chronicles 2",
-            "url_slug": "/games/xenoblade-chronicles-2"
-        },
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "Final Fantasy XVI",
-            "url_slug": "/games/final-fantasy-xvi"
-        },
-        {
-            "title": "Tales of Arise",
-            "url_slug": "/games/tales-of-arise"
-        },
-        {
-            "title": "Star Ocean: The Divine Force",
-            "url_slug": "/games/star-ocean-the-divine-force"
-        },
-        {
-            "title": "The Legend of Zelda: Breath of the Wild",
-            "url_slug": "/games/zelda-breath-of-the-wild"
-        },
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        }
+  "basic_info": {
+    "url_slug": "/games/xenoblade-chronicles-3",
+    "title": "Xenoblade Chronicles 3",
+    "cover_url": "/images/xenoblade-chronicles-3.jpg",
+    "genres": [
+      "Action RPG"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch (Base Game + Expansion Pass)",
-            "details": "The complete experience with all DLC including Future Redeemed story expansion, additional characters, weapons, and challenge content. Best played on docked mode for optimal visuals.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Ultimate XC3 Rebalance Mod",
-                    "description": "Comprehensive combat rebalance that improves Keves arts timing and adds third positional art slot. Version 1.0 is the latest stable release.",
-                    "url": "https://gamebanana.com/mods/442899"
-                },
-                {
-                    "name": "Noah, City Costume & Attachments",
-                    "description": "Fixes graphical issues while using rebalance mods and adds costume options for Noah character.",
-                    "url": "https://gamebanana.com/mods/541370"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Ryujinx or Citron",
-                    "optimal_settings": [
-                        "Resolution scale: 2x for 1080p output",
-                        "Enable VSync for stable frame rate",
-                        "Use latest graphics drivers"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Suyu (Yuzu fork)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Nintendo Switch (Base Game Only)",
-            "details": "The original release without DLC content. Still offers the full main story experience but lacks Future Redeemed epilogue and additional characters.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Ryujinx or Citron",
-                    "optimal_settings": [
-                        "Resolution scale: 2x for 1080p output",
-                        "Enable VSync for stable frame rate"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Suyu (Yuzu fork)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Nintendo Switch (Future Redeemed DLC Only)",
-            "details": "Standalone epilogue story set after the main game. Features new battle mechanics like Unity Combo and continues the story of Noah and Mio. Requires base game for full access.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Ryujinx or Citron",
-                    "optimal_settings": [
-                        "Resolution scale: 2x for 1080p output",
-                        "Enable VSync for stable frame rate"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Suyu (Yuzu fork)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "In the world of Aionios, two hostile nations - Keves and Agnus - are locked in eternal war. Noah and Mio, soldiers from opposing sides, discover they can share a single body and join forces with other young soldiers to uncover the truth behind their world's endless conflict.",
-        "key_features": [
-            "Refined combat system combining mechanics from Xenoblade 1 & 2",
-            "Unique class system allowing any character to use any of 20+ classes",
-            "Emotional story exploring themes of war, freedom, and sacrifice",
-            "Massive world spanning multiple regions with diverse environments",
-            "Future Redeemed epilogue with new Unity Combo battle mechanics"
-        ],
-        "long_description": "Xenoblade Chronicles 3, developed by Monolith Soft and published by Nintendo, was released worldwide on July 29, 2022 for the Nintendo Switch. It is the third main installment in the Xenoblade Chronicles series and brings together elements from both previous games to create what many consider the pinnacle of the trilogy. Set in the world of Aionios, where two nations - Keves (mechanical technology) and Agnus (ether-based magic) - are locked in eternal war, players follow Noah and Mio who discover they can share a single body. The game features a refined combat system that combines the positioning-based mechanics from Xenoblade 1 with the class-switching freedom of Xenoblade 2, allowing any character to use any of over 20 different classes. The Future Redeemed DLC (April 25, 2023) provides an epilogue story with a 92 Metascore, featuring new battle mechanics like Unity Combo and continuing the journey of Noah and Mio.",
-        "legacy_and_impact": [
-            "Considered by many as the best game in the Xenoblade Chronicles series",
-            "Future Redeemed achieved highest-rated DLC score (92) since original Xenoblade on Wii",
-            "Bestselling physical game during first week release in Japan and UK for Xeno franchise",
-            "Won awards at 2019 Japan Game Awards and 2018 Famitsu Awards",
-            "Demonstrated Nintendo Switch's capability for AAA JRPG experiences with refined combat"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "reception_score": 8.9,
+    "review": "IGN praised the game as a masterpiece of modern JRPGs, highlighting its emotional depth and refined combat system."
+  },
+  "release": {
+    "alternative_names": [
+      "Xenoblade 3",
+      "ゼノブレイド3"
+    ],
+    "platforms": [
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2022-07-29"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Xenoblade Chronicles",
+    "part_number": 3,
+    "previous_game": {
+      "title": "Xenoblade Chronicles 2",
+      "url_slug": "/games/xenoblade-chronicles-2"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Xenoblade Chronicles 2",
+      "url_slug": "/games/xenoblade-chronicles-2"
+    },
+    {
+      "title": "Xenoblade Chronicles",
+      "url_slug": "/games/xenoblade-chronicles"
+    },
+    {
+      "title": "Final Fantasy XV",
+      "url_slug": "/games/final-fantasy-xv"
+    },
+    {
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "url_slug": "/games/the-legend-of-zelda-breath-of-the-wild"
+    },
+    {
+      "title": "Persona 5 Royal",
+      "url_slug": "/games/persona-5-royal"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch (Base Game + Expansion Pass)",
+      "details": "The complete experience with all DLC including Future Redeemed story expansion, additional characters, weapons, and challenge content. Best played on docked mode for optimal visuals.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Ultimate XC3 Rebalance Mod",
+          "description": "Comprehensive combat rebalance that improves Keves arts timing and adds third positional art slot. Version 1.0 is the latest stable release.",
+          "url": "https://gamebanana.com/mods/442899"
+        },
+        {
+          "name": "Noah, City Costume & Attachments",
+          "description": "Fixes graphical issues while using rebalance mods and adds costume options for Noah character.",
+          "url": "https://gamebanana.com/mods/541370"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Ryujinx or Citron",
+          "optimal_settings": [
+            "Resolution scale: 2x for 1080p output",
+            "Enable VSync for stable frame rate",
+            "Use latest graphics drivers"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Suyu (Yuzu fork)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch (Base Game Only)",
+      "details": "The original release without DLC content. Still offers the full main story experience but lacks Future Redeemed epilogue and additional characters.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Ryujinx or Citron",
+          "optimal_settings": [
+            "Resolution scale: 2x for 1080p output",
+            "Enable VSync for stable frame rate"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Suyu (Yuzu fork)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch (Future Redeemed DLC Only)",
+      "details": "Standalone epilogue story set after the main game. Features new battle mechanics like Unity Combo and continues the story of Noah and Mio. Requires base game for full access.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Ryujinx or Citron",
+          "optimal_settings": [
+            "Resolution scale: 2x for 1080p output",
+            "Enable VSync for stable frame rate"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Suyu (Yuzu fork)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "Third entry representing the standard Switch experience without Switch 2 enhancements. It offers the complete game with all expansions and English text. Performance is stable but lower than Switch 2, with occasional frame drops. It is the most widely available version, ensuring easy access for all players.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Xenoblade Chronicles 3 Official Update v2.2.1",
+          "description": "Official Nintendo patch for the Nintendo Switch version that implements performance adjustments and bug fixes specifically for the Switch 2 hardware while maintaining compatibility with the original Switch.",
+          "url": "https://www.nintendo.com/en-gb/Support/Nintendo-Switch/Game-Updates/Xenoblade-Chronicles-3-Update-History-2515655.html"
+        },
+        {
+          "name": "Xenoblade Chronicles 3 Expansion Pass Bug Fix",
+          "description": "Official patch addressing specific issues with the Expansion Pass DLC on the Nintendo Switch, ensuring proper loading and functionality of additional content.",
+          "url": "https://comicbook.com/gaming/news/xenoblade-chronicles-3-update-patch-notes-expansion-pass-bug/"
+        },
+        {
+          "name": "XC3 Visual Enhancement Patch Collection",
+          "description": "Community-created patch collection for the Nintendo Switch version that modifies texture files to improve Level of Detail (LOD) and remove distracting motion blur effects.",
+          "url": "https://github.com/theboy181/switch-ptchtxt-mods/tree/main/Xenoblade%20Chronicles%203"
+        },
+        {
+          "name": "Xenoblade Chronicles 3 Depth of Field Improvements",
+          "description": "A mod for the Nintendo Switch version that adjusts camera depth of field settings to provide clearer visuals during combat and exploration sequences.",
+          "url": "https://gamebanana.com/games/16871"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Set in a war-torn world called Aionios, Xenoblade Chronicles 3 follows two rival nations, Keves and Agnus, locked in an eternal conflict. Players control a group of soldiers who discover a mysterious power that could end the war but at a great personal cost. The story explores themes of sacrifice, memory, and the cyclical nature of war.",
+    "key_features": [
+      "Blade Arts combat system with real-time action and cooldown management",
+      "Chain Attack mechanic allowing synchronized multi-character combos",
+      "Cross-Blade system enabling character swapping and skill inheritance",
+      "Open-world exploration with seamless transitions between zones",
+      "Base management and customization via the 'Home' mechanic",
+      "Dynamic weather and day-night cycle affecting gameplay",
+      "Cooperative multiplayer mode for specific missions",
+      "Deep narrative integration with previous Xenoblade Chronicles entries",
+      "Character progression through Arts, Skills, and Equipment",
+      "Strategic party composition with elemental affinities"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Xenoblade Chronicles 3 is widely regarded as a pinnacle of the JRPG genre, concluding the trilogy with emotional resonance and mechanical refinement. Its exploration of war, sacrifice, and unity has left a lasting impact on fans and critics alike, solidifying Monolith Soft's reputation for storytelling excellence."
+    ]
+  }
 }

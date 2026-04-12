@@ -1,2 +1,0 @@
-read the content of the games folder and download an image from wikipedia for each game. then put the image in the
-  "images" folder, with the same name as the json file (different file extension) overwriting existing image files

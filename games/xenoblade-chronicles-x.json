@@ -1,190 +1,251 @@
 {
-    "basic_info": {
-        "url_slug": "/games/xenoblade-chronicles-x",
-        "title": "Xenoblade Chronicles X",
-        "cover_url": "/images/xenoblade-chronicles-x.jpg",
-        "genres": [
-            "RPG",
-            "JRPG"
-        ],
-        "themes": [
-            "Survival and Exploration",
-            "Humanity vs Aliens",
-            "Discovery",
-            "World Building",
-            "Science Fiction"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": true,
-            "co_op": true
-        },
-        "difficulty_rating": 4,
-        "reception_score": 8.7,
-        "review": "Xenoblade Chronicles X is a unique sci-fi JRPG praised for its massive open world exploration, innovative Skell mecha combat system, and single-player MMO-like experience on the planet Mira.",
-        "developers": [
-            "Monolith Soft"
-        ],
-        "publishers": [
-            "Nintendo"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "XCX",
-            "Xenoblade Chronicles X: Definitive Edition",
-            "XBCXDE"
-        ],
-        "platforms": [
-            {
-                "name": "Wii U",
-                "region": "Japan",
-                "release_date": "2015-04-29"
-            },
-            {
-                "name": "Wii U",
-                "region": "North America",
-                "release_date": "2015-12-04"
-            },
-            {
-                "name": "Wii U",
-                "region": "Europe",
-                "release_date": "2015-12-04"
-            },
-            {
-                "name": "Wii U",
-                "region": "Australia",
-                "release_date": "2015-12-05"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "World",
-                "release_date": "2025-03-20"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Xenoblade Chronicles",
-        "part_number": 4,
-        "previous_game": {
-            "title": "Xenoblade Chronicles 2",
-            "url_slug": "/games/xenoblade-chronicles-2"
-        },
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "Mass Effect Andromeda",
-            "url_slug": "/games/mass-effect-andromeda"
-        },
-        {
-            "title": "Horizon Zero Dawn",
-            "url_slug": "/games/horizon-zero-dawn"
-        },
-        {
-            "title": "The Legend of Zelda: Breath of the Wild",
-            "url_slug": "/games/zelda-breath-of-the-wild"
-        },
-        {
-            "title": "Starfield",
-            "url_slug": "/games/starfield"
-        },
-        {
-            "title": "Xenoblade Chronicles 3",
-            "url_slug": "/games/xenoblade-chronicles-3"
-        }
+  "basic_info": {
+    "url_slug": "/games/xenoblade-chronicles-x",
+    "title": "Xenoblade Chronicles X",
+    "cover_url": "/images/xenoblade-chronicles-x.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch (Definitive Edition)",
-            "details": "The definitive version with enhanced visuals, improved character models, smoother performance, quality-of-life improvements including shared XP and quest tracking, plus new epilogue content. Best played on docked mode for optimal visuals.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Cut Content Restoration Mod",
-                    "description": "Restores dozens of unused missions, weapons, arts, and Skells that were cut from the original release. Version 1.0 is the latest stable release.",
-                    "url": "https://gamebanana.com/mods/607445"
-                },
-                {
-                    "name": "Alternate Button Prompts",
-                    "description": "Support for Dualshock 4, Dualsense, and Xbox One controller button prompts instead of default Switch buttons.",
-                    "url": "https://gamebanana.com/mods/651545"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Eden",
-                    "optimal_settings": [
-                        "Resolution scale: 2x for 1080p output",
-                        "Enable VSync for stable frame rate",
-                        "Use latest graphics drivers"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Eden",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Wii U (Original)",
-            "details": "The original release with classic presentation. Requires physical disc or emulator to play. Lacks Definitive Edition improvements.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Cemu",
-                    "optimal_settings": [
-                        "Internal resolution: 2x or higher for HD output",
-                        "Enable Widescreen hack if desired",
-                        "Low-latency audio settings"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Cemu Android (if available)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "Performance mode for stable 30fps"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "In the year 2054, Earth has been destroyed by an intergalactic war between two alien races. A small number of survivors aboard the USS White Whale crash land on the mysterious planet Mira, where they must rebuild humanity while exploring a vast untamed world and battling hostile alien creatures.",
-        "key_features": [
-            "Massive open-world exploration with single-player MMO-like experience",
-            "Innovative Skell mecha combat system for traversal and battle",
-            "Character customization including appearance, voice, and gender",
-            "Extensive side quests and survey missions across diverse biomes",
-            "Online co-op multiplayer support for certain activities"
-        ],
-        "long_description": "Xenoblade Chronicles X, developed by Monolith Soft and published by Nintendo, was originally released on Wii U in Japan (April 29, 2015) and later internationally (December 2015). It is the fourth main installment in the Xenoblade Chronicles series and a spiritual successor to the original game. Set in the year 2054 after Earth's destruction by an intergalactic war between alien races called the Gaur and Vahnatai, players control one of four customizable protagonists who crash land on the mysterious planet Mira aboard the USS White Whale. The game features a massive open world with single-player MMO-like elements, innovative Skell mecha combat for both traversal and battle, extensive character customization including appearance, voice, and gender selection, and over 100 hours of content through main story missions and side quests. The Definitive Edition (March 20, 2025) brings the game to Nintendo Switch with enhanced visuals, improved character models, smoother performance, quality-of-life improvements including shared XP and quest tracking, plus new epilogue content.",
-        "legacy_and_impact": [
-            "Considered one of the most ambitious open-world JRPGs ever created",
-            "Pioneered single-player MMO-like experience in console RPGs",
-            "Established Skell mecha system as unique gameplay mechanic",
-            "Definitive Edition achieved 87 Metacritic score, among highest-rated Switch games of 2025",
-            "Demonstrated Nintendo's commitment to bringing Wii U exclusives to modern platforms"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Monolith Soft"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "reception_score": 8.5,
+    "review": "Xenoblade Chronicles X offers a breathtaking open world filled with diverse biomes and engaging combat, though its story is often overshadowed by the sheer scale of exploration."
+  },
+  "release": {
+    "alternative_names": [
+      "Xenoblade X",
+      "Zenobureido Kurosu",
+      "Xenoblade Chronicles X: Definitive Edition"
+    ],
+    "platforms": [
+      {
+        "name": "Wii U",
+        "region": "Japan",
+        "release_date": "2015-04-24"
+      },
+      {
+        "name": "Wii U",
+        "region": "North America",
+        "release_date": "2015-12-04"
+      },
+      {
+        "name": "Wii U",
+        "region": "Europe",
+        "release_date": "2015-12-04"
+      },
+      {
+        "name": "Wii U",
+        "region": "Australia",
+        "release_date": "2015-12-04"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2025-03-20"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Xenoblade Chronicles",
+    "part_number": 2,
+    "previous_game": {
+      "title": "Xenoblade Chronicles 2",
+      "url_slug": "/games/xenoblade-chronicles-2"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Xenoblade Chronicles",
+      "url_slug": "/games/xenoblade-chronicles"
+    },
+    {
+      "title": "Xenoblade Chronicles 2",
+      "url_slug": "/games/xenoblade-chronicles-2"
+    },
+    {
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "url_slug": "/games/the-legend-of-zelda-breath-of-the-wild"
+    },
+    {
+      "title": "Horizon Zero Dawn",
+      "url_slug": "/games/horizon-zero-dawn"
+    },
+    {
+      "title": "Mass Effect 2",
+      "url_slug": "/games/mass-effect-2"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch (Definitive Edition)",
+      "details": "The definitive version with enhanced visuals, improved character models, smoother performance, quality-of-life improvements including shared XP and quest tracking, plus new epilogue content. Best played on docked mode for optimal visuals.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Cut Content Restoration Mod",
+          "description": "Restores dozens of unused missions, weapons, arts, and Skells that were cut from the original release. Version 1.0 is the latest stable release.",
+          "url": "https://gamebanana.com/mods/607445"
+        },
+        {
+          "name": "Alternate Button Prompts",
+          "description": "Support for Dualshock 4, Dualsense, and Xbox One controller button prompts instead of default Switch buttons.",
+          "url": "https://gamebanana.com/mods/651545"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Eden",
+          "optimal_settings": [
+            "Resolution scale: 2x for 1080p output",
+            "Enable VSync for stable frame rate",
+            "Use latest graphics drivers"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Eden",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Wii U (Original)",
+      "details": "The original release with classic presentation. Requires physical disc or emulator to play. Lacks Definitive Edition improvements.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Cemu",
+          "optimal_settings": [
+            "Internal resolution: 2x or higher for HD output",
+            "Enable Widescreen hack if desired",
+            "Low-latency audio settings"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Cemu Android (if available)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled",
+            "Performance mode for stable 30fps"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "The definitive modern experience via Definitive Edition. Features native 1080p/4K support, 60 FPS performance, and significant QoL improvements like fast travel and streamlined UI. Includes all DLC and official English localization. While some fans note minor texture downgrades compared to emulated Wii U, the convenience and stability make it the best choice for most players today.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Xenoblade Chronicles X: DE Retranslation and Uncensor Patch",
+          "description": "A community-made patch for the Switch Definitive Edition that restores original Japanese voice lines, fixes localization errors, and uncensors censored content like the Lizard Man sprite.",
+          "url": "https://www.gamebrew.org/wiki/Xenoblade_X_DE_Switch_-_Retranslation_and_Uncensor_Patch"
+        },
+        {
+          "name": "XCX DE 60FPS Mod",
+          "description": "An experimental mod for the Switch version that attempts to unlock the frame rate cap beyond 30FPS, though stability varies and it may affect QTE timing.",
+          "url": "https://www.youtube.com/watch?v=hnFFh-bAYsc"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Wii U",
+      "details": "The Japanese version of the original release. While it offers the same base game content as the Western release, it lacks official English localization. It is only recommended for players who can read Japanese or use specific fan translation patches, which are less stable than the official English versions. The graphical potential remains high via emulation but is hindered by language barriers for most audiences.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "XCX 60FPS Mod (Cemu Graphic Pack)",
+          "description": "A highly optimized graphic pack for the Wii U version running on Cemu that unlocks the frame rate to 60+ FPS and fixes QTE timing issues.",
+          "url": "https://cemu-project.github.io/cemu_graphic_packs/"
+        },
+        {
+          "name": "XCX Enemy Statistics Mod",
+          "description": "A mod for the Wii U version (via Cemu) that allows players to adjust enemy HP, attack, and evasion stats globally for difficulty balancing.",
+          "url": "https://github.com/cemu-project/cemu_graphic_packs/blob/master/src/XenobladeChroniclesX/Mods/readme.md"
+        },
+        {
+          "name": "XCX English Fan Translation",
+          "description": "A community translation patch for the Japanese Wii U version to translate text to English, though less stable than the official Western release.",
+          "url": "https://varishangout.com/index.php?threads/xenoblade-x-de-name-delocalization-retranslation-uncensor-patch.2889/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Cemu",
+          "optimal_settings": [
+            "Enable Async GPU for maximum performance",
+            "Set Internal Resolution to 4K (3840x2160) for sharp textures",
+            "Enable 'XCX 60FPS' Graphic Pack in the Cemu settings",
+            "Set CPU Accuracy to 'High' to prevent physics glitches"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "Cemu",
+          "optimal_settings": [
+            "Enable Vulkan backend for better Linux compatibility",
+            "Set Internal Resolution to 2x or 4x based on GPU power",
+            "Enable 'XCX 60FPS' Graphic Pack",
+            "Disable 'Async GPU' if experiencing audio stuttering"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In the year 2115, humanity flees Earth to escape the alien threat known as the Zauru, settling on the planet Mira. The game follows Mio, a survivor who awakens from a coma to find the colony under attack. Players must explore the vast, alien world, customize mechs, and fight to reclaim humanity's future while uncovering the mysteries of Mira's ecosystem.",
+    "key_features": [
+      "Massive open-world exploration on the planet Mira",
+      "Customizable mechs (Skells) with modular weapon systems",
+      "Real-time action combat with dodge and parry mechanics",
+      "Deep character customization including appearance and stats",
+      "Dynamic weather and day-night cycles affecting gameplay",
+      "Extensive side quests and monster hunting activities",
+      "Co-op multiplayer for specific missions and events",
+      "Vehicle-based traversal and aerial combat",
+      "Faction-based progression and reputation systems",
+      "Photo mode for capturing in-game moments"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Xenoblade Chronicles X is remembered as a bold experiment in open-world design that prioritized exploration and customization over narrative depth. Despite being a Wii U exclusive for a decade, its cult following and critical acclaim led to a highly anticipated Switch remaster, cementing its status as a unique entry in the Xenoblade series."
+    ]
+  }
 }

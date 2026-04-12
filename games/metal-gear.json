@@ -1,267 +1,364 @@
 {
-    "basic_info": {
-        "url_slug": "/games/metal-gear",
-        "title": "Metal Gear",
-        "cover_url": "/images/metal-gear.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Stealth",
-            "Espionage",
-            "Military",
-            "Cold War",
-            "Hero's Journey"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 8.7,
-        "review": "Metal Gear is a groundbreaking stealth game that pioneered the genre and established many conventions still used today. While the NES port has significant differences from Kojima's original vision, it remains a beloved classic that influenced countless games.",
-        "developers": [
-            "Konami"
-        ],
-        "publishers": [
-            "Konami",
-            "Ultra Games"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30e1\u30bf\u30eb\u30ae\u30a2 (Metal Gear)",
-            "Intruder"
-        ],
-        "platforms": [
-            {
-                "name": "MSX2",
-                "region": "Japan",
-                "release_date": "1987-07-13"
-            },
-            {
-                "name": "Famicom/NES",
-                "region": "Japan",
-                "release_date": "1987-12-22"
-            },
-            {
-                "name": "NES",
-                "region": "North America",
-                "release_date": "1988-06-01"
-            },
-            {
-                "name": "NES",
-                "region": "Europe",
-                "release_date": "1989-01-01"
-            },
-            {
-                "name": "Commodore 64",
-                "region": "North America",
-                "release_date": "1989-01-01"
-            },
-            {
-                "name": "MS-DOS",
-                "region": "North America",
-                "release_date": "1990-08-30"
-            },
-            {
-                "name": "Mobile Phone",
-                "region": "Japan",
-                "release_date": "2004-08-18"
-            },
-            {
-                "name": "Windows (GOG.com)",
-                "region": "Worldwide",
-                "release_date": "2020-09-25"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Metal Gear",
-        "part_number": 1,
-        "previous_game": null,
-        "next_game": {
-            "title": "Metal Gear 2: Solid Snake",
-            "url_slug": "/games/metal-gear-2-solid-snake"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Metal Gear 2: Solid Snake",
-            "url_slug": "/games/metal-gear-2-solid-snake"
-        },
-        {
-            "title": "Metal Gear Solid",
-            "url_slug": "/games/metal-gear-solid"
-        },
-        {
-            "title": "Contra",
-            "url_slug": "/games/contra"
-        },
-        {
-            "title": "Gradius",
-            "url_slug": "/games/gradius"
-        },
-        {
-            "title": "Castlevania III: Dracula's Curse",
-            "url_slug": "/games/castlevania-iii-draculas-curse"
-        }
+  "basic_info": {
+    "url_slug": "/games/metal-gear",
+    "title": "Metal Gear",
+    "cover_url": "/images/metal-gear.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (GOG.com)",
-            "details": "Modern PC port with widescreen support, save states, and no region lock. Best for accessibility and ease of play.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Metal Gear Solid HD Collection Patch",
-                    "description": "Enhanced graphics and widescreen support from the HD Collection port"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo Switch / PlayStation 4 / PlayStation 5 / Xbox Series X/S",
-            "details": "Metal Gear Solid: Master Collection Vol. 1 - Official compilation with both MSX2 and NES versions, modernized controls.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "MSX2",
-            "details": "Original canonical version by Hideo Kojima. Requires MSX emulator with tape drive support for save functionality.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "MSX2 Improvements Patch",
-                    "description": "Dynamic Vsync, turbo speed controls, improved graphics for bridge parts, removes region lock"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "FCEUX / FMSX",
-                    "optimal_settings": [
-                        "Enable VDP 60Hz mode",
-                        "Use turbo speed controls",
-                        "Enable save state functionality"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "FCEUX DS / RetroArch (MSX core)",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Nintendo Entertainment System (NES)",
-            "details": "Original Western release with significant changes from Kojima's vision. Includes fan translation patches for improved localization.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": true
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Personal Area Network Patch",
-                    "description": "Automatically opens doors when you have the correct card key - quality of life improvement"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "FCEUX / Nestopia UE",
-                    "optimal_settings": [
-                        "Low-latency audio",
-                        "Accurate mode for best compatibility"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "RetroArch (NES core) / FCEUX DS",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Commodore 64",
-            "details": "1989 port based on NES version. Limited availability but historically significant.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "VICE C64",
-                    "optimal_settings": [
-                        "Enable turbo speed",
-                        "Use disk drive emulation"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "MS-DOS",
-            "details": "1990 port based on NES version. Rare and historically interesting but not recommended for modern play.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "DOSBox",
-                    "optimal_settings": [
-                        "Cycle CPU speed appropriately",
-                        "Enable sound blaster emulation"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Solid Snake, a special forces operative, infiltrates the fortified state of Outer Heaven to destroy Metal Gear, a bipedal walking tank capable of launching nuclear missiles, while rescuing captured allies and uncovering a conspiracy.",
-        "key_features": [
-            "Pioneered the stealth action genre",
-            "Radio transceiver for storytelling through dialogue",
-            "Multiple difficulty levels based on hostage rescue count",
-            "Boss battles with unique mechanics",
-            "Password save system (NES version)"
-        ],
-        "long_description": "Metal Gear, developed by Konami and designed by Hideo Kojima, is widely recognized as the first mainstream stealth game. Released in 1987 for MSX2 in Japan, it introduced revolutionary gameplay mechanics where players must avoid detection rather than engage enemies directly. The game features a portable radio transceiver that enables organic storytelling through dialogue with allies and enemies. Despite being developed without Kojima's direct involvement, the NES port became a major international success, selling 1 million units in the United States alone. The MSX2 version is considered the canonical version by Kojima himself, while the NES version features significant alterations including different level designs and the replacement of the Metal Gear boss with a supercomputer. Both versions have been preserved through various ports and remasters, including the GOG.com PC release in 2020 and inclusion in the Metal Gear Solid: Master Collection Vol. 1 for modern platforms.",
-        "legacy_and_impact": [
-            "Established the stealth action genre",
-            "Introduced innovative storytelling via radio transceiver",
-            "Influenced countless games including Splinter Cell, Metal Gear Solid series, and more",
-            "Considered one of the greatest games ever made",
-            "NES version sold 1 million units in the US alone"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Konami"
+    ],
+    "publishers": [
+      "Konami",
+      "Playtronic",
+      "U.S. Gold",
+      "KEMCO"
+    ],
+    "reception_score": 8.6,
+    "review": "A groundbreaking title that defined the stealth genre, offering a unique blend of action and strategy on the MSX2."
+  },
+  "release": {
+    "alternative_names": [
+      "METAL GEAR",
+      "メタルギア",
+      "Metal Gear (MSX2)"
+    ],
+    "platforms": [
+      {
+        "name": "MSX2",
+        "region": "Japan",
+        "release_date": "1987-07-13"
+      },
+      {
+        "name": "MSX2",
+        "region": "Europe",
+        "release_date": "1987-07-13"
+      },
+      {
+        "name": "NES",
+        "region": "Japan",
+        "release_date": "1987-12-22"
+      },
+      {
+        "name": "NES",
+        "region": "North America",
+        "release_date": "1988-01-01"
+      },
+      {
+        "name": "NES",
+        "region": "Europe",
+        "release_date": "1988-01-01"
+      },
+      {
+        "name": "Commodore 64",
+        "region": "North America",
+        "release_date": "1990-01-01"
+      },
+      {
+        "name": "Commodore 64",
+        "region": "Europe",
+        "release_date": "1990-01-01"
+      },
+      {
+        "name": "MS-DOS",
+        "region": "North America",
+        "release_date": "1990-01-01"
+      },
+      {
+        "name": "MS-DOS",
+        "region": "Europe",
+        "release_date": "1990-01-01"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2020-01-01"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Metal Gear",
+    "part_number": 1,
+    "next_game": {
+      "title": "Metal Gear 2: Solid Snake",
+      "url_slug": "/games/metal-gear-2-solid-snake"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Metal Gear 2: Solid Snake",
+      "url_slug": "/games/metal-gear-2-solid-snake"
+    },
+    {
+      "title": "Metal Gear Solid",
+      "url_slug": "/games/metal-gear-solid"
+    },
+    {
+      "title": "Splinter Cell",
+      "url_slug": "/games/splinter-cell"
+    },
+    {
+      "title": "Commando",
+      "url_slug": "/games/commando"
+    },
+    {
+      "title": "Ninja Gaiden",
+      "url_slug": "/games/ninja-gaiden"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (GOG.com)",
+      "details": "Modern PC port with widescreen support, save states, and no region lock. Best for accessibility and ease of play.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Metal Gear Solid HD Collection Patch",
+          "description": "Enhanced graphics and widescreen support from the HD Collection port"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch / PlayStation 4 / PlayStation 5 / Xbox Series X/S",
+      "details": "Metal Gear Solid: Master Collection Vol. 1 - Official compilation with both MSX2 and NES versions, modernized controls.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "MSX2",
+      "details": "Original canonical version by Hideo Kojima. Requires MSX emulator with tape drive support for save functionality.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "MSX2 Improvements Patch",
+          "description": "Dynamic Vsync, turbo speed controls, improved graphics for bridge parts, removes region lock"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "FCEUX / FMSX",
+          "optimal_settings": [
+            "Enable VDP 60Hz mode",
+            "Use turbo speed controls",
+            "Enable save state functionality"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "FCEUX DS / RetroArch (MSX core)",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Entertainment System (NES)",
+      "details": "Original Western release with significant changes from Kojima's vision. Includes fan translation patches for improved localization.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": true
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Personal Area Network Patch",
+          "description": "Automatically opens doors when you have the correct card key - quality of life improvement"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "FCEUX / Nestopia UE",
+          "optimal_settings": [
+            "Low-latency audio",
+            "Accurate mode for best compatibility"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "RetroArch (NES core) / FCEUX DS",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Commodore 64",
+      "details": "1989 port based on NES version. Limited availability but historically significant.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "VICE C64",
+          "optimal_settings": [
+            "Enable turbo speed",
+            "Use disk drive emulation"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "MS-DOS",
+      "details": "The original PC port offers a unique experience with mouse support and different control schemes compared to console versions. While graphics are lower resolution and frame rates vary, it provides the most authentic 1990s PC gaming experience. Best for purists seeking the original DOS environment without modern emulation layers.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Metal Gear MSX2 English Translation Patch",
+          "description": "A fan translation patch that converts the Japanese MSX2 version of Metal Gear into English, fixing the 'Engrish' of the European port and restoring cut messages.",
+          "url": "https://vimm.net/romhacking/translations/5065"
+        },
+        {
+          "name": "MSX2+ High Resolution Patch",
+          "description": "Allows the MSX2 version of Metal Gear to run at higher resolutions on modern MSX emulators, improving clarity on large screens.",
+          "url": "https://msxtranslations.com/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "OpenMSX",
+          "optimal_settings": [
+            "Set CPU speed to 'Turbo R' for maximum performance",
+            "Enable 'VDP' scaling to 2x or 4x for crisp graphics",
+            "Configure audio to 'MSX-Audio' for enhanced sound effects"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "MSX Emulator (MSX Emu)",
+          "optimal_settings": [
+            "Set CPU to 'Turbo R' for smooth gameplay",
+            "Enable 'Screen scaling' to 2x for better visibility",
+            "Configure touch controls for D-pad and action buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience via Steam's Master Collection. Features native widescreen support, controller remapping, and cloud saves. While the base emulation is criticized for lack of enhancements, the PC version allows community mods for QoL improvements, higher resolutions, and bug fixes not present in console versions. Best for accessibility and modding.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "MGSHDFix",
+          "description": "A comprehensive fix for the Metal Gear Solid Master Collection on PC that enables native widescreen support, custom resolutions, and fixes various emulation bugs present in the base game.",
+          "url": "https://github.com/Lyall/MGSHDFix/releases"
+        },
+        {
+          "name": "MGS2MC Better Audio",
+          "description": "Restores the original high-quality audio tracks for Metal Gear Solid 2 in the Master Collection, replacing the compressed audio files with the original source audio.",
+          "url": "https://www.nexusmods.com/metalgearsolid2mc/mods/24"
+        },
+        {
+          "name": "MGS2 High Resolution Textures (AI Slop Edition)",
+          "description": "Upscales the textures in Metal Gear Solid 2 to 4x resolution using AI upscaling for a sharper visual experience on modern displays.",
+          "url": "https://www.nexusmods.com/metalgearsolid2mc/mods/24"
+        },
+        {
+          "name": "MGSM2Fix",
+          "description": "A collection of fixes for Metal Gear Solid 2 in the Master Collection, addressing specific graphical glitches and performance issues.",
+          "url": "https://github.com/nuggslet/MGSM2Fix/releases"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "NES",
+      "details": "The original NES port is a 2D side-scrolling action game, vastly different from the 3D stealth gameplay of the PS1 version. It is historically significant but lacks the depth and mechanics of later entries. Recommended only for completionists or those interested in the series' 2D origins. Not recommended for a first-time experience of the Metal Gear Solid franchise.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Metal Gear (NES) Bugfix and Style Patch",
+          "description": "Corrects numerous spelling, grammatical, and punctuation errors in the NES version, and fixes gameplay errors such as the incorrect location for the EOD suit.",
+          "url": "https://www.romhacking.net/hacks/4109/"
+        },
+        {
+          "name": "Metal Gear (NES) Uncensoring Patch",
+          "description": "Restores censored content and fixes minor graphical glitches in the NES version of Metal Gear.",
+          "url": "https://www.romhacking.net/hacks/4109/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "RetroArch",
+          "optimal_settings": [
+            "Core: Nestopia (for best accuracy)",
+            "Aspect Ratio: 4:3 (Original)",
+            "Frame Skip: 0 (for smooth gameplay)"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "RetroArch",
+          "optimal_settings": [
+            "Core: Nestopia (for best accuracy)",
+            "Touch Controls: Enable on-screen D-pad and buttons",
+            "Frame Skip: 0 (for smooth gameplay)"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In 1995, the player controls Solid Snake, a special forces operative sent to infiltrate Outer Heaven, a fortress nation in Africa. His mission is to stop the rogue commander Big Boss and destroy the Metal Gear, a walking nuclear tank capable of launching missiles from anywhere. Snake must navigate a heavily guarded facility using stealth, avoiding detection while uncovering a deeper conspiracy.",
+    "key_features": [
+      "Top-down stealth gameplay mechanics",
+      "Radio communication system for intel and hints",
+      "Non-lethal takedown options",
+      "Dynamic enemy patrol patterns",
+      "Inventory management with limited carrying capacity",
+      "Use of environmental cover and shadows",
+      "Multiple endings based on player choices",
+      "Boss battles against mechs and special units",
+      "Coded message transmission puzzles",
+      "Real-time movement with turn-based combat elements"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Metal Gear is widely credited with creating the stealth-action genre, shifting the focus of video game combat from direct confrontation to evasion and strategy. Its narrative depth and political themes set a new standard for storytelling in video games, influencing countless titles that followed."
+    ]
+  }
 }

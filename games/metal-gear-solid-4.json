@@ -1,252 +1,272 @@
 {
-    "basic_info": {
-        "url_slug": "/games/metal-gear-solid-4",
-        "title": "Metal Gear Solid 4: Guns of the Patriots",
-        "cover_url": "/images/metal-gear-solid-4.jpg",
-        "genres": [
-            "Action",
-            "Stealth"
-        ],
-        "themes": [
-            "War and Conflict",
-            "Corporate Power",
-            "Aging and Legacy",
-            "Information Warfare",
-            "Redemption"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": true,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 9.0,
-        "review": "Metal Gear Solid 4: Guns of the Patriots is an ambitious conclusion to the Metal Gear Solid saga that delivers one of gaming's longest cutscenes (71 minutes) and explores themes of aging, legacy, and corporate control through Solid Snake's final mission. Despite technical limitations on PS3, it remains a landmark achievement in interactive storytelling.",
-        "developers": [
-            "Kojima Productions",
-            "Sucker Punch Productions"
-        ],
-        "publishers": [
-            "Konami Digital Entertainment"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Metal Gear Solid 4: Guns of the Patriots - Trophy Edition (Legacy Collection)",
-            "\u30e1\u30bf\u30eb\u30ae\u30a2\u30bd\u30ea\u30c3\u30c94 \u30b6\u30fb\u30ac\u30f3\u30ba\u30fb\u30aa\u30d6\u30fb\u30b6\u30fb\u30d1\u30c8\u30ea\u30aa\u30c3\u30c8 (Japanese)"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation 3",
-                "region": "North America",
-                "release_date": "2008-06-12"
-            },
-            {
-                "name": "PlayStation 3",
-                "region": "Japan",
-                "release_date": "2008-07-17"
-            },
-            {
-                "name": "PlayStation 3",
-                "region": "Europe",
-                "release_date": "2008-06-13"
-            },
-            {
-                "name": "PlayStation 3",
-                "region": "Worldwide",
-                "release_date": "2013-07-09"
-            },
-            {
-                "name": "PlayStation 5",
-                "region": "Worldwide",
-                "release_date": "2026-08-27"
-            },
-            {
-                "name": "Xbox Series X/S",
-                "region": "Worldwide",
-                "release_date": "2026-08-27"
-            },
-            {
-                "name": "Nintendo Switch 2",
-                "region": "Worldwide",
-                "release_date": "2026-08-27"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Worldwide",
-                "release_date": "2026-08-27"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2026-08-27"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Metal Gear Solid",
-        "part_number": 4,
-        "previous_game": {
-            "title": "Metal Gear Solid: Peace Walker",
-            "url_slug": "/games/metal-gear-solid-peace-walker"
-        },
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "Metal Gear Solid 3: Snake Eater",
-            "url_slug": "/games/metal-gear-solid-3"
-        },
-        {
-            "title": "Metal Gear Solid 2: Sons of Liberty",
-            "url_slug": "/games/metal-gear-solid-2"
-        },
-        {
-            "title": "Splinter Cell: Conviction",
-            "url_slug": "/games/splinter-cell-conviction"
-        },
-        {
-            "title": "Hitman: Absolution",
-            "url_slug": "/games/hitman-absolution"
-        },
-        {
-            "title": "Deus Ex: Human Revolution",
-            "url_slug": "/games/deus-ex-human-revolution"
-        }
+  "basic_info": {
+    "url_slug": "/games/metal-gear-solid-4",
+    "title": "Metal Gear Solid 4: Guns of the Patriots",
+    "cover_url": "/images/metal-gear-solid-4-guns-of-the-patriots.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "PlayStation 3 (Trophy Edition/Legacy Collection)",
-            "details": "The definitive original version with Trophy support and all DLC content. Despite running at variable frame rates (15-60fps depending on scene), this remains the most complete experience with online multiplayer intact. The Legacy Collection includes additional VR missions and digital graphic novels.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Trophy Patch",
-                    "description": "Enables PlayStation 3 trophy support for the original disc version",
-                    "url": "https://gamefaqs.gamespot.com/boards/926596-metal-gear-solid-4-guns-of-the-patriots"
-                },
-                {
-                    "name": "Online Multiplayer Server (Community)",
-                    "description": "Community-run servers for online multiplayer modes after official server shutdown",
-                    "url": "https://www.reddit.com/r/metalgearsolid"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Windows (RPCS3 Emulator)",
-            "details": "PS3 emulation via RPCS3 can achieve 4K resolution and 60fps with modern hardware. Requires canary patches for stability. Digital Foundry analysis confirms this provides the best visual experience available, surpassing all official versions.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "RPCS3 Canary Patches",
-                    "description": "Essential patches for game stability and crash prevention - required for smooth gameplay from start to finish",
-                    "url": "https://wiki.rpcs3.net/index.php?title=Metal_Gear_Solid_4%3A_Guns_of_the_Patriots"
-                },
-                {
-                    "name": "Lossless Scaling Mod",
-                    "description": "Upscales resolution and improves frame pacing for smoother gameplay on PC hardware",
-                    "url": "https://www.youtube.com/watch?v=bXVgyb0mggs"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "RPCS3 (Latest Canary Build)",
-                    "optimal_settings": [
-                        "GPU Renderer: Vulkan or OpenGL",
-                        "Resolution Scale: 4x (1440p) or higher for 4K output",
-                        "Frame Rate Limit: Off or 60fps cap",
-                        "SPU Decoder: Async with Recompiler",
-                        "PPU Decoder: Recompiler",
-                        "Enable Canary Patches via Patch Manager"
-                    ]
-                },
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "RPCS3 with High-End CPU",
-                    "optimal_settings": [
-                        "Use 6+ core CPU for optimal performance",
-                        "Resolution Scale: Native PS3 resolution (720p) or higher",
-                        "Anti-aliasing: Enabled via GPU override",
-                        "Texture Filtering: x16 Anisotropic"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PlayStation 5 / Xbox Series X/S (Master Collection Vol. 2)",
-            "details": "Announced for August 27, 2026 release. Digital Foundry confirms this will finally deliver the promised 60fps target that was never achieved on PS3. Some cutscenes may remain at 30fps. This represents the first official modern port of MGS4.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Master Collection Vol. 2 Update",
-                    "description": "Official remaster delivering native 60fps gameplay and modernized graphics",
-                    "url": "https://www.digitalfoundry.net/news/2026/02/the-metal-gear-solid-4-remaster-can-finally-deliver-on-the-promise-of-its-earliest-ps3-demo"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo Switch 2 / Switch (Master Collection Vol. 2)",
-            "details": "Part of Master Collection Vol. 2 release. Digital Foundry notes this is a challenging port given the hardware limitations compared to PS3, but will provide accessible play for new audiences.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Master Collection Vol. 2 Update",
-                    "description": "Official remaster with optimized performance for Switch hardware",
-                    "url": "https://www.digitalfoundry.net/news/2026/02/the-metal-gear-solid-4-remaster-can-finally-deliver-on-the-promise-of-its-earliest-ps3-demo"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 3 (HD Collection)",
-            "details": "The 2011 HD Collection version lacks MGS4 content. Only available through the Legacy Collection which includes Trophy Edition.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Set in 2014-2015, Metal Gear Solid 4 follows the aging Solid Snake on one final mission to infiltrate a private military company and stop the Patriots' AI system from controlling global warfare through information manipulation.",
-        "key_features": [
-            "Record-breaking 71-minute opening cutscene (Guinness World Record)",
-            "Advanced camouflage and survival mechanics",
-            "Multiple endings based on player choices",
-            "Online multiplayer mode with various game types",
-            "Haptic feedback integration with Sixaxis controller",
-            "Codec conversations with AI characters"
-        ],
-        "long_description": "Metal Gear Solid 4: Guns of the Patriots, developed by Kojima Productions in collaboration with Sucker Punch Productions, was released on June 12, 2008 for PlayStation 3. As the conclusion to the Metal Gear Solid saga that began in 1998, it follows the aging protagonist Solid Snake on what would be his final mission. The game explores themes of aging, legacy, corporate control, and information warfare through one of gaming's most ambitious narratives. Digital Foundry analysis from 2022 revealed that the original PS3 version suffered from severe performance issues, with frame rates fluctuating between 15-60fps depending on scene complexity. The game was originally designed to run at 60fps based on early tech demos, but technical limitations of the Cell processor prevented this. The Legacy Collection (2013) added Trophy support and additional VR missions. Digital Foundry's February 2026 analysis confirms that the upcoming Master Collection Vol. 2 will finally deliver the promised 60fps experience through a modern port.",
-        "legacy_and_impact": [
-            "Holds Guinness World Record for longest cutscene in gaming (71 minutes)",
-            "Considered one of the most ambitious conclusions to any game series",
-            "Pioneered haptic feedback integration with PS3 controllers",
-            "Continues to be studied for its prescient commentary on information warfare and AI control",
-            "The 2026 remaster finally delivers technical potential that was impossible in 2008"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Kojima Productions"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "reception_score": 9.1,
+    "review": "A visually stunning and emotionally resonant conclusion to the Solid Snake saga, praised for its technical achievements and narrative depth."
+  },
+  "release": {
+    "alternative_names": [
+      "MGS4",
+      "Metal Gear Solid 4",
+      "メタルギア・ソリッド4・ガンズ・オブ・ザ・パトリオット"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation 3",
+        "region": "Japan",
+        "release_date": "2008-06-12"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "North America",
+        "release_date": "2008-06-12"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Europe",
+        "release_date": "2008-06-13"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Australia",
+        "release_date": "2008-06-13"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Asia",
+        "release_date": "2008-06-12"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Metal Gear",
+    "part_number": 4,
+    "previous_game": {
+      "title": "Metal Gear Solid: Peace Walker",
+      "url_slug": "/games/metal-gear-solid-peace-walker"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Metal Gear Solid 3: Snake Eater",
+      "url_slug": "/games/metal-gear-solid-3-snake-eater"
+    },
+    {
+      "title": "Metal Gear Solid V: The Phantom Pain",
+      "url_slug": "/games/metal-gear-solid-v-the-phantom-pain"
+    },
+    {
+      "title": "Splinter Cell: Chaos Theory",
+      "url_slug": "/games/splinter-cell-chaos-theory"
+    },
+    {
+      "title": "Hitman: Absolution",
+      "url_slug": "/games/hitman-absolution"
+    },
+    {
+      "title": "Uncharted 2: Among Thieves",
+      "url_slug": "/games/uncharted-2-among-thieves"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "PlayStation 3 (Trophy Edition/Legacy Collection)",
+      "details": "The definitive original version with Trophy support and all DLC content. Despite running at variable frame rates (15-60fps depending on scene), this remains the most complete experience with online multiplayer intact. The Legacy Collection includes additional VR missions and digital graphic novels.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Trophy Patch",
+          "description": "Enables PlayStation 3 trophy support for the original disc version",
+          "url": "https://gamefaqs.gamespot.com/boards/926596-metal-gear-solid-4-guns-of-the-patriots"
+        },
+        {
+          "name": "Online Multiplayer Server (Community)",
+          "description": "Community-run servers for online multiplayer modes after official server shutdown",
+          "url": "https://www.reddit.com/r/metalgearsolid"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Windows (RPCS3 Emulator)",
+      "details": "PS3 emulation via RPCS3 can achieve 4K resolution and 60fps with modern hardware. Requires canary patches for stability. Digital Foundry analysis confirms this provides the best visual experience available, surpassing all official versions.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "RPCS3 Canary Patches",
+          "description": "Essential patches for game stability and crash prevention - required for smooth gameplay from start to finish",
+          "url": "https://wiki.rpcs3.net/index.php?title=Metal_Gear_Solid_4%3A_Guns_of_the_Patriots"
+        },
+        {
+          "name": "Lossless Scaling Mod",
+          "description": "Upscales resolution and improves frame pacing for smoother gameplay on PC hardware",
+          "url": "https://www.youtube.com/watch?v=bXVgyb0mggs"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "RPCS3 (Latest Canary Build)",
+          "optimal_settings": [
+            "GPU Renderer: Vulkan or OpenGL",
+            "Resolution Scale: 4x (1440p) or higher for 4K output",
+            "Frame Rate Limit: Off or 60fps cap",
+            "SPU Decoder: Async with Recompiler",
+            "PPU Decoder: Recompiler",
+            "Enable Canary Patches via Patch Manager"
+          ]
+        },
+        {
+          "platform": "Windows",
+          "recommended_emulator": "RPCS3 with High-End CPU",
+          "optimal_settings": [
+            "Use 6+ core CPU for optimal performance",
+            "Resolution Scale: Native PS3 resolution (720p) or higher",
+            "Anti-aliasing: Enabled via GPU override",
+            "Texture Filtering: x16 Anisotropic"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation 5 / Xbox Series X/S (Master Collection Vol. 2)",
+      "details": "Announced for August 27, 2026 release. Digital Foundry confirms this will finally deliver the promised 60fps target that was never achieved on PS3. Some cutscenes may remain at 30fps. This represents the first official modern port of MGS4.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Master Collection Vol. 2 Update",
+          "description": "Official remaster delivering native 60fps gameplay and modernized graphics",
+          "url": "https://www.digitalfoundry.net/news/2026/02/the-metal-gear-solid-4-remaster-can-finally-deliver-on-the-promise-of-its-earliest-ps3-demo"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch 2 / Switch (Master Collection Vol. 2)",
+      "details": "Part of Master Collection Vol. 2 release. Digital Foundry notes this is a challenging port given the hardware limitations compared to PS3, but will provide accessible play for new audiences.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Master Collection Vol. 2 Update",
+          "description": "Official remaster with optimized performance for Switch hardware",
+          "url": "https://www.digitalfoundry.net/news/2026/02/the-metal-gear-solid-4-remaster-can-finally-deliver-on-the-promise-of-its-earliest-ps3-demo"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 3 (HD Collection)",
+      "details": "The 2011 HD Collection version lacks MGS4 content. Only available through the Legacy Collection which includes Trophy Edition.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 3",
+      "details": "The European release of the original game. Contains the full English localization and all story content. While the hardware limitations of the PS3 result in lower resolution and frame rates compared to modern standards, it remains the most authentic way to experience the game's original pacing and atmosphere.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "MGS4 60FPS Unlock Patch",
+          "description": "Specific to the PlayStation 3 version, this patch modifies the game's vblank frequency to unlock the framerate from 30 to 60 FPS, significantly reducing input lag and smoothing gameplay when played via RPCS3 emulation.",
+          "url": "https://www.psx-place.com/threads/60-unlock-fps-patches.49905/"
+        },
+        {
+          "name": "MGS4 Internal Resolution Force Patch",
+          "description": "A PlayStation 3 specific modification that forces the game to render at higher internal resolutions (up to 4K) when emulated, bypassing the native 720p hardware limitations for sharper visuals.",
+          "url": "https://www.psx-place.com/threads/force-internal-resolution-in-metal-gear-solid-4.44373/"
+        },
+        {
+          "name": "Canary Patch (MGS4 Compatibility)",
+          "description": "A critical compatibility patch for the PlayStation 3 version required to run Metal Gear Solid 4 on modern RPCS3 builds, fixing crash issues and enabling stable gameplay.",
+          "url": "https://www.reddit.com/r/rpcs3/comments/mixu2q/finally_got_mgs4_to_run_on_rpcs3_using_canary/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "RPCS3",
+          "optimal_settings": [
+            "Enable Vulkan API for best performance on modern GPUs",
+            "Set Resolution Scale to 2x or 3x for 4K output",
+            "Enable 'Force Internal Resolution' to 1920x1080 or higher",
+            "Set GPU Accuracy to 'High' to prevent graphical glitches"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "RPCS3",
+          "optimal_settings": [
+            "Enable Vulkan API for optimal Linux driver support",
+            "Set Resolution Scale to 2x for 4K output",
+            "Enable 'Force Internal Resolution' to 1920x1080",
+            "Set GPU Accuracy to 'High' for stability"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "Set in a post-apocalyptic world ravaged by war, an aging Solid Snake is forced out of retirement for one final mission. Tasked with assassinating Liquid Ocelot, who has taken control of the Patriots' AI system, Snake must confront his past and the genetic legacy of the Patriots. As he battles through a crumbling world, Snake discovers the true nature of the Patriots' control over global conflict and faces his own mortality.",
+    "key_features": [
+      "Fox Engine graphics rendering with dynamic lighting and high-resolution textures",
+      "Tactical Espionage Action (TEA) gameplay with stealth and combat integration",
+      "Psycho Mantis-like fourth-wall breaking sequences",
+      "Dynamic difficulty adjustment based on player performance",
+      "Cross-platform online multiplayer modes (Metal Gear Online 2)",
+      "CQC (Close Quarters Combat) system with context-sensitive takedowns",
+      "Real-time aging of the protagonist Solid Snake",
+      "Extensive customization of weapons and gadgets via the Codec",
+      "Cinematic cutscenes with motion capture technology",
+      "Integration of previous Metal Gear Solid characters and storylines"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Metal Gear Solid 4 is widely regarded as a technical marvel that pushed the PlayStation 3 to its limits, setting a new standard for cinematic storytelling in video games. It successfully concluded the long-running Solid Snake narrative, providing closure to decades of plot threads while introducing the Fox Engine, which would define Konami's future development."
+    ]
+  }
 }

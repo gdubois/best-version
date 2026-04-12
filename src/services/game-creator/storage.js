@@ -150,7 +150,7 @@ async function gameExists(slug) {
  * @returns {Object}
  */
 function assembleGameData(researchData, options = {}) {
-    const { title, alternativeTitles, genres, platforms, releaseDate, developers, publishers, description, synopsis, reception, playToday } = researchData;
+    const { title, alternativeTitles, genres, platforms, releaseDate, developers, publishers, description, synopsis, reception, playToday, key_features, features, themes, similarGames, serie } = researchData;
 
     // Generate slug
     const slug = generateSlug(title);
@@ -304,14 +304,14 @@ function assembleGameData(researchData, options = {}) {
         serie_name: '',
         part_number: 1  // Default to 1 (minimum valid value)
     };
-    if (options.isPartOfSeries || researchData.serie?.is_part_of_serie) {
+    if (options.isPartOfSeries || serie?.is_part_of_serie) {
         serieData.is_part_of_serie = true;
-        serieData.serie_name = options.seriesName || researchData.serie?.serie_name || '';
-        serieData.part_number = options.partNumber || researchData.serie?.part_number || 1;
+        serieData.serie_name = options.seriesName || serie?.serie_name || '';
+        serieData.part_number = options.partNumber || serie?.part_number || 1;
     }
 
     // Handle similar_games - must be array of objects with {title, url_slug}
-    const similarGamesData = (options.similarGames || researchData.similarGames || []).map(game => {
+    const similarGamesData = (options.similarGames || similarGames || []).map(game => {
         if (typeof game === 'string') {
             // Convert string to object format
             return {
@@ -335,7 +335,7 @@ function assembleGameData(researchData, options = {}) {
             title: title,
             cover_url: `/images/${slug.split('/').pop()}.jpg`,
             genres: normalizedGenres.length > 0 ? normalizedGenres : ['Adventure'],
-            themes: options.themes || (researchData.themes && researchData.themes.length > 0 ? researchData.themes : ['Classic']),
+            themes: options.themes || (themes && themes.length > 0 ? themes : (researchData.themes && researchData.themes.length > 0 ? researchData.themes : ['Classic'])),
             modes: {
                 single_player: true,
                 multiplayer_local: false,
@@ -357,17 +357,21 @@ function assembleGameData(researchData, options = {}) {
         play_today: finalPlayToday,
         description: {
             synopsis: synopsis || description || 'No synopsis available.',
-            key_features: options.keyFeatures || (researchData.features && researchData.features.length > 0 ? researchData.features : ['Classic gameplay']),
+            key_features: options.keyFeatures || (key_features && key_features.length > 0 ? key_features : (features && features.length > 0 ? features : ['Classic gameplay'])),
             long_description: description || 'No description available.',
-            legacy_and_impact: options.legacyAndImpact || (researchData.reception?.legacy ? [researchData.reception.legacy] : ['Classic game'])
+            legacy_and_impact: options.legacyAndImpact || (reception?.legacy ? [reception.legacy] : (researchData.reception?.legacy ? [researchData.reception.legacy] : ['Classic game']))
         }
     };
 
     // Set reception data if available
     if (reception) {
         if (reception.scores && reception.scores.length > 0) {
+            // Calculate average score - normalize to 1.0-10.0 scale
             const avgScore = reception.scores.reduce((a, b) => a + b, 0) / reception.scores.length;
-            gameData.basic_info.reception_score = Math.min(Math.round(avgScore / 10), 10);
+            // If scores are already 0-10, use as-is; if 0-100, divide by 10
+            const normalizedScore = avgScore > 10 ? avgScore / 10 : avgScore;
+            // Round to 1 decimal place and clamp to 1.0-10.0 range
+            gameData.basic_info.reception_score = Math.max(1.0, Math.min(10.0, Math.round(normalizedScore * 10) / 10));
         }
         if (reception.reviews && reception.reviews.length > 0) {
             gameData.basic_info.review = reception.reviews[0];
@@ -385,11 +389,21 @@ function assembleGameData(researchData, options = {}) {
 
 /**
  * Save game data to file and update index
- * @param {string} slug - URL slug
+ * @param {string} slug - URL slug (must match gameData.basic_info.url_slug)
  * @param {Object} gameData - Complete game metadata
  * @returns {Promise<Object>}
  */
 async function saveGame(slug, gameData) {
+    // ENFORCE: The slug parameter must match the url_slug in the game data
+    if (gameData.basic_info.url_slug !== slug) {
+        log(`Slug mismatch - enforcing filename slug: ${slug}`, 'warn', {
+            providedSlug: slug,
+            dataSlug: gameData.basic_info.url_slug
+        });
+        // Ensure the game data's url_slug matches the filename slug
+        gameData.basic_info.url_slug = slug;
+    }
+
     const fileName = slug.split('/').pop() + '.json';
     const filePath = path.join(GAMES_PATH, fileName);
 

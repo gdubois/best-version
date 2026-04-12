@@ -1,208 +1,239 @@
 {
-    "basic_info": {
-        "url_slug": "/games/world-of-final-fantasy",
-        "title": "World of Final Fantasy",
-        "cover_url": "/images/world-of-final-fantasy.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Chibi Adventure",
-            "Character Collection",
-            "Friendship and Teamwork",
-            "Fantasy World Exploration",
-            "Crossover Characters"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 2,
-        "reception_score": 7.5,
-        "review": "World of Final Fantasy is a charming spin-off featuring chibi versions of classic FF characters. The PS4/PS5 version offers the best experience with Maxima DLC adding significant content including new mirages, dungeons, and harder difficulty modes.",
-        "developers": [
-            "Square Enix"
-        ],
-        "publishers": [
-            "Square Enix"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30ef\u30fc\u30eb\u30c9 \u30aa\u30d6 \u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fc (World of Final Fantasy)",
-            "World of Final Fantasy Maxima",
-            "Final Fantasy: World of Chocobo"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation Vita",
-                "region": "Japan",
-                "release_date": "2016-10-25"
-            },
-            {
-                "name": "PlayStation Vita",
-                "region": "North America",
-                "release_date": "2016-10-25"
-            },
-            {
-                "name": "PlayStation Vita",
-                "region": "Europe",
-                "release_date": "2016-10-28"
-            },
-            {
-                "name": "PlayStation 4",
-                "region": "Worldwide",
-                "release_date": "2017-11-07"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Worldwide",
-                "release_date": "2018-03-13"
-            },
-            {
-                "name": "Xbox One",
-                "region": "North America",
-                "release_date": "2017-11-07"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2018-03-13"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Fabula Nova Crystallis: Final Fantasy",
-        "part_number": 0,
-        "previous_game": null,
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "Kingdom Hearts Series",
-            "url_slug": "/games/kingdom-hearts"
-        },
-        {
-            "title": "Bravely Default II",
-            "url_slug": "/games/bravely-default-ii"
-        },
-        {
-            "title": "Octopath Traveler",
-            "url_slug": "/games/octopath-traveler"
-        },
-        {
-            "title": "Dragon Quest Monsters: Terry's Wonderland",
-            "url_slug": "/games/dragon-quest-monsters"
-        },
-        {
-            "title": "Pok\u00e9mon Masters EX",
-            "url_slug": "/games/pokemon-masters-ex"
-        }
+  "basic_info": {
+    "url_slug": "/games/world-of-final-fantasy",
+    "title": "World of Final Fantasy",
+    "cover_url": "/images/world-of-final-fantasy.jpg",
+    "genres": [
+      "Action RPG"
     ],
-    "play_today": [
-        {
-            "platform": "PlayStation 4 / PlayStation 5 (Maxima)",
-            "details": "The definitive version with all Maxima DLC content including new mirages, characters, dungeons, and harder difficulty modes. Best performance on PS4 Pro or PS5.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "Windows (Steam) with WOFFFix Mod",
-            "details": "PC version with WOFFFix mod by Lyall adds ultrawide support and unlocks FPS beyond 30fps. Includes all Maxima content.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "WOFFFix Mod",
-                    "description": "Ultrawidescreen mod that adds support for custom resolutions and unlocks FPS beyond 30fps.",
-                    "url": "https://www.nexusmods.com/worldoffinalfantasy/mods/3"
-                },
-                {
-                    "name": "Ultimate Engine Tweaks",
-                    "description": "Eliminates stutters, boosts FPS, and reduces input lag without sacrificing visual quality.",
-                    "url": "https://www.nexusmods.com/worldoffinalfantasy/mods/3"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo Switch",
-            "details": "Portable version with all Maxima content. Performance is generally good but slightly inferior to PS4 version.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation Vita",
-            "details": "Original handheld release. Good experience but lacks Maxima DLC content unless purchased separately.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Vita3K",
-                    "optimal_settings": [
-                        "Enable GPU emulation for better performance",
-                        "Set resolution scaling to 2x or higher"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Vita3K (experimental)",
-                    "optimal_settings": [
-                        "Lower internal resolution",
-                        "Enable asynchronous shader compilation"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Xbox One",
-            "details": "Console version with all Maxima content. Performance comparable to PS4 but lacks PlayStation-specific features.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Twins Lann and Reyna discover they can summon Chocobos and other Final Fantasy characters as 'Mirages' in a world where classic FF characters exist as collectible creatures.",
-        "key_features": [
-            "Chibi-style character designs from across the Final Fantasy series",
-            "Mirage collection and fusion system",
-            "Multiple difficulty modes (Squire, Knight, Tactician)",
-            "Maxima DLC adds new content including harder difficulties",
-            "Crossover featuring characters from multiple FF games"
-        ],
-        "long_description": "World of Final Fantasy, developed by Square Enix and directed by Koichi Ishii, is a unique spin-off that reimagines classic Final Fantasy characters in adorable chibi form. Released on PS Vita in October 2016 and expanded to other platforms as Maxima in November 2017/March 2018, the game features an innovative Mirage system where players collect, fuse, and battle with iconic FF characters. The Maxima version adds significant content including new Mirages (characters), additional dungeons, harder difficulty modes, and quality-of-life improvements like New Game+ with inventory retention. Digital Foundry noted that while charming, the PS Vita version had performance limitations compared to the PS4/PC versions. The game received praise for its art style, music, and nostalgic appeal, though some critics found it too casual for traditional FF fans.",
-        "legacy_and_impact": [
-            "Introduced chibi-style reimagining of classic Final Fantasy characters",
-            "Created unique Mirage collection/fusion gameplay mechanics",
-            "Served as a bridge between mainline FF games and spin-offs",
-            "Maxima DLC set new standards for post-launch content in mobile-first titles",
-            "Featured crossover appeal with over 50+ recognizable FF characters"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Tose",
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "reception_score": 7.6,
+    "review": "A charming love letter to the Final Fantasy series with a unique stacking mechanic, though it lacks the depth of mainline entries."
+  },
+  "release": {
+    "alternative_names": [
+      "World of Final Fantasy Maxima",
+      "WoFF"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation 4",
+        "region": "Japan",
+        "release_date": "2016-09-01"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Japan",
+        "release_date": "2016-09-01"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "North America",
+        "release_date": "2016-10-18"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "North America",
+        "release_date": "2016-10-18"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "Europe",
+        "release_date": "2016-10-21"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Europe",
+        "release_date": "2016-10-21"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2017-05-23"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2018-09-21"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2018-09-21"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Final Fantasy",
+    "part_number": 1
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy Crystal Chronicles: The Crystal Bearers",
+      "url_slug": "/games/final-fantasy-crystal-chronicles-the-crystal-bearers"
+    },
+    {
+      "title": "Final Fantasy Tactics",
+      "url_slug": "/games/final-fantasy-tactics"
+    },
+    {
+      "title": "Dragon Quest Monsters: Joker",
+      "url_slug": "/games/dragon-quest-monsters-joker"
+    },
+    {
+      "title": "Paper Mario: The Thousand-Year Door",
+      "url_slug": "/games/paper-mario-the-thousand-year-door"
     }
+  ],
+  "play_today": [
+    {
+      "platform": "PlayStation 4 / PlayStation 5 (Maxima)",
+      "details": "The definitive version with all Maxima DLC content including new mirages, characters, dungeons, and harder difficulty modes. Best performance on PS4 Pro or PS5.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows (Steam) with WOFFFix Mod",
+      "details": "PC version with WOFFFix mod by Lyall adds ultrawide support and unlocks FPS beyond 30fps. Includes all Maxima content.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "WOFFFix Mod",
+          "description": "Ultrawidescreen mod that adds support for custom resolutions and unlocks FPS beyond 30fps.",
+          "url": "https://www.nexusmods.com/worldoffinalfantasy/mods/3"
+        },
+        {
+          "name": "Ultimate Engine Tweaks",
+          "description": "Eliminates stutters, boosts FPS, and reduces input lag without sacrificing visual quality.",
+          "url": "https://www.nexusmods.com/worldoffinalfantasy/mods/3"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "Best for portability, allowing play on the go with the full Maxima content. However, graphics are noticeably softer with lower resolution compared to PS4/PC. Frame rate can dip in handheld mode during intense battles. Still a solid choice for fans who prioritize mobility over visual fidelity.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation Vita",
+      "details": "Original handheld release. Good experience but lacks Maxima DLC content unless purchased separately.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Vita3K",
+          "optimal_settings": [
+            "Enable GPU emulation for better performance",
+            "Set resolution scaling to 2x or higher"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Vita3K (experimental)",
+          "optimal_settings": [
+            "Lower internal resolution",
+            "Enable asynchronous shader compilation"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Xbox One",
+      "details": "Console version with all Maxima content. Performance comparable to PS4 but lacks PlayStation-specific features.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive version for PC players. Runs at unlocked 60+ FPS with native widescreen support and ultrawide monitor compatibility. Includes all Maxima content like the Hidden Dungeon and new characters. Steam offers cloud saves and controller remapping. Community patches fix minor bugs and enhance UI.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "WOFFFix",
+          "description": "A comprehensive mod for the Windows version that unlocks the framerate cap to 60+ FPS, adds native ultrawide and custom resolution support, and fixes the Geo-11 glitch.",
+          "url": "https://github.com/Lyall/WOFFFix"
+        },
+        {
+          "name": "Proper PlayStation Buttons Mod (DS4)",
+          "description": "Replaces the default Xbox controller button prompts with PlayStation DualShock 4 icons for the Windows version, improving UI consistency for PS controller users.",
+          "url": "https://www.nexusmods.com/worldoffinalfantasy/mods/2"
+        },
+        {
+          "name": "Helix Mod: World of Final Fantasy",
+          "description": "Provides a fix for the Geo-11 glitch and enables 3D Vision support with post-processing toggles for the Windows version.",
+          "url": "https://helixmod.blogspot.com/2019/04/world-of-final-fantasy.html"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 4",
+      "details": "Excellent console experience with stable 60 FPS and sharp 1080p visuals. Includes the full Maxima expansion with new dungeons and characters. Offers convenient cloud saves and trophy support. The PS4 version is widely considered the best console port due to consistent performance and lack of resolution scaling issues found on Switch.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Twin siblings Lann and Reynn awaken in the mysterious world of Grymoire with no memories of their past. Guided by a mysterious girl named Lann, they must navigate a world filled with monsters from the Final Fantasy series to uncover the truth about their origins and the threat of the Dark Fafnir.",
+    "key_features": [
+      "Stacking mechanic allowing monsters to be stacked on top of each other for combined attacks",
+      "Chocobo and Moogle companion system for exploration and combat assistance",
+      "Turn-based combat with real-time movement and positioning",
+      "Extensive collection of monsters from across the Final Fantasy series",
+      "Dual protagonist system with Lann and Reynn",
+      "Customizable character progression and equipment loadouts",
+      "Exploration of a condensed world map featuring iconic locations",
+      "Photo mode and collectible hunting mechanics"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "World of Final Fantasy serves as a unique anthology celebrating the franchise's 30th anniversary, introducing the stacking mechanic which became a signature element. While not a mainline entry, it successfully bridges the gap between classic and modern RPG styles, appealing to a broad audience."
+    ]
+  }
 }

@@ -53,6 +53,9 @@ coverage/
 .vscode/test/
 *.d.db
 *.test.db
+test-results/
+src/.admin_sessions/
+playwright-report
 
 # ==============
 # IDE & Editors

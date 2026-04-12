@@ -81,7 +81,9 @@ describe('Images Service', () => {
         });
 
         it('should download and process image', async () => {
-            fs.access.mockRejectedValueOnce({ code: 'ENOENT' }); // image doesn't exist
+            // Reject all fs.access calls (ensureImagesDir and imageExists both fail = directory doesn't exist, image doesn't exist)
+            fs.access.mockRejectedValue({ code: 'ENOENT' });
+            fs.mkdir.mockResolvedValue(); // ensureImagesDir creates it
             fs.writeFile.mockResolvedValue();
 
             const axios = require('axios');
@@ -99,7 +101,9 @@ describe('Images Service', () => {
         });
 
         it('should handle download failures', async () => {
-            fs.access.mockRejectedValueOnce({ code: 'ENOENT' });
+            // Image doesn't exist (ENOENT for both ensureImagesDir and imageExists)
+            fs.access.mockRejectedValue({ code: 'ENOENT' });
+            fs.mkdir.mockResolvedValue(); // ensureImagesDir creates the directory
 
             const axios = require('axios');
             axios.get = jest.fn().mockRejectedValue(new Error('Network error'));

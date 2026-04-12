@@ -1,155 +1,198 @@
 {
-    "basic_info": {
-        "url_slug": "/games/the-witcher",
-        "title": "The Witcher",
-        "cover_url": "/images/the-witcher.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Fantasy",
-            "Monster Hunting",
-            "Moral Choices",
-            "Political Intrigue",
-            "Magic and Alchemy"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 7.8,
-        "review": "The Witcher is a groundbreaking RPG that introduced complex moral choices and mature storytelling to the genre, though its combat system shows its age compared to later entries in the series.",
-        "developers": [
-            "CD Projekt Red"
-        ],
-        "publishers": [
-            "Atari",
-            "CD Projekt"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Wied\u017amin (Polish)",
-            "The Witcher: Enhanced Edition Director's Cut",
-            "The Witcher: Rise of the White Wolf (PS3/Xbox 360)"
-        ],
-        "platforms": [
-            {
-                "name": "Windows (PC)",
-                "region": "Worldwide",
-                "release_date": "2007-10-26"
-            },
-            {
-                "name": "PlayStation 3",
-                "region": "Worldwide",
-                "release_date": "2009-05-28"
-            },
-            {
-                "name": "Xbox 360",
-                "region": "Worldwide",
-                "release_date": "2009-05-28"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "The Witcher",
-        "part_number": 1,
-        "previous_game": null,
-        "next_game": {
-            "title": "The Witcher 2: Assassins of Kings",
-            "url_slug": "/games/the-witcher-2"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Baldur's Gate II",
-            "url_slug": "/games/baldurs-gate-ii"
-        },
-        {
-            "title": "Neverwinter Nights 2",
-            "url_slug": "/games/neverwinter-nights-2"
-        },
-        {
-            "title": "Dragon Age: Origins",
-            "url_slug": "/games/dragon-age-origins"
-        },
-        {
-            "title": "Mass Effect 1",
-            "url_slug": "/games/mass-effect-1"
-        },
-        {
-            "title": "The Elder Scrolls IV: Oblivion",
-            "url_slug": "/games/oblivion"
-        }
+  "basic_info": {
+    "url_slug": "/games/the-witcher",
+    "title": "The Witcher",
+    "cover_url": "/images/the-witcher.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (PC - GOG/Steam)",
-            "details": "Enhanced Edition Director's Cut is the definitive version with all DLC, improved stability, and modern compatibility. Best experience when combined with community mods.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "HD Reworked Project",
-                    "description": "Comprehensive visual overhaul improving textures, models, and assets for modern displays"
-                },
-                {
-                    "name": "4GB Patch (NTcore)",
-                    "description": "Allows game to use more than 2GB RAM, preventing crashes on modern systems"
-                },
-                {
-                    "name": "Aspect Ratio Fix",
-                    "description": "Enables ultrawide and multi-monitor support for cutscenes"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 3",
-            "details": "Console port with simplified controls but complete content. Good for casual play but lacks modding flexibility.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "Xbox 360",
-            "details": "Console port with complete content and controller support. Performance similar to PS3 version.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Geralt of Rivia, a mutated monster hunter known as a Witcher, investigates political conspiracies while searching for his former lover and navigating the dangerous world of magic and monsters.",
-        "key_features": [
-            "Multiple difficulty levels affecting gameplay depth",
-            "Choice system with lasting consequences on story outcomes",
-            "Alchemy and potion brewing mechanics",
-            "Isometric or over-the-shoulder camera perspectives",
-            "First game in the acclaimed Witcher trilogy"
-        ],
-        "long_description": "The Witcher, released in October 2007 by CD Projekt Red (then known as CD Projekt), is based on Andrzej Sapkowski's bestselling fantasy novels. It was the studio's debut title and established their reputation for mature storytelling and complex moral choices. The Enhanced Edition Director's Cut (September 2008) added over 200 new animations, improved NPC models, redesigned inventory systems, reduced load times by 80%, and included all DLC content. While the original combat system shows its age compared to later entries in the series, the game remains praised for its narrative depth, world-building, and pioneering approach to player choice. The PS3 and Xbox 360 ports (2009) brought the experience to consoles but with simplified controls.",
-        "legacy_and_impact": [
-            "Established CD Projekt Red as a major RPG developer",
-            "Introduced mature storytelling and moral complexity to Western RPGs",
-            "Created the foundation for one of gaming's most beloved franchises",
-            "Pioneered choice systems that influenced later RPGs like The Witcher 2 & 3",
-            "Continues to receive community support and mods years after release"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "CD Projekt Red"
+    ],
+    "publishers": [
+      "Atari",
+      "CD Projekt"
+    ],
+    "reception_score": 7.2,
+    "review": "A solid RPG with a compelling story and deep mechanics, though hampered by clunky controls and a steep learning curve."
+  },
+  "release": {
+    "alternative_names": [
+      "Wiedźmin",
+      "The Witcher: Enhanced Edition Director's Cut"
+    ],
+    "platforms": [
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2007-09-26"
+      },
+      {
+        "name": "Windows",
+        "region": "North America",
+        "release_date": "2008-09-30"
+      },
+      {
+        "name": "Windows",
+        "region": "Europe",
+        "release_date": "2007-09-26"
+      },
+      {
+        "name": "macOS",
+        "region": "World",
+        "release_date": "2008-09-30"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "The Witcher",
+    "part_number": 1,
+    "next_game": {
+      "title": "The Witcher 2: Assassins of Kings",
+      "url_slug": "/games/the-witcher-2"
     }
+  },
+  "similar_games": [
+    {
+      "title": "The Elder Scrolls IV: Oblivion",
+      "url_slug": "/games/the-elder-scrolls-iv-oblivion"
+    },
+    {
+      "title": "Dragon Age: Origins",
+      "url_slug": "/games/dragon-age-origins"
+    },
+    {
+      "title": "Gothic 3",
+      "url_slug": "/games/gothic-3"
+    },
+    {
+      "title": "Kingdoms of Amalur: Reckoning",
+      "url_slug": "/games/kingdoms-of-amalur-reckoning"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (PC - GOG/Steam)",
+      "details": "Enhanced Edition Director's Cut is the definitive version with all DLC, improved stability, and modern compatibility. Best experience when combined with community mods.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "HD Reworked Project",
+          "description": "Comprehensive visual overhaul improving textures, models, and assets for modern displays"
+        },
+        {
+          "name": "4GB Patch (NTcore)",
+          "description": "Allows game to use more than 2GB RAM, preventing crashes on modern systems"
+        },
+        {
+          "name": "Aspect Ratio Fix",
+          "description": "Enables ultrawide and multi-monitor support for cutscenes"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 3",
+      "details": "Console port with simplified controls but complete content. Good for casual play but lacks modding flexibility.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Xbox 360",
+      "details": "Console port with complete content and controller support. Performance similar to PS3 version.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The original 2007 release offers a raw, unfiltered experience for purists. Lacks the quality-of-life improvements, widescreen support, and content additions of the Enhanced Edition. Suffers from known bugs and a clunky combat system that was later refined. Only recommended for historical interest or specific modding scenarios where the original engine is required. Not the best way to play for modern audiences.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "The Witcher Enhanced Edition Patch 1.3.1",
+          "description": "Official final patch for the Windows Enhanced Edition fixing critical bugs, stability issues, and minor gameplay glitches specific to the 2008 release.",
+          "url": "https://www.nexusmods.com/witcher/mods/1068"
+        },
+        {
+          "name": "Widescreen Fix for The Witcher Enhanced Edition",
+          "description": "Community patch enabling native ultrawide and high-resolution support for the Windows Enhanced Edition, fixing cutscene black bars and aspect ratio issues.",
+          "url": "https://community.pcgamingwiki.com/files/file/1462-the-witcher-aspect-ratio-fix-ultrawide-multi-mon/"
+        },
+        {
+          "name": "The Witcher Texturen Mod",
+          "description": "High-resolution texture overhaul for the Windows Enhanced Edition replacing original low-res assets with detailed 4K textures while maintaining the original art style.",
+          "url": "https://www.moddb.com/mods/the-witcher-texturen-mod-2009-2021"
+        },
+        {
+          "name": "UK English Subtitle Changes",
+          "description": "Translation improvement patch for the Windows Enhanced Edition correcting spellings and subtitles to UK English standards for players in ROI/AUS/NZ.",
+          "url": "https://www.nexusmods.com/games/witcher"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "macOS",
+      "details": "A solid alternative for Apple users, offering the same Enhanced Edition content as the Windows version. Includes the expanded story, new animations, and improved dialogue. While performance may vary on older Mac hardware, it provides a native experience without emulation. Features cloud saves and controller support, making it a convenient choice for macOS gamers who want the full RPG experience.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "macOS Compatibility Fix",
+          "description": "Community patch resolving launch issues and compatibility errors on newer macOS versions for the native Enhanced Edition port."
+        },
+        {
+          "name": "Widescreen Fix for The Witcher Enhanced Edition",
+          "description": "Port of the Windows widescreen fix enabling native ultrawide and high-resolution support for the macOS Enhanced Edition.",
+          "url": "https://community.pcgamingwiki.com/files/file/1462-the-witcher-aspect-ratio-fix-ultrawide-multi-mon/"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Geralt of Rivia, a mutated monster hunter known as a Witcher, awakens in a tavern with no memory of his recent past. He must navigate a war-torn continent filled with political intrigue, supernatural threats, and personal demons to uncover the truth behind his amnesia and the fate of his lover, Yennefer.",
+    "key_features": [
+      "Real-time combat system with sword and sign magic",
+      "Alchemy system for crafting potions, oils, and bombs",
+      "Non-linear narrative with branching dialogue and multiple endings",
+      "Dynamic day-night cycle affecting monster behavior",
+      "Complex quest design with morally ambiguous choices",
+      "Character progression through skill trees and mutations",
+      "Open-world exploration of the Northern Kingdoms",
+      "Gwent mini-game precursor mechanics"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "The Witcher established CD Projekt Red as a major force in the RPG genre, proving that licensed adaptations could succeed with deep respect for source material. Its narrative complexity and moral ambiguity set a new standard for the genre, paving the way for the massive success of its sequels."
+    ]
+  }
 }

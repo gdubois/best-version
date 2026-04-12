@@ -1,236 +1,279 @@
 {
-    "basic_info": {
-        "url_slug": "/games/bravely-default",
-        "title": "Bravely Default",
-        "cover_url": "/images/bravely-default.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Time Travel",
-            "Parallel Worlds",
-            "Hero's Journey",
-            "Crystal Mythology",
-            "Job System"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": true,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 8.5,
-        "review": "Bravely Default is a masterpiece within the RPG genre that combines nostalgia and modernity with its innovative Brave/Default battle system, deep job customization, and compelling parallel world narrative.",
-        "developers": [
-            "Silicon Studio",
-            "Cattle Call"
-        ],
-        "publishers": [
-            "Square Enix",
-            "Nintendo"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Bravely Default: Flying Fairy (\u30af\u30ed\u30ce\u30fb\u30c8\u30ea\u30ac\u30fc)",
-            "Bravely Default: For the Sequel",
-            "Bravely Default: Where the Fairy Flies"
-        ],
-        "platforms": [
-            {
-                "name": "Nintendo 3DS",
-                "region": "Japan",
-                "release_date": "2012-10-11"
-            },
-            {
-                "name": "Nintendo 3DS",
-                "region": "Europe",
-                "release_date": "2013-12-06"
-            },
-            {
-                "name": "Nintendo 3DS",
-                "region": "Australia",
-                "release_date": "2013-12-07"
-            },
-            {
-                "name": "Nintendo 3DS",
-                "region": "North America",
-                "release_date": "2014-02-07"
-            },
-            {
-                "name": "Nintendo Switch 2",
-                "region": "Worldwide",
-                "release_date": "2025-06-05"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2026-03-12"
-            },
-            {
-                "name": "Xbox Series X|S",
-                "region": "Worldwide",
-                "release_date": "2026-03-12"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Bravely",
-        "part_number": 1,
-        "previous_game": null,
-        "next_game": {
-            "title": "Bravely Second: End Layer",
-            "url_slug": "/games/bravely-second-end-layer"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Final Fantasy VI",
-            "url_slug": "/games/final-fantasy-vi"
-        },
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "Octopath Traveler",
-            "url_slug": "/games/octopath-traveler"
-        },
-        {
-            "title": "Final Fantasy: The 4 Heroes of Light",
-            "url_slug": "/games/final-fantasy-4-heroes-of-light"
-        },
-        {
-            "title": "Lunar: Silver Star Story",
-            "url_slug": "/games/lunar-silver-star-story"
-        }
+  "basic_info": {
+    "url_slug": "/games/bravely-default",
+    "title": "Bravely Default",
+    "cover_url": "/images/bravely-default.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch 2 / PC (Steam) / Xbox Series X|S",
-            "details": "The definitive HD Remaster version with 60FPS performance, widescreen aspect ratio, redesigned UI, and comprehensive quality of life improvements. This is the best way to experience Bravely Default in 2025-2026.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Japanese Version (Uncensored)",
-                    "description": "Purchase the Japanese version of the HD Remaster to access uncensored character outfits and costumes not available in Western releases.",
-                    "url": "https://www.square-enix-games.com/en_US/games/bravely-default-flying-fairy-hd-remaster"
-                },
-                {
-                    "name": "HD Sprite Enhancement Mod",
-                    "description": "Community mod that further enhances visual clarity and sharpness beyond the official HD remaster.",
-                    "url": "https://www.nexusmods.com/bravelydefault/mods"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo 3DS",
-            "details": "The original release with the For the Sequel update included in overseas versions. Features StreetPass functionality and all quality of life improvements from the expanded edition.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "Uncensored Outfit Patch",
-                    "description": "Restores all censored character outfits and costumes from the original Japanese version to the Western release.",
-                    "url": "https://gbatemp.net/threads/release-bravely-default-bravely-second-ballad-of-the-three-cavaliers-uncensor-patches-proper.602154/"
-                },
-                {
-                    "name": "For the Sequel Update",
-                    "description": "Official update that adds auto-battle, difficulty settings, encounter rate adjustments, and quality of life improvements.",
-                    "url": "https://www.nintendo.com/au/games/nintendo-3ds/bravely-default"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Lime3DS / Citra",
-                    "optimal_settings": [
-                        "High internal resolution (2x or 3x)",
-                        "Enable texture caching",
-                        "Use accurate CPU timing for best compatibility"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Lime3DS / Citra",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "High performance mode for smoother gameplay"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Nintendo 3DS (Original Release)",
-            "details": "The original Japanese release from October 2012. Lacks the For the Sequel improvements but offers the authentic experience.",
-            "available_in_english": {
-                "official_localization": false,
-                "fan_translation": true
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "English Translation Patch",
-                    "description": "Fan translation patch for the original Japanese release.",
-                    "url": "https://www.romhacking.net/translations/"
-                },
-                {
-                    "name": "Uncensored Outfit Patch",
-                    "description": "Restores all censored character outfits and costumes from the original Japanese version to the Western release.",
-                    "url": "https://gbatemp.net/threads/release-bravely-default-bravely-second-ballad-of-the-three-cavaliers-uncensor-patches-proper.602154/"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Lime3DS / Citra",
-                    "optimal_settings": [
-                        "High internal resolution (2x or 3x)",
-                        "Enable texture caching",
-                        "Use accurate CPU timing for best compatibility"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Lime3DS / Citra",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "High performance mode for smoother gameplay"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Four heroes travel through parallel worlds to awaken four elemental crystals consumed by darkness, uncovering a conspiracy involving a mysterious fairy and an ancient evil known as Ouroboros.",
-        "key_features": [
-            "Innovative Brave/Default battle system with risk/reward mechanics",
-            "Deep job class system with 24 unique jobs and ability combination",
-            "Parallel world narrative with multiple endings based on player choices",
-            "StreetPass/Norende Village reconstruction social features",
-            "Bravely Second ability to freeze time during battles (For the Sequel)",
-            "Auto-battle and fast-forward options for quality of life"
-        ],
-        "long_description": "Bravely Default, known in Japan as Bravely Default: Flying Fairy, is a 2012 role-playing video game developed by Silicon Studio and published by Square Enix for the Nintendo 3DS. Originally conceived as a sequel to Final Fantasy: The 4 Heroes of Light, it evolved into its own intellectual property while retaining classic JRPG elements. The game features an innovative turn-based battle system built around Brave Points (BP) that allow players to either bank actions for later use or borrow from future turns at the cost of waiting. The job system offers deep customization with 24 unique jobs that can be combined and leveled independently. The story follows four protagonists\u2014Agn\u00e8s Oblige, Tiz Arrior, Ringabel, and Edea Lee\u2014as they traverse parallel worlds to awaken elemental crystals consumed by darkness. The game was composed by Revo of Sound Horizon, character designs handled by Akihiko Yoshida (Final Fantasy Tactics), and received critical acclaim for its gameplay mechanics, story, and presentation. An expanded edition titled For the Sequel added quality of life improvements including auto-battle, difficulty settings, and encounter rate adjustments. The HD Remaster released in 2025-2026 further enhanced the experience with 60FPS performance, widescreen support, redesigned UI, and additional quality of life features.",
-        "legacy_and_impact": [
-            "Revitalized interest in traditional turn-based JRPGs during the handheld era",
-            "Popularized the Brave/Default battle mechanic that influenced later Square Enix titles",
-            "Demonstrated commercial viability for Japanese-style RPGs in Western markets",
-            "Led to multiple sequels including Bravely Second: End Layer and Bravely Default II",
-            "Inspired Octopath Traveler through shared development team members",
-            "Maintained strong community engagement years after release with active modding scene"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Silicon Studio",
+      "Cattle Call"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "reception_score": 8.6,
+    "review": "A masterful blend of classic JRPG mechanics and modern strategic depth, praised for its innovative combat system and engaging story."
+  },
+  "release": {
+    "alternative_names": [
+      "Bravely Default: Flying Fairy",
+      "Bravely Default: Flying Fairy HD Remaster"
+    ],
+    "platforms": [
+      {
+        "name": "Nintendo 3DS",
+        "region": "Japan",
+        "release_date": "2012-10-11"
+      },
+      {
+        "name": "Nintendo 3DS",
+        "region": "North America",
+        "release_date": "2013-09-25"
+      },
+      {
+        "name": "Nintendo 3DS",
+        "region": "Europe",
+        "release_date": "2013-10-04"
+      },
+      {
+        "name": "Nintendo 3DS",
+        "region": "Australia",
+        "release_date": "2013-10-04"
+      },
+      {
+        "name": "Nintendo 3DS",
+        "region": "Japan",
+        "release_date": "2013-12-05"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2025-06-05"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2026-03-01"
+      },
+      {
+        "name": "Xbox Series X/S",
+        "region": "World",
+        "release_date": "2026-03-01"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Bravely Default",
+    "part_number": 1,
+    "next_game": {
+      "title": "Bravely Second: End Layer",
+      "url_slug": "/games/bravely-second-end-layer"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy Tactics",
+      "url_slug": "/games/final-fantasy-tactics"
+    },
+    {
+      "title": "Chrono Trigger",
+      "url_slug": "/games/chrono-trigger"
+    },
+    {
+      "title": "Disgaea 5: Alliance of Vengeance",
+      "url_slug": "/games/disgaea-5-alliance-of-vengeance"
+    },
+    {
+      "title": "Octopath Traveler",
+      "url_slug": "/games/octopath-traveler"
+    },
+    {
+      "title": "Persona 5 Royal",
+      "url_slug": "/games/persona-5-royal"
+    },
+    {
+      "title": "Tactics Ogre: Let Us Cling Together",
+      "url_slug": "/games/tactics-ogre-let-us-cling-together"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch 2 / PC (Steam) / Xbox Series X|S",
+      "details": "The definitive HD Remaster version with 60FPS performance, widescreen aspect ratio, redesigned UI, and comprehensive quality of life improvements. This is the best way to experience Bravely Default in 2025-2026.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Japanese Version (Uncensored)",
+          "description": "Purchase the Japanese version of the HD Remaster to access uncensored character outfits and costumes not available in Western releases.",
+          "url": "https://www.square-enix-games.com/en_US/games/bravely-default-flying-fairy-hd-remaster"
+        },
+        {
+          "name": "HD Sprite Enhancement Mod",
+          "description": "Community mod that further enhances visual clarity and sharpness beyond the official HD remaster.",
+          "url": "https://www.nexusmods.com/bravelydefault/mods"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo 3DS",
+      "details": "The original handheld experience with historical significance. Features the authentic 2012 release with the original soundtrack and art style. While it lacks the HD textures and widescreen support of the remaster, it offers the most faithful representation of the game's initial launch state. The North American version includes the English localization.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Bravely Default Uncensored Patch",
+          "description": "Restores original uncensored character outfits and sprites that were modified for the Western release, including the 'Lizard Man' and female character attire.",
+          "url": "https://gbatemp.net/threads/released-bravely-default-second-uncensored.391715/"
+        },
+        {
+          "name": "Bravely Default 999k Damage Limit Mod",
+          "description": "Removes the 999,999 damage cap and allows for crowd data editing, enabling extreme damage numbers and custom battle scenarios.",
+          "url": "https://github.com/struktured-labs/bravely-default-mod"
+        },
+        {
+          "name": "Original HD Font and Some Icons (OHDFaSI)",
+          "description": "Replaces the standard UI font and icons with high-resolution versions to improve text clarity and visual consistency on the 3DS screen.",
+          "url": "https://gbatemp.net/threads/bravely-default-second-original-hd-font-and-some-icons-ohdfasi.670650/"
+        },
+        {
+          "name": "Uncensored Outfit Patch",
+          "description": "Restores all censored character outfits and costumes from the original Japanese version to the Western release.",
+          "url": "https://gbatemp.net/threads/release-bravely-default-bravely-second-ballad-of-the-three-cavaliers-uncensor-patches-proper.602154/"
+        },
+        {
+          "name": "For the Sequel Update",
+          "description": "Official update that adds auto-battle, difficulty settings, encounter rate adjustments, and quality of life improvements.",
+          "url": "https://www.nintendo.com/au/games/nintendo-3ds/bravely-default"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Citra",
+          "optimal_settings": [
+            "Internal Resolution: 4x Native for sharp HD textures on modern monitors",
+            "Texture Filtering: Bilinear for smoother sprite scaling",
+            "Enable Async GPU: Reduces stuttering during complex battle animations"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Citra MMJ",
+          "optimal_settings": [
+            "Internal Resolution: 2x Native for balanced performance and clarity",
+            "CPU Accuracy: High to prevent audio glitches and save corruption",
+            "Enable VSync: Prevents screen tearing on high refresh rate devices"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo 3DS (Original Release)",
+      "details": "The original Japanese release from October 2012. Lacks the For the Sequel improvements but offers the authentic experience.",
+      "available_in_english": {
+        "official_localization": false,
+        "fan_translation": true
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "English Translation Patch",
+          "description": "Fan translation patch for the original Japanese release.",
+          "url": "https://www.romhacking.net/translations/"
+        },
+        {
+          "name": "Uncensored Outfit Patch",
+          "description": "Restores all censored character outfits and costumes from the original Japanese version to the Western release.",
+          "url": "https://gbatemp.net/threads/release-bravely-default-bravely-second-ballad-of-the-three-cavaliers-uncensor-patches-proper.602154/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Lime3DS / Citra",
+          "optimal_settings": [
+            "High internal resolution (2x or 3x)",
+            "Enable texture caching",
+            "Use accurate CPU timing for best compatibility"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Lime3DS / Citra",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled",
+            "High performance mode for smoother gameplay"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "The definitive modern experience via the HD Remaster. Features native 1080p/4K resolution, widescreen support, and a locked 60 FPS frame rate. Includes all original content plus new dungeons, voice acting, and quality-of-life improvements like auto-battle and faster travel. Cloud saves and modern controller support make it the most convenient way to play.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The best PC experience for modding enthusiasts and high-end displays. Offers native 4K support, uncapped frame rates, and full controller remapping. Includes the complete Flying Fairy content and Steam achievements. While the Switch version is optimized, PC allows for community mods, UI overhauls, and higher refresh rates on compatible monitors.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Bravely Default: Flying Fairy HD Remaster Mod Loader",
+          "description": "A MelonLoader-based modding framework that enables 18 native hooks, a web configuration UI, and custom runtime modifications for the Steam version of the game.",
+          "url": "https://github.com/struktured-labs/bravely-default-mod"
+        },
+        {
+          "name": "Bravely Randomize",
+          "description": "A randomization mod that shuffles enemy encounters, item drops, and dungeon layouts to provide a unique replay experience for the HD Remaster.",
+          "url": "https://github.com/MarvinXLII/BravelyRandomize"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Bravely Default is a fantasy role-playing game set in the world of Luxendarc, where four heroes must unite to stop the corrupt King of the Kingdom of Luxendarc from unleashing a catastrophic magical force. Players utilize a unique Brave/Default command system to manage turns strategically, combining classes and skills to overcome challenging battles while uncovering a deep narrative about power, sacrifice, and the nature of heroism.",
+    "key_features": [
+      "Brave/Default command system allowing players to skip turns to stock up actions",
+      "Class-based job system with 12 distinct roles and unique abilities",
+      "Job Fusion system combining two classes to create powerful hybrid forms",
+      "Strategic turn-based combat with real-time movement and positioning",
+      "Extensive customization through equipment, accessories, and skill trees",
+      "Multiple endings determined by player choices and side quest completion",
+      "Rich narrative with branching storylines and character development",
+      "High-fidelity HD remaster with updated graphics and quality-of-life improvements",
+      "Cross-platform save data transfer capabilities",
+      "Dynamic battle music that changes based on combat intensity"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Bravely Default revitalized the turn-based JRPG genre on handheld consoles, proving that strategic depth could coexist with accessibility. Its unique combat system has influenced subsequent RPGs and established a dedicated fanbase that continues to support the franchise through sequels and remasters."
+    ]
+  }
 }

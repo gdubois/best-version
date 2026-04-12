@@ -48,7 +48,7 @@ describe('MobyGames Service', () => {
             expect(results.found).toBe(true);
             expect(results.games).toHaveLength(2);
             expect(results.games[0].title).toBe('Super Mario Bros.');
-            expect(results.games[0].wikipediaUrl).toContain('Super Mario Bros.');
+            expect(results.games[0].wikipediaUrl).toContain('Super%20Mario%20Bros.');
         });
 
         it('should return empty results when no games found', async () => {
@@ -157,10 +157,11 @@ describe('MobyGames Service', () => {
                 width: 300
             };
 
+            // Snippet needs game-indicator keywords to pass the filter
             wikipediaService.searchWikipedia.mockResolvedValue([
                 {
                     title: 'Test Game',
-                    snippet: 'A test game'
+                    snippet: 'Test Game is a video game developed by Test Studio'
                 }
             ]);
             wikipediaService.findGameCover.mockResolvedValue(mockCoverInfo);
@@ -185,7 +186,8 @@ describe('MobyGames Service', () => {
 
             expect(result.found).toBe(true);
             expect(result.metadata.title).toBe('Final Fantasy VII');
-            expect(result.metadata.wikipediaUrl).toContain('Final Fantasy VII');
+            // URL is encoded, so check for encoded version
+            expect(result.metadata.wikipediaUrl).toContain('Final%20Fantasy%20VII');
             expect(result.metadata.snippet).toContain('role-playing game');
         });
 

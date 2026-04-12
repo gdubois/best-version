@@ -24,50 +24,60 @@
       "Square",
       "Square Enix"
     ],
-    "reception_score": 10,
-    "review": "A masterpiece of game design that redefined the RPG genre with its time-travel mechanics and multiple endings."
+    "reception_score": 9.6,
+    "review": "Chrono Trigger is a masterpiece of the RPG genre, offering a perfect blend of engaging story, innovative combat, and emotional depth that set a new standard for the medium."
   },
   "release": {
     "alternative_names": [
-      "CT",
-      "Chrono Trigger '99",
-      "Final Fantasy Chronicles"
+      "クロノ・トリガー",
+      "Chrono Trigger DS",
+      "Chrono Trigger (PlayStation)"
     ],
     "platforms": [
       {
-        "name": "Super Nintendo Entertainment System",
+        "name": "SNES",
         "region": "Japan",
         "release_date": "1995-03-11"
       },
       {
-        "name": "Super Nintendo Entertainment System",
+        "name": "SNES",
         "region": "North America",
         "release_date": "1995-08-22"
       },
       {
-        "name": "Super Nintendo Entertainment System",
+        "name": "SNES",
         "region": "Europe",
-        "release_date": "1995-09-01"
-      },
-      {
-        "name": "PlayStation",
-        "region": "North America",
-        "release_date": "1999-06-29"
+        "release_date": "1995-11-24"
       },
       {
         "name": "PlayStation",
         "region": "Japan",
-        "release_date": "1999-08-05"
+        "release_date": "1999-10-29"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "2001-08-28"
       },
       {
         "name": "PlayStation",
         "region": "Europe",
-        "release_date": "1999-10-01"
+        "release_date": "2001-10-05"
       },
       {
-        "name": "Nintendo DS",
+        "name": "Windows",
         "region": "North America",
-        "release_date": "2008-11-25"
+        "release_date": "2004-08-31"
+      },
+      {
+        "name": "Windows",
+        "region": "Europe",
+        "release_date": "2004-09-03"
+      },
+      {
+        "name": "Windows",
+        "region": "Japan",
+        "release_date": "2004-09-02"
       },
       {
         "name": "Nintendo DS",
@@ -76,28 +86,23 @@
       },
       {
         "name": "Nintendo DS",
+        "region": "North America",
+        "release_date": "2008-11-25"
+      },
+      {
+        "name": "Nintendo DS",
         "region": "Europe",
         "release_date": "2009-02-06"
       },
       {
-        "name": "Windows",
-        "region": "North America",
-        "release_date": "2011-11-15"
-      },
-      {
-        "name": "Windows",
-        "region": "Japan",
-        "release_date": "2011-11-15"
-      },
-      {
         "name": "iOS",
-        "region": "North America",
-        "release_date": "2011-11-15"
+        "region": "World",
+        "release_date": "2011-09-15"
       },
       {
         "name": "Android",
-        "region": "North America",
-        "release_date": "2011-11-15"
+        "region": "World",
+        "release_date": "2011-09-15"
       }
     ]
   },
@@ -116,27 +121,52 @@
       "url_slug": "/games/xenogears"
     },
     {
-      "title": "Mother 3",
-      "url_slug": "/games/mother-3"
-    },
-    {
       "title": "Dragon Quest VIII",
       "url_slug": "/games/dragon-quest-viii"
     },
     {
-      "title": "Chrono Cross",
-      "url_slug": "/games/chrono-cross"
+      "title": "Mother 3",
+      "url_slug": "/games/mother-3"
+    },
+    {
+      "title": "The Legend of Zelda: Ocarina of Time",
+      "url_slug": "/games/the-legend-of-zelda-ocarina-of-time"
     }
   ],
   "play_today": [
     {
       "platform": "Nintendo DS",
-      "details": "The definitive version for most players, featuring a complete English localization, a new voice acting track, and a second playable character (Kid) with her own questline. It includes a touch-screen interface for menu navigation and a new dungeon, though the graphics remain 2D sprites.",
+      "details": "Widely considered the definitive version by the community. It includes the original SNES content plus the Dream Devourer dungeon, new characters (Lynx), and voice acting for cutscenes. Features a dual-screen interface for maps and inventory, plus a modernized translation that fixes many SNES-era errors. While the soundtrack is rearranged, the added content and QoL features make it the most complete experience.",
       "available_in_english": {
         "official_localization": true
       },
-      "recommended_patches": [],
-      "emulators": []
+      "recommended_patches": [
+        {
+          "name": "Chrono Trigger DS High Resolution Texture Pack",
+          "description": "Replaces the low-resolution DS sprites with upscaled, high-definition textures to improve visual clarity on modern screens while retaining the original DS content.",
+          "url": "https://www.nexusmods.com/chronotrigger/mods/8"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DeSmuME",
+          "optimal_settings": [
+            "Enable 4x internal resolution for sharp visuals",
+            "Use OpenGL renderer for better performance",
+            "Enable audio interpolation for smoother sound"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DraStic",
+          "optimal_settings": [
+            "Set frame skip to 0 for smooth gameplay",
+            "Enable touch controls overlay for mobile play",
+            "Use high-quality audio resampling"
+          ]
+        }
+      ]
     },
     {
       "platform": "Super Nintendo Entertainment System",
@@ -210,20 +240,108 @@
           ]
         }
       ]
+    },
+    {
+      "platform": "Windows",
+      "details": "The most convenient modern option available on Steam. It is based on the DS version, meaning it includes the Lost Sanctum, voice acting, and animated cutscenes. It features native widescreen support, controller remapping, and cloud saves. While the graphics are upscaled, the lack of a native 4K texture pack and occasional UI scaling issues prevent it from being perfect.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Chrono Trigger PC Widescreen Fix",
+          "description": "Fixes UI scaling issues on ultrawide monitors and ensures the game renders correctly in native resolutions beyond 1080p.",
+          "url": "https://www.pcgamingwiki.com/wiki/Chrono_Trigger"
+        },
+        {
+          "name": "Chrono Trigger PC High Resolution Texture Pack",
+          "description": "Replaces the default upscaled DS textures with community-created high-resolution assets for sharper visuals on 4K displays.",
+          "url": "https://www.nexusmods.com/chronotrigger/mods/8"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "SNES",
+      "details": "The original experience with the authentic soundtrack composed by Yasunori Mitsuda and the classic pixel art. Preferred by purists who want the game exactly as it was released in 1995. Lacks the extra content of the DS version but offers the most faithful representation of the original design. Requires emulation for modern play, but offers the best audio fidelity for the original score.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Chrono Trigger Bugfix and Uncensoring Patch",
+          "description": "Fixes critical bugs like the 'Lucca's Gun' glitch and restores censored content including the original Lizard Man sprite and dialogue.",
+          "url": "https://www.romhacking.net/hacks/3691/"
+        },
+        {
+          "name": "Chrono Trigger+",
+          "description": "Adds a ton of cut content back into the game, allows access to previously unexplorable areas, and includes additional music tracks.",
+          "url": "https://www.romhacking.net/hacks/3691/"
+        },
+        {
+          "name": "Chrono Trigger: Bugfix and Uncensoring Patch",
+          "description": "Fixes critical bugs like the 'Lucca's Gun' glitch and restores censored content including the original Lizard Man sprite and dialogue.",
+          "url": "https://www.romhacking.net/hacks/3691/"
+        },
+        {
+          "name": "Chrono Trigger: Complete",
+          "description": "Updates the script to modern standards while preserving the original translation's character, combining the best of the SNES and DS scripts.",
+          "url": "https://www.romhacking.net/hacks/3891/"
+        },
+        {
+          "name": "Chrono Trigger: ATB Fixes",
+          "description": "Resolves subtle bugs in the Active Time Battle system where multiple actions resolve incorrectly or inputs are lost during animations.",
+          "url": "https://romhackplaza.org/romhacks/chrono-trigger-atb-fixes-snes/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Snes9x",
+          "optimal_settings": [
+            "Enable SuperFX emulation for accurate hardware behavior",
+            "Set audio to 44100Hz for original fidelity",
+            "Use CRT shader for authentic retro feel"
+          ]
+        },
+        {
+          "platform": "macOS",
+          "recommended_emulator": "bsnes",
+          "optimal_settings": [
+            "Enable accurate timing for precise gameplay",
+            "Use high-quality audio resampling for clear sound",
+            "Set internal resolution to 2x for clean scaling"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "iOS",
+      "details": "A convenient mobile port based on the DS version, offering the same extra content and voice acting. Ideal for playing on the go with controller support (MFi or Bluetooth). The interface is optimized for touch, though some users find the on-screen controls less precise than a physical controller. Includes cloud save support via Game Center, making it a solid alternative to emulation.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
     }
   ],
   "description": {
-    "synopsis": "In the year 1000 AD, a festival is interrupted by a mysterious machine that transports the protagonist, Crono, and his friend Lucca to the distant past, where they meet a dinosaur named Marle. As they traverse time to return home, they uncover a conspiracy involving a powerful entity known as Lavos, threatening to destroy the world.",
+    "synopsis": "In the year 1000 AD, a young man named Crono is interrupted during a festival by a mysterious woman named Marle, who is chased by a robot. After a strange incident involving a time portal, Crono and Marle are transported to the year 65,000,000 BC, where they meet a dinosaur named Lucca. Together, they must navigate through different eras to prevent a catastrophic future and uncover the truth behind the mysterious robot.",
     "key_features": [
-      "Active Time Battle (ATB) system with real-time movement and cooperative attacks",
-      "Non-linear story progression with multiple distinct endings based on player choices",
-      "Time travel mechanics allowing access to five distinct historical eras",
-      "Absence of random enemy encounters, with all battles occurring on the overworld map",
-      "Dual-wielding weapon system and character-specific tech combinations"
+      "Active Time Battle (ATB) system with real-time movement",
+      "Party-based combat with up to seven selectable characters",
+      "Non-linear time travel allowing access to seven distinct eras",
+      "Multiple endings determined by player choices and sequence of events",
+      "Dual-weapon system allowing characters to equip two weapons simultaneously",
+      "Techno system combining two characters' abilities for powerful attacks",
+      "No traditional random encounters; enemies visible on overworld map",
+      "Dynamic soundtrack that changes based on era and context",
+      "Fast-forwarding time to skip battles or travel between eras",
+      "New Game+ mode allowing retention of stats and items"
     ],
-    "long_description": "Chrono Trigger is a landmark role-playing game developed by Square, featuring a non-linear narrative where players travel through time to prevent a global catastrophe. Set in a world where technology and magic coexist, the story follows Crono and his companions as they navigate different eras, from the prehistoric past to a dystopian future. The game is renowned for its lack of random encounters, its multiple endings determined by player choices, and its innovative battle system that allows for real-time attacks and cooperative moves. It stands as a pinnacle of 16-bit gaming, blending the storytelling depth of Final Fantasy with the action-oriented pacing of Dragon Quest.",
+    "long_description": "No description available.",
     "legacy_and_impact": [
-      "Chrono Trigger is universally acclaimed as one of the greatest video games ever made. It influenced countless subsequent RPGs with its non-linear storytelling, lack of random encounters, and emphasis on player agency. Its soundtrack by Yasunori Mitsuda and Nobuo Uematsu is considered a classic in video game music history."
+      "Chrono Trigger is widely regarded as one of the greatest video games of all time, influencing countless RPGs that followed with its time-travel mechanics and narrative structure. Its critical acclaim has remained consistent across decades, with modern ports introducing it to new generations of players."
     ]
   }
 }

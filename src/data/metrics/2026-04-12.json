@@ -1,0 +1,1865 @@
+{
+  "date": "2026-04-12",
+  "processed": 231,
+  "autoApproved": 106,
+  "needsReview": 35,
+  "failed": 90,
+  "totalProcessingTimeMs": 74793,
+  "validationFailures": {
+    "undefined": 53
+  },
+  "apiResponseTimes": {
+    "duckduckgo": [],
+    "wikipedia": []
+  },
+  "entries": [
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T08:12:45.044Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T08:12:45.055Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:12:45.064Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T08:12:45.073Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:12:45.083Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:12:46.093Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:12:47.106Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T08:12:47.117Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T08:13:20.197Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T08:13:20.208Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:13:20.219Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T08:13:20.229Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:13:20.238Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:13:21.253Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:13:22.265Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T08:13:22.276Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:17:15.931Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T08:17:15.943Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:17:15.954Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:17:15.966Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:17:15.979Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T08:17:16.369Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T08:17:16.379Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:17:16.388Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T08:17:16.397Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:17:16.406Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:17:17.418Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:17:18.429Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T08:17:18.441Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 3,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:21:08.511Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T08:21:08.528Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:21:08.538Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T08:21:08.549Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 2,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T08:21:08.562Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 33684,
+      "confidenceScore": 0.24999999999999992,
+      "timestamp": "2026-04-12T09:36:30.384Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T09:37:09.870Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T09:37:09.885Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:37:09.896Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T09:37:09.912Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:37:09.924Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:37:10.943Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:37:11.955Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T09:37:11.966Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:37:12.438Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T09:37:12.451Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:37:12.467Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:37:12.480Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:37:12.492Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T09:41:34.147Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T09:41:34.158Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:41:34.169Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T09:41:34.178Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:41:34.187Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:41:35.197Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:41:36.209Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T09:41:36.218Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 2,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:41:36.594Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T09:41:36.607Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:41:36.616Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:41:36.627Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 2,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:41:36.637Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T09:57:04.253Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T09:57:04.266Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:57:04.277Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T09:57:04.289Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:57:04.300Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:57:05.310Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:57:06.322Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T09:57:06.334Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:57:07.003Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T09:57:07.017Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:57:07.033Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T09:57:07.046Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T09:57:07.061Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T10:02:21.457Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T10:02:21.468Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:02:21.478Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T10:02:21.489Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:02:21.499Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:02:22.509Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:02:23.520Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T10:02:23.529Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:02:23.907Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T10:02:23.919Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:02:23.929Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:02:23.942Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 2,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:02:23.956Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T10:15:34.282Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T10:15:34.292Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:15:34.304Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T10:15:34.316Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:15:34.325Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:15:35.335Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:15:36.345Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T10:15:36.354Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 3,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:19:26.382Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T10:19:26.399Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:19:26.408Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:19:26.419Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:19:26.430Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T10:57:24.379Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T10:57:24.390Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:57:24.399Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T10:57:24.408Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:57:24.417Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:57:25.427Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:57:26.438Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T10:57:26.450Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:57:26.830Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T10:57:26.841Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:57:26.850Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T10:57:26.861Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T10:57:26.872Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T11:05:23.052Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T11:05:23.063Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:05:23.072Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T11:05:23.082Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:05:23.092Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:05:24.103Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:05:25.114Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T11:05:25.124Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:05:25.483Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T11:05:25.494Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:05:25.504Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:05:25.515Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 10,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:05:25.536Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T11:16:42.307Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T11:16:42.318Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:16:42.328Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T11:16:42.337Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:16:42.347Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:16:43.356Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:16:44.367Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T11:16:44.377Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:16:44.738Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T11:16:44.748Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:16:44.758Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:16:44.768Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:16:44.778Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T11:49:48.672Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T11:49:48.683Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:49:48.692Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T11:49:48.709Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:49:48.718Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:49:49.728Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:49:50.745Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T11:49:50.761Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:53:53.109Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T11:53:53.124Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 4,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:53:53.139Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T11:53:53.151Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T11:53:53.161Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T14:01:28.155Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:01:28.165Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:01:28.174Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T14:01:28.182Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:01:28.190Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:01:29.203Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:01:30.217Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T14:01:30.226Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:01:30.605Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:01:30.616Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:01:30.625Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:01:30.636Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:01:30.648Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T14:05:44.019Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:05:44.031Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:05:44.041Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T14:05:44.049Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:05:44.059Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:05:45.071Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:05:46.115Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T14:05:46.127Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:05:46.590Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:05:46.603Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:05:46.615Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:05:46.628Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:05:46.640Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T14:10:17.397Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:10:17.410Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:10:17.421Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T14:10:17.432Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:10:17.447Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:10:18.461Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:10:19.476Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T14:10:19.487Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 2,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:10:19.945Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:10:19.961Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:10:19.977Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:10:19.995Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 3,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:10:20.014Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 41010,
+      "confidenceScore": 0.24999999999999992,
+      "timestamp": "2026-04-12T14:14:24.726Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T14:14:33.211Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:14:33.324Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:14:33.337Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T14:14:33.349Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:14:33.362Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:14:34.384Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:14:35.399Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T14:14:35.415Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 2,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:14:35.900Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:14:35.916Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:14:35.930Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:14:35.947Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 2,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:14:35.966Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T14:21:30.030Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:21:30.043Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:21:30.053Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T14:21:30.063Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:21:30.072Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:21:31.083Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:21:32.096Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T14:21:32.108Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 2,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:21:32.550Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:21:32.564Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:21:32.576Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 1,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:21:32.592Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 11,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:21:32.614Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.92,
+      "timestamp": "2026-04-12T14:28:18.226Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Unknown Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:28:18.238Z"
+    },
+    {
+      "submissionId": "sub-003",
+      "title": "Fake Game XYZ 123",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:28:18.249Z"
+    },
+    {
+      "submissionId": "sub-004",
+      "title": "Old Game",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.85,
+      "timestamp": "2026-04-12T14:28:18.261Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Game One",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:28:18.273Z"
+    },
+    {
+      "submissionId": "sub-002",
+      "title": "Game Two",
+      "status": "auto_approved",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:28:19.287Z"
+    },
+    {
+      "submissionId": "sub-005",
+      "title": "Error Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:28:20.301Z"
+    },
+    {
+      "submissionId": "sub-006",
+      "title": "Validation Error",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.1,
+      "timestamp": "2026-04-12T14:28:20.315Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Final Fantasy VII",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:28:21.547Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "needs_review",
+      "processingTimeMs": 0,
+      "confidenceScore": 0.6,
+      "timestamp": "2026-04-12T14:28:21.560Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Unknown Game XYZ",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:28:21.571Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "failed",
+      "processingTimeMs": 0,
+      "confidenceScore": 0,
+      "timestamp": "2026-04-12T14:28:21.584Z"
+    },
+    {
+      "submissionId": "sub-001",
+      "title": "Test Game",
+      "status": "auto_approved",
+      "processingTimeMs": 1,
+      "confidenceScore": 0.9,
+      "timestamp": "2026-04-12T14:28:21.597Z"
+    }
+  ]
+}

@@ -1,140 +1,192 @@
 {
-    "basic_info": {
-        "url_slug": "/games/fire-emblem-three-houses",
-        "title": "Fire Emblem: Three Houses",
-        "cover_url": "/images/fire-emblem-three-houses.jpg",
-        "genres": [
-            "Tactical Role-Playing"
-        ],
-        "themes": [
-            "War and Politics",
-            "School Life",
-            "Moral Choices",
-            "Romance",
-            "Military Strategy"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 9.0,
-        "review": "Fire Emblem: Three Houses is a masterpiece of tactical RPG design, combining deep character relationships, strategic combat, and meaningful choices that shape the story in multiple directions.",
-        "developers": [
-            "Koei Tecmo",
-            "Intelligent Systems"
-        ],
-        "publishers": [
-            "Nintendo"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30d5\u30a1\u30a4\u30a2\u30fc\u30a8\u30e0\u30d6\u30ec\u30e0 \u98a8\u82b1\u96ea\u6708 (Japanese)",
-            "FE3H",
-            "Fire Emblem: Three Houses - Complete Edition"
-        ],
-        "platforms": [
-            {
-                "name": "Nintendo Switch",
-                "region": "Worldwide",
-                "release_date": "2019-07-26"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Fire Emblem",
-        "part_number": 16,
-        "previous_game": {
-            "title": "Fire Emblem Fates",
-            "url_slug": "/games/fire-emblem-fates"
-        },
-        "next_game": {
-            "title": "Fire Emblem Engage",
-            "url_slug": "/games/fire-emblem-engage"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Persona 3 Reload",
-            "url_slug": "/games/persona-3-reload"
-        },
-        {
-            "title": "Fire Emblem: Awakening",
-            "url_slug": "/games/fire-emblem-awakening"
-        },
-        {
-            "title": "Dragon Quest XI",
-            "url_slug": "/games/dragon-quest-xi"
-        },
-        {
-            "title": "Disgaea 5 Complete",
-            "url_slug": "/games/disgaea-5-complete"
-        },
-        {
-            "title": "XCOM 2",
-            "url_slug": "/games/xcom-2"
-        }
+  "basic_info": {
+    "url_slug": "/games/fire-emblem-three-houses",
+    "title": "Fire Emblem: Three Houses",
+    "cover_url": "/images/fire-emblem-three-houses.jpg",
+    "genres": [
+      "Simulator"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch (OLED/Standard)",
-            "details": "The definitive version with all DLC content available via Expansion Pass. Best experience in handheld mode for portability, or docked for better visuals.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Expansion Pass",
-                    "description": "Official DLC adding 4 waves of content including new characters (Hilda, Sylvain, etc.), story routes, and gameplay features"
-                },
-                {
-                    "name": "1.2.0 Update",
-                    "description": "Official update adding unit appearance customization and quality-of-life improvements"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Yuzu/Ryujinx",
-                    "optimal_settings": [
-                        "60 FPS patch (Ctrl+U)",
-                        "High resolution rendering",
-                        "Enable VSync for stability"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Skyline",
-                    "optimal_settings": [
-                        "Custom shader compilation",
-                        "Performance mode enabled"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Byleth, a mercenary and professor at the Garreg Mach Monastery, must choose one of three houses to lead through a war-torn continent while managing relationships with students who will become their allies or enemies.",
-        "key_features": [
-            "Three distinct story routes based on house choice",
-            "Social simulation mechanics (teaching, bonding, romance)",
-            "Tactical turn-based combat with permadeath option",
-            "Multiple endings determined by player choices",
-            "Extensive character customization and relationship system"
-        ],
-        "long_description": "Fire Emblem: Three Houses, developed by Koei Tecmo's Omega Force team in collaboration with Intelligent Systems, was released for Nintendo Switch on July 26, 2019. It is the sixteenth main installment in the Fire Emblem franchise and represents a major evolution of the series' formula. Players take on the role of Byleth, a mercenary turned professor at Garreg Mach Monastery, where they teach students from three noble houses while navigating political intrigue and an impending war. The game features unprecedented depth with three distinct story routes (Golden Deer, Black Eagles, Blue Lions), each offering unique characters, storylines, and endings. The Expansion Pass adds additional content including the Crimson Flower route, new playable characters, and gameplay enhancements. With over 100 hours of gameplay for a complete playthrough including all DLC, it's widely considered one of the best tactical RPGs ever made.",
-        "legacy_and_impact": [
-            "Became the best-selling Fire Emblem game in history",
-            "Revolutionized the series with social simulation mechanics",
-            "Set new standards for character depth and relationship systems",
-            "The Expansion Pass became a model for DLC integration",
-            "Continues to receive community support years after release"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Intelligent Systems",
+      "Koei Tecmo"
+    ],
+    "publishers": [
+      "Nintendo"
+    ],
+    "reception_score": 8.8,
+    "review": "A masterpiece of the genre that successfully blends deep tactical combat with engaging character simulation, offering three distinct narratives that reward replayability."
+  },
+  "release": {
+    "alternative_names": [
+      "FE3H",
+      "Fire Emblem: San no Ie"
+    ],
+    "platforms": [
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2019-07-26"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Fire Emblem",
+    "part_number": 16,
+    "previous_game": {
+      "title": "Fire Emblem Fates",
+      "url_slug": "/games/fire-emblem-fates"
+    },
+    "next_game": {
+      "title": "Fire Emblem Engage",
+      "url_slug": "/games/fire-emblem-engage"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Fire Emblem: Fates",
+      "url_slug": "/games/fire-emblem-fates"
+    },
+    {
+      "title": "XCOM 2",
+      "url_slug": "/games/xcom-2"
+    },
+    {
+      "title": "Disgaea 5: Alliance of Vengeance",
+      "url_slug": "/games/disgaea-5-alliance-of-vengeance"
+    },
+    {
+      "title": "Final Fantasy Tactics",
+      "url_slug": "/games/final-fantasy-tactics"
+    },
+    {
+      "title": "Persona 5 Royal",
+      "url_slug": "/games/persona-5-royal"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch (OLED/Standard)",
+      "details": "The definitive version with all DLC content available via Expansion Pass. Best experience in handheld mode for portability, or docked for better visuals.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Expansion Pass",
+          "description": "Official DLC adding 4 waves of content including new characters (Hilda, Sylvain, etc.), story routes, and gameplay features"
+        },
+        {
+          "name": "1.2.0 Update",
+          "description": "Official update adding unit appearance customization and quality-of-life improvements"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Yuzu/Ryujinx",
+          "optimal_settings": [
+            "60 FPS patch (Ctrl+U)",
+            "High resolution rendering",
+            "Enable VSync for stability"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Skyline",
+          "optimal_settings": [
+            "Custom shader compilation",
+            "Performance mode enabled"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "A secondary recommendation for players who prefer the original 30 FPS experience but want to utilize community mods. This version supports various UI overhauls and quality-of-life improvements that are not available on the base game. It is ideal for those who want to customize their experience without the complexity of full emulation.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Aldebaran Mod Loader",
+          "description": "Essential mod loader for the Nintendo Switch version that enables the installation of gameplay, UI, and graphical mods via Atmosphere CFW.",
+          "url": "https://github.com/three-houses-research-team/Aldebaran/releases"
+        },
+        {
+          "name": "Enbarr Edition",
+          "description": "A comprehensive rebalance mod for the Nintendo Switch version that overhauls classes, spells, and weapon types to create unique identities for characters.",
+          "url": "https://gamebanana.com/mods/394880"
+        },
+        {
+          "name": "Teaspoon Translations",
+          "description": "A fan translation patch for the Nintendo Switch version that improves the English localization of story events, supports, and character information.",
+          "url": "https://fe3htranslations.wordpress.com/"
+        },
+        {
+          "name": "60 FPS Unlock Patch",
+          "description": "Removes the 30 FPS cap for the Nintendo Switch version when played on emulators, significantly improving combat fluidity and menu navigation.",
+          "url": "https://www.gamebrew.org/wiki/Fire_Emblem_-_Three_Houses_60_FPS_Mod"
+        },
+        {
+          "name": "No Outlines Mod",
+          "description": "A graphical quality-of-life mod for the Nintendo Switch version that removes the black outlines around characters for a cleaner visual experience.",
+          "url": "https://gamebanana.com/mods/games/7492"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Yuzu",
+          "optimal_settings": [
+            "Enable 60 FPS Unlock via Game Settings",
+            "Set Internal Resolution to 2x or 4x for sharper visuals",
+            "Enable Async GPU for improved performance",
+            "Set CPU Accuracy to 'High' for stability"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "Ryujinx",
+          "optimal_settings": [
+            "Enable 60 FPS Unlock in Game Settings",
+            "Set Resolution Scale to 2x Native",
+            "Use Vulkan Backend for optimal performance",
+            "Enable 'Use Disk Cache' for faster load times"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "Set in the continent of Fódlan, the game follows Byleth, a mercenary who becomes a professor at the Officers Academy. The player must choose to lead one of three houses, each aligned with a different faction in a brewing civil war. As the conflict escalates, Byleth's choices determine the fate of the continent and the future of the church.",
+    "key_features": [
+      "Three distinct story paths based on house selection",
+      "Class-based character progression with unique skill trees",
+      "Turn-based tactical combat with terrain and weapon triangle mechanics",
+      "Social simulation phase with bonding and support conversations",
+      "Dual-phase battle system (Day/Night) with strategic movement",
+      "Paralogue system for optional side missions and character development",
+      "Dynamic difficulty settings including Casual and Classic modes",
+      "Multiplayer mode with custom map creation and online battles",
+      "Character customization through skill inheritance and class mastery",
+      "Narrative branching that alters the ending based on player choices"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Fire Emblem: Three Houses revitalized the franchise for a global audience, becoming one of the best-selling entries in the series. It set a new standard for narrative depth in tactical RPGs, proving that complex storytelling and strategic gameplay can coexist seamlessly."
+    ]
+  }
 }

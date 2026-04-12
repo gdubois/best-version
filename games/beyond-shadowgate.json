@@ -1,114 +1,139 @@
 {
-    "basic_info": {
-        "url_slug": "/games/beyond-shadowgate",
-        "title": "Beyond Shadowgate",
-        "cover_url": "/images/beyond-shadowgate.jpg",
-        "genres": [
-            "Adventure"
-        ],
-        "themes": [
-            "Dark Fantasy",
-            "Puzzle Solving",
-            "Castle Exploration",
-            "Magic and Sorcery",
-            "Medieval Setting",
-            "Trial and Error Gameplay"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 7.3,
-        "review": "Beyond Shadowgate is a faithful sequel to the NES classic that expands on its predecessor with 250 rooms and modern quality-of-life improvements while maintaining the challenging puzzle design and dark atmosphere fans love.",
-        "developers": [
-            "Zojoi",
-            "Grahfmetal Games"
-        ],
-        "publishers": [
-            "Zojoi"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Shadowgate II (working title)"
-        ],
-        "platforms": [
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2024-09-19"
-            },
-            {
-                "name": "Windows (GOG)",
-                "region": "Worldwide",
-                "release_date": "2024-09-19"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Shadowgate",
-        "part_number": 3,
-        "previous_game": {
-            "title": "Shadowgate (NES)",
-            "url_slug": "/games/shadowgate"
-        },
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "D\u00e9j\u00e0 Vu",
-            "url_slug": "/games/deja-vu"
-        },
-        {
-            "title": "Uninvited",
-            "url_slug": "/games/uninvited"
-        },
-        {
-            "title": "The Manhole",
-            "url_slug": "/games/the-manhole"
-        },
-        {
-            "title": "Myst",
-            "url_slug": "/games/myst"
-        },
-        {
-            "title": "Monkey Island 2: LeChuck's Revenge",
-            "url_slug": "/games/monkey-island-2"
-        }
+  "basic_info": {
+    "url_slug": "/games/beyond-shadowgate",
+    "title": "Beyond Shadowgate",
+    "cover_url": "/images/beyond-shadowgate.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (Steam/GOG)",
-            "details": "The definitive and only modern version. Based on original 1990 design documents by Dave Marsh, this is the true sequel to NES Shadowgate that fans have waited 34 years for. Features 250 unique rooms across multiple environments, expanded story with more dialogue and character interactions, no dead ends or game-over states (modern QoL improvement), torch mechanic removed, cameo appearances from other MacVenture titles including D\u00e9j\u00e0 Vu and Uninvited.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Decades after the events of Shadowgate, a Fenling named Del awakens imprisoned in a castle dungeon. Guided by a wisp companion who provides hints and objectives, Del must escape and uncover a conspiracy threatening the kingdom while encountering allies, enemy creatures, and specters from Castle Shadowgate's past.",
-        "key_features": [
-            "250 unique rooms across diverse environments (expansion from original NES game)",
-            "Classic first-person point-and-click puzzle-solving design",
-            "Modern quality-of-life improvements: no dead ends or permanent deaths, torch mechanic removed",
-            "Expanded narrative with more dialogue and character interactions than predecessor",
-            "Cameo segments from other ICOM MacVenture titles including D\u00e9j\u00e0 Vu and Uninvited"
-        ],
-        "long_description": "Beyond Shadowgate is a 2024 point-and-click adventure game developed by Zojoi (rights holders to the ICOM properties) in partnership with indie developer Grahfmetal Games. It serves as an official sequel to the Nintendo Entertainment System version of Shadowgate, drawing from original design documents written by co-creator Dave Marsh around 1990 that were largely discarded when the TurboGrafx-CD team developed their unrelated Beyond Shadowgate in 1993. The game was successfully crowdfunded via Kickstarter in February 2023 with over $120,000 raised. Using GameMaker Studio 2 engine, it retains the first-person perspective and classic puzzle-solving design of the original while expanding significantly in scope with 250 rooms versus the NES version's much smaller castle. The soundtrack was composed by Orie Falconer, who previously worked on Grahfmetal's retro-inspired adventures Spectacle and Infested. While maintaining the challenging puzzle design and dark atmosphere that defined the MacVenture series, Beyond Shadowgate modernizes the experience by removing frustrating elements like dead ends and resource management (torches), making it more accessible while preserving the nostalgic feel.",
-        "legacy_and_impact": [
-            "Realized a 34-year-old vision for an NES Shadowgate sequel based on original design documents",
-            "Successfully crowdfunded via Kickstarter with over $120,000 raised in February 2023",
-            "Bridges the gap between classic MacVenture games and modern point-and-click adventures",
-            "Features crossover elements from other ICOM titles including D\u00e9j\u00e0 Vu and Uninvited",
-            "Demonstrates enduring appeal of challenging puzzle-adventure genre among retro gaming enthusiasts"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Zojoi",
+      "Grahfmetal Games"
+    ],
+    "publishers": [
+      "Zojoi"
+    ],
+    "reception_score": 8.1,
+    "review": "A faithful and ambitious revival of the classic point-and-click genre, offering a massive world and challenging puzzles that honor the original Shadowgate while modernizing the experience."
+  },
+  "release": {
+    "alternative_names": [
+      "Beyond Shadowgate (2024)"
+    ],
+    "platforms": [
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2024-09-19"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Shadowgate",
+    "part_number": 2,
+    "previous_game": {
+      "title": "Shadowgate (NES)",
+      "url_slug": "/games/shadowgate"
     }
+  },
+  "similar_games": [
+    {
+      "title": "The Longest Journey",
+      "url_slug": "/games/the-longest-journey"
+    },
+    {
+      "title": "Myst",
+      "url_slug": "/games/myst"
+    },
+    {
+      "title": "Syberia",
+      "url_slug": "/games/syberia"
+    },
+    {
+      "title": "Deponia",
+      "url_slug": "/games/deponia"
+    },
+    {
+      "title": "The Secret of Monkey Island",
+      "url_slug": "/games/the-secret-of-monkey-island"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (Steam/GOG)",
+      "details": "The definitive and only modern version. Based on original 1990 design documents by Dave Marsh, this is the true sequel to NES Shadowgate that fans have waited 34 years for. Features 250 unique rooms across multiple environments, expanded story with more dialogue and character interactions, no dead ends or game-over states (modern QoL improvement), torch mechanic removed, cameo appearances from other MacVenture titles including Déjà Vu and Uninvited.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "Third ranking slot filled by the same Windows platform due to lack of other versions. This entry highlights the modding potential on PC. While the base game is complete, the PC platform allows for potential future community mods to enhance UI or add quality-of-life features not present in the original 8-bit era. The modern engine ensures stability and performance on current hardware.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Beyond Shadowgate v1.0.0.5 Official Update",
+          "description": "Official patch fixing the infinite item pickup glitch with Dragon Tears and adding speedrun features for dedicated players.",
+          "url": "https://store.steampowered.com/news/app/2332240/view/4534654356721500220"
+        },
+        {
+          "name": "Beyond Shadowgate v1.0.0.4 Quality of Life Update",
+          "description": "Fixes the unresponsive Blacksmith bug in the endgame and adds chapter numbers to the minimap for better navigation.",
+          "url": "https://store.steampowered.com/news/app/2332240/view/4672011608154485489"
+        },
+        {
+          "name": "Beyond Shadowgate v1.0.0.3 Stability Patch",
+          "description": "Addresses minor stability issues and refines game text for better readability. This update serves as a foundational fix for the game's initial release stability.",
+          "url": "https://steamcommunity.com/app/2332240/eventcomments/4849903159943852701/"
+        },
+        {
+          "name": "Beyond Shadowgate v1.0.0.4 Official Update",
+          "description": "Corrects text typos and minor narrative inconsistencies while adding new sound effects to enhance the audio experience. Fixes a specific endgame bug involving the Blacksmith NPC interaction.",
+          "url": "https://store.steampowered.com/news/app/2332240/view/4672011608154485489"
+        },
+        {
+          "name": "Beyond Shadowgate v1.0.0.3 Official Update",
+          "description": "Patches several game-breaking exploits and fixes minor bugs discovered in the initial release. Introduces a hidden 'Secret Menu' for advanced users and speedrunners.",
+          "url": "https://steamcommunity.com/app/2332240/eventcomments/4849903519809543023/"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Beyond Shadowgate follows Del Thornburrow, a fenling wrongfully imprisoned in the dungeons of the Shadowgate castle. After escaping, he must navigate a vast and treacherous world to uncover the truth behind his father's death and clear his family name. The journey involves solving intricate puzzles, battling dark magic, and confronting the legacy of the original Shadowgate hero.",
+    "key_features": [
+      "Point-and-click interface with modern mouse controls",
+      "Inventory-based puzzle solving with item combination mechanics",
+      "Non-linear exploration of a massive interconnected world",
+      "Retro 8-bit pixel art aesthetic with modern rendering",
+      "Multiple endings based on player choices and puzzle solutions",
+      "Complex logic puzzles requiring environmental observation",
+      "Narrative-driven progression with extensive dialogue trees",
+      "Hidden secrets and easter eggs referencing the original Shadowgate",
+      "Dynamic lighting effects enhancing the dark atmosphere",
+      "Integrated hint system for challenging puzzles"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Beyond Shadowgate represents a significant milestone in the preservation of classic adventure game design, bringing a long-lost sequel concept to life after decades. It has revitalized interest in the Shadowgate franchise and demonstrated the enduring appeal of complex, logic-based puzzle games in the modern market."
+    ]
+  }
 }

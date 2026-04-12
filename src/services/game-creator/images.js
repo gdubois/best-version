@@ -10,8 +10,10 @@
 const fs = require('fs').promises;
 const path = require('path');
 const { createLogger } = require('./logger');
+const llmClient = require('./llmClient');
 
-const IMAGES_PATH = path.join(__dirname, '../../../images');
+// Use public/images for direct serving by the web service
+const IMAGES_PATH = path.join(__dirname, '../../../public/images');
 
 // Try to load sharp for image processing
 let sharp = null;
@@ -185,6 +187,117 @@ async function storeGameImage(slug, imageUrl) {
 }
 
 /**
+ * Find the best cover image using LLM-powered web search
+ * @param {string} gameTitle - Game title
+ * @returns {Promise<Object>} Image info or { found: false }
+ */
+async function findCoverImageWithLLM(gameTitle) {
+    log('Starting LLM-powered image search', 'info', { gameTitle });
+
+    try {
+        // Load the image search prompt
+        const promptPath = path.join(__dirname, '../../../prompts/image_search.txt');
+        let promptTemplate;
+        try {
+            promptTemplate = await fs.readFile(promptPath, 'utf8');
+        } catch (error) {
+            log('Failed to load image_search.txt prompt', 'warn', { error: error.message });
+            return { found: false, reason: 'prompt_not_found' };
+        }
+
+        // Replace placeholder with game title
+        let prompt = promptTemplate.replace('${GAME_TITLE}', gameTitle);
+
+        // Try to use MCP web search tool if available
+        const mcpClientPath = './mcp-client';
+        let mcpClient;
+        try {
+            mcpClient = require(mcpClientPath);
+        } catch (error) {
+            log('MCP client not available, will use LLM directly', 'debug');
+        }
+
+        // Perform web searches using MCP if available
+        let searchResults = '';
+        if (mcpClient && typeof mcpClient.executeTool === 'function') {
+            try {
+                const searchPrompts = [
+                    `${gameTitle} cover art official`,
+                    `${gameTitle} box art wiki`,
+                    `${gameTitle} Wikipedia infobox image`
+                ];
+
+                const results = [];
+                for (const searchPrompt of searchPrompts) {
+                    const toolResult = await mcpClient.executeTool('search-web', {
+                        query: searchPrompt,
+                        num: 10
+                    });
+                    if (toolResult && toolResult.results) {
+                        results.push(...toolResult.results);
+                    }
+                }
+
+                // Format results for LLM
+                searchResults = results.slice(0, 15).map((r, i) =>
+                    `${i + 1}. ${r.title || 'No title'}\n   URL: ${r.url || ''}\n   Snippet: ${(r.snippet || '').substring(0, 200)}`
+                ).join('\n\n');
+
+                log('MCP search completed', 'info', { resultsCount: results.length });
+            } catch (error) {
+                log('MCP search failed, continuing without it', 'warn', { error: error.message });
+            }
+        }
+
+        // Append search results to prompt
+        if (searchResults) {
+            prompt += `\n\n=== SEARCH RESULTS ===\n${searchResults}\n\nBased on the search results above, select the best cover image.`;
+        }
+
+        // Call LLM to analyze and select best image
+        const llmResponse = await llmClient.callLLMWithJSON(prompt, {
+            type: 'object',
+            properties: {
+                imageUrl: { type: 'string', description: 'Direct URL to the image' },
+                source: { type: 'string', description: 'Source website name' },
+                reason: { type: 'string', description: 'Why this is the best image' }
+            },
+            required: ['imageUrl', 'source', 'reason']
+        });
+
+        if (llmResponse.success && llmResponse.data) {
+            const data = llmResponse.data;
+
+            // Validate the image URL
+            if (!data.imageUrl || !data.imageUrl.match(/^https?:\/\/.*\.(jpg|jpeg|png|webp)(\?.*)?$/i)) {
+                log('LLM returned invalid image URL', 'warn', { url: data.imageUrl });
+                return { found: false, reason: 'invalid_image_url' };
+            }
+
+            log('LLM selected cover image', 'info', {
+                url: data.imageUrl,
+                source: data.source,
+                reason: data.reason
+            });
+
+            return {
+                found: true,
+                imageUrl: data.imageUrl,
+                source: data.source || 'LLM-selected',
+                reason: data.reason
+            };
+        }
+
+        log('LLM image selection failed', 'warn', { error: llmResponse.error });
+        return { found: false, reason: 'llm_selection_failed' };
+
+    } catch (error) {
+        log('LLM-powered image search failed: ' + error.message, 'error');
+        return { found: false, reason: error.message };
+    }
+}
+
+/**
  * Search for game cover art using DuckDuckGo image search
  * @param {string} gameTitle - Game title
  * @returns {Promise<Object>} Image info or { found: false }
@@ -270,22 +383,39 @@ async function searchDuckDuckGoImages(gameTitle) {
 
 /**
  * Fetch and store a game's cover image
- * Primary source: MobyGames (via Wikipedia)
- * Fallback: Wikipedia direct search
+ * Primary source: LLM-powered image search with MCP web tools
+ * Fallback 1: MobyGames (via Wikipedia)
+ * Fallback 2: Wikipedia direct search
  * Final fallback: DuckDuckGo image search
  * @param {string} gameTitle - Game title
  * @param {string} slug - Game slug
  * @returns {Promise<Object>}
  */
 async function fetchAndStoreCover(gameTitle, slug) {
-    const mobygamesService = require('./mobygames');
-
     log(`Fetching cover for: ${gameTitle}`, 'info', { slug });
 
-    // Try MobyGames first (which uses Wikipedia as its data source)
-    let coverInfo = await mobygamesService.findGameCover(gameTitle, 600);
+    // PRIMARY: Try LLM-powered image search first
+    let coverInfo = await findCoverImageWithLLM(gameTitle);
 
-    // If MobyGames doesn't have it, fall back to direct Wikipedia search
+    if (coverInfo.found && coverInfo.imageUrl) {
+        log('LLM-powered search found cover image', 'info', {
+            gameTitle,
+            source: coverInfo.source
+        });
+    }
+
+    // FALLBACK 1: Try MobyGames (via Wikipedia)
+    if (!coverInfo.found || !coverInfo.imageUrl) {
+        log('LLM search did not find image, trying MobyGames', 'debug', { gameTitle });
+        const mobygamesService = require('./mobygames');
+        coverInfo = await mobygamesService.findGameCover(gameTitle, 600);
+
+        if (coverInfo.found && coverInfo.imageUrl) {
+            log('Found image via MobyGames fallback', 'info', { gameTitle });
+        }
+    }
+
+    // FALLBACK 2: Wikipedia direct search
     if (!coverInfo.found || !coverInfo.imageUrl) {
         log('MobyGames search did not find image, trying Wikipedia directly', 'debug', { gameTitle });
         const wikipediaService = require('./wikipedia');
@@ -296,7 +426,7 @@ async function fetchAndStoreCover(gameTitle, slug) {
         }
     }
 
-    // Final fallback: DuckDuckGo image search
+    // FINAL FALLBACK: DuckDuckGo image search
     if (!coverInfo.found || !coverInfo.imageUrl) {
         log('Wikipedia search did not find image, trying DuckDuckGo image search', 'debug', { gameTitle });
         coverInfo = await searchDuckDuckGoImages(gameTitle);
@@ -403,6 +533,7 @@ async function deleteImage(slug) {
 module.exports = {
     storeGameImage,
     fetchAndStoreCover,
+    findCoverImageWithLLM,
     imageExists,
     getImagePath,
     getImageStats,

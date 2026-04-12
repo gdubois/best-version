@@ -1,0 +1,9 @@
+The Qwen 3.5 4B model at 4-bit quantization (Q4_K_M) is currently the best balance of quality and speed for a Raspberry Pi 5 with 8GB RAM, delivering 4–5 tokens per second with significantly better results than other 4-bit variants. 
+
+While smaller models like Qwen 3.5 2B offer faster speeds (5–6 t/s) and Qwen 3.5 0.8B can reach 8.05 t/s, the 4B model is widely recommended for 8GB devices as it provides superior performance without exceeding memory constraints, whereas the 9B variant is generally not suitable for this hardware. 
+
+Recommended Model: qwen3.5:4b (4-bit quantized, specifically Q4_K_M). 
+Performance: ~4–5 tokens/second on standard 8GB Pi 5. 
+Memory Usage: Fits comfortably within 8GB, leaving headroom for the OS.
+Setup: Use Ollama or llama.cpp with optimized settings (e.g., OLLAMA_MAX_LOADED_MODELS=1) to ensure stability. 
+Alternative: For maximum speed, Qwen 3.5 2B is a strong runner-up, while Phi-3.5 Mini or Gemma 2 2B remain viable options for specific use cases.

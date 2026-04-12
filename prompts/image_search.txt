@@ -1,0 +1,110 @@
+# IMAGE SEARCH: FIND BEST COVER IMAGE
+
+Find the BEST cover image URL for the game: ${GAME_TITLE}
+
+I am creating a website about the BEST VERSION available for each game. You need to find the highest quality, most appropriate cover image for this game.
+
+=============================================================================
+YOUR TASK
+=============================================================================
+
+1. Search the web for official cover art/box art images of this game
+2. Analyze the search results and identify the BEST image source
+3. Return the direct image URL in the specified JSON format
+
+=============================================================================
+PRIORITY SOURCES (in order of preference)
+=============================================================================
+
+1. **Wikipedia Infobox Images**
+   - High quality, reliably sourced
+   - Format: https://upload.wikimedia.org/wikipedia/...
+   - Look for the image used in the game's Wikipedia infobox
+
+2. **MobyGames Box Art**
+   - Official cover art archive
+   - High resolution scans of original packaging
+   - Format: https://artworks.mobygames.com/...
+
+3. **Steam Store Page**
+   - Official promotional art from Valve
+   - High quality, modern images
+   - Format: https://cdn.akamai.steamstatic.com/...
+
+4. **IGN / GameSpot / Major Gaming Sites**
+   - Professional photography and screenshots
+   - Format: https://media.ign.com/... or https://images.giantbomb.com/...
+
+5. **Publisher/Developer Official Sites**
+   - Square Enix, Nintendo, Sony, Microsoft official pages
+   - Format: Publisher-specific URLs
+
+6. **GOG.com / Epic Games Store**
+   - Official digital store images
+   - Format: https://images.gog-statics.com/...
+
+=============================================================================
+IMAGE REQUIREMENTS
+=============================================================================
+
+MUST:
+- Be the actual game cover art or official box art
+- Be in JPEG, PNG, or WebP format
+- Have resolution of at least 300x300 pixels
+- Be from a trusted, reliable source
+- Show the game title or recognizable game imagery
+
+PREFER:
+- High resolution images (600px+ on the longest side)
+- Official promotional art over fan art
+- Images from the original release or definitive edition
+- Images without watermarks or heavy cropping
+
+AVOID:
+- Fan art, memes, or unofficial artwork
+- Blurry, pixelated, or low-quality images
+- Screenshots instead of cover art
+- Images with heavy watermarks or overlays
+- Redirect or intermediate pages (must be direct image URL)
+- SVG files (use raster formats only)
+
+=============================================================================
+SEARCH STRATEGY
+=============================================================================
+
+Search for:
+- "${GAME_TITLE} cover art"
+- "${GAME_TITLE} box art"
+- "${GAME_TITLE} official artwork"
+- "${GAME_TITLE} Wikipedia" (to find infobox image)
+
+Look for direct image URLs ending in:
+- .jpg, .jpeg, .png, .webp
+- Wikimedia URLs: /wiki/File: or /wikipedia/commons/
+- MobyGames artwork URLs
+- Steam CDN URLs
+
+=============================================================================
+OUTPUT FORMAT
+=============================================================================
+
+Generate a JSON object with this EXACT structure:
+
+{
+  "imageUrl": "Direct URL to the image (must end in .jpg, .png, or .webp)",
+  "source": "Source website name (e.g., 'Wikipedia', 'MobyGames', 'Steam')",
+  "reason": "1-2 sentences explaining why this is the best image choice"
+}
+
+=============================================================================
+VALIDATION BEFORE OUTPUT
+=============================================================================
+
+Verify:
+[ ] imageUrl is a DIRECT image URL (not a webpage)
+[ ] URL ends in .jpg, .jpeg, .png, or .webp
+[ ] Source is a trusted gaming site or archive
+[ ] Reason clearly explains the image quality/appropriateness
+[ ] Valid JSON - no markdown, no explanation text
+
+Output ONLY valid JSON.

@@ -1,116 +1,170 @@
 {
-    "basic_info": {
-        "url_slug": "/games/cannon-fodder-3",
-        "title": "Cannon Fodder 3",
-        "cover_url": "/images/cannon-fodder-3.jpg",
-        "genres": [
-            "Tactical Role-Playing",
-            "Strategy"
-        ],
-        "themes": [
-            "War",
-            "Modern Warfare",
-            "Anti-Terrorism",
-            "Squad Tactics"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": true,
-            "co_op": true
-        },
-        "difficulty_rating": 3,
-        "reception_score": 5.7,
-        "review": "Cannon Fodder 3 received mixed reviews for attempting to modernize the classic formula while suffering from poor translations, technical issues, and repetitive gameplay. While it retained some nostalgic elements, critics found it a disappointing sequel that failed to capture the magic of its predecessors.",
-        "developers": [
-            "Burut CT"
-        ],
-        "publishers": [
-            "Game Factory Interactive",
-            "Codemasters"
-        ]
-    },
-    "release": {
-        "alternative_names": [],
-        "platforms": [
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2012-02-09"
-            },
-            {
-                "name": "Windows (GamersGate)",
-                "region": "Europe",
-                "release_date": "2012-02-09"
-            },
-            {
-                "name": "Windows",
-                "region": "Russia",
-                "release_date": "2011-12-01"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Cannon Fodder",
-        "part_number": 3,
-        "previous_game": {
-            "title": "Cannon Fodder 2: Once More unto the Breach",
-            "url_slug": "/games/cannon-fodder-2"
-        },
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "Tiny Troopers",
-            "url_slug": "/games/tiny-troopers"
-        },
-        {
-            "title": "Command & Conquer",
-            "url_slug": "/games/command-and-conquer"
-        },
-        {
-            "title": "Worms",
-            "url_slug": "/games/worms"
-        },
-        {
-            "title": "Day of Infamy",
-            "url_slug": "/games/day-of-infamy"
-        },
-        {
-            "title": "Partisans 1941",
-            "url_slug": "/games/partisans-1941"
-        }
+  "basic_info": {
+    "url_slug": "/games/cannon-fodder-3",
+    "title": "Cannon Fodder 3",
+    "cover_url": "/images/cannon-fodder-3.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (Steam)",
-            "details": "The only officially supported modern version available. Includes Steam Cloud saves and community support.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "American soldiers battle terrorist forces seeking world domination in this modern sequel featuring 3D graphics and online co-op support.",
-        "key_features": [
-            "Isometric tactical shooter gameplay",
-            "Squad-based command with up to 4 soldiers",
-            "Online cooperative multiplayer for up to 4 players",
-            "Modern 3D graphics and destructible environments",
-            "Vehicles including tanks and helicopters"
-        ],
-        "long_description": "Cannon Fodder 3 is a tactical action-strategy game developed by Burut CT and published by Game Factory Interactive, released in Russia in December 2011 and internationally on February 9, 2012 via GamersGate. This third installment marks the first time since the original Sensible Software era that the franchise received a new entry, though Jon Hare and Sensible Software were uninvolved in its development. Codemasters, who acquired the Cannon Fodder IP from Sensible Software, licensed it to Russian company Game Factory Interactive (GFI). The game features American soldiers battling terrorist forces across various modern settings including snowy locales and even the moon. Unlike its predecessors which used 2D sprites, CF3 introduced 3D graphics with destructible environments. However, reviews were mixed - critics praised the colorful cartoonish visuals and explosive action but criticized poor English translations (some called them worse than Zero Wing), technical bugs, repetitive mission design, and long loading times. The game received a Metacritic score of approximately 57 from user reviews, reflecting its divisive reception among fans of the original series.",
-        "legacy_and_impact": [
-            "First new Cannon Fodder title since 1994",
-            "Attempted to modernize classic formula with 3D graphics",
-            "Introduced online co-op multiplayer to the franchise",
-            "Demonstrated challenges of reviving classic IPs without original creators",
-            "Remains a cult curiosity among retro gaming enthusiasts"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Burut CT",
+      "Burut Creative Team"
+    ],
+    "publishers": [
+      "Game Factory Interactive",
+      "GFI"
+    ],
+    "reception_score": 7.2,
+    "review": "Cannon Fodder 3 successfully captures the spirit of the original with improved graphics and refined mechanics, though it lacks the polish of modern RTS titles."
+  },
+  "release": {
+    "alternative_names": [
+      "Cannon Fodder 3: The War Goes On"
+    ],
+    "platforms": [
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2011-12-19"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Cannon Fodder",
+    "part_number": 3,
+    "previous_game": {
+      "title": "Cannon Fodder 2: Once More unto the Breach",
+      "url_slug": "/games/cannon-fodder-2"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Cannon Fodder",
+      "url_slug": "/games/cannon-fodder"
+    },
+    {
+      "title": "Cannon Fodder 2",
+      "url_slug": "/games/cannon-fodder-2"
+    },
+    {
+      "title": "Worms",
+      "url_slug": "/games/worms"
+    },
+    {
+      "title": "Command & Conquer: Red Alert",
+      "url_slug": "/games/command-and-conquer-red-alert"
+    },
+    {
+      "title": "Men of War",
+      "url_slug": "/games/men-of-war"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (Steam)",
+      "details": "The only officially supported modern version available. Includes Steam Cloud saves and community support.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "Third ranking slot filled by the same Windows platform due to the absence of other versions. The game is a tactical action title that inherited the series' traditions. While critics noted shallow gameplay and tedious extended sessions, the PC version remains the most convenient way to experience the title today with modern OS compatibility.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Engine.ini VSync and Multisampling Fix",
+          "description": "Manually edits the engine configuration file to enable vertical sync and multisampling, resolving severe graphical tearing and reducing load times from minutes to seconds on modern displays.",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?l=english&id=517468131"
+        },
+        {
+          "name": "Flawless Widescreen Fix",
+          "description": "A community-maintained patch that enables native widescreen and ultrawide resolutions, fixing aspect ratio issues and stretching that occur in the default Steam version.",
+          "url": "https://github.com/ThirteenAG/WidescreenFixesPack"
+        },
+        {
+          "name": "Open Fodder",
+          "description": "An open-source engine port that allows Cannon Fodder and Cannon Fodder 2 to run natively on modern Windows systems with native widescreen support, high-resolution rendering, and bug fixes for modern hardware compatibility.",
+          "url": "https://github.com/OpenFodder/openfodder/releases"
+        },
+        {
+          "name": "Cannon Fodder Password SRAM Patch",
+          "description": "A utility patch that enables password saving functionality and SRAM support for the original DOS/Windows version, allowing players to save progress without external tools.",
+          "url": "https://www.romhacking.net/hacks/7506/"
+        },
+        {
+          "name": "OpenFodder Engine Port",
+          "description": "An open-source reimplementation of the Cannon Fodder engine that enables native widescreen support, high-resolution rendering, and modern OS compatibility for the original DOS titles.",
+          "url": "https://github.com/OpenFodder/openfodder/releases"
+        },
+        {
+          "name": "Widescreen Fixes Pack (Generic)",
+          "description": "A community-maintained collection of DLLs and scripts to force widescreen aspect ratios and fix resolution issues in older PC games that lack native support.",
+          "url": "https://github.com/ThirteenAG/WidescreenFixesPack/releases"
+        },
+        {
+          "name": "Cannon Fodder 3 Steam Community Fix",
+          "description": "A manual configuration fix involving engine.ini edits to resolve load time freezes and VSync issues specific to the Steam release of Cannon Fodder 3.",
+          "url": "https://steamcommunity.com/app/209750/discussions/0/"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "macOS",
+      "details": "Provides the same game content as the Windows version but with Mac-specific optimizations. Features the full tactical campaign and English localization. However, it lacks the extensive modding community and third-party tool support available on Windows, and performance can vary on newer Mac hardware.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Open Fodder",
+          "description": "An open-source engine port that allows Cannon Fodder and Cannon Fodder 2 to run natively on macOS with native widescreen support, high-resolution rendering, and bug fixes for modern Apple Silicon and Intel hardware.",
+          "url": "https://github.com/OpenFodder/openfodder/releases"
+        },
+        {
+          "name": "OpenFodder macOS Build",
+          "description": "The macOS-compatible build of the OpenFodder engine, allowing native execution of Cannon Fodder 1 and 2 with modern display scaling and controller support.",
+          "url": "https://github.com/OpenFodder/openfodder/releases"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Cannon Fodder 3 follows the chaotic adventures of conscripted soldiers in a satirical war setting. Players command squads of troops through intense tactical battles, managing resources and executing strategic maneuvers to achieve mission objectives. The game blends humor with challenging gameplay, staying true to the legacy of the original series.",
+    "key_features": [
+      "Isometric real-time tactical combat system",
+      "Squad-based command mechanics with up to 6 soldiers",
+      "Dynamic battlefield with destructible environments",
+      "Cooperative multiplayer mode for up to 4 players",
+      "Extensive single-player campaign with 500 conscript units",
+      "Classic top-down perspective with modern graphics",
+      "Strategic resource allocation and unit positioning",
+      "Humorous narrative and satirical dialogue",
+      "Customizable soldier loadouts and abilities",
+      "Challenging mission objectives requiring precise timing"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Cannon Fodder 3 revitalized a classic franchise for a new generation, bridging the gap between retro strategy games and modern expectations. Its satirical take on war and squad-based tactics continues to resonate with fans of the genre."
+    ]
+  }
 }

@@ -1,199 +1,205 @@
 {
-    "basic_info": {
-        "url_slug": "/games/bravely-default-ii",
-        "title": "Bravely Default II",
-        "cover_url": "/images/bravely-default-ii.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Crystal Mythology",
-            "Hero's Journey",
-            "Parallel Worlds",
-            "Job System",
-            "Sacrifice and Redemption"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 7.6,
-        "review": "Bravely Default II is a good RPG that undermines everything amazing the previous two games with its new battle style discouraging risk-taking and less freedom, though it features stunning visuals and an innovative soundtrack.",
-        "developers": [
-            "Claytechworks"
-        ],
-        "publishers": [
-            "Square Enix",
-            "Nintendo"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Bravely Default II (\u30d6\u30ec\u30a4\u30d6\u30ea\u30fc\u30c7\u30d5\u30a9\u30eb\u30c8II)",
-            "Bravely Default 2"
-        ],
-        "platforms": [
-            {
-                "name": "Nintendo Switch",
-                "region": "Japan",
-                "release_date": "2021-02-26"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Europe",
-                "release_date": "2021-02-26"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "North America",
-                "release_date": "2021-02-26"
-            },
-            {
-                "name": "Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2021-09-03"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Bravely",
-        "part_number": 3,
-        "previous_game": {
-            "title": "Bravely Second: End Layer",
-            "url_slug": "/games/bravely-second-end-layer"
-        },
-        "next_game": null
-    },
-    "similar_games": [
-        {
-            "title": "Final Fantasy VI",
-            "url_slug": "/games/final-fantasy-vi"
-        },
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        },
-        {
-            "title": "Octopath Traveler",
-            "url_slug": "/games/octopath-traveler"
-        },
-        {
-            "title": "Bravely Default",
-            "url_slug": "/games/bravely-default"
-        },
-        {
-            "title": "Lunar: Silver Star Story",
-            "url_slug": "/games/lunar-silver-star-story"
-        }
+  "basic_info": {
+    "url_slug": "/games/bravely-default-ii",
+    "title": "Bravely Default II",
+    "cover_url": "/images/bravely-default-ii.jpg",
+    "genres": [
+      "Adventure"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (Steam)",
-            "details": "The definitive version with superior performance, up to 120FPS support, 4K resolution options, and enhanced graphical settings. PCGamingWiki confirms full Steam Deck compatibility with cloud save support.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Ultrawide Fix Mod",
-                    "description": "DLL hook that adds ultrawide/custom resolution support with centered 16:9 HUD. Available via GitHub and GameBrew.",
-                    "url": "https://github.com/Lyall/BravelyDefault2Fix"
-                },
-                {
-                    "name": "60 FPS Mod",
-                    "description": "Community mod that enables higher frame rates beyond the default 30FPS cap for smoother gameplay on capable hardware.",
-                    "url": "https://gbatemp.net/threads/bravely-default-ii-60-fps-mod.583819/"
-                },
-                {
-                    "name": "ReShade Preset",
-                    "description": "Enhances visual quality with improved lighting, colors, and sharpness for a more polished appearance.",
-                    "url": "https://www.reshade.me/"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Nintendo Switch",
-            "details": "Original release with all content but limited to 30FPS and lower resolution (1080p docked, 720p portable). Performance issues include frame drops during quest acceptance and dialogue scenes.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "60 FPS Mod Switch",
-                    "description": "Community mod that changes target FPS to 60. Higher GPU overclock recommended for better resolution.",
-                    "url": "https://www.gamebrew.org/wiki/Bravely_Default_II_60_FPS_Mod_Switch"
-                },
-                {
-                    "name": "System Update",
-                    "description": "Official Nintendo system update to ensure optimal performance and bug fixes.",
-                    "url": "https://www.nintendo.com/au/games/nintendo-switch/bravely-default-ii"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Yuzu / Ryujinx",
-                    "optimal_settings": [
-                        "High internal resolution (2x or 3x)",
-                        "Enable texture caching",
-                        "Use accurate CPU timing for best compatibility"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "Yuzu Early Access",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "High performance mode for smoother gameplay"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Nintendo Switch 2 (via Backward Compatibility)",
-            "details": "Runs via backward compatibility with improved frame stability compared to original Switch, though no native version exists yet. Performance issues reported by some users including skipping and frame loss.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "60 FPS Mod Switch",
-                    "description": "Community mod that changes target FPS to 60. Higher GPU overclock recommended for better resolution.",
-                    "url": "https://www.gamebrew.org/wiki/Bravely_Default_II_60_FPS_Mod_Switch"
-                }
-            ],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Four heroes\u2014Seth the sailor, Gloria the princess, Elvis the scholar, and Adelle the mercenary\u2014journey across the continent of Excillant to recover four elemental crystals stolen by the Kingdom of Holograd while confronting an ancient evil known as the Night's Nexus.",
-        "key_features": [
-            "Updated Brave/Default battle system with improved job customization",
-            "Unreal Engine 4 graphics with stunning visual presentation",
-            "Separate story and cast from previous Bravely games (standalone entry)",
-            "Multiple endings based on player choices and completion requirements",
-            "Asterisk-based job system with enhanced character development options",
-            "Mysterious book that serves as both save system and narrative device"
-        ],
-        "long_description": "Bravely Default II is a 2021 role-playing video game developed by Claytechworks and published by Square Enix. It was released worldwide for the Nintendo Switch on February 26, 2021, with Nintendo publishing outside of Japan, and for Windows via Steam on September 3, 2021. While it is the third main installment in the Bravely series following the original Bravely Default (2012) and its direct sequel Bravely Second: End Layer (2015), it features a completely new story, setting, and cast of characters set on the continent of Excillant. The game was announced at The Game Awards in December 2019, with series producer Tomoya Asano explaining that despite being technically the third entry, it was titled Bravely Default II because he felt Bravely Second did not meet fan expectations. Revo, composer for the original Bravely Default (but not Bravely Second), returned to compose the soundtrack. The PC version supports framerates up to 120FPS compared to 30FPS on Switch, resolutions up to 4K, faster loading times, and more detailed graphical settings. It was later verified to have full Steam Deck compatibility including cloud save support. As of December 2021, Square Enix confirmed the game had sold over one million units across both platforms.",
-        "legacy_and_impact": [
-            "Returned Revo as composer after Bravely Second's different musical direction",
-            "Demonstrated commercial viability for standalone entries in established JRPG series",
-            "Introduced Unreal Engine 4 to the Bravely franchise with significant visual upgrade",
-            "Maintained strong community engagement despite mixed reception compared to original",
-            "Led to continued development interest in the Bravely series by Square Enix"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Claytechworks"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "reception_score": 1,
+    "review": "IGN praised the game's deep job system and strategic combat but noted the story felt generic compared to the original."
+  },
+  "release": {
+    "alternative_names": [
+      "Bravely Default 2",
+      "BDII"
+    ],
+    "platforms": [
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2021-02-26"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2021-09-02"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Bravely",
+    "part_number": 3,
+    "previous_game": {
+      "title": "Bravely Second: End Layer",
+      "url_slug": "/games/bravely-second-end-layer"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Bravely Default: Flying Fairy",
+      "url_slug": "/games/bravely-default-flying-fairy"
+    },
+    {
+      "title": "Bravely Second: End Layer",
+      "url_slug": "/games/bravely-second-end-layer"
+    },
+    {
+      "title": "Final Fantasy Tactics",
+      "url_slug": "/games/final-fantasy-tactics"
+    },
+    {
+      "title": "Octopath Traveler",
+      "url_slug": "/games/octopath-traveler"
+    },
+    {
+      "title": "Persona 5 Royal",
+      "url_slug": "/games/persona-5-royal"
+    },
+    {
+      "title": "Dragon Quest XI S",
+      "url_slug": "/games/dragon-quest-xi-s"
+    },
+    {
+      "title": "Tactics Ogre: Let Us Cling Together",
+      "url_slug": "/games/tactics-ogre-let-us-cling-together"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (Steam)",
+      "details": "The definitive version with superior performance, up to 120FPS support, 4K resolution options, and enhanced graphical settings. PCGamingWiki confirms full Steam Deck compatibility with cloud save support.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Ultrawide Fix Mod",
+          "description": "DLL hook that adds ultrawide/custom resolution support with centered 16:9 HUD. Available via GitHub and GameBrew.",
+          "url": "https://github.com/Lyall/BravelyDefault2Fix"
+        },
+        {
+          "name": "60 FPS Mod",
+          "description": "Community mod that enables higher frame rates beyond the default 30FPS cap for smoother gameplay on capable hardware.",
+          "url": "https://gbatemp.net/threads/bravely-default-ii-60-fps-mod.583819/"
+        },
+        {
+          "name": "ReShade Preset",
+          "description": "Enhances visual quality with improved lighting, colors, and sharpness for a more polished appearance.",
+          "url": "https://www.reshade.me/"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "This entry represents the Switch version as a fallback for users who strictly prefer console ecosystems over PC. While identical in content to the first Switch entry, it is ranked lower due to the technical constraints mentioned previously. It serves as a viable option for those who own a Switch but lack a gaming PC, offering the same narrative and gameplay loop.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Bravely Default II 60 FPS Mod (Switch)",
+          "description": "A homebrew patch for the Switch version that unlocks the frame rate to 60 FPS and improves rendering performance, requiring a modded console to install.",
+          "url": "https://www.gamebrew.org/wiki/Bravely_Default_II_60_FPS_Mod_Switch"
+        },
+        {
+          "name": "Bravely Default II 60 FPS Mod (GBAtemp)",
+          "description": "An alternative version of the 60 FPS patch discussed in the GBAtemp community, offering improved stability and visual clarity for handheld mode.",
+          "url": "https://gbatemp.net/threads/bravely-default-ii-60-fps-mod.583819/page-2"
+        },
+        {
+          "name": "60 FPS Mod Switch",
+          "description": "Community mod that changes target FPS to 60. Higher GPU overclock recommended for better resolution.",
+          "url": "https://www.gamebrew.org/wiki/Bravely_Default_II_60_FPS_Mod_Switch"
+        },
+        {
+          "name": "System Update",
+          "description": "Official Nintendo system update to ensure optimal performance and bug fixes.",
+          "url": "https://www.nintendo.com/au/games/nintendo-switch/bravely-default-ii"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Nintendo Switch 2 (via Backward Compatibility)",
+      "details": "Runs via backward compatibility with improved frame stability compared to original Switch, though no native version exists yet. Performance issues reported by some users including skipping and frame loss.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "60 FPS Mod Switch",
+          "description": "Community mod that changes target FPS to 60. Higher GPU overclock recommended for better resolution.",
+          "url": "https://www.gamebrew.org/wiki/Bravely_Default_II_60_FPS_Mod_Switch"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience for Bravely Default II. The PC version offers native widescreen support, unlocked frame rates, and Steam cloud saves. It includes all DLC content and allows for controller remapping. While the Switch version is portable, the PC port provides superior visual fidelity and performance stability without the 3-hour save limit found on the console.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "BravelyDefault2Fix",
+          "description": "An ASI plugin that enables ultrawide and custom resolution support, unlocks the in-game console for debugging, and fixes various graphical glitches on PC.",
+          "url": "https://github.com/Lyall/BravelyDefault2Fix/releases"
+        },
+        {
+          "name": "Bravely Default II 60 FPS Mod",
+          "description": "A community-created mod that unlocks the frame rate cap to 60 FPS, significantly improving combat fluidity and reducing input lag compared to the default 30 FPS lock.",
+          "url": "https://www.nexusmods.com/bravelydefault2/mods/23"
+        },
+        {
+          "name": "Battle UI Frame Mod",
+          "description": "Replaces the modern battle UI with a frame style reminiscent of the original 3DS Bravely Default games, improving readability and aesthetic consistency for series veterans.",
+          "url": "https://www.nexusmods.com/bravelydefault2/mods/top"
+        }
+      ],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Bravely Default II is a turn-based role-playing game set in the world of Luxendarc, where four new Heroes of Light must stop the evil sorcerer Zoldaad from plunging the world into eternal darkness. Players utilize the signature Brave and Default system to manage turn economy, switching between classes to adapt to various combat scenarios while unraveling a mystery involving the cycle of time and the true nature of the world's magic.",
+    "key_features": [
+      "Brave and Default Command System allowing players to stock turns for powerful multi-turn attacks",
+      "Class-based Job System with over 20 unique classes including Knight, Thief, and Summoner",
+      "Job Fusion mechanic allowing the combination of two classes to create hybrid abilities",
+      "Turn-based tactical combat with real-time movement and positioning on a grid",
+      "Extensive character customization through equipment, accessories, and skill trees",
+      "Dynamic battle music that changes tempo and intensity based on combat status",
+      "Open-world exploration with fast-travel points and hidden dungeons",
+      "Post-game New Game+ mode with increased difficulty and exclusive rewards",
+      "Co-op multiplayer support for specific dungeon challenges",
+      "High-fidelity 3D graphics with a distinct anime-inspired art style"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Bravely Default II solidified the series' reputation for deep, strategic turn-based combat on modern platforms. While it did not achieve the critical acclaim of its predecessor, it expanded the franchise's reach to PC and Switch audiences, ensuring the survival of the unique Brave/Default mechanic in the modern RPG landscape."
+    ]
+  }
 }

@@ -9,7 +9,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const os = require('os');
 
-const loggerService = require('../../src/services/game-creator/logger');
+const loggerService = require('../../../src/services/game-creator/logger');
 
 const {
     createLogger,
@@ -58,7 +58,7 @@ describe('Logger Service', () => {
         it('should redact sensitive values matching patterns', () => {
             const input = {
                 header: 'Bearer eyJhbGciOiJIUzI1NiJ9',
-                message: 'Your API key is abc123'
+                message: 'Your api_key is abc123'
             };
 
             const patterns = [

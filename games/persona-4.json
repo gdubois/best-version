@@ -1,171 +1,258 @@
 {
-    "basic_info": {
-        "url_slug": "/games/persona-4",
-        "title": "Persona 4",
-        "cover_url": "/images/persona-4.jpg",
-        "genres": [
-            "JRPG",
-            "Social Simulation"
-        ],
-        "themes": [
-            "Mystery",
-            "Supernatural",
-            "Teen Life"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 8.7,
-        "review": "A timeless classic that masterfully blends deep storytelling with engaging social mechanics.",
-        "developers": [
-            "Atlus"
-        ],
-        "publishers": [
-            "Atlus"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Shin Megami Tensei: Persona 4",
-            "Persona IV"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation 2",
-                "region": "Japan",
-                "release_date": "2008-07-10"
-            },
-            {
-                "name": "PlayStation 2",
-                "region": "North America",
-                "release_date": "2008-10-07"
-            },
-            {
-                "name": "PlayStation 2",
-                "region": "Europe",
-                "release_date": "2009-03-06"
-            },
-            {
-                "name": "PlayStation Portable",
-                "region": "Japan",
-                "release_date": "2011-11-26"
-            },
-            {
-                "name": "PlayStation Portable",
-                "region": "North America",
-                "release_date": "2012-10-16"
-            },
-            {
-                "name": "PlayStation Portable",
-                "region": "Europe",
-                "release_date": "2012-10-19"
-            },
-            {
-                "name": "PC",
-                "region": "Global",
-                "release_date": "2020-09-26"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Japan",
-                "release_date": "2021-05-25"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "North America",
-                "release_date": "2021-06-30"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Europe",
-                "release_date": "2021-06-30"
-            },
-            {
-                "name": "PlayStation 4",
-                "region": "Global",
-                "release_date": "2021-06-30"
-            },
-            {
-                "name": "Xbox One",
-                "region": "Global",
-                "release_date": "2021-06-30"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Persona",
-        "part_number": 4,
-        "previous_game": {
-            "title": "Persona 3",
-            "url_slug": "/games/persona-3"
-        },
-        "next_game": {
-            "title": "Persona 5",
-            "url_slug": "/games/persona-5"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Shin Megami Tensei V",
-            "url_slug": "/games/shin-megami-tensei-v"
-        },
-        {
-            "title": "Final Fantasy XV",
-            "url_slug": "/games/final-fantasy-xv"
-        }
+  "basic_info": {
+    "url_slug": "/games/persona-4",
+    "title": "Shin Megami Tensei: Persona 4",
+    "cover_url": "/images/shin-megami-tensei-persona-4.jpg",
+    "genres": [
+      "Social Simulation"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch",
-            "details": "Persona 4 Golden edition available via Nintendo eShop",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "PC (Steam)",
-            "details": "Persona 4 Golden available on Steam",
-            "available_in_english": {
-                "official_localization": true
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 4",
-            "details": "Persona 4 Golden available on PlayStation Store",
-            "available_in_english": {
-                "official_localization": true
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "A group of high school students investigate the Midnight Channel phenomenon, which leads them to a supernatural realm called the TV World where they battle Shadows using Personas.",
-        "key_features": [
-            "Social Link system",
-            "Turn-based combat with elemental strengths and weaknesses",
-            "Dungeon exploration in the TV World",
-            "Calendar management for daily activities",
-            "Character-driven narrative with multiple endings"
-        ],
-        "long_description": "Persona 4 is a Japanese role-playing game developed by Atlus. The story follows a group of students at Yasogami High School who uncover a mystery surrounding missing persons linked to the Midnight Channel\u2014a mysterious TV phenomenon. They are transported to the TV World, where they battle Shadows using Personas\u2014manifestations of their psyche. The game features a calendar-based system that allows players to manage school days and social relationships (Social Links), which enhance combat abilities and story progression. Released for PlayStation 2 in 2008, it has since been re-released as Persona 4 Golden on multiple platforms including Nintendo Switch, PlayStation 4, Xbox One, and PC via Steam.",
-        "legacy_and_impact": [
-            "Pioneered the integration of social simulation elements into JRPGs",
-            "Influenced numerous subsequent games in the genre with its narrative depth",
-            "Widely regarded as one of the greatest RPGs of all time"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Atlus"
+    ],
+    "publishers": [
+      "Atlus",
+      "Square Enix"
+    ],
+    "reception_score": 8.8,
+    "review": "A masterpiece of the JRPG genre that perfectly balances social simulation with engaging turn-based combat, praised for its memorable characters and gripping mystery."
+  },
+  "release": {
+    "alternative_names": [
+      "Persona 4",
+      "P4",
+      "ペルソナ4"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation 2",
+        "region": "Japan",
+        "release_date": "2008-07-10"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "North America",
+        "release_date": "2008-12-09"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Europe",
+        "release_date": "2009-03-27"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Australia",
+        "release_date": "2009-03-26"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Japan",
+        "release_date": "2012-06-14"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "North America",
+        "release_date": "2012-06-19"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Europe",
+        "release_date": "2012-06-22"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "Australia",
+        "release_date": "2012-06-21"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Japan",
+        "release_date": "2012-06-14"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "North America",
+        "release_date": "2012-06-19"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Europe",
+        "release_date": "2012-06-22"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "Australia",
+        "release_date": "2012-06-21"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2020-06-09"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2020-06-09"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2020-06-09"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2023-04-21"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Persona",
+    "part_number": 5,
+    "previous_game": {
+      "title": "Persona 3",
+      "url_slug": "/games/persona-3"
+    },
+    "next_game": {
+      "title": "Persona 5",
+      "url_slug": "/games/persona-5"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Shin Megami Tensei: Persona 3",
+      "url_slug": "/games/shin-megami-tensei-persona-3"
+    },
+    {
+      "title": "Persona 5",
+      "url_slug": "/games/persona-5"
+    },
+    {
+      "title": "Yakuza: Like a Dragon",
+      "url_slug": "/games/yakuza-like-a-dragon"
+    },
+    {
+      "title": "Disco Elysium",
+      "url_slug": "/games/disco-elysium"
+    },
+    {
+      "title": "The World Ends with You",
+      "url_slug": "/games/the-world-ends-with-you"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch",
+      "details": "Best portable option with full Golden content. Includes Chie's dungeon, voice acting, and new difficulty settings. Runs at 30 FPS in handheld mode with occasional frame drops in crowded areas. No native widescreen support, but offers convenient on-the-go play with cloud save integration.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PC (Steam)",
+      "details": "Persona 4 Golden available on Steam",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 4",
+      "details": "Persona 4 Golden available on PlayStation Store",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience via Steam. Features native widescreen support, customizable difficulty, and cloud saves. Includes all Golden content like Chie's dungeon and voice acting. Mod support allows UI overhauls and QoL improvements not present in original. Runs at 60 FPS with minimal input lag.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "P4G Community Enhancement Pack (P4G CEP)",
+          "description": "An all-in-one mod manager and collection for the Windows PC version of Persona 4 Golden, providing over 50 quality-of-life improvements including auto-save, widescreen support, UI scaling, and bug fixes.",
+          "url": "https://www.nexusmods.com/persona4golden/mods/11"
+        },
+        {
+          "name": "P4G PC Fixes + Quality-of-Life Mod Directory",
+          "description": "A curated Steam Workshop collection for the Windows version containing essential fixes for the 64-bit port, including resolution fixes, text corrections, and performance optimizations.",
+          "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=2177877196"
+        },
+        {
+          "name": "P4G Nightmare Mod Difficulty",
+          "description": "A difficulty enhancement mod specifically for the Windows 64-bit version that increases enemy stats and adds new challenges for experienced players.",
+          "url": "https://gamebanana.com/mods/553084"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation Vita",
+      "details": "Original Golden release with full content including Chie's dungeon and voice acting. Runs at 60 FPS with excellent performance. Requires physical hardware or emulator. No native widescreen support, but offers the most authentic experience with original controls and UI design.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Vita3K",
+          "optimal_settings": [
+            "Enable GPU backend (Vulkan or OpenGL) for best performance",
+            "Set internal resolution to 2x native for sharper visuals",
+            "Enable 'Skip Present' to reduce input lag if experiencing stutter",
+            "Map controller inputs to match original Vita layout for authentic feel"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Vita3K",
+          "optimal_settings": [
+            "Enable GPU backend (Vulkan recommended for modern devices)",
+            "Set internal resolution to 1.5x native to balance performance and clarity",
+            "Enable 'Async Shaders' to reduce frame drops in crowded areas",
+            "Configure touch controls to overlay on-screen buttons for Vita-specific interactions"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In the rural town of Inaba, a series of mysterious murders occurs where victims are found in the fog. A high school student named Yu Narukami moves to the town and discovers that the murders are linked to a distorted world accessible through television screens. He joins a group of friends who can enter this world to confront the 'shadows' of the killers, uncovering a conspiracy that challenges their perceptions of truth and friendship.",
+    "key_features": [
+      "Dual gameplay loop alternating between high school social simulation and dungeon crawling",
+      "Social Link system allowing deep character bonding that enhances combat abilities",
+      "Turn-based combat utilizing the Persona summoning and fusion system",
+      "Dynamic weather system where foggy days trigger supernatural dungeon events",
+      "TV World mechanic where characters enter a distorted dimension to confront inner demons",
+      "All-Out Attack cooperative combat mechanic triggered by defeating enemies in sequence",
+      "Time management system requiring players to balance school, work, and social activities",
+      "Character customization through clothing, hairstyles, and accessories",
+      "Multiple endings determined by player choices and Social Link completion",
+      "Integration of pop culture references and a distinct jazz/rock soundtrack"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Persona 4 revitalized the Persona series in the West, establishing the franchise as a global phenomenon. Its narrative structure and social mechanics heavily influenced the design of subsequent entries like Persona 5 and inspired a wave of social sim-RPG hybrids."
+    ]
+  }
 }

@@ -1,227 +1,332 @@
 {
-    "basic_info": {
-        "url_slug": "/games/metal-gear-solid",
-        "title": "Metal Gear Solid",
-        "cover_url": "/images/metal-gear-solid.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Stealth",
-            "Espionage",
-            "Military",
-            "Conspiracy",
-            "Genetic Engineering",
-            "Cold War"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 3,
-        "reception_score": 9.4,
-        "review": "Metal Gear Solid is a groundbreaking stealth game that revolutionized the genre with its cinematic presentation, complex narrative, and innovative gameplay mechanics including the Codec communication system and memory card-reading boss battles.",
-        "developers": [
-            "Konami Computer Entertainment Japan"
-        ],
-        "publishers": [
-            "Konami",
-            "Microsoft Games"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30e1\u30bf\u30eb\u30ae\u30a2\u30bd\u30ea\u30c3\u30c9 (Metal Gear Solid)",
-            "Metal Gear Solid: Integral"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation",
-                "region": "Japan",
-                "release_date": "1998-09-03"
-            },
-            {
-                "name": "PlayStation",
-                "region": "North America",
-                "release_date": "1998-10-20"
-            },
-            {
-                "name": "PlayStation",
-                "region": "Europe",
-                "release_date": "1999-02-22"
-            },
-            {
-                "name": "PlayStation (Integral)",
-                "region": "Japan",
-                "release_date": "1999-06-24"
-            },
-            {
-                "name": "PlayStation (VR Missions/Special Missions)",
-                "region": "North America",
-                "release_date": "1999-09-23"
-            },
-            {
-                "name": "Windows",
-                "region": "North America",
-                "release_date": "2000-09-24"
-            },
-            {
-                "name": "PlayStation 4/5, Xbox Series X/S, Nintendo Switch, Windows (Steam)",
-                "region": "Worldwide",
-                "release_date": "2023-10-24"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Metal Gear",
-        "part_number": 3,
-        "previous_game": {
-            "title": "Metal Gear 2: Solid Snake",
-            "url_slug": "/games/metal-gear-2-solid-snake"
-        },
-        "next_game": {
-            "title": "Metal Gear Solid 2: Sons of Liberty",
-            "url_slug": "/games/metal-gear-solid-2-sons-of-liberty"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Metal Gear Solid 2: Sons of Liberty",
-            "url_slug": "/games/metal-gear-solid-2-sons-of-liberty"
-        },
-        {
-            "title": "Metal Gear Solid 3: Snake Eater",
-            "url_slug": "/games/metal-gear-solid-3-snake-eater"
-        },
-        {
-            "title": "Splinter Cell",
-            "url_slug": "/games/splinter-cell"
-        },
-        {
-            "title": "Thief: The Dark Project",
-            "url_slug": "/games/thief-the-dark-project"
-        },
-        {
-            "title": "Hitman",
-            "url_slug": "/games/hitman"
-        }
+  "basic_info": {
+    "url_slug": "/games/metal-gear-solid",
+    "title": "Metal Gear Solid",
+    "cover_url": "/images/metal-gear-solid.jpg",
+    "genres": [
+      "Stealth"
     ],
-    "play_today": [
-        {
-            "platform": "Windows (GOG.com)",
-            "details": "PC port with widescreen mod support, quality of life improvements, and compatibility fixes for modern Windows systems. Best overall experience.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Widescreen Fix",
-                    "description": "Enables 16:9 widescreen resolution and removes letterboxing from cutscenes"
-                },
-                {
-                    "name": "MGSILauncher",
-                    "description": "Save file manager, core affinity switching, music restoration patch, controller support fixes"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 4 / PlayStation 5 / Xbox Series X/S / Nintendo Switch / Windows (Steam)",
-            "details": "Metal Gear Solid: Master Collection Vol. 1 - Official compilation with M2 emulator, multiple regional versions available, includes VR Missions expansion.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation (Original)",
-            "details": "Original 1998 PS1 release. Integral version adds VR Missions disc and additional content.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "DuckStation",
-                    "optimal_settings": [
-                        "Internal resolution: 2x-4x for clean retro look or 9x for 4K sharpness",
-                        "Enable NTSC mode for correct timing",
-                        "Use texture filtering for smoother visuals"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "DuckStation / ePSXe",
-                    "optimal_settings": [
-                        "Custom button mapping",
-                        "Save state slots enabled",
-                        "Enable fast forward for cutscenes"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PlayStation 2 (Twin Snakes)",
-            "details": "2004 GameCube remake with updated graphics and gameplay mechanics from MGS2. Includes enhanced cutscenes.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "Dolphin",
-                    "optimal_settings": [
-                        "Enable high resolution textures",
-                        "Use 16:9 aspect ratio",
-                        "Enable frame skipping if needed"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "PlayStation Classic",
-            "details": "Included in the pre-loaded games of PlayStation Classic console (2018). Limited availability.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Solid Snake infiltrates Shadow Moses nuclear facility in Alaska to stop the terrorist group FOXHOUND from launching a nuclear weapon using Metal Gear REX, while uncovering a conspiracy involving genetic engineering and clone warfare.",
-        "key_features": [
-            "Pioneered cinematic cutscenes rendered with in-game engine",
-            "Codec radio communication system for storytelling",
-            "Psycho Mantis boss battle reading memory card",
-            "Multiple difficulty levels including Very Easy mode (Integral)",
-            "VR Training missions with 300+ challenges"
-        ],
-        "long_description": "Metal Gear Solid, directed by Hideo Kojima and released in 1998 for PlayStation, is widely regarded as one of the greatest video games ever made. It revolutionized stealth gaming by introducing cinematic cutscenes rendered using the game's own engine, creating a film-like experience unprecedented at the time. The game features an innovative Codec communication system that delivers exposition and character development through radio conversations with Snake's support team. Its most famous moment involves the boss Psycho Mantis, who reads the player's memory card to determine which games they've played and uses controller vibration accordingly. The expanded Integral version added VR Missions (300 training challenges), a Very Easy difficulty setting, first-person mode, and additional content. The game sold over 7 million copies worldwide and influenced countless stealth-action games including Splinter Cell, Assassin's Creed, and the rest of the Metal Gear Solid series. It was later remade as Metal Gear Solid: The Twin Snakes for GameCube in 2004 with updated graphics and gameplay mechanics.",
-        "legacy_and_impact": [
-            "Established cinematic presentation standards in video games",
-            "Popularized the stealth action genre globally",
-            "Introduced innovative storytelling through Codec system",
-            "Influenced Splinter Cell, Assassin's Creed, and other stealth games",
-            "Sold over 7 million copies worldwide",
-            "Featured in Smithsonian American Art Museum exhibition 'The Art of Video Games'",
-            "Named one of Time magazine's 100 greatest video games of all time"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Konami Computer Entertainment Tokyo"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "reception_score": 9,
+    "review": "A masterpiece of stealth action that redefined the genre with its cinematic storytelling and innovative gameplay mechanics."
+  },
+  "release": {
+    "alternative_names": [
+      "MGS",
+      "Metal Gear Solid 1",
+      "MGS1",
+      "メタルギアソリッド"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation",
+        "region": "Japan",
+        "release_date": "1998-09-03"
+      },
+      {
+        "name": "PlayStation",
+        "region": "North America",
+        "release_date": "1998-09-23"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Europe",
+        "release_date": "1998-10-16"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Australia",
+        "release_date": "1998-10-16"
+      },
+      {
+        "name": "Windows",
+        "region": "North America",
+        "release_date": "1999-09-30"
+      },
+      {
+        "name": "Windows",
+        "region": "Europe",
+        "release_date": "1999-10-01"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Japan",
+        "release_date": "2006-06-22"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "North America",
+        "release_date": "2006-10-17"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Europe",
+        "release_date": "2006-10-20"
+      },
+      {
+        "name": "PlayStation 3",
+        "region": "World",
+        "release_date": "2011-09-06"
+      },
+      {
+        "name": "PlayStation Vita",
+        "region": "World",
+        "release_date": "2012-09-05"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2016-09-06"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2016-09-06"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2018-09-05"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Metal Gear",
+    "part_number": 5,
+    "previous_game": {
+      "title": "Metal Gear 2: Solid Snake",
+      "url_slug": "/games/metal-gear-2-solid-snake"
+    },
+    "next_game": {
+      "title": "Metal Gear Solid 2: Sons of Liberty",
+      "url_slug": "/games/metal-gear-solid-2-sons-of-liberty"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Splinter Cell",
+      "url_slug": "/games/splinter-cell"
+    },
+    {
+      "title": "Metal Gear Solid 2: Sons of Liberty",
+      "url_slug": "/games/metal-gear-solid-2-sons-of-liberty"
+    },
+    {
+      "title": "Hitman",
+      "url_slug": "/games/hitman"
+    },
+    {
+      "title": "Thief: The Dark Project",
+      "url_slug": "/games/thief-the-dark-project"
+    },
+    {
+      "title": "Metal Gear Solid 3: Snake Eater",
+      "url_slug": "/games/metal-gear-solid-3-snake-eater"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Windows (GOG.com)",
+      "details": "PC port with widescreen mod support, quality of life improvements, and compatibility fixes for modern Windows systems. Best overall experience.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Widescreen Fix",
+          "description": "Enables 16:9 widescreen resolution and removes letterboxing from cutscenes"
+        },
+        {
+          "name": "MGSILauncher",
+          "description": "Save file manager, core affinity switching, music restoration patch, controller support fixes"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 4 / PlayStation 5 / Xbox Series X/S / Nintendo Switch / Windows (Steam)",
+      "details": "Metal Gear Solid: Master Collection Vol. 1 - Official compilation with M2 emulator, multiple regional versions available, includes VR Missions expansion.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation (Original)",
+      "details": "Original 1998 PS1 release. Integral version adds VR Missions disc and additional content.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Internal resolution: 2x-4x for clean retro look or 9x for 4K sharpness",
+            "Enable NTSC mode for correct timing",
+            "Use texture filtering for smoother visuals"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation / ePSXe",
+          "optimal_settings": [
+            "Custom button mapping",
+            "Save state slots enabled",
+            "Enable fast forward for cutscenes"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation 2 (Twin Snakes)",
+      "details": "2004 GameCube remake with updated graphics and gameplay mechanics from MGS2. Includes enhanced cutscenes.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Dolphin",
+          "optimal_settings": [
+            "Enable high resolution textures",
+            "Use 16:9 aspect ratio",
+            "Enable frame skipping if needed"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation Classic",
+      "details": "Included in the pre-loaded games of PlayStation Classic console (2018). Limited availability.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 4",
+      "details": "The definitive modern experience via the Master Collection Vol. 1. Runs at a stable 60 FPS with unlocked frame rates on PS5, supports modern controllers, and includes cloud saves. Features the enhanced content from the HD Collection, including the new 'Peace Walker' mode and improved textures. While not a full remake, it offers the best balance of convenience, performance, and accessibility for new players.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Metal Gear Solid Master Collection Fix (MGSM2Fix)",
+          "description": "A comprehensive mod for the Master Collection on PS4/PS5 that enables custom resolutions, widescreen support, and unlocks modding capabilities for MGS1 and Snake's Revenge.",
+          "url": "https://github.com/nuggslet/MGSM2Fix"
+        },
+        {
+          "name": "MGS Master Collection HD Texture Pack",
+          "description": "Officially supported texture pack that replaces low-resolution assets in MGS2 and MGS3 within the Master Collection with high-definition versions.",
+          "url": "https://wccftech.com/metal-gear-solid-master-collection-hd-texture-packs/"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation",
+      "details": "The original 1998 release remains the most authentic experience for purists seeking the exact gameplay and atmosphere intended by Kojima. While it lacks widescreen support and modern QoL features, it is the source material for all remasters. Best played via emulation to bypass hardware limitations, offering a nostalgic journey with the original soundtrack and unaltered mechanics.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "MGS1 Widescreen Patch",
+          "description": "Enables native widescreen aspect ratio (16:9) and fixes geometry stretching for the original PS1 version when played via emulation.",
+          "url": "https://www.psx-place.com/resources/mgs1-widescreen-patch.123/"
+        },
+        {
+          "name": "MGS1 HD Texture Pack",
+          "description": "Replaces original low-resolution textures with high-definition versions for the PS1 version, significantly improving visual clarity on modern displays.",
+          "url": "https://github.com/SammyCola/mgs-hdtex"
+        },
+        {
+          "name": "MGS1 60 FPS Patch",
+          "description": "Modifies the game code to run at a stable 60 FPS instead of the original 30 FPS, providing smoother gameplay for the PS1 version.",
+          "url": "https://github.com/lybxlpsv/mgf60fps/blob/master/patch.ps1"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Enable widescreen patch in Patches menu",
+            "Set internal resolution to 2x or 4x for sharp retro look",
+            "Enable bilinear filtering for smoother sprite scaling",
+            "Set frame skipping to 'Auto' for performance optimization"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation",
+          "optimal_settings": [
+            "Enable widescreen patch for correct aspect ratio",
+            "Set internal resolution to 720p for mobile performance",
+            "Configure on-screen controller with custom layout",
+            "Enable texture filtering for cleaner visuals"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "PlayStation 3",
+      "details": "Part of the HD Collection, this version offers a significant upgrade over the original with 720p resolution and 60 FPS gameplay. It includes the 'Peace Walker' mode and improved textures. However, it suffers from occasional frame rate drops and lacks the modern convenience features of the Master Collection. Still a solid choice for those who prefer the PS3 ecosystem.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    }
+  ],
+  "description": {
+    "synopsis": "Special agent Solid Snake is deployed to Shadow Moses Island to stop a group of terrorists known as FOXHOUND from seizing nuclear warheads. Led by the enigmatic Liquid Snake, the group threatens to launch a nuclear strike. Snake must infiltrate the base, uncover the conspiracy, and prevent a global catastrophe while confronting his own genetic destiny.",
+    "key_features": [
+      "CQC (Close Quarters Combat) system allowing melee takedowns",
+      "Stealth mechanics requiring avoidance of enemy line-of-sight",
+      "Codec communication system for narrative delivery and intel",
+      "Dynamic camera angles and cinematic cutscenes",
+      "Cardboard box hiding mechanic for evasion",
+      "Multiple endings based on player choices and performance",
+      "VR Missions for replayability and skill testing",
+      "Real-time strategy elements in managing resources and ammo",
+      "Boss battles requiring specific tactical approaches",
+      "Integration of film noir and thriller storytelling tropes"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Metal Gear Solid revolutionized the stealth genre, proving that video games could deliver complex, cinematic narratives on par with Hollywood films. Its introduction of the Codec system and CQC mechanics became staples in the industry, influencing countless successors. The game cemented Hideo Kojima's reputation as a visionary director and established the Metal Gear franchise as a cultural phenomenon."
+    ]
+  }
 }

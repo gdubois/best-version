@@ -1,205 +1,305 @@
 {
-    "basic_info": {
-        "url_slug": "/games/final-fantasy-xii",
-        "title": "Final Fantasy XII: The Zodiac Age",
-        "cover_url": "/images/final-fantasy-xii.jpg",
-        "genres": [
-            "RPG"
-        ],
-        "themes": [
-            "Political Intrigue",
-            "War and Conflict",
-            "Friendship",
-            "Revenge",
-            "Magic and Technology"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 9.0,
-        "review": "Final Fantasy XII is a landmark JRPG featuring an expansive world, innovative Gambit system, and mature storytelling that redefined the series' direction.",
-        "developers": [
-            "Square Enix"
-        ],
-        "publishers": [
-            "Square Enix"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "\u30d5\u30a1\u30a4\u30ca\u30eb\u30d5\u30a1\u30f3\u30bf\u30b8\u30fcXII (Japanese)",
-            "Final Fantasy XII International: The Zodiac Job System",
-            "FFXII HD Remaster"
-        ],
-        "platforms": [
-            {
-                "name": "PlayStation 2",
-                "region": "Japan",
-                "release_date": "2006-03-16"
-            },
-            {
-                "name": "PlayStation 2",
-                "region": "North America",
-                "release_date": "2006-10-31"
-            },
-            {
-                "name": "PlayStation Portable (PSP)",
-                "region": "Japan",
-                "release_date": "2007-08-09"
-            },
-            {
-                "name": "Nintendo Switch",
-                "region": "Worldwide",
-                "release_date": "2017-04-30"
-            },
-            {
-                "name": "Xbox One",
-                "region": "Worldwide",
-                "release_date": "2017-04-30"
-            },
-            {
-                "name": "PlayStation 4",
-                "region": "Worldwide",
-                "release_date": "2017-06-29"
-            },
-            {
-                "name": "Windows (PC)",
-                "region": "Worldwide",
-                "release_date": "2017-04-11"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Final Fantasy",
-        "part_number": 12,
-        "previous_game": {
-            "title": "Final Fantasy X-2",
-            "url_slug": "/games/final-fantasy-x-2"
-        },
-        "next_game": {
-            "title": "Final Fantasy XIII",
-            "url_slug": "/games/final-fantasy-xiii"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Final Fantasy X",
-            "url_slug": "/games/final-fantasy-x"
-        },
-        {
-            "title": "Dragon Quest XI",
-            "url_slug": "/games/dragon-quest-xi"
-        },
-        {
-            "title": "Persona 5 Royal",
-            "url_slug": "/games/persona-5"
-        },
-        {
-            "title": "Fire Emblem: Three Houses",
-            "url_slug": "/games/fire-emblem-three-houses"
-        },
-        {
-            "title": "Chrono Trigger",
-            "url_slug": "/games/chrono-trigger"
-        }
+  "basic_info": {
+    "url_slug": "/games/final-fantasy-xii",
+    "title": "Final Fantasy XII",
+    "cover_url": "/images/final-fantasy-xii.jpg",
+    "genres": [
+      "Action RPG"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch / Xbox One / PS4 (Zodiac Age)",
-            "details": "The definitive version with Job System, faster gameplay speed, quality-of-life improvements including skip cutscenes and auto-battle. Best experience on modern platforms.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Zodiac Age Update",
-                    "description": "Official update adding Job System with 12 license boards, faster gameplay speed, and quality-of-life improvements"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Windows (PC - Steam)",
-            "details": "HD Remaster version with 4K support, widescreen options, and extensive modding community. Best for customization.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "4GB Memory Patch",
-                    "description": "Fixes crashes on PC by enabling large address space support"
-                },
-                {
-                    "name": "Smart Stealing Gambits Mod",
-                    "description": "Enhances the Gambit system with quality-of-life improvements"
-                },
-                {
-                    "name": "Quick License Purchase Mod",
-                    "description": "Streamlines license board progression for faster gameplay"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "PlayStation 2 (Original)",
-            "details": "The original experience with classic mechanics. Requires patches for better performance and quality-of-life features.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [
-                {
-                    "name": "Zodiac Age Conversion Patch",
-                    "description": "Converts original to Zodiac Age version with all improvements"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "PCSX2",
-                    "optimal_settings": [
-                        "High resolution rendering",
-                        "Enable save states",
-                        "Fast forward for battles"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "DuckStation / ePSXe",
-                    "optimal_settings": [
-                        "Touch controls customization",
-                        "Save state slots enabled"
-                    ]
-                }
-            ]
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Vaan, a young thief from Dalmasca, becomes entangled in a war between nations while uncovering a conspiracy involving the Empire and his friend Basch.",
-        "key_features": [
-            "Innovative Gambit system for automated combat strategies",
-            "Open zones with seamless exploration",
-            "Deep Job System (Zodiac Age version) with 12 license boards",
-            "Complex political storyline about war and betrayal",
-            "Memorable soundtrack by Hitoshi Sakimoto"
-        ],
-        "long_description": "Final Fantasy XII, released for PlayStation 2 in March 2006 (Japan) and October 2006 (North America), is a landmark JRPG developed by Square Enix. Directed by Hiroyuki Ito and Akihiko Yoshida, it introduced the Gambit system allowing players to create automated battle strategies based on conditions (e.g., 'IF ally HP < 70% THEN heal'). The Zodiac Age version (2017) added the Job System with 12 different license boards for character customization, faster gameplay speed (2x original), and quality-of-life improvements including skip cutscenes and auto-battle. With over 60 hours of content and an iconic soundtrack by Hitoshi Sakimoto, it's widely considered one of the greatest JRPGs ever made.",
-        "legacy_and_impact": [
-            "Introduced Gambit system influencing later RPGs",
-            "Set new standards for open-world exploration in JRPGs",
-            "Zodiac Age version became a model for remakes",
-            "Influenced Final Fantasy XIV's development direction",
-            "Continues to receive community mods and appreciation decades after release"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Square Enix"
+    ],
+    "publishers": [
+      "Square Enix"
+    ],
+    "reception_score": 8.7,
+    "review": "Final Fantasy XII is a masterpiece of world-building and gameplay innovation, offering a mature political narrative and a revolutionary battle system that rewards strategic planning."
+  },
+  "release": {
+    "alternative_names": [
+      "FFXII",
+      "Final Fantasy 12",
+      "Final Fantasy XII: The Zodiac Age"
+    ],
+    "platforms": [
+      {
+        "name": "PlayStation 2",
+        "region": "Japan",
+        "release_date": "2006-03-16"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "North America",
+        "release_date": "2006-11-14"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Europe",
+        "release_date": "2006-12-01"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Australia",
+        "release_date": "2006-12-07"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Asia",
+        "release_date": "2007-01-18"
+      },
+      {
+        "name": "PlayStation 2",
+        "region": "Brazil",
+        "release_date": "2007-03-23"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2017-07-11"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2017-07-11"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2017-07-11"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2017-07-11"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2017-07-11"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Final Fantasy",
+    "part_number": 12,
+    "previous_game": {
+      "title": "Final Fantasy X-2",
+      "url_slug": "/games/final-fantasy-x-2"
+    },
+    "next_game": {
+      "title": "Final Fantasy XIII",
+      "url_slug": "/games/final-fantasy-xiii"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Final Fantasy Tactics",
+      "url_slug": "/games/final-fantasy-tactics"
+    },
+    {
+      "title": "Dragon Age: Origins",
+      "url_slug": "/games/dragon-age-origins"
+    },
+    {
+      "title": "The Witcher 3: Wild Hunt",
+      "url_slug": "/games/the-witcher-3-wild-hunt"
+    },
+    {
+      "title": "Persona 5 Royal",
+      "url_slug": "/games/persona-5-royal"
+    },
+    {
+      "title": "Xenoblade Chronicles",
+      "url_slug": "/games/xenoblade-chronicles"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch / Xbox One / PS4 (Zodiac Age)",
+      "details": "The definitive version with Job System, faster gameplay speed, quality-of-life improvements including skip cutscenes and auto-battle. Best experience on modern platforms.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Zodiac Age Update",
+          "description": "Official update adding Job System with 12 license boards, faster gameplay speed, and quality-of-life improvements"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Windows (PC - Steam)",
+      "details": "HD Remaster version with 4K support, widescreen options, and extensive modding community. Best for customization.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "4GB Memory Patch",
+          "description": "Fixes crashes on PC by enabling large address space support"
+        },
+        {
+          "name": "Smart Stealing Gambits Mod",
+          "description": "Enhances the Gambit system with quality-of-life improvements"
+        },
+        {
+          "name": "Quick License Purchase Mod",
+          "description": "Streamlines license board progression for faster gameplay"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 2 (Original)",
+      "details": "The original experience with classic mechanics. Requires patches for better performance and quality-of-life features.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [
+        {
+          "name": "Zodiac Age Conversion Patch",
+          "description": "Converts original to Zodiac Age version with all improvements"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PCSX2",
+          "optimal_settings": [
+            "High resolution rendering",
+            "Enable save states",
+            "Fast forward for battles"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "DuckStation / ePSXe",
+          "optimal_settings": [
+            "Touch controls customization",
+            "Save state slots enabled"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience via Steam. Features native widescreen support, controller remapping, cloud saves, and the ability to run at 60 FPS with uncapped frame rates. Includes the Zodiac Age's enhanced content like the job system and voice acting. Mod support allows UI overhauls and QoL improvements not present in console versions.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "The Zodiac Age HD Texture Pack",
+          "description": "Replaces the blurry upscaled textures in the PC remaster with high-resolution versions derived from the original PS2 IZJS release, significantly improving visual clarity for characters and environments.",
+          "url": "https://www.nexusmods.com/finalfantasy12/mods/292"
+        },
+        {
+          "name": "Reupscaled Textures (PS2 IZJS Source)",
+          "description": "A texture pack that upscales textures from the International Zodiac Job System PS2 version to replace the lower quality textures found in the default PC remaster.",
+          "url": "https://www.nexusmods.com/finalfantasy12/mods/306"
+        },
+        {
+          "name": "HD Environment and Structures",
+          "description": "Increases the detail and resolution of commonly used wall, ground, and structure textures to enhance the immersion of the game world.",
+          "url": "https://www.nexusmods.com/finalfantasy12/mods/182"
+        },
+        {
+          "name": "Clothing Texture Fix",
+          "description": "Fixes low-resolution artifacts on party and guest clothing textures without altering the original art style, ensuring a cleaner look in HD.",
+          "url": "https://www.nexusmods.com/finalfantasy12/mods/top"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 4",
+      "details": "Excellent console experience with native 1080p/4K support and stable 60 FPS performance. Includes all Zodiac Age features like the job system and voice acting. Offers convenient cloud saves and trophy support. Slightly less flexible than PC regarding mods and frame rate uncapping, but provides a polished, plug-and-play experience.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "PlayStation 2",
+      "details": "The original experience for purists, but requires emulation for modern play. The International Zodiac Job System (IZJS) version is preferred over the original for its job system. Lacks widescreen support, has lower resolution, and no modern QoL features. Best played via PCSX2 with upscaling patches for a faithful but enhanced retro experience.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "International Zodiac Job System (IZJS) Patch",
+          "description": "Adds the International Zodiac Job System to the original PS2 version, allowing character specialization and restoring content cut from the original US release.",
+          "url": "https://retro-replay.com/db/playstation-2/final-fantasy-xii-international-zodiac-job-system/"
+        },
+        {
+          "name": "Widescreen Patch (PCSX2)",
+          "description": "Enables native 16:9 widescreen rendering for the PS2 version when played via PCSX2, removing black bars and adjusting the camera for a modern aspect ratio.",
+          "url": "https://krystianlesniak.github.io/pcsx2_patches_list/markdown_patches.html"
+        },
+        {
+          "name": "No Interlace Patch",
+          "description": "Removes the interlaced video effect from the PS2 version, resulting in a cleaner, progressive scan image when emulated.",
+          "url": "https://krystianlesniak.github.io/pcsx2_patches_list/markdown_patches.html"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "PCSX2",
+          "optimal_settings": [
+            "Internal Resolution: 2x Native (1280x720) or 3x Native (1920x1080) for sharp HD visuals",
+            "Texture Filtering: Bilinear (Hardware) for smooth sprite scaling",
+            "Enable Widescreen Patch: Apply the 16:9 patch for correct aspect ratio",
+            "Frame Limit: 60 FPS (NTSC) to ensure stable gameplay timing"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "PCSX2",
+          "optimal_settings": [
+            "Internal Resolution: 2x Native for balanced performance and clarity",
+            "Texture Filtering: Bilinear (Hardware) to reduce pixelation",
+            "Enable Widescreen Patch: Essential for modern display compatibility",
+            "Frame Limit: 60 FPS (NTSC) for consistent frame pacing"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "Set in the fantasy world of Ivalice, the game follows Princess Ashe of Dalmasca as she flees her homeland after it is occupied by the Archadian Empire. She joins a group of rebels and sky pirates, including the thief Basch and the mage Fran, to reclaim her throne and uncover the truth behind the empire's expansionist ambitions.",
+    "key_features": [
+      "Gambit System: Condition-driven AI for party members allowing complex tactical automation",
+      "License Board: Character progression system allowing flexible customization of stats and abilities",
+      "Real-Time Combat: Shift from turn-based to real-time action with strategic positioning",
+      "Open World Exploration: Seamless transition between overworld and dungeons in the world of Ivalice",
+      "Sky Pirate Ships: Airship travel and aerial combat mechanics",
+      "Bazaar System: Player-driven economy for crafting items via item collection",
+      "Quicksave System: Ability to save progress instantly during gameplay",
+      "The Zodiac Age Mechanics: Dual job system allowing characters to master multiple roles"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Final Fantasy XII is widely regarded as one of the greatest RPGs of all time, credited with modernizing the genre by introducing real-time combat and deep strategic customization. Its political narrative and the world of Ivalice have influenced countless subsequent games, while its remaster, The Zodiac Age, revitalized the title for a new generation."
+    ]
+  }
 }

@@ -18,44 +18,43 @@
     "difficulty_rating": 3,
     "developers": [
       "Square",
-      "Square Enix"
+      "Xeen"
     ],
     "publishers": [
       "Square",
       "Square Enix"
     ],
-    "reception_score": 9,
-    "review": "A masterpiece of world-building and non-linear storytelling that set a new standard for action RPGs."
+    "reception_score": 8.8,
+    "review": "A masterpiece of non-linear design with a stunning soundtrack and unique world-building mechanics that set it apart from traditional RPGs."
   },
   "release": {
     "alternative_names": [
-      "Seiken Densetsu 3",
-      "Mana no Densetsu",
-      "Legend of Mana HD Remaster"
+      "Seiken Densetsu: Legend of Mana",
+      "聖剣伝説 レジェンド・オブ・マナ"
     ],
     "platforms": [
       {
         "name": "PlayStation",
-        "region": "World",
-        "release_date": "1999-04-29"
+        "region": "Japan",
+        "release_date": "1999-07-15"
       },
       {
         "name": "PlayStation",
-        "region": "World",
-        "release_date": "1999-10-31"
+        "region": "North America",
+        "release_date": "2000-06-07"
       },
       {
         "name": "PlayStation",
-        "region": "World",
-        "release_date": "2000-03-31"
+        "region": "Europe",
+        "release_date": "2000-09-22"
+      },
+      {
+        "name": "PlayStation",
+        "region": "Australia",
+        "release_date": "2000-09-28"
       },
       {
         "name": "Windows",
-        "region": "World",
-        "release_date": "2021-06-24"
-      },
-      {
-        "name": "Nintendo Switch",
         "region": "World",
         "release_date": "2021-06-24"
       },
@@ -65,7 +64,17 @@
         "release_date": "2021-06-24"
       },
       {
-        "name": "Xbox Series X|S",
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2021-06-24"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2021-06-24"
+      },
+      {
+        "name": "Xbox Series X/S",
         "region": "World",
         "release_date": "2021-06-24"
       },
@@ -92,35 +101,47 @@
       "url_slug": "/games/secret-of-mana"
     },
     {
-      "title": "Soul Nomad: The World Eater",
-      "url_slug": "/games/soul-nomad-the-world-eater"
-    },
-    {
-      "title": "Octopath Traveler",
-      "url_slug": "/games/octopath-traveler"
+      "title": "Chrono Trigger",
+      "url_slug": "/games/chrono-trigger"
     },
     {
       "title": "Tales of Phantasia",
       "url_slug": "/games/tales-of-phantasia"
     },
     {
-      "title": "Ys I & II",
-      "url_slug": "/games/ys-i-ii"
+      "title": "Star Ocean: The Second Story",
+      "url_slug": "/games/star-ocean-the-second-story"
     }
   ],
   "play_today": [
     {
       "platform": "Windows",
-      "details": "The HD Remaster on PC offers the best balance of modern convenience and performance. It features 1080p resolution, widescreen support, and a streamlined user interface. The game runs smoothly on modern hardware, and the Steam version includes cloud saves and controller support, making it the most accessible way to experience the game today.",
+      "details": "The definitive modern experience via Steam. Features native widescreen support, controller remapping, and cloud saves. Includes the remaster's enhanced content like the new dungeon and voice acting. Mod support allows UI overhauls and QoL improvements not present in original. Best performance with 60 FPS and 4K scaling options.",
       "available_in_english": {
         "official_localization": true
       },
-      "recommended_patches": [],
+      "recommended_patches": [
+        {
+          "name": "Widescreen Fix for Legend of Mana",
+          "description": "Enables native support for ultra-wide and custom resolutions on the Windows HD Remaster, fixing UI stretching and black bars on non-16:9 monitors.",
+          "url": "https://flawlesswidescreen.org/game.php?id=1175830"
+        },
+        {
+          "name": "Legend of Mana HD Remaster Mod",
+          "description": "Community mod for the Windows version adding UI scaling improvements, faster menu navigation, and quality of life enhancements not present in the base game.",
+          "url": "https://www.nexusmods.com/legendofmana"
+        },
+        {
+          "name": "ReShade Preset for Legend of Mana",
+          "description": "Enhances visual fidelity on Windows by applying color correction and sharpening filters to the remastered graphics, improving clarity on 4K displays.",
+          "url": "https://steamcommunity.com/app/1175830/discussions/0/3181232619047758421/"
+        }
+      ],
       "emulators": []
     },
     {
       "platform": "Nintendo Switch",
-      "details": "The Switch version of the HD Remaster is ideal for portable play, offering the same visual upgrades as the PC version. It allows players to enjoy the game on the go with a battery life that supports extended sessions. The controls are well-adapted for the Joy-Cons, though a Pro Controller is recommended for the action combat.",
+      "details": "Best portable option with full remaster content including new dungeon and voice acting. Runs at 30 FPS in handheld mode with occasional frame drops, but offers the convenience of playing anywhere. Graphics are slightly scaled down compared to PS4/PC but still look sharp. Ideal for commuters or those preferring handheld gaming.",
       "available_in_english": {
         "official_localization": true
       },
@@ -156,20 +177,32 @@
           ]
         }
       ]
+    },
+    {
+      "platform": "PlayStation 4",
+      "details": "Excellent console experience with native 1080p resolution and stable 60 FPS. Includes all remaster features like the new dungeon and voice acting. Convenient for TV play with controller support and trophy integration. Slightly less flexible than PC regarding mods and resolution scaling but offers a polished, plug-and-play experience.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [],
+      "emulators": []
     }
   ],
   "description": {
-    "synopsis": "A young girl named Raine Sage awakens in a forest with no memory of her past. She must travel the world of Fa'Diel to restore the Tree of Mana, which is dying, while uncovering the mysteries of her own identity and the history of the world.",
+    "synopsis": "The game follows a young girl named Riesz who dreams of a mystical Mana Tree and a world in chaos. Upon waking, she discovers her dream is a prophecy and sets out to find the tree before the world is consumed by darkness. Along the way, she encounters a diverse cast of characters, each with their own motivations and stories, all tied to the fate of the Mana Tree.",
     "key_features": [
-      "Land Make System: A unique world-building mechanic allowing players to customize the map layout by placing towns and dungeons.",
-      "Non-Linear Storytelling: The narrative branches based on player choices and the order in which events are triggered.",
-      "Real-Time Action Combat: Fast-paced battles requiring precise timing and strategy without turn-based delays.",
-      "Weapon and Armor Crafting: A deep synthesis system allowing players to combine materials to create powerful equipment.",
-      "Dynamic World Map: The environment changes visually and functionally based on the player's progress and map configuration."
+      "Land Make System: Non-linear world map creation where players place towns and dungeons to shape the story",
+      "Real-time Action Combat: Fast-paced swordplay with no turn-based waiting",
+      "Dynamic Weapon System: Weapons have unique stats and can be upgraded or fused",
+      "Non-Linear Story Progression: Multiple quest paths and endings based on player choices",
+      "Unique Character Classes: Distinct classes like the 'Dancer' and 'Monk' with specific mechanics",
+      "Orchestral Soundtrack: Composed by Yoko Shimomura, featuring a distinct fantasy style",
+      "Dream World Mechanic: The game begins in a dream state that influences the waking world",
+      "Mana Tree Lore: Central plot device connecting all characters and events"
     ],
-    "long_description": "Legend of Mana is a unique action role-playing game developed by Square and directed by Koichi Ishii. Set in the fantasy world of Fa'Diel, the game distinguishes itself with a non-linear narrative structure where the player's actions determine the story's progression. The game features the innovative 'Land Make' system, allowing players to customize the world map by placing towns and dungeons, effectively creating their own adventure. With real-time combat, a focus on exploration, and a memorable soundtrack by Yoko Shimomura, it stands as a cult classic in the Mana series.",
+    "long_description": "No description available.",
     "legacy_and_impact": [
-      "Legend of Mana is widely regarded as one of the most unique entries in the Mana series and the broader RPG genre. Its 'Land Make' system was a pioneering feature that influenced later games in terms of player agency and world customization. Despite a mixed initial reception due to its non-linear structure, it has gained a massive cult following over the years, celebrated for its artistic direction, Yoko Shimomura's iconic soundtrack, and its departure from traditional RPG tropes."
+      "Legend of Mana is widely regarded as one of the most unique entries in the Mana series and the broader RPG genre due to its revolutionary 'Land Make' system. It established a cult following for its non-linear storytelling and Yoko Shimomura's iconic soundtrack, influencing later games that prioritize player agency in world-building."
     ]
   }
 }

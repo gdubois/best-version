@@ -1,178 +1,387 @@
 {
-    "basic_info": {
-        "url_slug": "/games/castlevania",
-        "title": "Castlevania",
-        "cover_url": "/images/castlevania.jpg",
-        "genres": [
-            "Action"
-        ],
-        "themes": [
-            "Horror",
-            "Vampire Hunting",
-            "Medieval Fantasy",
-            "Good vs Evil",
-            "Gothic Atmosphere"
-        ],
-        "modes": {
-            "single_player": true,
-            "multiplayer_local": false,
-            "multiplayer_online": false,
-            "co_op": false
-        },
-        "difficulty_rating": 4,
-        "reception_score": 8.5,
-        "review": "Castlevania is a groundbreaking action-platformer that established the metroidvania genre with its atmospheric gothic horror setting, challenging gameplay, and memorable soundtrack by Michiru Yamane.",
-        "developers": [
-            "Konami"
-        ],
-        "publishers": [
-            "Konami"
-        ]
-    },
-    "release": {
-        "alternative_names": [
-            "Akumaj\u014d Dracula (\u60aa\u9b54\u57ce\u30c9\u30e9\u30ad\u30e5\u30e9 - Japanese)",
-            "Vampire Killer (MSX version)",
-            "Castlevania Anniversary Collection"
-        ],
-        "platforms": [
-            {
-                "name": "Famicom Disk System",
-                "region": "Japan",
-                "release_date": "1986-09-26"
-            },
-            {
-                "name": "Nintendo Entertainment System (NES)",
-                "region": "North America",
-                "release_date": "1987-05-01"
-            },
-            {
-                "name": "Nintendo Entertainment System (NES)",
-                "region": "Europe",
-                "release_date": "1988-12-19"
-            },
-            {
-                "name": "MSX",
-                "region": "Japan",
-                "release_date": "1986-09-26"
-            }
-        ]
-    },
-    "serie": {
-        "is_part_of_serie": true,
-        "serie_name": "Castlevania",
-        "part_number": 1,
-        "previous_game": null,
-        "next_game": {
-            "title": "Castlevania II: Simon's Quest",
-            "url_slug": "/games/castlevania-ii"
-        }
-    },
-    "similar_games": [
-        {
-            "title": "Super Metroid",
-            "url_slug": "/games/super-metroid"
-        },
-        {
-            "title": "Contra",
-            "url_slug": "/games/contra"
-        },
-        {
-            "title": "Ghosts 'n Goblins",
-            "url_slug": "/games/ghosts-n-goblins"
-        },
-        {
-            "title": "Kid Icarus",
-            "url_slug": "/games/kid-icarus"
-        },
-        {
-            "title": "Blaster Master",
-            "url_slug": "/games/blaster-master"
-        }
+  "basic_info": {
+    "url_slug": "/games/castlevania",
+    "title": "Castlevania",
+    "cover_url": "/images/castlevania.jpg",
+    "genres": [
+      "Action",
+      "Platform"
     ],
-    "play_today": [
-        {
-            "platform": "Nintendo Switch (Anniversary Collection)",
-            "details": "The most accessible modern version with all classic Castlevania games included. Features save states, rewind functionality, and online leaderboards.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Anniversary Collection Update",
-                    "description": "Official update adding online leaderboards and improved save functionality"
-                }
-            ],
-            "emulators": []
-        },
-        {
-            "platform": "Windows (Emulation)",
-            "details": "NES emulation provides the most authentic experience. Best played with FCEUX or Nestopia emulator for accuracy.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": true,
-            "recommended_patches": [
-                {
-                    "name": "Control Enhancement Mod",
-                    "description": "Improves jump mechanics and input responsiveness for modern controllers"
-                },
-                {
-                    "name": "Graphics Overhaul Pack",
-                    "description": "Enhanced sprite quality while preserving original art style"
-                }
-            ],
-            "emulators": [
-                {
-                    "platform": "Windows",
-                    "recommended_emulator": "FCEUX / Nestopia UE",
-                    "optimal_settings": [
-                        "CRT filter for authentic feel",
-                        "60 FPS emulation",
-                        "Enable save states"
-                    ]
-                },
-                {
-                    "platform": "Android",
-                    "recommended_emulator": "RetroArch (NES core)",
-                    "optimal_settings": [
-                        "Touch controls customization",
-                        "Save state slots enabled"
-                    ]
-                }
-            ]
-        },
-        {
-            "platform": "Nintendo Switch (Original NES ROM)",
-            "details": "Play the original cartridge version via emulation. Best for purists wanting authentic experience.",
-            "available_in_english": {
-                "official_localization": true,
-                "fan_translation": false
-            },
-            "retro_achievements_support": false,
-            "recommended_patches": [],
-            "emulators": []
-        }
+    "themes": [
+      "Classic"
     ],
-    "description": {
-        "synopsis": "Simon Belmont, a member of the noble Belmont clan, must venture into Dracula's castle to stop his resurrection and save humanity from eternal darkness.",
-        "key_features": [
-            "Pioneering side-scrolling action-platformer",
-            "Atmospheric gothic horror setting",
-            "Memorable soundtrack by Michiru Yamane",
-            "Multiple weapon and item pickups",
-            "Non-linear progression with secret areas"
-        ],
-        "long_description": "Castlevania, released in September 1986 for the Famicom Disk System in Japan (and May 1987 for NES in North America), is a landmark action-platformer developed by Konami. It established many conventions of the metroidvania genre and became one of the most influential games of the 8-bit era. Players control Simon Belmont, a vampire hunter from the noble Belmont clan, as he traverses Dracula's castle to prevent his resurrection. The game features challenging platforming, strategic combat with various weapons (whip, axe, dagger, holy water), and atmospheric gothic horror aesthetics that defined the series for decades. While the MSX version titled 'Vampire Killer' exists with different gameplay mechanics, the NES/Famicom version is universally considered the definitive original. The game's iconic soundtrack by Michiru Yamane remains one of gaming's most beloved compositions.",
-        "legacy_and_impact": [
-            "Established the metroidvania genre template",
-            "Created one of gaming's most recognizable franchises",
-            "Michiru Yamane's soundtrack became legendary in gaming history",
-            "Set standards for atmospheric horror in video games",
-            "Continues to influence modern indie developers decades later"
-        ]
+    "modes": {
+      "single_player": true,
+      "multiplayer_local": false,
+      "multiplayer_online": false,
+      "co_op": false
+    },
+    "difficulty_rating": 3,
+    "developers": [
+      "Konami"
+    ],
+    "publishers": [
+      "Konami"
+    ],
+    "reception_score": 8.7,
+    "review": "A masterpiece of the NES era that defined the gothic action-platformer genre with its challenging gameplay and atmospheric design."
+  },
+  "release": {
+    "alternative_names": [
+      "Akumajō Dracula",
+      "Devil's Castle Dracula",
+      "Demon Castle Dracula"
+    ],
+    "platforms": [
+      {
+        "name": "Famicom Disk System",
+        "region": "Japan",
+        "release_date": "1986-09-26"
+      },
+      {
+        "name": "NES",
+        "region": "North America",
+        "release_date": "1987-05-01"
+      },
+      {
+        "name": "NES",
+        "region": "Europe",
+        "release_date": "1987-09-01"
+      },
+      {
+        "name": "NES",
+        "region": "Australia",
+        "release_date": "1987-09-01"
+      },
+      {
+        "name": "Game Boy Advance",
+        "region": "Japan",
+        "release_date": "2004-06-24"
+      },
+      {
+        "name": "Game Boy Advance",
+        "region": "North America",
+        "release_date": "2004-09-20"
+      },
+      {
+        "name": "Game Boy Advance",
+        "region": "Europe",
+        "release_date": "2004-10-01"
+      },
+      {
+        "name": "Windows",
+        "region": "World",
+        "release_date": "2006-06-01"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "North America",
+        "release_date": "2009-06-09"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Europe",
+        "release_date": "2009-06-12"
+      },
+      {
+        "name": "PlayStation Portable",
+        "region": "Japan",
+        "release_date": "2009-06-18"
+      },
+      {
+        "name": "iOS",
+        "region": "World",
+        "release_date": "2010-06-09"
+      },
+      {
+        "name": "Android",
+        "region": "World",
+        "release_date": "2010-06-09"
+      },
+      {
+        "name": "Nintendo Switch",
+        "region": "World",
+        "release_date": "2021-09-24"
+      },
+      {
+        "name": "PlayStation 4",
+        "region": "World",
+        "release_date": "2021-09-24"
+      },
+      {
+        "name": "Xbox One",
+        "region": "World",
+        "release_date": "2021-09-24"
+      }
+    ]
+  },
+  "serie": {
+    "is_part_of_serie": true,
+    "serie_name": "Castlevania",
+    "part_number": 1,
+    "next_game": {
+      "title": "Castlevania II: Simon's Quest",
+      "url_slug": "/games/castlevania-ii"
     }
+  },
+  "similar_games": [
+    {
+      "title": "Contra",
+      "url_slug": "/games/contra"
+    },
+    {
+      "title": "Metroid",
+      "url_slug": "/games/metroid"
+    },
+    {
+      "title": "Ghosts 'n Goblins",
+      "url_slug": "/games/ghosts-n-goblins"
+    },
+    {
+      "title": "Zelda II: The Adventure of Link",
+      "url_slug": "/games/zelda-ii-the-adventure-of-link"
+    },
+    {
+      "title": "Mega Man",
+      "url_slug": "/games/mega-man"
+    }
+  ],
+  "play_today": [
+    {
+      "platform": "Nintendo Switch (Anniversary Collection)",
+      "details": "The most accessible modern version with all classic Castlevania games included. Features save states, rewind functionality, and online leaderboards.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Anniversary Collection Update",
+          "description": "Official update adding online leaderboards and improved save functionality"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Windows (Emulation)",
+      "details": "NES emulation provides the most authentic experience. Best played with FCEUX or Nestopia emulator for accuracy.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": true,
+      "recommended_patches": [
+        {
+          "name": "Control Enhancement Mod",
+          "description": "Improves jump mechanics and input responsiveness for modern controllers"
+        },
+        {
+          "name": "Graphics Overhaul Pack",
+          "description": "Enhanced sprite quality while preserving original art style"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "FCEUX / Nestopia UE",
+          "optimal_settings": [
+            "CRT filter for authentic feel",
+            "60 FPS emulation",
+            "Enable save states"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "RetroArch (NES core)",
+          "optimal_settings": [
+            "Touch controls customization",
+            "Save state slots enabled"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch (Original NES ROM)",
+      "details": "Play the original cartridge version via emulation. Best for purists wanting authentic experience.",
+      "available_in_english": {
+        "official_localization": true,
+        "fan_translation": false
+      },
+      "retro_achievements_support": false,
+      "recommended_patches": [],
+      "emulators": []
+    },
+    {
+      "platform": "Windows",
+      "details": "The definitive modern experience via the Castlevania Anniversary Collection on Steam. This version offers native widescreen support, controller remapping, and cloud saves. It includes the original NES gameplay with modern convenience features like save states and quick access, making it the most accessible way to play today without sacrificing the core experience.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Castlevania Anniversary Collection Romhack Collection",
+          "description": "A curated collection of community patches for the Anniversary Collection that replaces internal ROMs with versions compatible with fan translations and quality-of-life fixes, specifically enabling the English Re-translation for Simon's Quest.",
+          "url": "https://steamcommunity.com/app/1018010/discussions/0/5738190708669013728/"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "NES",
+      "details": "The authentic original experience for purists. While lacking modern conveniences, it offers the purest gameplay feel and original soundtrack. Best played via emulation on PC or mobile for save states and widescreen stretching. Requires a fan translation patch for full English text if playing the Japanese FDS version, but the North American NES cartridge is fully localized.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Castlevania 30th Anniversary Edition",
+          "description": "A comprehensive overhaul that completely changes the game's graphics, including backgrounds, fonts, and item sprites, while fixing bugs and improving the overall visual presentation for the 30th anniversary.",
+          "url": "https://vimm.net/romhacking/hacks/3736"
+        },
+        {
+          "name": "Castlevania: Improved Controls",
+          "description": "Enhances the original gameplay by refining movement physics, jump mechanics, and weapon handling to provide a smoother and more responsive experience without altering the core game balance.",
+          "url": "https://www.romhacking.net/hacks/3867/"
+        },
+        {
+          "name": "Castlevania 1 - Fortified Army",
+          "description": "A quality-of-life patch that adds a map overlay, fixes translation errors, and improves enemy placement to make the original NES experience more accessible for modern players.",
+          "url": "https://romhackplaza.org/romhacks/castlevania-1-fortified-army-nes/"
+        },
+        {
+          "name": "Castlevania II: Simon's Quest English Re-translation (+Map)",
+          "description": "Re-translates the notoriously poor English script of Simon's Quest into accurate English and adds a functional in-game map to assist with navigation, restoring the Japanese staff credits.",
+          "url": "https://www.romhacking.net/hacks/1032/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "Mesen",
+          "optimal_settings": [
+            "Enable 'Stretch to Window' for widescreen aspect ratio",
+            "Set 'Audio Filter' to 'Original' for authentic sound",
+            "Enable 'Save States' for quick checkpointing"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "Nestopia UE",
+          "optimal_settings": [
+            "Enable 'Save States' for seamless progress saving",
+            "Map 'D-Pad' and 'A/B' buttons to touch screen corners",
+            "Set 'Screen Scaling' to 'Integer' for crisp pixel art"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Famicom Disk System",
+      "details": "The original Japanese release on Famicom Disk System is technically the earliest version, featuring a slightly different soundtrack and minor graphical tweaks. However, it is locked to Japanese language with no official English localization. While historically significant, the language barrier and lack of modern accessibility make it a poor choice for most players today.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Akumajou Densetsu - Localization And Title Screen Redone",
+          "description": "A fan translation patch that converts the original Japanese Famicom Disk System version of Castlevania III into English, including a redone title screen and accurate text localization.",
+          "url": "https://romhackplaza.org/romhacks/akumajou-densetsu-localization-and-title-screen-redone-castlevania-3-fds/"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "FCEUmm",
+          "optimal_settings": [
+            "Enable 'Disk System' support in the BIOS settings to load .fds files",
+            "Set 'Video Mode' to 'NTSC' for correct color palette and timing",
+            "Enable 'Save States' to bypass the physical disk swapping requirement"
+          ]
+        },
+        {
+          "platform": "Linux",
+          "recommended_emulator": "Mesen",
+          "optimal_settings": [
+            "Configure 'Input' to map D-Pad to keyboard arrows for precise movement",
+            "Enable 'Audio Resampling' to 48000Hz for cleaner sound output",
+            "Set 'Frame Skip' to 0 for maximum visual fidelity"
+          ]
+        }
+      ]
+    },
+    {
+      "platform": "Nintendo Switch",
+      "details": "The definitive modern experience via the Castlevania Anniversary Collection. Features native 1080p/4K resolution, widescreen support, and cloud saves. Includes the original NES version with modern quality-of-life features like save states and controller remapping. Official English localization ensures full accessibility without needing fan patches.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Castlevania Anniversary Collection Romhack Collection",
+          "description": "A curated collection of community patches for the Anniversary Collection, including the 'English Re-translation (+Map)' for Simon's Quest and improved ROM compatibility for other titles within the collection's emulator.",
+          "url": "https://steamcommunity.com/app/1018010/discussions/0/5738190708669013728/"
+        }
+      ],
+      "emulators": []
+    },
+    {
+      "platform": "Game Boy Advance",
+      "details": "A solid portable option with enhanced graphics and a new dungeon not found in the NES version. Features a rearranged soundtrack and improved visuals, though the screen is small. Best played via emulation on modern devices for better visibility and save states. Official English localization is included in all regions.",
+      "available_in_english": {
+        "official_localization": true
+      },
+      "recommended_patches": [
+        {
+          "name": "Castlevania: Circle of the Moon Definitive Edition",
+          "description": "Unlocks all DSS modes (Magician, Fighter, Shooter, Thief) at the start, ensures all DSS cards drop on the first enemy kill, and restores the original Japanese difficulty and experience tables.",
+          "url": "https://www.romhacking.net/hacks/9010/"
+        },
+        {
+          "name": "Castlevania: Advanced Romhack Collection",
+          "description": "A compilation of three favorite romhacks for the Advance Collection, including control improvements and visual enhancements tailored for the GBA versions of the trilogy.",
+          "url": "https://castlevaniamodding.boards.net/thread/708/castlevania-advanced-romhack-collection"
+        }
+      ],
+      "emulators": [
+        {
+          "platform": "Windows",
+          "recommended_emulator": "VisualBoyAdvance-M",
+          "optimal_settings": [
+            "Set 'Internal Resolution' to 4x for sharp scaling",
+            "Enable 'Sound Filter' for authentic audio emulation",
+            "Configure 'Save States' to auto-save every 5 minutes"
+          ]
+        },
+        {
+          "platform": "Android",
+          "recommended_emulator": "My Boy!",
+          "optimal_settings": [
+            "Enable 'Save States' for quick checkpointing",
+            "Map 'D-Pad' to the left side of the touch screen",
+            "Set 'Screen Scaling' to 'Integer' to preserve pixel art"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": {
+    "synopsis": "In the year 1691, the vampire lord Dracula awakens from his slumber to terrorize the land. Simon Belmont, a descendant of the legendary vampire hunters, must venture into Dracula's castle to defeat the evil lord and save the world from eternal darkness. Armed with the magical Vampire Killer whip, Simon battles through hordes of monsters and formidable bosses to reach the heart of the castle.",
+    "key_features": [
+      "Side-scrolling platforming with precise jumping mechanics",
+      "Weapon variety including whip, axe, cross, and holy water",
+      "Item-based combat system requiring strategic inventory management",
+      "Non-linear level design with hidden rooms and secret passages",
+      "Boss battles against iconic monsters like Frankenstein and Medusa",
+      "Time limit mechanic requiring speed and efficiency",
+      "Password system for saving progress",
+      "Dynamic background parallax scrolling",
+      "High difficulty curve requiring memorization of enemy patterns",
+      "Iconic soundtrack composed by Michiru Yamane and others"
+    ],
+    "long_description": "No description available.",
+    "legacy_and_impact": [
+      "Castlevania established the template for the action-platformer genre and spawned one of the longest-running video game franchises in history. Its gothic aesthetic and challenging gameplay influenced countless titles, including Metroid and Contra. The game remains a cultural touchstone for retro gaming enthusiasts."
+    ]
+  }
 }
